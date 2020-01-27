@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<config>
+<className>per.hyc.designPattern.Bridge.Blue</className>
+<className>per.hyc.designPattern.Bridge.SmallPen</className>
+</config>

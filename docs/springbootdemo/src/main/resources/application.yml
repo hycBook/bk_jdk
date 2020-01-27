@@ -1,0 +1,24 @@
+server:
+  port : 8089
+  tomcat:
+    uri-encoding: utf-8
+spring:
+  thymeleaf:
+    mode: LEGACYHTML5
+    cache: false
+  jackson:
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  profiles:
+    active: dev
+
+student:
+  name: nick
+  age: 17
+  id: 195620
+
+school:
+  host: 192.168.1.171
+  username: root
+  password: 123
+
