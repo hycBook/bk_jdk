@@ -1,7 +1,7 @@
 # Summary
 
 * [Introduction](README.md)
-* [设计模式2](chapters/设计模式.md)
+* [设计模式](chapters/设计模式.md)
 	* [设计模式_设计模式的概念](chapters/设计模式_设计模式的概念.md)
 	* [设计模式_组成和分类](chapters/设计模式_组成和分类.md)
 	* [设计模式_六大设计原则](chapters/设计模式_六大设计原则.md)
