@@ -291,109 +291,106 @@ java.lang.String([B,java.lang.String,)
 >
 > * 方法反射的操作method.invoke(对象，参数列表）
 >
->   ```java
->   import java.lang.reflect.Method;
->   class A {
->     public void print() {
->           System.out.println("helloworld");
->       }
->       public void print(int a, int b) {
->           System.out.println(a + b);
->       }
->       public void print(String a, String b) {
->           System.out.println(a.toUpperCase() + "," + b.toLowerCase());
->       }
->    }
->    public class MethodDemo1 {
->     public static void main(String[] args) {
->          // 获取方法名称和参数列表来决定
->           // getMethod获取的是public的方法
->           // getDelcaredMethod自己声明的方法
->           A a1 = new A();
->           Class c = a1.getClass();
->           try {
->               // 1.获取方法print(int,int)
->               // Method m =  c.getMethod("print", new Class[]{int.class,int.class});
->               Method m = c.getMethod("print", int.class, int.class);
->               // 方法的反射操作是用m对象来进行方法调用 和a1.print调用的效果完全相同
->               // Object o = m.invoke(a1,new Object[]{10,20});
->               Object o = m.invoke(a1, 10, 20);
->               System.out.println("==================");
->    
->              // 2.获取方法print(String,String)
->               Method m1 = c.getMethod("print", String.class, String.class);
->               o = m1.invoke(a1, "hello", "WORLD");
->               System.out.println("===================");
->    
->              // 3.获取方法print()
->               // Method m2 = c.getMethod("print", new Class[]{});
->               Method m2 = c.getMethod("print");
->               // m2.invoke(a1, new Object[]{});
->               m2.invoke(a1);
->           } catch (Exception e) {
->               e.printStackTrace();
->           }
->       }
->    }
->    // 输出
->    30
->   ==================
->   HELLO,world
-===================
-helloworld
-```
-
-
-
+> ```java
+> import java.lang.reflect.Method;
+> class A {
+>      public void print() {
+>            System.out.println("helloworld");
+>        }
+>        public void print(int a, int b) {
+>            System.out.println(a + b);
+>        }
+>        public void print(String a, String b) {
+>            System.out.println(a.toUpperCase() + "," + b.toLowerCase());
+>        }
+> }
+> public class MethodDemo1 {
+>      public static void main(String[] args) {
+>           // 获取方法名称和参数列表来决定
+>            // getMethod获取的是public的方法
+>            // getDelcaredMethod自己声明的方法
+>            A a1 = new A();
+>            Class c = a1.getClass();
+>            try {
+>                // 1.获取方法print(int,int)
+>                // Method m =  c.getMethod("print", new Class[]{int.class,int.class});
+>                Method m = c.getMethod("print", int.class, int.class);
+>                // 方法的反射操作是用m对象来进行方法调用 和a1.print调用的效果完全相同
+>                // Object o = m.invoke(a1,new Object[]{10,20});
+>                Object o = m.invoke(a1, 10, 20);
+>                System.out.println("==================");
+> 
+>               // 2.获取方法print(String,String)
+>                Method m1 = c.getMethod("print", String.class, String.class);
+>                o = m1.invoke(a1, "hello", "WORLD");
+>                System.out.println("===================");
+> 
+>               // 3.获取方法print()
+>                // Method m2 = c.getMethod("print", new Class[]{});
+>                Method m2 = c.getMethod("print");
+>                // m2.invoke(a1, new Object[]{});
+>                m2.invoke(a1);
+>            } catch (Exception e) {
+>                e.printStackTrace();
+>            }
+>        }
+> }
+> // 输出
+> 30
+> ==================
+> HELLO,world
+> ===================
+> helloworld
+> ```
 
 
 # 通过反射了解集合泛型的本质
 
->可以用反射绕过泛型
+> 可以用反射绕过泛型
 >
->```java
->import java.lang.reflect.Method;
->import java.util.ArrayList;
+> ```java
+> import java.lang.reflect.Method;
+> import java.util.ArrayList;
+> 
+> public class MethodDemo4 {
+> 	public static void main(String[] args) {
+> 		ArrayList list = new ArrayList();
+> 		
+> 		ArrayList<String> list1 = new ArrayList<String>();
+> 		list1.add("hello");
+> 		//list1.add(20);错误的
+> 		Class c1 = list.getClass();
+> 		Class c2 = list1.getClass();
+> 		System.out.println(c1 == c2);
+> 		//反射的操作都是编译之后的操作
+> 		
+> 		/*
+> 		 * c1==c2结果返回true说明编译之后集合的泛型是去泛型化的
+> 		 * Java中集合的泛型，是防止错误输入的，只在编译阶段有效，
+> 		 * 绕过编译就无效了
+> 		 * 验证：我们可以通过方法的反射来操作，绕过编译
+> 		 */
+> 		try {
+> 			Method m = c2.getMethod("add", Object.class);
+> 			m.invoke(list1, 20);//绕过编译操作就绕过了泛型
+> 			System.out.println(list1.size());
+> 			System.out.println(list1);
+> 			/*for (String string : list1) {
+> 				System.out.println(string);
+> 			}*///现在不能这样遍历
+> 		} catch (Exception e) {
+> 		  e.printStackTrace();
+> 		}
+> 	}
+> }
+> 
+> // 输出
+> true
+> 2
+> [hello, 20]
+> ```
 >
->public class MethodDemo4 {
->	public static void main(String[] args) {
->		ArrayList list = new ArrayList();
->		
->		ArrayList<String> list1 = new ArrayList<String>();
->		list1.add("hello");
->		//list1.add(20);错误的
->		Class c1 = list.getClass();
->		Class c2 = list1.getClass();
->		System.out.println(c1 == c2);
->		//反射的操作都是编译之后的操作
->		
->		/*
->		 * c1==c2结果返回true说明编译之后集合的泛型是去泛型化的
->		 * Java中集合的泛型，是防止错误输入的，只在编译阶段有效，
->		 * 绕过编译就无效了
->		 * 验证：我们可以通过方法的反射来操作，绕过编译
->		 */
->		try {
->			Method m = c2.getMethod("add", Object.class);
->			m.invoke(list1, 20);//绕过编译操作就绕过了泛型
->			System.out.println(list1.size());
->			System.out.println(list1);
->			/*for (String string : list1) {
->				System.out.println(string);
->			}*///现在不能这样遍历
->		} catch (Exception e) {
->		  e.printStackTrace();
->		}
->	}
->}
->
->// 输出
->true
->2
->[hello, 20]
->```
->
->
+> 
 
 # jOOR反射api
 
