@@ -293,9 +293,8 @@ java.lang.String([B,java.lang.String,)
 >
 >   ```java
 >   import java.lang.reflect.Method;
->   
 >   class A {
->      public void print() {
+>     public void print() {
 >           System.out.println("helloworld");
 >       }
 >       public void print(int a, int b) {
@@ -305,10 +304,9 @@ java.lang.String([B,java.lang.String,)
 >           System.out.println(a.toUpperCase() + "," + b.toLowerCase());
 >       }
 >    }
->   
->   public class MethodDemo1 {
->      public static void main(String[] args) {
->           // 获取方法名称和参数列表来决定
+>    public class MethodDemo1 {
+>     public static void main(String[] args) {
+>          // 获取方法名称和参数列表来决定
 >           // getMethod获取的是public的方法
 >           // getDelcaredMethod自己声明的方法
 >           A a1 = new A();
@@ -337,19 +335,15 @@ java.lang.String([B,java.lang.String,)
 >           }
 >       }
 >    }
->   
->   
->   // 输出
->   30
+>    // 输出
+>    30
 >   ==================
 >   HELLO,world
->   ===================
->   helloworld
->   ```
->   
->   
->
->   
+===================
+helloworld
+```
+
+
 
 
 
