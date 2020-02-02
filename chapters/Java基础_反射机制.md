@@ -292,11 +292,10 @@ java.lang.String([B,java.lang.String,)
 > * 方法反射的操作method.invoke(对象，参数列表）
 >
 >   ```java
->   
 >   import java.lang.reflect.Method;
 >   
 >   class A {
->       public void print() {
+>      public void print() {
 >           System.out.println("helloworld");
 >       }
 >       public void print(int a, int b) {
@@ -305,10 +304,10 @@ java.lang.String([B,java.lang.String,)
 >       public void print(String a, String b) {
 >           System.out.println(a.toUpperCase() + "," + b.toLowerCase());
 >       }
->   }
+>    }
 >   
 >   public class MethodDemo1 {
->       public static void main(String[] args) {
+>      public static void main(String[] args) {
 >           // 获取方法名称和参数列表来决定
 >           // getMethod获取的是public的方法
 >           // getDelcaredMethod自己声明的方法
@@ -322,13 +321,13 @@ java.lang.String([B,java.lang.String,)
 >               // Object o = m.invoke(a1,new Object[]{10,20});
 >               Object o = m.invoke(a1, 10, 20);
 >               System.out.println("==================");
->   
->               // 2.获取方法print(String,String)
+>    
+>              // 2.获取方法print(String,String)
 >               Method m1 = c.getMethod("print", String.class, String.class);
 >               o = m1.invoke(a1, "hello", "WORLD");
 >               System.out.println("===================");
->   
->               // 3.获取方法print()
+>    
+>              // 3.获取方法print()
 >               // Method m2 = c.getMethod("print", new Class[]{});
 >               Method m2 = c.getMethod("print");
 >               // m2.invoke(a1, new Object[]{});
@@ -337,7 +336,7 @@ java.lang.String([B,java.lang.String,)
 >               e.printStackTrace();
 >           }
 >       }
->   }
+>    }
 >   
 >   
 >   // 输出
@@ -346,8 +345,9 @@ java.lang.String([B,java.lang.String,)
 >   HELLO,world
 >   ===================
 >   helloworld
->   
 >   ```
+>   
+>   
 >
 >   
 
