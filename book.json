@@ -23,7 +23,8 @@
         "anchor-navigation-ex",
         "mathjax",
 		"mermaid-gb3",
-		"tbfed-pagefooter"
+		"tbfed-pagefooter",
+		"code"
     ],
     "pluginsConfig": {
 		"theme-default": {
