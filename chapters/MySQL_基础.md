@@ -447,10 +447,6 @@ select
 >
 > * 备用
 
-
-
-# DQL: 查询语句
-
 ## 排序查询
 
 > * 语法：order by 子句
@@ -536,9 +532,96 @@ select
 >
 > 
 
+# DCL：管理用户和授权
 
+## 用户管理
 
+### 添加用户
 
+```mysql
+CREATE USER '用户名'@'主机名' IDENTIFIED BY '密码';
+```
 
+### 删除用户
 
+```mysql
+DROP USER '用户名'@'主机名';
+```
+
+### 修改用户密码
+
+```mysql
+UPDATE USER SET PASSWORD = PASSWORD('新密码') WHERE USER = '用户名';
+UPDATE USER SET PASSWORD = PASSWORD('abc') WHERE USER = 'lisi';
+			
+SET PASSWORD FOR '用户名'@'主机名' = PASSWORD('新密码');
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('123');
+```
+
+### 忘记密码
+
+>1. 管理员运行cmd
+>
+>   ```mysql
+>   net stop mysql --停止mysql服务
+>   ```
+>
+>2. 使用无验证方式启动mysql服务
+>
+>   ```mysql
+>   mysqld --skip-grant-tables
+>   ```
+>
+>3. 使用无验证方式启动mysql服务
+>
+>4. 打开新的cmd窗口,直接输入mysql命令，敲回车就可以登录成功
+>
+>   ```mysql
+>   use mysql;
+>   update user set password = password('你的新密码') where user = 'root';
+>   ```
+>
+>5. 关闭两个窗口
+>
+>6. 打开任务管理器，手动结束mysqld.exe 的进程
+>
+>7. 启动mysql服务，使用新密码登录
+>
+>
+
+### 查询用户
+
+```mysql
+-- 1. 切换到mysql数据库
+USE myql;
+-- 2. 查询user表
+SELECT * FROM USER;		
+-- * 通配符： % 表示可以在任意主机使用用户登录数据库
+```
+
+## 权限管理
+
+### 查询权限
+
+```mysql
+SHOW GRANTS FOR '用户名'@'主机名';
+SHOW GRANTS FOR 'lisi'@'%';
+```
+
+### 授予权限
+
+```mysql
+-- 授予权限
+grant 权限列表 on 数据库名.表名 to '用户名'@'主机名';
+-- 给张三用户授予所有权限，在任意数据库任意表上
+GRANT ALL ON *.* TO 'zhangsan'@'localhost';
+```
+
+### 撤销权限
+
+```mysql
+-- 撤销权限
+revoke 权限列表 on 数据库名.表名 from '用户名'@'主机名';
+REVOKE UPDATE ON db3.`account` FROM 'lisi'@'%';
+```
 
