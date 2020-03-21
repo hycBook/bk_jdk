@@ -54,7 +54,6 @@ ReentrantLock分为“公平锁”和“非公平锁”。它们的区别体现�
 ReentrantLock()
 // 创建策略是fair的 ReentrantLock。fair为true表示是公平锁，fair为false表示是非公平锁。
 ReentrantLock(boolean fair)
-
 // 查询当前线程保持此锁的次数。
 int getHoldCount()
 // 返回目前拥有此锁的线程，如果此锁不被任何线程拥有，则返回 null。
@@ -92,6 +91,8 @@ boolean tryLock(long timeout, TimeUnit unit)
 // 试图释放此锁。
 void unlock()
 ```
+
+
 
 ```java
 // ReentrantLock示例
