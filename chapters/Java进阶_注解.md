@@ -1,4 +1,4 @@
-![异世界.png](res/Java%20And%20Spring%20Annotation/15675864-e39212ac990782cf.png)
+![异世界.png](https://upload-images.jianshu.io/upload_images/15675864-e39212ac990782cf.png)
 
 [TOC]
 
@@ -45,9 +45,9 @@
 >> `@SuppressWarnings`：压制警告，一般传递参数all，定义在java.lang.SuppressWarnings中，用来抑制编译时的警告信息。与前两个注释有所不同，你需要添加一个参数才能正确使用，这些参数都是已经定义好了的，我们选择性的使用就好了
 >>
 >    > 如@SuppressWarnings("all")、@SuppressWarnings("all")、@SuppressWarnings("unchecked")、@SuppressWarnings(value={"unchecked","deprecation"})
+> 
 >    
->    
->    
+> 
 
 # 自定义注解
 

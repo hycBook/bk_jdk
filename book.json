@@ -49,8 +49,8 @@
             ]
         },
         "donate": {
-            "wechat": "./chapters/res/alipayHyc.png",
-            "alipay": "./chapters/res/alipayHyc.png",
+            "wechat": "https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png",
+            "alipay": "https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png",
             "title": "",
             "button": "赏",
             "alipayText": "支付宝打赏",

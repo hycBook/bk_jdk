@@ -1,4 +1,4 @@
-![异世界.png](res/JDBC_JDBC%E8%BF%9E%E6%8E%A5%E6%B1%A0/15675864-e39212ac990782cf.png)
+![异世界.png](https://upload-images.jianshu.io/upload_images/15675864-e39212ac990782cf.png)
 
 [TOC]
 
