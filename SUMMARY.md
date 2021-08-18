@@ -11,6 +11,7 @@
 	* [设计模式_总结](chapters/设计模式_总结.md)
 * [多线程](chapters/多线程.md)
 	* [多线程_基础篇](chapters/多线程_基础篇.md)
+	* [多线程_锁](chapters/多线程_锁.md)
 	* [多线程_JUC原子类](chapters/多线程_JUC原子类.md)
 	* [多线程_JUC锁集合 ](chapters/多线程_JUC锁集合 .md)
 	* [多线程_ JUC集合](chapters/多线程_ JUC集合.md)
@@ -45,7 +46,6 @@
 	* [JDBC_JDBC基础](chapters/JDBC_JDBC基础.md)
 	* [JDBC_JDBC连接池](chapters/JDBC_JDBC连接池.md)
 	* [JDBC_JDBCTemplate](chapters/JDBC_JDBCTemplate.md)
-
 
 
 
