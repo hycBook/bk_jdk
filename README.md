@@ -1,4 +1,4 @@
-# bk_python
+# Java Readme
 
  ![img]( https://upload-images.jianshu.io/upload_images/15675864-952291e89189c8a8.jpg ) 
 
@@ -7,14 +7,8 @@
 > 其中有些来自一些博客论坛，如有侵权，请联系作者 1832044043@qq.com
 >
 > 其中能加上原文地址的都已在文中尽可能加上
-
-
-
-[gitbook使用教程](http://gitbook.zhangjikai.com/ )
-
-
-
-
+>
+> [gitbook使用教程](http://gitbook.zhangjikai.com/ )
 
 > Some study notes on java and python.
 > Java learning comparison includes java basic syntax, java multi-threading, design patterns and Spring annotations.
@@ -40,13 +34,10 @@
 > મૂળભૂત પાયથોન સિન્ટેક્સમાં મલ્ટિ-પ્રોસેસ, મલ્ટિ-કોરઆઉટ, ડેકોનર, પાયથોનિક પદ્ધતિઓ, જનરેટર અને ઇટરેટર્સ, તેમજ કેટલીક વિગતવાર ટીપ્સ શામેલ છે.
 > મશીન લર્નિંગ લાઇબ્રેરીમાં મુખ્યત્વે મેટપ્લોલિબ, numpy, pandas, scikit, skimage અને અન્ય સામગ્રી શામેલ છે.
 
-
-
 $$
 \text{life}= \underset{birth}{\overset{death}{\mathop
 \int }}\,\frac{happiness}{time}\vartriangle time
 $$
-
 
 
 
@@ -74,3 +65,4 @@ URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8569207&isnumber=85
 doi: 10.1109/ICASI.2018.8394429
 keywords: {driver information systems;feature extraction;feedforward neural nets;road accidents;road safety;sensor fusion;deep convolutional neural network;multimodal sensor data;intelligent vehicle systems;advanced driving assistance systems;driving-related accidents;human injuries;impaired driving detection;collaborative information extraction;classifier;feature fusion;Feature extraction;Vehicles;Convolution;Sensors;Conferences;Accidents;Support vector machines;intelligent vehicle systems;multimodal sensor data;deep neural network},
 URL: http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8394429&isnumber=8394245
+
