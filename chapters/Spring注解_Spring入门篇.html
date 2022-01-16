@@ -1,0 +1,2397 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Spring注解_Spring入门篇 · Java相关学习记录</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="narutohyc">
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Java基础.md" />
+    
+    
+    <link rel="prev" href="Spring注解_常用注解.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/narutohyc" target="_blank" class="custom-link">我的狗窝</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="设计模式.md">
+            
+                <span>
+            
+                    
+                        <b>1.2.</b>
+                    
+                    设计模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="设计模式_设计模式的概念.html">
+            
+                <a href="设计模式_设计模式的概念.html">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    设计模式_设计模式的概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="设计模式_组成和分类.html">
+            
+                <a href="设计模式_组成和分类.html">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    设计模式_组成和分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="设计模式_六大设计原则.html">
+            
+                <a href="设计模式_六大设计原则.html">
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    设计模式_六大设计原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="设计模式_创建型模式.html">
+            
+                <a href="设计模式_创建型模式.html">
+            
+                    
+                        <b>1.2.4.</b>
+                    
+                    设计模式_创建型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="设计模式_结构型模式.html">
+            
+                <a href="设计模式_结构型模式.html">
+            
+                    
+                        <b>1.2.5.</b>
+                    
+                    设计模式_结构型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="设计模式_行为型模式.html">
+            
+                <a href="设计模式_行为型模式.html">
+            
+                    
+                        <b>1.2.6.</b>
+                    
+                    设计模式_行为型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="设计模式_总结.html">
+            
+                <a href="设计模式_总结.html">
+            
+                    
+                        <b>1.2.7.</b>
+                    
+                    设计模式_总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="多线程.md">
+            
+                <span>
+            
+                    
+                        <b>1.3.</b>
+                    
+                    多线程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="多线程_基础篇.html">
+            
+                <a href="多线程_基础篇.html">
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    多线程_基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="多线程_锁.html">
+            
+                <a href="多线程_锁.html">
+            
+                    
+                        <b>1.3.2.</b>
+                    
+                    多线程_锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="多线程_JUC原子类.html">
+            
+                <a href="多线程_JUC原子类.html">
+            
+                    
+                        <b>1.3.3.</b>
+                    
+                    多线程_JUC原子类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="多线程_JUC锁集合 .html">
+            
+                <a href="多线程_JUC锁集合 .html">
+            
+                    
+                        <b>1.3.4.</b>
+                    
+                    多线程_JUC锁集合 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="多线程_ JUC集合.html">
+            
+                <a href="多线程_ JUC集合.html">
+            
+                    
+                        <b>1.3.5.</b>
+                    
+                    多线程_ JUC集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="多线程_JUC线程池.html">
+            
+                <a href="多线程_JUC线程池.html">
+            
+                    
+                        <b>1.3.6.</b>
+                    
+                    多线程_JUC线程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="多线程_生产者消费者.html">
+            
+                <a href="多线程_生产者消费者.html">
+            
+                    
+                        <b>1.3.7.</b>
+                    
+                    多线程_生产者消费者
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="IDEA快捷键.html">
+            
+                <a href="IDEA快捷键.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    IDEA快捷键
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="Spring注解.md">
+            
+                <span>
+            
+                    
+                        <b>1.5.</b>
+                    
+                    Spring注解
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="Spring注解_介绍.html">
+            
+                <a href="Spring注解_介绍.html">
+            
+                    
+                        <b>1.5.1.</b>
+                    
+                    Spring注解_介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="Spring注解_常用注解.html">
+            
+                <a href="Spring注解_常用注解.html">
+            
+                    
+                        <b>1.5.2.</b>
+                    
+                    Spring注解_常用注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.3" data-path="Spring注解_Spring入门篇.html">
+            
+                <a href="Spring注解_Spring入门篇.html">
+            
+                    
+                        <b>1.5.3.</b>
+                    
+                    Spring注解_Spring入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="Java基础.md">
+            
+                <span>
+            
+                    
+                        <b>1.6.</b>
+                    
+                    Java基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="Java基础_集合.html">
+            
+                <a href="Java基础_集合.html">
+            
+                    
+                        <b>1.6.1.</b>
+                    
+                    Java基础_集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="Java基础_泛型.html">
+            
+                <a href="Java基础_泛型.html">
+            
+                    
+                        <b>1.6.2.</b>
+                    
+                    Java基础_泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="Java基础_打jar包.html">
+            
+                <a href="Java基础_打jar包.html">
+            
+                    
+                        <b>1.6.3.</b>
+                    
+                    Java基础_打jar包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="Java基础_正则匹配.html">
+            
+                <a href="Java基础_正则匹配.html">
+            
+                    
+                        <b>1.6.4.</b>
+                    
+                    Java基础_正则匹配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="Java基础_反射机制.html">
+            
+                <a href="Java基础_反射机制.html">
+            
+                    
+                        <b>1.6.5.</b>
+                    
+                    Java基础_反射机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="Java基础_对象正反序列化.html">
+            
+                <a href="Java基础_对象正反序列化.html">
+            
+                    
+                        <b>1.6.6.</b>
+                    
+                    Java基础_对象正反序列化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="Java基础_读取配置文件.html">
+            
+                <a href="Java基础_读取配置文件.html">
+            
+                    
+                        <b>1.6.7.</b>
+                    
+                    Java基础_读取配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="Java基础_解析与生成XML.html">
+            
+                <a href="Java基础_解析与生成XML.html">
+            
+                    
+                        <b>1.6.8.</b>
+                    
+                    Java基础_解析与生成XML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="Java基础_后台服务器开发.html">
+            
+                <a href="Java基础_后台服务器开发.html">
+            
+                    
+                        <b>1.6.9.</b>
+                    
+                    Java基础_后台服务器开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="Java基础_四舍五入.html">
+            
+                <a href="Java基础_四舍五入.html">
+            
+                    
+                        <b>1.6.10.</b>
+                    
+                    Java基础_四舍五入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="Java进阶.md">
+            
+                <span>
+            
+                    
+                        <b>1.7.</b>
+                    
+                    Java进阶
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="Java进阶_反射.html">
+            
+                <a href="Java进阶_反射.html">
+            
+                    
+                        <b>1.7.1.</b>
+                    
+                    Java进阶_反射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="Java进阶_注解.html">
+            
+                <a href="Java进阶_注解.html">
+            
+                    
+                        <b>1.7.2.</b>
+                    
+                    Java进阶_注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="MySQL.md">
+            
+                <span>
+            
+                    
+                        <b>1.8.</b>
+                    
+                    MySQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="MySQL_基础.html">
+            
+                <a href="MySQL_基础.html">
+            
+                    
+                        <b>1.8.1.</b>
+                    
+                    MySQL_基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="MySQL_约束.html">
+            
+                <a href="MySQL_约束.html">
+            
+                    
+                        <b>1.8.2.</b>
+                    
+                    MySQL_约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="MySQL_多表查询.html">
+            
+                <a href="MySQL_多表查询.html">
+            
+                    
+                        <b>1.8.3.</b>
+                    
+                    MySQL_多表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="MySQL_事务.html">
+            
+                <a href="MySQL_事务.html">
+            
+                    
+                        <b>1.8.4.</b>
+                    
+                    MySQL_事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="MySQL_数据库设计.html">
+            
+                <a href="MySQL_数据库设计.html">
+            
+                    
+                        <b>1.8.5.</b>
+                    
+                    MySQL_数据库设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="JDBC.md">
+            
+                <span>
+            
+                    
+                        <b>1.9.</b>
+                    
+                    JDBC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="JDBC_JDBC基础.html">
+            
+                <a href="JDBC_JDBC基础.html">
+            
+                    
+                        <b>1.9.1.</b>
+                    
+                    JDBC_JDBC基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="JDBC_JDBC连接池.html">
+            
+                <a href="JDBC_JDBC连接池.html">
+            
+                    
+                        <b>1.9.2.</b>
+                    
+                    JDBC_JDBC连接池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="JDBC_JDBCTemplate.html">
+            
+                <a href="JDBC_JDBCTemplate.html">
+            
+                    
+                        <b>1.9.3.</b>
+                    
+                    JDBC_JDBCTemplate
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Spring注解_Spring入门篇</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#spring&#x5165;&#x95E8;&#x7BC7;"><b></b>Spring&#x5165;&#x95E8;&#x7BC7;</a></li><li><span class="title-icon "></span><a href="#&#x6982;&#x8FF0;"><b></b>&#x6982;&#x8FF0;</a></li><li><span class="title-icon "></span><a href="#spring-ioc&#x5BB9;&#x5668;"><b></b>Spring IOC&#x5BB9;&#x5668;</a></li><ul><li><span class="title-icon "></span><a href="#&#x63A5;&#x53E3;&#x53CA;&#x9762;&#x5411;&#x63A5;&#x53E3;&#x7F16;&#x7A0B;"><b></b>&#x63A5;&#x53E3;&#x53CA;&#x9762;&#x5411;&#x63A5;&#x53E3;&#x7F16;&#x7A0B;</a></li><li><span class="title-icon "></span><a href="#bean&#x5BB9;&#x5668;&#x521D;&#x59CB;&#x5316;"><b></b>Bean&#x5BB9;&#x5668;&#x521D;&#x59CB;&#x5316;</a></li><li><span class="title-icon "></span><a href="#spring&#x7684;&#x5E38;&#x7528;&#x6CE8;&#x5165;&#x65B9;&#x5F0F;"><b></b>Spring&#x7684;&#x5E38;&#x7528;&#x6CE8;&#x5165;&#x65B9;&#x5F0F;</a></li></ul><li><span class="title-icon "></span><a href="#spring-bean&#x88C5;&#x914D;"><b></b>Spring Bean&#x88C5;&#x914D;</a></li><ul><li><span class="title-icon "></span><a href="#bean&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;"><b></b>Bean&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;</a></li><li><span class="title-icon "></span><a href="#aware&#x63A5;&#x53E3;"><b></b>Aware&#x63A5;&#x53E3;</a></li><li><span class="title-icon "></span><a href="#bean&#x7684;&#x81EA;&#x52A8;&#x88C5;&#x914D;"><b></b>Bean&#x7684;&#x81EA;&#x52A8;&#x88C5;&#x914D;</a></li><li><span class="title-icon "></span><a href="#bean&#x7684;resources"><b></b>Bean&#x7684;Resources</a></li><li><span class="title-icon "></span><a href="#bean&#x7684;&#x5B9A;&#x4E49;&#x53CA;&#x4F5C;&#x7528;&#x57DF;"><b></b>Bean&#x7684;&#x5B9A;&#x4E49;&#x53CA;&#x4F5C;&#x7528;&#x57DF;</a></li><li><span class="title-icon "></span><a href="#autowired&#x6CE8;&#x89E3;&#x8BF4;&#x660E;"><b></b>Autowired&#x6CE8;&#x89E3;&#x8BF4;&#x660E;</a></li><li><span class="title-icon "></span><a href="#qualifier&#x6CE8;&#x89E3;"><b></b>@Qualifier&#x6CE8;&#x89E3;</a></li><li><span class="title-icon "></span><a href="#&#x57FA;&#x4E8E;java&#x7684;&#x5BB9;&#x5668;&#x6CE8;&#x89E3;"><b></b>&#x57FA;&#x4E8E;Java&#x7684;&#x5BB9;&#x5668;&#x6CE8;&#x89E3;</a></li><li><span class="title-icon "></span><a href="#&#x57FA;&#x4E8E;&#x6CDB;&#x578B;&#x7684;&#x88C5;&#x914D;"><b></b>&#x57FA;&#x4E8E;&#x6CDB;&#x578B;&#x7684;&#x88C5;&#x914D;</a></li><li><span class="title-icon "></span><a href="#jsr&#x652F;&#x6301;&#x8BF4;&#x660E;"><b></b>JSR&#x652F;&#x6301;&#x8BF4;&#x660E;</a></li></ul><li><span class="title-icon "></span><a href="#spring-aop&#x57FA;&#x672C;&#x6982;&#x5FF5;"><b></b>Spring AOP&#x57FA;&#x672C;&#x6982;&#x5FF5;</a></li><ul><li><span class="title-icon "></span><a href="#aop&#x57FA;&#x672C;&#x6982;&#x5FF5;&#x548C;&#x7279;&#x70B9;"><b></b>AOP&#x57FA;&#x672C;&#x6982;&#x5FF5;&#x548C;&#x7279;&#x70B9;</a></li><li><span class="title-icon "></span><a href="#&#x914D;&#x7F6E;&#x5207;&#x9762;&#x548C;&#x5207;&#x5165;&#x70B9;"><b></b>&#x914D;&#x7F6E;&#x5207;&#x9762;&#x548C;&#x5207;&#x5165;&#x70B9;</a></li><li><span class="title-icon "></span><a href="#advice&#x5E94;&#x7528;"><b></b>Advice&#x5E94;&#x7528;</a></li><li><span class="title-icon "></span><a href="#introduction&#x5E94;&#x7528;"><b></b>Introduction&#x5E94;&#x7528;</a></li><li><span class="title-icon "></span><a href="#advisors"><b></b>Advisors</a></li></ul></ul></div><a href="#spring&#x5165;&#x95E8;&#x7BC7;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><img src="https://upload-images.jianshu.io/upload_images/15675864-e39212ac990782cf.png" alt="&#x5F02;&#x4E16;&#x754C;.png"></p>
+<p>[TOC]</p>
+<h1 id="spring&#x5165;&#x95E8;&#x7BC7;"><a name="spring&#x5165;&#x95E8;&#x7BC7;" class="anchor-navigation-ex-anchor" href="#spring&#x5165;&#x95E8;&#x7BC7;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="spring&#x5165;&#x95E8;&#x7BC7;" class="plugin-anchor" href="#spring&#x5165;&#x95E8;&#x7BC7;"><i class="fa fa-link" aria-hidden="true"></i></a><a href="https://www.imooc.com/learn/196" target="_blank">Spring&#x5165;&#x95E8;&#x7BC7;</a></h1>
+<blockquote>
+<p><a href="https://www.imooc.com/learn/196" target="_blank">&#x90A3;&#x4E9B;&#x5E74;&#xFF0C;&#x8BA9;&#x6211;&#x4EEC;&#x4E00;&#x8D77;&#x7740;&#x8FF7;&#x7684;Spring</a></p>
+<p><a href="http://spring.io" target="_blank">http://spring.io</a></p>
+<p><a href="https://spring.io/projects/spring-framework" target="_blank">https://spring.io/projects/spring-framework</a></p>
+</blockquote>
+<h1 id="&#x6982;&#x8FF0;"><a name="&#x6982;&#x8FF0;" class="anchor-navigation-ex-anchor" href="#&#x6982;&#x8FF0;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x6982;&#x8FF0;" class="plugin-anchor" href="#&#x6982;&#x8FF0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6982;&#x8FF0;</h1>
+<blockquote>
+<p>spring&#x662F;&#x4E00;&#x4E2A;&#x5F00;&#x6E90;&#x6846;&#x67B6;&#xFF0C;&#x662F;&#x4E00;&#x4E2A;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#x63A7;&#x5236;&#x53CD;&#x8F6C;(IOC)&#x548C;&#x9762;&#x5411;&#x5207;&#x9762;&#xFF08;AOP)&#x7684;&#x5BB9;&#x5668;&#x6846;&#x67B6; </p>
+<ul>
+<li><p>-&#x4ECE;&#x5927;&#x5C0F;&#x4E0E;&#x5F00;&#x9500;&#x4E24;&#x65B9;&#x9762;&#x800C;&#x8A00;Spring&#x90FD;&#x662F;&#x8F7B;&#x91CF;&#x7684; </p>
+</li>
+<li><p>-&#x901A;&#x8FC7;&#x63A7;&#x5236;&#x53CD;&#x8F6C;&#xFF08;IoC&#xFF09;&#x7684;&#x6280;&#x672F;&#x8FBE;&#x5230;&#x677E;&#x8026;&#x5408;&#x7684;&#x76EE;&#x7684; </p>
+</li>
+<li><p>-&#x63D0;&#x4F9B;&#x4E86;&#x9762;&#x5411;&#x5207;&#x9762;&#x7F16;&#x7A0B;&#x7684;&#x4E30;&#x5BCC;&#x652F;&#x6301;&#xFF0C;&#x5141;&#x8BB8;&#x901A;&#x8FC7;&#x5206;&#x79BB;&#x5E94;&#x7528;&#x7684;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x4E0E;&#x7CFB;&#x7EDF;&#x7EA7;&#x670D;&#x52A1;&#x8FDB;&#x884C;&#x5185;&#x805A;&#x6027;&#x7684;&#x5F00;&#x53D1; </p>
+</li>
+<li><p>-&#x5305;&#x542B;&#x5E76;&#x7BA1;&#x7406;&#x5E94;&#x7528;&#x5BF9;&#x8C61;&#x7684;&#x914D;&#x7F6E;&#x548C;&#x751F;&#x547D;&#x5468;&#x671F;&#xFF0C;&#x8FD9;&#x4E2A;&#x610F;&#x4E49;&#x4E0A;&#x662F;&#x4E00;&#x79CD;&#x5BB9;&#x5668; </p>
+</li>
+<li><p>-&#x5C06;&#x7B80;&#x5355;&#x7684;&#x7EC4;&#x4EF6;&#x914D;&#x7F6E;&#x3001;&#x7EC4;&#x5408;&#x6210;&#x4E3A;&#x590D;&#x6742;&#x7684;&#x5E94;&#x7528;&#xFF0C;&#x8FD9;&#x4E2A;&#x610F;&#x4E49;&#x4E0A;&#x662F;&#x6846;&#x67B6; </p>
+</li>
+</ul>
+<p><img src="res/Java%20And%20Spring%20Annotation/spring%20framework%20runtime.png" alt="spring framework runtime&#x7ED3;&#x6784;&#x56FE;"></p>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&amp;mid=2247486373&amp;idx=1&amp;sn=601720b8a9dc1af60ffe6b2bd1dfc917&amp;scene=21#wechat_redirect" target="_blank">Java &#x7A0B;&#x5E8F;&#x5458;&#x5FC5;&#x987B;&#x638C;&#x63E1;&#x7684; 5 &#x4E2A;&#x6CE8;&#x89E3;&#xFF01;</a></p>
+<p><strong>Spring&#x4F5C;&#x7528;</strong></p>
+<ul>
+<li>&#x5BB9;&#x5668; &#xB7;</li>
+<li>&#x63D0;&#x4F9B;&#x4E86;&#x5BF9;&#x591A;&#x79CD;&#x6280;&#x672F;&#x7684;&#x652F;&#x6301; -JMS -MQ&#x652F;&#x6301; -UnitTest </li>
+<li>AOP&#xFF08;&#x4E8B;&#x52A1;&#x7BA1;&#x7406;&#x3001;&#x65E5;&#x5FD7;&#x7B49;&#xFF09; &#xB7;</li>
+<li>&#x63D0;&#x4F9B;&#x4E86;&#x4F17;&#x591A;&#x65B9;&#x4FBF;&#x5E94;&#x7528;&#x7684;&#x8F85;&#x52A9;&#x7C7B;&#xFF08;JDBC Template&#x7B49;&#xFF09; &#xB7;</li>
+<li>&#x5BF9;&#x4E3B;&#x6D41;&#x5E94;&#x7528;&#x6846;&#x67B6;&#xFF08;Hibernate&#x7B49;&#xFF09;&#x63D0;&#x4F9B;&#x4E86;&#x826F;&#x597D;&#x7684;&#x652F;&#x6301;</li>
+</ul>
+<p><strong>&#x9002;&#x7528;&#x8303;&#x56F4;</strong></p>
+<ul>
+<li>&#x6784;&#x5EFA;&#x4F01;&#x4E1A;&#x5E94;&#x7528;&#xFF08;SpringMVC+Spring+Hibernate/ibatis) </li>
+<li>&#x5355;&#x72EC;&#x4F7F;&#x7528;Bean&#x5BB9;&#x5668;&#xFF08;Bean&#x7BA1;&#x7406;&#xFF09; </li>
+<li>&#x5355;&#x72EC;&#x4F7F;&#x7528;AOP&#x8FDB;&#x884C;&#x5207;&#x9762;&#x5904;&#x7406; </li>
+<li>&#x5176;&#x4ED6;&#x7684;Spring&#x529F;&#x80FD;&#xFF0C;&#x5982;&#xFF1A;&#x5BF9;&#x6D88;&#x606F;&#x7684;&#x652F;&#x6301;&#x7B49; &#x5728;&#x4E92;&#x8054;&#x7F51;&#x4E2D;&#x7684;&#x5E94;&#x7528;</li>
+</ul>
+<p><strong>&#x4EC0;&#x4E48;&#x662F;&#x6846;&#x67B6;</strong></p>
+<ul>
+<li><p>&#xB7;&#x6846;&#x67B6;&#x7684;&#x7279;&#x70B9; </p>
+<ul>
+<li><p>-&#x534A;&#x6210;&#x54C1; -&#x5C01;&#x88C5;&#x4E86;&#x7279;&#x5B9A;&#x7684;&#x5904;&#x7406;&#x6D41;&#x7A0B;&#x548C;&#x63A7;&#x5236;&#x903B;&#x8F91; </p>
+</li>
+<li><p>-&#x6210;&#x719F;&#x7684;&#x3001;&#x4E0D;&#x65AD;&#x5347;&#x7EA7;&#x6539;&#x8FDB;&#x7684;&#x8F6F;&#x4EF6; </p>
+</li>
+</ul>
+</li>
+<li><p>&#xB7;&#x6846;&#x67B6;&#x4E0E;&#x7C7B;&#x5E93;&#x7684;&#x533A;&#x522B; </p>
+<ul>
+<li><p>-&#x6846;&#x67B6;&#x4E00;&#x822C;&#x662F;&#x5C01;&#x88C5;&#x4E86;&#x903B;&#x8F91;&#x3001;&#x9AD8;&#x5185;&#x805A;&#x7684;&#xFF0C;&#x7C7B;&#x5E93;&#x5219;&#x662F;&#x677E;&#x6563;&#x7684;&#x5DE5;&#x5177;&#x7EC4;&#x5408; </p>
+</li>
+<li><p>-&#x6846;&#x67B6;&#x4E13;&#x6CE8;&#x4E8E;&#x67D0;&#x4E00;&#x9886;&#x57DF;&#xFF0C;&#x7C7B;&#x5E93;&#x5219;&#x662F;&#x66F4;&#x901A;&#x7528;&#x7684; </p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>&#x4E3A;&#x4EC0;&#x4E48;&#x4F7F;&#x7528;&#x6846;&#x67B6;</strong></p>
+<ul>
+<li>&#xB7;&#x8F6F;&#x4EF6;&#x7CFB;&#x7EDF;&#x65E5;&#x8D8B;&#x590D;&#x6742; </li>
+<li>&#xB7;&#x91CD;&#x7528;&#x5EA6;&#x9AD8;&#xFF0C;&#x5F00;&#x53D1;&#x6548;&#x7387;&#x548C;&#x8D28;&#x91CF;&#x63D0;&#x9AD8; </li>
+<li>&#xB7;&#x8F6F;&#x4EF6;&#x8BBE;&#x8BA1;&#x4EBA;&#x5458;&#x8981;&#x4E13;&#x6CE8;&#x4E8E;&#x5BF9;&#x9886;&#x57DF;&#x7684;&#x4E86;&#x89E3;&#xFF0C;&#x4F7F;&#x9700;&#x6C42;&#x5206;&#x6790;&#x66F4;&#x5145;&#x5206; &#xB7;&#x6613;&#x4E8E;&#x4E0A;&#x624B;&#x3001;&#x5FEB;&#x901F;&#x89E3;&#x51B3;&#x95EE;&#x9898; </li>
+</ul>
+</blockquote>
+<h1 id="spring-ioc&#x5BB9;&#x5668;"><a name="spring-ioc&#x5BB9;&#x5668;" class="anchor-navigation-ex-anchor" href="#spring-ioc&#x5BB9;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="spring-ioc&#x5BB9;&#x5668;" class="plugin-anchor" href="#spring-ioc&#x5BB9;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>Spring IOC&#x5BB9;&#x5668;</h1>
+<h2 id="&#x63A5;&#x53E3;&#x53CA;&#x9762;&#x5411;&#x63A5;&#x53E3;&#x7F16;&#x7A0B;"><a name="&#x63A5;&#x53E3;&#x53CA;&#x9762;&#x5411;&#x63A5;&#x53E3;&#x7F16;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#&#x63A5;&#x53E3;&#x53CA;&#x9762;&#x5411;&#x63A5;&#x53E3;&#x7F16;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x63A5;&#x53E3;&#x53CA;&#x9762;&#x5411;&#x63A5;&#x53E3;&#x7F16;&#x7A0B;" class="plugin-anchor" href="#&#x63A5;&#x53E3;&#x53CA;&#x9762;&#x5411;&#x63A5;&#x53E3;&#x7F16;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x63A5;&#x53E3;&#x53CA;&#x9762;&#x5411;&#x63A5;&#x53E3;&#x7F16;&#x7A0B;</h2>
+<blockquote>
+<p><strong>&#x63A5;&#x53E3;</strong></p>
+<ul>
+<li>&#xB7;&#x7528;&#x4E8E;&#x6C9F;&#x901A;&#x7684;&#x4E2D;&#x4ECB;&#x7269;&#x7684;&#x62BD;&#x8C61;&#x5316; </li>
+<li>&#xB7;&#x5B9E;&#x4F53;&#x628A;&#x81EA;&#x5DF1;&#x63D0;&#x4F9B;&#x7ED9;&#x5916;&#x754C;&#x7684;&#x4E00;&#x79CD;&#x62BD;&#x8C61;&#x5316;&#x8BF4;&#x660E;&#xFF0C;&#x7528;&#x4EE5;&#x7531;&#x5185;&#x90E8;&#x64CD;&#x4F5C;&#x5206; &#x79BB;&#x51FA;&#x5916;&#x90E8;&#x6C9F;&#x901A;&#x65B9;&#x6CD5;&#xFF0C;&#x4F7F;&#x5176;&#x80FD;&#x88AB;&#x4FEE;&#x6539;&#x5185;&#x90E8;&#x800C;&#x4E0D;&#x5F71;&#x54CD;&#x5916;&#x754C;&#x5176;&#x4ED6;&#x5B9E;&#x4F53; &#x4E0E;&#x5176;&#x4EA4;&#x4E92;&#x7684;&#x65B9;&#x5F0F; </li>
+<li>&#xB7;&#x5BF9;&#x5E94;Java&#x63A5;&#x53E3;&#x5373;&#x58F0;&#x660E;&#xFF0C;&#x58F0;&#x660E;&#x4E86;&#x54EA;&#x4E9B;&#x65B9;&#x6CD5;&#x662F;&#x5BF9;&#x5916;&#x516C;&#x5F00;&#x63D0;&#x4F9B;&#x7684; </li>
+<li>&#xB7;&#x5728;Java8&#x4E2D;&#xFF0C;&#x63A5;&#x53E3;&#x53EF;&#x4EE5;&#x62E5;&#x6709;&#x65B9;&#x6CD5;&#x4F53; </li>
+</ul>
+<p><strong>&#x9762;&#x5411;&#x63A5;&#x53E3;&#x7F16;&#x7A0B;</strong></p>
+<ul>
+<li>&#x7ED3;&#x6784;&#x8BBE;&#x8BA1;&#x4E2D;&#xFF0C;&#x5206;&#x6E05;&#x5C42;&#x6B21;&#x53CA;&#x8C03;&#x7528;&#x5173;&#x7CFB;&#xFF0C;&#x6BCF;&#x5C42;&#x53EA;&#x5411;&#x5916;&#xFF08;&#x4E0A;&#x5C42;&#xFF09;&#x63D0;&#x4F9B; &#x4E00;&#x7EC4;&#x529F;&#x80FD;&#x63A5;&#x53E3;&#xFF0C;&#x5404;&#x5C42;&#x95F4;&#x4EC5;&#x4F9D;&#x8D56;&#x63A5;&#x53E3;&#x800C;&#x975E;&#x5B9E;&#x73B0;&#x7C7B; </li>
+<li>&#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#x7684;&#x53D8;&#x52A8;&#x4E0D;&#x5F71;&#x54CD;&#x5404;&#x5C42;&#x95F4;&#x7684;&#x8C03;&#x7528;&#xFF0C;&#x8FD9;&#x4E00;&#x70B9;&#x5728;&#x516C;&#x5171;&#x670D;&#x52A1;&#x4E2D;&#x5C24;&#x4E3A;&#x91CD;&#x8981; </li>
+<li>&#x201C;&#x9762;&#x5411;&#x63A5;&#x53E3;&#x7F16;&#x7A0B;&#x201D;&#x4E2D;&#x7684;&#x201C;&#x63A5;&#x53E3;&#x201D;&#x662F;&#x7528;&#x4E8E;&#x9690;&#x85CF;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x548C;&#x5B9E;&#x73B0;&#x591A;&#x6001;&#x6027;&#x7684;&#x7EC4;&#x4EF6;</li>
+</ul>
+<p><strong>&#x4EC0;&#x4E48;&#x662F;IOC</strong></p>
+<ul>
+<li>IOC:&#x63A7;&#x5236;&#x53CD;&#x8F6C;&#xFF0C;&#x63A7;&#x5236;&#x6743;&#x7684;&#x8F6C;&#x79FB;&#xFF0C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x672C;&#x8EAB;&#x4E0D;&#x8D1F;&#x8D23;&#x4F9D;&#x8D56;&#x5BF9;&#x8C61;&#x7684;&#x521B;&#x5EFA;&#x548C;&#x7EF4;&#x62A4;&#xFF0C;&#x800C;&#x662F;&#x7531;&#x5916;&#x90E8;&#x5BB9;&#x5668;&#x8D1F;&#x8D23;&#x521B;&#x5EFA;&#x548C;&#x7EF4;&#x62A4; </li>
+<li>DI&#xFF08;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#xFF09;&#x662F;&#x5176;&#x4E00;&#x79CD;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F; </li>
+<li>&#x76EE;&#x7684;&#xFF1A;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x5E76;&#x4E14;&#x7EC4;&#x88C5;&#x5BF9;&#x8C61;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB; </li>
+</ul>
+<p><img src="res/Java%20And%20Spring%20Annotation/IoC%20container.png" alt="IoC container&#x7ED3;&#x6784;&#x56FE;"></p>
+<p><strong>&#x6269;&#x5C55;&#x7406;&#x89E3;</strong></p>
+<ul>
+<li>2004&#x5E74;&#xFF0C;Martin Fowler&#x63A2;&#x8BA8;&#x4E86;&#x540C;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#xFF0C;&#x65E2;&#x7136;IOC&#x662F;&#x63A7;&#x5236; &#x53CD;&#x8F6C;&#xFF0C;&#x90A3;&#x4E48;&#x5230;&#x5E95;&#x662F;&#x201C;&#x54EA;&#x4E9B;&#x65B9;&#x9762;&#x7684;&#x63A7;&#x5236;&#x88AB;&#x53CD;&#x8F6C;&#x4E86;&#x5462;&#xFF1F;&#x201D;&#xFF0C;&#x7ECF;&#x8FC7;&#x8BE6; &#x7EC6;&#x5730;&#x5206;&#x6790;&#x548C;&#x8BBA;&#x8BC1;&#x540E;&#xFF0C;&#x4ED6;&#x5F97;&#x51FA;&#x4E86;&#x7B54;&#x6848;&#xFF1A;&#x201C;&#x83B7;&#x5F97;&#x4F9D;&#x8D56;&#x5BF9;&#x8C61;&#x7684;&#x8FC7;&#x7A0B;&#x88AB; &#x53CD;&#x8F6C;&#x4E86;&#x201D;&#x3002;&#x63A7;&#x5236;&#x88AB;&#x53CD;&#x8F6C;&#x4E4B;&#x540E;&#xFF0C;&#x83B7;&#x5F97;&#x4F9D;&#x8D56;&#x5BF9;&#x8C61;&#x7684;&#x8FC7;&#x7A0B;&#x7531;&#x81EA;&#x8EAB;&#x7BA1;&#x7406; &#x53D8;&#x4E3A;&#x4E86;&#x7531;IOC&#x5BB9;&#x5668;&#x4E3B;&#x52A8;&#x6CE8;&#x5165;&#x3002;&#x4E8E;&#x662F;&#xFF0C;&#x4ED6;&#x7ED9;&#x201C;&#x63A7;&#x5236;&#x53CD;&#x8F6C;&#x201D;&#x53D6;&#x4E86;&#x4E00; &#x4E2A;&#x66F4;&#x5408;&#x9002;&#x7684;&#x540D;&#x5B57;&#x53EB;&#x505A;&#x201C;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#xFF08;Dependency Injection) &quot;&#x3002;&#x4ED6;&#x7684;&#x8FD9;&#x4E2A;&#x7B54;&#x6848;&#xFF0C;&#x5B9E;&#x9645;&#x4E0A;&#x7ED9;&#x51FA;&#x4E86;&#x5B9E;&#x73B0;IOC&#x7684;&#x65B9;&#x6CD5;&#xFF1A;&#x6CE8;&#x5165;&#x3002;&#x6240; &#x8C13;&#x4F9D;&#x8D56;&#x6CE8;&#x5165;&#xFF0C;&#x5C31;&#x662F;&#x7531;IOC&#x5BB9;&#x5668;&#x5728;&#x8FD0;&#x884C;&#x671F;&#x95F4;&#xFF0C;&#x52A8;&#x6001;&#x5730;&#x5C06;&#x67D0;&#x79CD;&#x4F9D;&#x8D56; &#x5173;&#x7CFB;&#x6CE8;&#x5165;&#x5230;&#x5BF9;&#x8C61;&#x4E4B;&#x4E2D;&#x3002;</li>
+</ul>
+<p><strong>&#x5355;&#x5143;&#x6D4B;&#x8BD5;</strong></p>
+<ul>
+<li>&#x4E0B;&#x8F7D;junit-*.jar&#x5E76;&#x5F15;&#x5165;&#x5DE5;&#x7A0B; </li>
+<li>&#x521B;&#x5EFA;UnitTestBase&#x7C7B;&#xFF0C;&#x5B8C;&#x6210;&#x5BF9;Spring&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x52A0;&#x8F7D;&#x3001;&#x9500;&#x6BC1; &#x6240;&#x6709;&#x7684;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7C7B;&#x90FD;&#x7EE7;&#x627F;&#x81EA;UnitTestBase&#xFF0C;&#x901A;&#x8FC7;&#x5B83;&#x7684; getBean&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x60F3;&#x8981;&#x5F97;&#x5230;&#x7684;&#x5BF9;&#x8C61; </li>
+<li>&#x5B50;&#x7C7B;&#xFF08;&#x5177;&#x4F53;&#x6267;&#x884C;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x7684;&#x7C7B;&#xFF09;&#x52A0;&#x6CE8;&#x89E3;&#xFF1A; @RunWith(BlockJUnit4ClassRunner.class) </li>
+<li>&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x52A0;&#x6CE8;&#x89E3;&#xFF1A;@Test </li>
+<li>&#x53F3;&#x952E;&#x9009;&#x62E9;&#x8981;&#x6267;&#x884C;&#x7684;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5;&#x6267;&#x884C;&#x6216;&#x8005;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5168;&#x90E8;&#x5355; &#x5143;&#x6D4B;&#x8BD5;&#x65B9;&#x6CD5; </li>
+</ul>
+</blockquote>
+<h2 id="bean&#x5BB9;&#x5668;&#x521D;&#x59CB;&#x5316;"><a name="bean&#x5BB9;&#x5668;&#x521D;&#x59CB;&#x5316;" class="anchor-navigation-ex-anchor" href="#bean&#x5BB9;&#x5668;&#x521D;&#x59CB;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="bean&#x5BB9;&#x5668;&#x521D;&#x59CB;&#x5316;" class="plugin-anchor" href="#bean&#x5BB9;&#x5668;&#x521D;&#x59CB;&#x5316;"><i class="fa fa-link" aria-hidden="true"></i></a>Bean&#x5BB9;&#x5668;&#x521D;&#x59CB;&#x5316;</h2>
+<blockquote>
+<p><strong>&#x57FA;&#x7840;&#xFF1A;&#x4E24;&#x4E2A;&#x5305; </strong></p>
+<ul>
+<li><p>-org.springframework.beans </p>
+</li>
+<li><p>-org.springframework.context </p>
+</li>
+<li><p>-BeanFactory&#x63D0;&#x4F9B;&#x914D;&#x7F6E;&#x7ED3;&#x6784;&#x548C;&#x57FA;&#x672C;&#x529F;&#x80FD;&#xFF0C;&#x52A0;&#x8F7D;&#x5E76;&#x521D;&#x59CB;&#x5316;Bean </p>
+</li>
+<li><p>-ApplicationContext&#x4FDD;&#x5B58;&#x4E86;Bean&#x5BF9;&#x8C61;&#x5E76;&#x5728;Spring&#x4E2D;&#x88AB;&#x5E7F;&#x6CDB;&#x4F7F;&#x7528; </p>
+</li>
+</ul>
+<p><strong>&#x65B9;&#x5F0F;&#xFF0C;ApplicationContext </strong></p>
+<ul>
+<li><p>-&#x672C;&#x5730;&#x6587;&#x4EF6; </p>
+</li>
+<li><p>-Classpath </p>
+</li>
+<li><p>-Web&#x5E94;&#x7528;&#x4E2D;&#x4F9D;&#x8D56;servlet&#x6216;Listener </p>
+</li>
+</ul>
+<p><strong>Bean&#x5BB9;&#x5668;&#x521D;&#x59CB;&#x5316;</strong></p>
+<ul>
+<li>&#xB7;&#x6587;&#x4EF6; </li>
+</ul>
+<pre><code class="lang-java">FileSystemXmlApplicationContext context= <span class="hljs-keyword">new</span> FileSystemXmlApplicationContext(<span class="hljs-string">&quot;F:/workspace/appcontext.xml&quot;</span>);
+</code></pre>
+<ul>
+<li>&#xB7;Classpath </li>
+</ul>
+<pre><code class="lang-java">caspatxnlApplicstionc ontext context= <span class="hljs-keyword">new</span> ClaspathxmlAplicationcontextrclasspathispring-contextxml);
+</code></pre>
+<ul>
+<li>.Web&#x5E94;&#x7528; </li>
+</ul>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">listener</span>&gt;</span> 
+    <span class="hljs-tag">&lt;<span class="hljs-name">listener-class</span>&gt;</span>
+        org.springframework.web.context.ContextLoaderListener
+    <span class="hljs-tag">&lt;/<span class="hljs-name">listener-class</span>&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-name">listener</span>&gt;</span> 
+<span class="hljs-tag">&lt;<span class="hljs-name">servlet</span>&gt;</span> 
+    <span class="hljs-tag">&lt;<span class="hljs-name">servlet-name</span>&gt;</span>context<span class="hljs-tag">&lt;/<span class="hljs-name">servlet-name</span>&gt;</span> 
+    <span class="hljs-tag">&lt;<span class="hljs-name">servlet-class</span>&gt;</span>
+        org.springframework.web.context.ContextLoaderServlet
+    <span class="hljs-tag">&lt;/<span class="hljs-name">servlet-class</span>&gt;</span> 
+    <span class="hljs-tag">&lt;<span class="hljs-name">load-on-startup</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">load-on-startup</span>&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-name">servlet</span>&gt;</span>
+</code></pre>
+</blockquote>
+<h2 id="spring&#x7684;&#x5E38;&#x7528;&#x6CE8;&#x5165;&#x65B9;&#x5F0F;"><a name="spring&#x7684;&#x5E38;&#x7528;&#x6CE8;&#x5165;&#x65B9;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#spring&#x7684;&#x5E38;&#x7528;&#x6CE8;&#x5165;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="spring&#x7684;&#x5E38;&#x7528;&#x6CE8;&#x5165;&#x65B9;&#x5F0F;" class="plugin-anchor" href="#spring&#x7684;&#x5E38;&#x7528;&#x6CE8;&#x5165;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>Spring&#x7684;&#x5E38;&#x7528;&#x6CE8;&#x5165;&#x65B9;&#x5F0F;</h2>
+<blockquote>
+<p><strong>Spring&#x6CE8;&#x5165;</strong></p>
+<ul>
+<li><p>Spring&#x6CE8;&#x5165;&#x662F;&#x6307;&#x5728;&#x542F;&#x52A8;Spring&#x5BB9;&#x5668;&#x52A0;&#x8F7D;bean&#x914D;&#x7F6E;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5B8C;&#x6210;&#x5BF9;&#x53D8;&#x91CF;&#x7684;&#x8D4B;&#x503C;&#x884C;&#x4E3A; </p>
+</li>
+<li><p>&#x5E38;&#x7528;&#x7684;&#x4E24;&#x79CD;&#x6CE8;&#x5165;&#x65B9;&#x5F0F; </p>
+<ul>
+<li>-&#x8BBE;&#x503C;&#x6CE8;&#x5165; </li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-xml"> <span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span>encoding=<span class="hljs-string">&quot;UTF-8?&gt;</span></span> 
+ <span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http:/www.springframework.org/schema/beans&quot;</span>             
+         <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;htto://www.w3.org/2001/XMLSchema-instance&quot;</span>
+         <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http:/www.springframework.org/schema/beans 
+         http:/www.springframeworkorg/schema/beans/spring-beans.xsd&quot;</span>&gt;</span> 
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;injectionService&quot;</span><span class="hljs-string">class=&apos;com.imooc.ioc.injection.service.InjiectionServicelmp</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;injection0AO&quot;</span><span class="hljs-string">ref=tipjection0Ag&apos;1p&lt;</span>/<span class="hljs-attr">property</span>&gt;</span> 
+    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span> 
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">ipjection0AO&quot;class=&quot;com.imooc.iodinjiection.dao.lpjection0AOlmp</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> com.imooc.ioc.injection.dao.InjectionDAO; 
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InjectionServicelmpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">InjectionService</span></span>{ 
+    <span class="hljs-keyword">private</span> InjectionDAO injectionDAO; 
+    <span class="hljs-comment">//&#x8BBE;&#x503C;&#x6CE8;&#x5165; </span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setlnjectionDAO</span><span class="hljs-params">(InjectionDAO injectionDAO)</span>
+    </span>{ 
+        <span class="hljs-keyword">this</span>.injectionDAO=injectionDAO; 
+    } 
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">save</span><span class="hljs-params">(String arg)</span>
+    </span>{ 
+        <span class="hljs-comment">//&#x6A21;&#x62DF;&#x4E1A;&#x52A1;&#x64CD;&#x4F5C; </span>
+        System.outprintin(CService&#x63A5;&#x6536;&#x53C2;&#x6570;&#xFF1A;+arg); 
+        arg=arg +<span class="hljs-string">&quot;:&quot;</span>+<span class="hljs-keyword">this</span>.hashCode0; 
+        injectionDAO.save(arg);
+    }
+}
+</code></pre>
+<p>&#x200B;    -&#x6784;&#x9020;&#x6CE8;&#x5165; </p>
+<pre><code class="lang-xml"> <span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span>encoding=<span class="hljs-string">&quot;UTF-8?&gt;</span></span> 
+ <span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http:/www.springframework.org/schema/beans&quot;</span>             
+         <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;htto://www.w3.org/2001/XMLSchema-instance&quot;</span>
+         <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http:/www.springframework.org/schema/beans 
+         http:/www.springframeworkorg/schema/beans/spring-beans.xsd&quot;</span>&gt;</span> 
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;injectionService&quot;</span><span class="hljs-string">class=&apos;com.imooc.ioc.injection.service.InjiectionServicelmp</span>/&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">constructor-arg</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;injection0AO&quot;</span><span class="hljs-string">ref=iniection0AQ</span>&gt;</span>I<span class="hljs-tag">&lt;/<span class="hljs-name">constructor-arg</span>&gt;</span>  
+    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span> 
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">ipjection0AO&quot;class=&quot;com.imooc.iodinjiection.dao.lpjection0AOlmp</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> com.imooc.ioc.injection.dao.InjectionDAO; 
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InjectionServicelmpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">InjectionService</span></span>{ 
+    <span class="hljs-keyword">private</span> InjectionDAO injectionDAO; 
+    <span class="hljs-comment">//&#x6784;&#x9020;&#x5668;&#x6CE8;&#x5165; </span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">InjectionServicelmpl</span><span class="hljs-params">(InjectionDAO injectionDAO)</span>
+    </span>{ 
+        <span class="hljs-keyword">this</span>.injectionDAO=injectionDAO;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">save</span><span class="hljs-params">(String arg)</span>
+    </span>{ 
+        <span class="hljs-comment">//&#x6A21;&#x62DF;&#x4E1A;&#x52A1;&#x64CD;&#x4F5C; </span>
+        System.outprintin(CService&#x63A5;&#x6536;&#x53C2;&#x6570;&#xFF1A;+arg); 
+        arg=arg +<span class="hljs-string">&quot;:&quot;</span>+<span class="hljs-keyword">this</span>.hashCode0; 
+        injectionDAO.save(arg);
+    }
+}
+</code></pre>
+</blockquote>
+<h1 id="spring-bean&#x88C5;&#x914D;"><a name="spring-bean&#x88C5;&#x914D;" class="anchor-navigation-ex-anchor" href="#spring-bean&#x88C5;&#x914D;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="spring-bean&#x88C5;&#x914D;" class="plugin-anchor" href="#spring-bean&#x88C5;&#x914D;"><i class="fa fa-link" aria-hidden="true"></i></a>Spring Bean&#x88C5;&#x914D;</h1>
+<blockquote>
+<p><a href="https://juejin.im/post/5d5a48615188257c7d1648ae" target="_blank">Bean&#x88C5;&#x914D;&#xFF0C;&#x4ECE;Spring&#x5230;Spring Boot</a></p>
+<p><strong>Bean&#x914D;&#x7F6E;&#x9879;</strong></p>
+<ul>
+<li>Class </li>
+<li>Scope </li>
+<li>Constructor </li>
+<li>arguments </li>
+<li>Properties </li>
+<li>Autowiring </li>
+<li>mode </li>
+<li>lazy-initialization mode </li>
+<li>Initialization/destruction method </li>
+</ul>
+<p><strong>Bean&#x7684;&#x4F5C;&#x7528;&#x57DF;</strong></p>
+<ul>
+<li>singleton:&#x5355;&#x4F8B;&#xFF0C;&#x6307;&#x4E00;&#x4E2A;Bean&#x5BB9;&#x5668;&#x4E2D;&#x53EA;&#x5B58;&#x5728;&#x4E00;&#x4EFD; </li>
+<li>prototype&#xFF1A;&#x6BCF;&#x6B21;&#x8BF7;&#x6C42;&#xFF08;&#x6BCF;&#x6B21;&#x4F7F;&#x7528;&#xFF09;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;destroy &#x65B9;&#x5F0F;&#x4E0D;&#x751F;&#x6548; </li>
+<li>request:&#x6BCF;&#x6B21;http&#x8BF7;&#x6C42;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x4E14;&#x4EC5;&#x5728;&#x5F53;&#x524D;request&#x5185; &#x6709;&#x6548; </li>
+<li>session:&#x540C;&#x4E0A;&#xFF0C;&#x6BCF;&#x6B21;http&#x8BF7;&#x6C42;&#x521B;&#x5EFA;&#xFF0C;&#x5F53;&#x524D;session&#x5185;&#x6709;&#x6548; </li>
+<li>global session:&#x57FA;&#x4E8E;portlet&#x7684;web&#x4E2D;&#x6709;&#x6548;&#xFF08;portlet&#x5B9A;&#x4E49;&#x4E86; global session),&#x5982;&#x679C;&#x662F;&#x5728;web&#x4E2D;&#xFF0C;&#x540C;session </li>
+</ul>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;beanScope&quot;</span><span class="hljs-string">class=&quot;com.imooc.bean.BeanScope&quot;</span> <span class="hljs-attr">scope</span>=<span class="hljs-string">singletor&apos;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+</code></pre>
+</blockquote>
+<h2 id="bean&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;"><a name="bean&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;" class="anchor-navigation-ex-anchor" href="#bean&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="bean&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;" class="plugin-anchor" href="#bean&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;"><i class="fa fa-link" aria-hidden="true"></i></a>Bean&#x7684;&#x751F;&#x547D;&#x5468;&#x671F;</h2>
+<blockquote>
+<p><strong>&#x751F;&#x547D;&#x5468;&#x671F;</strong></p>
+<ul>
+<li><p>-&#x5B9A;&#x4E49; </p>
+</li>
+<li><p>-&#x521D;&#x59CB;&#x5316;</p>
+<ul>
+<li>-&#x5B9E;&#x73B0;org.springframework.beans.factory.InitializingBean&#x63A5;&#x53E3; &#xFF0C;&#x8986;&#x76D6;afterPropertiesSet&#x65B9;&#x6CD5; </li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ExamplelnitializingBean</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">InitializingBean</span></span>{ 
+    <span class="hljs-meta">@Override</span> 
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> afterPropertiesSet0 <span class="hljs-keyword">throws</span> Exception{ 
+        <span class="hljs-comment">//do something</span>
+    }
+}
+</code></pre>
+<ul>
+<li>-&#x914D;&#x7F6E;init-method</li>
+</ul>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;exampleInitBean&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;examples.ExampleBean&quot;</span> <span class="hljs-attr">init-method</span>=<span class="hljs-string">&quot;init&quot;</span>/&#x3009;
+</span></code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ExampleBean</span> </span>{ 
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span></span>{ 
+        <span class="hljs-comment">//do some initialization work </span>
+    }
+}
+</code></pre>
+</li>
+<li><p>-&#x4F7F;&#x7528; </p>
+</li>
+<li><p>-&#x9500;&#x6BC1; </p>
+<ul>
+<li><p>-&#x5B9E;&#x73B0;org.springframework.beans.factory.DisposableBean&#x63A5;&#x53E3; &#xFF0C;&#x8986;&#x76D6;destroy&#x65B9;&#x6CD5; </p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ExampleDisposableBean</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">DisposableBean</span></span>{ 
+    <span class="hljs-meta">@Override</span> 
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> destroy0 <span class="hljs-keyword">throws</span> Exception{ 
+        <span class="hljs-comment">//do something</span>
+    }
+}
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>&#x914D;&#x7F6E;destroy-method </p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;exampleInitRean&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;examples.ExampleBean&quot;</span><span class="hljs-string">destroy-method=&quot;cleanup&quot;</span>/&gt;</span>
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ExampleBean</span> </span>{ 
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">cleanup</span><span class="hljs-params">()</span></span>{ 
+        <span class="hljs-comment">//do some destruction work (like releasing pooled connections) </span>
+    }
+}
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><p>&#x914D;&#x7F6E;&#x5168;&#x5C40;&#x9ED8;&#x8BA4;&#x521D;&#x59CB;&#x5316;&#x3001;&#x9500;&#x6BC1;&#x65B9;&#x6CD5; </p>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-number">1.0</span><span class="hljs-string">&quot;encoding=&apos;UTF-8?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http:/www.springframework.org/schema/beans&quot;</span> 
+        <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XML Schema-instance&quot;</span> 
+        <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://www.springframeworkorg/schema/beans 
+        http:/www.springframework.org/schema/beans/spring-beans.xsd&quot;</span>
+        <span class="hljs-attr">default-init-method</span>=<span class="hljs-string">&quot;init&quot;</span><span class="hljs-string">default-destroy-method=&quot;destroys&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span>
+</code></pre>
+</li>
+<li><p>&#x4F18;&#x5148;&#x987A;&#x5E8F;  </p>
+<ul>
+<li>InitializingBean&#x548C;DisposableBean(&#x5B9A;&#x4E49;&#x5B8C;&#x9700;&#x5B9E;&#x73B0;)</li>
+<li>&#x914D;&#x7F6E;init-method&#x548C;destroy-method(&#x5B9A;&#x4E49;&#x5B8C;&#x9700;&#x5B9E;&#x73B0;)</li>
+<li>&#x9ED8;&#x8BA4;(&#x53EF;&#x9009;)</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="aware&#x63A5;&#x53E3;"><a name="aware&#x63A5;&#x53E3;" class="anchor-navigation-ex-anchor" href="#aware&#x63A5;&#x53E3;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="aware&#x63A5;&#x53E3;" class="plugin-anchor" href="#aware&#x63A5;&#x53E3;"><i class="fa fa-link" aria-hidden="true"></i></a>Aware&#x63A5;&#x53E3;</h2>
+<blockquote>
+<ul>
+<li>Spring&#x4E2D;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E9B;&#x4EE5;Aware&#x7ED3;&#x5C3E;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;Aware&#x63A5; &#x53E3;&#x7684;bean&#x5728;&#x88AB;&#x521D;&#x59CB;&#x5316;&#x4E4B;&#x540E;&#xFF0C;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x76F8;&#x5E94;&#x8D44;&#x6E90; </li>
+<li>&#x901A;&#x8FC7;Aware&#x63A5;&#x53E3;&#xFF0C;&#x53EF;&#x4EE5;&#x5BF9;Spring&#x76F8;&#x5E94;&#x8D44;&#x6E90;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF08;&#x4E00;&#x5B9A;&#x8981;&#x614E; &#x91CD;&#xFF09; </li>
+<li>&#x4E3A;&#x5BF9;Spring&#x8FDB;&#x884C;&#x7B80;&#x5355;&#x7684;&#x6269;&#x5C55;&#x63D0;&#x4F9B;&#x4E86;&#x65B9;&#x4FBF;&#x7684;&#x5165;&#x53E3; </li>
+</ul>
+<p><a href="https://www.jianshu.com/p/c5c61c31080b" target="_blank">Spring&#x4E2D;&#x7684;aware&#x63A5;&#x53E3;</a></p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.springframework.beans.BeansException;
+<span class="hljs-keyword">import</span> org.springframework.beans.factory.BeanNameAware;
+<span class="hljs-keyword">import</span> org.springframework.context.ApplicationContext;
+<span class="hljs-keyword">import</span> org.springframework.context.ApplicationContextAware;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MoocBeanName</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">BeanNameAware</span>, <span class="hljs-title">ApplicationContextAware</span> </span>{
+   <span class="hljs-keyword">private</span> String beanName;
+
+   <span class="hljs-meta">@Override</span>
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setBeanName</span><span class="hljs-params">(String name)</span> </span>{
+       <span class="hljs-keyword">this</span>.beanName = name;
+       System.out.println(<span class="hljs-string">&quot;MoocBeanName : &quot;</span> + name);
+   }
+
+   <span class="hljs-meta">@Override</span>
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setApplicationContext</span><span class="hljs-params">(ApplicationContext applicationContext)</span>
+           <span class="hljs-keyword">throws</span> BeansException </span>{
+       System.out.println(<span class="hljs-string">&quot;setApplicationContext : &quot;</span> + applicationContext.getBean(<span class="hljs-keyword">this</span>.beanName).hashCode());
+   }
+}
+</code></pre>
+</blockquote>
+<h2 id="bean&#x7684;&#x81EA;&#x52A8;&#x88C5;&#x914D;"><a name="bean&#x7684;&#x81EA;&#x52A8;&#x88C5;&#x914D;" class="anchor-navigation-ex-anchor" href="#bean&#x7684;&#x81EA;&#x52A8;&#x88C5;&#x914D;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="bean&#x7684;&#x81EA;&#x52A8;&#x88C5;&#x914D;" class="plugin-anchor" href="#bean&#x7684;&#x81EA;&#x52A8;&#x88C5;&#x914D;"><i class="fa fa-link" aria-hidden="true"></i></a>Bean&#x7684;&#x81EA;&#x52A8;&#x88C5;&#x914D;</h2>
+<blockquote>
+<p><strong>Bean&#x7684;&#x81EA;&#x52A8;&#x88C5;&#x914D;&#xFF08;Autowiring)</strong> </p>
+<ul>
+<li><p>No:&#x4E0D;&#x505A;&#x4EFB;&#x4F55;&#x64CD;&#x4F5C; </p>
+</li>
+<li><p>byName:&#x6839;&#x636E;&#x5C5E;&#x6027;&#x540D;&#x81EA;&#x52A8;&#x88C5;&#x914D;&#x3002;&#x6B64;&#x9009;&#x9879;&#x5C06;&#x68C0;&#x67E5;&#x5BB9;&#x5668;&#x5E76;&#x6839;&#x636E;&#x540D;&#x5B57; &#x67E5;&#x627E;&#x4E0E;&#x5C5E;&#x6027;&#x5B8C;&#x5168;&#x4E00;&#x81F4;&#x7684;bean&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x4E0E;&#x5C5E;&#x6027;&#x81EA;&#x52A8;&#x88C5;&#x914D; </p>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans&quot;</span>
+    <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+    <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span> 
+    <span class="hljs-attr">default-autowire</span>=<span class="hljs-string">&quot;byName&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;autoWiringService&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.imooc.autowiring.AutoWiringService&quot;</span> &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;autoWiringDAO&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.imooc.autowiring.AutoWiringDAO&quot;</span> &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AutoWiringDAO</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">say</span><span class="hljs-params">(String word)</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;AutoWiringDAO : &quot;</span> + word);
+    }
+}
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AutoWiringService</span> </span>{
+    <span class="hljs-keyword">private</span> AutoWiringDAO autoWiringDAO;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setAutoWiringDAO</span><span class="hljs-params">(AutoWiringDAO autoWiringDAO)</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;setAutoWiringDAO&quot;</span>);
+        <span class="hljs-keyword">this</span>.autoWiringDAO = autoWiringDAO;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">say</span><span class="hljs-params">(String word)</span> </span>{
+        <span class="hljs-keyword">this</span>.autoWiringDAO.say(word);
+    }
+}
+</code></pre>
+</li>
+<li><p>byType:&#x5982;&#x679C;&#x5BB9;&#x5668;&#x4E2D;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x4E0E;&#x6307;&#x5B9A;&#x5C5E;&#x6027;&#x7C7B;&#x578B;&#x76F8;&#x540C;&#x7684;bean&#xFF0C;&#x90A3; &#x4E48;&#x5C06;&#x4E0E;&#x8BE5;&#x5C5E;&#x6027;&#x81EA;&#x52A8;&#x88C5;&#x914D;&#xFF1B;&#x5982;&#x679C;&#x5B58;&#x5728;&#x591A;&#x4E2A;&#x8BE5;&#x7C7B;&#x578B;bean&#xFF0C;&#x90A3;&#x4E48;&#x629B;&#x51FA; &#x5F02;&#x5E38;&#xFF0C;&#x5E76;&#x6307;&#x51FA;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;byType&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x81EA;&#x52A8;&#x88C5;&#x914D;&#xFF1B;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x627E; &#x5230;&#x76F8;&#x5339;&#x914D;&#x7684;bean&#xFF0C;&#x5219;&#x4EC0;&#x4E48;&#x4E8B;&#x90FD;&#x4E0D;&#x53D1;&#x751F; </p>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans&quot;</span>
+    <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+    <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span> 
+    <span class="hljs-attr">default-autowire</span>=<span class="hljs-string">&quot;byType&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;autoWiringService&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.imooc.autowiring.AutoWiringService&quot;</span> &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;autoWiringDAO&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.imooc.autowiring.AutoWiringDAO&quot;</span> &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span>
+<span class="hljs-comment">&lt;!--autoWiringDAO  &#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x5176;&#x5B83;&#x540D;&#x5B57;&#x4E0D;&#x5F71;&#x54CD;&#xFF0C; &#x751A;&#x81F3;&#x5220;&#x9664;&#x4E5F;&#x53EF;&#x4EE5;--&gt;</span>
+</code></pre>
+</li>
+<li><p>Constructor:&#x4E0E;byType&#x65B9;&#x5F0F;&#x7C7B;&#x4F3C;&#xFF0C;&#x4E0D;&#x540C;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#x5B83;&#x5E94;&#x7528;&#x4E8E;&#x6784;&#x9020;&#x5668;&#x53C2;&#x6570;&#x3002;&#x5982;&#x679C;&#x5BB9;&#x5668;&#x4E2D;&#x6CA1;&#x6709;&#x627E;&#x5230;&#x4E0E;&#x6784;&#x9020;&#x5668;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4E00;&#x81F4;&#x7684;bean&#xFF0C;&#x90A3;&#x4E48;&#x629B;&#x51FA;&#x5F02;&#x5E38; </p>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans&quot;</span>
+    <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+    <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd&quot;</span> 
+    <span class="hljs-attr">default-autowire</span>=<span class="hljs-string">&quot;constructor&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;autoWiringService&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.imooc.autowiring.AutoWiringService&quot;</span> &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.imooc.autowiring.AutoWiringDAO&quot;</span> &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AutoWiringService</span> </span>{
+    <span class="hljs-keyword">private</span> AutoWiringDAO autoWiringDAO;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">AutoWiringService</span><span class="hljs-params">(AutoWiringDAO autoWiringDAO)</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;AutoWiringService&quot;</span>);
+        <span class="hljs-keyword">this</span>.autoWiringDAO = autoWiringDAO;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">say</span><span class="hljs-params">(String word)</span> </span>{
+        <span class="hljs-keyword">this</span>.autoWiringDAO.say(word);
+    }
+}
+</code></pre>
+</li>
+</ul>
+</blockquote>
+<h2 id="bean&#x7684;resources"><a name="bean&#x7684;resources" class="anchor-navigation-ex-anchor" href="#bean&#x7684;resources"><i class="fa fa-link" aria-hidden="true"></i></a><a name="bean&#x7684;resources" class="plugin-anchor" href="#bean&#x7684;resources"><i class="fa fa-link" aria-hidden="true"></i></a>Bean&#x7684;Resources</h2>
+<blockquote>
+<p><strong>&#x9488;&#x5BF9;&#x4E8E;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x7684;&#x7EDF;&#x4E00;&#x63A5;&#x53E3;Resources</strong></p>
+<ul>
+<li>-UrlResource&#xFF1A;URL&#x5BF9;&#x5E94;&#x7684;&#x8D44;&#x6E90;&#xFF0C;&#x6839;&#x636E;&#x4E00;&#x4E2A;URL&#x5730;&#x5740;&#x5373;&#x53EF;&#x6784;&#x5EFA; </li>
+<li>-ClassPathResource&#xFF1A;&#x83B7;&#x53D6;&#x7C7B;&#x8DEF;&#x5F84;&#x4E0B;&#x7684;&#x8D44;&#x6E90;&#x6587;&#x4EF6; </li>
+<li>-FileSystemResource:&#x83B7;&#x53D6;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x91CC;&#x9762;&#x7684;&#x8D44;&#x6E90; </li>
+<li>-ServletContextResource:ServletContext&#x5C01;&#x88C5;&#x7684;&#x8D44;&#x6E90;&#xFF0C;&#x7528;&#x4E8E;&#x8BBF;&#x95EE;ServletContext&#x73AF;&#x5883;&#x4E0B;&#x7684;&#x8D44;&#x6E90; </li>
+<li>-InputStreamResource:&#x9488;&#x5BF9;&#x4E8E;&#x8F93;&#x5165;&#x6D41;&#x5C01;&#x88C5;&#x7684;&#x8D44;&#x6E90; </li>
+<li>-ByteArrayResource:&#x9488;&#x5BF9;&#x4E8E;&#x5B57;&#x8282;&#x6570;&#x7EC4;&#x5C01;&#x88C5;&#x7684;&#x8D44;&#x6E90; </li>
+</ul>
+<p><strong>ResourceLoader</strong> </p>
+<ul>
+<li><p>&#x6240;&#x6709;&#x7684;application contexts&#x90FD;&#x5B9E;&#x73B0;&#x4E86;ResourceLoader&#x63A5;&#x53E3;&#xFF0C;&#x56E0;&#x6B64;&#x5728;Resource&#x5B9E;&#x4F8B;&#x4E2D;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;application contexts&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">ResourceLoader</span></span>{
+   <span class="hljs-function">Resource <span class="hljs-title">getResource</span><span class="hljs-params">(String location)</span></span>;
+}
+Resource template=ctx.getResource(<span class="hljs-string">&quot;some/resource/path/myTemplate.txt&quot;</span>);
+Resource template=ctx.getResource(<span class="hljs-string">&quot;classpath:some/resource/path/myTemplate.txt&quot;</span>);
+Resource template=ctx.getResource(<span class="hljs-string">&quot;file:/some/resource/path/myTemplate.txt&quot;</span>);
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.io.IOException;
+<span class="hljs-keyword">import</span> org.springframework.beans.BeansException;
+<span class="hljs-keyword">import</span> org.springframework.context.ApplicationContext;
+<span class="hljs-keyword">import</span> org.springframework.context.ApplicationContextAware;
+<span class="hljs-keyword">import</span> org.springframework.core.io.Resource;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MoocResource</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ApplicationContextAware</span>  </span>{
+   <span class="hljs-keyword">private</span> ApplicationContext applicationContext;
+   <span class="hljs-meta">@Override</span>
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setApplicationContext</span><span class="hljs-params">(ApplicationContext applicationContext)</span>
+           <span class="hljs-keyword">throws</span> BeansException </span>{
+       <span class="hljs-keyword">this</span>.applicationContext = applicationContext;
+   }
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">resource</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> IOException </span>{
+       Resource resource = applicationContext.getResource(<span class="hljs-string">&quot;config.txt&quot;</span>);
+       System.out.println(resource.getFilename());
+       System.out.println(resource.contentLength());
+   }
+}
+</code></pre>
+</li>
+</ul>
+</blockquote>
+<h2 id="bean&#x7684;&#x5B9A;&#x4E49;&#x53CA;&#x4F5C;&#x7528;&#x57DF;"><a name="bean&#x7684;&#x5B9A;&#x4E49;&#x53CA;&#x4F5C;&#x7528;&#x57DF;" class="anchor-navigation-ex-anchor" href="#bean&#x7684;&#x5B9A;&#x4E49;&#x53CA;&#x4F5C;&#x7528;&#x57DF;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="bean&#x7684;&#x5B9A;&#x4E49;&#x53CA;&#x4F5C;&#x7528;&#x57DF;" class="plugin-anchor" href="#bean&#x7684;&#x5B9A;&#x4E49;&#x53CA;&#x4F5C;&#x7528;&#x57DF;"><i class="fa fa-link" aria-hidden="true"></i></a>Bean&#x7684;&#x5B9A;&#x4E49;&#x53CA;&#x4F5C;&#x7528;&#x57DF;</h2>
+<blockquote>
+<p><strong>Classpath&#x626B;&#x63CF;&#x4E0E;&#x7EC4;&#x4EF6;&#x7BA1;&#x7406;</strong></p>
+<ul>
+<li>&#x4ECE;Spring3.0&#x5F00;&#x59CB;&#xFF0C;Spring JavaConfig&#x9879;&#x76EE;&#x63D0;&#x4F9B;&#x4E86;&#x5F88;&#x591A;&#x7279;&#x6027; &#xFF0C;&#x5305;&#x62EC;&#x4F7F;&#x7528;java&#x800C;&#x4E0D;&#x662F;XML&#x5B9A;&#x4E49;bean&#xFF0C;&#x6BD4;&#x5982;@Configuration,@Bean,@Import,@DependsOn </li>
+<li>@Component&#x662F;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x6CE8;&#x89E3;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x4EFB;&#x4F55;bean </li>
+<li>@Repository,@Service,@Controller&#x662F;&#x66F4;&#x6709;&#x9488;&#x5BF9;&#x6027;&#x7684;&#x6CE8;&#x89E3; <ul>
+<li>-@Repository&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x6CE8;&#x89E3;DAO&#x7C7B;&#xFF0C;&#x5373;&#x6301;&#x4E45;&#x5C42; </li>
+<li>-@Service&#x901A;&#x5E38;&#x7528;&#x4E8E;&#x6CE8;&#x89E3;Service&#x7C7B;&#xFF0C;&#x5373;&#x670D;&#x52A1;&#x5C42; </li>
+<li>-@Controller&#x901A;&#x5E38;&#x7528;&#x4E8E;Controller&#x7C7B;&#xFF0C;&#x5373;&#x63A7;&#x5236;&#x5C42;&#xFF08;MVC&#xFF09;</li>
+</ul>
+</li>
+</ul>
+<p><strong>&#x7C7B;&#x7684;&#x81EA;&#x52A8;&#x68C0;&#x6D4B;&#x53CA;Bean&#x7684;&#x6CE8;&#x518C;</strong></p>
+<ul>
+<li>&#xB7;Spring&#x53EF;&#x4EE5;&#x81EA;&#x52A8;&#x68C0;&#x6D4B;&#x7C7B;&#x5E76;&#x6CE8;&#x518C;Bean&#x5230;ApplicationContext&#x4E2D;</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-meta">@Service</span> 
+bublic <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SimpleMovielister</span></span>{ 
+<span class="hljs-keyword">private</span> MovieFinder movieFinder; 
+<span class="hljs-meta">@Autovired</span> 
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">SimpleMovieLister</span><span class="hljs-params">(MovieFinder movieFinder)</span></span>{ 
+    <span class="hljs-keyword">this</span>.movieFinder=movieFinder;
+}
+}
+
+<span class="hljs-meta">@Repository</span> <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">JpaMovieFinder</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">MovieFinder</span></span>{ 
+    <span class="hljs-comment">//implementation elided for clarity</span>
+}
+</code></pre>
+<p><strong>context:annotation-config</strong> </p>
+<ul>
+<li><p>&#x901A;&#x8FC7;&#x5728;&#x57FA;&#x4E8E;XML&#x7684;Spring&#x914D;&#x7F6E;&#x5982;&#x4E0B;&#x6807;&#x7B7E;&#xFF08;&#x8BF7;&#x6CE8;&#x610F;&#x5305;&#x542B;&#x4E0A;&#x4E0B;&#x6587; &#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF09; </p>
+</li>
+<li><p>\<context:annotation-config>&#x4EC5;&#x4F1A;&#x67E5;&#x627E;&#x5728;&#x540C;&#x4E00;&#x4E2A;applicatcontext&#x4E2D;&#x7684;Bean&#x6CE8;&#x89E3;</context:annotation-config></p>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans&quot;</span>
+ <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+ <span class="hljs-attr">xmlns:context</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/context&quot;</span>
+ <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans.xsd
+     http://www.springframework.org/schema/context
+     http://www.springframework.org/schema/context/spring-context.xsd&quot;</span> &gt;</span>
+ <span class="hljs-tag">&lt;<span class="hljs-name">context:annotation-config</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span>
+</code></pre>
+</li>
+</ul>
+<p><strong>&#x7C7B;&#x7684;&#x81EA;&#x52A8;&#x68C0;&#x6D4B;&#x53CA;Bean&#x7684;&#x6CE8;&#x518C;</strong></p>
+<ul>
+<li>&#x4E3A;&#x4E86;&#x80FD;&#x591F;&#x68C0;&#x6D4B;&#x8FD9;&#x4E9B;&#x7C7B;&#x5E76;&#x6CE8;&#x518C;&#x76F8;&#x5E94;&#x7684;Bean&#xFF0C;&#x9700;&#x8981;&#x4E0B;&#x9762;&#x5185;&#x5BB9;</li>
+</ul>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">beans</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">context:component-scan</span> <span class="hljs-attr">base-package</span>=<span class="hljs-string">&quot;org.example&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span>
+</code></pre>
+<ul>
+<li><p>\<context:component-scan>&#x5305;&#x542B;<context:annotation- config="">&#xFF0C;&#x901A;&#x5E38;&#x5728;&#x4F7F;&#x7528;&#x524D;&#x8005;&#x540E;&#xFF0C;&#x4E0D;&#x7528;&#x518D;&#x4F7F;&#x7528;&#x540E;&#x8005;&#xFF0C;&#x524D;&#x8005;&#x5305;&#x542B;&#x540E;&#x8005;&#x5168;&#x90E8;&#x529F;&#x80FD;</context:annotation-></context:component-scan></p>
+</li>
+<li><p>AutowiredAnnotationBeanPostProcessor&#x548C; CommonAnnotationBeanPostProcessor&#x4E5F;&#x4F1A;&#x88AB;&#x5305;&#x542B;&#x8FDB;&#x6765;</p>
+</li>
+</ul>
+<p><strong>&#x4F7F;&#x7528;&#x8FC7;&#x6EE4;&#x5668;&#x8FDB;&#x884C;&#x81EA;&#x5B9A;&#x4E49;&#x626B;&#x63CF;</strong></p>
+<ul>
+<li><p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x7C7B;&#x88AB;&#x81EA;&#x52A8;&#x53D1;&#x73B0;&#x5E76;&#x6CE8;&#x518C;bean&#x7684;&#x6761;&#x4EF6;&#x662F;&#xFF1A;&#x4F7F;&#x7528; @Component,@Repository,@Service,@Controller&#x6CE8;&#x89E3;&#x6216;&#x8005;&#x4F7F;&#x7528;@Component&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x6CE8;&#x89E3; </p>
+</li>
+<li><p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FC7;&#x6EE4;&#x5668;&#x4FEE;&#x6539;&#x4E0A;&#x9762;&#x7684;&#x884C;&#x4E3A;&#xFF0C;&#x5982;:&#x4E0B;&#x9762;&#x4F8B;&#x5B50;&#x7684;XML&#x914D;&#x7F6E;&#x5FFD;&#x7565;&#x6240;&#x6709;&#x7684;@Repository&#x6CE8;&#x89E3;&#x5E76;&#x7528;&#x201C;Stub&#x201D;&#x4EE3;&#x66FF;</p>
+</li>
+</ul>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">beans</span>&gt;</span> 
+   <span class="hljs-tag">&lt;<span class="hljs-name">context:component-scan</span> <span class="hljs-attr">base-package</span>=<span class="hljs-string">&quot;org.example&quot;</span>&gt;</span> 
+   <span class="hljs-tag">&lt;<span class="hljs-name">context:include-filter</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;regex&quot;</span> <span class="hljs-attr">expression</span>=<span class="hljs-string">&quot;.*Stub.*Repository&quot;</span>/&gt;</span> 
+   <span class="hljs-tag">&lt;<span class="hljs-name">context:exclude-filter</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;annotation&quot;</span> <span class="hljs-attr">expression</span>=<span class="hljs-string">&quot;org.springframework.stereotype.Repository&quot;</span>/&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">context:component-scan</span>&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span>
+</code></pre>
+<ul>
+<li>&#x8FD8;&#x53EF;&#x4F7F;&#x7528;use-default-filters=&quot;false&quot;&#x7981;&#x7528;&#x81EA;&#x52A8;&#x53D1;&#x73B0;&#x4E0E;&#x6CE8;&#x518C;</li>
+</ul>
+<p><strong>&#x5B9A;&#x4E49;Bean</strong></p>
+<ul>
+<li>&#x626B;&#x63CF;&#x8FC7;&#x7A0B;&#x4E2D;&#x7EC4;&#x4EF6;&#x88AB;&#x81EA;&#x52A8;&#x68C0;&#x6D4B;&#xFF0C;&#x90A3;&#x4E48;Bean&#x540D;&#x79F0;&#x662F;&#x7531; BeanNameGenerator&#x751F;&#x6210;&#x7684;&#xFF08;@Component, @Repository,@Service,@Controller&#x90FD;&#x4F1A;&#x6709;&#x4E2A;name&#x5C5E;&#x6027;&#x7528; &#x4E8E;&#x663E;&#x5F0F;&#x8BBE;&#x7F6E;Bean Name) </li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-meta">@Service</span>(<span class="hljs-string">&quot;myMovieLister&quot;</span>)
+Repository <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SimpleMovieLister</span> </span>{}
+<span class="hljs-meta">@Repository</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MovieFinderImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">MovieFinder</span></span>{}
+</code></pre>
+<ul>
+<li>&#x53EF;&#x81EA;&#x5B9A;&#x4E49;bean&#x547D;&#x540D;&#x7B56;&#x7565;&#xFF0C;&#x5B9E;&#x73B0;BeanNameGenerator&#x63A5;&#x53E3;&#xFF0C; &#x5E76;&#x4E00;&#x5B9A;&#x8981;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x65E0;&#x53C2;&#x6570;&#x6784;&#x9020;&#x51FD;&#x5668;</li>
+</ul>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">beans</span>&gt;</span> 
+   <span class="hljs-tag">&lt;<span class="hljs-name">context:component-scan</span> <span class="hljs-attr">base-package</span>=<span class="hljs-string">&quot;org.example&quot;</span> <span class="hljs-attr">name-generator</span>=<span class="hljs-string">&quot;org.example.MyNameGenerator&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span>
+</code></pre>
+<p><strong>&#x4F5C;&#x7528;&#x57DF;&#xFF08;Scope)</strong></p>
+<ul>
+<li>&#x901A;&#x5E38;&#x60C5;&#x51B5;&#x4E0B;&#x81EA;&#x52A8;&#x67E5;&#x627E;&#x7684;Spring&#x7EC4;&#x4EF6;&#xFF0C;&#x5176;scope&#x662F;singleton&#xFF0C;Spring2.5&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x6807;&#x8BC6;scope&#x7684;&#x6CE8;&#x89E3;@Scope</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-meta">@Scope</span>(<span class="hljs-string">&quot;prototype&quot;</span>) 
+<span class="hljs-meta">@Repository</span> 
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MovieFinderImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">MovieFinder</span></span>{}
+</code></pre>
+<ul>
+<li>&#x4E5F;&#x53EF;&#x4EE5;&#x81EA;&#x5B9A;&#x4E49;scope&#x7B56;&#x7565;&#xFF0C;&#x5B9E;&#x73B0;ScopeMetadataResolver&#x63A5; &#x53E3;&#x5E76;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x65E0;&#x53C2;&#x6784;&#x9020;&#x5668;&#xFF0C;&#x6BD4;&#x5982;&#x5728;&#x591A;&#x7EBF;&#x7A0B;&#x4E2D;</li>
+</ul>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">beans</span>&gt;</span> 
+    <span class="hljs-tag">&lt;<span class="hljs-name">context:component-scan</span> <span class="hljs-attr">base-package</span>=<span class="hljs-string">&quot;org.example&#x201D; scope-resolver=&quot;</span><span class="hljs-string">org.example.MyScopeResolver&quot;</span>/&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span>
+</code></pre>
+<ul>
+<li><p>proxyMode&#x5C5E;&#x6027;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Scope</span>(<span class="hljs-string">&quot;prototype&quot;</span> proxyMode=ScopedProxyMode.TARGET_CLASS )
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MovieFinderImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">MovieFinder</span></span>{}
+</code></pre>
+</li>
+</ul>
+</blockquote>
+<h2 id="autowired&#x6CE8;&#x89E3;&#x8BF4;&#x660E;"><a name="autowired&#x6CE8;&#x89E3;&#x8BF4;&#x660E;" class="anchor-navigation-ex-anchor" href="#autowired&#x6CE8;&#x89E3;&#x8BF4;&#x660E;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="autowired&#x6CE8;&#x89E3;&#x8BF4;&#x660E;" class="plugin-anchor" href="#autowired&#x6CE8;&#x89E3;&#x8BF4;&#x660E;"><i class="fa fa-link" aria-hidden="true"></i></a>Autowired&#x6CE8;&#x89E3;&#x8BF4;&#x660E;</h2>
+<blockquote>
+<p><strong>@Required</strong></p>
+<ul>
+<li><p>@Required&#x6CE8;&#x89E3;&#x9002;&#x7528;&#x4E8E;bean&#x5C5E;&#x6027;&#x7684;setter&#x65B9;&#x6CD5; </p>
+</li>
+<li><p>&#x8FD9;&#x4E2A;&#x6CE8;&#x89E3;&#x4EC5;&#x4EC5;&#x8868;&#x793A;&#xFF0C;&#x53D7;&#x5F71;&#x54CD;&#x7684;bean&#x5C5E;&#x6027;&#x5FC5;&#x987B;&#x5728;&#x914D;&#x7F6E;&#x65F6;&#x88AB;&#x586B;&#x5145;&#xFF0C; &#x901A;&#x8FC7;&#x5728;bean&#x5B9A;&#x4E49;&#x6216;&#x901A;&#x8FC7;&#x81EA;&#x52A8;&#x88C5;&#x914D;&#x4E00;&#x4E2A;&#x660E;&#x786E;&#x7684;&#x5C5E;&#x6027;&#x503C; </p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SimpleMovieLister</span> </span>{
+<span class="hljs-keyword">private</span> MovieFinder movieFinder; 
+    <span class="hljs-meta">@Required</span> 
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setMovieFinder</span><span class="hljs-params">(MovieFinder movieFinder)</span></span>{ 
+        <span class="hljs-keyword">this</span>.movieFinder=movieFinder; 
+    }
+}
+</code></pre>
+</li>
+</ul>
+<p><strong>@Autowired</strong></p>
+<ul>
+<li><p>&#x53EF;&#x4EE5;&#x5C06;@Autowired&#x6CE8;&#x89E3;&#x4E3A;&#x201C;&#x4F20;&#x7EDF;&quot;&#x7684;setter&#x65B9;&#x6CD5; </p>
+<pre><code class="lang-java"><span class="hljs-keyword">private</span> MovieFinder movieFinder; 
+    <span class="hljs-meta">@Autovired</span> 
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setMovieFinder</span><span class="hljs-params">(MovieFinder movieFinder)</span>
+    </span>{ 
+        <span class="hljs-keyword">this</span>.moviesinder=movieFinder; 
+    }
+}
+</code></pre>
+</li>
+<li><p>&#x53EF;&#x7528;&#x4E8E;&#x6784;&#x9020;&#x5668;&#x6216;&#x6210;&#x5458;&#x53D8;&#x91CF; </p>
+<pre><code class="lang-java"><span class="hljs-meta">@Autovired</span> 
+<span class="hljs-keyword">private</span> MovieCatalog movieCatalog; 
+<span class="hljs-keyword">private</span> CustomerPreferenceDao customerPreferenceDao; 
+<span class="hljs-meta">@Autovired</span> 
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MovieRecommender</span><span class="hljs-params">(CustomerPreferenceDao customerPreferenceDao)</span></span>{ 
+    <span class="hljs-keyword">this</span>.customerPreferenceDao=customerPreferenceDao;
+}
+</code></pre>
+</li>
+<li><p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5982;&#x679C;&#x56E0;&#x627E;&#x4E0D;&#x5230;&#x5408;&#x9002;&#x7684;bean&#x5C06;&#x4F1A;&#x5BFC;&#x81F4;autowiring &#x5931;&#x8D25;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E0B;&#x9762;&#x7684;&#x65B9;&#x5F0F;&#x907F;&#x514D;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">simpleMovieLister</span></span>{ 
+    <span class="hljs-keyword">private</span> MovieFinder movieFinder; 
+    <span class="hljs-meta">@Autovired</span>(required=<span class="hljs-keyword">false</span>) 
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setMovieFinder</span><span class="hljs-params">(MovieFinder movieFinder)</span></span>{ 
+        <span class="hljs-keyword">this</span>.movieFinder=movieFinder;
+    }
+}
+</code></pre>
+</li>
+<li><p>&#x6BCF;&#x4E2A;&#x7C7B;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x4E2A;&#x6784;&#x9020;&#x5668;&#x88AB;&#x6807;&#x8BB0;&#x4E3A;required=true </p>
+</li>
+<li><p>@Autowired&#x7684;&#x5FC5;&#x8981;&#x5C5E;&#x6027;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;@Required&#x6CE8;&#x89E3; </p>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans&quot;</span>
+    <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+    <span class="hljs-attr">xmlns:context</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/context&quot;</span>
+    <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd&quot;</span> &gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">context:component-scan</span> <span class="hljs-attr">base-package</span>=<span class="hljs-string">&quot;com.imooc.beanannotation&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">context:component-scan</span>&gt;</span>
+ <span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Autowired;
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Service;
+<span class="hljs-keyword">import</span> com.imooc.beanannotation.injection.dao.InjectionDAO;
+
+<span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InjectionServiceImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">InjectionService</span> </span>{
+    <span class="hljs-comment">// &#x65B9;&#x5F0F;&#x4E00;</span>
+    <span class="hljs-comment">// @Autowired</span>
+    <span class="hljs-keyword">private</span> InjectionDAO injectionDAO;
+
+    <span class="hljs-comment">// &#x65B9;&#x5F0F;&#x4E8C;</span>
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">InjectionServiceImpl</span><span class="hljs-params">(InjectionDAO injectionDAO)</span> </span>{
+        <span class="hljs-keyword">this</span>.injectionDAO = injectionDAO;
+    }
+
+    <span class="hljs-comment">// &#x65B9;&#x5F0F;&#x4E09;</span>
+    <span class="hljs-comment">// @Autowired</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setInjectionDAO</span><span class="hljs-params">(InjectionDAO injectionDAO)</span> </span>{
+        <span class="hljs-keyword">this</span>.injectionDAO = injectionDAO;
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">save</span><span class="hljs-params">(String arg)</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;Service&#x63A5;&#x6536;&#x53C2;&#x6570;&#xFF1A;&quot;</span> + arg);
+        injectionDAO.save(arg + <span class="hljs-string">&quot;:&quot;</span> + <span class="hljs-keyword">this</span>.hashCode());
+    }
+}
+</code></pre>
+</li>
+<li><p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;@Autowired&#x6CE8;&#x89E3;&#x90A3;&#x4E9B;&#x4F17;&#x6240;&#x5468;&#x77E5;&#x7684;&#x89E3;&#x6790;&#x4F9D;&#x8D56;&#x6027;&#x63A5;&#x53E3;&#xFF0C; &#x6BD4;&#x5982;&#xFF1A;BeanFactory&#xFF0C;ApplicationContext,Environment, ResourceLoader,ApplicationEventPublisher,and MessageSource </p>
+</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MovieRecommender</span> </span>{ 
+<span class="hljs-meta">@Autovired</span> <span class="hljs-keyword">private</span> ApplicationContext context; 
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MovieRecommender</span><span class="hljs-params">()</span></span>{}
+}
+</code></pre>
+<ul>
+<li>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6DFB;&#x52A0;&#x6CE8;&#x89E3;&#x7ED9;&#x9700;&#x8981;&#x8BE5;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x7EC4;&#x7684;&#x5B57;&#x6BB5;&#x6216;&#x65B9;&#x6CD5;&#xFF0C;&#x4EE5;&#x63D0;&#x4F9B;ApplicationContext&#x4E2D;&#x7684;&#x6240;&#x6709;&#x7279;&#x5B9A;&#x7C7B;&#x578B;&#x7684;bean</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">private</span> Set&lt;Moviecatalog&gt; movieCatalogs; 
+<span class="hljs-meta">@Autovired</span> 
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">seMovieCatalogs</span><span class="hljs-params">(Set&lt;MovieCatalog&gt; movieCatalogs)</span></span>{( 
+<span class="hljs-keyword">this</span>.movieCatalogs=movieCatalogs;
+}
+</code></pre>
+<ul>
+<li>&#x53EF;&#x4EE5;&#x7528;&#x5E72;&#x88C5;&#x914D;kew&#x4E3A;string&#x7684;Map</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">private</span> Map&lt;String,Movlecatalog&gt; moviecatalogs; 
+<span class="hljs-meta">@Aucovired</span> 
+<span class="hljs-function">pablic <span class="hljs-keyword">void</span> <span class="hljs-title">setMovieCatalogs</span><span class="hljs-params">(Map&lt;String,MovieCatalog &gt; movieCatalogs)</span></span>{
+    <span class="hljs-keyword">this</span>.movieCatalogs=movieCatalogs;
+}
+</code></pre>
+<ul>
+<li><p>&#x5982;&#x679C;&#x5E0C;&#x671B;&#x6570;&#x7EC4;&#x6709;&#x5E8F;&#xFF0C;&#x53EF;&#x4EE5;&#x8BA9;bean&#x5B9E;&#x73B0; org.springframework.core.Ordered&#x63A5;&#x53E3;&#x6216;&#x4F7F;&#x7528;&#x7684;@Order&#x6CE8;&#x89E3;&#xFF0C;&#x5E76;&#x4E14;&#x53EA;&#x9488;&#x5BF9;&#x6570;&#x7EC4;&#x6709;&#x6548;</p>
+</li>
+<li><p>@Autowired&#x662F;&#x7531;Spring BeanPostProcessor&#x5904;&#x7406;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x80FD;&#x5728;&#x81EA;&#x5DF1;&#x7684;BeanPostProcessor&#x6216; BeanFactoryPostProcessor&#x7C7B;&#x578B;&#x5E94;&#x7528;&#x8FD9;&#x4E9B;&#x6CE8;&#x89E3;&#xFF0C;&#x8FD9;&#x4E9B;&#x7C7B;&#x578B;&#x5FC5;&#x987B;&#x901A;&#x8FC7;XML&#x6216;&#x8005;Spring&#x7684;@Bean&#x6CE8;&#x89E3;&#x52A0;&#x8F7D;</p>
+</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">BeanInterface</span> </span>{}
+
+<span class="hljs-keyword">import</span> org.springframework.core.annotation.Order;
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Component;
+<span class="hljs-meta">@Order</span>(<span class="hljs-number">2</span>)
+<span class="hljs-meta">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BeanImplOne</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">BeanInterface</span> </span>{
+}
+<span class="hljs-meta">@Order</span>(<span class="hljs-number">1</span>)
+<span class="hljs-meta">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BeanImplTwo</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">BeanInterface</span> </span>{
+}
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.List;
+<span class="hljs-keyword">import</span> java.util.Map;
+<span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Autowired;
+<span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Qualifier;
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Component;
+
+<span class="hljs-meta">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BeanInvoker</span> </span>{
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> List&lt;BeanInterface&gt; list;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">say</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">null</span> != list &amp;&amp; <span class="hljs-number">0</span> != list.size()) {
+            System.out.println(<span class="hljs-string">&quot;list...&quot;</span>);
+            <span class="hljs-keyword">for</span> (BeanInterface bean : list) {
+                System.out.println(bean.getClass().getName());
+            }
+        } <span class="hljs-keyword">else</span> {
+            System.out.println(<span class="hljs-string">&quot;List&lt;BeanInterface&gt; list is null&quot;</span>);
+        }
+    }
+}
+
+list...
+com.imooc.beanannotation.multibean.BeanImplTwo
+com.imooc.beanannotation.multibean.BeanImplOne
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.List;
+<span class="hljs-keyword">import</span> java.util.Map;
+<span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Autowired;
+<span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Qualifier;
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Component;
+
+<span class="hljs-meta">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BeanInvoker</span> </span>{
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-keyword">private</span> Map&lt;String, BeanInterface&gt; map;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">say</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">null</span> != map &amp;&amp; <span class="hljs-number">0</span> != map.size()) {
+            System.out.println(<span class="hljs-string">&quot;map...&quot;</span>);
+            <span class="hljs-keyword">for</span> (Map.Entry&lt;String, BeanInterface&gt; entry : map.entrySet()) {
+                System.out.println(entry.getKey() + <span class="hljs-string">&quot;      &quot;</span> + entry.getValue().getClass().getName());
+            }
+        } <span class="hljs-keyword">else</span> {
+            System.out.println(<span class="hljs-string">&quot;Map&lt;String, BeanInterface&gt; map is null&quot;</span>);
+        }
+    }
+}
+
+map...
+beanImplTwo  com.imooc.beanannotation.multibean.BeanImplTwo
+beanImplOne  com.imooc.beanannotation.multibean.BeanImplOne
+</code></pre>
+</blockquote>
+<h2 id="qualifier&#x6CE8;&#x89E3;"><a name="qualifier&#x6CE8;&#x89E3;" class="anchor-navigation-ex-anchor" href="#qualifier&#x6CE8;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="qualifier&#x6CE8;&#x89E3;" class="plugin-anchor" href="#qualifier&#x6CE8;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>@Qualifier&#x6CE8;&#x89E3;</h2>
+<blockquote>
+<ul>
+<li><p>&#x6309;&#x7C7B;&#x578B;&#x81EA;&#x52A8;&#x88C5;&#x914D;&#x53EF;&#x80FD;&#x591A;&#x4E2A;bean&#x5B9E;&#x4F8B;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Spring&#x7684;@Qualifier&#x6CE8;&#x89E3;&#x7F29;&#x5C0F;&#x8303;&#x56F4;(&#x6216;&#x6307;&#x5B9A;&#x552F;&#x4E00;)&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x6307;&#x5B9A;&#x5355;&#x72EC;&#x7684;&#x6784;&#x9020;&#x5668;&#x53C2;&#x6570;&#x6216;&#x65B9;&#x6CD5;&#x53C2;&#x6570; </p>
+</li>
+<li><p>&#x53EF;&#x7528;&#x4E8E;&#x6CE8;&#x89E3;&#x96C6;&#x5408;&#x7C7B;&#x578B;&#x53D8;&#x91CF;</p>
+</li>
+<li><p>&#x4E3B;&#x8981;&#x7531;xml&#x5B9A;&#x4E49;&#x548C;java&#x6CE8;&#x89E3;&#x5B9E;&#x73B0;&#x8FD9;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;</p>
+</li>
+</ul>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;example.SimpleMovieCatalog&quot;</span>&gt;</span> 
+<span class="hljs-tag">&lt;<span class="hljs-name">qualifier</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;main&quot;</span>/&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span> 
+<span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;example.SimpleMovieCatalog&quot;</span>&gt;</span> 
+<span class="hljs-tag">&lt;<span class="hljs-name">qualifier</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;action&quot;</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+</code></pre>
+<ul>
+<li>&#x5982;&#x679C;&#x901A;&#x8FC7;&#x540D;&#x5B57;&#x8FDB;&#x884C;&#x6CE8;&#x89E3;&#x6CE8;&#x5165;&#xFF0C;&#x4E3B;&#x8981;&#x4F7F;&#x7528;&#x7684;&#x4E0D;&#x662F;@Autowired( &#x5373;&#x4F7F;&#x5728;&#x6280;&#x672F;&#x4E0A;&#x80FD;&#x591F;&#x901A;&#x8FC7;@Qualifier&#x5B9A;bean&#x7684;&#x540D;&#x5B57;&#xFF09;&#xFF0C;&#x66FF;&#x4EE3;&#x65B9;&#x5F0F;&#x662F;&#x4F7F;&#x7528;JSR-250@Resource&#x6CE8;&#x89E3;&#xFF0C;&#x5B83;&#x662F;&#x901A;&#x8FC7;&#x5176;&#x72EC;&#x7279;&#x7684;&#x540D;&#x79F0; &#x6765;&#x5B9A;&#x4E49;&#x6765;&#x8BC6;&#x522B;&#x7279;&#x5B9A;&#x7684;&#x76EE;&#x6807;&#xFF08;&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x4E0E;&#x6240;&#x58F0;&#x660E;&#x7684;&#x7C7B;&#x578B;&#x662F;&#x65E0;&#x5173;&#x7684; &#x5339;&#x914D;&#x8FC7;&#x7A0B;&#xFF09;</li>
+<li>&#x56E0;&#x8BED;&#x4E49;&#x5DEE;&#x5F02;&#xFF0C;&#x96C6;&#x5408;&#x6216;Map&#x7C7B;&#x578B;&#x7684;bean&#x65E0;&#x6CD5;&#x901A;&#x8FC7;@Autowired &#x6765;&#x6CE8;&#x5165;&#xFF0C;&#x56E0;&#x4E3A;&#x6CA1;&#x6709;&#x7C7B;&#x578B;&#x5339;&#x914D;&#x5230;&#x8FD9;&#x6837;&#x7684;bean&#xFF0C;&#x4E3A;&#x8FD9;&#x4E9B;bean&#x4F7F;&#x7528; @Resource&#x6CE8;&#x89E3;&#xFF0C;&#x901A;&#x8FC7;&#x552F;&#x4E00;&#x540D;&#x79F0;&#x5F15;&#x7528;&#x96C6;&#x5408;&#x6216;Map&#x7684;bean </li>
+<li>@Autowired&#x9002;&#x7528;&#x4E8E;fields,constructors,multi-argument methods&#x8FD9;&#x4E9B;&#x5141;&#x8BB8;&#x5728;&#x53C2;&#x6570;&#x7EA7;&#x522B;&#x4F7F;&#x7528;@Qualifier&#x6CE8;&#x89E3;&#x7F29;&#x5C0F;&#x8303;&#x56F4;&#x7684;&#x60C5;&#x51B5; </li>
+<li>@Resource&#x9002;&#x7528;&#x4E8E;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x3001;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x7684;setter&#x65B9;&#x6CD5;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x76EE;&#x6807;&#x662F;&#x6784;&#x9020;&#x5668;&#x6216;&#x4E00;&#x4E2A;&#x591A;&#x53C2;&#x6570;&#x65B9;&#x6CD5;&#x65F6;&#xFF0C;&#x6700;&#x597D;&#x7684;&#x65B9;&#x5F0F;&#x662F;&#x4F7F;&#x7528;qualifiers</li>
+<li>&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x81EA;&#x5DF1;&#x7684;Qualifier</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-meta">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BeanImplOne</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">BeanInterface</span> </span>{
+}
+<span class="hljs-meta">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BeanImplTwo</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">BeanInterface</span> </span>{
+}
+
+<span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Autowired;
+<span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Qualifier;
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Component;
+
+<span class="hljs-meta">@Component</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BeanInvoker</span> </span>{
+    <span class="hljs-meta">@Autowired</span>
+    <span class="hljs-meta">@Qualifier</span>(<span class="hljs-string">&quot;beanImplTwo&quot;</span>)
+    <span class="hljs-keyword">private</span> BeanInterface beanInterface;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">say</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">null</span> != beanInterface) {
+            System.out.println(beanInterface.getClass().getName());
+        } <span class="hljs-keyword">else</span> {
+            System.out.println(<span class="hljs-string">&quot;beanInterface is null...&quot;</span>);
+        }
+    }
+}
+
+com.imooc.beanannotation.multibean.BeanImplTwo
+</code></pre>
+</blockquote>
+<h2 id="&#x57FA;&#x4E8E;java&#x7684;&#x5BB9;&#x5668;&#x6CE8;&#x89E3;"><a name="&#x57FA;&#x4E8E;java&#x7684;&#x5BB9;&#x5668;&#x6CE8;&#x89E3;" class="anchor-navigation-ex-anchor" href="#&#x57FA;&#x4E8E;java&#x7684;&#x5BB9;&#x5668;&#x6CE8;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x57FA;&#x4E8E;java&#x7684;&#x5BB9;&#x5668;&#x6CE8;&#x89E3;" class="plugin-anchor" href="#&#x57FA;&#x4E8E;java&#x7684;&#x5BB9;&#x5668;&#x6CE8;&#x89E3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x57FA;&#x4E8E;Java&#x7684;&#x5BB9;&#x5668;&#x6CE8;&#x89E3;</h2>
+<blockquote>
+<ul>
+<li><p>@Bean&#x6807;&#x8BC6;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x914D;&#x7F6E;&#x548C;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;&#x7531;SpringloC&#x5BB9;&#x5668;&#x7BA1;&#x7406;&#x7684;&#x65B0;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E8E;XML&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;<bean> </bean></p>
+</li>
+<li><p>&#x53EF;&#x4EE5;&#x5728;Spring&#x7684;@Component&#x6CE8;&#x89E3;&#x7684;&#x7C7B;&#x4E2D;&#x4F7F;&#x7528;@Bean&#x6CE8;&#x89E3; &#x4EFB;&#x4F55;&#x65B9;&#x6CD5;&#xFF08;&#x4EC5;&#x4EC5;&#x662F;&#x53EF;&#x4EE5;&#xFF09;</p>
+</li>
+<li><p>&#x4E0A;&#x4E00;&#x70B9;&#x4E2D;&#xFF0C;&#x901A;&#x5E38;&#x4F7F;&#x7528;&#x7684;&#x662F;@Configuration </p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">beans</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;myService&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.acme.services.MyServiceImp1&quot;</span>/&gt;</span> <span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span>
+</code></pre>
+<p>&#x7B49;&#x4EF7;&#x4E8E;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.springframework.context.annotation.Bean;
+<span class="hljs-keyword">import</span> org.springframework.context.annotation.Configuration;
+
+<span class="hljs-meta">@Configuration</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StoreConfig</span> </span>{
+    <span class="hljs-comment">// &#x82E5;&#x6CA1;&#x6709;&#x6307;&#x660E;name&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x4E3A;&#x65B9;&#x6CD5;&#x540D;</span>
+    <span class="hljs-comment">// @Bean</span>
+    <span class="hljs-meta">@Bean</span>(name=<span class="hljs-string">&quot;stringStore&quot;</span> initMethod=<span class="hljs-string">&quot;init&quot;</span> destoryMethod=<span class="hljs-string">&quot;cleanup&quot;</span>)
+    <span class="hljs-function"><span class="hljs-keyword">public</span> StringStore <span class="hljs-title">stringStore</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> StringStore();
+    }
+}
+</code></pre>
+</li>
+</ul>
+<p><strong>&#x4F7F;&#x7528;@ImportResource&#x548C;@Value &#x6CE8;&#x89E3;&#x8FDB;&#x884C;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#x8BFB;&#x53D6;</strong></p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">beans</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">context:annotation-config</span>/&gt;</span> 
+    <span class="hljs-tag">&lt;<span class="hljs-name">context:property-placeholder</span> <span class="hljs-attr">location</span>=<span class="hljs-string">&quot;classpath:/com/acme/jdbc.properties&quot;</span>/&gt;</span> 
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.acme.AppConfig&quot;</span>/&gt;</span> 
+    <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">class</span>=<span class="hljs-string">lWorg.springframework.jdbc.datasource.DriverManagerDataSource&quot;</span>&gt;</span> 
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;url&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;${jdbc.url}&quot;</span>/&gt;</span> 
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;username&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;${jdbc.username}&quot;</span>/&gt;</span> 
+        <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;password&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;S{jdbc.password)&quot;</span>/&gt;</span> 
+    <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span>
+</code></pre>
+<p>&#x7B49;&#x4EF7;&#x4E8E;</p>
+<pre><code class="lang-java"><span class="hljs-meta">@Configuration</span> 
+ImportResource(<span class="hljs-string">&quot;classpath:/com/acme/properties-config.xm1&quot;</span>) 
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppConfig</span></span>{
+    <span class="hljs-meta">@Value</span>(<span class="hljs-string">&quot;$(jdbc.url)&quot;</span>) 
+    <span class="hljs-keyword">private</span> String url; 
+    <span class="hljs-meta">@Value</span>(<span class="hljs-string">&quot;$(jdbc.username)&quot;</span>) 
+    <span class="hljs-keyword">private</span> String username; 
+    <span class="hljs-meta">@Value</span>(<span class="hljs-string">&quot;jdbc.password)&quot;</span>) 
+    <span class="hljs-keyword">private</span> String password; 
+
+    <span class="hljs-meta">@Bean</span> 
+    <span class="hljs-function"><span class="hljs-keyword">public</span> DataSource <span class="hljs-title">dataSource</span><span class="hljs-params">()</span></span>{ 
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> DriverManagerDataSource(url,username,password); 
+    }
+}
+</code></pre>
+<pre><code class="lang-properties"># properties-config.xm1
+
+jdbc.username=root
+password=root
+url=127.00.1
+</code></pre>
+</blockquote>
+<h2 id="&#x57FA;&#x4E8E;&#x6CDB;&#x578B;&#x7684;&#x88C5;&#x914D;"><a name="&#x57FA;&#x4E8E;&#x6CDB;&#x578B;&#x7684;&#x88C5;&#x914D;" class="anchor-navigation-ex-anchor" href="#&#x57FA;&#x4E8E;&#x6CDB;&#x578B;&#x7684;&#x88C5;&#x914D;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x57FA;&#x4E8E;&#x6CDB;&#x578B;&#x7684;&#x88C5;&#x914D;" class="plugin-anchor" href="#&#x57FA;&#x4E8E;&#x6CDB;&#x578B;&#x7684;&#x88C5;&#x914D;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x57FA;&#x4E8E;&#x6CDB;&#x578B;&#x7684;&#x88C5;&#x914D;</h2>
+<p>&gt;
+&gt;</p>
+<blockquote>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Store</span>&lt;<span class="hljs-title">T</span>&gt; </span>{}
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StringStore</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Store</span>&lt;<span class="hljs-title">String</span>&gt; </span>{}
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">IntegerStore</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Store</span>&lt;<span class="hljs-title">Integer</span>&gt; </span>{}
+
+
+<span class="hljs-keyword">import</span> org.springframework.beans.factory.annotation.Autowired;
+<span class="hljs-keyword">import</span> org.springframework.context.annotation.Bean;
+<span class="hljs-keyword">import</span> org.springframework.context.annotation.Configuration;
+<span class="hljs-keyword">import</span> org.springframework.context.annotation.ImportResource;
+
+<span class="hljs-meta">@Configuration</span>
+<span class="hljs-meta">@ImportResource</span>(<span class="hljs-string">&quot;classpath:config.xml&quot;</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StoreConfig</span> </span>{
+   <span class="hljs-meta">@Autowired</span>
+   <span class="hljs-keyword">private</span> Store&lt;String&gt; s1;
+   <span class="hljs-meta">@Autowired</span>
+   <span class="hljs-keyword">private</span> Store&lt;Integer&gt; s2;
+
+   <span class="hljs-meta">@Bean</span>
+   <span class="hljs-function"><span class="hljs-keyword">public</span> StringStore <span class="hljs-title">stringStore</span><span class="hljs-params">()</span> </span>{
+       <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> StringStore();
+   }
+   <span class="hljs-meta">@Bean</span>
+   <span class="hljs-function"><span class="hljs-keyword">public</span> IntegerStore <span class="hljs-title">integerStore</span><span class="hljs-params">()</span> </span>{
+       <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> IntegerStore();
+   }
+   <span class="hljs-meta">@Bean</span>(name = <span class="hljs-string">&quot;stringStoreTest&quot;</span>)
+   <span class="hljs-function"><span class="hljs-keyword">public</span> Store <span class="hljs-title">stringStoreTest</span><span class="hljs-params">()</span> </span>{
+       System.out.println(<span class="hljs-string">&quot;s1 : &quot;</span> + s1.getClass().getName());
+       System.out.println(<span class="hljs-string">&quot;s2 : &quot;</span> + s2.getClass().getName());
+       <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> StringStore();
+   }
+}
+</code></pre>
+<p><strong>CustomAutowireConfigurer</strong></p>
+<ul>
+<li><p>CustomAutowireConfigurer&#x662F; BeanFactoryPostProcessor&#x7684;&#x5B50;&#x7C7B;&#xFF0C;&#x901A;&#x8FC7;&#x5B83;&#x53EF;&#x4EE5;&#x6CE8;&#x518C;&#x81EA;&#x5DF1;&#x7684; qualifier&#x6CE8;&#x89E3;&#x7C7B;&#x578B;&#xFF08;&#x5373;&#x4F7F;&#x6CA1;&#x6709;&#x4F7F;&#x7528;Spring&#x7684;@Qualifier &#x6CE8;&#x89E3;&#xFF09;</p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;customAutowireConfigurer&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;org.springframework.beans.factory.annotation.CustomAutowireConfigurer&quot;</span>&gt;</span> 
+   <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;customQualifierTypes&quot;</span>&gt;</span> 
+       <span class="hljs-tag">&lt;<span class="hljs-name">set</span>&gt;</span> 
+           <span class="hljs-tag">&lt;<span class="hljs-name">value</span>&gt;</span>example.CustomQualifier<span class="hljs-tag">&lt;/<span class="hljs-name">value</span>&gt;</span> 
+       <span class="hljs-tag">&lt;/<span class="hljs-name">set</span>&gt;</span> 
+   <span class="hljs-tag">&lt;/<span class="hljs-name">property</span>&gt;</span> 
+<span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+</code></pre>
+</li>
+</ul>
+<ul>
+<li><p>&#x8BE5;AutowireCandidateResolver&#x51B3;&#x5B9A;&#x81EA;&#x52A8;&#x88C5;&#x914D;&#x7684;&#x5019;&#x9009;&#x8005;</p>
+<ul>
+<li>-&#x6BCF;&#x4E2A;bean&#x5B9A;&#x4E49;&#x7684;autowire-candidate&#x503C; </li>
+<li>-&#x4EFB;&#x4F55;<bean>&#x4E2D;&#x7684;default-autowire-candidates </bean></li>
+<li>-@Qualifier&#x6CE8;&#x89E3;&#x53CA;&#x4F7F;&#x7528;CustomAutowireConfigurer&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x578B;</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="jsr&#x652F;&#x6301;&#x8BF4;&#x660E;"><a name="jsr&#x652F;&#x6301;&#x8BF4;&#x660E;" class="anchor-navigation-ex-anchor" href="#jsr&#x652F;&#x6301;&#x8BF4;&#x660E;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="jsr&#x652F;&#x6301;&#x8BF4;&#x660E;" class="plugin-anchor" href="#jsr&#x652F;&#x6301;&#x8BF4;&#x660E;"><i class="fa fa-link" aria-hidden="true"></i></a>JSR&#x652F;&#x6301;&#x8BF4;&#x660E;</h2>
+<h1 id="spring-aop&#x57FA;&#x672C;&#x6982;&#x5FF5;"><a name="spring-aop&#x57FA;&#x672C;&#x6982;&#x5FF5;" class="anchor-navigation-ex-anchor" href="#spring-aop&#x57FA;&#x672C;&#x6982;&#x5FF5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="spring-aop&#x57FA;&#x672C;&#x6982;&#x5FF5;" class="plugin-anchor" href="#spring-aop&#x57FA;&#x672C;&#x6982;&#x5FF5;"><i class="fa fa-link" aria-hidden="true"></i></a>Spring AOP&#x57FA;&#x672C;&#x6982;&#x5FF5;</h1>
+<blockquote>
+<p><a href="https://blog.csdn.net/fygu18/article/details/79989862" target="_blank">Spring AOP&#x662F;&#x4EC0;&#x4E48;?&#x4F60;&#x90FD;&#x62FF;&#x5B83;&#x505A;&#x4EC0;&#x4E48;?</a></p>
+</blockquote>
+<h2 id="aop&#x57FA;&#x672C;&#x6982;&#x5FF5;&#x548C;&#x7279;&#x70B9;"><a name="aop&#x57FA;&#x672C;&#x6982;&#x5FF5;&#x548C;&#x7279;&#x70B9;" class="anchor-navigation-ex-anchor" href="#aop&#x57FA;&#x672C;&#x6982;&#x5FF5;&#x548C;&#x7279;&#x70B9;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="aop&#x57FA;&#x672C;&#x6982;&#x5FF5;&#x548C;&#x7279;&#x70B9;" class="plugin-anchor" href="#aop&#x57FA;&#x672C;&#x6982;&#x5FF5;&#x548C;&#x7279;&#x70B9;"><i class="fa fa-link" aria-hidden="true"></i></a>AOP&#x57FA;&#x672C;&#x6982;&#x5FF5;&#x548C;&#x7279;&#x70B9;</h2>
+<blockquote>
+<p><strong>&#x4EC0;&#x4E48;&#x662F;AOP</strong></p>
+<ul>
+<li>AOP&#xFF1A;Aspect Oriented Programming&#x7684;&#x7F29;&#x5199;&#xFF0C;&#x610F;&#x4E3A;&#xFF1A;&#x9762;&#x5411;&#x5207;&#x9762;&#x7F16;&#x7A0B;&#xFF0C;&#x901A;&#x8FC7;&#x9884;&#x7F16;&#x8BD1;&#x65B9;&#x5F0F;&#x548C;&#x8FD0;&#x884C;&#x671F;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x5B9E;&#x73B0;&#x7A0B;&#x5E8F;&#x529F;&#x80FD; &#x7684;&#x7EDF;&#x4E00;&#x7EF4;&#x62A4;&#x7684;&#x4E00;&#x79CD;&#x6280;&#x672F; </li>
+<li>&#x4E3B;&#x8981;&#x7684;&#x529F;&#x80FD;&#x662F;&#xFF1A;&#x65E5;&#x5FD7;&#x8BB0;&#x5F55;&#xFF0C;&#x6027;&#x80FD;&#x7EDF;&#x8BA1;&#xFF0C;&#x5B89;&#x5168;&#x63A7;&#x5236;&#xFF0C;&#x4E8B;&#x52A1;&#x5904;&#x7406;&#xFF0C; &#x5F02;&#x5E38;&#x5904;&#x7406;&#x7B49;&#x7B49; </li>
+</ul>
+<p><img src="res/Java%20And%20Spring%20Annotation/AOP%E5%88%87%E9%9D%A2%E7%A4%BA%E6%84%8F%E5%9B%BE.png" alt="AOP&#x5207;&#x9762;&#x793A;&#x610F;&#x56FE;"></p>
+<p><strong>AOP&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;</strong></p>
+<ul>
+<li>&#x9884;&#x7F16;&#x8BD1; <ul>
+<li>-AspectJ </li>
+</ul>
+</li>
+<li>&#x8FD0;&#x884C;&#x671F;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#xFF08;JDK&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x3001;CGLib&#x52A8;&#x6001;&#x4EE3;&#x7406;&#xFF09; <ul>
+<li>-SpringAOP</li>
+<li>JbossAOP </li>
+</ul>
+</li>
+</ul>
+<p><strong>AOP&#x51E0;&#x4E2A;&#x76F8;&#x5173;&#x6982;&#x5FF5;</strong> </p>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x5207;&#x9762;(Aspect)</td>
+<td>&#x4E00;&#x4E2A;&#x5173;&#x6CE8;&#x70B9;&#x7684;&#x6A21;&#x5757;&#x5316;&#xFF0C;&#x8FD9;&#x4E2A;&#x5173;&#x6CE8;&#x70B9;&#x53EF;&#x80FD;&#x4F1A;&#x6A2A;&#x5207;&#x591A;&#x4E2A;&#x5BF9;&#x8C61;</td>
+</tr>
+<tr>
+<td>&#x8FDE;&#x63A5;&#x70B9;(Joinpoint)</td>
+<td>&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x70B9;</td>
+</tr>
+<tr>
+<td>&#x901A;&#x77E5;(Advice)</td>
+<td>&#x5728;&#x5207;&#x9762;&#x7684;&#x67D0;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x8FDE;&#x63A5;&#x70B9;&#x4E0A;&#x6267;&#x884C;&#x7684;&#x52A8;&#x4F5C;</td>
+</tr>
+<tr>
+<td>&#x5207;&#x5165;&#x70B9;(Pointcut)</td>
+<td>&#x5339;&#x914D;&#x8FDE;&#x63A5;&#x70B9;&#x7684;&#x65AD;&#x8A00;&#xFF0C;&#x5728;AOP&#x4E2D;&#x901A;&#x77E5;&#x548C;&#x4E00;&#x4E2A;&#x5207;&#x5165;&#x70B9;&#x8868;&#x8FBE;&#x5F0F;&#x5173;&#x8054;</td>
+</tr>
+<tr>
+<td>&#x5F15;&#x5165;(Introduction)</td>
+<td>&#x5728;&#x4E0D;&#x4FEE;&#x6539;&#x7C7B;&#x4EE3;&#x7801;&#x7684;&#x524D;&#x63D0;&#x4E0B;&#xFF0C;&#x4E3A;&#x7C7B;&#x6DFB;&#x52A0;&#x65B0;&#x7684;&#x65B9;&#x6CD5;&#x548C;&#x5C5E;&#x6027;</td>
+</tr>
+<tr>
+<td>&#x76EE;&#x6807;&#x5BF9;&#x8C61;(Target Object)</td>
+<td>&#x88AB;&#x4E00;&#x4E2A;&#x6216;&#x8005;&#x591A;&#x4E2A;&#x5207;&#x9762;&#x6240;&#x901A;&#x77E5;&#x7684;&#x5BF9;&#x8C61;</td>
+</tr>
+<tr>
+<td>AOP&#x4EE3;&#x7406;(AOP Proxy)</td>
+<td>AOP&#x6846;&#x67B6;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x7528;&#x6765;&#x5B9E;&#x73B0;&#x5207;&#x9762;&#x5951;&#x7EA6;(aspect contract)<br>(&#x5305;&#x62EC;&#x901A;&#x77E5;&#x65B9;&#x6CD5;&#x6267;&#x884C;&#x7B49;&#x529F;&#x80FD;&#xFF09;</td>
+</tr>
+<tr>
+<td>&#x7EC7;&#x5165;(Weaving)</td>
+<td>&#x628A;&#x5207;&#x9762;&#x8FDE;&#x63A5;&#x5230;&#x5176;&#x5B83;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7C7B;&#x578B;&#x6216;&#x8005;&#x5BF9;&#x8C61;&#x4E0A;&#xFF0C;&#x5E76;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x88AB;&#x901A;&#x77E5;<br>&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5206;&#x4E3A;&#xFF1A;&#x7F16;&#x8BD1;&#x65F6;&#x7EC7;&#x5165;&#x3001;&#x7C7B;&#x52A0;&#x8F7D;&#x65F6;&#x7EC7;&#x5165;&#x3001;&#x6267;&#x884C;&#x65F6;&#x7EC7;&#x5165;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Advice&#x7684;&#x7C7B;&#x578B;</strong></p>
+<table>
+<thead>
+<tr>
+<th>&#x540D;&#x79F0;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x524D;&#x7F6E;&#x901A;&#x77E5;(Before advice)</td>
+<td>&#x5728;&#x67D0;&#x8FDE;&#x63A5;&#x70B9;(join point)&#x4E4B;&#x524D;&#x6267;&#x884C;&#x7684;&#x901A; &#x77E5;&#xFF0C;&#x4F46;&#x4E0D;&#x80FD;&#x963B;&#x6B62;<br>&#x8FDE;&#x63A5;&#x70B9;&#x524D;&#x7684;&#x6267;&#x884C;(&#x9664;&#x975E;&#x5B83;&#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x5F02;&#x5E38;&#xFF09;</td>
+</tr>
+<tr>
+<td>&#x8FD4;&#x56DE;&#x540E;&#x901A;&#x77E5;(After returning advice)</td>
+<td>(After returning advice)&#x5728;&#x67D0;&#x8FDE;&#x63A5;&#x70B9;(join point)&#x6B63;&#x5E38;&#x5B8C;<br>&#x6210;&#x540E;&#x6267;&#x884C;&#x7684;&#x901A;&#x77E5;</td>
+</tr>
+<tr>
+<td>&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x540E;&#x901A;&#x77E5;(After throwing advice)</td>
+<td>&#x5728;&#x65B9;&#x6CD5;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x9000;&#x51FA;&#x65F6;&#x6267;&#x884C;&#x7684;&#x901A;&#x77E5;</td>
+</tr>
+<tr>
+<td>&#x540E;&#x901A;&#x77E5;(After((finally) advice)</td>
+<td>&#x5F53;&#x67D0;&#x8FDE;&#x63A5;&#x70B9;&#x9000;&#x51FA;&#x7684;&#x65F6;&#x5019;&#x6267;&#x884C;&#x7684;&#x901A;&#x77E5;<br>(&#x4E0D;&#x8BBA;&#x662F;&#x6B63;&#x5E38;&#x8FD4;&#x56DE;&#x8FD8;&#x662F;&#x5F02;&#x5E38;&#x9000;&#x51FA;&#xFF09;</td>
+</tr>
+<tr>
+<td>&#x73AF;&#x7ED5;&#x901A;&#x77E5;(Around Advice)</td>
+<td>&#x5305;&#x56F4;&#x4E00;&#x4E2A;&#x8FDE;&#x63A5;&#x70B9;(join point)&#x7684;&#x901A;&#x77E5;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Spring&#x6846;&#x67B6;&#x4E2D;AOP&#x7684;&#x7528;&#x9014;</strong></p>
+<ul>
+<li>&#x63D0;&#x4F9B;&#x4E86;&#x58F0;&#x660E;&#x5F0F;&#x7684;&#x4F01;&#x4E1A;&#x670D;&#x52A1;&#xFF0C;&#x7279;&#x522B;&#x662F;EJB&#x7684;&#x66FF;&#x4EE3;&#x670D;&#x52A1;&#x7684;&#x58F0;&#x660E; </li>
+<li>&#x5141;&#x8BB8;&#x7528;&#x6237;&#x5B9A;&#x5236;&#x81EA;&#x5DF1;&#x7684;&#x65B9;&#x9762;&#xFF0C;&#x4EE5;&#x5B8C;&#x6210;OOP&#x4E0E;AOP&#x7684;&#x4E92;&#x8865;&#x4F7F;&#x7528; </li>
+</ul>
+<p><strong>Spring&#x7684;AOP&#x5B9E;&#x73B0;</strong></p>
+<ul>
+<li>&#x7EAF;java&#x5B9E;&#x73B0;&#xFF0C;&#x65E0;&#x9700;&#x7279;&#x6B8A;&#x7684;&#x7F16;&#x8BD1;&#x8FC7;&#x7A0B;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x63A7;&#x5236;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x5C42;&#x6B21; </li>
+<li>&#x76EE;&#x524D;&#x53EA;&#x652F;&#x6301;&#x65B9;&#x6CD5;&#x6267;&#x884C;&#x8FDE;&#x63A5;&#x70B9;(&#x901A;&#x77E5;Spring Bean&#x7684;&#x65B9;&#x6CD5;&#x6267;&#x884C;) </li>
+<li>&#x4E0D;&#x662F;&#x4E3A;&#x4E86;&#x63D0;&#x4F9B;&#x6700;&#x5B8C;&#x6574;&#x7684;AOP&#x5B9E;&#x73B0;(&#x5C3D;&#x7BA1;&#x5B83;&#x975E;&#x5E38;&#x5F3A;&#x5927;)&#xFF1B;&#x800C;&#x662F;&#x4FA7;&#x91CD;&#x4E8E;&#x63D0;&#x4F9B;&#x4E00;&#x79CD;AOP&#x5B9E;&#x73B0;&#x548C;Spring IoC&#x5BB9;&#x5668;&#x4E4B;&#x95F4;&#x7684;&#x6574;&#x5408;&#xFF0C;&#x7528;&#x4E8E;&#x5E2E;&#x52A9;&#x89E3;&#x51B3;&#x4F01;&#x4E1A;&#x5E94;&#x7528;&#x4E2D;&#x7684;&#x5E38;&#x89C1;&#x95EE;&#x9898; </li>
+<li>Spring AOP&#x4E0D;&#x4F1A;&#x4E0E;AspectU&#x7ADE;&#x4E89;&#xFF0C;&#x4ECE;&#x800C;&#x63D0;&#x4F9B;&#x7EFC;&#x5408;&#x5168;&#x9762;&#x7684;AOP&#x89E3;&#x51B3;&#x65B9;&#x6848; </li>
+</ul>
+<p><strong>&#x6709;&#x63A5;&#x53E3;&#x548C;&#x65E0;&#x63A5;&#x53E3;&#x7684;Spring AOP&#x5B9E;&#x73B0;&#x533A;&#x522B;</strong></p>
+<ul>
+<li>Spring AOP&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x6807;&#x51C6;&#x7684;JavaSE&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x4F5C;&#x4E3A;AOP&#x4EE3;&#x7406;&#xFF0C; &#x8FD9;&#x4F7F;&#x5F97;&#x4EFB;&#x4F55;&#x63A5;&#x53E3;(&#x6216;&#x8005;&#x63A5;&#x53E3;&#x96C6;)&#x90FD;&#x53EF;&#x4EE5;&#x88AB;&#x4EE3;&#x7406; </li>
+<li>Spring AOP&#x4E2D;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;CGLIB&#x4EE3;&#x7406;(&#x5982;&#x679C;&#x4E00;&#x4E2A;&#x4E1A;&#x52A1;&#x5BF9;&#x8C61;&#x5E76;&#x6CA1;&#x6709;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;)</li>
+</ul>
+</blockquote>
+<h2 id="&#x914D;&#x7F6E;&#x5207;&#x9762;&#x548C;&#x5207;&#x5165;&#x70B9;"><a name="&#x914D;&#x7F6E;&#x5207;&#x9762;&#x548C;&#x5207;&#x5165;&#x70B9;" class="anchor-navigation-ex-anchor" href="#&#x914D;&#x7F6E;&#x5207;&#x9762;&#x548C;&#x5207;&#x5165;&#x70B9;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x914D;&#x7F6E;&#x5207;&#x9762;&#x548C;&#x5207;&#x5165;&#x70B9;" class="plugin-anchor" href="#&#x914D;&#x7F6E;&#x5207;&#x9762;&#x548C;&#x5207;&#x5165;&#x70B9;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x914D;&#x7F6E;&#x5207;&#x9762;&#x548C;&#x5207;&#x5165;&#x70B9;</h2>
+<blockquote>
+<p><strong>Schema-based AOP</strong></p>
+<ul>
+<li><p>Spring&#x6240;&#x6709;&#x7684;&#x5207;&#x9762;&#x548C;&#x901A;&#x77E5;&#x5668;&#x90FD;&#x5FC5;&#x987B;&#x653E;&#x5728;&#x4E00;&#x4E2A;<aop：config>&#x5185; &#xFF08;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x5305;&#x542B;&#x591A;&#x4E2A;<aop：config>&#x5143;&#x7D20;&#xFF09;&#xFF0C;</aop：config></aop：config></p>
+</li>
+<li><p>&#x6BCF;&#x4E00;&#x4E2A; \<aop:config>&#x53EF;&#x4EE5;&#x5305;&#x542B;pointcut&#xFF0C;advisor&#x548C;aspect&#x5143;&#x7D20; &#xFF08;&#x5B83;&#x4EEC;&#x5FC5;&#x987B;&#x6309;&#x7167;&#x8FD9;&#x4E2A;&#x987A;&#x5E8F;&#x8FDB;&#x884C;&#x58F0;&#x660E; )</aop:config></p>
+</li>
+<li><p>\<aop:config>&#x98CE;&#x683C;&#x7684;&#x914D;&#x7F6E;&#x5927;&#x91CF;&#x4F7F;&#x7528;&#x4E86;Spring&#x7684;&#x81EA;&#x52A8;&#x4EE3;&#x7406;&#x673A;&#x5236;</aop:config></p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;moocAspect&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.imooc.aop.schema.advice.MoocAspect&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span> 
+<span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;aspectBiz&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.imooc.aop.schema.advice.biz.AspectBiz&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">aop:config</span>&gt;</span> 
+    <span class="hljs-tag">&lt;<span class="hljs-name">aop:aspect</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;moocAspect4op&quot;</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;moocAspect&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">aop:pointcut</span> <span class="hljs-attr">expression</span>=<span class="hljs-string">&quot;execution(* com.imooc.aop.schema.advice.biz.*Biz(..))&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;moocPiontcut&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">aop:aspect</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">aop:config</span>&gt;</span>
+</code></pre>
+<p>| &#x8868;&#x8FBE;&#x5F0F;                                                       | &#x542B;&#x4E49;                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| execution(public<em>*(..))                                      | &#x5207;&#x5165;&#x70B9;&#x4E3A;&#x6267;&#x884C;&#x6240;&#x6709;public&#x65B9;&#x6CD5;&#x65F6;                                 |
+| execution(</em> set<em>(..))                                        | &#x5207;&#x5165;&#x70B9;&#x4E3A;&#x6267;&#x884C;&#x6240;&#x6709;set&#x5F00;&#x59CB;&#x7684;&#x65B9;&#x6CD5;&#x65F6;                              |
+| execution(</em> com.service.Service.<em>(..))                       | &#x5207;&#x5165;&#x70B9;&#x4E3A;&#x6267;&#x884C;AccountService&#x7C7B;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#x65F6;                   |
+| execution(</em> com.xyz.service..(.))                            | &#x5207;&#x5165;&#x70B9;&#x4E3A;&#x6267;&#x884C;com.xyz.service&#x5305;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#x65F6;                  |
+| execution(<em> com.xyz.service...(..))                          | &#x5207;&#x5165;&#x70B9;&#x4E3A;&#x6267;&#x884C;com.xyz.service&#x5305;&#x53CA;&#x5176;&#x5B50;&#x5305;&#x4E0B;&#x7684;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#x65F6;          |
+| within(com.xyz.service.</em>)                                    | (only in Spring AOP)                                         |
+| within(com.xyz.service..*)                                   | (only in Spring AOP) <br>within&#x7528;&#x4E8E;&#x5339;&#x914D;&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x5185;&#x7684;&#x65B9;&#x6CD5;&#x6267;&#x884C; |
+| this(com.xyz.service.AccountService)                         | (only in Spring AOP)<br>this&#x7528;&#x4E8E;&#x5339;&#x914D;&#x5F53;&#x524D;AOP&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x7684;&#x6267;&#x884C;&#x65B9;&#x6CD5; |
+| target(com.xyz.service.AccountService)                       | (only in Spring AOP)<br>target &#x7528;&#x4E8E;&#x5339;&#x914D;&#x5F53;&#x524D;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x7684;&#x6267;&#x884C;&#x65B9;&#x6CD5; |
+| @annotation<br>(org.springframework.transaction.annota tion.Transactional) | (only in Spring AOP)<br>args &#x7528;&#x4E8E;&#x5339;&#x914D;&#x5F53;&#x524D;&#x6267;&#x884C;&#x7684;&#x65B9;&#x6CD5;&#x4F20;&#x5165;&#x7684;&#x53C2;&#x6570;&#x4E3A;<br>&#x6307;&#x5B9A;&#x7C7B;&#x578B;&#x7684;&#x6267;&#x884C;&#x65B9;&#x6CD5; |</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="advice&#x5E94;&#x7528;"><a name="advice&#x5E94;&#x7528;" class="anchor-navigation-ex-anchor" href="#advice&#x5E94;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="advice&#x5E94;&#x7528;" class="plugin-anchor" href="#advice&#x5E94;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>Advice&#x5E94;&#x7528;</h2>
+<blockquote>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AspectBiz</span> </span>{
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">biz</span><span class="hljs-params">()</span> </span>{
+       System.out.println(<span class="hljs-string">&quot;AspectBiz biz.&quot;</span>);
+<span class="hljs-comment">//        throw new RuntimeException();</span>
+   }
+}
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.aspectj.lang.ProceedingJoinPoint;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MoocAspect</span> </span>{
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">before</span><span class="hljs-params">()</span> </span>{
+       System.out.println(<span class="hljs-string">&quot;MoocAspect before.&quot;</span>);
+   }
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">afterReturning</span><span class="hljs-params">()</span> </span>{
+       System.out.println(<span class="hljs-string">&quot;MoocAspect afterReturning.&quot;</span>);
+   }
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">afterThrowing</span><span class="hljs-params">()</span> </span>{
+       System.out.println(<span class="hljs-string">&quot;MoocAspect afterThrowing.&quot;</span>);
+   }
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">after</span><span class="hljs-params">()</span> </span>{
+       System.out.println(<span class="hljs-string">&quot;MoocAspect after.&quot;</span>);
+   }
+}
+</code></pre>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;moocAspect&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.imooc.aop.schema.advice.MoocAspect&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span> 
+<span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;aspectBiz&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.imooc.aop.schema.advice.biz.AspectBiz&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span> <span class="hljs-tag">&lt;<span class="hljs-name">aop:config</span>&gt;</span> 
+   <span class="hljs-tag">&lt;<span class="hljs-name">aop:aspect</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;moocAspect4op&quot;</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;moocAspect&quot;</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">aop:pointcut</span> <span class="hljs-attr">expression</span>=<span class="hljs-string">&quot;execution(* com.imooc.aop.schema.advice.biz.*Biz(..))&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;moocPiontcut&quot;</span>/&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">aop:before</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;before&quot;</span> <span class="hljs-attr">pointcut-ref</span>=<span class="hljs-string">&quot;moocPiontcut&quot;</span>/&gt;</span> 
+        <span class="hljs-tag">&lt;<span class="hljs-name">aop:after-returning</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;afterReturning&quot;</span> <span class="hljs-attr">pointcut-ref</span>=<span class="hljs-string">&quot;moocPiontcut&quot;</span>/&gt;</span> 
+        <span class="hljs-tag">&lt;<span class="hljs-name">aop:after-throwing</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;afterThrowing&quot;</span> <span class="hljs-attr">pointcut-ref</span>=<span class="hljs-string">&quot;moocPiontcut&quot;</span>/&gt;</span> 
+        <span class="hljs-tag">&lt;<span class="hljs-name">aop:after</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;after&quot;</span> <span class="hljs-attr">pointcut-ref</span>=<span class="hljs-string">&quot;moocPiontcut&quot;</span>/&gt;</span> 
+   <span class="hljs-tag">&lt;/<span class="hljs-name">aop:aspect</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">aop:config</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-comment">// &#x8F93;&#x51FA;</span>
+MoocAspect before.
+AspectBiz biz.
+MoocAspect afterReturning.
+MoocAspect after
+</code></pre>
+<p><strong>Around advice</strong></p>
+<ul>
+<li><p>&#x901A;&#x77E5;&#x65B9;&#x6CD5;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x662F;ProceedingJoinPoint&#x7C7B;&#x578B; </p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">aop:around</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;around&quot;</span> <span class="hljs-attr">pointcut-ref</span>=<span class="hljs-string">&quot;moocPiontcut&quot;</span>/&gt;</span>
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">around</span><span class="hljs-params">(ProceedingJoinPoint pjp)</span> </span>{
+       Object obj = <span class="hljs-keyword">null</span>;
+       <span class="hljs-keyword">try</span> {
+           System.out.println(<span class="hljs-string">&quot;MoocAspect around 1.&quot;</span>);
+           obj = pjp.proceed();
+           System.out.println(<span class="hljs-string">&quot;MoocAspect around 2.&quot;</span>);
+       } <span class="hljs-keyword">catch</span> (Throwable e) {
+           e.printStackTrace();
+       }
+       <span class="hljs-keyword">return</span> obj;
+   }
+</code></pre>
+</li>
+</ul>
+<p><strong>Advice parameters</strong></p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">aop:around</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;aroundInit&quot;</span> 
+           <span class="hljs-attr">pointcut</span>=<span class="hljs-string">&quot;execution(* com.imooc.aop.schema.advice.biz.AspectBiz.init(String, int)) and args(bizName, times)&quot;</span>/&gt;</span>
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AspectBiz</span> </span>{
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">biz</span><span class="hljs-params">()</span> </span>{
+       System.out.println(<span class="hljs-string">&quot;AspectBiz biz.&quot;</span>);
+   }
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">(String bizName, <span class="hljs-keyword">int</span> times)</span> </span>{
+       System.out.println(<span class="hljs-string">&quot;AspectBiz init : &quot;</span> + bizName + <span class="hljs-string">&quot;   &quot;</span> + times);
+   }
+}
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.aspectj.lang.ProceedingJoinPoint;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MoocAspect</span> </span>{
+   <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">aroundInit</span><span class="hljs-params">(ProceedingJoinPoint pjp, String bizName, <span class="hljs-keyword">int</span> times)</span> </span>{
+       System.out.println(bizName + <span class="hljs-string">&quot;   &quot;</span> + times);
+       Object obj = <span class="hljs-keyword">null</span>;
+       <span class="hljs-keyword">try</span> {
+           System.out.println(<span class="hljs-string">&quot;MoocAspect aroundInit 1.&quot;</span>);
+           obj = pjp.proceed();
+           System.out.println(<span class="hljs-string">&quot;MoocAspect aroundInit 2.&quot;</span>);
+       } <span class="hljs-keyword">catch</span> (Throwable e) {
+           e.printStackTrace();
+       }
+       <span class="hljs-keyword">return</span> obj;
+   }
+}
+</code></pre>
+</blockquote>
+<h2 id="introduction&#x5E94;&#x7528;"><a name="introduction&#x5E94;&#x7528;" class="anchor-navigation-ex-anchor" href="#introduction&#x5E94;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="introduction&#x5E94;&#x7528;" class="plugin-anchor" href="#introduction&#x5E94;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>Introduction&#x5E94;&#x7528;</h2>
+<blockquote>
+<ul>
+<li><p>&#x5141;&#x8BB8;&#x4E00;&#x4E2A;&#x5207;&#x9762;&#x58F0;&#x660E;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#x6307;&#x5B9A;&#x63A5;&#x53E3;&#x7684;&#x901A;&#x77E5;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x4E14;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#x5B9E;&#x73B0;&#x7C7B;&#x6765;&#x4EE3;&#x8868;&#x8FD9;&#x4E9B;&#x5BF9;&#x8C61; </p>
+</li>
+<li><p>&#x7531;\<aop:aspect>&#x4E2D;&#x7684;\<aop:declare-parents>&#x5143;&#x7D20;&#x58F0;&#x660E;</aop:declare-parents></aop:aspect></p>
+</li>
+<li><p>&#x8BE5;&#x5143;&#x7D20;&#x7528;&#x4E8E;&#x58F0;&#x660E;&#x6240;&#x5339;&#x914D;&#x7684;&#x7C7B;&#x578B;&#x62E5;&#x6709;&#x4E00;&#x4E2A;&#x65B0;&#x7684;parent&#xFF08;&#x56E0;&#x6B64;&#x5F97;&#x540D;&#xFF09;</p>
+</li>
+<li><p>schema-defined aspects&#x53EA;&#x652F;&#x6301;singleton model </p>
+<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-name">aop:config</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">aop:aspect</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;moocAspectAOP&quot;</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;moocAspect&quot;</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">aop:declare-parents</span> 
+           <span class="hljs-attr">types-matching</span>=<span class="hljs-string">&quot;com.imooc.aop.schema.advice.biz.*(+)&quot;</span>
+           <span class="hljs-attr">implement-interface</span>=<span class="hljs-string">&quot;com.imooc.aop.schema.advice.Fit&quot;</span>
+           <span class="hljs-attr">default-impl</span>=<span class="hljs-string">&quot;com.imooc.aop.schema.advice.FitImpl&quot;</span>/&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">aop:aspect</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">aop:config</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Fit</span> </span>{
+   <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">filter</span><span class="hljs-params">()</span></span>;
+}
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FitImpl</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Fit</span> </span>{
+   <span class="hljs-meta">@Override</span>
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">filter</span><span class="hljs-params">()</span> </span>{
+       System.out.println(<span class="hljs-string">&quot;FitImpl filter.&quot;</span>);
+   }
+}
+
+<span class="hljs-meta">@Test</span> 
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> testFit0{ 
+   Fit fit=(Fit)<span class="hljs-keyword">super</span>.getBean(<span class="hljs-string">&quot;aspectBiz&quot;</span>); 
+   fit.filter0; 
+}
+
+<span class="hljs-comment">// &#x8F93;&#x51FA;</span>
+FitImpl filter.
+</code></pre>
+</li>
+</ul>
+</blockquote>
+<h2 id="advisors"><a name="advisors" class="anchor-navigation-ex-anchor" href="#advisors"><i class="fa fa-link" aria-hidden="true"></i></a><a name="advisors" class="plugin-anchor" href="#advisors"><i class="fa fa-link" aria-hidden="true"></i></a>Advisors</h2>
+<blockquote>
+<ul>
+<li><p>advisor&#x5C31;&#x50CF;&#x4E00;&#x4E2A;&#x5C0F;&#x7684;&#x81EA;&#x5305;&#x542B;&#x7684;&#x65B9;&#x9762;&#xFF0C;&#x53EA;&#x6709;&#x4E00;&#x4E2A;advice </p>
+</li>
+<li><p>&#x5207;&#x9762;&#x81EA;&#x8EAB;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;bean&#x8868;&#x793A;&#xFF0C;&#x5E76;&#x4E14;&#x5FC5;&#x987B;&#x5B9E;&#x73B0;&#x67D0;&#x4E2A;advice &#x63A5;&#x53E3;&#xFF0C;&#x540C;&#x65F6;&#xFF0C;advisor&#x4E5F;&#x53EF;&#x4EE5;&#x5F88;&#x597D;&#x7684;&#x5229;&#x7528;AspectJ&#x7684;&#x5207;&#x5165; &#x70B9;&#x8868;&#x8FBE;&#x5F0F; </p>
+</li>
+<li><p>Spring&#x901A;&#x8FC7;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;\<aop:advisor>&#x5143;&#x7D20;&#x652F;&#x6301;advisor &#x5B9E;&#x9645;&#x4F7F;&#x7528;&#x4E2D;&#xFF0C;&#x5927;&#x591A;&#x6570;&#x60C5;&#x51B5;&#x4E0B;&#x5B83;&#x4F1A;&#x548C;transactional advice &#x914D;&#x5408;&#x4F7F;&#x7528; </aop:advisor></p>
+</li>
+<li><p>&#x4E3A;&#x4E86;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;advisor&#x7684;&#x4F18;&#x5148;&#x7EA7;&#x4EE5;&#x4FBF;&#x8BA9;advice&#x53EF;&#x4EE5;&#x6709;&#x5E8F;&#xFF0C; &#x53EF;&#x4EE5;&#x4F7F;&#x7528;order&#x5C5E;&#x6027;&#x6765;&#x5B9A;&#x4E49;advisor&#x7684;&#x987A;&#x5E8F; </p>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">beans</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans&quot;</span>
+   <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+   <span class="hljs-attr">xmlns:context</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/context&quot;</span>
+   <span class="hljs-attr">xmlns:aop</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/aop&quot;</span>
+   <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://www.springframework.org/schema/beans 
+       http://www.springframework.org/schema/beans/spring-beans.xsd  
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop 
+       http://www.springframework.org/schema/aop/spring-aop.xsd&quot;</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">context:component-scan</span> <span class="hljs-attr">base-package</span>=<span class="hljs-string">&quot;com.imooc.aop.schema&quot;</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">context:component-scan</span>&gt;</span>
+
+   <span class="hljs-tag">&lt;<span class="hljs-name">aop:config</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">aop:aspect</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;concurrentOperationRetry&quot;</span>     
+                   <span class="hljs-attr">ref</span>=<span class="hljs-string">&quot;concurrentOperationExecutor&quot;</span>&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">aop:pointcut</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;idempotentOperation&quot;</span>
+               <span class="hljs-attr">expression</span>=<span class="hljs-string">&quot;execution(* com.imooc.aop.schema.advisors.service.*.*(..)) &quot;</span> /&gt;</span>
+           <span class="hljs-tag">&lt;<span class="hljs-name">aop:around</span> <span class="hljs-attr">pointcut-ref</span>=<span class="hljs-string">&quot;idempotentOperation&quot;</span> 
+                       <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;doConcurrentOperation&quot;</span> /&gt;</span>
+       <span class="hljs-tag">&lt;/<span class="hljs-name">aop:aspect</span>&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">aop:config</span>&gt;</span>
+
+   <span class="hljs-tag">&lt;<span class="hljs-name">bean</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;concurrentOperationExecutor&quot;</span> 
+         <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;com.imooc.aop.schema.advisors.ConcurrentOperationExecutor&quot;</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;maxRetries&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;3&quot;</span> /&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">property</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;order&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;100&quot;</span> /&gt;</span>
+   <span class="hljs-tag">&lt;/<span class="hljs-name">bean</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">beans</span>&gt;</span>
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.aspectj.lang.ProceedingJoinPoint;
+<span class="hljs-keyword">import</span> org.springframework.core.Ordered;
+<span class="hljs-keyword">import</span> org.springframework.dao.PessimisticLockingFailureException;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcurrentOperationExecutor</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Ordered</span> </span>{
+   <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> DEFAULT_MAX_RETRIES = <span class="hljs-number">2</span>;
+   <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> maxRetries = DEFAULT_MAX_RETRIES;
+   <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> order = <span class="hljs-number">1</span>;
+
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setMaxRetries</span><span class="hljs-params">(<span class="hljs-keyword">int</span> maxRetries)</span> </span>{
+       <span class="hljs-keyword">this</span>.maxRetries = maxRetries;
+   }
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getOrder</span><span class="hljs-params">()</span> </span>{
+       <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.order;
+   }
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setOrder</span><span class="hljs-params">(<span class="hljs-keyword">int</span> order)</span> </span>{
+       <span class="hljs-keyword">this</span>.order = order;
+   }
+   <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">doConcurrentOperation</span><span class="hljs-params">(ProceedingJoinPoint pjp)</span> <span class="hljs-keyword">throws</span> Throwable </span>{
+       <span class="hljs-keyword">int</span> numAttempts = <span class="hljs-number">0</span>;
+       PessimisticLockingFailureException lockFailureException;
+       do {
+           numAttempts++;
+           System.out.println(<span class="hljs-string">&quot;Try times : &quot;</span> + numAttempts);
+           <span class="hljs-keyword">try</span> {
+               <span class="hljs-keyword">return</span> pjp.proceed();
+           } <span class="hljs-keyword">catch</span> (PessimisticLockingFailureException ex) {
+               lockFailureException = ex;
+           }
+       } <span class="hljs-keyword">while</span> (numAttempts &lt;= <span class="hljs-keyword">this</span>.maxRetries);
+       System.out.println(<span class="hljs-string">&quot;Try error : &quot;</span> + numAttempts);
+       <span class="hljs-keyword">throw</span> lockFailureException;
+   }
+}
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.springframework.dao.PessimisticLockingFailureException;
+<span class="hljs-keyword">import</span> org.springframework.stereotype.Service;
+
+<span class="hljs-meta">@Service</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">InvokeService</span> </span>{
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">invoke</span><span class="hljs-params">()</span> </span>{
+       System.out.println(<span class="hljs-string">&quot;InvokeService ......&quot;</span>);
+   }
+   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">invokeException</span><span class="hljs-params">()</span> </span>{
+       <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> PessimisticLockingFailureException(<span class="hljs-string">&quot;&quot;</span>);
+   }
+}
+</code></pre>
+<pre><code class="lang-java">@Test 
+public void testSave0{ 
+   InvokeService service=super.getBeaninvokeService&quot;); 
+   service.invoke0; 
+   System.out printin0.
+   service.invokeException0;
+}
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-comment">// &#x8F93;&#x51FA;</span>
+Try times:<span class="hljs-number">1</span> 
+InvokeService... 
+
+Try times:<span class="hljs-number">1</span> 
+Try times:<span class="hljs-number">2</span> 
+Try times:<span class="hljs-number">3</span> 
+Try times:<span class="hljs-number">4</span> 
+Try error:<span class="hljs-number">4</span>
+</code></pre>
+</li>
+</ul>
+</blockquote>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; narutohyc.com 2020 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2022-01-16 08:08:17
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Spring注解_常用注解.html" class="navigation navigation-prev " aria-label="Previous page: Spring注解_常用注解">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Java基础.md" class="navigation navigation-next " aria-label="Next page: Java基础">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Spring注解_Spring入门篇","level":"1.5.3","depth":2,"next":{"title":"Java基础","level":"1.6","depth":1,"path":"chapters/Java基础.md","ref":"chapters/Java基础.md","articles":[{"title":"Java基础_集合","level":"1.6.1","depth":2,"path":"chapters/Java基础_集合.md","ref":"chapters/Java基础_集合.md","articles":[]},{"title":"Java基础_泛型","level":"1.6.2","depth":2,"path":"chapters/Java基础_泛型.md","ref":"chapters/Java基础_泛型.md","articles":[]},{"title":"Java基础_打jar包","level":"1.6.3","depth":2,"path":"chapters/Java基础_打jar包.md","ref":"chapters/Java基础_打jar包.md","articles":[]},{"title":"Java基础_正则匹配","level":"1.6.4","depth":2,"path":"chapters/Java基础_正则匹配.md","ref":"chapters/Java基础_正则匹配.md","articles":[]},{"title":"Java基础_反射机制","level":"1.6.5","depth":2,"path":"chapters/Java基础_反射机制.md","ref":"chapters/Java基础_反射机制.md","articles":[]},{"title":"Java基础_对象正反序列化","level":"1.6.6","depth":2,"path":"chapters/Java基础_对象正反序列化.md","ref":"chapters/Java基础_对象正反序列化.md","articles":[]},{"title":"Java基础_读取配置文件","level":"1.6.7","depth":2,"path":"chapters/Java基础_读取配置文件.md","ref":"chapters/Java基础_读取配置文件.md","articles":[]},{"title":"Java基础_解析与生成XML","level":"1.6.8","depth":2,"path":"chapters/Java基础_解析与生成XML.md","ref":"chapters/Java基础_解析与生成XML.md","articles":[]},{"title":"Java基础_后台服务器开发","level":"1.6.9","depth":2,"path":"chapters/Java基础_后台服务器开发.md","ref":"chapters/Java基础_后台服务器开发.md","articles":[]},{"title":"Java基础_四舍五入","level":"1.6.10","depth":2,"path":"chapters/Java基础_四舍五入.md","ref":"chapters/Java基础_四舍五入.md","articles":[]}]},"previous":{"title":"Spring注解_常用注解","level":"1.5.2","depth":2,"path":"chapters/Spring注解_常用注解.md","ref":"chapters/Spring注解_常用注解.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2020","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java相关学习记录","language":"zh-hans","links":{"sidebar":{"我的狗窝":"https://github.com/narutohyc"}},"gitbook":"*","description":"记录 Java 的学习和一些技巧的使用"},"file":{"path":"chapters/Spring注解_Spring入门篇.md","mtime":"2022-01-16T08:08:17.589Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-16T08:08:57.028Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

@@ -1,0 +1,1544 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>设计模式_创建型模式 · Java相关学习记录</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="narutohyc">
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="设计模式_结构型模式.html" />
+    
+    
+    <link rel="prev" href="设计模式_六大设计原则.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/narutohyc" target="_blank" class="custom-link">我的狗窝</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="设计模式.md">
+            
+                <span>
+            
+                    
+                        <b>1.2.</b>
+                    
+                    设计模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="设计模式_设计模式的概念.html">
+            
+                <a href="设计模式_设计模式的概念.html">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    设计模式_设计模式的概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="设计模式_组成和分类.html">
+            
+                <a href="设计模式_组成和分类.html">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    设计模式_组成和分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="设计模式_六大设计原则.html">
+            
+                <a href="设计模式_六大设计原则.html">
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    设计模式_六大设计原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4" data-path="设计模式_创建型模式.html">
+            
+                <a href="设计模式_创建型模式.html">
+            
+                    
+                        <b>1.2.4.</b>
+                    
+                    设计模式_创建型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="设计模式_结构型模式.html">
+            
+                <a href="设计模式_结构型模式.html">
+            
+                    
+                        <b>1.2.5.</b>
+                    
+                    设计模式_结构型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="设计模式_行为型模式.html">
+            
+                <a href="设计模式_行为型模式.html">
+            
+                    
+                        <b>1.2.6.</b>
+                    
+                    设计模式_行为型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="设计模式_总结.html">
+            
+                <a href="设计模式_总结.html">
+            
+                    
+                        <b>1.2.7.</b>
+                    
+                    设计模式_总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="多线程.md">
+            
+                <span>
+            
+                    
+                        <b>1.3.</b>
+                    
+                    多线程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="多线程_基础篇.html">
+            
+                <a href="多线程_基础篇.html">
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    多线程_基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="多线程_锁.html">
+            
+                <a href="多线程_锁.html">
+            
+                    
+                        <b>1.3.2.</b>
+                    
+                    多线程_锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="多线程_JUC原子类.html">
+            
+                <a href="多线程_JUC原子类.html">
+            
+                    
+                        <b>1.3.3.</b>
+                    
+                    多线程_JUC原子类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="多线程_JUC锁集合 .html">
+            
+                <a href="多线程_JUC锁集合 .html">
+            
+                    
+                        <b>1.3.4.</b>
+                    
+                    多线程_JUC锁集合 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="多线程_ JUC集合.html">
+            
+                <a href="多线程_ JUC集合.html">
+            
+                    
+                        <b>1.3.5.</b>
+                    
+                    多线程_ JUC集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="多线程_JUC线程池.html">
+            
+                <a href="多线程_JUC线程池.html">
+            
+                    
+                        <b>1.3.6.</b>
+                    
+                    多线程_JUC线程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="多线程_生产者消费者.html">
+            
+                <a href="多线程_生产者消费者.html">
+            
+                    
+                        <b>1.3.7.</b>
+                    
+                    多线程_生产者消费者
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="IDEA快捷键.html">
+            
+                <a href="IDEA快捷键.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    IDEA快捷键
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="Spring注解.md">
+            
+                <span>
+            
+                    
+                        <b>1.5.</b>
+                    
+                    Spring注解
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="Spring注解_介绍.html">
+            
+                <a href="Spring注解_介绍.html">
+            
+                    
+                        <b>1.5.1.</b>
+                    
+                    Spring注解_介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="Spring注解_常用注解.html">
+            
+                <a href="Spring注解_常用注解.html">
+            
+                    
+                        <b>1.5.2.</b>
+                    
+                    Spring注解_常用注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="Spring注解_Spring入门篇.html">
+            
+                <a href="Spring注解_Spring入门篇.html">
+            
+                    
+                        <b>1.5.3.</b>
+                    
+                    Spring注解_Spring入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="Java基础.md">
+            
+                <span>
+            
+                    
+                        <b>1.6.</b>
+                    
+                    Java基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="Java基础_集合.html">
+            
+                <a href="Java基础_集合.html">
+            
+                    
+                        <b>1.6.1.</b>
+                    
+                    Java基础_集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="Java基础_泛型.html">
+            
+                <a href="Java基础_泛型.html">
+            
+                    
+                        <b>1.6.2.</b>
+                    
+                    Java基础_泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="Java基础_打jar包.html">
+            
+                <a href="Java基础_打jar包.html">
+            
+                    
+                        <b>1.6.3.</b>
+                    
+                    Java基础_打jar包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="Java基础_正则匹配.html">
+            
+                <a href="Java基础_正则匹配.html">
+            
+                    
+                        <b>1.6.4.</b>
+                    
+                    Java基础_正则匹配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="Java基础_反射机制.html">
+            
+                <a href="Java基础_反射机制.html">
+            
+                    
+                        <b>1.6.5.</b>
+                    
+                    Java基础_反射机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="Java基础_对象正反序列化.html">
+            
+                <a href="Java基础_对象正反序列化.html">
+            
+                    
+                        <b>1.6.6.</b>
+                    
+                    Java基础_对象正反序列化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="Java基础_读取配置文件.html">
+            
+                <a href="Java基础_读取配置文件.html">
+            
+                    
+                        <b>1.6.7.</b>
+                    
+                    Java基础_读取配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="Java基础_解析与生成XML.html">
+            
+                <a href="Java基础_解析与生成XML.html">
+            
+                    
+                        <b>1.6.8.</b>
+                    
+                    Java基础_解析与生成XML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="Java基础_后台服务器开发.html">
+            
+                <a href="Java基础_后台服务器开发.html">
+            
+                    
+                        <b>1.6.9.</b>
+                    
+                    Java基础_后台服务器开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="Java基础_四舍五入.html">
+            
+                <a href="Java基础_四舍五入.html">
+            
+                    
+                        <b>1.6.10.</b>
+                    
+                    Java基础_四舍五入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="Java进阶.md">
+            
+                <span>
+            
+                    
+                        <b>1.7.</b>
+                    
+                    Java进阶
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="Java进阶_反射.html">
+            
+                <a href="Java进阶_反射.html">
+            
+                    
+                        <b>1.7.1.</b>
+                    
+                    Java进阶_反射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="Java进阶_注解.html">
+            
+                <a href="Java进阶_注解.html">
+            
+                    
+                        <b>1.7.2.</b>
+                    
+                    Java进阶_注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="MySQL.md">
+            
+                <span>
+            
+                    
+                        <b>1.8.</b>
+                    
+                    MySQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="MySQL_基础.html">
+            
+                <a href="MySQL_基础.html">
+            
+                    
+                        <b>1.8.1.</b>
+                    
+                    MySQL_基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="MySQL_约束.html">
+            
+                <a href="MySQL_约束.html">
+            
+                    
+                        <b>1.8.2.</b>
+                    
+                    MySQL_约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="MySQL_多表查询.html">
+            
+                <a href="MySQL_多表查询.html">
+            
+                    
+                        <b>1.8.3.</b>
+                    
+                    MySQL_多表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="MySQL_事务.html">
+            
+                <a href="MySQL_事务.html">
+            
+                    
+                        <b>1.8.4.</b>
+                    
+                    MySQL_事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="MySQL_数据库设计.html">
+            
+                <a href="MySQL_数据库设计.html">
+            
+                    
+                        <b>1.8.5.</b>
+                    
+                    MySQL_数据库设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="JDBC.md">
+            
+                <span>
+            
+                    
+                        <b>1.9.</b>
+                    
+                    JDBC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="JDBC_JDBC基础.html">
+            
+                <a href="JDBC_JDBC基础.html">
+            
+                    
+                        <b>1.9.1.</b>
+                    
+                    JDBC_JDBC基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="JDBC_JDBC连接池.html">
+            
+                <a href="JDBC_JDBC连接池.html">
+            
+                    
+                        <b>1.9.2.</b>
+                    
+                    JDBC_JDBC连接池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="JDBC_JDBCTemplate.html">
+            
+                <a href="JDBC_JDBCTemplate.html">
+            
+                    
+                        <b>1.9.3.</b>
+                    
+                    JDBC_JDBCTemplate
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >设计模式_创建型模式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x521B;&#x5EFA;&#x578B;&#x6A21;&#x5F0F;"><b></b>&#x521B;&#x5EFA;&#x578B;&#x6A21;&#x5F0F;</a></li><li><span class="title-icon "></span><a href="#&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;abstract-factory"><b></b>&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;(Abstract Factory)</a></li><li><span class="title-icon "></span><a href="#&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;builder"><b></b>&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;(Builder)</a></li><li><span class="title-icon "></span><a href="#&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;factory-method"><b></b>&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;(Factory Method)</a></li><li><span class="title-icon "></span><a href="#&#x539F;&#x578B;&#x6A21;&#x5F0F;prototype"><b></b>&#x539F;&#x578B;&#x6A21;&#x5F0F;(Prototype)</a></li><li><span class="title-icon "></span><a href="#&#x5355;&#x4F8B;&#x6A21;&#x5F0F;singleton"><b></b>&#x5355;&#x4F8B;&#x6A21;&#x5F0F;(Singleton)</a></li></ul></div><a href="#&#x521B;&#x5EFA;&#x578B;&#x6A21;&#x5F0F;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><img src="https://upload-images.jianshu.io/upload_images/15675864-e39212ac990782cf.png" alt="&#x5F02;&#x4E16;&#x754C;.png"></p>
+<p>[TOC]</p>
+<h1 id="&#x521B;&#x5EFA;&#x578B;&#x6A21;&#x5F0F;"><a name="&#x521B;&#x5EFA;&#x578B;&#x6A21;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x521B;&#x5EFA;&#x578B;&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x521B;&#x5EFA;&#x578B;&#x6A21;&#x5F0F;" class="plugin-anchor" href="#&#x521B;&#x5EFA;&#x578B;&#x6A21;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x521B;&#x5EFA;&#x578B;&#x6A21;&#x5F0F;</h1>
+<blockquote>
+<p><a href="http://www.plantuml.com/plantuml/uml/SyfFKj2rKt3CoKnELR1Io4ZDoSa70000" target="_blank">&#x5728;&#x7EBF;plantuml&#x5DE5;&#x5177;</a></p>
+<p><a href="http://plantuml.com/zh/class-diagram" target="_blank">plantuml&#x8BED;&#x6CD5;</a></p>
+<p><a href="https://support.typora.io/Draw-Diagrams-With-Markdown/" target="_blank">Draw Diagrams With Markdown</a></p>
+</blockquote>
+<h1 id="&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;abstract-factory"><a name="&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;abstract-factory" class="anchor-navigation-ex-anchor" href="#&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;abstract-factory"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;abstract-factory" class="plugin-anchor" href="#&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;abstract-factory"><i class="fa fa-link" aria-hidden="true"></i></a><strong>&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;</strong>(Abstract Factory)</h1>
+<p><img src="http://www.plantuml.com/plantuml/png/fPDFIiD05CRtSufPjaXw097IFzx04wJj284abPc91Vz05IjMYXIABbIG8gBWghYejlOscRGxhs3Y3FPrd0OXs_TxyxqlttifCMvJ7dWkickCKxlESRd6AbwhQjD3XF56Wphx99T7nyXlSe9TiiitSNGvMuo6uUHP34w-FdlXz74nV0advz53FtnlpqVJ-UsPfAZksepXM71dhqdv7zKbhmJCyGbZgOD5PnpE1l6OU8OQi6Ay73ISTJCI9asaDAntiHeGyG_MoIHCpabf-EUSxQGiE-gKs9oemRayA7ajhQ9IC6zDZ9_4rMcyDT7hYFvhihLkExhloZZ5nPsOJkBroURevYDwkrQ-VpugkoCLWWeWkvuIhBeEyJb2l-UBjuui2rwUXk3HAIfb5GRtOeRQOsbSSNW4HgWzbZ5837BMa9OQaj-CBQku_6jX4RW6PN30Ubdf0WUuK2Z247McfwXZaA8PfZq6APeXV8n0E2RZPWmLO0TqcB45V4SAXn8buZS2p_q6" alt="&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;(Abstract Factory)&#x7ED3;&#x6784;&#x56FE;"></p>
+<pre><code class="lang-json">@startuml
+abstract AbsBmwCar{
+  +drive()
+}
+note left: &#x62BD;&#x8C61;&#x4EA7;&#x54C1;&#xFF0C;&#x4EE3;&#x8868;&#x4E86;&#x67D0;&#x4E00;&#x7C7B;&#x7684;&#x4EA7;&#x54C1;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BmwSportCar</span></span>{
+  +drive()
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BmwBusinessCar</span></span>{
+  +drive()
+}
+note left: &#x5177;&#x4F53;&#x67D0;&#x7C7B;&#x4EA7;&#x54C1;
+
+abstract AbsAudiCar{
+  +drive()
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AudiSportCar</span></span>{
+  +drive()
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AudiBusinessCar</span></span>{
+  +drive()
+}
+
+abstract AbsBenzCar{
+  +drive()
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BenzSportCar</span></span>{
+  +drive()
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BenzBusinessCar</span></span>{
+  +drive()
+}
+
+abstract AbsDriver{
+  +createBenzCar()
+  +createBmwCar()
+  +createAudiCar()
+}
+note left: &#x62BD;&#x8C61;&#x5DE5;&#x5382;&#xFF0C;&#x5305;&#x542B;&#x4E86;&#x6240;&#x6709;&#x4EA7;&#x54C1;&#x521B;&#x5EFA;&#x7684;&#x62BD;&#x8C61;&#x65B9;&#x6CD5;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SportDriver</span></span>{
+  +createBenzCar()
+  +createBmwCar()
+  +createAudiCar()
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BusinessDriver</span></span>{
+  +createBenzCar()
+  +createBmwCar()
+  +createAudiCar()
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span>
+
+<span class="hljs-title">AbsBmwCar</span> &lt;|-- <span class="hljs-title">BmwSportCar</span>
+<span class="hljs-title">AbsBmwCar</span> &lt;|-- <span class="hljs-title">BmwBusinessCar</span>
+<span class="hljs-title">AbsAudiCar</span> &lt;|-- <span class="hljs-title">AudiSportCar</span>
+<span class="hljs-title">AbsAudiCar</span> &lt;|-- <span class="hljs-title">AudiBusinessCar</span>
+<span class="hljs-title">AbsBenzCar</span> &lt;|-- <span class="hljs-title">BenzSportCar</span>
+<span class="hljs-title">AbsBenzCar</span> &lt;|-- <span class="hljs-title">BenzBusinessCar</span>
+<span class="hljs-title">AbsDriver</span> &lt;|-- <span class="hljs-title">SportDriver</span>
+<span class="hljs-title">AbsDriver</span> &lt;|-- <span class="hljs-title">BusinessDriver</span>
+<span class="hljs-title">Client</span> --&gt; <span class="hljs-title">AbsBmwCar</span>
+<span class="hljs-title">Client</span> --&gt; <span class="hljs-title">AbsAudiCar</span> 
+<span class="hljs-title">Client</span> --&gt; <span class="hljs-title">AbsBenzCar</span> 
+<span class="hljs-title">Client</span> --&gt; <span class="hljs-title">AbsDriver</span>
+<span class="hljs-title">SportDriver</span> ..&gt; <span class="hljs-title">BmwSportCar</span>
+<span class="hljs-title">SportDriver</span> ..&gt; <span class="hljs-title">BmwBusinessCar</span>
+<span class="hljs-title">SportDriver</span> ..&gt; <span class="hljs-title">AudiSportCar</span>
+<span class="hljs-title">SportDriver</span> ..&gt; <span class="hljs-title">AudiBusinessCar</span>
+<span class="hljs-title">SportDriver</span> ..&gt; <span class="hljs-title">BenzSportCar</span>
+<span class="hljs-title">SportDriver</span> ..&gt; <span class="hljs-title">BenzBusinessCar</span>
+
+<span class="hljs-title">BusinessDriver</span> ..&gt; <span class="hljs-title">BmwSportCar</span>
+<span class="hljs-title">BusinessDriver</span> ..&gt; <span class="hljs-title">BmwBusinessCar</span>
+<span class="hljs-title">BusinessDriver</span> ..&gt; <span class="hljs-title">AudiBusinessCar</span>
+<span class="hljs-title">BusinessDriver</span> ..&gt; <span class="hljs-title">AudiBusinessCar</span>
+<span class="hljs-title">BusinessDriver</span> ..&gt; <span class="hljs-title">BenzSportCar</span>
+<span class="hljs-title">BusinessDriver</span> ..&gt; <span class="hljs-title">BenzBusinessCar</span>
+@<span class="hljs-title">enduml</span>
+</span></code></pre>
+<blockquote>
+<p><a href="https://www.cnblogs.com/betterboyz/p/9355777.html" target="_blank">&#x300A;JAVA&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x300B;&#x4E4B;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;(Abstract Factory)</a></p>
+<p>&#x6BCF;&#x4E00;&#x4E2A;&#x6A21;&#x5F0F;&#x90FD;&#x662F;&#x9488;&#x5BF9;&#x4E00;&#x5B9A;&#x95EE;&#x9898;&#x7684;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x3002;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x4E0E;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x7684;&#x6700;&#x5927;&#x533A;&#x522B;&#x5C31;&#x5728;&#x4E8E;&#xFF0C;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x9488;&#x5BF9;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x4EA7;&#x54C1;&#x7B49;&#x7EA7;&#x7ED3;&#x6784;&#xFF1B;&#x800C;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5219;&#x9700;&#x8981;&#x9762;&#x5BF9;&#x591A;&#x4E2A;&#x4EA7;&#x54C1;&#x7B49;&#x7EA7;&#x7ED3;&#x6784;&#x3002;</p>
+<h5 id="&#x4F18;&#x70B9;"><a name="&#x4F18;&#x70B9;" class="anchor-navigation-ex-anchor" href="#&#x4F18;&#x70B9;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4F18;&#x70B9;" class="plugin-anchor" href="#&#x4F18;&#x70B9;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F18;&#x70B9;</h5>
+<p>&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x6B63;&#x5982;&#x5176;&#x540D;&#x5B57;&#x4E00;&#x6837;&#xFF0C;&#x7406;&#x89E3;&#x8D77;&#x6765;&#x975E;&#x5E38;&#x62BD;&#x8C61;&#xFF0C;<strong>&#x6B63;&#x662F;&#x56E0;&#x4E3A;&#x8FD9;&#x79CD;&#x62BD;&#x8C61;&#xFF0C;&#x4F7F;&#x5F97;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x975E;&#x5E38;&#x5F3A;&#x5927;&#x548C;&#x7075;&#x6D3B;</strong>&#xFF0C;&#x6BD4;&#x5176;&#x4ED6;&#x4E24;&#x79CD;&#x5DE5;&#x5382;&#x8BBE;&#x8BA1;&#x6A21;&#x5F0F;&#x8981;&#x5F3A;&#x5927;&#x5F88;&#x591A;&#x3002;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x591A;&#x4E2A;&#x7CFB;&#x5217;&#xFF0C;&#x5E76;&#x4E14;&#x6BCF;&#x4E2A;&#x7CFB;&#x5217;&#x62BD;&#x8C61;&#x5B50;&#x7C7B;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;&#xFF0C;&#x8FD9;&#x79CD;&#x5F3A;&#x5927;&#x7684;&#x529F;&#x80FD;&#x662F;&#x5176;&#x4ED6;&#x4E24;&#x79CD;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x90FD;&#x4E0D;&#x80FD;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<p><strong>&#x901A;&#x8FC7;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7EDF;&#x4E00;&#x63A7;&#x5236;&#x591A;&#x4E2A;&#x7CFB;&#x5217;&#x7684;&#x62BD;&#x8C61;&#x5B50;&#x7C7B;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x591A;&#x4E2A;&#x7CFB;&#x5217;&#x7684;&#x62BD;&#x8C61;&#x5B50;&#x7C7B;&#x5B8C;&#x6210;&#x4E00;&#x4E9B;&#x590D;&#x6742;&#x7684;&#x9700;&#x6C42;</strong>&#x3002;&#x4F8B;&#x5982;&#x6211;&#x4EEC;&#x6587;&#x4E2D;&#x8BF4;&#x5230;&#x7684;&#x672C;&#x5730;&#x6301;&#x4E45;&#x5316;&#x65B9;&#x6848;&#x7684;&#x5207;&#x6362;&#xFF0C;&#x6700;&#x540E;&#x901A;&#x8FC7;&#x6211;&#x4EEC;&#x7684;&#x4E0D;&#x65AD;&#x4F18;&#x5316;&#xFF0C;&#x505A;&#x5230;<strong>&#x53EA;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x4E00;&#x4E2A;&#x9884;&#x7F16;&#x8BD1;&#x6307;&#x4EE4;&#x7684;&#x53C2;&#x6570;&#x5373;&#x53EF;&#x5207;&#x6362;&#x6574;&#x4E2A;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5316;&#x65B9;&#x6848;</strong>&#xFF0C;&#x8FD9;&#x662F;&#x5176;&#x4ED6;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x6240;&#x4E0D;&#x80FD;&#x5B8C;&#x6210;&#x7684;&#x3002;</p>
+<p><strong>&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5EF6;&#x7EED;&#x4E86;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x7684;&#x4F18;&#x70B9;&#xFF0C;&#x5916;&#x754C;&#x63A5;&#x89E6;&#x4E0D;&#x5230;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#x7684;&#x62BD;&#x8C61;&#x5B50;&#x7C7B;</strong>&#xFF0C;&#x800C;&#x53EA;&#x9700;&#x8981;&#x77E5;&#x9053;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x62BD;&#x8C61;&#x7C7B;&#x5373;&#x53EF;&#xFF0C;&#x62BD;&#x8C61;&#x5B50;&#x7C7B;&#x7684;&#x521B;&#x5EFA;&#x8FC7;&#x7A0B;&#x90FD;&#x5728;&#x5DE5;&#x5382;&#x5B50;&#x7C7B;&#x4E2D;&#x3002;&#x8FD9;&#x79CD;&#x8BBE;&#x8BA1;&#x65B9;&#x5F0F;&#x5145;&#x5206;&#x7684;&#x5229;&#x7528;&#x4E86;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x8BED;&#x8A00;&#x4E2D;&#x7684;&#x591A;&#x6001;&#x7279;&#x6027;&#xFF0C;&#x4F7F;&#x7075;&#x6D3B;&#x6027;&#x5927;&#x5927;&#x63D0;&#x5347;&#x3002;&#x800C;&#x4E14;<strong>&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x662F;&#x975E;&#x5E38;&#x7B26;&#x5408;&#x5F00;&#x653E;&#x5C01;&#x95ED;&#x539F;&#x5219;&#x7684;&#xFF0C;&#x5BF9;&#x6269;&#x5C55;&#x7684;&#x5F00;&#x653E;&#x4EE5;&#x53CA;&#x5BF9;&#x4FEE;&#x6539;&#x7684;&#x5C01;&#x95ED;&#x90FD;&#x5B8C;&#x7F8E;&#x652F;&#x6301;</strong>&#x3002;</p>
+<p><strong>&#x7F3A;&#x70B9;</strong></p>
+<p>&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x6A21;&#x5F0F;&#x5E26;&#x6765;&#x7684;&#x7F3A;&#x70B9;&#x4E5F;&#x662F;&#x663E;&#x800C;&#x6613;&#x89C1;&#x7684;&#xFF0C;<strong>&#x6700;&#x660E;&#x663E;&#x7684;&#x7F3A;&#x70B9;&#x5C31;&#x662F;&#x6A21;&#x5F0F;&#x6BD4;&#x8F83;&#x5E9E;&#x5927;</strong>&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x5728;&#x9002;&#x5408;&#x7684;&#x4E1A;&#x52A1;&#x573A;&#x666F;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#xFF0C;&#x5426;&#x5219;&#x4F1A;&#x9002;&#x5F97;&#x5176;&#x53CD;&#x3002;</p>
+<p>&#x4E0A;&#x9762;&#x8BF4;&#x5230;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x548C;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x7684;&#x529F;&#x80FD;&#x6DFB;&#x52A0;&#x90FD;&#x975E;&#x5E38;&#x590D;&#x6742;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x6709;&#x6CA1;&#x6709;&#x4EC0;&#x4E48;&#x529E;&#x6CD5;&#x53EF;&#x4EE5;&#x7B80;&#x5316;&#x5462;&#xFF1F; </p>
+<p>&#x7B54;&#x6848;&#x662F;&#x80AF;&#x5B9A;&#x6709;&#x7684;&#xFF1A; &#x90A3;&#x5C31;&#x662F;&#x5DE5;&#x5382;&#x6A21;&#x5F0F; +  &#x914D;&#x7F6E;&#x6587;&#x4EF6; + &#x53CD;&#x5C04;&#x3002;&#x5177;&#x4F53;&#x600E;&#x4E48;&#x5B9E;&#x73B0;&#xFF0C;&#x8BF7;&#x770B;&#x4E0B;&#x56DE;&#x5206;&#x89E3;&#x3002;</p>
+</blockquote>
+<h1 id="&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;builder"><a name="&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;builder" class="anchor-navigation-ex-anchor" href="#&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;builder"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;builder" class="plugin-anchor" href="#&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;builder"><i class="fa fa-link" aria-hidden="true"></i></a><strong>&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;</strong>(Builder)</h1>
+<blockquote>
+<p><a href="https://blog.csdn.net/u014727260/article/details/82712802" target="_blank">&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;</a></p>
+</blockquote>
+<p><img src="http://www.plantuml.com/plantuml/png/hP91Ipf16CRlyoa6_fT_v0fvN4Aa-W1ILo-wEzh2EYEpirugC78fmYooGnW88P9qqBgKATANsLdrMpJhp8HwxhJCi--yp-zztibuB4-PNtQ1vUOz3nuu55cCq1C0eL7m7TT6rDoJNo5jMmHxZFeM-xzbLebZWpE02KEGaOe9eyPbrEZDQq4YwjJvP1oEQk7eDPn-pnxwgaVKxF7RxgnTvyEl-Vip00vcY1Rp5eAg8dR-jtJE2h8TxRCgfbP4YXXrK1KT8iztOwei9RRWMmFJve_3S3JcLq-_RAfOmkHmp7LN5_hYeXzEFiGyVD0MOdGz5VybEr19gQjmcLGbHZMF10ekwNDAdnL9WJ16oYRamMSuRONZ5zuwryts2ROeOaY1ofxIG0_qjx6imyX8uiNnGMVMV5jRLYA7vJhvVMFU3HR1pMf60AXYk7jg69k3W8qpJBgeo99fg77qUuF4e4xfc1bfgAzc4BR5m_m1" alt="&#x5EFA;&#x9020;&#x8005;&#x6A21;&#x5F0F;(Builder)&#x7ED3;&#x6784;&#x56FE;"></p>
+<pre><code class="lang-json">@startuml
+class Director{
+  -builder:Builder
+  +construct():void
+}
+note top: &#x6307;&#x6325;&#x8005;,&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;Builder&#x63A5;&#x53E3;&#x7684;&#x5BF9;&#x8C61;
+
+interface Builder{
+  #buildPart1():void
+  #buildPart2():void
+  #retrieveResult():Product
+}
+note top: Builder&#x662F;&#x4E3A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;Product&#x5BF9;&#x8C61;\n&#x7684;&#x5404;&#x4E2A;&#x90E8;&#x4EF6;&#x6307;&#x5B9A;&#x7684;&#x62BD;&#x8C61;&#x63A5;&#x53E3;
+
+class Product {
+  -part1:String
+  -part2:String
+}
+note bottom: &#x5177;&#x4F53;&#x4EA7;&#x54C1;
+
+class ConcreteBuilder{
+  -product:Product
+  #buildPart1():void
+  #buildPart2():void
+  #retrieveResult():Product
+}
+note bottom: &#x5177;&#x4F53;&#x521B;&#x5EFA;&#x8005;,&#x5B9E;&#x73B0;Builder&#x63A5;&#x53E3;,\n&#x6784;&#x5EFA;&#x548C;&#x88C5;&#x914D;&#x5404;&#x4E2A;&#x90E8;&#x4EF6;
+
+Builder &lt;|-- ConcreteBuilder
+ConcreteBuilder .left.&gt; Product
+Director o-right-&gt; Builder
+@enduml
+</code></pre>
+<h1 id="&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;factory-method"><a name="&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;factory-method" class="anchor-navigation-ex-anchor" href="#&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;factory-method"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;factory-method" class="plugin-anchor" href="#&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;factory-method"><i class="fa fa-link" aria-hidden="true"></i></a><strong>&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;</strong>(Factory Method)</h1>
+<p><img src="res/Java%20Design%20Pattern/%E5%B7%A5%E5%8E%82%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F.png" alt="&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x7ED3;&#x6784;&#x56FE;"></p>
+<pre><code class="lang-json">@startuml
+interface Icar{
+  +run()
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Audi</span></span>{
+  +run()
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Byd</span></span>{
+  +run()
+}
+
+interface ICarFactory{
+  +createCar()
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AudiFactory</span></span>{
+  +createCar()
+}
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BydFactory</span></span>{
+  +createCar()
+}
+
+Icar .left.&gt; ICarFactory
+Icar &lt;|-- Audi
+Icar &lt;|-- Byd
+ICarFactory &lt;|-- AudiFactory
+ICarFactory &lt;|-- BydFactory
+Audi &lt;.. AudiFactory
+Byd &lt;.. BydFactory
+@enduml
+</code></pre>
+<blockquote>
+<p>&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x89D2;&#x8272;&#xFF1A;</p>
+<p>&#x200B;           &#x62BD;&#x8C61;&#x5DE5;&#x5382;(Creator)&#x89D2;&#x8272;&#xFF1A;&#x662F;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x7684;&#x6838;&#x5FC3;&#xFF0C;&#x4E0E;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x65E0;&#x5173;&#x3002;&#x4EFB;&#x4F55;&#x5728;&#x6A21;&#x5F0F;&#x4E2D;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x5DE5;&#x5382;&#x7C7B;&#x5FC5;&#x987B;&#x5B9E;&#x73B0;&#x8FD9;&#x4E2A;&#x63A5;&#x53E3;&#x3002;</p>
+<p>&#x200B;           &#x5177;&#x4F53;&#x5DE5;&#x5382;(Concrete Creator)&#x89D2;&#x8272;&#xFF1A;&#x8FD9;&#x662F;&#x5B9E;&#x73B0;&#x62BD;&#x8C61;&#x5DE5;&#x5382;&#x63A5;&#x53E3;&#x7684;&#x5177;&#x4F53;&#x5DE5;&#x5382;&#x7C7B;&#xFF0C;&#x5305;&#x542B;&#x4E0E;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5BC6;&#x5207;&#x76F8;&#x5173;&#x7684;&#x903B;&#x8F91;&#xFF0C;&#x5E76;&#x4E14;&#x53D7;&#x5230;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x8C03;&#x7528;&#x4EE5;&#x521B;&#x5EFA;&#x4EA7;&#x54C1;&#x5BF9;&#x8C61;&#x3002;</p>
+<p>&#x200B;           &#x62BD;&#x8C61;&#x4EA7;&#x54C1;(Product)&#x89D2;&#x8272;&#xFF1A;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x6240;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;&#x7684;&#x8D85;&#x7C7B;&#x578B;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4EA7;&#x54C1;&#x5BF9;&#x8C61;&#x7684;&#x5171;&#x540C;&#x7236;&#x7C7B;&#x6216;&#x5171;&#x540C;&#x62E5;&#x6709;&#x7684;&#x63A5;&#x53E3;&#x3002;</p>
+<p>&#x200B;           &#x5177;&#x4F53;&#x4EA7;&#x54C1;(Concrete Product)&#x89D2;&#x8272;&#xFF1A;&#x8FD9;&#x4E2A;&#x89D2;&#x8272;&#x5B9E;&#x73B0;&#x4E86;&#x62BD;&#x8C61;&#x4EA7;&#x54C1;&#x89D2;&#x8272;&#x6240;&#x5B9A;&#x4E49;&#x7684;&#x63A5;&#x53E3;&#x3002;&#x67D0;&#x5177;&#x4F53;&#x4EA7;&#x54C1;&#x6709;&#x4E13;&#x95E8;&#x7684;&#x5177;&#x4F53;&#x5DE5;&#x5382;&#x521B;&#x5EFA;&#xFF0C;&#x5B83;&#x4EEC;&#x4E4B;&#x95F4;&#x5F80;&#x5F80;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;&#x3002;</p>
+<p>&#x5728;&#x5DE5;&#x5382;&#x65B9;&#x6CD5;&#x6A21;&#x5F0F;&#x4E2D;&#xFF0C;&#x6838;&#x5FC3;&#x5DE5;&#x5382;&#x7C7B;&#x4E0D;&#x5728;&#x8D1F;&#x8D23;&#x4EA7;&#x54C1;&#x7684;&#x521B;&#x5EFA;&#xFF0C;&#x800C;&#x662F;&#x5C06;&#x5177;&#x4F53;&#x7684;&#x521B;&#x5EFA;&#x5DE5;&#x4F5C;&#x4EA4;&#x7ED9;&#x5B50;&#x7C7B;&#x53BB;&#x5B8C;&#x6210;&#x3002;&#x4E5F;&#x5C31;&#x662F;&#x540E;&#x6240;&#x8FD9;&#x4E2A;&#x6838;&#x5FC3;&#x5DE5;&#x5382;&#x4EC5;&#x4EC5;&#x53EA;&#x662F;&#x63D0;&#x4F9B;&#x521B;&#x5EFA;&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x65B9;&#x6CD5;&#x4EA4;&#x7ED9;&#x7EE7;&#x627F;&#x5B83;&#x7684;&#x5B50;&#x7C7B;&#x53BB;&#x5B8C;&#x6210;&#x3002;</p>
+</blockquote>
+<h1 id="&#x539F;&#x578B;&#x6A21;&#x5F0F;prototype"><a name="&#x539F;&#x578B;&#x6A21;&#x5F0F;prototype" class="anchor-navigation-ex-anchor" href="#&#x539F;&#x578B;&#x6A21;&#x5F0F;prototype"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x539F;&#x578B;&#x6A21;&#x5F0F;prototype" class="plugin-anchor" href="#&#x539F;&#x578B;&#x6A21;&#x5F0F;prototype"><i class="fa fa-link" aria-hidden="true"></i></a><strong>&#x539F;&#x578B;&#x6A21;&#x5F0F;</strong>(Prototype)</h1>
+<p><img src="http://www.plantuml.com/plantuml/png/TL9FQzH07BtFfnZmqkBE5mYb57hHWmZkrSia6PF8R1AJtogo2aMjOl_4mz95bbBnLgkDkmZkPcE_pKmsdlmAJZAD6wHxV2-FztxlPNPYe17qUnnPdCOntkKUys60NY8_08OZpt71ADClOhudvXSo-IJF3kN-uU_ns_BTHRdusddeYpmfzuwAqKJcYslPzwoSVaQ8cZ54r0BSTMd81WXZujb65oBFTnIu1Sz3jeAtxOW-szWqdWQUNK6B1pvJ-Bxvc5dGN0H1Q61zntAQTsGw5jbxcPujauaERr-t7ByfHbdnumHTrtl0BA2-mzdWly36tWm0WfvAs9-9g-4gHoSeLpcRLgx3Ot5rshXsd_HfT9DbCweNMNpzTptFBhLSXYiHYIjyZuR67HgxG4tEjlHA7ItThfmS1ZNOgDLtcrqtZPgj53oWTkswfgFwSSN9f3XEvM9O9ZFvOQHQgjQgxvzVHpBxMHmSoFIroB_9ou_orRayFTSJ_pjBp2yHglFmrWj2LlEsIRrEcz5xD0pXx16GrWX8Fq9Co7QRtM6-tU_nlm00" alt="&#x539F;&#x578B;&#x6A21;&#x5F0F;(Prototype)&#x7ED3;&#x6784;&#x56FE;"></p>
+<pre><code class="lang-json">@startuml
+class Client{
+}
+note right:&#x8BA9;&#x4E00;&#x4E2A;&#x539F;&#x578B;&#x514B;&#x9686;&#x81EA;&#x8EAB;,\n&#x4ECE;&#x800C;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;
+
+abstract Shape{
+  -id:String
+  #type:String
+  +draw():void
+  +clone():Object
+}
+note top: &#x539F;&#x578B;&#x7C7B;,&#x5B9A;&#x4E49;&#x5B9E;&#x73B0;&#x4E00;&#x4E2A;&#x514B;&#x9686;&#x81EA;&#x8EAB;&#x7684;&#x65B9;&#x6CD5;
+
+class Rectangle{
+  +draw():void
+}
+note bottom: &#x5177;&#x4F53;&#x539F;&#x578B;&#x7C7B;,&#x5B9E;&#x73B0;&#x81EA;&#x5DF1;&#x7684;&#x64CD;&#x4F5C;
+
+class Square{
+  +draw():void
+}
+
+class Circle{
+  +draw():void
+}
+
+class ShapeCache {
+  -shapeMap:Hashtable&lt;String, Shape&gt;
+  +getShape(shapeId:String):Shape
+  +loadCache():void
+}
+note bottom: &#x4ECE;&#x6570;&#x636E;&#x5E93;&#x83B7;&#x53D6;&#x5B9E;&#x4F53;&#x7C7B;&#xFF0C;&#x5E76;&#x628A;&#x5B83;&#x4EEC;&#x5B58;&#x50A8;&#x5728;&#x4E00;&#x4E2A;Hashtable&#x4E2D;
+
+Shape &lt;|-- Rectangle
+Shape &lt;|-- Square
+Shape &lt;|-- Circle
+Shape &lt;-left- ShapeCache
+Client --&gt; ShapeCache
+@enduml
+</code></pre>
+<h1 id="&#x5355;&#x4F8B;&#x6A21;&#x5F0F;singleton"><a name="&#x5355;&#x4F8B;&#x6A21;&#x5F0F;singleton" class="anchor-navigation-ex-anchor" href="#&#x5355;&#x4F8B;&#x6A21;&#x5F0F;singleton"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5355;&#x4F8B;&#x6A21;&#x5F0F;singleton" class="plugin-anchor" href="#&#x5355;&#x4F8B;&#x6A21;&#x5F0F;singleton"><i class="fa fa-link" aria-hidden="true"></i></a><strong>&#x5355;&#x4F8B;&#x6A21;&#x5F0F;</strong>(Singleton)</h1>
+<p><img src="http://www.plantuml.com/plantuml/png/SoWkIImgAStDuKhEIImkLWZEp4lFIIt9pwlcKb3GpSm3IkSbfofO8IH0ud2EXYQGg-sUMk89LGaKgENAooz9LIZAJCyeiOAhVBvnz_izFK_NpNgoi_F9ZeOdErOXwNeskVV9tZaW-TR65-jsF5stw5d7zXVhzh-SlkxfkkRdirgUJbaFrFHqtRmd-xeVDpJ5v2aWwvwn7cBYoxapdpKqFfksyzdcgK33dkpO_M9PuzEEsKztxthHlkhfzere9d4vfEQb0FqE0000" alt="&#x5355;&#x4F8B;&#x6A21;&#x5F0F;(Singleton)&#x7ED3;&#x6784;&#x56FE;"></p>
+<pre><code class="lang-json">@startuml
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Singleton</span></span>{
+  -instance : Singleton
+  -Singleton()
+  +GetInstance()
+}
+note right:Singleton&#x7C7B;&#xFF0C;&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;GetInstance&#x64CD;&#x4F5C;&#xFF0C;&#x5141;&#x8BB8;&#x5BA2;&#x6237;&#x8BBF;&#x95EE;&#x5B83;&#x7684;&#x552F;&#x4E00;&#x5B9E;&#x4F8B;&#x3002;\n GetInstance&#x662F;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x4E3B;&#x8981;&#x521B;&#x5EFA;&#x81EA;&#x5DF1;&#x7684;&#x552F;&#x4E00;&#x5B9E;&#x4F8B;
+@enduml
+</code></pre>
+<blockquote>
+<p>&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x53EA;&#x5141;&#x8BB8;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x56E0;&#x6B64;&#x8282;&#x7701;&#x5185;&#x5B58;&#xFF0C;&#x52A0;&#x5FEB;&#x5BF9;&#x8C61;&#x8BBF;&#x95EE;&#x901F;&#x5EA6;&#xFF0C;&#x56E0;&#x6B64;&#x5BF9;&#x8C61;&#x9700;&#x8981;&#x88AB;&#x516C;&#x7528;&#x7684;&#x573A;&#x5408;&#x9002;&#x5408;&#x4F7F;&#x7528;&#xFF0C;&#x5982;&#x591A;&#x4E2A;&#x6A21;&#x5757;&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x6E90;&#x8FDE;&#x63A5;&#x5BF9;&#x8C61;&#x7B49;&#x7B49;&#x3002;&#x5982;&#xFF1A;</p>
+<p> &#xFF08;1&#xFF09;&#x9700;&#x8981;&#x9891;&#x7E41;&#x5B9E;&#x4F8B;&#x5316;&#x7136;&#x540E;&#x9500;&#x6BC1;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<p> &#xFF08;2&#xFF09;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x65F6;&#x8017;&#x65F6;&#x8FC7;&#x591A;&#x6216;&#x8005;&#x8017;&#x8D44;&#x6E90;&#x8FC7;&#x591A;&#xFF0C;&#x4F46;&#x53C8;&#x7ECF;&#x5E38;&#x7528;&#x5230;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+<p> &#xFF08;3&#xFF09;&#x6709;&#x72B6;&#x6001;&#x7684;&#x5DE5;&#x5177;&#x7C7B;&#x5BF9;&#x8C61;&#x3002;</p>
+<p> &#xFF08;4&#xFF09;&#x9891;&#x7E41;&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x5E93;&#x6216;&#x6587;&#x4EF6;&#x7684;&#x5BF9;&#x8C61;&#x3002;</p>
+</blockquote>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> per.hyc.designPattern.Singleton;
+
+<span class="hljs-comment">/**
+ * 1&#x3001;&#x61D2;&#x6C49;&#x5F0F;&#xFF0C;&#x7EBF;&#x7A0B;&#x4E0D;&#x5B89;&#x5168;
+ * &#x662F;&#x5426; Lazy &#x521D;&#x59CB;&#x5316;&#xFF1A;&#x662F;
+ * &#x662F;&#x5426;&#x591A;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF1A;&#x5426;
+ * &#x5B9E;&#x73B0;&#x96BE;&#x5EA6;&#xFF1A;&#x6613;
+ * &#x63CF;&#x8FF0;&#xFF1A;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x662F;&#x6700;&#x57FA;&#x672C;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#xFF0C;&#x8FD9;&#x79CD;&#x5B9E;&#x73B0;&#x6700;&#x5927;&#x7684;&#x95EE;&#x9898;&#x5C31;&#x662F;&#x4E0D;&#x652F;&#x6301;&#x591A;&#x7EBF;&#x7A0B;&#x3002;&#x56E0;&#x4E3A;&#x6CA1;&#x6709;&#x52A0;&#x9501; synchronized&#xFF0C;&#x6240;&#x4EE5;&#x4E25;&#x683C;&#x610F;&#x4E49;&#x4E0A;&#x5B83;&#x5E76;&#x4E0D;&#x7B97;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x3002;
+ * &#x8FD9;&#x79CD;&#x65B9;&#x5F0F; lazy loading &#x5F88;&#x660E;&#x663E;&#xFF0C;&#x4E0D;&#x8981;&#x6C42;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF0C;&#x5728;&#x591A;&#x7EBF;&#x7A0B;&#x4E0D;&#x80FD;&#x6B63;&#x5E38;&#x5DE5;&#x4F5C;&#x3002;
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SingleObject_1</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> SingleObject_1 instance;
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">SingleObject_1</span><span class="hljs-params">()</span> </span>{
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> SingleObject_1 <span class="hljs-title">getInstance</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">if</span> (instance == <span class="hljs-keyword">null</span>) {
+            instance = <span class="hljs-keyword">new</span> SingleObject_1();
+        }
+        <span class="hljs-keyword">return</span> instance;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">showMessage</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;1&#x3001;&#x61D2;&#x6C49;&#x5F0F;&#xFF0C;&#x7EBF;&#x7A0B;&#x4E0D;&#x5B89;&#x5168;&quot;</span>);
+    }
+}
+
+<span class="hljs-comment">/**
+ * 2&#x3001;&#x61D2;&#x6C49;&#x5F0F;&#xFF0C;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;
+ * &#x662F;&#x5426; Lazy &#x521D;&#x59CB;&#x5316;&#xFF1A;&#x662F;
+ * &#x662F;&#x5426;&#x591A;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF1A;&#x662F;
+ * &#x5B9E;&#x73B0;&#x96BE;&#x5EA6;&#xFF1A;&#x6613;
+ * &#x63CF;&#x8FF0;&#xFF1A;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x5177;&#x5907;&#x5F88;&#x597D;&#x7684; lazy loading&#xFF0C;&#x80FD;&#x591F;&#x5728;&#x591A;&#x7EBF;&#x7A0B;&#x4E2D;&#x5F88;&#x597D;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x6548;&#x7387;&#x5F88;&#x4F4E;&#xFF0C;99% &#x60C5;&#x51B5;&#x4E0B;&#x4E0D;&#x9700;&#x8981;&#x540C;&#x6B65;&#x3002;
+ * &#x4F18;&#x70B9;&#xFF1A;&#x7B2C;&#x4E00;&#x6B21;&#x8C03;&#x7528;&#x624D;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x907F;&#x514D;&#x5185;&#x5B58;&#x6D6A;&#x8D39;&#x3002;
+ * &#x7F3A;&#x70B9;&#xFF1A;&#x5FC5;&#x987B;&#x52A0;&#x9501; synchronized &#x624D;&#x80FD;&#x4FDD;&#x8BC1;&#x5355;&#x4F8B;&#xFF0C;&#x4F46;&#x52A0;&#x9501;&#x4F1A;&#x5F71;&#x54CD;&#x6548;&#x7387;&#x3002;
+ * getInstance() &#x7684;&#x6027;&#x80FD;&#x5BF9;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E0D;&#x662F;&#x5F88;&#x5173;&#x952E;&#xFF08;&#x8BE5;&#x65B9;&#x6CD5;&#x4F7F;&#x7528;&#x4E0D;&#x592A;&#x9891;&#x7E41;&#xFF09;&#x3002;
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SingleObject_2</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> SingleObject_2 instance;
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">SingleObject_2</span><span class="hljs-params">()</span> </span>{
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">synchronized</span> SingleObject_2 <span class="hljs-title">getInstance</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">if</span> (instance == <span class="hljs-keyword">null</span>) {
+            instance = <span class="hljs-keyword">new</span> SingleObject_2();
+        }
+        <span class="hljs-keyword">return</span> instance;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">showMessage</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;2&#x3001;&#x61D2;&#x6C49;&#x5F0F;&#xFF0C;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&quot;</span>);
+    }
+}
+
+<span class="hljs-comment">/**
+ * 3&#x3001;&#x997F;&#x6C49;&#x5F0F;
+ * &#x662F;&#x5426; Lazy &#x521D;&#x59CB;&#x5316;&#xFF1A;&#x5426;
+ * &#x662F;&#x5426;&#x591A;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF1A;&#x662F;
+ * &#x5B9E;&#x73B0;&#x96BE;&#x5EA6;&#xFF1A;&#x6613;
+ * &#x63CF;&#x8FF0;&#xFF1A;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x6BD4;&#x8F83;&#x5E38;&#x7528;&#xFF0C;&#x4F46;&#x5BB9;&#x6613;&#x4EA7;&#x751F;&#x5783;&#x573E;&#x5BF9;&#x8C61;&#x3002;
+ * &#x4F18;&#x70B9;&#xFF1A;&#x6CA1;&#x6709;&#x52A0;&#x9501;&#xFF0C;&#x6267;&#x884C;&#x6548;&#x7387;&#x4F1A;&#x63D0;&#x9AD8;&#x3002;
+ * &#x7F3A;&#x70B9;&#xFF1A;&#x7C7B;&#x52A0;&#x8F7D;&#x65F6;&#x5C31;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x6D6A;&#x8D39;&#x5185;&#x5B58;&#x3002;
+ * &#x5B83;&#x57FA;&#x4E8E; classloader &#x673A;&#x5236;&#x907F;&#x514D;&#x4E86;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x540C;&#x6B65;&#x95EE;&#x9898;&#xFF0C;&#x4E0D;&#x8FC7;&#xFF0C;instance &#x5728;&#x7C7B;&#x88C5;&#x8F7D;&#x65F6;&#x5C31;&#x5B9E;&#x4F8B;&#x5316;&#xFF0C;
+ * &#x867D;&#x7136;&#x5BFC;&#x81F4;&#x7C7B;&#x88C5;&#x8F7D;&#x7684;&#x539F;&#x56E0;&#x6709;&#x5F88;&#x591A;&#x79CD;&#xFF0C;&#x5728;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x4E2D;&#x5927;&#x591A;&#x6570;&#x90FD;&#x662F;&#x8C03;&#x7528; getInstance &#x65B9;&#x6CD5;&#xFF0C;
+ * &#x4F46;&#x662F;&#x4E5F;&#x4E0D;&#x80FD;&#x786E;&#x5B9A;&#x6709;&#x5176;&#x4ED6;&#x7684;&#x65B9;&#x5F0F;&#xFF08;&#x6216;&#x8005;&#x5176;&#x4ED6;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF09;&#x5BFC;&#x81F4;&#x7C7B;&#x88C5;&#x8F7D;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x521D;&#x59CB;&#x5316; instance
+ * &#x663E;&#x7136;&#x6CA1;&#x6709;&#x8FBE;&#x5230; lazy loading &#x7684;&#x6548;&#x679C;&#x3002;
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SingleObject_3</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> SingleObject_3 instance = <span class="hljs-keyword">new</span> SingleObject_3();
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">SingleObject_3</span><span class="hljs-params">()</span> </span>{
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> SingleObject_3 <span class="hljs-title">getInstance</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> instance;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">showMessage</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;3&#x3001;&#x997F;&#x6C49;&#x5F0F;&quot;</span>);
+    }
+}
+
+
+<span class="hljs-comment">/**
+ * 4&#x3001;&#x53CC;&#x68C0;&#x9501;/&#x53CC;&#x91CD;&#x6821;&#x9A8C;&#x9501;&#xFF08;DCL&#xFF0C;&#x5373; double-checked locking&#xFF09;
+ * JDK &#x7248;&#x672C;&#xFF1A;JDK1.5 &#x8D77;
+ * &#x662F;&#x5426; Lazy &#x521D;&#x59CB;&#x5316;&#xFF1A;&#x662F;
+ * &#x662F;&#x5426;&#x591A;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF1A;&#x662F;
+ * &#x5B9E;&#x73B0;&#x96BE;&#x5EA6;&#xFF1A;&#x8F83;&#x590D;&#x6742;
+ * &#x63CF;&#x8FF0;&#xFF1A;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x91C7;&#x7528;&#x53CC;&#x9501;&#x673A;&#x5236;&#xFF0C;&#x5B89;&#x5168;&#x4E14;&#x5728;&#x591A;&#x7EBF;&#x7A0B;&#x60C5;&#x51B5;&#x4E0B;&#x80FD;&#x4FDD;&#x6301;&#x9AD8;&#x6027;&#x80FD;&#x3002;
+ * getInstance() &#x7684;&#x6027;&#x80FD;&#x5BF9;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x5F88;&#x5173;&#x952E;&#x3002;
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SingleObject_4</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">volatile</span> <span class="hljs-keyword">static</span> SingleObject_4 singleton;
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">SingleObject_4</span><span class="hljs-params">()</span> </span>{
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> SingleObject_4 <span class="hljs-title">getInstance</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">if</span> (singleton == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">synchronized</span> (SingleObject_4.class) {
+                <span class="hljs-keyword">if</span> (singleton == <span class="hljs-keyword">null</span>) {
+                    singleton = <span class="hljs-keyword">new</span> SingleObject_4();
+                }
+            }
+        }
+        <span class="hljs-keyword">return</span> singleton;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">showMessage</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;4&#x3001;&#x53CC;&#x68C0;&#x9501;/&#x53CC;&#x91CD;&#x6821;&#x9A8C;&#x9501;&#xFF08;DCL&#xFF0C;&#x5373; double-checked locking&#xFF09;&quot;</span>);
+    }
+}
+
+<span class="hljs-comment">/**
+ * 5&#x3001;&#x767B;&#x8BB0;&#x5F0F;/&#x9759;&#x6001;&#x5185;&#x90E8;&#x7C7B;
+ * &#x662F;&#x5426; Lazy &#x521D;&#x59CB;&#x5316;&#xFF1A;&#x662F;
+ * &#x662F;&#x5426;&#x591A;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF1A;&#x662F;
+ * &#x5B9E;&#x73B0;&#x96BE;&#x5EA6;&#xFF1A;&#x4E00;&#x822C;
+ * &#x63CF;&#x8FF0;&#xFF1A;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x80FD;&#x8FBE;&#x5230;&#x53CC;&#x68C0;&#x9501;&#x65B9;&#x5F0F;&#x4E00;&#x6837;&#x7684;&#x529F;&#x6548;&#xFF0C;&#x4F46;&#x5B9E;&#x73B0;&#x66F4;&#x7B80;&#x5355;&#x3002;&#x5BF9;&#x9759;&#x6001;&#x57DF;&#x4F7F;&#x7528;&#x5EF6;&#x8FDF;&#x521D;&#x59CB;&#x5316;&#xFF0C;
+ * &#x5E94;&#x4F7F;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x800C;&#x4E0D;&#x662F;&#x53CC;&#x68C0;&#x9501;&#x65B9;&#x5F0F;&#x3002;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x53EA;&#x9002;&#x7528;&#x4E8E;&#x9759;&#x6001;&#x57DF;&#x7684;&#x60C5;&#x51B5;&#xFF0C;
+ * &#x53CC;&#x68C0;&#x9501;&#x65B9;&#x5F0F;&#x53EF;&#x5728;&#x5B9E;&#x4F8B;&#x57DF;&#x9700;&#x8981;&#x5EF6;&#x8FDF;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x4F7F;&#x7528;&#x3002;
+ * &#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x540C;&#x6837;&#x5229;&#x7528;&#x4E86; classloader &#x673A;&#x5236;&#x6765;&#x4FDD;&#x8BC1;&#x521D;&#x59CB;&#x5316; instance &#x65F6;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#xFF0C;
+ * &#x5B83;&#x8DDF;&#x7B2C; 3 &#x79CD;&#x65B9;&#x5F0F;&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF1A;&#x7B2C; 3 &#x79CD;&#x65B9;&#x5F0F;&#x53EA;&#x8981; Singleton &#x7C7B;&#x88AB;&#x88C5;&#x8F7D;&#x4E86;&#xFF0C;
+ * &#x90A3;&#x4E48; instance &#x5C31;&#x4F1A;&#x88AB;&#x5B9E;&#x4F8B;&#x5316;&#xFF08;&#x6CA1;&#x6709;&#x8FBE;&#x5230; lazy loading &#x6548;&#x679C;&#xFF09;&#xFF0C;
+ * &#x800C;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x662F; Singleton &#x7C7B;&#x88AB;&#x88C5;&#x8F7D;&#x4E86;&#xFF0C;instance &#x4E0D;&#x4E00;&#x5B9A;&#x88AB;&#x521D;&#x59CB;&#x5316;&#x3002;
+ * &#x56E0;&#x4E3A; SingletonHolder &#x7C7B;&#x6CA1;&#x6709;&#x88AB;&#x4E3B;&#x52A8;&#x4F7F;&#x7528;&#xFF0C;&#x53EA;&#x6709;&#x901A;&#x8FC7;&#x663E;&#x5F0F;&#x8C03;&#x7528; getInstance &#x65B9;&#x6CD5;&#x65F6;&#xFF0C;
+ * &#x624D;&#x4F1A;&#x663E;&#x5F0F;&#x88C5;&#x8F7D; SingletonHolder &#x7C7B;&#xFF0C;&#x4ECE;&#x800C;&#x5B9E;&#x4F8B;&#x5316; instance&#x3002;
+ * &#x60F3;&#x8C61;&#x4E00;&#x4E0B;&#xFF0C;&#x5982;&#x679C;&#x5B9E;&#x4F8B;&#x5316; instance &#x5F88;&#x6D88;&#x8017;&#x8D44;&#x6E90;&#xFF0C;&#x6240;&#x4EE5;&#x60F3;&#x8BA9;&#x5B83;&#x5EF6;&#x8FDF;&#x52A0;&#x8F7D;&#xFF0C;
+ * &#x53E6;&#x5916;&#x4E00;&#x65B9;&#x9762;&#xFF0C;&#x53C8;&#x4E0D;&#x5E0C;&#x671B;&#x5728; Singleton &#x7C7B;&#x52A0;&#x8F7D;&#x65F6;&#x5C31;&#x5B9E;&#x4F8B;&#x5316;&#xFF0C;
+ * &#x56E0;&#x4E3A;&#x4E0D;&#x80FD;&#x786E;&#x4FDD; Singleton &#x7C7B;&#x8FD8;&#x53EF;&#x80FD;&#x5728;&#x5176;&#x4ED6;&#x7684;&#x5730;&#x65B9;&#x88AB;&#x4E3B;&#x52A8;&#x4F7F;&#x7528;&#x4ECE;&#x800C;&#x88AB;&#x52A0;&#x8F7D;&#xFF0C;
+ * &#x90A3;&#x4E48;&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x5B9E;&#x4F8B;&#x5316; instance &#x663E;&#x7136;&#x662F;&#x4E0D;&#x5408;&#x9002;&#x7684;&#x3002;
+ * &#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#xFF0C;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x76F8;&#x6BD4;&#x7B2C; 3 &#x79CD;&#x65B9;&#x5F0F;&#x5C31;&#x663E;&#x5F97;&#x5F88;&#x5408;&#x7406;&#x3002;
+ */</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SingleObject_5</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SingletonHolder</span> </span>{
+        <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> SingleObject_5 INSTANCE = <span class="hljs-keyword">new</span> SingleObject_5();
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">SingleObject_5</span><span class="hljs-params">()</span> </span>{
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> SingleObject_5 <span class="hljs-title">getInstance</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> SingletonHolder.INSTANCE;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">showMessage</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;5&#x3001;&#x767B;&#x8BB0;&#x5F0F;/&#x9759;&#x6001;&#x5185;&#x90E8;&#x7C7B;&quot;</span>);
+    }
+}
+
+<span class="hljs-comment">/**
+ * 6&#x3001;&#x679A;&#x4E3E;
+ * JDK &#x7248;&#x672C;&#xFF1A;JDK1.5 &#x8D77;
+ * &#x662F;&#x5426; Lazy &#x521D;&#x59CB;&#x5316;&#xFF1A;&#x5426;
+ * &#x662F;&#x5426;&#x591A;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#xFF1A;&#x662F;
+ * &#x5B9E;&#x73B0;&#x96BE;&#x5EA6;&#xFF1A;&#x6613;
+ * &#x63CF;&#x8FF0;&#xFF1A;&#x8FD9;&#x79CD;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x8FD8;&#x6CA1;&#x6709;&#x88AB;&#x5E7F;&#x6CDB;&#x91C7;&#x7528;&#xFF0C;&#x4F46;&#x8FD9;&#x662F;&#x5B9E;&#x73B0;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x7684;&#x6700;&#x4F73;&#x65B9;&#x6CD5;&#x3002;
+ * &#x5B83;&#x66F4;&#x7B80;&#x6D01;&#xFF0C;&#x81EA;&#x52A8;&#x652F;&#x6301;&#x5E8F;&#x5217;&#x5316;&#x673A;&#x5236;&#xFF0C;&#x7EDD;&#x5BF9;&#x9632;&#x6B62;&#x591A;&#x6B21;&#x5B9E;&#x4F8B;&#x5316;&#x3002;
+ * &#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x662F; Effective Java &#x4F5C;&#x8005; Josh Bloch &#x63D0;&#x5021;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5B83;&#x4E0D;&#x4EC5;&#x80FD;&#x907F;&#x514D;&#x591A;&#x7EBF;&#x7A0B;&#x540C;&#x6B65;&#x95EE;&#x9898;&#xFF0C;
+ * &#x800C;&#x4E14;&#x8FD8;&#x81EA;&#x52A8;&#x652F;&#x6301;&#x5E8F;&#x5217;&#x5316;&#x673A;&#x5236;&#xFF0C;&#x9632;&#x6B62;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x7EDD;&#x5BF9;&#x9632;&#x6B62;&#x591A;&#x6B21;&#x5B9E;&#x4F8B;&#x5316;&#x3002;
+ * &#x4E0D;&#x8FC7;&#xFF0C;&#x7531;&#x4E8E; JDK1.5 &#x4E4B;&#x540E;&#x624D;&#x52A0;&#x5165; enum &#x7279;&#x6027;&#xFF0C;&#x7528;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x5199;&#x4E0D;&#x514D;&#x8BA9;&#x4EBA;&#x611F;&#x89C9;&#x751F;&#x758F;&#xFF0C;
+ * &#x5728;&#x5B9E;&#x9645;&#x5DE5;&#x4F5C;&#x4E2D;&#xFF0C;&#x4E5F;&#x5F88;&#x5C11;&#x7528;&#x3002;
+ * &#x4E0D;&#x80FD;&#x901A;&#x8FC7; reflection attack &#x6765;&#x8C03;&#x7528;&#x79C1;&#x6709;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x3002;
+ */</span>
+<span class="hljs-keyword">enum</span> SingleObject_6 {
+    INSTANCE;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">showMessage</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;6&#x3001;&#x679A;&#x4E3E;&quot;</span>);
+    }
+}
+
+<span class="hljs-comment">/**
+ * &#x7ECF;&#x9A8C;&#x4E4B;&#x8C08;&#xFF1A;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4E0D;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x7B2C; 1 &#x79CD;&#x548C;&#x7B2C; 2 &#x79CD;&#x61D2;&#x6C49;&#x65B9;&#x5F0F;&#xFF0C;&#x5EFA;&#x8BAE;&#x4F7F;&#x7528;&#x7B2C; 3 &#x79CD;&#x997F;&#x6C49;&#x65B9;&#x5F0F;&#x3002;
+ * &#x53EA;&#x6709;&#x5728;&#x8981;&#x660E;&#x786E;&#x5B9E;&#x73B0; lazy loading &#x6548;&#x679C;&#x65F6;&#xFF0C;&#x624D;&#x4F1A;&#x4F7F;&#x7528;&#x7B2C; 5 &#x79CD;&#x767B;&#x8BB0;&#x65B9;&#x5F0F;&#x3002;
+ * &#x5982;&#x679C;&#x6D89;&#x53CA;&#x5230;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x5C1D;&#x8BD5;&#x4F7F;&#x7528;&#x7B2C; 6 &#x79CD;&#x679A;&#x4E3E;&#x65B9;&#x5F0F;&#x3002;
+ * &#x5982;&#x679C;&#x6709;&#x5176;&#x4ED6;&#x7279;&#x6B8A;&#x7684;&#x9700;&#x6C42;&#xFF0C;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x4F7F;&#x7528;&#x7B2C; 4 &#x79CD;&#x53CC;&#x68C0;&#x9501;&#x65B9;&#x5F0F;&#x3002;
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Singleton</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">TestSingleObject_1</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">//&#x4E0D;&#x5408;&#x6CD5;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;</span>
+        <span class="hljs-comment">//&#x7F16;&#x8BD1;&#x65F6;&#x9519;&#x8BEF;&#xFF1A;&#x6784;&#x9020;&#x51FD;&#x6570; SingleObject() &#x662F;&#x4E0D;&#x53EF;&#x89C1;&#x7684;</span>
+        <span class="hljs-comment">//SingleObject object = new SingleObject();</span>
+
+        <span class="hljs-comment">//&#x83B7;&#x53D6;&#x552F;&#x4E00;&#x53EF;&#x7528;&#x7684;&#x5BF9;&#x8C61;</span>
+        SingleObject_1 object = SingleObject_1.getInstance();
+
+        <span class="hljs-comment">//&#x663E;&#x793A;&#x6D88;&#x606F;</span>
+        object.showMessage();
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">TestSingleObject_2</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">//&#x83B7;&#x53D6;&#x552F;&#x4E00;&#x53EF;&#x7528;&#x7684;&#x5BF9;&#x8C61;</span>
+        SingleObject_2 object = SingleObject_2.getInstance();
+
+        <span class="hljs-comment">//&#x663E;&#x793A;&#x6D88;&#x606F;</span>
+        object.showMessage();
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">TestSingleObject_3</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">//&#x83B7;&#x53D6;&#x552F;&#x4E00;&#x53EF;&#x7528;&#x7684;&#x5BF9;&#x8C61;</span>
+        SingleObject_3 object = SingleObject_3.getInstance();
+
+        <span class="hljs-comment">//&#x663E;&#x793A;&#x6D88;&#x606F;</span>
+        object.showMessage();
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">TestSingleObject_4</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">//&#x83B7;&#x53D6;&#x552F;&#x4E00;&#x53EF;&#x7528;&#x7684;&#x5BF9;&#x8C61;</span>
+        SingleObject_4 object = SingleObject_4.getInstance();
+
+        <span class="hljs-comment">//&#x663E;&#x793A;&#x6D88;&#x606F;</span>
+        object.showMessage();
+    }
+
+
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">TestSingleObject_5</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">//&#x83B7;&#x53D6;&#x552F;&#x4E00;&#x53EF;&#x7528;&#x7684;&#x5BF9;&#x8C61;</span>
+        SingleObject_5 object = SingleObject_5.getInstance();
+
+        <span class="hljs-comment">//&#x663E;&#x793A;&#x6D88;&#x606F;</span>
+        object.showMessage();
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">TestSingleObject_6</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">//&#x83B7;&#x53D6;&#x552F;&#x4E00;&#x53EF;&#x7528;&#x7684;&#x5BF9;&#x8C61;</span>
+        SingleObject_6 object = SingleObject_6.INSTANCE;
+
+        <span class="hljs-comment">//&#x663E;&#x793A;&#x6D88;&#x606F;</span>
+        object.showMessage();
+    }
+
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        TestSingleObject_1();
+        TestSingleObject_2();
+        TestSingleObject_3();
+        TestSingleObject_4();
+        TestSingleObject_5();
+        TestSingleObject_6();
+
+    }
+}
+
+
+<span class="hljs-number">1</span>&#x3001;&#x61D2;&#x6C49;&#x5F0F;&#xFF0C;&#x7EBF;&#x7A0B;&#x4E0D;&#x5B89;&#x5168;
+<span class="hljs-number">2</span>&#x3001;&#x61D2;&#x6C49;&#x5F0F;&#xFF0C;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;
+<span class="hljs-number">3</span>&#x3001;&#x997F;&#x6C49;&#x5F0F;
+<span class="hljs-number">4</span>&#x3001;&#x53CC;&#x68C0;&#x9501;/&#x53CC;&#x91CD;&#x6821;&#x9A8C;&#x9501;&#xFF08;DCL&#xFF0C;&#x5373; <span class="hljs-keyword">double</span>-checked locking&#xFF09;
+<span class="hljs-number">5</span>&#x3001;&#x767B;&#x8BB0;&#x5F0F;/&#x9759;&#x6001;&#x5185;&#x90E8;&#x7C7B;
+<span class="hljs-number">6</span>&#x3001;&#x679A;&#x4E3E;
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; narutohyc.com 2020 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2022-01-16 08:08:17
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="设计模式_六大设计原则.html" class="navigation navigation-prev " aria-label="Previous page: 设计模式_六大设计原则">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="设计模式_结构型模式.html" class="navigation navigation-next " aria-label="Next page: 设计模式_结构型模式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"设计模式_创建型模式","level":"1.2.4","depth":2,"next":{"title":"设计模式_结构型模式","level":"1.2.5","depth":2,"path":"chapters/设计模式_结构型模式.md","ref":"chapters/设计模式_结构型模式.md","articles":[]},"previous":{"title":"设计模式_六大设计原则","level":"1.2.3","depth":2,"path":"chapters/设计模式_六大设计原则.md","ref":"chapters/设计模式_六大设计原则.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2020","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java相关学习记录","language":"zh-hans","links":{"sidebar":{"我的狗窝":"https://github.com/narutohyc"}},"gitbook":"*","description":"记录 Java 的学习和一些技巧的使用"},"file":{"path":"chapters/设计模式_创建型模式.md","mtime":"2022-01-16T08:08:17.777Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-16T08:08:57.028Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

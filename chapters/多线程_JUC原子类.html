@@ -1,0 +1,1347 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>多线程_JUC原子类 · Java相关学习记录</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="narutohyc">
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="多线程_JUC锁集合 .html" />
+    
+    
+    <link rel="prev" href="多线程_锁.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/narutohyc" target="_blank" class="custom-link">我的狗窝</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="设计模式.md">
+            
+                <span>
+            
+                    
+                        <b>1.2.</b>
+                    
+                    设计模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="设计模式_设计模式的概念.html">
+            
+                <a href="设计模式_设计模式的概念.html">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    设计模式_设计模式的概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="设计模式_组成和分类.html">
+            
+                <a href="设计模式_组成和分类.html">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    设计模式_组成和分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="设计模式_六大设计原则.html">
+            
+                <a href="设计模式_六大设计原则.html">
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    设计模式_六大设计原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="设计模式_创建型模式.html">
+            
+                <a href="设计模式_创建型模式.html">
+            
+                    
+                        <b>1.2.4.</b>
+                    
+                    设计模式_创建型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="设计模式_结构型模式.html">
+            
+                <a href="设计模式_结构型模式.html">
+            
+                    
+                        <b>1.2.5.</b>
+                    
+                    设计模式_结构型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="设计模式_行为型模式.html">
+            
+                <a href="设计模式_行为型模式.html">
+            
+                    
+                        <b>1.2.6.</b>
+                    
+                    设计模式_行为型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="设计模式_总结.html">
+            
+                <a href="设计模式_总结.html">
+            
+                    
+                        <b>1.2.7.</b>
+                    
+                    设计模式_总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="多线程.md">
+            
+                <span>
+            
+                    
+                        <b>1.3.</b>
+                    
+                    多线程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="多线程_基础篇.html">
+            
+                <a href="多线程_基础篇.html">
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    多线程_基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="多线程_锁.html">
+            
+                <a href="多线程_锁.html">
+            
+                    
+                        <b>1.3.2.</b>
+                    
+                    多线程_锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="多线程_JUC原子类.html">
+            
+                <a href="多线程_JUC原子类.html">
+            
+                    
+                        <b>1.3.3.</b>
+                    
+                    多线程_JUC原子类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="多线程_JUC锁集合 .html">
+            
+                <a href="多线程_JUC锁集合 .html">
+            
+                    
+                        <b>1.3.4.</b>
+                    
+                    多线程_JUC锁集合 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="多线程_ JUC集合.html">
+            
+                <a href="多线程_ JUC集合.html">
+            
+                    
+                        <b>1.3.5.</b>
+                    
+                    多线程_ JUC集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="多线程_JUC线程池.html">
+            
+                <a href="多线程_JUC线程池.html">
+            
+                    
+                        <b>1.3.6.</b>
+                    
+                    多线程_JUC线程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="多线程_生产者消费者.html">
+            
+                <a href="多线程_生产者消费者.html">
+            
+                    
+                        <b>1.3.7.</b>
+                    
+                    多线程_生产者消费者
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="IDEA快捷键.html">
+            
+                <a href="IDEA快捷键.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    IDEA快捷键
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="Spring注解.md">
+            
+                <span>
+            
+                    
+                        <b>1.5.</b>
+                    
+                    Spring注解
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="Spring注解_介绍.html">
+            
+                <a href="Spring注解_介绍.html">
+            
+                    
+                        <b>1.5.1.</b>
+                    
+                    Spring注解_介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="Spring注解_常用注解.html">
+            
+                <a href="Spring注解_常用注解.html">
+            
+                    
+                        <b>1.5.2.</b>
+                    
+                    Spring注解_常用注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="Spring注解_Spring入门篇.html">
+            
+                <a href="Spring注解_Spring入门篇.html">
+            
+                    
+                        <b>1.5.3.</b>
+                    
+                    Spring注解_Spring入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="Java基础.md">
+            
+                <span>
+            
+                    
+                        <b>1.6.</b>
+                    
+                    Java基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="Java基础_集合.html">
+            
+                <a href="Java基础_集合.html">
+            
+                    
+                        <b>1.6.1.</b>
+                    
+                    Java基础_集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="Java基础_泛型.html">
+            
+                <a href="Java基础_泛型.html">
+            
+                    
+                        <b>1.6.2.</b>
+                    
+                    Java基础_泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="Java基础_打jar包.html">
+            
+                <a href="Java基础_打jar包.html">
+            
+                    
+                        <b>1.6.3.</b>
+                    
+                    Java基础_打jar包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="Java基础_正则匹配.html">
+            
+                <a href="Java基础_正则匹配.html">
+            
+                    
+                        <b>1.6.4.</b>
+                    
+                    Java基础_正则匹配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="Java基础_反射机制.html">
+            
+                <a href="Java基础_反射机制.html">
+            
+                    
+                        <b>1.6.5.</b>
+                    
+                    Java基础_反射机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="Java基础_对象正反序列化.html">
+            
+                <a href="Java基础_对象正反序列化.html">
+            
+                    
+                        <b>1.6.6.</b>
+                    
+                    Java基础_对象正反序列化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="Java基础_读取配置文件.html">
+            
+                <a href="Java基础_读取配置文件.html">
+            
+                    
+                        <b>1.6.7.</b>
+                    
+                    Java基础_读取配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="Java基础_解析与生成XML.html">
+            
+                <a href="Java基础_解析与生成XML.html">
+            
+                    
+                        <b>1.6.8.</b>
+                    
+                    Java基础_解析与生成XML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="Java基础_后台服务器开发.html">
+            
+                <a href="Java基础_后台服务器开发.html">
+            
+                    
+                        <b>1.6.9.</b>
+                    
+                    Java基础_后台服务器开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="Java基础_四舍五入.html">
+            
+                <a href="Java基础_四舍五入.html">
+            
+                    
+                        <b>1.6.10.</b>
+                    
+                    Java基础_四舍五入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="Java进阶.md">
+            
+                <span>
+            
+                    
+                        <b>1.7.</b>
+                    
+                    Java进阶
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="Java进阶_反射.html">
+            
+                <a href="Java进阶_反射.html">
+            
+                    
+                        <b>1.7.1.</b>
+                    
+                    Java进阶_反射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="Java进阶_注解.html">
+            
+                <a href="Java进阶_注解.html">
+            
+                    
+                        <b>1.7.2.</b>
+                    
+                    Java进阶_注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="MySQL.md">
+            
+                <span>
+            
+                    
+                        <b>1.8.</b>
+                    
+                    MySQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="MySQL_基础.html">
+            
+                <a href="MySQL_基础.html">
+            
+                    
+                        <b>1.8.1.</b>
+                    
+                    MySQL_基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="MySQL_约束.html">
+            
+                <a href="MySQL_约束.html">
+            
+                    
+                        <b>1.8.2.</b>
+                    
+                    MySQL_约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="MySQL_多表查询.html">
+            
+                <a href="MySQL_多表查询.html">
+            
+                    
+                        <b>1.8.3.</b>
+                    
+                    MySQL_多表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="MySQL_事务.html">
+            
+                <a href="MySQL_事务.html">
+            
+                    
+                        <b>1.8.4.</b>
+                    
+                    MySQL_事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="MySQL_数据库设计.html">
+            
+                <a href="MySQL_数据库设计.html">
+            
+                    
+                        <b>1.8.5.</b>
+                    
+                    MySQL_数据库设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="JDBC.md">
+            
+                <span>
+            
+                    
+                        <b>1.9.</b>
+                    
+                    JDBC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="JDBC_JDBC基础.html">
+            
+                <a href="JDBC_JDBC基础.html">
+            
+                    
+                        <b>1.9.1.</b>
+                    
+                    JDBC_JDBC基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="JDBC_JDBC连接池.html">
+            
+                <a href="JDBC_JDBC连接池.html">
+            
+                    
+                        <b>1.9.2.</b>
+                    
+                    JDBC_JDBC连接池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="JDBC_JDBCTemplate.html">
+            
+                <a href="JDBC_JDBCTemplate.html">
+            
+                    
+                        <b>1.9.3.</b>
+                    
+                    JDBC_JDBCTemplate
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >多线程_JUC原子类</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#juc&#x539F;&#x5B50;&#x7C7B;"><b></b>JUC&#x539F;&#x5B50;&#x7C7B;</a></li><li><span class="title-icon "></span><a href="#atomiclong&#x4ECB;&#x7ECD;&#x548C;&#x51FD;&#x6570;&#x5217;&#x8868;"><b></b>AtomicLong&#x4ECB;&#x7ECD;&#x548C;&#x51FD;&#x6570;&#x5217;&#x8868;</a></li><li><span class="title-icon "></span><a href="#atomiclongarray&#x539F;&#x5B50;&#x7C7B;"><b></b>AtomicLongArray&#x539F;&#x5B50;&#x7C7B;</a></li><li><span class="title-icon "></span><a href="#atomicreference&#x4ECB;&#x7ECD;&#x548C;&#x51FD;&#x6570;&#x5217;&#x8868;"><b></b>AtomicReference&#x4ECB;&#x7ECD;&#x548C;&#x51FD;&#x6570;&#x5217;&#x8868;</a></li><li><span class="title-icon "></span><a href="#atomiclongfieldupdater&#x4ECB;&#x7ECD;&#x548C;&#x51FD;&#x6570;&#x5217;&#x8868;"><b></b>AtomicLongFieldUpdater&#x4ECB;&#x7ECD;&#x548C;&#x51FD;&#x6570;&#x5217;&#x8868;</a></li></ul></div><a href="#juc&#x539F;&#x5B50;&#x7C7B;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><img src="https://upload-images.jianshu.io/upload_images/15675864-e39212ac990782cf.png" alt="&#x5F02;&#x4E16;&#x754C;.png"></p>
+<p>[TOC]</p>
+<h1 id="juc&#x539F;&#x5B50;&#x7C7B;"><a name="juc&#x539F;&#x5B50;&#x7C7B;" class="anchor-navigation-ex-anchor" href="#juc&#x539F;&#x5B50;&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="juc&#x539F;&#x5B50;&#x7C7B;" class="plugin-anchor" href="#juc&#x539F;&#x5B50;&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>JUC&#x539F;&#x5B50;&#x7C7B;</h1>
+<p>&#x6839;&#x636E;&#x4FEE;&#x6539;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;JUC&#x5305;&#x4E2D;&#x7684;&#x539F;&#x5B50;&#x64CD;&#x4F5C;&#x7C7B;&#x53EF;&#x4EE5;&#x5206;&#x4E3A;4&#x7C7B;&#x3002;</p>
+<p><strong>&#x57FA;&#x672C;&#x7C7B;&#x578B;</strong>: AtomicInteger, AtomicLong, AtomicBoolean ;
+<strong>&#x6570;&#x7EC4;&#x7C7B;&#x578B;</strong>: AtomicIntegerArray, AtomicLongArray, AtomicReferenceArray ;
+<strong>&#x5F15;&#x7528;&#x7C7B;&#x578B;</strong>: AtomicReference, AtomicStampedRerence, AtomicMarkableReference ;
+<strong>&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x4FEE;&#x6539;&#x7C7B;&#x578B;</strong>: AtomicIntegerFieldUpdater, AtomicLongFieldUpdater, AtomicReferenceFieldUpdater &#x3002;</p>
+<p>&#x8FD9;&#x4E9B;&#x7C7B;&#x5B58;&#x5728;&#x7684;&#x76EE;&#x7684;&#x662F;&#x5BF9;&#x76F8;&#x5E94;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x539F;&#x5B50;&#x64CD;&#x4F5C;&#x3002;&#x6240;&#x8C13;&#x539F;&#x5B50;&#x64CD;&#x4F5C;&#xFF0C;&#x662F;&#x6307;&#x64CD;&#x4F5C;&#x8FC7;&#x7A0B;&#x4E0D;&#x4F1A;&#x88AB;&#x4E2D;&#x65AD;&#xFF0C;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x64CD;&#x4F5C;&#x662F;&#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x7684;&#x3002;</p>
+<h1 id="atomiclong&#x4ECB;&#x7ECD;&#x548C;&#x51FD;&#x6570;&#x5217;&#x8868;"><a name="atomiclong&#x4ECB;&#x7ECD;&#x548C;&#x51FD;&#x6570;&#x5217;&#x8868;" class="anchor-navigation-ex-anchor" href="#atomiclong&#x4ECB;&#x7ECD;&#x548C;&#x51FD;&#x6570;&#x5217;&#x8868;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="atomiclong&#x4ECB;&#x7ECD;&#x548C;&#x51FD;&#x6570;&#x5217;&#x8868;" class="plugin-anchor" href="#atomiclong&#x4ECB;&#x7ECD;&#x548C;&#x51FD;&#x6570;&#x5217;&#x8868;"><i class="fa fa-link" aria-hidden="true"></i></a>AtomicLong&#x4ECB;&#x7ECD;&#x548C;&#x51FD;&#x6570;&#x5217;&#x8868;</h1>
+<p>AtomicLong&#x662F;&#x4F5C;&#x7528;&#x662F;&#x5BF9;&#x957F;&#x6574;&#x5F62;&#x8FDB;&#x884C;&#x539F;&#x5B50;&#x64CD;&#x4F5C;&#x3002;
+&#x5728;32&#x4F4D;&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;64&#x4F4D;&#x7684;long &#x548C; double &#x53D8;&#x91CF;&#x7531;&#x4E8E;&#x4F1A;&#x88AB;JVM&#x5F53;&#x4F5C;&#x4E24;&#x4E2A;&#x5206;&#x79BB;&#x7684;32&#x4F4D;&#x6765;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x5177;&#x6709;&#x539F;&#x5B50;&#x6027;&#x3002;&#x800C;&#x4F7F;&#x7528;AtomicLong&#x80FD;&#x8BA9;long&#x7684;&#x64CD;&#x4F5C;&#x4FDD;&#x6301;&#x539F;&#x5B50;&#x578B;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-comment">// AtomicLong&#x51FD;&#x6570;&#x5217;&#x8868;</span>
+<span class="hljs-comment">// &#x6784;&#x9020;&#x51FD;&#x6570;</span>
+AtomicLong()
+<span class="hljs-comment">// &#x521B;&#x5EFA;&#x503C;&#x4E3A;initialValue&#x7684;AtomicLong&#x5BF9;&#x8C61;</span>
+AtomicLong(<span class="hljs-keyword">long</span> initialValue)
+<span class="hljs-comment">// &#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x8BBE;&#x7F6E;&#x5F53;&#x524D;&#x503C;&#x4E3A;newValue&#x3002;</span>
+<span class="hljs-function"><span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title">set</span><span class="hljs-params">(<span class="hljs-keyword">long</span> newValue)</span> 
+<span class="hljs-comment">// &#x83B7;&#x53D6;&#x5F53;&#x524D;&#x503C;</span>
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> <span class="hljs-title">get</span><span class="hljs-params">()</span> 
+<span class="hljs-comment">// &#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x5F53;&#x524D;&#x503C;&#x51CF; 1&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x51CF;1&#x540E;&#x7684;&#x503C;&#x3002;&#x7B49;&#x4EF7;&#x4E8E;&#x201C;--num&#x201D;</span>
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> <span class="hljs-title">decrementAndGet</span><span class="hljs-params">()</span> 
+<span class="hljs-comment">// &#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x5F53;&#x524D;&#x503C;&#x51CF; 1&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x51CF;1&#x524D;&#x7684;&#x503C;&#x3002;&#x7B49;&#x4EF7;&#x4E8E;&#x201C;num--&#x201D;</span>
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> <span class="hljs-title">getAndDecrement</span><span class="hljs-params">()</span> 
+<span class="hljs-comment">// &#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x5F53;&#x524D;&#x503C;&#x52A0; 1&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x52A0;1&#x540E;&#x7684;&#x503C;&#x3002;&#x7B49;&#x4EF7;&#x4E8E;&#x201C;++num&#x201D;</span>
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> <span class="hljs-title">incrementAndGet</span><span class="hljs-params">()</span> 
+<span class="hljs-comment">// &#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x5F53;&#x524D;&#x503C;&#x52A0; 1&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x52A0;1&#x524D;&#x7684;&#x503C;&#x3002;&#x7B49;&#x4EF7;&#x4E8E;&#x201C;num++&#x201D;</span>
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> <span class="hljs-title">getAndIncrement</span><span class="hljs-params">()</span>    
+<span class="hljs-comment">// &#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;delta&#x4E0E;&#x5F53;&#x524D;&#x503C;&#x76F8;&#x52A0;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x76F8;&#x52A0;&#x540E;&#x7684;&#x503C;&#x3002;</span>
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> <span class="hljs-title">addAndGet</span><span class="hljs-params">(<span class="hljs-keyword">long</span> delta)</span> 
+<span class="hljs-comment">// &#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;delta&#x6DFB;&#x52A0;&#x5230;&#x5F53;&#x524D;&#x503C;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x76F8;&#x52A0;&#x524D;&#x7684;&#x503C;&#x3002;</span>
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> <span class="hljs-title">getAndAdd</span><span class="hljs-params">(<span class="hljs-keyword">long</span> delta)</span> 
+<span class="hljs-comment">// &#x5982;&#x679C;&#x5F53;&#x524D;&#x503C; == expect&#xFF0C;&#x5219;&#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x8BE5;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A;update&#x3002;&#x6210;&#x529F;&#x8FD4;&#x56DE;true&#xFF0C;&#x5426;&#x5219;&#x8FD4;&#x56DE;false&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x4FEE;&#x6539;&#x539F;&#x503C;&#x3002;</span>
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">compareAndSet</span><span class="hljs-params">(<span class="hljs-keyword">long</span> expect, <span class="hljs-keyword">long</span> update)</span>
+<span class="hljs-comment">// &#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x8BBE;&#x7F6E;&#x5F53;&#x524D;&#x503C;&#x4E3A;newValue&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x65E7;&#x503C;&#x3002;</span>
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> <span class="hljs-title">getAndSet</span><span class="hljs-params">(<span class="hljs-keyword">long</span> newValue)</span>
+<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x503C;&#x5BF9;&#x5E94;&#x7684;int&#x503C;</span>
+<span class="hljs-keyword">int</span> <span class="hljs-title">intValue</span><span class="hljs-params">()</span> 
+<span class="hljs-comment">// &#x83B7;&#x53D6;&#x5F53;&#x524D;&#x503C;&#x5BF9;&#x5E94;&#x7684;long&#x503C;</span>
+<span class="hljs-keyword">long</span> <span class="hljs-title">longValue</span><span class="hljs-params">()</span>    
+<span class="hljs-comment">// &#x4EE5; float &#x5F62;&#x5F0F;&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x503C;</span>
+<span class="hljs-keyword">float</span> <span class="hljs-title">floatValue</span><span class="hljs-params">()</span>    
+<span class="hljs-comment">// &#x4EE5; double &#x5F62;&#x5F0F;&#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x503C;</span>
+<span class="hljs-keyword">double</span> <span class="hljs-title">doubleValue</span><span class="hljs-params">()</span>    
+<span class="hljs-comment">// &#x6700;&#x540E;&#x8BBE;&#x7F6E;&#x4E3A;&#x7ED9;&#x5B9A;&#x503C;&#x3002;&#x5EF6;&#x65F6;&#x8BBE;&#x7F6E;&#x53D8;&#x91CF;&#x503C;&#xFF0C;&#x8FD9;&#x4E2A;&#x7B49;&#x4EF7;&#x4E8E;set()&#x65B9;&#x6CD5;&#xFF0C;&#x4F46;&#x662F;&#x7531;&#x4E8E;&#x5B57;&#x6BB5;&#x662F;volatile&#x7C7B;&#x578B;&#x7684;&#xFF0C;&#x56E0;&#x6B64;&#x6B21;&#x5B57;&#x6BB5;&#x7684;&#x4FEE;&#x6539;&#x4F1A;&#x6BD4;&#x666E;&#x901A;&#x5B57;&#x6BB5;&#xFF08;&#x975E;volatile&#x5B57;&#x6BB5;&#xFF09;&#x6709;&#x7A0D;&#x5FAE;&#x7684;&#x6027;&#x80FD;&#x5EF6;&#x65F6;&#xFF08;&#x5C3D;&#x7BA1;&#x53EF;&#x4EE5;&#x5FFD;&#x7565;&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x5982;&#x679C;&#x4E0D;&#x662F;&#x60F3;&#x7ACB;&#x5373;&#x8BFB;&#x53D6;&#x8BBE;&#x7F6E;&#x7684;&#x65B0;&#x503C;&#xFF0C;&#x5141;&#x8BB8;&#x5728;&#x201C;&#x540E;&#x53F0;&#x201D;&#x4FEE;&#x6539;&#x503C;&#xFF0C;&#x90A3;&#x4E48;&#x6B64;&#x65B9;&#x6CD5;&#x5C31;&#x5F88;&#x6709;&#x7528;&#x3002;&#x5982;&#x679C;&#x8FD8;&#x662F;&#x96BE;&#x4EE5;&#x7406;&#x89E3;&#xFF0C;&#x8FD9;&#x91CC;&#x5C31;&#x7C7B;&#x4F3C;&#x4E8E;&#x542F;&#x52A8;&#x4E00;&#x4E2A;&#x540E;&#x53F0;&#x7EBF;&#x7A0B;&#x5982;&#x6267;&#x884C;&#x4FEE;&#x6539;&#x65B0;&#x503C;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x539F;&#x7EBF;&#x7A0B;&#x5C31;&#x4E0D;&#x7B49;&#x5F85;&#x4FEE;&#x6539;&#x7ED3;&#x679C;&#x7ACB;&#x5373;&#x8FD4;&#x56DE;&#xFF08;&#x8FD9;&#x79CD;&#x89E3;&#x91CA;&#x5176;&#x5B9E;&#x662F;&#x4E0D;&#x6B63;&#x786E;&#x7684;&#xFF0C;&#x4F46;&#x662F;&#x53EF;&#x4EE5;&#x8FD9;&#x4E48;&#x7406;&#x89E3;&#xFF09;&#x3002;</span>
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title">lazySet</span><span class="hljs-params">(<span class="hljs-keyword">long</span> newValue)</span>
+<span class="hljs-comment">// &#x5982;&#x679C;&#x5F53;&#x524D;&#x503C; == &#x9884;&#x671F;&#x503C;&#xFF0C;&#x5219;&#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x8BE5;&#x8BBE;&#x7F6E;&#x4E3A;&#x7ED9;&#x5B9A;&#x7684;&#x66F4;&#x65B0;&#x503C;&#x3002;JSR&#x89C4;&#x8303;&#x4E2D;&#x8BF4;&#xFF1A;&#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x8BFB;&#x53D6;&#x548C;&#x6709;&#x6761;&#x4EF6;&#x5730;&#x5199;&#x5165;&#x53D8;&#x91CF;&#x4F46;&#x4E0D; &#x521B;&#x5EFA;&#x4EFB;&#x4F55; happen-before &#x6392;&#x5E8F;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x63D0;&#x4F9B;&#x4E0E;&#x9664; weakCompareAndSet &#x76EE;&#x6807;&#x5916;&#x4EFB;&#x4F55;&#x53D8;&#x91CF;&#x4EE5;&#x524D;&#x6216;&#x540E;&#x7EED;&#x8BFB;&#x53D6;&#x6216;&#x5199;&#x5165;&#x64CD;&#x4F5C;&#x6709;&#x5173;&#x7684;&#x4EFB;&#x4F55;&#x4FDD;&#x8BC1;&#x3002;&#x5927;&#x610F;&#x5C31;&#x662F;&#x8BF4;&#x8C03;&#x7528;weakCompareAndSet&#x65F6;&#x5E76;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x4E0D;&#x5B58;&#x5728;happen-before&#x7684;&#x53D1;&#x751F;&#xFF08;&#x4E5F;&#x5C31;&#x662F;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x6307;&#x4EE4;&#x91CD;&#x6392;&#x5E8F;&#x5BFC;&#x81F4;&#x6B64;&#x64CD;&#x4F5C;&#x5931;&#x8D25;&#xFF09;&#x3002;&#x4F46;&#x662F;&#x4ECE;Java&#x6E90;&#x7801;&#x6765;&#x770B;&#xFF0C;&#x5176;&#x5B9E;&#x6B64;&#x65B9;&#x6CD5;&#x5E76;&#x6CA1;&#x6709;&#x5B9E;&#x73B0;JSR&#x89C4;&#x8303;&#x7684;&#x8981;&#x6C42;&#xFF0C;&#x6700;&#x540E;&#x6548;&#x679C;&#x548C;compareAndSet&#x662F;&#x7B49;&#x6548;&#x7684;&#xFF0C;&#x90FD;&#x8C03;&#x7528;&#x4E86;unsafe.compareAndSwapInt()&#x5B8C;&#x6210;&#x64CD;&#x4F5C;&#x3002;</span>
+<span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">weakCompareAndSet</span><span class="hljs-params">(<span class="hljs-keyword">long</span> expect, <span class="hljs-keyword">long</span> update)</span>
+</span></code></pre>
+<pre><code class="lang-java"><span class="hljs-comment">// &#x4EE5;incrementAndGet()&#x4E3A;&#x4F8B;&#xFF0C;&#x5BF9;AtomicLong&#x7684;&#x539F;&#x7406;&#x8FDB;&#x884C;&#x8BF4;&#x660E;&#x3002;</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">long</span> <span class="hljs-title">incrementAndGet</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">for</span> (;;) {
+        <span class="hljs-comment">// &#x83B7;&#x53D6;AtomicLong&#x5F53;&#x524D;&#x5BF9;&#x5E94;&#x7684;long&#x503C;</span>
+        <span class="hljs-keyword">long</span> current = get();
+        <span class="hljs-comment">// &#x5C06;current&#x52A0;1</span>
+        <span class="hljs-keyword">long</span> next = current + <span class="hljs-number">1</span>;
+        <span class="hljs-comment">// &#x901A;&#x8FC7;CAS&#x51FD;&#x6570;&#xFF0C;&#x66F4;&#x65B0;current&#x7684;&#x503C;</span>
+        <span class="hljs-keyword">if</span> (compareAndSet(current, next))
+            <span class="hljs-keyword">return</span> next;
+    }
+}
+&#x8BF4;&#x660E;&#xFF1A;
+(<span class="hljs-number">01</span>) incrementAndGet()&#x9996;&#x5148;&#x4F1A;&#x6839;&#x636E;get()&#x83B7;&#x53D6;AtomicLong&#x5BF9;&#x5E94;&#x7684;<span class="hljs-keyword">long</span>&#x503C;&#x3002;&#x8BE5;&#x503C;&#x662F;<span class="hljs-keyword">volatile</span>&#x7C7B;&#x578B;&#x7684;&#x53D8;&#x91CF;&#xFF0C;get()&#x7684;&#x6E90;&#x7801;&#x5982;&#x4E0B;&#xFF1A;
+(<span class="hljs-number">02</span>) incrementAndGet()&#x63A5;&#x7740;&#x5C06;current&#x52A0;<span class="hljs-number">1</span>,&#x7136;&#x540E;&#x901A;&#x8FC7;CAS&#x51FD;&#x6570;&#xFF0C;&#x5C06;&#x65B0;&#x7684;&#x503C;&#x8D4B;&#x503C;&#x7ED9;value&#x3002;
+</code></pre>
+<pre><code class="lang-java"><span class="hljs-comment">// AtomicLong&#x793A;&#x4F8B;</span>
+<span class="hljs-comment">// LongTest.java&#x7684;&#x6E90;&#x7801;</span>
+<span class="hljs-keyword">import</span> java.util.concurrent.atomic.AtomicLong;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LongTest</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>{
+        <span class="hljs-comment">// &#x65B0;&#x5EFA;AtomicLong&#x5BF9;&#x8C61;</span>
+        AtomicLong mAtoLong = <span class="hljs-keyword">new</span> AtomicLong();
+        mAtoLong.set(<span class="hljs-number">0x0123456789ABCDEFL</span>);
+        System.out.printf(<span class="hljs-string">&quot;%20s : 0x%016X\n&quot;</span>, <span class="hljs-string">&quot;get()&quot;</span>, mAtoLong.get());
+        System.out.printf(<span class="hljs-string">&quot;%20s : 0x%016X\n&quot;</span>, <span class="hljs-string">&quot;intValue()&quot;</span>, mAtoLong.intValue());
+        System.out.printf(<span class="hljs-string">&quot;%20s : 0x%016X\n&quot;</span>, <span class="hljs-string">&quot;longValue()&quot;</span>, mAtoLong.longValue());
+        System.out.printf(<span class="hljs-string">&quot;%20s : %s\n&quot;</span>, <span class="hljs-string">&quot;doubleValue()&quot;</span>, mAtoLong.doubleValue());
+        System.out.printf(<span class="hljs-string">&quot;%20s : %s\n&quot;</span>, <span class="hljs-string">&quot;floatValue()&quot;</span>, mAtoLong.floatValue());
+        System.out.printf(<span class="hljs-string">&quot;%20s : 0x%016X\n&quot;</span>, <span class="hljs-string">&quot;getAndDecrement()&quot;</span>, mAtoLong.getAndDecrement());
+        System.out.printf(<span class="hljs-string">&quot;%20s : 0x%016X\n&quot;</span>, <span class="hljs-string">&quot;decrementAndGet()&quot;</span>, mAtoLong.decrementAndGet());
+        System.out.printf(<span class="hljs-string">&quot;%20s : 0x%016X\n&quot;</span>, <span class="hljs-string">&quot;getAndIncrement()&quot;</span>, mAtoLong.getAndIncrement());
+        System.out.printf(<span class="hljs-string">&quot;%20s : 0x%016X\n&quot;</span>, <span class="hljs-string">&quot;incrementAndGet()&quot;</span>, mAtoLong.incrementAndGet());
+        System.out.printf(<span class="hljs-string">&quot;%20s : 0x%016X\n&quot;</span>, <span class="hljs-string">&quot;addAndGet(0x10)&quot;</span>, mAtoLong.addAndGet(<span class="hljs-number">0x10</span>));
+        System.out.printf(<span class="hljs-string">&quot;%20s : 0x%016X\n&quot;</span>, <span class="hljs-string">&quot;getAndAdd(0x10)&quot;</span>, mAtoLong.getAndAdd(<span class="hljs-number">0x10</span>));
+        System.out.printf(<span class="hljs-string">&quot;\n%20s : 0x%016X\n&quot;</span>, <span class="hljs-string">&quot;get()&quot;</span>, mAtoLong.get());
+        System.out.printf(<span class="hljs-string">&quot;%20s : %s\n&quot;</span>, <span class="hljs-string">&quot;compareAndSet()&quot;</span>, mAtoLong.compareAndSet(<span class="hljs-number">0x12345679L</span>, <span class="hljs-number">0xFEDCBA9876543210L</span>));
+        System.out.printf(<span class="hljs-string">&quot;%20s : 0x%016X\n&quot;</span>, <span class="hljs-string">&quot;get()&quot;</span>, mAtoLong.get());
+    }
+}
+
+               get() : <span class="hljs-number">0x0123456789ABCDEF</span>
+          intValue() : <span class="hljs-number">0x0000000089ABCDEF</span>
+         longValue() : <span class="hljs-number">0x0123456789ABCDEF</span>
+       doubleValue() : <span class="hljs-number">8.1985529216486896E16</span>
+        floatValue() : <span class="hljs-number">8.1985531E16</span>
+   getAndDecrement() : <span class="hljs-number">0x0123456789ABCDEF</span>
+   decrementAndGet() : <span class="hljs-number">0x0123456789ABCDED</span>
+   getAndIncrement() : <span class="hljs-number">0x0123456789ABCDED</span>
+   incrementAndGet() : <span class="hljs-number">0x0123456789ABCDEF</span>
+     addAndGet(<span class="hljs-number">0x10</span>) : <span class="hljs-number">0x0123456789ABCDFF</span>
+     getAndAdd(<span class="hljs-number">0x10</span>) : <span class="hljs-number">0x0123456789ABCDFF</span>
+               get() : <span class="hljs-number">0x0123456789ABCE0F</span>
+     compareAndSet() : <span class="hljs-function"><span class="hljs-keyword">false</span>
+               <span class="hljs-title">get</span><span class="hljs-params">()</span> : 0x0123456789ABCE0F
+</span></code></pre>
+<h1 id="atomiclongarray&#x539F;&#x5B50;&#x7C7B;"><a name="atomiclongarray&#x539F;&#x5B50;&#x7C7B;" class="anchor-navigation-ex-anchor" href="#atomiclongarray&#x539F;&#x5B50;&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="atomiclongarray&#x539F;&#x5B50;&#x7C7B;" class="plugin-anchor" href="#atomiclongarray&#x539F;&#x5B50;&#x7C7B;"><i class="fa fa-link" aria-hidden="true"></i></a>AtomicLongArray&#x539F;&#x5B50;&#x7C7B;</h1>
+<p>AtomicLongArray&#x7684;&#x4F5C;&#x7528;&#x5219;&#x662F;&#x5BF9;&quot;&#x957F;&#x6574;&#x5F62;&#x6570;&#x7EC4;&quot;&#x8FDB;&#x884C;&#x539F;&#x5B50;&#x64CD;&#x4F5C;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-comment">// AtomicLongArray&#x51FD;&#x6570;&#x5217;&#x8868;</span>
+<span class="hljs-comment">// &#x521B;&#x5EFA;&#x7ED9;&#x5B9A;&#x957F;&#x5EA6;&#x7684;&#x65B0; AtomicLongArray&#x3002;</span>
+AtomicLongArray(<span class="hljs-keyword">int</span> length)
+<span class="hljs-comment">// &#x521B;&#x5EFA;&#x4E0E;&#x7ED9;&#x5B9A;&#x6570;&#x7EC4;&#x5177;&#x6709;&#x76F8;&#x540C;&#x957F;&#x5EA6;&#x7684;&#x65B0; AtomicLongArray&#xFF0C;&#x5E76;&#x4ECE;&#x7ED9;&#x5B9A;&#x6570;&#x7EC4;&#x590D;&#x5236;&#x5176;&#x6240;&#x6709;&#x5143;&#x7D20;&#x3002;</span>
+AtomicLongArray(<span class="hljs-keyword">long</span>[] array)
+<span class="hljs-comment">// &#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x7ED9;&#x5B9A;&#x503C;&#x6DFB;&#x52A0;&#x5230;&#x7D22;&#x5F15; i &#x7684;&#x5143;&#x7D20;&#x3002;</span>
+<span class="hljs-function"><span class="hljs-keyword">long</span> <span class="hljs-title">addAndGet</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i, <span class="hljs-keyword">long</span> delta)</span>
+<span class="hljs-comment">// &#x5982;&#x679C;&#x5F53;&#x524D;&#x503C; == &#x9884;&#x671F;&#x503C;&#xFF0C;&#x5219;&#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x8BE5;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A;&#x7ED9;&#x5B9A;&#x7684;&#x66F4;&#x65B0;&#x503C;&#x3002;</span>
+<span class="hljs-keyword">boolean</span> <span class="hljs-title">compareAndSet</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i, <span class="hljs-keyword">long</span> expect, <span class="hljs-keyword">long</span> update)</span>
+<span class="hljs-comment">// &#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x7D22;&#x5F15; i &#x7684;&#x5143;&#x7D20;&#x51CF;1&#x3002;</span>
+<span class="hljs-keyword">long</span> <span class="hljs-title">decrementAndGet</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span>
+<span class="hljs-comment">// &#x83B7;&#x53D6;&#x4F4D;&#x7F6E; i &#x7684;&#x5F53;&#x524D;&#x503C;&#x3002;</span>
+<span class="hljs-keyword">long</span> <span class="hljs-title">get</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span>
+<span class="hljs-comment">// &#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x7ED9;&#x5B9A;&#x503C;&#x4E0E;&#x7D22;&#x5F15; i &#x7684;&#x5143;&#x7D20;&#x76F8;&#x52A0;&#x3002;</span>
+<span class="hljs-keyword">long</span> <span class="hljs-title">getAndAdd</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i, <span class="hljs-keyword">long</span> delta)</span>
+<span class="hljs-comment">// &#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x7D22;&#x5F15; i &#x7684;&#x5143;&#x7D20;&#x51CF; 1&#x3002;</span>
+<span class="hljs-keyword">long</span> <span class="hljs-title">getAndDecrement</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span>
+<span class="hljs-comment">// &#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x7D22;&#x5F15; i &#x7684;&#x5143;&#x7D20;&#x52A0; 1&#x3002;</span>
+<span class="hljs-keyword">long</span> <span class="hljs-title">getAndIncrement</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span>
+<span class="hljs-comment">// &#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x4F4D;&#x7F6E; i &#x7684;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x4E3A;&#x7ED9;&#x5B9A;&#x503C;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x65E7;&#x503C;&#x3002;</span>
+<span class="hljs-keyword">long</span> <span class="hljs-title">getAndSet</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i, <span class="hljs-keyword">long</span> newValue)</span>
+<span class="hljs-comment">// &#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x7D22;&#x5F15; i &#x7684;&#x5143;&#x7D20;&#x52A0;1&#x3002;</span>
+<span class="hljs-keyword">long</span> <span class="hljs-title">incrementAndGet</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i)</span>
+<span class="hljs-comment">// &#x6700;&#x7EC8;&#x5C06;&#x4F4D;&#x7F6E; i &#x7684;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x4E3A;&#x7ED9;&#x5B9A;&#x503C;&#x3002;</span>
+<span class="hljs-keyword">void</span> <span class="hljs-title">lazySet</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i, <span class="hljs-keyword">long</span> newValue)</span>
+<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x8BE5;&#x6570;&#x7EC4;&#x7684;&#x957F;&#x5EA6;&#x3002;</span>
+<span class="hljs-keyword">int</span> <span class="hljs-title">length</span><span class="hljs-params">()</span>
+<span class="hljs-comment">// &#x5C06;&#x4F4D;&#x7F6E; i &#x7684;&#x5143;&#x7D20;&#x8BBE;&#x7F6E;&#x4E3A;&#x7ED9;&#x5B9A;&#x503C;&#x3002;</span>
+<span class="hljs-keyword">void</span> <span class="hljs-title">set</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i, <span class="hljs-keyword">long</span> newValue)</span>
+<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6570;&#x7EC4;&#x5F53;&#x524D;&#x503C;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x8868;&#x793A;&#x5F62;&#x5F0F;&#x3002;</span>
+String <span class="hljs-title">toString</span><span class="hljs-params">()</span>
+<span class="hljs-comment">// &#x5982;&#x679C;&#x5F53;&#x524D;&#x503C; == &#x9884;&#x671F;&#x503C;&#xFF0C;&#x5219;&#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x8BE5;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A;&#x7ED9;&#x5B9A;&#x7684;&#x66F4;&#x65B0;&#x503C;&#x3002;</span>
+<span class="hljs-keyword">boolean</span>    <span class="hljs-title">weakCompareAndSet</span><span class="hljs-params">(<span class="hljs-keyword">int</span> i, <span class="hljs-keyword">long</span> expect, <span class="hljs-keyword">long</span> update)</span>
+</span></code></pre>
+<p><strong>AtomicLongArray&#x793A;&#x4F8B;</strong></p>
+<pre><code class="lang-java"><span class="hljs-comment">// LongArrayTest.java&#x7684;&#x6E90;&#x7801;</span>
+<span class="hljs-keyword">import</span> java.util.concurrent.atomic.AtomicLongArray;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LongArrayTest</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>{
+        <span class="hljs-comment">// &#x65B0;&#x5EFA;AtomicLongArray&#x5BF9;&#x8C61;</span>
+        <span class="hljs-keyword">long</span>[] arrLong = <span class="hljs-keyword">new</span> <span class="hljs-keyword">long</span>[] {<span class="hljs-number">10</span>, <span class="hljs-number">20</span>, <span class="hljs-number">30</span>, <span class="hljs-number">40</span>, <span class="hljs-number">50</span>};
+        AtomicLongArray ala = <span class="hljs-keyword">new</span> AtomicLongArray(arrLong);
+        ala.set(<span class="hljs-number">0</span>, <span class="hljs-number">100</span>);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i=<span class="hljs-number">0</span>, len=ala.length(); i&lt;len; i++) 
+            System.out.printf(<span class="hljs-string">&quot;get(%d) : %s\n&quot;</span>, i, ala.get(i));
+        System.out.printf(<span class="hljs-string">&quot;%20s : %s\n&quot;</span>, <span class="hljs-string">&quot;getAndDecrement(0)&quot;</span>, ala.getAndDecrement(<span class="hljs-number">0</span>));
+        System.out.printf(<span class="hljs-string">&quot;%20s : %s\n&quot;</span>, <span class="hljs-string">&quot;decrementAndGet(1)&quot;</span>, ala.decrementAndGet(<span class="hljs-number">1</span>));
+        System.out.printf(<span class="hljs-string">&quot;%20s : %s\n&quot;</span>, <span class="hljs-string">&quot;getAndIncrement(2)&quot;</span>, ala.getAndIncrement(<span class="hljs-number">2</span>));
+        System.out.printf(<span class="hljs-string">&quot;%20s : %s\n&quot;</span>, <span class="hljs-string">&quot;incrementAndGet(3)&quot;</span>, ala.incrementAndGet(<span class="hljs-number">3</span>));
+        System.out.printf(<span class="hljs-string">&quot;%20s : %s\n&quot;</span>, <span class="hljs-string">&quot;addAndGet(100)&quot;</span>, ala.addAndGet(<span class="hljs-number">0</span>, <span class="hljs-number">100</span>));
+        System.out.printf(<span class="hljs-string">&quot;%20s : %s\n&quot;</span>, <span class="hljs-string">&quot;getAndAdd(100)&quot;</span>, ala.getAndAdd(<span class="hljs-number">1</span>, <span class="hljs-number">100</span>));
+        System.out.printf(<span class="hljs-string">&quot;%20s : %s\n&quot;</span>, <span class="hljs-string">&quot;compareAndSet()&quot;</span>, ala.compareAndSet(<span class="hljs-number">2</span>, <span class="hljs-number">31</span>, <span class="hljs-number">1000</span>));
+        System.out.printf(<span class="hljs-string">&quot;%20s : %s\n&quot;</span>, <span class="hljs-string">&quot;get(2)&quot;</span>, ala.get(<span class="hljs-number">2</span>));
+    }
+}
+
+              get(<span class="hljs-number">0</span>) : <span class="hljs-number">100</span>
+              get(<span class="hljs-number">1</span>) : <span class="hljs-number">20</span>
+              get(<span class="hljs-number">2</span>) : <span class="hljs-number">30</span>
+              get(<span class="hljs-number">3</span>) : <span class="hljs-number">40</span>
+              get(<span class="hljs-number">4</span>) : <span class="hljs-number">50</span>
+  getAndDecrement(<span class="hljs-number">0</span>) : <span class="hljs-number">100</span>
+  decrementAndGet(<span class="hljs-number">1</span>) : <span class="hljs-number">19</span>
+  getAndIncrement(<span class="hljs-number">2</span>) : <span class="hljs-number">30</span>
+  incrementAndGet(<span class="hljs-number">3</span>) : <span class="hljs-number">41</span>
+      addAndGet(<span class="hljs-number">100</span>) : <span class="hljs-number">199</span>
+      getAndAdd(<span class="hljs-number">100</span>) : <span class="hljs-number">19</span>
+     compareAndSet() : <span class="hljs-function"><span class="hljs-keyword">true</span>
+              <span class="hljs-title">get</span><span class="hljs-params">(<span class="hljs-number">2</span>)</span> : 1000
+</span></code></pre>
+<h1 id="atomicreference&#x4ECB;&#x7ECD;&#x548C;&#x51FD;&#x6570;&#x5217;&#x8868;"><a name="atomicreference&#x4ECB;&#x7ECD;&#x548C;&#x51FD;&#x6570;&#x5217;&#x8868;" class="anchor-navigation-ex-anchor" href="#atomicreference&#x4ECB;&#x7ECD;&#x548C;&#x51FD;&#x6570;&#x5217;&#x8868;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="atomicreference&#x4ECB;&#x7ECD;&#x548C;&#x51FD;&#x6570;&#x5217;&#x8868;" class="plugin-anchor" href="#atomicreference&#x4ECB;&#x7ECD;&#x548C;&#x51FD;&#x6570;&#x5217;&#x8868;"><i class="fa fa-link" aria-hidden="true"></i></a>AtomicReference&#x4ECB;&#x7ECD;&#x548C;&#x51FD;&#x6570;&#x5217;&#x8868;</h1>
+<p>AtomicReference&#x662F;&#x4F5C;&#x7528;&#x662F;&#x5BF9;&quot;&#x5BF9;&#x8C61;&quot;&#x8FDB;&#x884C;&#x539F;&#x5B50;&#x64CD;&#x4F5C;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-comment">// AtomicReference&#x51FD;&#x6570;&#x5217;&#x8868;</span>
+<span class="hljs-comment">// &#x4F7F;&#x7528; null &#x521D;&#x59CB;&#x503C;&#x521B;&#x5EFA;&#x65B0;&#x7684; AtomicReference&#x3002;</span>
+AtomicReference()
+<span class="hljs-comment">// &#x4F7F;&#x7528;&#x7ED9;&#x5B9A;&#x7684;&#x521D;&#x59CB;&#x503C;&#x521B;&#x5EFA;&#x65B0;&#x7684; AtomicReference&#x3002;</span>
+AtomicReference(V initialValue)
+<span class="hljs-comment">// &#x5982;&#x679C;&#x5F53;&#x524D;&#x503C; == &#x9884;&#x671F;&#x503C;&#xFF0C;&#x5219;&#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x8BE5;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A;&#x7ED9;&#x5B9A;&#x7684;&#x66F4;&#x65B0;&#x503C;&#x3002;</span>
+<span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">compareAndSet</span><span class="hljs-params">(V expect, V update)</span>
+<span class="hljs-comment">// &#x83B7;&#x53D6;&#x5F53;&#x524D;&#x503C;&#x3002;</span>
+V <span class="hljs-title">get</span><span class="hljs-params">()</span>
+<span class="hljs-comment">// &#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x8BBE;&#x7F6E;&#x4E3A;&#x7ED9;&#x5B9A;&#x503C;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x65E7;&#x503C;&#x3002;</span>
+V <span class="hljs-title">getAndSet</span><span class="hljs-params">(V newValue)</span>
+<span class="hljs-comment">// &#x6700;&#x7EC8;&#x8BBE;&#x7F6E;&#x4E3A;&#x7ED9;&#x5B9A;&#x503C;&#x3002;</span>
+<span class="hljs-keyword">void</span> <span class="hljs-title">lazySet</span><span class="hljs-params">(V newValue)</span>
+<span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x4E3A;&#x7ED9;&#x5B9A;&#x503C;&#x3002;</span>
+<span class="hljs-keyword">void</span> <span class="hljs-title">set</span><span class="hljs-params">(V newValue)</span>
+<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x5F53;&#x524D;&#x503C;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x8868;&#x793A;&#x5F62;&#x5F0F;&#x3002;</span>
+String <span class="hljs-title">toString</span><span class="hljs-params">()</span>
+<span class="hljs-comment">// &#x5982;&#x679C;&#x5F53;&#x524D;&#x503C; == &#x9884;&#x671F;&#x503C;&#xFF0C;&#x5219;&#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x8BE5;&#x503C;&#x8BBE;&#x7F6E;&#x4E3A;&#x7ED9;&#x5B9A;&#x7684;&#x66F4;&#x65B0;&#x503C;&#x3002;</span>
+<span class="hljs-keyword">boolean</span> <span class="hljs-title">weakCompareAndSet</span><span class="hljs-params">(V expect, V update)</span>
+</span></code></pre>
+<pre><code class="lang-java">AtomicReference&#x7684;&#x6E90;&#x7801;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#x3002;&#x5B83;&#x662F;&#x901A;&#x8FC7;<span class="hljs-string">&quot;volatile&quot;</span>&#x548C;<span class="hljs-string">&quot;Unsafe&#x63D0;&#x4F9B;&#x7684;CAS&#x51FD;&#x6570;&#x5B9E;&#x73B0;&quot;</span>&#x539F;&#x5B50;&#x64CD;&#x4F5C;&#x3002;
+(<span class="hljs-number">01</span>) value&#x662F;<span class="hljs-keyword">volatile</span>&#x7C7B;&#x578B;&#x3002;&#x8FD9;&#x4FDD;&#x8BC1;&#x4E86;&#xFF1A;&#x5F53;&#x67D0;&#x7EBF;&#x7A0B;&#x4FEE;&#x6539;value&#x7684;&#x503C;&#x65F6;&#xFF0C;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x770B;&#x5230;&#x7684;value&#x503C;&#x90FD;&#x662F;&#x6700;&#x65B0;&#x7684;value&#x503C;&#xFF0C;&#x5373;&#x4FEE;&#x6539;&#x4E4B;&#x540E;&#x7684;<span class="hljs-keyword">volatile</span>&#x7684;&#x503C;&#x3002;
+(<span class="hljs-number">02</span>) &#x901A;&#x8FC7;CAS&#x8BBE;&#x7F6E;value&#x3002;&#x8FD9;&#x4FDD;&#x8BC1;&#x4E86;&#xFF1A;&#x5F53;&#x67D0;&#x7EBF;&#x7A0B;&#x6C60;&#x901A;&#x8FC7;CAS&#x51FD;&#x6570;(&#x5982;compareAndSet&#x51FD;&#x6570;)&#x8BBE;&#x7F6E;value&#x65F6;&#xFF0C;&#x5B83;&#x7684;&#x64CD;&#x4F5C;&#x662F;&#x539F;&#x5B50;&#x7684;&#xFF0C;&#x5373;&#x7EBF;&#x7A0B;&#x5728;&#x64CD;&#x4F5C;value&#x65F6;&#x4E0D;&#x4F1A;&#x88AB;&#x4E2D;&#x65AD;&#x3002;
+</code></pre>
+<p><strong>AtomicReference&#x793A;&#x4F8B;</strong></p>
+<pre><code class="lang-java"><span class="hljs-comment">// AtomicReferenceTest.java&#x7684;&#x6E90;&#x7801;</span>
+<span class="hljs-keyword">import</span> java.util.concurrent.atomic.AtomicReference;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AtomicReferenceTest</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span></span>{
+        <span class="hljs-comment">// &#x521B;&#x5EFA;&#x4E24;&#x4E2A;Person&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;id&#x5206;&#x522B;&#x662F;101&#x548C;102&#x3002;</span>
+        Person p1 = <span class="hljs-keyword">new</span> Person(<span class="hljs-number">101</span>);
+        Person p2 = <span class="hljs-keyword">new</span> Person(<span class="hljs-number">102</span>);
+        <span class="hljs-comment">// &#x65B0;&#x5EFA;AtomicReference&#x5BF9;&#x8C61;&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x5B83;&#x7684;&#x503C;&#x4E3A;p1&#x5BF9;&#x8C61;</span>
+        AtomicReference ar = <span class="hljs-keyword">new</span> AtomicReference(p1);
+        <span class="hljs-comment">// &#x901A;&#x8FC7;CAS&#x8BBE;&#x7F6E;ar&#x3002;&#x5982;&#x679C;ar&#x7684;&#x503C;&#x4E3A;p1&#x7684;&#x8BDD;&#xFF0C;&#x5219;&#x5C06;&#x5176;&#x8BBE;&#x7F6E;&#x4E3A;p2&#x3002;</span>
+        ar.compareAndSet(p1, p2);
+        Person p3 = (Person)ar.get();
+        System.out.println(<span class="hljs-string">&quot;p3 is &quot;</span>+p3);
+        System.out.println(<span class="hljs-string">&quot;p3.equals(p1)=&quot;</span>+p3.equals(p1));
+    }
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{
+    <span class="hljs-keyword">volatile</span> <span class="hljs-keyword">long</span> id;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">(<span class="hljs-keyword">long</span> id)</span> </span>{
+        <span class="hljs-keyword">this</span>.id = id;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;id:&quot;</span>+id;
+    }
+}
+
+<span class="hljs-comment">// &#x7ED3;&#x679C;&#x8BF4;&#x660E;&#xFF1A;</span>
+&#x65B0;&#x5EFA;AtomicReference&#x5BF9;&#x8C61;ar&#x65F6;&#xFF0C;&#x5C06;&#x5B83;&#x521D;&#x59CB;&#x5316;&#x4E3A;p1&#x3002;
+&#x7D27;&#x63A5;&#x7740;&#xFF0C;&#x901A;&#x8FC7;CAS&#x51FD;&#x6570;&#x5BF9;&#x5B83;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#x3002;&#x5982;&#x679C;ar&#x7684;&#x503C;&#x4E3A;p1&#x7684;&#x8BDD;&#xFF0C;&#x5219;&#x5C06;&#x5176;&#x8BBE;&#x7F6E;&#x4E3A;p2&#x3002;
+&#x6700;&#x540E;&#xFF0C;&#x83B7;&#x53D6;ar&#x5BF9;&#x5E94;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x6253;&#x5370;&#x7ED3;&#x679C;&#x3002;p3.equals(p1)&#x7684;&#x7ED3;&#x679C;&#x4E3A;<span class="hljs-keyword">false</span>&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;Person&#x5E76;&#x6CA1;&#x6709;&#x8986;&#x76D6;equals()&#x65B9;&#x6CD5;&#xFF0C;&#x800C;&#x662F;&#x91C7;&#x7528;&#x7EE7;&#x627F;&#x81EA;Object.java&#x7684;equals()&#x65B9;&#x6CD5;&#xFF1B;&#x800C;Object.java&#x4E2D;&#x7684;equals()&#x5B9E;&#x9645;&#x4E0A;&#x662F;&#x8C03;&#x7528;<span class="hljs-string">&quot;==&quot;</span>&#x53BB;&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5373;&#x6BD4;&#x8F83;&#x4E24;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x5730;&#x5740;&#x662F;&#x5426;&#x76F8;&#x7B49;&#x3002;
+
+p3 is id:<span class="hljs-number">102</span>
+p3.equals(p1)=<span class="hljs-keyword">false</span>
+</code></pre>
+<h1 id="atomiclongfieldupdater&#x4ECB;&#x7ECD;&#x548C;&#x51FD;&#x6570;&#x5217;&#x8868;"><a name="atomiclongfieldupdater&#x4ECB;&#x7ECD;&#x548C;&#x51FD;&#x6570;&#x5217;&#x8868;" class="anchor-navigation-ex-anchor" href="#atomiclongfieldupdater&#x4ECB;&#x7ECD;&#x548C;&#x51FD;&#x6570;&#x5217;&#x8868;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="atomiclongfieldupdater&#x4ECB;&#x7ECD;&#x548C;&#x51FD;&#x6570;&#x5217;&#x8868;" class="plugin-anchor" href="#atomiclongfieldupdater&#x4ECB;&#x7ECD;&#x548C;&#x51FD;&#x6570;&#x5217;&#x8868;"><i class="fa fa-link" aria-hidden="true"></i></a>AtomicLongFieldUpdater&#x4ECB;&#x7ECD;&#x548C;&#x51FD;&#x6570;&#x5217;&#x8868;</h1>
+<p>AtomicLongFieldUpdater&#x53EF;&#x4EE5;&#x5BF9;&#x6307;&#x5B9A;&quot;&#x7C7B;&#x7684; &apos;volatile long&apos;&#x7C7B;&#x578B;&#x7684;&#x6210;&#x5458;&quot;&#x8FDB;&#x884C;&#x539F;&#x5B50;&#x66F4;&#x65B0;&#x3002;&#x5B83;&#x662F;&#x57FA;&#x4E8E;&#x53CD;&#x5C04;&#x539F;&#x7406;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-comment">// AtomicLongFieldUpdater&#x51FD;&#x6570;&#x5217;&#x8868;</span>
+<span class="hljs-comment">// &#x53D7;&#x4FDD;&#x62A4;&#x7684;&#x65E0;&#x64CD;&#x4F5C;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#xFF0C;&#x4F9B;&#x5B50;&#x7C7B;&#x4F7F;&#x7528;&#x3002;</span>
+<span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-title">AtomicLongFieldUpdater</span><span class="hljs-params">()</span>
+<span class="hljs-comment">// &#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x7ED9;&#x5B9A;&#x503C;&#x6DFB;&#x52A0;&#x5230;&#x6B64;&#x66F4;&#x65B0;&#x5668;&#x7BA1;&#x7406;&#x7684;&#x7ED9;&#x5B9A;&#x5BF9;&#x8C61;&#x7684;&#x5B57;&#x6BB5;&#x7684;&#x5F53;&#x524D;&#x503C;&#x3002;</span>
+<span class="hljs-keyword">long</span> <span class="hljs-title">addAndGet</span><span class="hljs-params">(T obj, <span class="hljs-keyword">long</span> delta)</span>
+<span class="hljs-comment">// &#x5982;&#x679C;&#x5F53;&#x524D;&#x503C; == &#x9884;&#x671F;&#x503C;&#xFF0C;&#x5219;&#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x6B64;&#x66F4;&#x65B0;&#x5668;&#x6240;&#x7BA1;&#x7406;&#x7684;&#x7ED9;&#x5B9A;&#x5BF9;&#x8C61;&#x7684;&#x5B57;&#x6BB5;&#x8BBE;&#x7F6E;&#x4E3A;&#x7ED9;&#x5B9A;&#x7684;&#x66F4;&#x65B0;&#x503C;&#x3002;</span>
+<span class="hljs-keyword">abstract</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">compareAndSet</span><span class="hljs-params">(T obj, <span class="hljs-keyword">long</span> expect, <span class="hljs-keyword">long</span> update)</span>
+<span class="hljs-comment">// &#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x6B64;&#x66F4;&#x65B0;&#x5668;&#x7BA1;&#x7406;&#x7684;&#x7ED9;&#x5B9A;&#x5BF9;&#x8C61;&#x5B57;&#x6BB5;&#x5F53;&#x524D;&#x503C;&#x51CF; 1&#x3002;</span>
+<span class="hljs-keyword">long</span> <span class="hljs-title">decrementAndGet</span><span class="hljs-params">(T obj)</span>
+<span class="hljs-comment">// &#x83B7;&#x53D6;&#x6B64;&#x66F4;&#x65B0;&#x5668;&#x7BA1;&#x7406;&#x7684;&#x5728;&#x7ED9;&#x5B9A;&#x5BF9;&#x8C61;&#x7684;&#x5B57;&#x6BB5;&#x4E2D;&#x4FDD;&#x6301;&#x7684;&#x5F53;&#x524D;&#x503C;&#x3002;</span>
+<span class="hljs-keyword">abstract</span> <span class="hljs-keyword">long</span> <span class="hljs-title">get</span><span class="hljs-params">(T obj)</span>
+<span class="hljs-comment">// &#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x7ED9;&#x5B9A;&#x503C;&#x6DFB;&#x52A0;&#x5230;&#x6B64;&#x66F4;&#x65B0;&#x5668;&#x7BA1;&#x7406;&#x7684;&#x7ED9;&#x5B9A;&#x5BF9;&#x8C61;&#x7684;&#x5B57;&#x6BB5;&#x7684;&#x5F53;&#x524D;&#x503C;&#x3002;</span>
+<span class="hljs-keyword">long</span> <span class="hljs-title">getAndAdd</span><span class="hljs-params">(T obj, <span class="hljs-keyword">long</span> delta)</span>
+<span class="hljs-comment">// &#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x6B64;&#x66F4;&#x65B0;&#x5668;&#x7BA1;&#x7406;&#x7684;&#x7ED9;&#x5B9A;&#x5BF9;&#x8C61;&#x5B57;&#x6BB5;&#x5F53;&#x524D;&#x503C;&#x51CF; 1&#x3002;</span>
+<span class="hljs-keyword">long</span> <span class="hljs-title">getAndDecrement</span><span class="hljs-params">(T obj)</span>
+<span class="hljs-comment">// &#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x6B64;&#x66F4;&#x65B0;&#x5668;&#x7BA1;&#x7406;&#x7684;&#x7ED9;&#x5B9A;&#x5BF9;&#x8C61;&#x5B57;&#x6BB5;&#x7684;&#x5F53;&#x524D;&#x503C;&#x52A0; 1&#x3002;</span>
+<span class="hljs-keyword">long</span> <span class="hljs-title">getAndIncrement</span><span class="hljs-params">(T obj)</span>
+<span class="hljs-comment">// &#x5C06;&#x6B64;&#x66F4;&#x65B0;&#x5668;&#x7BA1;&#x7406;&#x7684;&#x7ED9;&#x5B9A;&#x5BF9;&#x8C61;&#x7684;&#x5B57;&#x6BB5;&#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x8BBE;&#x7F6E;&#x4E3A;&#x7ED9;&#x5B9A;&#x503C;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x65E7;&#x503C;&#x3002;</span>
+<span class="hljs-keyword">long</span> <span class="hljs-title">getAndSet</span><span class="hljs-params">(T obj, <span class="hljs-keyword">long</span> newValue)</span>
+<span class="hljs-comment">// &#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x6B64;&#x66F4;&#x65B0;&#x5668;&#x7BA1;&#x7406;&#x7684;&#x7ED9;&#x5B9A;&#x5BF9;&#x8C61;&#x5B57;&#x6BB5;&#x5F53;&#x524D;&#x503C;&#x52A0; 1&#x3002;</span>
+<span class="hljs-keyword">long</span> <span class="hljs-title">incrementAndGet</span><span class="hljs-params">(T obj)</span>
+<span class="hljs-comment">// &#x6700;&#x540E;&#x5C06;&#x6B64;&#x66F4;&#x65B0;&#x5668;&#x7BA1;&#x7406;&#x7684;&#x7ED9;&#x5B9A;&#x5BF9;&#x8C61;&#x7684;&#x5B57;&#x6BB5;&#x8BBE;&#x7F6E;&#x4E3A;&#x7ED9;&#x5B9A;&#x66F4;&#x65B0;&#x503C;&#x3002;</span>
+<span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">lazySet</span><span class="hljs-params">(T obj, <span class="hljs-keyword">long</span> newValue)</span>
+<span class="hljs-comment">// &#x4E3A;&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x5E76;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5177;&#x6709;&#x7ED9;&#x5B9A;&#x5B57;&#x6BB5;&#x7684;&#x66F4;&#x65B0;&#x5668;&#x3002;</span>
+<span class="hljs-keyword">static</span> &lt;U&gt; AtomicLongFieldUpdater&lt;U&gt; <span class="hljs-title">newUpdater</span><span class="hljs-params">(Class&lt;U&gt; tclass, String fieldName)</span>
+<span class="hljs-comment">// &#x5C06;&#x6B64;&#x66F4;&#x65B0;&#x5668;&#x7BA1;&#x7406;&#x7684;&#x7ED9;&#x5B9A;&#x5BF9;&#x8C61;&#x7684;&#x5B57;&#x6BB5;&#x8BBE;&#x7F6E;&#x4E3A;&#x7ED9;&#x5B9A;&#x66F4;&#x65B0;&#x503C;&#x3002;</span>
+<span class="hljs-keyword">abstract</span> <span class="hljs-keyword">void</span> <span class="hljs-title">set</span><span class="hljs-params">(T obj, <span class="hljs-keyword">long</span> newValue)</span>
+<span class="hljs-comment">// &#x5982;&#x679C;&#x5F53;&#x524D;&#x503C; == &#x9884;&#x671F;&#x503C;&#xFF0C;&#x5219;&#x4EE5;&#x539F;&#x5B50;&#x65B9;&#x5F0F;&#x5C06;&#x6B64;&#x66F4;&#x65B0;&#x5668;&#x6240;&#x7BA1;&#x7406;&#x7684;&#x7ED9;&#x5B9A;&#x5BF9;&#x8C61;&#x7684;&#x5B57;&#x6BB5;&#x8BBE;&#x7F6E;&#x4E3A;&#x7ED9;&#x5B9A;&#x7684;&#x66F4;&#x65B0;&#x503C;&#x3002;</span>
+<span class="hljs-keyword">abstract</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">weakCompareAndSet</span><span class="hljs-params">(T obj, <span class="hljs-keyword">long</span> expect, <span class="hljs-keyword">long</span> update)</span>
+</span></code></pre>
+<pre><code class="lang-java"><span class="hljs-comment">// AtomicLongFieldUpdater&#x793A;&#x4F8B;</span>
+<span class="hljs-comment">// LongTest.java&#x7684;&#x6E90;&#x7801;</span>
+<span class="hljs-keyword">import</span> java.util.concurrent.atomic.AtomicLongFieldUpdater;
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">LongFieldTest</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        <span class="hljs-comment">// &#x83B7;&#x53D6;Person&#x7684;class&#x5BF9;&#x8C61;</span>
+        Class cls = Person.class; 
+        <span class="hljs-comment">// &#x65B0;&#x5EFA;AtomicLongFieldUpdater&#x5BF9;&#x8C61;&#xFF0C;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x662F;&#x201C;class&#x5BF9;&#x8C61;&#x201D;&#x548C;&#x201C;long&#x7C7B;&#x578B;&#x5728;&#x7C7B;&#x4E2D;&#x5BF9;&#x5E94;&#x7684;&#x540D;&#x79F0;&#x201D;</span>
+        AtomicLongFieldUpdater mAtoLong = AtomicLongFieldUpdater.newUpdater(cls, <span class="hljs-string">&quot;id&quot;</span>);
+        Person person = <span class="hljs-keyword">new</span> Person(<span class="hljs-number">12345678L</span>);
+        <span class="hljs-comment">// &#x6BD4;&#x8F83;person&#x7684;&quot;id&quot;&#x5C5E;&#x6027;&#xFF0C;&#x5982;&#x679C;id&#x7684;&#x503C;&#x4E3A;12345678L&#xFF0C;&#x5219;&#x8BBE;&#x7F6E;&#x4E3A;1000&#x3002;</span>
+        mAtoLong.compareAndSet(person, <span class="hljs-number">12345678L</span>, <span class="hljs-number">1000</span>);
+        System.out.println(<span class="hljs-string">&quot;id=&quot;</span>+person.getId());
+    }
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{
+    <span class="hljs-keyword">volatile</span> <span class="hljs-keyword">long</span> id;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">(<span class="hljs-keyword">long</span> id)</span> </span>{
+        <span class="hljs-keyword">this</span>.id = id;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setId</span><span class="hljs-params">(<span class="hljs-keyword">long</span> id)</span> </span>{
+        <span class="hljs-keyword">this</span>.id = id;
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">long</span> <span class="hljs-title">getId</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> id;
+    }
+}
+
+id=<span class="hljs-number">1000</span>
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; narutohyc.com 2020 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2022-01-16 08:08:17
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="多线程_锁.html" class="navigation navigation-prev " aria-label="Previous page: 多线程_锁">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="多线程_JUC锁集合 .html" class="navigation navigation-next " aria-label="Next page: 多线程_JUC锁集合 ">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"多线程_JUC原子类","level":"1.3.3","depth":2,"next":{"title":"多线程_JUC锁集合 ","level":"1.3.4","depth":2,"path":"chapters/多线程_JUC锁集合 .md","ref":"chapters/多线程_JUC锁集合 .md","articles":[]},"previous":{"title":"多线程_锁","level":"1.3.2","depth":2,"path":"chapters/多线程_锁.md","ref":"chapters/多线程_锁.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2020","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java相关学习记录","language":"zh-hans","links":{"sidebar":{"我的狗窝":"https://github.com/narutohyc"}},"gitbook":"*","description":"记录 Java 的学习和一些技巧的使用"},"file":{"path":"chapters/多线程_JUC原子类.md","mtime":"2022-01-16T08:08:17.773Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-16T08:08:57.028Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+

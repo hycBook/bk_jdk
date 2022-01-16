@@ -1,0 +1,1372 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>MySQL_多表查询 · Java相关学习记录</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="narutohyc">
+        
+        
+    
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="MySQL_事务.html" />
+    
+    
+    <link rel="prev" href="MySQL_约束.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]};
+    </script>
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://github.com/narutohyc" target="_blank" class="custom-link">我的狗窝</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                        <b>1.1.</b>
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="设计模式.md">
+            
+                <span>
+            
+                    
+                        <b>1.2.</b>
+                    
+                    设计模式
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="设计模式_设计模式的概念.html">
+            
+                <a href="设计模式_设计模式的概念.html">
+            
+                    
+                        <b>1.2.1.</b>
+                    
+                    设计模式_设计模式的概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="设计模式_组成和分类.html">
+            
+                <a href="设计模式_组成和分类.html">
+            
+                    
+                        <b>1.2.2.</b>
+                    
+                    设计模式_组成和分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="设计模式_六大设计原则.html">
+            
+                <a href="设计模式_六大设计原则.html">
+            
+                    
+                        <b>1.2.3.</b>
+                    
+                    设计模式_六大设计原则
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="设计模式_创建型模式.html">
+            
+                <a href="设计模式_创建型模式.html">
+            
+                    
+                        <b>1.2.4.</b>
+                    
+                    设计模式_创建型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="设计模式_结构型模式.html">
+            
+                <a href="设计模式_结构型模式.html">
+            
+                    
+                        <b>1.2.5.</b>
+                    
+                    设计模式_结构型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="设计模式_行为型模式.html">
+            
+                <a href="设计模式_行为型模式.html">
+            
+                    
+                        <b>1.2.6.</b>
+                    
+                    设计模式_行为型模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="设计模式_总结.html">
+            
+                <a href="设计模式_总结.html">
+            
+                    
+                        <b>1.2.7.</b>
+                    
+                    设计模式_总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="多线程.md">
+            
+                <span>
+            
+                    
+                        <b>1.3.</b>
+                    
+                    多线程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="多线程_基础篇.html">
+            
+                <a href="多线程_基础篇.html">
+            
+                    
+                        <b>1.3.1.</b>
+                    
+                    多线程_基础篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="多线程_锁.html">
+            
+                <a href="多线程_锁.html">
+            
+                    
+                        <b>1.3.2.</b>
+                    
+                    多线程_锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="多线程_JUC原子类.html">
+            
+                <a href="多线程_JUC原子类.html">
+            
+                    
+                        <b>1.3.3.</b>
+                    
+                    多线程_JUC原子类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="多线程_JUC锁集合 .html">
+            
+                <a href="多线程_JUC锁集合 .html">
+            
+                    
+                        <b>1.3.4.</b>
+                    
+                    多线程_JUC锁集合 
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="多线程_ JUC集合.html">
+            
+                <a href="多线程_ JUC集合.html">
+            
+                    
+                        <b>1.3.5.</b>
+                    
+                    多线程_ JUC集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="多线程_JUC线程池.html">
+            
+                <a href="多线程_JUC线程池.html">
+            
+                    
+                        <b>1.3.6.</b>
+                    
+                    多线程_JUC线程池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="多线程_生产者消费者.html">
+            
+                <a href="多线程_生产者消费者.html">
+            
+                    
+                        <b>1.3.7.</b>
+                    
+                    多线程_生产者消费者
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="IDEA快捷键.html">
+            
+                <a href="IDEA快捷键.html">
+            
+                    
+                        <b>1.4.</b>
+                    
+                    IDEA快捷键
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="Spring注解.md">
+            
+                <span>
+            
+                    
+                        <b>1.5.</b>
+                    
+                    Spring注解
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="Spring注解_介绍.html">
+            
+                <a href="Spring注解_介绍.html">
+            
+                    
+                        <b>1.5.1.</b>
+                    
+                    Spring注解_介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="Spring注解_常用注解.html">
+            
+                <a href="Spring注解_常用注解.html">
+            
+                    
+                        <b>1.5.2.</b>
+                    
+                    Spring注解_常用注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="Spring注解_Spring入门篇.html">
+            
+                <a href="Spring注解_Spring入门篇.html">
+            
+                    
+                        <b>1.5.3.</b>
+                    
+                    Spring注解_Spring入门篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="Java基础.md">
+            
+                <span>
+            
+                    
+                        <b>1.6.</b>
+                    
+                    Java基础
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="Java基础_集合.html">
+            
+                <a href="Java基础_集合.html">
+            
+                    
+                        <b>1.6.1.</b>
+                    
+                    Java基础_集合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="Java基础_泛型.html">
+            
+                <a href="Java基础_泛型.html">
+            
+                    
+                        <b>1.6.2.</b>
+                    
+                    Java基础_泛型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="Java基础_打jar包.html">
+            
+                <a href="Java基础_打jar包.html">
+            
+                    
+                        <b>1.6.3.</b>
+                    
+                    Java基础_打jar包
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="Java基础_正则匹配.html">
+            
+                <a href="Java基础_正则匹配.html">
+            
+                    
+                        <b>1.6.4.</b>
+                    
+                    Java基础_正则匹配
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="Java基础_反射机制.html">
+            
+                <a href="Java基础_反射机制.html">
+            
+                    
+                        <b>1.6.5.</b>
+                    
+                    Java基础_反射机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="Java基础_对象正反序列化.html">
+            
+                <a href="Java基础_对象正反序列化.html">
+            
+                    
+                        <b>1.6.6.</b>
+                    
+                    Java基础_对象正反序列化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="Java基础_读取配置文件.html">
+            
+                <a href="Java基础_读取配置文件.html">
+            
+                    
+                        <b>1.6.7.</b>
+                    
+                    Java基础_读取配置文件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="Java基础_解析与生成XML.html">
+            
+                <a href="Java基础_解析与生成XML.html">
+            
+                    
+                        <b>1.6.8.</b>
+                    
+                    Java基础_解析与生成XML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="Java基础_后台服务器开发.html">
+            
+                <a href="Java基础_后台服务器开发.html">
+            
+                    
+                        <b>1.6.9.</b>
+                    
+                    Java基础_后台服务器开发
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="Java基础_四舍五入.html">
+            
+                <a href="Java基础_四舍五入.html">
+            
+                    
+                        <b>1.6.10.</b>
+                    
+                    Java基础_四舍五入
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="Java进阶.md">
+            
+                <span>
+            
+                    
+                        <b>1.7.</b>
+                    
+                    Java进阶
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="Java进阶_反射.html">
+            
+                <a href="Java进阶_反射.html">
+            
+                    
+                        <b>1.7.1.</b>
+                    
+                    Java进阶_反射
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="Java进阶_注解.html">
+            
+                <a href="Java进阶_注解.html">
+            
+                    
+                        <b>1.7.2.</b>
+                    
+                    Java进阶_注解
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="MySQL.md">
+            
+                <span>
+            
+                    
+                        <b>1.8.</b>
+                    
+                    MySQL
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="MySQL_基础.html">
+            
+                <a href="MySQL_基础.html">
+            
+                    
+                        <b>1.8.1.</b>
+                    
+                    MySQL_基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="MySQL_约束.html">
+            
+                <a href="MySQL_约束.html">
+            
+                    
+                        <b>1.8.2.</b>
+                    
+                    MySQL_约束
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.3" data-path="MySQL_多表查询.html">
+            
+                <a href="MySQL_多表查询.html">
+            
+                    
+                        <b>1.8.3.</b>
+                    
+                    MySQL_多表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.4" data-path="MySQL_事务.html">
+            
+                <a href="MySQL_事务.html">
+            
+                    
+                        <b>1.8.4.</b>
+                    
+                    MySQL_事务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.5" data-path="MySQL_数据库设计.html">
+            
+                <a href="MySQL_数据库设计.html">
+            
+                    
+                        <b>1.8.5.</b>
+                    
+                    MySQL_数据库设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="JDBC.md">
+            
+                <span>
+            
+                    
+                        <b>1.9.</b>
+                    
+                    JDBC
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="JDBC_JDBC基础.html">
+            
+                <a href="JDBC_JDBC基础.html">
+            
+                    
+                        <b>1.9.1.</b>
+                    
+                    JDBC_JDBC基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="JDBC_JDBC连接池.html">
+            
+                <a href="JDBC_JDBC连接池.html">
+            
+                    
+                        <b>1.9.2.</b>
+                    
+                    JDBC_JDBC连接池
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="JDBC_JDBCTemplate.html">
+            
+                <a href="JDBC_JDBCTemplate.html">
+            
+                    
+                        <b>1.9.3.</b>
+                    
+                    JDBC_JDBCTemplate
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >MySQL_多表查询</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#sql&#x51C6;&#x5907;"><b></b>sql&#x51C6;&#x5907;</a></li><li><span class="title-icon "></span><a href="#&#x5185;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;"><b></b>&#x5185;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;</a></li><ul><li><span class="title-icon "></span><a href="#&#x9690;&#x5F0F;&#x5185;&#x8FDE;&#x63A5;"><b></b>&#x9690;&#x5F0F;&#x5185;&#x8FDE;&#x63A5;</a></li><li><span class="title-icon "></span><a href="#&#x663E;&#x5F0F;&#x5185;&#x8FDE;&#x63A5;"><b></b>&#x663E;&#x5F0F;&#x5185;&#x8FDE;&#x63A5;</a></li></ul><li><span class="title-icon "></span><a href="#&#x5916;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;"><b></b>&#x5916;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5DE6;&#x5916;&#x8FDE;&#x63A5;"><b></b>&#x5DE6;&#x5916;&#x8FDE;&#x63A5;</a></li><li><span class="title-icon "></span><a href="#&#x53F3;&#x5916;&#x8FDE;&#x63A5;"><b></b>&#x53F3;&#x5916;&#x8FDE;&#x63A5;</a></li></ul><li><span class="title-icon "></span><a href="#&#x5B50;&#x67E5;&#x8BE2;"><b></b>&#x5B50;&#x67E5;&#x8BE2;</a></li><ul><li><span class="title-icon "></span><a href="#&#x5B50;&#x67E5;&#x7ED3;&#x679C;&#x662F;&#x5355;&#x884C;&#x5355;&#x5217;"><b></b>&#x5B50;&#x67E5;&#x7ED3;&#x679C;&#x662F;&#x5355;&#x884C;&#x5355;&#x5217;</a></li><li><span class="title-icon "></span><a href="#&#x5B50;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x662F;&#x591A;&#x884C;&#x5355;&#x5217;"><b></b>&#x5B50;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x662F;&#x591A;&#x884C;&#x5355;&#x5217;</a></li><li><span class="title-icon "></span><a href="#&#x5B50;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x662F;&#x591A;&#x884C;&#x591A;&#x5217;"><b></b>&#x5B50;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x662F;&#x591A;&#x884C;&#x591A;&#x5217;</a></li><li><span class="title-icon "></span><a href="#&#x591A;&#x8868;&#x67E5;&#x8BE2;&#x7EC3;&#x4E60;"><b></b>&#x591A;&#x8868;&#x67E5;&#x8BE2;&#x7EC3;&#x4E60;</a></li></ul><li><span class="title-icon "></span><a href="#&#x9644;&#x5F55;"><b></b>&#x9644;&#x5F55;</a></li></ul></div><a href="#sql&#x51C6;&#x5907;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><img src="https://upload-images.jianshu.io/upload_images/15675864-e39212ac990782cf.png" alt="&#x5F02;&#x4E16;&#x754C;.png"></p>
+<p>[TOC]</p>
+<blockquote>
+<p><a href="res/MySQL_&#x591A;&#x8868;&#x67E5;&#x8BE2;/MySQL&#x591A;&#x8868;&#x67E5;&#x8BE2;&#x4E0E;&#x4E8B;&#x52A1;&#x7684;&#x64CD;&#x4F5C;.pdf">MySQL&#x591A;&#x8868;&#x67E5;&#x8BE2;&#x4E0E;&#x4E8B;&#x52A1;&#x7684;&#x64CD;&#x4F5C;</a></p>
+</blockquote>
+<hr>
+<h1 id="sql&#x51C6;&#x5907;"><a name="sql&#x51C6;&#x5907;" class="anchor-navigation-ex-anchor" href="#sql&#x51C6;&#x5907;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="sql&#x51C6;&#x5907;" class="plugin-anchor" href="#sql&#x51C6;&#x5907;"><i class="fa fa-link" aria-hidden="true"></i></a>sql&#x51C6;&#x5907;</h1>
+<pre><code class="lang-mysql"># &#x521B;&#x5EFA;&#x90E8;&#x95E8;&#x8868;
+CREATE TABLE dept(
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    NAME VARCHAR(20)
+);
+INSERT INTO dept (NAME) VALUES (&apos;&#x5F00;&#x53D1;&#x90E8;&apos;),(&apos;&#x5E02;&#x573A;&#x90E8;&apos;),(&apos;&#x8D22;&#x52A1;&#x90E8;&apos;);
+# &#x521B;&#x5EFA;&#x5458;&#x5DE5;&#x8868;
+CREATE TABLE emp (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    NAME VARCHAR(10),
+    gender CHAR(1), -- &#x6027;&#x522B;
+    salary DOUBLE, -- &#x5DE5;&#x8D44;
+    join_date DATE, -- &#x5165;&#x804C;&#x65E5;&#x671F;
+    dept_id INT,
+    FOREIGN KEY (dept_id) REFERENCES dept(id) -- &#x5916;&#x952E;&#xFF0C;&#x5173;&#x8054;&#x90E8;&#x95E8;&#x8868;(&#x90E8;&#x95E8;&#x8868;&#x7684;&#x4E3B;&#x952E;)
+);
+INSERT INTO emp(NAME,gender,salary,join_date,dept_id) VALUES(&apos;&#x5B59;&#x609F;&#x7A7A;&apos;,&apos;&#x7537;&apos;,7200,&apos;2013-02-24&apos;,1);
+INSERT INTO emp(NAME,gender,salary,join_date,dept_id) VALUES(&apos;&#x732A;&#x516B;&#x6212;&apos;,&apos;&#x7537;&apos;,3600,&apos;2010-12-02&apos;,2);
+INSERT INTO emp(NAME,gender,salary,join_date,dept_id) VALUES(&apos;&#x5510;&#x50E7;&apos;,&apos;&#x7537;&apos;,9000,&apos;2008-08-08&apos;,2);
+INSERT INTO emp(NAME,gender,salary,join_date,dept_id) VALUES(&apos;&#x767D;&#x9AA8;&#x7CBE;&apos;,&apos;&#x5973;&apos;,5000,&apos;2015-10-07&apos;,3);
+INSERT INTO emp(NAME,gender,salary,join_date,dept_id) VALUES(&apos;&#x8718;&#x86DB;&#x7CBE;&apos;,&apos;&#x5973;&apos;,4500,&apos;2011-03-14&apos;,1);
+</code></pre>
+<h1 id="&#x5185;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;"><a name="&#x5185;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;" class="anchor-navigation-ex-anchor" href="#&#x5185;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5185;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;" class="plugin-anchor" href="#&#x5185;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5185;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;</h1>
+<blockquote>
+<p>&#x4ECE;&#x54EA;&#x4E9B;&#x8868;&#x4E2D;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x3001;&#x6761;&#x4EF6;&#x662F;&#x4EC0;&#x4E48;&#x3001;&#x67E5;&#x8BE2;&#x54EA;&#x4E9B;&#x5B57;&#x6BB5;</p>
+</blockquote>
+<h2 id="&#x9690;&#x5F0F;&#x5185;&#x8FDE;&#x63A5;"><a name="&#x9690;&#x5F0F;&#x5185;&#x8FDE;&#x63A5;" class="anchor-navigation-ex-anchor" href="#&#x9690;&#x5F0F;&#x5185;&#x8FDE;&#x63A5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x9690;&#x5F0F;&#x5185;&#x8FDE;&#x63A5;" class="plugin-anchor" href="#&#x9690;&#x5F0F;&#x5185;&#x8FDE;&#x63A5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9690;&#x5F0F;&#x5185;&#x8FDE;&#x63A5;</h2>
+<blockquote>
+<p>&#x4F7F;&#x7528;where&#x6761;&#x4EF6;&#x6D88;&#x9664;&#x65E0;&#x7528;&#x6570;&#x636E;</p>
+<pre><code class="lang-mysql">-- &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x4FE1;&#x606F;&#x548C;&#x5BF9;&#x5E94;&#x7684;&#x90E8;&#x95E8;&#x4FE1;&#x606F;
+SELECT * FROM emp,dept WHERE emp.`dept_id` = dept.`id`;
+
+-- &#x67E5;&#x8BE2;&#x5458;&#x5DE5;&#x8868;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x6027;&#x522B;&#x3002;&#x90E8;&#x95E8;&#x8868;&#x7684;&#x540D;&#x79F0;
+SELECT emp.name,emp.gender,dept.name FROM emp,dept WHERE emp.`dept_id` = dept.`id`;
+
+SELECT 
+    t1.name, -- &#x5458;&#x5DE5;&#x8868;&#x7684;&#x59D3;&#x540D;
+    t1.gender,-- &#x5458;&#x5DE5;&#x8868;&#x7684;&#x6027;&#x522B;
+    t2.name -- &#x90E8;&#x95E8;&#x8868;&#x7684;&#x540D;&#x79F0;
+FROM
+    emp t1,
+    dept t2
+WHERE 
+    t1.`dept_id` = t2.`id`;
+</code></pre>
+</blockquote>
+<h2 id="&#x663E;&#x5F0F;&#x5185;&#x8FDE;&#x63A5;"><a name="&#x663E;&#x5F0F;&#x5185;&#x8FDE;&#x63A5;" class="anchor-navigation-ex-anchor" href="#&#x663E;&#x5F0F;&#x5185;&#x8FDE;&#x63A5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x663E;&#x5F0F;&#x5185;&#x8FDE;&#x63A5;" class="plugin-anchor" href="#&#x663E;&#x5F0F;&#x5185;&#x8FDE;&#x63A5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x663E;&#x5F0F;&#x5185;&#x8FDE;&#x63A5;</h2>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A; select &#x5B57;&#x6BB5;&#x5217;&#x8868; from &#x8868;&#x540D;1 [inner] join &#x8868;&#x540D;2 on &#x6761;&#x4EF6;</p>
+<pre><code class="lang-mysql">SELECT * FROM emp INNER JOIN dept ON emp.`dept_id` = dept.`id`;    
+SELECT * FROM emp JOIN dept ON emp.`dept_id` = dept.`id`;
+</code></pre>
+</blockquote>
+<h1 id="&#x5916;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;"><a name="&#x5916;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;" class="anchor-navigation-ex-anchor" href="#&#x5916;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5916;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;" class="plugin-anchor" href="#&#x5916;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5916;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;</h1>
+<h2 id="&#x5DE6;&#x5916;&#x8FDE;&#x63A5;"><a name="&#x5DE6;&#x5916;&#x8FDE;&#x63A5;" class="anchor-navigation-ex-anchor" href="#&#x5DE6;&#x5916;&#x8FDE;&#x63A5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5DE6;&#x5916;&#x8FDE;&#x63A5;" class="plugin-anchor" href="#&#x5DE6;&#x5916;&#x8FDE;&#x63A5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5DE6;&#x5916;&#x8FDE;&#x63A5;</h2>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A;select &#x5B57;&#x6BB5;&#x5217;&#x8868; from &#x8868;1 left [outer] join &#x8868;2 on &#x6761;&#x4EF6;&#xFF1B;</p>
+<pre><code class="lang-mysql">-- &#x67E5;&#x8BE2;&#x7684;&#x662F;&#x5DE6;&#x8868;&#x6240;&#x6709;&#x6570;&#x636E;&#x4EE5;&#x53CA;&#x5176;&#x4EA4;&#x96C6;&#x90E8;&#x5206;&#x3002;
+-- &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x4FE1;&#x606F;&#xFF0C;&#x5982;&#x679C;&#x5458;&#x5DE5;&#x6709;&#x90E8;&#x95E8;&#xFF0C;&#x5219;&#x67E5;&#x8BE2;&#x90E8;&#x95E8;&#x540D;&#x79F0;&#xFF0C;&#x6CA1;&#x6709;&#x90E8;&#x95E8;&#xFF0C;&#x5219;&#x4E0D;&#x663E;&#x793A;&#x90E8;&#x95E8;&#x540D;&#x79F0;
+SELECT     t1.*,t2.`name` FROM emp t1 LEFT JOIN dept t2 ON t1.`dept_id` = t2.`id`;
+</code></pre>
+</blockquote>
+<h2 id="&#x53F3;&#x5916;&#x8FDE;&#x63A5;"><a name="&#x53F3;&#x5916;&#x8FDE;&#x63A5;" class="anchor-navigation-ex-anchor" href="#&#x53F3;&#x5916;&#x8FDE;&#x63A5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x53F3;&#x5916;&#x8FDE;&#x63A5;" class="plugin-anchor" href="#&#x53F3;&#x5916;&#x8FDE;&#x63A5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53F3;&#x5916;&#x8FDE;&#x63A5;</h2>
+<blockquote>
+<p>&#x8BED;&#x6CD5;&#xFF1A;select &#x5B57;&#x6BB5;&#x5217;&#x8868; from &#x8868;1 right [outer] join &#x8868;2 on &#x6761;&#x4EF6;&#xFF1B;</p>
+<pre><code class="lang-mysql">-- &#x67E5;&#x8BE2;&#x7684;&#x662F;&#x53F3;&#x8868;&#x6240;&#x6709;&#x6570;&#x636E;&#x4EE5;&#x53CA;&#x5176;&#x4EA4;&#x96C6;&#x90E8;&#x5206;
+SELECT     * FROM dept t2 RIGHT JOIN emp t1 ON t1.`dept_id` = t2.`id`;
+</code></pre>
+</blockquote>
+<h1 id="&#x5B50;&#x67E5;&#x8BE2;"><a name="&#x5B50;&#x67E5;&#x8BE2;" class="anchor-navigation-ex-anchor" href="#&#x5B50;&#x67E5;&#x8BE2;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5B50;&#x67E5;&#x8BE2;" class="plugin-anchor" href="#&#x5B50;&#x67E5;&#x8BE2;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B50;&#x67E5;&#x8BE2;</h1>
+<blockquote>
+<p>&#x6982;&#x5FF5;&#xFF1A;&#x67E5;&#x8BE2;&#x4E2D;&#x5D4C;&#x5957;&#x67E5;&#x8BE2;&#xFF0C;&#x79F0;&#x5D4C;&#x5957;&#x67E5;&#x8BE2;&#x4E3A;&#x5B50;&#x67E5;&#x8BE2;</p>
+<pre><code class="lang-mysql">-- &#x67E5;&#x8BE2;&#x5DE5;&#x8D44;&#x6700;&#x9AD8;&#x7684;&#x5458;&#x5DE5;&#x4FE1;&#x606F;
+-- 1 &#x67E5;&#x8BE2;&#x6700;&#x9AD8;&#x7684;&#x5DE5;&#x8D44;&#x662F;&#x591A;&#x5C11; 9000
+SELECT MAX(salary) FROM emp;
+-- 2 &#x67E5;&#x8BE2;&#x5458;&#x5DE5;&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x4E14;&#x5DE5;&#x8D44;&#x7B49;&#x4E8E;9000&#x7684;
+SELECT * FROM emp WHERE emp.`salary` = 9000;
+
+-- &#x4E00;&#x6761;sql&#x5C31;&#x5B8C;&#x6210;&#x8FD9;&#x4E2A;&#x64CD;&#x4F5C;&#x3002;&#x5B50;&#x67E5;&#x8BE2;
+SELECT * FROM emp WHERE emp.`salary` = (SELECT MAX(salary) FROM emp);
+</code></pre>
+</blockquote>
+<h2 id="&#x5B50;&#x67E5;&#x7ED3;&#x679C;&#x662F;&#x5355;&#x884C;&#x5355;&#x5217;"><a name="&#x5B50;&#x67E5;&#x7ED3;&#x679C;&#x662F;&#x5355;&#x884C;&#x5355;&#x5217;" class="anchor-navigation-ex-anchor" href="#&#x5B50;&#x67E5;&#x7ED3;&#x679C;&#x662F;&#x5355;&#x884C;&#x5355;&#x5217;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5B50;&#x67E5;&#x7ED3;&#x679C;&#x662F;&#x5355;&#x884C;&#x5355;&#x5217;" class="plugin-anchor" href="#&#x5B50;&#x67E5;&#x7ED3;&#x679C;&#x662F;&#x5355;&#x884C;&#x5355;&#x5217;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B50;&#x67E5;&#x7ED3;&#x679C;&#x662F;&#x5355;&#x884C;&#x5355;&#x5217;</h2>
+<blockquote>
+<p>&#x5B50;&#x67E5;&#x8BE2;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x6761;&#x4EF6;&#xFF0C;&#x4F7F;&#x7528;&#x8FD0;&#x7B97;&#x7B26;&#x53BB;&#x5224;&#x65AD;&#x3002; &#x8FD0;&#x7B97;&#x7B26;&#xFF1A; &gt; &gt;= &lt; &lt;= =</p>
+<pre><code class="lang-mysql">-- &#x67E5;&#x8BE2;&#x5458;&#x5DE5;&#x5DE5;&#x8D44;&#x5C0F;&#x4E8E;&#x5E73;&#x5747;&#x5DE5;&#x8D44;&#x7684;&#x4EBA;
+SELECT * FROM emp WHERE emp.salary &lt; (SELECT AVG(salary) FROM emp);
+</code></pre>
+</blockquote>
+<h2 id="&#x5B50;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x662F;&#x591A;&#x884C;&#x5355;&#x5217;"><a name="&#x5B50;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x662F;&#x591A;&#x884C;&#x5355;&#x5217;" class="anchor-navigation-ex-anchor" href="#&#x5B50;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x662F;&#x591A;&#x884C;&#x5355;&#x5217;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5B50;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x662F;&#x591A;&#x884C;&#x5355;&#x5217;" class="plugin-anchor" href="#&#x5B50;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x662F;&#x591A;&#x884C;&#x5355;&#x5217;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B50;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x662F;&#x591A;&#x884C;&#x5355;&#x5217;</h2>
+<blockquote>
+<p>&#x5B50;&#x67E5;&#x8BE2;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x6761;&#x4EF6;&#xFF0C;&#x4F7F;&#x7528;&#x8FD0;&#x7B97;&#x7B26;in&#x6765;&#x5224;&#x65AD;</p>
+<pre><code class="lang-mysql">-- &#x67E5;&#x8BE2;&apos;&#x8D22;&#x52A1;&#x90E8;&apos;&#x548C;&apos;&#x5E02;&#x573A;&#x90E8;&apos;&#x6240;&#x6709;&#x7684;&#x5458;&#x5DE5;&#x4FE1;&#x606F;
+SELECT id FROM dept WHERE NAME = &apos;&#x8D22;&#x52A1;&#x90E8;&apos; OR NAME = &apos;&#x5E02;&#x573A;&#x90E8;&apos;;
+SELECT * FROM emp WHERE dept_id = 3 OR dept_id = 2;
+-- &#x5B50;&#x67E5;&#x8BE2;
+SELECT * FROM emp WHERE dept_id IN (SELECT id FROM dept WHERE NAME = &apos;&#x8D22;&#x52A1;&#x90E8;&apos; OR NAME = &apos;&#x5E02;&#x573A;&#x90E8;&apos;);
+</code></pre>
+</blockquote>
+<h2 id="&#x5B50;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x662F;&#x591A;&#x884C;&#x591A;&#x5217;"><a name="&#x5B50;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x662F;&#x591A;&#x884C;&#x591A;&#x5217;" class="anchor-navigation-ex-anchor" href="#&#x5B50;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x662F;&#x591A;&#x884C;&#x591A;&#x5217;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5B50;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x662F;&#x591A;&#x884C;&#x591A;&#x5217;" class="plugin-anchor" href="#&#x5B50;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x662F;&#x591A;&#x884C;&#x591A;&#x5217;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5B50;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x662F;&#x591A;&#x884C;&#x591A;&#x5217;</h2>
+<blockquote>
+<p>&#x5B50;&#x67E5;&#x8BE2;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x4E00;&#x5F20;&#x865A;&#x62DF;&#x8868;&#x53C2;&#x4E0E;&#x67E5;&#x8BE2;</p>
+<pre><code class="lang-mysql">-- &#x67E5;&#x8BE2;&#x5458;&#x5DE5;&#x5165;&#x804C;&#x65E5;&#x671F;&#x662F;2011-11-11&#x65E5;&#x4E4B;&#x540E;&#x7684;&#x5458;&#x5DE5;&#x4FE1;&#x606F;&#x548C;&#x90E8;&#x95E8;&#x4FE1;&#x606F;
+-- &#x5B50;&#x67E5;&#x8BE2;
+SELECT * FROM dept t1 ,(SELECT * FROM emp WHERE emp.`join_date` &gt; &apos;2011-11-11&apos;) t2 WHERE t1.id = t2.dept_id;
+
+-- &#x666E;&#x901A;&#x5185;&#x8FDE;&#x63A5;
+SELECT * FROM emp t1,dept t2 WHERE t1.`dept_id` = t2.`id` AND t1.`join_date` &gt;  &apos;2011-11-11&apos;
+</code></pre>
+</blockquote>
+<h2 id="&#x591A;&#x8868;&#x67E5;&#x8BE2;&#x7EC3;&#x4E60;"><a name="&#x591A;&#x8868;&#x67E5;&#x8BE2;&#x7EC3;&#x4E60;" class="anchor-navigation-ex-anchor" href="#&#x591A;&#x8868;&#x67E5;&#x8BE2;&#x7EC3;&#x4E60;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x591A;&#x8868;&#x67E5;&#x8BE2;&#x7EC3;&#x4E60;" class="plugin-anchor" href="#&#x591A;&#x8868;&#x67E5;&#x8BE2;&#x7EC3;&#x4E60;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x591A;&#x8868;&#x67E5;&#x8BE2;&#x7EC3;&#x4E60;</h2>
+<blockquote>
+<p>&#x89C1;&#x8868;&#x8BED;&#x53E5;&#x8BE6;&#x89C1;&#x9644;&#x5F55;</p>
+<pre><code class="lang-mysql">-- 1.&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x4FE1;&#x606F;&#x3002;&#x67E5;&#x8BE2;&#x5458;&#x5DE5;&#x7F16;&#x53F7;&#xFF0C;&#x5458;&#x5DE5;&#x59D3;&#x540D;&#xFF0C;&#x5DE5;&#x8D44;&#xFF0C;&#x804C;&#x52A1;&#x540D;&#x79F0;&#xFF0C;&#x804C;&#x52A1;&#x63CF;&#x8FF0;
+/*
+   &#x5206;&#x6790;&#xFF1A;
+   1.&#x5458;&#x5DE5;&#x7F16;&#x53F7;&#xFF0C;&#x5458;&#x5DE5;&#x59D3;&#x540D;&#xFF0C;&#x5DE5;&#x8D44;&#xFF0C;&#x9700;&#x8981;&#x67E5;&#x8BE2;emp&#x8868;  &#x804C;&#x52A1;&#x540D;&#x79F0;&#xFF0C;&#x804C;&#x52A1;&#x63CF;&#x8FF0; &#x9700;&#x8981;&#x67E5;&#x8BE2;job&#x8868;
+   2.&#x67E5;&#x8BE2;&#x6761;&#x4EF6; emp.job_id = job.id
+*/
+SELECT 
+   t1.`id`, -- &#x5458;&#x5DE5;&#x7F16;&#x53F7;
+   t1.`ename`, -- &#x5458;&#x5DE5;&#x59D3;&#x540D;
+   t1.`salary`,-- &#x5DE5;&#x8D44;
+   t2.`jname`, -- &#x804C;&#x52A1;&#x540D;&#x79F0;
+   t2.`description` -- &#x804C;&#x52A1;&#x63CF;&#x8FF0;
+FROM 
+   emp t1, job t2
+WHERE 
+   t1.`job_id` = t2.`id`;
+</code></pre>
+<pre><code class="lang-mysql">-- 2.&#x67E5;&#x8BE2;&#x5458;&#x5DE5;&#x7F16;&#x53F7;&#xFF0C;&#x5458;&#x5DE5;&#x59D3;&#x540D;&#xFF0C;&#x5DE5;&#x8D44;&#xFF0C;&#x804C;&#x52A1;&#x540D;&#x79F0;&#xFF0C;&#x804C;&#x52A1;&#x63CF;&#x8FF0;&#xFF0C;&#x90E8;&#x95E8;&#x540D;&#x79F0;&#xFF0C;&#x90E8;&#x95E8;&#x4F4D;&#x7F6E;
+/*
+   &#x5206;&#x6790;&#xFF1A;
+   1. &#x5458;&#x5DE5;&#x7F16;&#x53F7;&#xFF0C;&#x5458;&#x5DE5;&#x59D3;&#x540D;&#xFF0C;&#x5DE5;&#x8D44; emp  &#x804C;&#x52A1;&#x540D;&#x79F0;&#xFF0C;&#x804C;&#x52A1;&#x63CF;&#x8FF0; job  &#x90E8;&#x95E8;&#x540D;&#x79F0;&#xFF0C;&#x90E8;&#x95E8;&#x4F4D;&#x7F6E; dept
+   2. &#x6761;&#x4EF6;&#xFF1A; emp.job_id = job.id and emp.dept_id = dept.id
+*/
+SELECT 
+   t1.`id`, -- &#x5458;&#x5DE5;&#x7F16;&#x53F7;
+   t1.`ename`, -- &#x5458;&#x5DE5;&#x59D3;&#x540D;
+   t1.`salary`,-- &#x5DE5;&#x8D44;
+   t2.`jname`, -- &#x804C;&#x52A1;&#x540D;&#x79F0;
+   t2.`description`, -- &#x804C;&#x52A1;&#x63CF;&#x8FF0;
+   t3.`dname`, -- &#x90E8;&#x95E8;&#x540D;&#x79F0;
+   t3.`loc` -- &#x90E8;&#x95E8;&#x4F4D;&#x7F6E;
+FROM 
+   emp t1, job t2,dept t3
+WHERE 
+   t1.`job_id` = t2.`id` AND t1.`dept_id` = t3.`id`;
+</code></pre>
+<pre><code class="lang-mysql">-- 3.&#x67E5;&#x8BE2;&#x5458;&#x5DE5;&#x59D3;&#x540D;&#xFF0C;&#x5DE5;&#x8D44;&#xFF0C;&#x5DE5;&#x8D44;&#x7B49;&#x7EA7;
+/*
+   &#x5206;&#x6790;&#xFF1A;
+   1.&#x5458;&#x5DE5;&#x59D3;&#x540D;&#xFF0C;&#x5DE5;&#x8D44; emp  &#x5DE5;&#x8D44;&#x7B49;&#x7EA7; salarygrade
+   2.&#x6761;&#x4EF6; 
+       emp.salary &gt;= salarygrade.losalary and emp.salary &lt;= salarygrade.hisalary
+       emp.salary BETWEEN salarygrade.losalary and salarygrade.hisalary
+*/
+SELECT 
+   t1.ename ,
+   t1.`salary`,
+   t2.*
+FROM 
+   emp t1, salarygrade t2
+WHERE 
+   t1.`salary` BETWEEN t2.`losalary` AND t2.`hisalary`;
+</code></pre>
+<pre><code class="lang-mysql">-- 4.&#x67E5;&#x8BE2;&#x5458;&#x5DE5;&#x59D3;&#x540D;&#xFF0C;&#x5DE5;&#x8D44;&#xFF0C;&#x804C;&#x52A1;&#x540D;&#x79F0;&#xFF0C;&#x804C;&#x52A1;&#x63CF;&#x8FF0;&#xFF0C;&#x90E8;&#x95E8;&#x540D;&#x79F0;&#xFF0C;&#x90E8;&#x95E8;&#x4F4D;&#x7F6E;&#xFF0C;&#x5DE5;&#x8D44;&#x7B49;&#x7EA7;
+/*
+   &#x5206;&#x6790;&#xFF1A;
+   1. &#x5458;&#x5DE5;&#x59D3;&#x540D;&#xFF0C;&#x5DE5;&#x8D44; emp &#xFF0C; &#x804C;&#x52A1;&#x540D;&#x79F0;&#xFF0C;&#x804C;&#x52A1;&#x63CF;&#x8FF0; job &#x90E8;&#x95E8;&#x540D;&#x79F0;&#xFF0C;&#x90E8;&#x95E8;&#x4F4D;&#x7F6E;&#xFF0C;dept  &#x5DE5;&#x8D44;&#x7B49;&#x7EA7; salarygrade
+   2. &#x6761;&#x4EF6;&#xFF1A; emp.job_id = job.id and emp.dept_id = dept.id and emp.salary BETWEEN salarygrade.losalary and salarygrade.hisalary
+*/
+SELECT 
+   t1.`ename`,
+   t1.`salary`,
+   t2.`jname`,
+   t2.`description`,
+   t3.`dname`,
+   t3.`loc`,
+   t4.`grade`
+FROM 
+   emp t1,job t2,dept t3,salarygrade t4
+WHERE 
+   t1.`job_id` = t2.`id` 
+   AND t1.`dept_id` = t3.`id`
+   AND t1.`salary` BETWEEN t4.`losalary` AND t4.`hisalary`;
+</code></pre>
+<pre><code class="lang-mysql">-- 5.&#x67E5;&#x8BE2;&#x51FA;&#x90E8;&#x95E8;&#x7F16;&#x53F7;&#x3001;&#x90E8;&#x95E8;&#x540D;&#x79F0;&#x3001;&#x90E8;&#x95E8;&#x4F4D;&#x7F6E;&#x3001;&#x90E8;&#x95E8;&#x4EBA;&#x6570;
+/*
+   &#x5206;&#x6790;&#xFF1A;
+   1.&#x90E8;&#x95E8;&#x7F16;&#x53F7;&#x3001;&#x90E8;&#x95E8;&#x540D;&#x79F0;&#x3001;&#x90E8;&#x95E8;&#x4F4D;&#x7F6E; dept &#x8868;&#x3002; &#x90E8;&#x95E8;&#x4EBA;&#x6570; emp&#x8868;
+   2.&#x4F7F;&#x7528;&#x5206;&#x7EC4;&#x67E5;&#x8BE2;&#x3002;&#x6309;&#x7167;emp.dept_id&#x5B8C;&#x6210;&#x5206;&#x7EC4;&#xFF0C;&#x67E5;&#x8BE2;count(id)
+   3.&#x4F7F;&#x7528;&#x5B50;&#x67E5;&#x8BE2;&#x5C06;&#x7B2C;2&#x6B65;&#x7684;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x548C;dept&#x8868;&#x8FDB;&#x884C;&#x5173;&#x8054;&#x67E5;&#x8BE2;
+*/
+SELECT 
+   t1.`id`,t1.`dname`,t1.`loc` , t2.total
+FROM 
+   dept t1,
+   (SELECT
+       dept_id,COUNT(id) total
+   FROM 
+       emp
+   GROUP BY dept_id) t2
+WHERE t1.`id` = t2.dept_id;
+</code></pre>
+<pre><code class="lang-mysql">-- 6.&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x7684;&#x59D3;&#x540D;&#x53CA;&#x5176;&#x76F4;&#x63A5;&#x4E0A;&#x7EA7;&#x7684;&#x59D3;&#x540D;,&#x6CA1;&#x6709;&#x9886;&#x5BFC;&#x7684;&#x5458;&#x5DE5;&#x4E5F;&#x9700;&#x8981;&#x67E5;&#x8BE2;
+/*
+   &#x5206;&#x6790;&#xFF1A;
+   1.&#x59D3;&#x540D; emp&#xFF0C; &#x76F4;&#x63A5;&#x4E0A;&#x7EA7;&#x7684;&#x59D3;&#x540D; emp
+        emp&#x8868;&#x7684;id &#x548C; mgr &#x662F;&#x81EA;&#x5173;&#x8054;
+   2.&#x6761;&#x4EF6; emp.id = emp.mgr
+   3.&#x67E5;&#x8BE2;&#x5DE6;&#x8868;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x548C; &#x4EA4;&#x96C6;&#x6570;&#x636E;
+       &#x4F7F;&#x7528;&#x5DE6;&#x5916;&#x8FDE;&#x63A5;&#x67E5;&#x8BE2;
+*/
+SELECT 
+   t1.ename,
+   t1.mgr,
+   t2.`id`,
+   t2.`ename`
+FROM emp t1
+   LEFT JOIN emp t2
+   ON t1.`mgr` = t2.`id`;
+</code></pre>
+</blockquote>
+<h1 id="&#x9644;&#x5F55;"><a name="&#x9644;&#x5F55;" class="anchor-navigation-ex-anchor" href="#&#x9644;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x9644;&#x5F55;" class="plugin-anchor" href="#&#x9644;&#x5F55;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x9644;&#x5F55;</h1>
+<pre><code class="lang-mysql">-- &#x90E8;&#x95E8;&#x8868;
+CREATE TABLE dept (
+  id INT PRIMARY KEY PRIMARY KEY, -- &#x90E8;&#x95E8;id
+  dname VARCHAR(50), -- &#x90E8;&#x95E8;&#x540D;&#x79F0;
+  loc VARCHAR(50) -- &#x90E8;&#x95E8;&#x6240;&#x5728;&#x5730;
+);
+
+-- &#x6DFB;&#x52A0;4&#x4E2A;&#x90E8;&#x95E8;
+INSERT INTO dept(id,dname,loc) VALUES 
+(10,&apos;&#x6559;&#x7814;&#x90E8;&apos;,&apos;&#x5317;&#x4EAC;&apos;),
+(20,&apos;&#x5B66;&#x5DE5;&#x90E8;&apos;,&apos;&#x4E0A;&#x6D77;&apos;),
+(30,&apos;&#x9500;&#x552E;&#x90E8;&apos;,&apos;&#x5E7F;&#x5DDE;&apos;),
+(40,&apos;&#x8D22;&#x52A1;&#x90E8;&apos;,&apos;&#x6DF1;&#x5733;&apos;);
+
+
+
+-- &#x804C;&#x52A1;&#x8868;&#xFF0C;&#x804C;&#x52A1;&#x540D;&#x79F0;&#xFF0C;&#x804C;&#x52A1;&#x63CF;&#x8FF0;
+CREATE TABLE job (
+  id INT PRIMARY KEY,
+  jname VARCHAR(20),
+  description VARCHAR(50)
+);
+
+-- &#x6DFB;&#x52A0;4&#x4E2A;&#x804C;&#x52A1;
+INSERT INTO job (id, jname, description) VALUES
+(1, &apos;&#x8463;&#x4E8B;&#x957F;&apos;, &apos;&#x7BA1;&#x7406;&#x6574;&#x4E2A;&#x516C;&#x53F8;&#xFF0C;&#x63A5;&#x5355;&apos;),
+(2, &apos;&#x7ECF;&#x7406;&apos;, &apos;&#x7BA1;&#x7406;&#x90E8;&#x95E8;&#x5458;&#x5DE5;&apos;),
+(3, &apos;&#x9500;&#x552E;&#x5458;&apos;, &apos;&#x5411;&#x5BA2;&#x4EBA;&#x63A8;&#x9500;&#x4EA7;&#x54C1;&apos;),
+(4, &apos;&#x6587;&#x5458;&apos;, &apos;&#x4F7F;&#x7528;&#x529E;&#x516C;&#x8F6F;&#x4EF6;&apos;);
+
+
+
+-- &#x5458;&#x5DE5;&#x8868;
+CREATE TABLE emp (
+  id INT PRIMARY KEY, -- &#x5458;&#x5DE5;id
+  ename VARCHAR(50), -- &#x5458;&#x5DE5;&#x59D3;&#x540D;
+  job_id INT, -- &#x804C;&#x52A1;id
+  mgr INT , -- &#x4E0A;&#x7EA7;&#x9886;&#x5BFC;
+  joindate DATE, -- &#x5165;&#x804C;&#x65E5;&#x671F;
+  salary DECIMAL(7,2), -- &#x5DE5;&#x8D44;
+  bonus DECIMAL(7,2), -- &#x5956;&#x91D1;
+  dept_id INT, -- &#x6240;&#x5728;&#x90E8;&#x95E8;&#x7F16;&#x53F7;
+  CONSTRAINT emp_jobid_ref_job_id_fk FOREIGN KEY (job_id) REFERENCES job (id),
+  CONSTRAINT emp_deptid_ref_dept_id_fk FOREIGN KEY (dept_id) REFERENCES dept (id)
+);
+
+-- &#x6DFB;&#x52A0;&#x5458;&#x5DE5;
+INSERT INTO emp(id,ename,job_id,mgr,joindate,salary,bonus,dept_id) VALUES 
+(1001,&apos;&#x5B59;&#x609F;&#x7A7A;&apos;,4,1004,&apos;2000-12-17&apos;,&apos;8000.00&apos;,NULL,20),
+(1002,&apos;&#x5362;&#x4FCA;&#x4E49;&apos;,3,1006,&apos;2001-02-20&apos;,&apos;16000.00&apos;,&apos;3000.00&apos;,30),
+(1003,&apos;&#x6797;&#x51B2;&apos;,3,1006,&apos;2001-02-22&apos;,&apos;12500.00&apos;,&apos;5000.00&apos;,30),
+(1004,&apos;&#x5510;&#x50E7;&apos;,2,1009,&apos;2001-04-02&apos;,&apos;29750.00&apos;,NULL,20),
+(1005,&apos;&#x674E;&#x9035;&apos;,4,1006,&apos;2001-09-28&apos;,&apos;12500.00&apos;,&apos;14000.00&apos;,30),
+(1006,&apos;&#x5B8B;&#x6C5F;&apos;,2,1009,&apos;2001-05-01&apos;,&apos;28500.00&apos;,NULL,30),
+(1007,&apos;&#x5218;&#x5907;&apos;,2,1009,&apos;2001-09-01&apos;,&apos;24500.00&apos;,NULL,10),
+(1008,&apos;&#x732A;&#x516B;&#x6212;&apos;,4,1004,&apos;2007-04-19&apos;,&apos;30000.00&apos;,NULL,20),
+(1009,&apos;&#x7F57;&#x8D2F;&#x4E2D;&apos;,1,NULL,&apos;2001-11-17&apos;,&apos;50000.00&apos;,NULL,10),
+(1010,&apos;&#x5434;&#x7528;&apos;,3,1006,&apos;2001-09-08&apos;,&apos;15000.00&apos;,&apos;0.00&apos;,30),
+(1011,&apos;&#x6C99;&#x50E7;&apos;,4,1004,&apos;2007-05-23&apos;,&apos;11000.00&apos;,NULL,20),
+(1012,&apos;&#x674E;&#x9035;&apos;,4,1006,&apos;2001-12-03&apos;,&apos;9500.00&apos;,NULL,30),
+(1013,&apos;&#x5C0F;&#x767D;&#x9F99;&apos;,4,1004,&apos;2001-12-03&apos;,&apos;30000.00&apos;,NULL,20),
+(1014,&apos;&#x5173;&#x7FBD;&apos;,4,1007,&apos;2002-01-23&apos;,&apos;13000.00&apos;,NULL,10);
+
+
+
+-- &#x5DE5;&#x8D44;&#x7B49;&#x7EA7;&#x8868;
+CREATE TABLE salarygrade (
+  grade INT PRIMARY KEY,   -- &#x7EA7;&#x522B;
+  losalary INT,  -- &#x6700;&#x4F4E;&#x5DE5;&#x8D44;
+  hisalary INT -- &#x6700;&#x9AD8;&#x5DE5;&#x8D44;
+);
+
+-- &#x6DFB;&#x52A0;5&#x4E2A;&#x5DE5;&#x8D44;&#x7B49;&#x7EA7;
+INSERT INTO salarygrade(grade,losalary,hisalary) VALUES 
+(1,7000,12000),
+(2,12010,14000),
+(3,14010,20000),
+(4,20010,30000),
+(5,30010,99990);
+
+-- &#x9700;&#x6C42;&#xFF1A;
+
+-- 1.&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x4FE1;&#x606F;&#x3002;&#x67E5;&#x8BE2;&#x5458;&#x5DE5;&#x7F16;&#x53F7;&#xFF0C;&#x5458;&#x5DE5;&#x59D3;&#x540D;&#xFF0C;&#x5DE5;&#x8D44;&#xFF0C;&#x804C;&#x52A1;&#x540D;&#x79F0;&#xFF0C;&#x804C;&#x52A1;&#x63CF;&#x8FF0;
+
+-- 2.&#x67E5;&#x8BE2;&#x5458;&#x5DE5;&#x7F16;&#x53F7;&#xFF0C;&#x5458;&#x5DE5;&#x59D3;&#x540D;&#xFF0C;&#x5DE5;&#x8D44;&#xFF0C;&#x804C;&#x52A1;&#x540D;&#x79F0;&#xFF0C;&#x804C;&#x52A1;&#x63CF;&#x8FF0;&#xFF0C;&#x90E8;&#x95E8;&#x540D;&#x79F0;&#xFF0C;&#x90E8;&#x95E8;&#x4F4D;&#x7F6E;
+
+-- 3.&#x67E5;&#x8BE2;&#x5458;&#x5DE5;&#x59D3;&#x540D;&#xFF0C;&#x5DE5;&#x8D44;&#xFF0C;&#x5DE5;&#x8D44;&#x7B49;&#x7EA7;
+
+-- 4.&#x67E5;&#x8BE2;&#x5458;&#x5DE5;&#x59D3;&#x540D;&#xFF0C;&#x5DE5;&#x8D44;&#xFF0C;&#x804C;&#x52A1;&#x540D;&#x79F0;&#xFF0C;&#x804C;&#x52A1;&#x63CF;&#x8FF0;&#xFF0C;&#x90E8;&#x95E8;&#x540D;&#x79F0;&#xFF0C;&#x90E8;&#x95E8;&#x4F4D;&#x7F6E;&#xFF0C;&#x5DE5;&#x8D44;&#x7B49;&#x7EA7;
+
+-- 5.&#x67E5;&#x8BE2;&#x51FA;&#x90E8;&#x95E8;&#x7F16;&#x53F7;&#x3001;&#x90E8;&#x95E8;&#x540D;&#x79F0;&#x3001;&#x90E8;&#x95E8;&#x4F4D;&#x7F6E;&#x3001;&#x90E8;&#x95E8;&#x4EBA;&#x6570;
+
+-- 6.&#x67E5;&#x8BE2;&#x6240;&#x6709;&#x5458;&#x5DE5;&#x7684;&#x59D3;&#x540D;&#x53CA;&#x5176;&#x76F4;&#x63A5;&#x4E0A;&#x7EA7;&#x7684;&#x59D3;&#x540D;,&#x6CA1;&#x6709;&#x9886;&#x5BFC;&#x7684;&#x5458;&#x5DE5;&#x4E5F;&#x9700;&#x8981;&#x67E5;&#x8BE2;
+</code></pre>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; narutohyc.com 2020 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2022-01-16 08:08:17
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="MySQL_约束.html" class="navigation navigation-prev " aria-label="Previous page: MySQL_约束">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="MySQL_事务.html" class="navigation navigation-next " aria-label="Next page: MySQL_事务">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"MySQL_多表查询","level":"1.8.3","depth":2,"next":{"title":"MySQL_事务","level":"1.8.4","depth":2,"path":"chapters/MySQL_事务.md","ref":"chapters/MySQL_事务.md","articles":[]},"previous":{"title":"MySQL_约束","level":"1.8.2","depth":2,"path":"chapters/MySQL_约束.md","ref":"chapters/MySQL_约束.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2020","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"donate":{"alipay":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://upload-images.jianshu.io/upload_images/15675864-5e5ba668035853d8.png","wechatText":"微信打赏"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":false,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java相关学习记录","language":"zh-hans","links":{"sidebar":{"我的狗窝":"https://github.com/narutohyc"}},"gitbook":"*","description":"记录 Java 的学习和一些技巧的使用"},"file":{"path":"chapters/MySQL_多表查询.md","mtime":"2022-01-16T08:08:17.589Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-01-16T08:08:57.028Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+
+    </body>
+</html>
+
