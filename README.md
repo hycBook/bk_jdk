@@ -1,9 +1,9 @@
-# Java Readme
+![img]( https://upload-images.jianshu.io/upload_images/15675864-952291e89189c8a8.jpg ) 
 
- ![img]( https://upload-images.jianshu.io/upload_images/15675864-952291e89189c8a8.jpg ) 
+---
 
-> 机器学习的学习记录电子书
->
+<font size=6 color=A8D683>&#x1F42C; java学习记录</font>
+
 > 其中有些来自一些博客论坛，如有侵权，请联系作者 1832044043@qq.com
 >
 > 其中能加上原文地址的都已在文中尽可能加上
@@ -38,8 +38,6 @@ $$
 \text{life}= \underset{birth}{\overset{death}{\mathop
 \int }}\,\frac{happiness}{time}\vartriangle time
 $$
-
-
 
 [1] J. Yin, Y. Huang, B. Chen and S. Ye, "Color Transferred Convolutional Neural Networks for Image Dehazing," in *IEEE Transactions on Circuits and Systems for Video Technology*.
 doi: 10.1109/TCSVT.2019.2917315

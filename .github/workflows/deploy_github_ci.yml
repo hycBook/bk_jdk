@@ -29,55 +29,31 @@ jobs:
       # configue gitbook
       - name: configue gitbook
         run: |
-          echo 安装calibre...
-          # apt install calibre
-          echo 安装calibre完成
-          npm install -g gitbook-cli
-          echo 开始显示
+          echo 开始拉取nodejs插件
           git clone https://github.com/narutohyc/node_modules_mathjax.git
           cp -r ./node_modules_mathjax/node_modules .
-          pwd
-          echo ==============================================
-          ls
-          echo ==============================================
-          ls ..
-          echo ==============================================
+          npm install -g gitbook-cli
           gitbook install
           # npm install -g gitbook-summary
+
+      #-name: export pdf ebook
+      #  run: |
+          # 安装calibre，生成电子书
+          # echo 安装calibre...
+          # npm install svgexport -g
+          # sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+          # sudo ln -s /usr/bin/nodejs /usr/bin/node
+          # echo 安装calibre完成
+
       
       # generate _book folder
       - name: generate_book_folder
         run: |
-          # book sm
           gitbook build
-          # cp SUMMARY.md _book
-
-      # - name: push _book to branch gh-pages
-      #   env:
-      #     TOKEN: ${{ secrets.TOKEN }}
-      #     REF: github.com/${{github.repository}}
-      #     MYEMAIL: 1832044043@qq.com
-      #     MYNAME: ${{github.repository_owner}}
-      #   run: |
-      #     echo ${TOKEN}
-      #     echo ${REF}
-      #     echo ${MYNAME}
-      #     cd _book
-      #     git config --global user.email "${MYEMAIL}"
-      #     git config --global user.name "${MYNAME}"
-      #     git init
-      #     git remote add origin https://${REF}
-      #     git add . 
-      #     git commit -m "Updated By Github Actions With Build ${{github.run_number}} of ${{github.workflow}} For Github Pages"
-      #     git branch -M main
-      #     echo 提交开始
-      #     git push --force --quiet "https://${TOKEN}@${REF}" main:gh-pages
-
-      # - name: Install SSH Client #步骤3：关联ssh私钥
-      #   uses: webfactory/ssh-agent@v0.2.0 #这里调用这个第三方的库，可以直接关联ssh私钥
-      #   with: #下面是参数
-      #     #这里需要通过github的环境参数中获取私钥，并传给这个库，（这是最安全的，git当然不能让用户直接输入私钥内容）
-      #     ssh-private-key: ${{ secrets.TOKEN }} 
+          cd _book
+          rm -rf docs/*
+          rm -rf chapters/*.md
+          rm -rf *.pdf
 
       - name: Deploy #步骤4：把编译好的静态目录上传到gh-pages分支上
         uses: JamesIves/github-pages-deploy-action@3.1.5 #这里调用第三方依赖，用于上传代码到指定分支上
@@ -89,5 +65,5 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: echo Hello, world!
+        run: echo Finish, build hyc books!
   

@@ -46,6 +46,7 @@
 	* [JDBC_JDBC基础](chapters/JDBC_JDBC基础.md)
 	* [JDBC_JDBC连接池](chapters/JDBC_JDBC连接池.md)
 	* [JDBC_JDBCTemplate](chapters/JDBC_JDBCTemplate.md)
+* [Spark集群搭建](chapters/Spark集群搭建.md)
 
 
 
