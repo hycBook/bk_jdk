@@ -1,4 +1,4 @@
-![异世界.png](https://upload-images.jianshu.io/upload_images/15675864-e39212ac990782cf.png)
+![img](res/other/异世界蕾姆_1.png)
 
 [TOC]
 
@@ -411,8 +411,6 @@ Erasure Coded Block Groups:
 
 * hdfs主页`Slave03:50070`，如果不行，试试默认端口`9870`
 * hadoop主页`Slave03:8088`
-
-
 
 ## spark安装
 

@@ -1,4 +1,4 @@
-![异世界.png](https://upload-images.jianshu.io/upload_images/15675864-e39212ac990782cf.png)
+![img](res/other/异世界蕾姆_1.png)
 
 [TOC]
 
@@ -660,5 +660,4 @@ JSR是Java Specification Requests的缩写，意思是Java 规范提案。是指
 >**通XML中装配bean**
 >
 >
-
 

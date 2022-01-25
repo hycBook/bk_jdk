@@ -1,4 +1,4 @@
-![异世界.png](https://upload-images.jianshu.io/upload_images/15675864-e39212ac990782cf.png)
+![img](res/other/异世界蕾姆_1.png)![异世界.png](https://upload-images.jianshu.io/upload_images/15675864-e39212ac990782cf.png)
 
 [TOC]
 
@@ -284,5 +284,4 @@ public String toString() {
 > 很好的问题，确实在ADF中大量使用注解有一些限制。之前提到的应用框架如Spring和Hibernate使用AOP(面向侧面的程序设计)。在AOP中，框架提供了一种机制，在事件的预处理和后续处理中注入代码。
 >
 > 例如：你有一个钩子用来在方法执行之前和之后添加代码，所以你可以在这些地方编写你的用户代码。ADF不使用AOP。如果我们有任何注解的用例可用，我们可能需要通过继承的方式实现。
-
 

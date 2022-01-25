@@ -1,4 +1,4 @@
-![异世界.png](https://upload-images.jianshu.io/upload_images/15675864-e39212ac990782cf.png)
+![img](res/other/异世界蕾姆_1.png)
 
 [TOC]
 
@@ -406,39 +406,39 @@ select
 >   -- 查询年龄大于20岁
 >   SELECT * FROM student WHERE age > 20;
 >   SELECT * FROM student WHERE age >= 20;
->   			
+>   			  
 >   -- 查询年龄等于20岁
 >   SELECT * FROM student WHERE age = 20;
->   			
+>   			  
 >   -- 查询年龄不等于20岁
 >   SELECT * FROM student WHERE age != 20;
 >   SELECT * FROM student WHERE age <> 20;
->   			
+>   			  
 >   -- 查询年龄大于等于20 小于等于30
 >   SELECT * FROM student WHERE age >= 20 &&  age <=30;
 >   SELECT * FROM student WHERE age >= 20 AND  age <=30;
 >   SELECT * FROM student WHERE age BETWEEN 20 AND 30;
->   			
+>   			  
 >   -- 查询年龄22岁，18岁，25岁的信息
 >   SELECT * FROM student WHERE age = 22 OR age = 18 OR age = 25
 >   SELECT * FROM student WHERE age IN (22,18,25);
->   			
+>   			  
 >   -- 查询英语成绩为null
 >   SELECT * FROM student WHERE english = NULL; -- 不对的。null值不能使用 = （!=） 判断
 >   SELECT * FROM student WHERE english IS NULL;
->   			
+>   			  
 >   -- 查询英语成绩不为null
 >   SELECT * FROM student WHERE english  IS NOT NULL;
->   			
+>   			  
 >   -- 查询姓马的有哪些？ like
 >   SELECT * FROM student WHERE NAME LIKE '马%';
->   
+>     
 >   -- 查询姓名第二个字是化的人
 >   SELECT * FROM student WHERE NAME LIKE "_化%";
->   			
+>   			  
 >   -- 查询姓名是3个字的人
 >   SELECT * FROM student WHERE NAME LIKE '___';
->   			
+>   			  
 >   -- 查询姓名中包含德的人
 >   SELECT * FROM student WHERE NAME LIKE '%德%';
 >   ```

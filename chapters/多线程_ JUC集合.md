@@ -1,4 +1,4 @@
-![异世界.png](https://upload-images.jianshu.io/upload_images/15675864-e39212ac990782cf.png)
+![img](res/other/异世界蕾姆_0.jpg)
 
 [TOC]
 
@@ -482,5 +482,4 @@ public class ConcurrentSkipListMapDemo1 {
 示例程序中，启动两个线程(线程a和线程b)分别对ConcurrentSkipListMap进行操作。以线程a而言，它会先获取“线程名”+“序号”，然后将该字符串作为key，将“0”作为value，插入到ConcurrentSkipListMap中；接着，遍历并输出ConcurrentSkipListMap中的全部元素。 线程b的操作和线程a一样，只不过线程b的名字和线程a的名字不同。
 当map是ConcurrentSkipListMap对象时，程序能正常运行。如果将map改为TreeMap时，程序会产生ConcurrentModificationException异常。
 ```
-
 

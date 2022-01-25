@@ -1,4 +1,4 @@
-![异世界.png](https://upload-images.jianshu.io/upload_images/15675864-e39212ac990782cf.png)
+![img](res/other/异世界蕾姆_1.png)
 
 [TOC]
 
@@ -722,25 +722,25 @@
 >   import org.springframework.beans.factory.annotation.Autowired;
 >   import org.springframework.stereotype.Service;
 >   import com.imooc.beanannotation.injection.dao.InjectionDAO;
->   
+>     
 >   @Service
 >   public class InjectionServiceImpl implements InjectionService {
 >       // 方式一
 >   	// @Autowired
 >   	private InjectionDAO injectionDAO;
->   	
+>   	  
 >       // 方式二
 >   	@Autowired
 >   	public InjectionServiceImpl(InjectionDAO injectionDAO) {
 >   		this.injectionDAO = injectionDAO;
 >   	}
->   	
+>   	  
 >       // 方式三
 >   	// @Autowired
 >   	public void setInjectionDAO(InjectionDAO injectionDAO) {
 >   		this.injectionDAO = injectionDAO;
 >   	}
->       
+>         
 >   	@Override
 >   	public void save(String arg) {
 >   		System.out.println("Service接收参数：" + arg);
@@ -929,7 +929,7 @@
 >   ```java
 >   import org.springframework.context.annotation.Bean;
 >   import org.springframework.context.annotation.Configuration;
->   
+>     
 >   @Configuration
 >   public class StoreConfig {
 >       // 若没有指明name，则默认为方法名
@@ -1435,5 +1435,4 @@
 >  ```
 >
 >
-
 
