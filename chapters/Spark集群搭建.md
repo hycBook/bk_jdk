@@ -4,6 +4,48 @@
 
 # spark环境搭建
 
+## 版本总览
+
+```sh
+(ray37) [root@Slave03 huangyc]# java -version
+java version "1.8.0_281"
+Java(TM) SE Runtime Environment (build 1.8.0_281-b09)
+Java HotSpot(TM) 64-Bit Server VM (build 25.281-b09, mixed mode)
+
+(ray37) [root@Slave03 huangyc]# hadoop version
+Hadoop 3.2.1
+Source code repository https://gitbox.apache.org/repos/asf/hadoop.git -r b3cbbb467e22ea829b3808f4b7b01d07e0bf3842
+Compiled by rohithsharmaks on 2019-09-10T15:56Z
+Compiled with protoc 2.5.0
+From source with checksum 776eaf9eee9c0ffc370bcbc1888737
+This command was run using /usr/hadoop-3.2.1/share/hadoop/common/hadoop-common-3.2.1.jar
+
+(ray37) [root@Slave03 huangyc]# scala -version
+Scala code runner version 2.12.15 -- Copyright 2002-2021, LAMP/EPFL and Lightbend, Inc.
+
+(ray37) [root@Slave03 huangyc]# sh /usr/spark-3.0/bin/spark-shell
+2022-01-25 13:57:45,643 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+Spark context Web UI available at http://Slave03:4040
+Spark context available as 'sc' (master = local[*], app id = local-1643090269540).
+Spark session available as 'spark'.
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /___/ .__/\_,_/_/ /_/\_\   version 3.0.3
+      /_/
+         
+Using Scala version 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_281)
+Type in expressions to have them evaluated.
+Type :help for more information.
+scala> 
+
+```
+
+
+
 ## scala
 
 > 下载并安装scala
@@ -25,6 +67,8 @@
   export PATH=$PATH:$SCALA_HOME
   ```
   
+
+执行`source /etc/profile`令其生效
 
 > 其他节点同样配置即可
 
@@ -169,6 +213,8 @@ vim /etc/sysconfig/selinux
   export HADOOP_HOME=/usr/hadoop-3.2.0
   export PATH=$PATH:$HADOOP_HOME
   ```
+
+* 执行`source /etc/profile`令其生效
 
 * 查看hadoop版本，`hadoop version`
 
@@ -371,6 +417,16 @@ Erasure Coded Block Groups:
 ## spark安装
 
 > 下载解压，复制到`/usr/spark-3.0`
+
+> 配置环境变量`vi /etc/profile`
+
+```sh
+# 配置spark环境
+export SPARK_HOME=/usr/spark-3.0
+export PATH=$PATH:$SPARK_HOME/bin
+```
+
+执行`source /etc/profile`令其生效
 
 > 配置`spark-env.sh`
 >
