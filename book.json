@@ -27,10 +27,11 @@
 		"code",
 		"search-plus", "-lunr", "-search",
 		"lightbox",
-		"change_girls"
+		"change_girls",
+		"theme-comscore"
     ],
     "pluginsConfig": {
-		"theme-default": {
+		"theme-comscore": {
             "showLevel": true
         },
         "github": {
