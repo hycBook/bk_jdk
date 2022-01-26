@@ -25,13 +25,14 @@
 		"mermaid-gb3",
 		"tbfed-pagefooter",
 		"code",
+		"favicon",
 		"search-plus", "-lunr", "-search",
 		"lightbox",
 		"change_girls",
 		"theme-comscore"
     ],
     "pluginsConfig": {
-		"theme-comscore": {
+		"theme-default": {
             "showLevel": true
         },
         "github": {
