@@ -29,8 +29,9 @@
 		"search-plus", "-lunr", "-search",
 		"pageview-count",
 		"lightbox",
-		"page-treeview",
-		"ancre-navigation"
+		"chapter-fold",
+		"ancre-navigation",
+		"custom-favicon"
     ],
     "pluginsConfig": {
 		"theme-default": {
@@ -85,13 +86,9 @@
                 "qq", "qzone", "linkedin", "pocket"
             ]
         },
-        "page-treeview": {
-            "copyright": "Copyright &#169; aleen42",
-            "minHeaderCount": "2",
-            "minHeaderDeep": "2"
-        },
         "anchor-navigation-ex": {
             "showLevel": false
-        }
+        },
+        "favicon": "./chapters/res/other/favicon.ico"
     }
 }
