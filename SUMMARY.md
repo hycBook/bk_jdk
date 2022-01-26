@@ -2,13 +2,6 @@
 
 * [Introduction](README.md)
 * [设计模式](chapters/设计模式.md)
-	* [设计模式_设计模式的概念](chapters/设计模式_设计模式的概念.md)
-	* [设计模式_组成和分类](chapters/设计模式_组成和分类.md)
-	* [设计模式_六大设计原则](chapters/设计模式_六大设计原则.md)
-	* [设计模式_创建型模式](chapters/设计模式_创建型模式.md)
-	* [设计模式_结构型模式](chapters/设计模式_结构型模式.md)
-	* [设计模式_行为型模式](chapters/设计模式_行为型模式.md)
-	* [设计模式_总结](chapters/设计模式_总结.md)
 * [多线程](chapters/多线程.md)
 	* [多线程_基础篇](chapters/多线程_基础篇.md)
 	* [多线程_锁](chapters/多线程_锁.md)
