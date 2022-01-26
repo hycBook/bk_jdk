@@ -1,4 +1,4 @@
-![img]( https://upload-images.jianshu.io/upload_images/15675864-952291e89189c8a8.jpg ) 
+![img](./chapters/res/other/异世界蕾姆_0.jpg) 
 
 ---
 
