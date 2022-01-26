@@ -27,7 +27,9 @@
 		"code",
 		"atoc",
 		"search-plus", "-lunr", "-search",
-		"sectionx"
+		"sectionx",
+		"pageview-count",
+		"lightbox"
     ],
     "pluginsConfig": {
 		"theme-default": {
