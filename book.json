@@ -29,7 +29,9 @@
 		"search-plus", "-lunr", "-search",
 		"sectionx",
 		"pageview-count",
-		"lightbox"
+		"lightbox",
+		"custom-favicon",
+		"chapter-fold"
     ],
     "pluginsConfig": {
 		"theme-default": {
