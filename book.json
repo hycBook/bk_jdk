@@ -26,7 +26,8 @@
 		"tbfed-pagefooter",
 		"code",
 		"atoc",
-		"search-plus", "-lunr", "-search"
+		"search-plus", "-lunr", "-search",
+		"sectionx"
     ],
     "pluginsConfig": {
 		"theme-default": {
