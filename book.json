@@ -30,8 +30,8 @@
 		"pageview-count",
 		"lightbox",
 		"custom-favicon",
-		"chapter-fold",
-		"page-treeview"
+		"page-treeview",
+		"ancre-navigation"
     ],
     "pluginsConfig": {
 		"theme-default": {
