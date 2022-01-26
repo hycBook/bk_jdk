@@ -25,7 +25,8 @@
 		"mermaid-gb3",
 		"tbfed-pagefooter",
 		"code",
-		"atoc"
+		"atoc",
+		"search-plus", "-lunr", "-search"
     ],
     "pluginsConfig": {
 		"theme-default": {
