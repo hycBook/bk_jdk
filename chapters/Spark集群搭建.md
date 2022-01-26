@@ -468,3 +468,9 @@ scp -r root@192.168.123.24:/usr/spark-3.0 /usr/
 
 
 
+## pyspark
+
+
+
+export PYSPARK_PYTHON=/usr/bin/python3
+
