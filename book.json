@@ -26,9 +26,7 @@
 		"tbfed-pagefooter",
 		"code",
 		"search-plus", "-lunr", "-search",
-		"pageview-count",
 		"lightbox",
-		"custom-favicon",
 		"change_girls"
     ],
     "pluginsConfig": {
@@ -87,7 +85,6 @@
         "anchor-navigation-ex": {
             "showLevel": false
         },
-        "favicon": "./chapters/res/other/favicon.ico",
         "change_girls" : {
             "time" : 10,
             "urls" : [
