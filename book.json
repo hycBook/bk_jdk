@@ -27,11 +27,11 @@
 		"code",
 		"atoc",
 		"search-plus", "-lunr", "-search",
-		"sectionx",
 		"pageview-count",
 		"lightbox",
 		"custom-favicon",
-		"chapter-fold"
+		"chapter-fold",
+		"page-treeview"
     ],
     "pluginsConfig": {
 		"theme-default": {
@@ -64,27 +64,32 @@
             "wechatText": "微信打赏"
         },
         "sharing": {
-            "douban": false,
-            "facebook": false,
-            "google": false,
+            "douban": true,
+            "facebook": true,
+            "google": true,
             "hatenaBookmark": false,
             "instapaper": false,
             "line": false,
             "linkedin": false,
             "messenger": false,
             "pocket": false,
-            "qq": false,
-            "qzone": false,
+            "qq": true,
+            "qzone": true,
             "stumbleupon": false,
-            "twitter": false,
+            "twitter": true,
             "viber": false,
             "vk": false,
-            "weibo": false,
+            "weibo": true,
             "whatsapp": false,
             "all": [
                 "google", "facebook", "weibo", "twitter",
                 "qq", "qzone", "linkedin", "pocket"
             ]
+        },
+        "page-treeview": {
+            "copyright": "Copyright &#169; aleen42",
+            "minHeaderCount": "2",
+            "minHeaderDeep": "2"
         },
         "anchor-navigation-ex": {
             "showLevel": false
