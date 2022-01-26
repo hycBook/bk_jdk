@@ -25,12 +25,9 @@
 		"mermaid-gb3",
 		"tbfed-pagefooter",
 		"code",
-		"atoc",
 		"search-plus", "-lunr", "-search",
 		"pageview-count",
 		"lightbox",
-		"chapter-fold",
-		"ancre-navigation",
 		"custom-favicon"
     ],
     "pluginsConfig": {
