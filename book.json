@@ -29,7 +29,6 @@
 		"search-plus", "-lunr", "-search",
 		"pageview-count",
 		"lightbox",
-		"custom-favicon",
 		"page-treeview",
 		"ancre-navigation"
     ],
