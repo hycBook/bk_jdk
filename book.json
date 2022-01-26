@@ -24,7 +24,8 @@
         "mathjax",
 		"mermaid-gb3",
 		"tbfed-pagefooter",
-		"code"
+		"code",
+		"atoc"
     ],
     "pluginsConfig": {
 		"theme-default": {
