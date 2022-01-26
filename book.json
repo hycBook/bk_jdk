@@ -28,7 +28,8 @@
 		"search-plus", "-lunr", "-search",
 		"pageview-count",
 		"lightbox",
-		"custom-favicon"
+		"custom-favicon",
+		"change_girls"
     ],
     "pluginsConfig": {
 		"theme-default": {
@@ -86,6 +87,13 @@
         "anchor-navigation-ex": {
             "showLevel": false
         },
-        "favicon": "./chapters/res/other/favicon.ico"
+        "favicon": "./chapters/res/other/favicon.ico",
+        "change_girls" : {
+            "time" : 10,
+            "urls" : [
+                "./chapters/res/other/背景_森林夜晚鹿.jpg", 
+                "./chapters/res/other/背景_水墨清明节.jpg"
+            ]
+        }
     }
 }
