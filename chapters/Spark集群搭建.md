@@ -9,39 +9,23 @@
 ```sh
 (ray37) [root@Slave03 huangyc]# java -version
 java version "1.8.0_281"
-Java(TM) SE Runtime Environment (build 1.8.0_281-b09)
-Java HotSpot(TM) 64-Bit Server VM (build 25.281-b09, mixed mode)
 
 (ray37) [root@Slave03 huangyc]# hadoop version
 Hadoop 3.2.1
-Source code repository https://gitbox.apache.org/repos/asf/hadoop.git -r b3cbbb467e22ea829b3808f4b7b01d07e0bf3842
-Compiled by rohithsharmaks on 2019-09-10T15:56Z
 Compiled with protoc 2.5.0
-From source with checksum 776eaf9eee9c0ffc370bcbc1888737
-This command was run using /usr/hadoop-3.2.1/share/hadoop/common/hadoop-common-3.2.1.jar
 
 (ray37) [root@Slave03 huangyc]# scala -version
 Scala code runner version 2.12.15 -- Copyright 2002-2021, LAMP/EPFL and Lightbend, Inc.
 
 (ray37) [root@Slave03 huangyc]# sh /usr/spark-3.0/bin/spark-shell
-2022-01-25 13:57:45,643 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-Setting default log level to "WARN".
-To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
 Spark context Web UI available at http://Slave03:4040
-Spark context available as 'sc' (master = local[*], app id = local-1643090269540).
-Spark session available as 'spark'.
 Welcome to
       ____              __
      / __/__  ___ _____/ /__
     _\ \/ _ \/ _ `/ __/  '_/
    /___/ .__/\_,_/_/ /_/\_\   version 3.0.3
-      /_/
-         
+      /_/  
 Using Scala version 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_281)
-Type in expressions to have them evaluated.
-Type :help for more information.
-scala> 
-
 ```
 
 
@@ -72,6 +56,8 @@ scala>
 
 > 其他节点同样配置即可
 
+
+
 ## 免密登录
 
 ### 修改主机名(非必须)
@@ -90,7 +76,7 @@ scala>
 192.168.123.24  Slave03
 ```
 
-
+> `/etc/init.d/network restart`
 
 ### 生成秘钥对
 
@@ -412,7 +398,16 @@ Erasure Coded Block Groups:
 * hdfs主页`Slave03:50070`，如果不行，试试默认端口`9870`
 * hadoop主页`Slave03:8088`
 
+### 主要命令
+
+* 启动集群: `./sbin/start-all.sh`
+* 关闭集群: `./sbin/stop-all.sh`
+
+
+
 ## spark安装
+
+### 安装配置
 
 > 下载解压，复制到`/usr/spark-3.0`
 
@@ -440,6 +435,7 @@ export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 export SPARK_MASTER_HOST=Slave03
 export SPARK_LOCAL_DIRS=/usr/spark-3.0
 export SPARK_DRIVER_MEMORY=16g  #内存
+export SPARK_EXECUTOR_MEMORY=8g  # 执行内存
 export SPARK_WORKER_CORES=2     #cpus核心数
 ```
 
@@ -468,9 +464,140 @@ scp -r root@192.168.123.24:/usr/spark-3.0 /usr/
 
 
 
-## pyspark
+### 主要命令
+
+* 启动集群: `./sbin/start-all.sh`
+* 关闭集群: `./sbin/stop-all.sh`
+
+# pyspark
+
+## 环境配置
+
+> spark集群服务器配置环境变量，`vi /etc/profile`
+
+```sh
+export PYSPARK_PYTHON=/root/anaconda3/envs/ray37/bin/python3.7
+export PYSPARK_DRIVER_PYTHON=/root/anaconda3/envs/ray37/bin/python3.7
+```
+
+执行`source /etc/profile`使其生效
+
+> 安装pyspark库
+
+```sh
+pip install pyspark
+```
 
 
 
-export PYSPARK_PYTHON=/usr/bin/python3
+## 配置远程解释器
+
+### 配置连接
+
+> 配置连接的远程服务器
+
+打开`Pycharm -> Tools -> Deployment -> Configuration`
+
+> 点击加号，选择SFTP，给服务器取一个名字
+
+> 点击SSH configuration后面的省略号
+>
+> 输入`服务器IP地址`和`账号密码`，结束后测试一下连接情况
+>
+> `Connection Parameters`下的心跳可以设置10秒
+>
+> 确认后，保存退出当前窗口
+
+> 点击自动检测 ，选择远程服务器的工作路径
+>
+> 这里选的是，自己提前新建的空文件夹`/home/huangyc/hyc_test`
+
+> `Mappings`下选择`Local path`，配置当前项目的路径
+>
+> 保存，退出
+
+### 配置解释器
+
+> 选择远程的解释器
+
+<center><img src="res/Spark%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/image-20220127143544475.png" width=600></center>
+
+> 点击move即可next
+> 配置路径，远程的选择自己之前新建的`/home/huangyc/hyc_test`
+> `Automatically upload ...`表示会自动上传项目到服务器中
+
+<center><img src="res/Spark%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/image-20220127143940559.png" width=600></center>
+
+
+
+### 其它功能
+
+* 在`Pycharm`上显示远程代码：选择`Tools -->Deployment-->Browse Remote Host`
+* 更新代码：将本地代码上传到服务器上`Tools -->Deployment-->upload to`
+* 服务器上代码下载到本地代码上`Tools -->Deployment-->Download from`
+
+## 测试例子
+
+```python
+#!/usr/bin/env Python
+# -- coding: utf-8 --
+
+"""
+@version: v1.0
+@author: huangyc
+@file: connenct_test.py
+@Description: 
+@time: 2022/1/25 14:49
+"""
+
+from pyspark import SparkConf
+from pyspark.sql import SparkSession
+import traceback
+import os
+
+# 配置服务器的python解释器的路径
+# 没配的情况下可能出错，正常来说配置了PYSPARK_PYTHON和PYSPARK_DRIVER_PYTHON应该可以
+os.environ["PYSPARK_PYTHON"] = "/root/anaconda3/envs/ray37/bin/python3.7"
+
+appname = "test_hyc"  # 任务名称
+master = "spark://192.168.xx.xx:7077"  # 单机模式设置
+
+'''
+local: 所有计算都运行在一个线程当中，没有任何并行计算，通常我们在本机执行一些测试代码，或者练手，就用这种模式。
+local[K]: 指定使用几个线程来运行计算，比如local[4]就是运行4个worker线程。通常我们的cpu有几个core，就指定几个线程，最大化利用cpu的计算能力
+local[*]: 这种模式直接帮你按照cpu最多cores来设置线程数了。
+'''
+
+if __name__ == '__main__':
+    try:
+        conf = SparkConf().setAppName(appname).setMaster(master)  # spark资源配置
+        spark = SparkSession.builder.config(conf=conf).getOrCreate()
+        sc = spark.sparkContext
+        words = sc.parallelize(
+            ["scala", "java", "hadoop", "spark", "akka", "spark vs hadoop", "pyspark", "pyspark and spark"])
+        counts = words.count()
+        print("Number of elements in RDD is %i" % counts)
+        sc.stop()
+        print('计算成功！')
+    except:
+        sc.stop()
+        traceback.print_exc()  # 返回出错信息
+
+22/01/27 14:11:18 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+Number of elements in RDD is 8
+计算成功！
+```
+
+
+
+
+
+# 常见问题
+
+
+
+
 
