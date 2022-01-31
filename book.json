@@ -29,7 +29,10 @@
 		"search-plus", "-lunr", "-search",
 		"lightbox",
 		"change_girls",
-		"theme-comscore"
+        "theme-comscore",
+        "valine",
+        "pageview-count",
+        "favicon-absolute"
     ],
     "pluginsConfig": {
 		"theme-default": {
@@ -93,6 +96,14 @@
                 "https://plc.jj20.com/up/allimg/1115/012122143136/220121143136-2.jpg", 
                 "https://plc.jj20.com/up/allimg/1115/111R1094405/21111P94405-1.jpg"
             ]
+        },
+        "valine": {
+            "appId": "jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz",
+            "appKey": "FOXMptWOHC7cU1FxXt0LJj4o"
+        },
+        "favicon-absolute":{
+            "favicon": "./chapters/res/other/favicon.ico",
+            "appleTouchIconPrecomposed152": "./chapters/res/other/favicon.ico"
         }
     }
 }
