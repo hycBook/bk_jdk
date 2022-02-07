@@ -488,6 +488,18 @@ export PYSPARK_DRIVER_PYTHON=/root/anaconda3/envs/ray37/bin/python3.7
 pip install pyspark
 ```
 
+> 对于spark服务器和work间环境不一致的情况
+
+* **方式一**: 重新安装python虚拟环境，使得路径完全一致
+
+* **方式二**: 配置软链接
+
+  ```sh
+  ln -s 源文件 目标文件
+  # 需要实现建好路径
+  ln -s /opt/anaconda/install/envs/ray37/bin/python3.7 /root/anaconda3/envs/ray37/bin/python3.7
+  ```
+
 
 
 ## 配置远程解释器
