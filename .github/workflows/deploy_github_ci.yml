@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: book index github
+name: book python github
 
 # Controls when the workflow will run
 on:
@@ -36,24 +36,30 @@ jobs:
           gitbook install
           # npm install -g gitbook-summary
 
-      #-name: export pdf ebook
-      #  run: |
+      - name: export pdf ebook
+        run: |
           # 安装calibre，生成电子书
-          # echo 安装calibre...
-          # npm install svgexport -g
-          # sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
-          # sudo ln -s /usr/bin/nodejs /usr/bin/node
-          # echo 安装calibre完成
+          echo 安装calibre...
+          npm install svgexport -g
+          sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+          sudo ln -s /usr/bin/nodejs /usr/bin/node
+          echo 安装calibre完成
+          mkdir -p /usr/share/fonts/truetype
+          cp -r ./node_modules_mathjax/fonts/* /usr/share/fonts/truetype
 
-      
       # generate _book folder
       - name: generate_book_folder
         run: |
           gitbook build
-          cd _book
-          rm -rf docs/*
-          rm -rf chapters/*.md
-          rm -rf *.pdf
+          echo 开始生成epub电子书...
+          gitbook epub ./ bk_jdk.epub
+          echo 生成epub电子书完成
+          mkdir _ebook
+          cp bk_jdk.epub _ebook/
+          echo pdf电子书复制完成
+          rm -rf _book/docs/*
+          rm -rf _book/chapters/*.md
+          rm -rf _book/*.pdf
 
       - name: Deploy #步骤4：把编译好的静态目录上传到gh-pages分支上
         uses: JamesIves/github-pages-deploy-action@3.1.5 #这里调用第三方依赖，用于上传代码到指定分支上
@@ -62,8 +68,17 @@ jobs:
           BRANCH: gh-pages #github pages 默认的分支
           FOLDER: _book #上传文件的目录，我这个目录在根目录下，如果是子目录可以这么写  docs/.vuepress/dist
 
+      - name: Create GitHub release
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: ${{ secrets.TOKEN }}
+          automatic_release_tag: 'ebook_jdk'
+          title: ${{ env.ReleaseVersion }}
+          prerelease: false
+          files: |
+            _ebook/*
 
       # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Finish, build hyc books!
+      - name: print_infos
+        run: echo build sucessful!
   
