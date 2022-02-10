@@ -63,9 +63,7 @@ Using Scala version 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_281)
 ### 修改主机名(非必须)
 
 > 查看主机名用`hostname`
->
-> 修改主机名`/etc/hostname`
->
+>修改主机名`/etc/hostname`
 > 修改后重启服务器`reboot`
 
 > 配置host文件`vi /etc/hosts`
@@ -230,10 +228,12 @@ Slave03  # 主节点
 旧版本以及网上的教程是修改`etc/hadoop/slaves`文件，但是新版已经移除了这一个文件，取而代之的是`workers`文件，上述设置代表我的集群有三个`datanode`结点
 
 > hadoop_env.sh
+> 在hadoop根目录下执行`mkdir pids`，用于存放pid文件
 
 ```sh
-export JAVA_HOME=${JAVA_HOME}               #设置JAVA_HOME的路径，需要再次指明
+export JAVA_HOME=${JAVA_HOME}                    #设置JAVA_HOME的路径，需要再次指明
 export HADOOP_HOME=${HADOOP_HOME}
+export HADOOP_PID_DIR=/usr/hadoop-3.2.0/pids     # pid文件根目录，不设置的默认值为/tmp，一段时间后/tmp下的文件会被清除，导致无法关闭hadoop集群
 ```
 
 注意的是，如果之前没有设置JAVA_HOME的环境变量，此处直接这样引用会出现错误，改用绝对路径即可消除错误。
@@ -327,8 +327,6 @@ export HADOOP_HOME=${HADOOP_HOME}
 </configuration>
 ```
 
-
-
 ### 从节点设置
 
 > 将hadoop目录拷贝到从节点的对应目录
@@ -403,6 +401,26 @@ Erasure Coded Block Groups:
 * 启动集群: `./sbin/start-all.sh`
 * 关闭集群: `./sbin/stop-all.sh`
 
+### 常见问题
+
+> stop-all.sh的时候hadoop的相关进程都无法停止
+
+解决方案: 参考spark的[常见问题](#stop-all问题)，Hadoop的pid命名规则：
+
+```sh
+pid=$HADOOP_PID_DIR/hadoop-$HADOOP_IDENT_STRING-$command.pid
+```
+
+因此，这里的pid文件名为:
+
+1. hadoop-root-datanode.pid
+2. hadoop-root-namenode.pid
+3. hadoop-root-nodemanager.pid
+4. hadoop-root-resourcemanager.pid
+5. hadoop-root-secondarynamenode.pid
+
+通过jps查看相关进程的pid，恢复这些pid文件即可使用stop-all.sh停止hadoop，根治方案参考spark常见问题部分
+
 
 
 ## spark安装
@@ -422,8 +440,8 @@ export PATH=$PATH:$SPARK_HOME/bin
 执行`source /etc/profile`令其生效
 
 > 配置`spark-env.sh`
->
 > 将`conf`文件夹下的`spark-env.sh.template`重命名为`spark-env.sh`，并添加以下内容：
+> 在spark根目录下执行`mkdir pids`，用于存放pid文件
 
 ```sh
 # 环境变量
@@ -434,14 +452,14 @@ export HADOOP_HOME=/usr/hadoop-3.2.1
 export HADOOP_CONF_DIR=$HADOOP_HOME/etc/hadoop
 export SPARK_MASTER_HOST=Slave03
 export SPARK_LOCAL_DIRS=/usr/spark-3.0
-export SPARK_DRIVER_MEMORY=16g  #内存
-export SPARK_EXECUTOR_MEMORY=8g  # 执行内存
-export SPARK_WORKER_CORES=2     #cpus核心数
+export SPARK_DRIVER_MEMORY=16g           # 内存
+export SPARK_EXECUTOR_MEMORY=8g          # 执行内存
+export SPARK_WORKER_CORES=4              # cpu核心数
+export SPARK_PID_DIR=/usr/spark-3.0/pids # pid文件根目录，不设置的默认值为/tmp，一段时间后/tmp下的文件会被清除，导致无法关闭spark集群
 ```
 
 > 配置`slaves`
->
-> 将`conf`文件夹下的`slaves.template`重命名为`slaves`，并添加以下内容：
+>将`conf`文件夹下的`slaves.template`重命名为`slaves`，并添加以下内容：
 
 ```sh
 Slave00
@@ -462,16 +480,55 @@ scp -r root@192.168.123.24:/usr/spark-3.0 /usr/
 启动成功后，我们在浏览器输入`Slave03:8080`看到有三个结点，就代表我们安装成功了。
 如果发现启动错误，请查看`logs`目录下的日志，自行检查配置文件！
 
-
-
 ### 主要命令
 
 * 启动集群: `./sbin/start-all.sh`
 * 关闭集群: `./sbin/stop-all.sh`
 
+### 常见问题
+
+> <span id="stop-all问题">stop-all.sh的时候spark的相关进程都无法停止</span>
+
+`$SPARK_PID_DIR`中存放的是pid文件，就是要停止进程的pid。其中$SPARK_PID_DIR默认是在系统的/tmp目录
+系统每隔一段时间就会清除/tmp目录下的内容。到/tmp下查看一下，果然没有相关进程的pid文件了。
+这才导致了stop-all.sh无法停止集群。
+解决方案: `$SPARK_PID_DIR`下新建`pid文件`，pid文件命名规则如下
+
+```sh
+$SPARK_PID_DIR/spark-$SPARK_IDENT_STRING-$command-$instance.pid
+```
+
+* `$SPARK_PID_DIR`默认是`/tmp`
+* `$SPARK_IDENT_STRING`是登录用户`$USER`，我的集群中用户名是root
+* `$command`是调用spark-daemon.sh时的参数，有两个：
+  1. org.apache.spark.deploy.master.Master
+  2. org.apache.spark.deploy.worker.Worker
+* `$instance`也是调用spark-daemon.sh时的参数，我的集群中是1
+
+因此pid文件名如下(名字不对的情况下，可以执行`./start-all.sh`，重新启动查看后，再执行`./stop-all.sh`进行本次集群的关闭，注意这里关闭的是本次打开的，之前无法关闭的进程仍然还在)：
+
+1. spark-root-org.apache.spark.deploy.master.Master-1.pid
+2. spark-root-org.apache.spark.deploy.worker.Worker-1.pid
+
+通过jps查看相关进程的pid，将pid保存到对应的pid文件即可，之后调用spark的stop-all.sh，即可正常停止spark集群
+要**根治**这个问题，只需要在集群所有节点都设置`$SPARK_PID_DIR`，`$HADOOP_PID_DIR`和`$YARN_PID_DIR`即可
+
+```sh
+# 修改hadoop-env.sh，增加：
+export HADOOP_PID_DIR=/home/ap/cdahdp/app/pids
+# 修改yarn-env.sh，增加：
+export YARN_PID_DIR=/home/ap/cdahdp/app/pids
+# 修改spark-env.sh，增加：
+export SPARK_PID_DIR=/home/ap/cdahdp/app/pids
+```
+
+
+
 # pyspark
 
 ## 环境配置
+
+### 基础环境
 
 > spark集群服务器配置环境变量，`vi /etc/profile`
 
@@ -485,7 +542,10 @@ export PYSPARK_DRIVER_PYTHON=/root/anaconda3/envs/ray37/bin/python3.7
 > 安装pyspark库
 
 ```sh
-pip install pyspark
+# 这里需要注意版本需要和spark的版本一致
+pip install pyspark==3.0.3
+# 在安装pyspark时默认会装上对应的py4j，如果没有的话，手动安装下
+pip install py4j==0.10.9
 ```
 
 > 对于spark服务器和work间环境不一致的情况
@@ -496,11 +556,29 @@ pip install pyspark
 
   ```sh
   ln -s 源文件 目标文件
-  # 需要实现建好路径
+  # 需要事先建好路径
   ln -s /opt/anaconda/install/envs/ray37/bin/python3.7 /root/anaconda3/envs/ray37/bin/python3.7
   ```
 
+>在服务器 liunx 环境上修改查看python的包路径site-package
 
+```python
+from distutils.sysconfig import get_python_lib
+print(get_python_lib())
+```
+
+### graphx环境
+
+> 安装graphframes
+
+```sh
+pip install graphframes==0.6
+```
+
+去[graphframes官网](https://spark-packages.org/package/graphframes/graphframes)下载对应jar包，这里spark集群是3.0.3，所以可以下载**Version: 0.8.2-spark3.0-s_2.12**这个版本的
+复制到`spark根目录`下的`jars目录`中，集群中每个节点都需要
+如果还会出错，可以把该jar包也复制一份到python环境下
+`/opt/anaconda/install/envs/ray37/lib/python3.7/site-packages/pyspark/jars`
 
 ## 配置远程解释器
 
@@ -513,20 +591,15 @@ pip install pyspark
 > 点击加号，选择SFTP，给服务器取一个名字
 
 > 点击SSH configuration后面的省略号
->
-> 输入`服务器IP地址`和`账号密码`，结束后测试一下连接情况
->
+>输入`服务器IP地址`和`账号密码`，结束后测试一下连接情况
 > `Connection Parameters`下的心跳可以设置10秒
->
-> 确认后，保存退出当前窗口
+>确认后，保存退出当前窗口
 
 > 点击自动检测 ，选择远程服务器的工作路径
->
-> 这里选的是，自己提前新建的空文件夹`/home/huangyc/hyc_test`
+>这里选的是，自己提前新建的空文件夹`/home/huangyc/hyc_test`
 
 > `Mappings`下选择`Local path`，配置当前项目的路径
->
-> 保存，退出
+>保存，退出
 
 ### 配置解释器
 
@@ -550,6 +623,8 @@ pip install pyspark
 
 ## 测试例子
 
+> 简单词统计 + pagerank例子
+
 ```python
 #!/usr/bin/env Python
 # -- coding: utf-8 --
@@ -561,18 +636,19 @@ pip install pyspark
 @Description: 
 @time: 2022/1/25 14:49
 """
+from typing import List
 
 from pyspark import SparkConf
 from pyspark.sql import SparkSession
 import traceback
 import os
+from graphframes import *
 
-# 配置服务器的python解释器的路径
-# 没配的情况下可能出错，正常来说配置了PYSPARK_PYTHON和PYSPARK_DRIVER_PYTHON应该可以
+# 配置集群中的py环境信息，不配置的话可能会报错
+# Exception: Python in worker has different version 3.9 than that in driver 3.7, PySpark cannot run with different minor versions.
+# Please check environment variables PYSPARK_PYTHON and PYSPARK_DRIVER_PYTHON are correctly set.
 os.environ["PYSPARK_PYTHON"] = "/root/anaconda3/envs/ray37/bin/python3.7"
-
-appname = "test_hyc"  # 任务名称
-master = "spark://192.168.xx.xx:7077"  # 单机模式设置
+os.environ["PYSPARK_DRIVER_PYTHON"] = "/root/anaconda3/envs/ray37/bin/python3.7"
 
 '''
 local: 所有计算都运行在一个线程当中，没有任何并行计算，通常我们在本机执行一些测试代码，或者练手，就用这种模式。
@@ -580,30 +656,123 @@ local[K]: 指定使用几个线程来运行计算，比如local[4]就是运行4�
 local[*]: 这种模式直接帮你按照cpu最多cores来设置线程数了。
 '''
 
-if __name__ == '__main__':
-    try:
-        conf = SparkConf().setAppName(appname).setMaster(master)  # spark资源配置
-        spark = SparkSession.builder.config(conf=conf).getOrCreate()
-        sc = spark.sparkContext
-        words = sc.parallelize(
-            ["scala", "java", "hadoop", "spark", "akka", "spark vs hadoop", "pyspark", "pyspark and spark"])
-        counts = words.count()
-        print("Number of elements in RDD is %i" % counts)
-        sc.stop()
-        print('计算成功！')
-    except:
-        sc.stop()
-        traceback.print_exc()  # 返回出错信息
 
-22/01/27 14:11:18 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
-Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
-Setting default log level to "WARN".
-To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
-Number of elements in RDD is 8
-计算成功！
+class PySparkClient:
+    def __init__(self, appname: str, master: str):
+        conf = SparkConf().setAppName(appname).setMaster(master)  # spark资源配置
+
+        try:
+            self.spark = SparkSession.builder.config(conf=conf).getOrCreate()
+            self.sc = self.spark.sparkContext
+        except:
+            traceback.print_exc()  # 返回出错信息
+
+    def word_count(self, log_file: str):
+        if not self.sc:
+            return
+
+        log_data = self.sc.textFile(log_file).cache()
+        words_rdd = log_data.flatMap(lambda sentence: sentence.split(" "))
+        res = words_rdd.countByValue()
+        res_rdd = words_rdd.filter(lambda k: len(k) > 0).map(lambda word: (word, 1)).reduceByKey(lambda a, b: a + b)
+
+        # 将rdd转为collection并打印
+        res_rdd_coll = res_rdd.takeOrdered(5, lambda x: -x[1])
+        for line in res_rdd_coll:
+            print(line)
+
+    def simple_test(self, words: List[str]):
+        if not self.sc:
+            return
+
+        counts = self.sc.parallelize(words).count()
+        print("Number of elements in RDD is %i" % counts)
+
+        test = self.spark.createDataFrame(
+            [('001', '1', 100, 87, 67, 83, 98), ('002', '2', 87, 81, 90, 83, 83), ('003', '3', 86, 91, 83, 89, 63),
+             ('004', '2', 65, 87, 94, 73, 88), ('005', '1', 76, 62, 89, 81, 98), ('006', '3', 84, 82, 85, 73, 99),
+             ('007', '3', 56, 76, 63, 72, 87), ('008', '1', 55, 62, 46, 78, 71), ('009', '2', 63, 72, 87, 98, 64)],
+            ['number', 'class', 'language', 'math', 'english', 'physic', 'chemical'])
+        test.show()
+        test.printSchema()
+
+        test.select('number', 'class', 'language', 'math', 'english').describe().show()
+
+        print("============   simple_test over   ============")
+
+    def simple_graph(self):
+        # Create a Vertex DataFrame with unique ID column "id"
+        spk = self.spark
+        v = spk.createDataFrame([
+            ("a", "Alice", 34),
+            ("b", "Bob", 36),
+            ("c", "Charlie", 30),
+        ], ["id", "name", "age"])
+        # Create an Edge DataFrame with "src" and "dst" columns
+        e = spk.createDataFrame([
+            ("a", "b", "friend"),
+            ("b", "c", "follow"),
+            ("c", "b", "follow"),
+        ], ["src", "dst", "relationship"])
+        # Create a GraphFrame
+        g = GraphFrame(v, e)
+
+        # Query: Get in-degree of each vertex.
+        g.inDegrees.show()
+
+        # Query: Count the number of "follow" connections in the graph.
+        print(g.edges.filter("relationship = 'follow'").count())
+
+        # Run PageRank algorithm, and show results.
+        results = g.pageRank(resetProbability=0.1, maxIter=5)
+        results.vertices.select("id", "pagerank").show()
+
+    def stop(self):
+        try:
+            self.sc.stop()
+        except:
+            pass
+
+
+if __name__ == '__main__':
+    appname = "test_hyc00"  # 任务名称
+    master = "spark://192.168.xx.xx:7077"  # 单机模式设置
+    # master = "local"
+    py_spark_client = PySparkClient(appname=appname, master=master)
+
+    # 简单功能测试
+    all_words = ["scala", "java", "hadoop", "spark", "akka", "spark vs hadoop",
+                 "akka", "spark vs hadoop", "pyspark", "pyspark and spark"]
+    py_spark_client.simple_test(words=all_words)
+
+    # 文档词频统计
+    logFile = "/usr/spark-3.0/README.md"
+    py_spark_client.word_count(log_file=logFile)
+
+    py_spark_client.simple_graph()
+
+    # 关闭客户端连接
+    py_spark_client.stop()
 ```
 
+> 执行方法
 
+* 可以直接在pycharm中执行，这里pycharm使用的是远程的python环境，这里执行时的内存是**默认值** 1024.0 MiB
+
+  在pycharm中执行可能需要加上变量设置，但使用`spark-submit`则可以不需要
+
+  ```python
+  os.environ["PYSPARK_PYTHON"] = "/root/anaconda3/envs/ray37/bin/python3.7"
+  os.environ["PYSPARK_DRIVER_PYTHON"] = "/root/anaconda3/envs/ray37/bin/python3.7"
+  ```
+
+* 或者执行以下命令执行，这里执行时的内存是spark中**配置**的 8.0 GiB
+
+  ```sh
+  ./bin/spark-submit  --master spark://192.168.xx.xx:7077 /home/huangyc/hyc_test/tests/pyspark_test/connenct_test.py
+  ```
+
+* 
 
 # 常见问题
 
