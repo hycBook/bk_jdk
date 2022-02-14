@@ -636,33 +636,39 @@ pip install graphframes==0.6
 @Description: 
 @time: 2022/1/25 14:49
 """
+import os
+import platform
+import traceback
 from typing import List
 
+from graphframes import *
 from pyspark import SparkConf
 from pyspark.sql import SparkSession
-import traceback
-import os
-from graphframes import *
+from pyspark.sql import functions as F
 
-# 配置集群中的py环境信息，不配置的话可能会报错
-# Exception: Python in worker has different version 3.9 than that in driver 3.7, PySpark cannot run with different minor versions.
-# Please check environment variables PYSPARK_PYTHON and PYSPARK_DRIVER_PYTHON are correctly set.
-os.environ["PYSPARK_PYTHON"] = "/root/anaconda3/envs/ray37/bin/python3.7"
-os.environ["PYSPARK_DRIVER_PYTHON"] = "/root/anaconda3/envs/ray37/bin/python3.7"
+py_root = "/root/anaconda3/envs/ray37/bin/python3.7"
+os.environ["PYSPARK_PYTHON"] = py_root
+os.environ["PYSPARK_DRIVER_PYTHON"] = py_root
 
-'''
-local: 所有计算都运行在一个线程当中，没有任何并行计算，通常我们在本机执行一些测试代码，或者练手，就用这种模式。
-local[K]: 指定使用几个线程来运行计算，比如local[4]就是运行4个worker线程。通常我们的cpu有几个core，就指定几个线程，最大化利用cpu的计算能力
-local[*]: 这种模式直接帮你按照cpu最多cores来设置线程数了。
-'''
+is_local_py: bool = True
+if is_local_py and platform.system().lower() == 'windows':
+    os.environ['JAVA_HOME'] = 'G:\Java\jdk1.8.0_201'
+    os.environ["SPARK_HOME"] = r"E:\PycharmWS\remote_spark\spark-3.0"
 
 
 class PySparkClient:
     def __init__(self, appname: str, master: str):
         conf = SparkConf().setAppName(appname).setMaster(master)  # spark资源配置
+        conf.set("spark.driver.maxResultSize", "4g")
+        conf.set("spark.executor.num", "4")
+        conf.set("spark.executor.memory", "2g")
+        conf.set("spark.executor.cores", "4")
+        conf.set("spark.cores.max", "16")
+        conf.set("spark.driver.memory", "2g")
 
         try:
             self.spark = SparkSession.builder.config(conf=conf).getOrCreate()
+
             self.sc = self.spark.sparkContext
         except:
             traceback.print_exc()  # 返回出错信息
@@ -724,15 +730,15 @@ class PySparkClient:
         print(g.edges.filter("relationship = 'follow'").count())
 
         # Run PageRank algorithm, and show results.
-        results = g.pageRank(resetProbability=0.1, maxIter=5)
-        results.vertices.select("id", "pagerank").show()
+        results = g.pageRank(resetProbability=0.1, maxIter=1)
+        res = results.vertices.select("id", F.bround("pagerank", scale=4).alias('pagerank'))
+        res.orderBy(res.pagerank.desc()).show(5)
 
     def stop(self):
         try:
             self.sc.stop()
         except:
             pass
-
 
 if __name__ == '__main__':
     appname = "test_hyc00"  # 任务名称
@@ -746,7 +752,7 @@ if __name__ == '__main__':
     py_spark_client.simple_test(words=all_words)
 
     # 文档词频统计
-    logFile = "/usr/spark-3.0/README.md"
+    logFile = r"hdfs://192.168.xx.xx:9000/test_data/README.md"
     py_spark_client.word_count(log_file=logFile)
 
     py_spark_client.simple_graph()
@@ -772,7 +778,57 @@ if __name__ == '__main__':
   ./bin/spark-submit  --master spark://192.168.xx.xx:7077 /home/huangyc/hyc_test/tests/pyspark_test/connenct_test.py
   ```
 
-* 
+
+
+## 本地连接
+
+> 除了配置远程服务器的py解释器，还可以配置本地的模式
+
+> 需要在spark集群中配置host映射，通过`vi /etc/hosts`命令打开hosts文件，添加本地的主机名映射
+
+```sh
+# hyc
+10.10.0.xx DSE-20191111ZOU
+```
+
+最后执行`/etc/init.d/network restart`刷新DNS
+如果没有的话，可能会报错误
+`Caused by: java.io.IOException: Failed to connect to DSE-20191111ZOU:65320`
+`Caused by: java.net.UnknownHostException: DSE-20191111ZOU`
+
+> py代码中需要添加以下的环境参数才能连接上spark集群
+
+```python
+import os
+
+# 配置集群的python环境路径
+py_root = "/root/anaconda3/envs/ray37/bin/python3.7"
+os.environ["PYSPARK_PYTHON"] = py_root
+os.environ["PYSPARK_DRIVER_PYTHON"] = py_root
+# 配置本地Jdk路径，版本尽量和spark集群的一致
+os.environ['JAVA_HOME'] = 'G:\Java\jdk1.8.0_201'
+# 配置本地的spark路径，这里直接从spark集群copy一份下载即可
+os.environ["SPARK_HOME"] = r"E:\PycharmWS\remote_spark\spark-3.0"
+
+class PySparkClient:
+    def __init__(self, appname: str, master: str):
+        conf = SparkConf().setAppName(appname).setMaster(master)  # spark资源配置
+        # 以下的参数不用全部配置，看自己的需求
+        conf.set("spark.driver.maxResultSize", "4g")
+        conf.set("spark.executor.num", "4")
+        conf.set("spark.executor.memory", "2g")
+        conf.set("spark.executor.cores", "4")
+        conf.set("spark.cores.max", "16")
+        conf.set("spark.driver.memory", "2g")
+
+        try:
+            self.spark = SparkSession.builder.config(conf=conf).getOrCreate()
+            self.sc = self.spark.sparkContext
+        except:
+            traceback.print_exc()  # 返回出错信息
+```
+
+&#x26A1;: 本地的**python版本**尽量和spark集群上的一致，避免不必要的错误
 
 # 常见问题
 
