@@ -1,895 +1,460 @@
-
 <!DOCTYPE HTML>
-<html lang="zh-hans" >
-    <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Java基础_解析与生成XML · Java相关学习记录</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
-        <meta name="author" content="narutohyc">
-        
-        
-    
-    
-    <link rel="stylesheet" href="../gitbook/style.css">
-
-    
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
-                
-            
-        
-
-    
-
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-
-    
-
-        
-    
-    
-    
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
-
-    
-    <link rel="next" href="Java基础_后台服务器开发.html" />
-    
-    
-    <link rel="prev" href="Java基础_读取配置文件.html" />
-    
-
-    
-        <link rel="shortcut icon" href="./chapters/res/other/favicon.ico" type="image/x-icon">
-    
-    
-    
-    
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./chapters/res/other/favicon.ico">
-    
-    
-        
-    
-    
-        
-    
-
-    
-    
-    
-    
-
-    <style>
+<html lang="zh-hans">
+<head>
+<meta charset="utf-8"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Java基础_解析与生成XML · Java相关学习记录</title>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="" name="description"/>
+<meta content="GitBook 3.2.3" name="generator"/>
+<meta content="narutohyc" name="author"/>
+<link href="../gitbook/style.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-splitter/splitter.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchors/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-donate/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-code/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-search-plus/search.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-change_girls/girls.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-pageview-count/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-highlight/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-fontsettings/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-theme-comscore/test.css" rel="stylesheet"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<link href="../gitbook/images/apple-touch-icon-precomposed-152.png" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<link href="../gitbook/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="Java基础_后台服务器开发.html" rel="next"/>
+<link href="Java基础_读取配置文件.html" rel="prev"/>
+<link href="./chapters/res/other/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="./chapters/res/other/favicon.ico" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<style>
     @media only screen and (max-width: 640px) {
         .book-header .hidden-mobile {
             display: none;
         }
     }
     </style>
-    <script>
+<script>
         window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]};
     </script>
-
-    </head>
-    <body>
-        
+</head>
+<body>
 <div class="book">
-    <div class="book-summary">
-        
-            
+<div class="book-summary">
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="输入并搜索" />
+<input placeholder="输入并搜索" type="text"/>
 </div>
-
-            
-                <nav role="navigation">
-                
-
-
+<nav role="navigation">
 <ul class="summary">
-    
-    
-    
-        
-        <li>
-            <a href="https://github.com/narutohyc" target="_blank" class="custom-link">我的狗窝</a>
-        </li>
-    
-    
-
-    
-    <li class="divider"></li>
-    
-
-    
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="../">
-            
-                <a href="../">
-            
-                    
-                        <b>1.1.</b>
+<li>
+<a class="custom-link" href="https://github.com/narutohyc" target="_blank">我的狗窝</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-level="1.1" data-path="../">
+<a href="../">
+<b>1.1.</b>
                     
                     Introduction
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2" data-path="设计模式.html">
-            
-                <a href="设计模式.html">
-            
-                    
-                        <b>1.2.</b>
+</li>
+<li class="chapter" data-level="1.2" data-path="设计模式.html">
+<a href="设计模式.html">
+<b>1.2.</b>
                     
                     设计模式
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" data-path="多线程.md">
-            
-                <span>
-            
-                    
-                        <b>1.3.</b>
+</li>
+<li class="chapter" data-level="1.3" data-path="多线程.md">
+<span>
+<b>1.3.</b>
                     
                     多线程
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.3.1" data-path="多线程_基础篇.html">
-            
-                <a href="多线程_基础篇.html">
-            
-                    
-                        <b>1.3.1.</b>
+<li class="chapter" data-level="1.3.1" data-path="多线程_基础篇.html">
+<a href="多线程_基础篇.html">
+<b>1.3.1.</b>
                     
                     多线程_基础篇
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.2" data-path="多线程_锁.html">
-            
-                <a href="多线程_锁.html">
-            
-                    
-                        <b>1.3.2.</b>
+</li>
+<li class="chapter" data-level="1.3.2" data-path="多线程_锁.html">
+<a href="多线程_锁.html">
+<b>1.3.2.</b>
                     
                     多线程_锁
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.3" data-path="多线程_JUC原子类.html">
-            
-                <a href="多线程_JUC原子类.html">
-            
-                    
-                        <b>1.3.3.</b>
+</li>
+<li class="chapter" data-level="1.3.3" data-path="多线程_JUC原子类.html">
+<a href="多线程_JUC原子类.html">
+<b>1.3.3.</b>
                     
                     多线程_JUC原子类
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.4" data-path="多线程_JUC锁集合 .html">
-            
-                <a href="多线程_JUC锁集合 .html">
-            
-                    
-                        <b>1.3.4.</b>
+</li>
+<li class="chapter" data-level="1.3.4" data-path="多线程_JUC锁集合 .html">
+<a href="多线程_JUC锁集合 .html">
+<b>1.3.4.</b>
                     
                     多线程_JUC锁集合 
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.5" data-path="多线程_ JUC集合.html">
-            
-                <a href="多线程_ JUC集合.html">
-            
-                    
-                        <b>1.3.5.</b>
+</li>
+<li class="chapter" data-level="1.3.5" data-path="多线程_ JUC集合.html">
+<a href="多线程_ JUC集合.html">
+<b>1.3.5.</b>
                     
                     多线程_ JUC集合
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.6" data-path="多线程_JUC线程池.html">
-            
-                <a href="多线程_JUC线程池.html">
-            
-                    
-                        <b>1.3.6.</b>
+</li>
+<li class="chapter" data-level="1.3.6" data-path="多线程_JUC线程池.html">
+<a href="多线程_JUC线程池.html">
+<b>1.3.6.</b>
                     
                     多线程_JUC线程池
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.7" data-path="多线程_生产者消费者.html">
-            
-                <a href="多线程_生产者消费者.html">
-            
-                    
-                        <b>1.3.7.</b>
+</li>
+<li class="chapter" data-level="1.3.7" data-path="多线程_生产者消费者.html">
+<a href="多线程_生产者消费者.html">
+<b>1.3.7.</b>
                     
                     多线程_生产者消费者
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4" data-path="IDEA快捷键.html">
-            
-                <a href="IDEA快捷键.html">
-            
-                    
-                        <b>1.4.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.4" data-path="IDEA快捷键.html">
+<a href="IDEA快捷键.html">
+<b>1.4.</b>
                     
                     IDEA快捷键
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" data-path="Spring注解.md">
-            
-                <span>
-            
-                    
-                        <b>1.5.</b>
+</li>
+<li class="chapter" data-level="1.5" data-path="Spring注解.md">
+<span>
+<b>1.5.</b>
                     
                     Spring注解
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.5.1" data-path="Spring注解_介绍.html">
-            
-                <a href="Spring注解_介绍.html">
-            
-                    
-                        <b>1.5.1.</b>
+<li class="chapter" data-level="1.5.1" data-path="Spring注解_介绍.html">
+<a href="Spring注解_介绍.html">
+<b>1.5.1.</b>
                     
                     Spring注解_介绍
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.2" data-path="Spring注解_常用注解.html">
-            
-                <a href="Spring注解_常用注解.html">
-            
-                    
-                        <b>1.5.2.</b>
+</li>
+<li class="chapter" data-level="1.5.2" data-path="Spring注解_常用注解.html">
+<a href="Spring注解_常用注解.html">
+<b>1.5.2.</b>
                     
                     Spring注解_常用注解
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.3" data-path="Spring注解_Spring入门篇.html">
-            
-                <a href="Spring注解_Spring入门篇.html">
-            
-                    
-                        <b>1.5.3.</b>
+</li>
+<li class="chapter" data-level="1.5.3" data-path="Spring注解_Spring入门篇.html">
+<a href="Spring注解_Spring入门篇.html">
+<b>1.5.3.</b>
                     
                     Spring注解_Spring入门篇
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6" data-path="Java基础.md">
-            
-                <span>
-            
-                    
-                        <b>1.6.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.6" data-path="Java基础.md">
+<span>
+<b>1.6.</b>
                     
                     Java基础
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.6.1" data-path="Java基础_集合.html">
-            
-                <a href="Java基础_集合.html">
-            
-                    
-                        <b>1.6.1.</b>
+<li class="chapter" data-level="1.6.1" data-path="Java基础_集合.html">
+<a href="Java基础_集合.html">
+<b>1.6.1.</b>
                     
                     Java基础_集合
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.2" data-path="Java基础_泛型.html">
-            
-                <a href="Java基础_泛型.html">
-            
-                    
-                        <b>1.6.2.</b>
+</li>
+<li class="chapter" data-level="1.6.2" data-path="Java基础_泛型.html">
+<a href="Java基础_泛型.html">
+<b>1.6.2.</b>
                     
                     Java基础_泛型
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.3" data-path="Java基础_打jar包.html">
-            
-                <a href="Java基础_打jar包.html">
-            
-                    
-                        <b>1.6.3.</b>
+</li>
+<li class="chapter" data-level="1.6.3" data-path="Java基础_打jar包.html">
+<a href="Java基础_打jar包.html">
+<b>1.6.3.</b>
                     
                     Java基础_打jar包
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.4" data-path="Java基础_正则匹配.html">
-            
-                <a href="Java基础_正则匹配.html">
-            
-                    
-                        <b>1.6.4.</b>
+</li>
+<li class="chapter" data-level="1.6.4" data-path="Java基础_正则匹配.html">
+<a href="Java基础_正则匹配.html">
+<b>1.6.4.</b>
                     
                     Java基础_正则匹配
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.5" data-path="Java基础_反射机制.html">
-            
-                <a href="Java基础_反射机制.html">
-            
-                    
-                        <b>1.6.5.</b>
+</li>
+<li class="chapter" data-level="1.6.5" data-path="Java基础_反射机制.html">
+<a href="Java基础_反射机制.html">
+<b>1.6.5.</b>
                     
                     Java基础_反射机制
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.6" data-path="Java基础_对象正反序列化.html">
-            
-                <a href="Java基础_对象正反序列化.html">
-            
-                    
-                        <b>1.6.6.</b>
+</li>
+<li class="chapter" data-level="1.6.6" data-path="Java基础_对象正反序列化.html">
+<a href="Java基础_对象正反序列化.html">
+<b>1.6.6.</b>
                     
                     Java基础_对象正反序列化
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.7" data-path="Java基础_读取配置文件.html">
-            
-                <a href="Java基础_读取配置文件.html">
-            
-                    
-                        <b>1.6.7.</b>
+</li>
+<li class="chapter" data-level="1.6.7" data-path="Java基础_读取配置文件.html">
+<a href="Java基础_读取配置文件.html">
+<b>1.6.7.</b>
                     
                     Java基础_读取配置文件
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.6.8" data-path="Java基础_解析与生成XML.html">
-            
-                <a href="Java基础_解析与生成XML.html">
-            
-                    
-                        <b>1.6.8.</b>
+</li>
+<li class="chapter active" data-level="1.6.8" data-path="Java基础_解析与生成XML.html">
+<a href="Java基础_解析与生成XML.html">
+<b>1.6.8.</b>
                     
                     Java基础_解析与生成XML
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.9" data-path="Java基础_后台服务器开发.html">
-            
-                <a href="Java基础_后台服务器开发.html">
-            
-                    
-                        <b>1.6.9.</b>
+</li>
+<li class="chapter" data-level="1.6.9" data-path="Java基础_后台服务器开发.html">
+<a href="Java基础_后台服务器开发.html">
+<b>1.6.9.</b>
                     
                     Java基础_后台服务器开发
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.10" data-path="Java基础_四舍五入.html">
-            
-                <a href="Java基础_四舍五入.html">
-            
-                    
-                        <b>1.6.10.</b>
+</li>
+<li class="chapter" data-level="1.6.10" data-path="Java基础_四舍五入.html">
+<a href="Java基础_四舍五入.html">
+<b>1.6.10.</b>
                     
                     Java基础_四舍五入
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7" data-path="Java进阶.md">
-            
-                <span>
-            
-                    
-                        <b>1.7.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.7" data-path="Java进阶.md">
+<span>
+<b>1.7.</b>
                     
                     Java进阶
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.7.1" data-path="Java进阶_反射.html">
-            
-                <a href="Java进阶_反射.html">
-            
-                    
-                        <b>1.7.1.</b>
+<li class="chapter" data-level="1.7.1" data-path="Java进阶_反射.html">
+<a href="Java进阶_反射.html">
+<b>1.7.1.</b>
                     
                     Java进阶_反射
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.2" data-path="Java进阶_注解.html">
-            
-                <a href="Java进阶_注解.html">
-            
-                    
-                        <b>1.7.2.</b>
+</li>
+<li class="chapter" data-level="1.7.2" data-path="Java进阶_注解.html">
+<a href="Java进阶_注解.html">
+<b>1.7.2.</b>
                     
                     Java进阶_注解
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8" data-path="MySQL.md">
-            
-                <span>
-            
-                    
-                        <b>1.8.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.8" data-path="MySQL.md">
+<span>
+<b>1.8.</b>
                     
                     MySQL
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.8.1" data-path="MySQL_基础.html">
-            
-                <a href="MySQL_基础.html">
-            
-                    
-                        <b>1.8.1.</b>
+<li class="chapter" data-level="1.8.1" data-path="MySQL_基础.html">
+<a href="MySQL_基础.html">
+<b>1.8.1.</b>
                     
                     MySQL_基础
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.2" data-path="MySQL_约束.html">
-            
-                <a href="MySQL_约束.html">
-            
-                    
-                        <b>1.8.2.</b>
+</li>
+<li class="chapter" data-level="1.8.2" data-path="MySQL_约束.html">
+<a href="MySQL_约束.html">
+<b>1.8.2.</b>
                     
                     MySQL_约束
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.3" data-path="MySQL_多表查询.html">
-            
-                <a href="MySQL_多表查询.html">
-            
-                    
-                        <b>1.8.3.</b>
+</li>
+<li class="chapter" data-level="1.8.3" data-path="MySQL_多表查询.html">
+<a href="MySQL_多表查询.html">
+<b>1.8.3.</b>
                     
                     MySQL_多表查询
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.4" data-path="MySQL_事务.html">
-            
-                <a href="MySQL_事务.html">
-            
-                    
-                        <b>1.8.4.</b>
+</li>
+<li class="chapter" data-level="1.8.4" data-path="MySQL_事务.html">
+<a href="MySQL_事务.html">
+<b>1.8.4.</b>
                     
                     MySQL_事务
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.5" data-path="MySQL_数据库设计.html">
-            
-                <a href="MySQL_数据库设计.html">
-            
-                    
-                        <b>1.8.5.</b>
+</li>
+<li class="chapter" data-level="1.8.5" data-path="MySQL_数据库设计.html">
+<a href="MySQL_数据库设计.html">
+<b>1.8.5.</b>
                     
                     MySQL_数据库设计
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9" data-path="JDBC.md">
-            
-                <span>
-            
-                    
-                        <b>1.9.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.9" data-path="JDBC.md">
+<span>
+<b>1.9.</b>
                     
                     JDBC
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.9.1" data-path="JDBC_JDBC基础.html">
-            
-                <a href="JDBC_JDBC基础.html">
-            
-                    
-                        <b>1.9.1.</b>
+<li class="chapter" data-level="1.9.1" data-path="JDBC_JDBC基础.html">
+<a href="JDBC_JDBC基础.html">
+<b>1.9.1.</b>
                     
                     JDBC_JDBC基础
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9.2" data-path="JDBC_JDBC连接池.html">
-            
-                <a href="JDBC_JDBC连接池.html">
-            
-                    
-                        <b>1.9.2.</b>
+</li>
+<li class="chapter" data-level="1.9.2" data-path="JDBC_JDBC连接池.html">
+<a href="JDBC_JDBC连接池.html">
+<b>1.9.2.</b>
                     
                     JDBC_JDBC连接池
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9.3" data-path="JDBC_JDBCTemplate.html">
-            
-                <a href="JDBC_JDBCTemplate.html">
-            
-                    
-                        <b>1.9.3.</b>
+</li>
+<li class="chapter" data-level="1.9.3" data-path="JDBC_JDBCTemplate.html">
+<a href="JDBC_JDBCTemplate.html">
+<b>1.9.3.</b>
                     
                     JDBC_JDBCTemplate
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.10" data-path="Spark集群搭建.html">
-            
-                <a href="Spark集群搭建.html">
-            
-                    
-                        <b>1.10.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.10" data-path="Spark集群搭建.html">
+<a href="Spark集群搭建.html">
+<b>1.10.</b>
                     
                     Spark集群搭建
             
                 </a>
-            
-
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+</li>
+<li class="divider"></li>
+<li>
+<a class="gitbook-link" href="https://www.gitbook.com" target="blank">
             本书使用 GitBook 发布
         </a>
-    </li>
+</li>
 </ul>
-
-
-                </nav>
-            
-        
-    </div>
-
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
-
-<div class="book-header" role="navigation">
-    
-
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Java基础_解析与生成XML</a>
-    </h1>
+</nav>
 </div>
-
-
-
-
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="..">Java基础_解析与生成XML</a>
+</h1>
+</div>
+<div class="page-wrapper" role="main" tabindex="-1">
+<div class="page-inner">
 <div class="search-plus" id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x89E3;&#x6790;&#x4E0E;&#x751F;&#x6210;xml"><b></b>&#x89E3;&#x6790;&#x4E0E;&#x751F;&#x6210;XML</a></li><li><span class="title-icon "></span><a href="#dom&#x65B9;&#x5F0F;"><b></b>Dom&#x65B9;&#x5F0F;</a></li><li><span class="title-icon "></span><a href="#dom4j&#x65B9;&#x5F0F;"><b></b>Dom4j&#x65B9;&#x5F0F;</a></li><li><span class="title-icon "></span><a href="#jdom&#x65B9;&#x5F0F;"><b></b>JDom&#x65B9;&#x5F0F;</a></li><li><span class="title-icon "></span><a href="#sax&#x65B9;&#x5F0F;"><b></b>Sax&#x65B9;&#x5F0F;</a></li><li><span class="title-icon "></span><a href="#xml&#x89E3;&#x6790;"><b></b>xml&#x89E3;&#x6790;</a></li></ul></div><a href="#&#x89E3;&#x6790;&#x4E0E;&#x751F;&#x6210;xml" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><a href="res/other/&#x5F02;&#x4E16;&#x754C;&#x857E;&#x59C6;_0.jpg" data-lightbox="eace6890-0d90-4902-9578-f7d78cd45342" data-title="img"><img src="res/other/&#x5F02;&#x4E16;&#x754C;&#x857E;&#x59C6;_0.jpg" alt="img"></a></p>
+<div class="search-noresults">
+<section class="normal markdown-section">
+<div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon"></span><a href="#解析与生成xml">1 解析与生成XML</a></li><li><span class="title-icon"></span><a href="#dom方式">2 Dom方式</a></li><li><span class="title-icon"></span><a href="#dom4j方式">3 Dom4j方式</a></li><li><span class="title-icon"></span><a href="#jdom方式">4 JDom方式</a></li><li><span class="title-icon"></span><a href="#sax方式">5 Sax方式</a></li><li><span class="title-icon"></span><a href="#xml解析">6 xml解析</a></li></ul></div><a href="#解析与生成xml" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><a data-lightbox="353dc3e6-4077-4f01-a029-6103b2659718" data-title="img" href="res/other/异世界蕾姆_0.jpg"><img alt="img" src="res/other/异世界蕾姆_0.jpg"/></a></p>
 <p>[TOC]</p>
-<hr>
-<h1 id="&#x89E3;&#x6790;&#x4E0E;&#x751F;&#x6210;xml"><a name="&#x89E3;&#x6790;&#x4E0E;&#x751F;&#x6210;xml" class="anchor-navigation-ex-anchor" href="#&#x89E3;&#x6790;&#x4E0E;&#x751F;&#x6210;xml"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x89E3;&#x6790;&#x4E0E;&#x751F;&#x6210;xml" class="plugin-anchor" href="#&#x89E3;&#x6790;&#x4E0E;&#x751F;&#x6210;xml"><i class="fa fa-link" aria-hidden="true"></i></a>&#x89E3;&#x6790;&#x4E0E;&#x751F;&#x6210;XML</h1>
+<hr/>
+<h1 id="解析与生成xml">1 解析与生成XML</h1>
 <blockquote>
-<p><a href="https://blog.csdn.net/qq_39237801/article/details/78378486" target="_blank">Java&#x751F;&#x6210;xml&#x6587;&#x4EF6;&#x7684;&#x56DB;&#x79CD;&#x65B9;&#x5F0F;</a></p>
-<p><a href="https://www.cnblogs.com/lanxuezaipiao/archive/2013/05/17/3082949.html" target="_blank">&#x56DB;&#x79CD;&#x751F;&#x6210;&#x548C;&#x89E3;&#x6790;XML&#x6587;&#x6863;&#x7684;&#x65B9;&#x6CD5;&#x8BE6;&#x89E3;&#xFF08;&#x4ECB;&#x7ECD;+&#x4F18;&#x7F3A;&#x70B9;&#x6BD4;&#x8F83;+&#x793A;&#x4F8B;&#xFF09;</a></p>
-<p><a href="https://juejin.im/entry/58cb48f2a22b9d00641fb558" target="_blank">Java &#x81EA;&#x5B9A;&#x4E49;&#x751F;&#x6210;&#x4E0E;&#x89E3;&#x6790;&#xFF08;Dom4J&#xFF09;XML &#x6587;&#x4EF6;</a></p>
-<pre><code class="lang-json">&#x56DB;&#x79CD;&#x65B9;&#x5F0F;&#x603B;&#x7ED3;:
-    <span class="hljs-number">1.</span>dom&#x57FA;&#x4E8E;tree&#xFF0C;sax&#x57FA;&#x4E8E;&#x4E8B;&#x4EF6;&#xFF0C;JDOM&#x548C;DOM4J&#x57FA;&#x4E8E;&#x5E95;&#x5C42;API
-    <span class="hljs-number">2.</span>dom&#x751F;&#x6210;&#x7684;&#x5185;&#x5BB9;&#x4F1A;&#x4FDD;&#x5B58;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x65B9;&#x4FBF;&#x5220;&#x9664;&#x548C;&#x4FEE;&#x6539;
-    <span class="hljs-number">3.</span>sax&#x4E0D;&#x80FD;&#x4FEE;&#x6539;&#x5DF2;&#x7ECF;&#x751F;&#x6210;&#x7684;&#x6807;&#x7B7E; 
-    <span class="hljs-number">4.</span>&#x6DFB;&#x52A0;JUnit&#x5728;Libraries&#x9009;&#x62E9;Add Library&#x4E2D;&#x7684;JUnit&#x5373;&#x53EF;
+<p><a href="https://blog.csdn.net/qq_39237801/article/details/78378486" target="_blank">Java生成xml文件的四种方式</a></p>
+<p><a href="https://www.cnblogs.com/lanxuezaipiao/archive/2013/05/17/3082949.html" target="_blank">四种生成和解析XML文档的方法详解（介绍+优缺点比较+示例）</a></p>
+<p><a href="https://juejin.im/entry/58cb48f2a22b9d00641fb558" target="_blank">Java 自定义生成与解析（Dom4J）XML 文件</a></p>
+<pre><code class="lang-json">四种方式总结:
+    <span class="hljs-number">1.</span>dom基于tree，sax基于事件，JDOM和DOM4J基于底层API
+    <span class="hljs-number">2.</span>dom生成的内容会保存到内存中，方便删除和修改
+    <span class="hljs-number">3.</span>sax不能修改已经生成的标签 
+    <span class="hljs-number">4.</span>添加JUnit在Libraries选择Add Library中的JUnit即可
 </code></pre>
-<p>&#x3010;DOM&#x3011;</p>
-<p>DOM&#x65B9;&#x5F0F;&#x751F;&#x6210;xml&#x662F;&#x57FA;&#x4E8E;DOM&#x6811;&#x7684;&#x7ED3;&#x6784;&#xFF0C;&#x6574;&#x4E2A;DOM&#x6811;&#x4F1A;&#x5B58;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x6240;&#x4EE5;&#x4F7F;&#x7528;DOM&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x9891;&#x7E41;&#x7684;&#x4FEE;&#x6539;xml&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x4F46;&#x662F;&#x56E0;&#x4E3A;DOM&#x6811;&#x662F;&#x5B58;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x5BF9;&#x5185;&#x5B58;&#x6D88;&#x8017;&#x8F83;&#x5927;&#x3002;DOM&#x65B9;&#x5F0F;&#x6BD4;&#x8F83;&#x9002;&#x7528;&#x4E8E;&#x9700;&#x8981;&#x9891;&#x7E41;&#x5220;&#x6539;&#x7684;&#x60C5;&#x51B5;&#x3002;</p>
-<p>&#x3010;SAX&#x3011;</p>
-<p>SAX&#x65B9;&#x5F0F;&#x751F;&#x6210;xml&#x662F;&#x9010;&#x6B65;&#x5199;&#x5165;&#x7684;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;&#x5728;SAX&#x5199;&#x5165;&#x65F6;&#xFF0C;&#x5DF2;&#x7ECF;&#x5199;&#x5165;&#x7684;&#x90E8;&#x5206;&#x662F;&#x65E0;&#x6CD5;&#x518D;&#x56DE;&#x5934;&#x4FEE;&#x6539;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;SAX&#x662F;&#x57FA;&#x4E8E;&#x4E8B;&#x4EF6;&#x9A71;&#x52A8;&#x7684;&#xFF0C;&#x5728;&#x5199;&#x5B8C;&#x4E00;&#x4E2A;&#x6807;&#x7B7E;&#x4E4B;&#x540E;&#x662F;&#x4E0D;&#x80FD;&#x56DE;&#x5934;&#x7684;&#xFF0C;&#x4E5F;&#x56E0;&#x6B64;&#xFF0C;SAX&#x7684;&#x6548;&#x7387;&#x6BD4;&#x8F83;&#x5FEB;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x80FD;&#x8FDB;&#x884C;&#x5220;&#x6539;&#x3002;</p>
-<p>&#x3010;JDOM&#x3011;</p>
-<p>JDOM&#x65B9;&#x5F0F;&#x4E0D;&#x662F;Java&#x63D0;&#x4F9B;&#x7684;&#x57FA;&#x672C;&#x7684;&#x751F;&#x6210;xml&#x65B9;&#x5F0F;&#xFF0C;&#x4F7F;&#x7528;&#x65F6;&#x9700;&#x8981;&#x5BFC;&#x5165;&#x989D;&#x5916;&#x7684;jar&#x5305;&#xFF0C;&#x4F46;&#x662F;&#x5B83;&#x662F;&#x57FA;&#x4E8E;&#x57FA;&#x7840;&#x7684;API&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
-<p>&#x3010;DOM4J&#x3011;</p>
-<p>DOM4J&#x65B9;&#x5F0F;&#x4E5F;&#x4E0D;&#x662F;Java&#x63D0;&#x4F9B;&#x7684;&#x57FA;&#x672C;&#x751F;&#x6210;xml&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x4F7F;&#x7528;&#x65F6;&#x4E5F;&#x9700;&#x8981;&#x5BFC;&#x5165;&#x989D;&#x5916;&#x7684;jar&#x5305;&#xFF0C;&#x5B83;&#x4E5F;&#x662F;&#x57FA;&#x4E8E;&#x57FA;&#x7840;&#x7684;API&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x5B83;&#x529F;&#x80FD;&#x5F3A;&#x5927;&#xFF0C;&#x6027;&#x80FD;&#x4F18;&#x5F02;&#xFF0C;&#x5728;&#x5B9E;&#x9645;&#x5F00;&#x53D1;&#x4E2D;&#x7ECF;&#x5E38;&#x4F7F;&#x7528;&#x3002;</p>
-<p>DOM&#x65B9;&#x5F0F;&#x662F;&#x6700;&#x6162;&#x7684;&#xFF0C;SAX&#x65B9;&#x5F0F;&#x53CD;&#x800C;&#x662F;&#x6700;&#x5FEB;&#x7684;&#xFF0C;DOM4J&#x65B9;&#x5F0F;&#x4EC5;&#x6B21;&#x4E8E;SAX&#x65B9;&#x5F0F;&#x3002;</p>
+<p>【DOM】</p>
+<p>DOM方式生成xml是基于DOM树的结构，整个DOM树会存在内存中，所以使用DOM方式可以频繁的修改xml的内容，但是因为DOM树是存在内存中的，所以对内存消耗较大。DOM方式比较适用于需要频繁删改的情况。</p>
+<p>【SAX】</p>
+<p>SAX方式生成xml是逐步写入的，也就是说，在SAX写入时，已经写入的部分是无法再回头修改的，因为SAX是基于事件驱动的，在写完一个标签之后是不能回头的，也因此，SAX的效率比较快，但是不能进行删改。</p>
+<p>【JDOM】</p>
+<p>JDOM方式不是Java提供的基本的生成xml方式，使用时需要导入额外的jar包，但是它是基于基础的API实现的。</p>
+<p>【DOM4J】</p>
+<p>DOM4J方式也不是Java提供的基本生成xml的方式，使用时也需要导入额外的jar包，它也是基于基础的API实现的，它功能强大，性能优异，在实际开发中经常使用。</p>
+<p>DOM方式是最慢的，SAX方式反而是最快的，DOM4J方式仅次于SAX方式。</p>
 </blockquote>
-<h1 id="dom&#x65B9;&#x5F0F;"><a name="dom&#x65B9;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#dom&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="dom&#x65B9;&#x5F0F;" class="plugin-anchor" href="#dom&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>Dom&#x65B9;&#x5F0F;</h1>
+<h1 id="dom方式">2 Dom方式</h1>
 <p>&gt;
 &gt;</p>
 <blockquote>
@@ -931,71 +496,71 @@
    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">()</span></span>{
        Long start = System.currentTimeMillis();
        createXml();
-       System.out.println(<span class="hljs-string">&quot;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#xFF1A;&quot;</span>+ (System.currentTimeMillis() - start));
+       System.out.println(<span class="hljs-string">"运行时间："</span>+ (System.currentTimeMillis() - start));
    }
 
    <span class="hljs-comment">/**
-    * &#x751F;&#x6210;xml&#x65B9;&#x6CD5;
+    * 生成xml方法
    */</span>
    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">createXml</span><span class="hljs-params">()</span> </span>{
        <span class="hljs-keyword">try</span> {
-           <span class="hljs-comment">// &#x521B;&#x5EFA;&#x89E3;&#x6790;&#x5668;&#x5DE5;&#x5382;</span>
+           <span class="hljs-comment">// 创建解析器工厂</span>
            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
            DocumentBuilder db = factory.newDocumentBuilder();
            Document document = db.newDocument();
-           <span class="hljs-comment">// &#x4E0D;&#x663E;&#x793A;standalone=&quot;no&quot;</span>
+           <span class="hljs-comment">// 不显示standalone="no"</span>
            document.setXmlStandalone(<span class="hljs-keyword">true</span>);
-           Element bookstore = document.createElement(<span class="hljs-string">&quot;bookstore&quot;</span>);
-           <span class="hljs-comment">// &#x5411;bookstore&#x6839;&#x8282;&#x70B9;&#x4E2D;&#x6DFB;&#x52A0;&#x5B50;&#x8282;&#x70B9;book</span>
-           Element book = document.createElement(<span class="hljs-string">&quot;book&quot;</span>);
+           Element bookstore = document.createElement(<span class="hljs-string">"bookstore"</span>);
+           <span class="hljs-comment">// 向bookstore根节点中添加子节点book</span>
+           Element book = document.createElement(<span class="hljs-string">"book"</span>);
 
-           Element name = document.createElement(<span class="hljs-string">&quot;name&quot;</span>);
-           <span class="hljs-comment">// &#x4E0D;&#x663E;&#x793A;&#x5185;&#x5BB9; name.setNodeValue(&quot;&#x4E0D;&#x597D;&#x4F7F;&quot;);</span>
-           name.setTextContent(<span class="hljs-string">&quot;&#x96F7;&#x795E;&quot;</span>);
+           Element name = document.createElement(<span class="hljs-string">"name"</span>);
+           <span class="hljs-comment">// 不显示内容 name.setNodeValue("不好使");</span>
+           name.setTextContent(<span class="hljs-string">"雷神"</span>);
            book.appendChild(name);
-           <span class="hljs-comment">// &#x4E3A;book&#x8282;&#x70B9;&#x6DFB;&#x52A0;&#x5C5E;&#x6027;</span>
-           book.setAttribute(<span class="hljs-string">&quot;id&quot;</span>, <span class="hljs-string">&quot;1&quot;</span>);
-           <span class="hljs-comment">// &#x5C06;book&#x8282;&#x70B9;&#x6DFB;&#x52A0;&#x5230;bookstore&#x6839;&#x8282;&#x70B9;&#x4E2D;</span>
+           <span class="hljs-comment">// 为book节点添加属性</span>
+           book.setAttribute(<span class="hljs-string">"id"</span>, <span class="hljs-string">"1"</span>);
+           <span class="hljs-comment">// 将book节点添加到bookstore根节点中</span>
            bookstore.appendChild(book);
-           <span class="hljs-comment">// &#x5C06;bookstore&#x8282;&#x70B9;&#xFF08;&#x5DF2;&#x5305;&#x542B;book&#xFF09;&#x6DFB;&#x52A0;&#x5230;dom&#x6811;&#x4E2D;</span>
+           <span class="hljs-comment">// 将bookstore节点（已包含book）添加到dom树中</span>
            document.appendChild(bookstore);
 
-           <span class="hljs-comment">// &#x65B9;&#x5F0F;&#x4E00;: &#x4FDD;&#x5B58;xml&#x6587;&#x4EF6;</span>
-           <span class="hljs-comment">// &#x521B;&#x5EFA;TransformerFactory&#x5BF9;&#x8C61;</span>
+           <span class="hljs-comment">// 方式一: 保存xml文件</span>
+           <span class="hljs-comment">// 创建TransformerFactory对象</span>
 <span class="hljs-comment">//            TransformerFactory tff = TransformerFactory.newInstance();</span>
-           <span class="hljs-comment">// &#x521B;&#x5EFA; Transformer&#x5BF9;&#x8C61;</span>
+           <span class="hljs-comment">// 创建 Transformer对象</span>
 <span class="hljs-comment">//            Transformer tf = tff.newTransformer();</span>
-           <span class="hljs-comment">// &#x8F93;&#x51FA;&#x5185;&#x5BB9;&#x662F;&#x5426;&#x4F7F;&#x7528;&#x6362;&#x884C;</span>
-<span class="hljs-comment">//            tf.setOutputProperty(OutputKeys.INDENT, &quot;yes&quot;);</span>
-           <span class="hljs-comment">// &#x521B;&#x5EFA;xml&#x6587;&#x4EF6;&#x5E76;&#x5199;&#x5165;&#x5185;&#x5BB9;</span>
-<span class="hljs-comment">//            tf.transform(new DOMSource(document), new StreamResult(new File(&quot;book1.xml&quot;)));</span>
-<span class="hljs-comment">//            System.out.println(&quot;&#x751F;&#x6210;book1.xml&#x6210;&#x529F;&quot;);</span>
+           <span class="hljs-comment">// 输出内容是否使用换行</span>
+<span class="hljs-comment">//            tf.setOutputProperty(OutputKeys.INDENT, "yes");</span>
+           <span class="hljs-comment">// 创建xml文件并写入内容</span>
+<span class="hljs-comment">//            tf.transform(new DOMSource(document), new StreamResult(new File("book1.xml")));</span>
+<span class="hljs-comment">//            System.out.println("生成book1.xml成功");</span>
 
-           <span class="hljs-comment">// &#x65B9;&#x5F0F;&#x4E8C;: &#x8F6C;&#x5B57;&#x7B26;&#x4E32;</span>
-           <span class="hljs-comment">// &#x521B;&#x5EFA;TransformerFactory&#x5BF9;&#x8C61;</span>
+           <span class="hljs-comment">// 方式二: 转字符串</span>
+           <span class="hljs-comment">// 创建TransformerFactory对象</span>
            TransformerFactory transformerFactory = TransformerFactory.newInstance();
-           <span class="hljs-comment">// &#x521B;&#x5EFA;Transformer&#x5BF9;&#x8C61;</span>
+           <span class="hljs-comment">// 创建Transformer对象</span>
            Transformer transformer = transformerFactory.newTransformer();
-           <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x8F93;&#x51FA;&#x6570;&#x636E;&#x65F6;&#x6362;&#x884C;</span>
-           <span class="hljs-comment">// tf.setOutputProperty(OutputKeys.INDENT, &quot;yes&quot;);</span>
+           <span class="hljs-comment">// 设置输出数据时换行</span>
+           <span class="hljs-comment">// tf.setOutputProperty(OutputKeys.INDENT, "yes");</span>
 
-           <span class="hljs-comment">// xml&#x683C;&#x5F0F;&#x5316;</span>
+           <span class="hljs-comment">// xml格式化</span>
            ByteArrayOutputStream bos = <span class="hljs-keyword">new</span> ByteArrayOutputStream();
            transformer.transform(<span class="hljs-keyword">new</span> DOMSource(document), <span class="hljs-keyword">new</span> StreamResult(bos));
            String xmlString = bos.toString();
            System.out.println(<span class="hljs-keyword">new</span> String(prettyXml(xmlString)));
        } <span class="hljs-keyword">catch</span> (Exception e) {
            e.printStackTrace();
-           System.out.println(<span class="hljs-string">&quot;&#x751F;&#x6210;book1.xml&#x5931;&#x8D25;&quot;</span>);
+           System.out.println(<span class="hljs-string">"生成book1.xml失败"</span>);
        }
    }
 }
 </code></pre>
 <pre><code class="lang-java">   <span class="hljs-comment">/**
-    * &#x683C;&#x5F0F;&#x5316;&#x8F93;&#x51FA;
+    * 格式化输出
     *
-    * <span class="hljs-doctag">@param</span> xmlStr: xml&#x6587;&#x6863;&#x5B57;&#x7B26;&#x4E32;
-    * <span class="hljs-doctag">@return</span> &#x683C;&#x5F0F;&#x5316;xml
+    * <span class="hljs-doctag">@param</span> xmlStr: xml文档字符串
+    * <span class="hljs-doctag">@return</span> 格式化xml
     */</span>
    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">byte</span>[] prettyXml(String xmlStr) {
        <span class="hljs-keyword">byte</span>[] data = <span class="hljs-keyword">null</span>;
@@ -1018,25 +583,25 @@
    }
 
    <span class="hljs-comment">/**
-    * &#x683C;&#x5F0F;&#x5316;&#x8F93;&#x51FA;
+    * 格式化输出
     *
-    * <span class="hljs-doctag">@param</span> node: &#x6587;&#x6863;&#x6811;&#x8282;&#x70B9;
-    * <span class="hljs-doctag">@return</span> &#x683C;&#x5F0F;&#x5316;&#x5B8C;&#x7684;&#x8282;&#x70B9;
+    * <span class="hljs-doctag">@param</span> node: 文档树节点
+    * <span class="hljs-doctag">@return</span> 格式化完的节点
     */</span>
    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">byte</span>[] prettyXml(Node node) {
        ByteArrayOutputStream byteArrayOutputStream = <span class="hljs-keyword">null</span>;
        <span class="hljs-keyword">byte</span>[] data = <span class="hljs-keyword">null</span>;
        <span class="hljs-keyword">try</span> {
            DOMImplementationRegistry registry = DOMImplementationRegistry.newInstance();
-           DOMImplementationLS impl = (DOMImplementationLS) registry.getDOMImplementation(<span class="hljs-string">&quot;XML 3.0&quot;</span>);
+           DOMImplementationLS impl = (DOMImplementationLS) registry.getDOMImplementation(<span class="hljs-string">"XML 3.0"</span>);
            LSSerializer serializer = impl.createLSSerializer();
            DOMConfiguration domConfiguration = serializer.getDomConfig();
-           <span class="hljs-keyword">boolean</span> isSupport = domConfiguration.canSetParameter(<span class="hljs-string">&quot;format-pretty-print&quot;</span>, <span class="hljs-keyword">true</span>);
+           <span class="hljs-keyword">boolean</span> isSupport = domConfiguration.canSetParameter(<span class="hljs-string">"format-pretty-print"</span>, <span class="hljs-keyword">true</span>);
            <span class="hljs-keyword">if</span> (isSupport) {
-               domConfiguration.setParameter(<span class="hljs-string">&quot;format-pretty-print&quot;</span>, <span class="hljs-keyword">true</span>);
+               domConfiguration.setParameter(<span class="hljs-string">"format-pretty-print"</span>, <span class="hljs-keyword">true</span>);
            }
            LSOutput output = impl.createLSOutput();
-           output.setEncoding(<span class="hljs-string">&quot;UTF-8&quot;</span>);
+           output.setEncoding(<span class="hljs-string">"UTF-8"</span>);
            byteArrayOutputStream = <span class="hljs-keyword">new</span> ByteArrayOutputStream();
            output.setByteStream(byteArrayOutputStream);
            serializer.write(node, output);
@@ -1055,15 +620,15 @@
        <span class="hljs-keyword">return</span> data;
    }
 </code></pre>
-<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span>encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">"1.0"</span>encoding=<span class="hljs-string">"UTF-8"</span><span class="hljs-meta">?&gt;</span></span>
 <span class="hljs-tag">&lt;<span class="hljs-name">bookstore</span>&gt;</span>
-   <span class="hljs-tag">&lt;<span class="hljs-name">book</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>
-       <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>&#x96F7;&#x795E;<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
+   <span class="hljs-tag">&lt;<span class="hljs-name">book</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"1"</span>&gt;</span>
+       <span class="hljs-tag">&lt;<span class="hljs-name">name</span>&gt;</span>雷神<span class="hljs-tag">&lt;/<span class="hljs-name">name</span>&gt;</span>
    <span class="hljs-tag">&lt;/<span class="hljs-name">book</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">bookstore</span>&gt;</span>
 </code></pre>
 </blockquote>
-<h1 id="dom4j&#x65B9;&#x5F0F;"><a name="dom4j&#x65B9;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#dom4j&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="dom4j&#x65B9;&#x5F0F;" class="plugin-anchor" href="#dom4j&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>Dom4j&#x65B9;&#x5F0F;</h1>
+<h1 id="dom4j方式">3 Dom4j方式</h1>
 <p>&gt;
 &gt;</p>
 <blockquote>
@@ -1083,47 +648,47 @@
    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">()</span></span>{
        Long start = System.currentTimeMillis();
        createXml();
-       System.out.println(<span class="hljs-string">&quot;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#xFF1A;&quot;</span>+ (System.currentTimeMillis() - start));
+       System.out.println(<span class="hljs-string">"运行时间："</span>+ (System.currentTimeMillis() - start));
    }
 
    <span class="hljs-comment">/**
-    * &#x751F;&#x6210;xml&#x65B9;&#x6CD5;
+    * 生成xml方法
     */</span>
    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">createXml</span><span class="hljs-params">()</span></span>{
        <span class="hljs-keyword">try</span> {
-           <span class="hljs-comment">// 1&#x3001;&#x521B;&#x5EFA;document&#x5BF9;&#x8C61;</span>
+           <span class="hljs-comment">// 1、创建document对象</span>
            Document document = DocumentHelper.createDocument();
-           <span class="hljs-comment">// 2&#x3001;&#x521B;&#x5EFA;&#x6839;&#x8282;&#x70B9;rss</span>
-           Element rss = document.addElement(<span class="hljs-string">&quot;rss&quot;</span>);
-           <span class="hljs-comment">// 3&#x3001;&#x5411;rss&#x8282;&#x70B9;&#x6DFB;&#x52A0;version&#x5C5E;&#x6027;</span>
-           rss.addAttribute(<span class="hljs-string">&quot;version&quot;</span>, <span class="hljs-string">&quot;2.0&quot;</span>);
-           <span class="hljs-comment">// 4&#x3001;&#x751F;&#x6210;&#x5B50;&#x8282;&#x70B9;&#x53CA;&#x5B50;&#x8282;&#x70B9;&#x5185;&#x5BB9;</span>
-           Element channel = rss.addElement(<span class="hljs-string">&quot;channel&quot;</span>);
-           Element title = channel.addElement(<span class="hljs-string">&quot;title&quot;</span>);
-           title.setText(<span class="hljs-string">&quot;&#x56FD;&#x5185;&#x6700;&#x65B0;&#x65B0;&#x95FB;&quot;</span>);
-           <span class="hljs-comment">// 5&#x3001;&#x8BBE;&#x7F6E;&#x751F;&#x6210;xml&#x7684;&#x683C;&#x5F0F;</span>
+           <span class="hljs-comment">// 2、创建根节点rss</span>
+           Element rss = document.addElement(<span class="hljs-string">"rss"</span>);
+           <span class="hljs-comment">// 3、向rss节点添加version属性</span>
+           rss.addAttribute(<span class="hljs-string">"version"</span>, <span class="hljs-string">"2.0"</span>);
+           <span class="hljs-comment">// 4、生成子节点及子节点内容</span>
+           Element channel = rss.addElement(<span class="hljs-string">"channel"</span>);
+           Element title = channel.addElement(<span class="hljs-string">"title"</span>);
+           title.setText(<span class="hljs-string">"国内最新新闻"</span>);
+           <span class="hljs-comment">// 5、设置生成xml的格式</span>
            OutputFormat format = OutputFormat.createPrettyPrint();
-           <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x7F16;&#x7801;&#x683C;&#x5F0F;</span>
-           format.setEncoding(<span class="hljs-string">&quot;UTF-8&quot;</span>);
+           <span class="hljs-comment">// 设置编码格式</span>
+           format.setEncoding(<span class="hljs-string">"UTF-8"</span>);
 
 
-           <span class="hljs-comment">// 6&#x3001;&#x751F;&#x6210;xml&#x6587;&#x4EF6;            </span>
-           File file = <span class="hljs-keyword">new</span> File(<span class="hljs-string">&quot;rss.xml&quot;</span>);
+           <span class="hljs-comment">// 6、生成xml文件            </span>
+           File file = <span class="hljs-keyword">new</span> File(<span class="hljs-string">"rss.xml"</span>);
            XMLWriter writer = <span class="hljs-keyword">new</span> XMLWriter(<span class="hljs-keyword">new</span> FileOutputStream(file), format);
-           <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x662F;&#x5426;&#x8F6C;&#x4E49;&#xFF0C;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;&#x8F6C;&#x4E49;&#x5B57;&#x7B26;</span>
+           <span class="hljs-comment">// 设置是否转义，默认使用转义字符</span>
            writer.setEscapeText(<span class="hljs-keyword">false</span>);
            writer.write(document);
            writer.close();
-           System.out.println(<span class="hljs-string">&quot;&#x751F;&#x6210;rss.xml&#x6210;&#x529F;&quot;</span>);
+           System.out.println(<span class="hljs-string">"生成rss.xml成功"</span>);
        } <span class="hljs-keyword">catch</span> (Exception e) {
            e.printStackTrace();
-           System.out.println(<span class="hljs-string">&quot;&#x751F;&#x6210;rss.xml&#x5931;&#x8D25;&quot;</span>);
+           System.out.println(<span class="hljs-string">"生成rss.xml失败"</span>);
        }
    }
 }
 </code></pre>
 </blockquote>
-<h1 id="jdom&#x65B9;&#x5F0F;"><a name="jdom&#x65B9;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#jdom&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="jdom&#x65B9;&#x5F0F;" class="plugin-anchor" href="#jdom&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>JDom&#x65B9;&#x5F0F;</h1>
+<h1 id="jdom方式">4 JDom方式</h1>
 <p>&gt;
 &gt;</p>
 <blockquote>
@@ -1142,185 +707,109 @@
    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test</span><span class="hljs-params">()</span></span>{
        Long start = System.currentTimeMillis();
        createXml();
-       System.out.println(<span class="hljs-string">&quot;&#x8FD0;&#x884C;&#x65F6;&#x95F4;&#xFF1A;&quot;</span>+ (System.currentTimeMillis() - start));
+       System.out.println(<span class="hljs-string">"运行时间："</span>+ (System.currentTimeMillis() - start));
    }
 
    <span class="hljs-comment">/**
-    * &#x751F;&#x6210;xml&#x65B9;&#x6CD5;
+    * 生成xml方法
     */</span>
    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">createXml</span><span class="hljs-params">()</span></span>{
        <span class="hljs-keyword">try</span> {
-           <span class="hljs-comment">// 1&#x3001;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x6839;&#x8282;&#x70B9;</span>
-           Element rss = <span class="hljs-keyword">new</span> Element(<span class="hljs-string">&quot;rss&quot;</span>);
-           <span class="hljs-comment">// 2&#x3001;&#x4E3A;&#x8282;&#x70B9;&#x6DFB;&#x52A0;&#x5C5E;&#x6027;</span>
-           rss.setAttribute(<span class="hljs-string">&quot;version&quot;</span>, <span class="hljs-string">&quot;2.0&quot;</span>);            
-           <span class="hljs-comment">// 3&#x3001;&#x751F;&#x6210;&#x4E00;&#x4E2A;document&#x5BF9;&#x8C61;</span>
+           <span class="hljs-comment">// 1、生成一个根节点</span>
+           Element rss = <span class="hljs-keyword">new</span> Element(<span class="hljs-string">"rss"</span>);
+           <span class="hljs-comment">// 2、为节点添加属性</span>
+           rss.setAttribute(<span class="hljs-string">"version"</span>, <span class="hljs-string">"2.0"</span>);            
+           <span class="hljs-comment">// 3、生成一个document对象</span>
            Document document = <span class="hljs-keyword">new</span> Document(rss);
 
-           Element channel = <span class="hljs-keyword">new</span> Element(<span class="hljs-string">&quot;channel&quot;</span>);
+           Element channel = <span class="hljs-keyword">new</span> Element(<span class="hljs-string">"channel"</span>);
            rss.addContent(channel);
-           Element title = <span class="hljs-keyword">new</span> Element(<span class="hljs-string">&quot;title&quot;</span>);
-           title.setText(<span class="hljs-string">&quot;&#x56FD;&#x5185;&#x6700;&#x65B0;&#x65B0;&#x95FB;&quot;</span>);
+           Element title = <span class="hljs-keyword">new</span> Element(<span class="hljs-string">"title"</span>);
+           title.setText(<span class="hljs-string">"国内最新新闻"</span>);
            channel.addContent(title);
 
            Format format = Format.getCompactFormat();
-           <span class="hljs-comment">// &#x8BBE;&#x7F6E;&#x6362;&#x884C;Tab&#x6216;&#x7A7A;&#x683C;</span>
-           format.setIndent(<span class="hljs-string">&quot;    &quot;</span>);
-           format.setEncoding(<span class="hljs-string">&quot;UTF-8&quot;</span>);
+           <span class="hljs-comment">// 设置换行Tab或空格</span>
+           format.setIndent(<span class="hljs-string">"    "</span>);
+           format.setEncoding(<span class="hljs-string">"UTF-8"</span>);
 
-           <span class="hljs-comment">// 4&#x3001;&#x521B;&#x5EFA;XMLOutputter&#x7684;&#x5BF9;&#x8C61;</span>
+           <span class="hljs-comment">// 4、创建XMLOutputter的对象</span>
            XMLOutputter outputer = <span class="hljs-keyword">new</span> XMLOutputter(format);
-           <span class="hljs-comment">// 5&#x3001;&#x5229;&#x7528;outputer&#x5C06;document&#x8F6C;&#x6362;&#x6210;xml&#x6587;&#x6863;</span>
-           File file = <span class="hljs-keyword">new</span> File(<span class="hljs-string">&quot;rssNew.xml&quot;</span>);
+           <span class="hljs-comment">// 5、利用outputer将document转换成xml文档</span>
+           File file = <span class="hljs-keyword">new</span> File(<span class="hljs-string">"rssNew.xml"</span>);
            outputer.output(document, <span class="hljs-keyword">new</span> FileOutputStream(file));
 
-           System.out.println(<span class="hljs-string">&quot;&#x751F;&#x6210;rssNew.xml&#x6210;&#x529F;&quot;</span>);
+           System.out.println(<span class="hljs-string">"生成rssNew.xml成功"</span>);
        } <span class="hljs-keyword">catch</span> (Exception e) {
-           System.out.println(<span class="hljs-string">&quot;&#x751F;&#x6210;rssNew.xml&#x5931;&#x8D25;&quot;</span>);
+           System.out.println(<span class="hljs-string">"生成rssNew.xml失败"</span>);
        }
    }    
 }
 </code></pre>
 </blockquote>
-<h1 id="sax&#x65B9;&#x5F0F;"><a name="sax&#x65B9;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#sax&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="sax&#x65B9;&#x5F0F;" class="plugin-anchor" href="#sax&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>Sax&#x65B9;&#x5F0F;</h1>
+<h1 id="sax方式">5 Sax方式</h1>
 <p>&gt;
 &gt;
 &gt;</p>
-<h1 id="xml&#x89E3;&#x6790;"><a name="xml&#x89E3;&#x6790;" class="anchor-navigation-ex-anchor" href="#xml&#x89E3;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="xml&#x89E3;&#x6790;" class="plugin-anchor" href="#xml&#x89E3;&#x6790;"><i class="fa fa-link" aria-hidden="true"></i></a>xml&#x89E3;&#x6790;</h1>
+<h1 id="xml解析">6 xml解析</h1>
 <p>&gt;
 &gt;
 &gt;</p>
 <pre><code class="lang-java"><span class="hljs-keyword">import</span> org.springframework.util.Assert;
-Assert.notNull(featureDataRow, <span class="hljs-string">&quot;&#x6570;&#x636E;&#x4E0D;&#x80FD;&#x4E3A;&#x7A7A;&quot;</span>);
-   Assert.noNullElements(featureDataRow.getColumns().values().toArray(), <span class="hljs-string">&quot;&#x8BE5;&#x6837;&#x672C;&#x5B58;&#x5728;null&#x7279;&#x5F81;&quot;</span>);
+Assert.notNull(featureDataRow, <span class="hljs-string">"数据不能为空"</span>);
+   Assert.noNullElements(featureDataRow.getColumns().values().toArray(), <span class="hljs-string">"该样本存在null特征"</span>);
 </code></pre>
-<p></p><footer class="page-footer"><span class="copyright">Copyright &#xA9; narutohyc.com 2022 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2022-02-14 09:16:40
-</span></footer><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz',appKey: 'FOXMptWOHC7cU1FxXt0LJj4o',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script><p></p>
-
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
+<p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2022 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
+2022-02-15 13:20:00
+</span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz',appKey: 'FOXMptWOHC7cU1FxXt0LJj4o',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script><p></p>
+</section>
 </div>
-
-                        </div>
-                    </div>
-                
-            </div>
-
-            
-                
-                <a href="Java基础_读取配置文件.html" class="navigation navigation-prev " aria-label="Previous page: Java基础_读取配置文件">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="Java基础_后台服务器开发.html" class="navigation navigation-next " aria-label="Next page: Java基础_后台服务器开发">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
-        
-    </div>
-
-    <script>
+<div class="search-results">
+<div class="has-results">
+<h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+<ul class="search-results-list"></ul>
+</div>
+<div class="no-results">
+<h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<a aria-label="Previous page: Java基础_读取配置文件" class="navigation navigation-prev" href="Java基础_读取配置文件.html">
+<i class="fa fa-angle-left"></i>
+</a>
+<a aria-label="Next page: Java基础_后台服务器开发" class="navigation navigation-next" href="Java基础_后台服务器开发.html">
+<i class="fa fa-angle-right"></i>
+</a>
+</div>
+<script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Java基础_解析与生成XML","level":"1.6.8","depth":2,"next":{"title":"Java基础_后台服务器开发","level":"1.6.9","depth":2,"path":"chapters/Java基础_后台服务器开发.md","ref":"chapters/Java基础_后台服务器开发.md","articles":[]},"previous":{"title":"Java基础_读取配置文件","level":"1.6.7","depth":2,"path":"chapters/Java基础_读取配置文件.md","ref":"chapters/Java基础_读取配置文件.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","favicon","search-plus","-lunr","-search","lightbox","change_girls","theme-comscore","valine","pageview-count","favicon-absolute"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"change_girls":{"time":10,"urls":["https://plc.jj20.com/up/allimg/1115/012122143136/220121143136-2.jpg","https://plc.jj20.com/up/allimg/1115/111R1094405/21111P94405-1.jpg"]},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://i.loli.net/2021/01/12/Cdunm9AoBcHF5MI.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://i.loli.net/2021/01/12/gmzASfCciIFXTyr.png","wechatText":"微信打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"","lang":"zh-CN","pageSize":10,"placeholder":"Just go go","recordIP":false,"appId":"jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz","appKey":"FOXMptWOHC7cU1FxXt0LJj4o"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java相关学习记录","language":"zh-hans","links":{"sidebar":{"我的狗窝":"https://github.com/narutohyc"}},"gitbook":"*","description":"记录 Java 的学习和一些技巧的使用"},"file":{"path":"chapters/Java基础_解析与生成XML.md","mtime":"2022-02-14T09:16:40.557Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-14T09:18:14.959Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Java基础_解析与生成XML","level":"1.6.8","depth":2,"next":{"title":"Java基础_后台服务器开发","level":"1.6.9","depth":2,"path":"chapters/Java基础_后台服务器开发.md","ref":"chapters/Java基础_后台服务器开发.md","articles":[]},"previous":{"title":"Java基础_读取配置文件","level":"1.6.7","depth":2,"path":"chapters/Java基础_读取配置文件.md","ref":"chapters/Java基础_读取配置文件.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","favicon","search-plus","-lunr","-search","lightbox","change_girls","theme-comscore","valine","pageview-count","favicon-absolute"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"change_girls":{"time":10,"urls":["https://plc.jj20.com/up/allimg/1115/012122143136/220121143136-2.jpg","https://plc.jj20.com/up/allimg/1115/111R1094405/21111P94405-1.jpg"]},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://i.loli.net/2021/01/12/Cdunm9AoBcHF5MI.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://i.loli.net/2021/01/12/gmzASfCciIFXTyr.png","wechatText":"微信打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"","lang":"zh-CN","pageSize":10,"placeholder":"Just go go","recordIP":false,"appId":"jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz","appKey":"FOXMptWOHC7cU1FxXt0LJj4o"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java相关学习记录","language":"zh-hans","links":{"sidebar":{"我的狗窝":"https://github.com/narutohyc"}},"gitbook":"*","description":"记录 Java 的学习和一些技巧的使用"},"file":{"path":"chapters/Java基础_解析与生成XML.md","mtime":"2022-02-15T13:20:00.829Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-15T13:21:52.737Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
-
-        
-    
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
-        
-    
-        
-        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
-        
-    
-
-    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
-
-    </body>
+<script src="../gitbook/gitbook.js"></script>
+<script src="../gitbook/theme.js"></script>
+<script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+<script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+<script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+<script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+<script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+</body>
 </html>
-

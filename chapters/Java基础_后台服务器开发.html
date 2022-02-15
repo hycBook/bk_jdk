@@ -1,1115 +1,604 @@
-
 <!DOCTYPE HTML>
-<html lang="zh-hans" >
-    <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Java基础_后台服务器开发 · Java相关学习记录</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
-        <meta name="author" content="narutohyc">
-        
-        
-    
-    
-    <link rel="stylesheet" href="../gitbook/style.css">
-
-    
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
-                
-            
-        
-
-    
-
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-
-    
-
-        
-    
-    
-    
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
-
-    
-    <link rel="next" href="Java基础_四舍五入.html" />
-    
-    
-    <link rel="prev" href="Java基础_解析与生成XML.html" />
-    
-
-    
-        <link rel="shortcut icon" href="./chapters/res/other/favicon.ico" type="image/x-icon">
-    
-    
-    
-    
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./chapters/res/other/favicon.ico">
-    
-    
-        
-    
-    
-        
-    
-
-    
-    
-    
-    
-
-    <style>
+<html lang="zh-hans">
+<head>
+<meta charset="utf-8"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Java基础_后台服务器开发 · Java相关学习记录</title>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="" name="description"/>
+<meta content="GitBook 3.2.3" name="generator"/>
+<meta content="narutohyc" name="author"/>
+<link href="../gitbook/style.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-splitter/splitter.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchors/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-donate/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-code/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-search-plus/search.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-change_girls/girls.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-pageview-count/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-highlight/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-fontsettings/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-theme-comscore/test.css" rel="stylesheet"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<link href="../gitbook/images/apple-touch-icon-precomposed-152.png" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<link href="../gitbook/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="Java基础_四舍五入.html" rel="next"/>
+<link href="Java基础_解析与生成XML.html" rel="prev"/>
+<link href="./chapters/res/other/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="./chapters/res/other/favicon.ico" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<style>
     @media only screen and (max-width: 640px) {
         .book-header .hidden-mobile {
             display: none;
         }
     }
     </style>
-    <script>
+<script>
         window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]};
     </script>
-
-    </head>
-    <body>
-        
+</head>
+<body>
 <div class="book">
-    <div class="book-summary">
-        
-            
+<div class="book-summary">
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="输入并搜索" />
+<input placeholder="输入并搜索" type="text"/>
 </div>
-
-            
-                <nav role="navigation">
-                
-
-
+<nav role="navigation">
 <ul class="summary">
-    
-    
-    
-        
-        <li>
-            <a href="https://github.com/narutohyc" target="_blank" class="custom-link">我的狗窝</a>
-        </li>
-    
-    
-
-    
-    <li class="divider"></li>
-    
-
-    
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="../">
-            
-                <a href="../">
-            
-                    
-                        <b>1.1.</b>
+<li>
+<a class="custom-link" href="https://github.com/narutohyc" target="_blank">我的狗窝</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-level="1.1" data-path="../">
+<a href="../">
+<b>1.1.</b>
                     
                     Introduction
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2" data-path="设计模式.html">
-            
-                <a href="设计模式.html">
-            
-                    
-                        <b>1.2.</b>
+</li>
+<li class="chapter" data-level="1.2" data-path="设计模式.html">
+<a href="设计模式.html">
+<b>1.2.</b>
                     
                     设计模式
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" data-path="多线程.md">
-            
-                <span>
-            
-                    
-                        <b>1.3.</b>
+</li>
+<li class="chapter" data-level="1.3" data-path="多线程.md">
+<span>
+<b>1.3.</b>
                     
                     多线程
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.3.1" data-path="多线程_基础篇.html">
-            
-                <a href="多线程_基础篇.html">
-            
-                    
-                        <b>1.3.1.</b>
+<li class="chapter" data-level="1.3.1" data-path="多线程_基础篇.html">
+<a href="多线程_基础篇.html">
+<b>1.3.1.</b>
                     
                     多线程_基础篇
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.2" data-path="多线程_锁.html">
-            
-                <a href="多线程_锁.html">
-            
-                    
-                        <b>1.3.2.</b>
+</li>
+<li class="chapter" data-level="1.3.2" data-path="多线程_锁.html">
+<a href="多线程_锁.html">
+<b>1.3.2.</b>
                     
                     多线程_锁
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.3" data-path="多线程_JUC原子类.html">
-            
-                <a href="多线程_JUC原子类.html">
-            
-                    
-                        <b>1.3.3.</b>
+</li>
+<li class="chapter" data-level="1.3.3" data-path="多线程_JUC原子类.html">
+<a href="多线程_JUC原子类.html">
+<b>1.3.3.</b>
                     
                     多线程_JUC原子类
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.4" data-path="多线程_JUC锁集合 .html">
-            
-                <a href="多线程_JUC锁集合 .html">
-            
-                    
-                        <b>1.3.4.</b>
+</li>
+<li class="chapter" data-level="1.3.4" data-path="多线程_JUC锁集合 .html">
+<a href="多线程_JUC锁集合 .html">
+<b>1.3.4.</b>
                     
                     多线程_JUC锁集合 
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.5" data-path="多线程_ JUC集合.html">
-            
-                <a href="多线程_ JUC集合.html">
-            
-                    
-                        <b>1.3.5.</b>
+</li>
+<li class="chapter" data-level="1.3.5" data-path="多线程_ JUC集合.html">
+<a href="多线程_ JUC集合.html">
+<b>1.3.5.</b>
                     
                     多线程_ JUC集合
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.6" data-path="多线程_JUC线程池.html">
-            
-                <a href="多线程_JUC线程池.html">
-            
-                    
-                        <b>1.3.6.</b>
+</li>
+<li class="chapter" data-level="1.3.6" data-path="多线程_JUC线程池.html">
+<a href="多线程_JUC线程池.html">
+<b>1.3.6.</b>
                     
                     多线程_JUC线程池
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.7" data-path="多线程_生产者消费者.html">
-            
-                <a href="多线程_生产者消费者.html">
-            
-                    
-                        <b>1.3.7.</b>
+</li>
+<li class="chapter" data-level="1.3.7" data-path="多线程_生产者消费者.html">
+<a href="多线程_生产者消费者.html">
+<b>1.3.7.</b>
                     
                     多线程_生产者消费者
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4" data-path="IDEA快捷键.html">
-            
-                <a href="IDEA快捷键.html">
-            
-                    
-                        <b>1.4.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.4" data-path="IDEA快捷键.html">
+<a href="IDEA快捷键.html">
+<b>1.4.</b>
                     
                     IDEA快捷键
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" data-path="Spring注解.md">
-            
-                <span>
-            
-                    
-                        <b>1.5.</b>
+</li>
+<li class="chapter" data-level="1.5" data-path="Spring注解.md">
+<span>
+<b>1.5.</b>
                     
                     Spring注解
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.5.1" data-path="Spring注解_介绍.html">
-            
-                <a href="Spring注解_介绍.html">
-            
-                    
-                        <b>1.5.1.</b>
+<li class="chapter" data-level="1.5.1" data-path="Spring注解_介绍.html">
+<a href="Spring注解_介绍.html">
+<b>1.5.1.</b>
                     
                     Spring注解_介绍
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.2" data-path="Spring注解_常用注解.html">
-            
-                <a href="Spring注解_常用注解.html">
-            
-                    
-                        <b>1.5.2.</b>
+</li>
+<li class="chapter" data-level="1.5.2" data-path="Spring注解_常用注解.html">
+<a href="Spring注解_常用注解.html">
+<b>1.5.2.</b>
                     
                     Spring注解_常用注解
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.3" data-path="Spring注解_Spring入门篇.html">
-            
-                <a href="Spring注解_Spring入门篇.html">
-            
-                    
-                        <b>1.5.3.</b>
+</li>
+<li class="chapter" data-level="1.5.3" data-path="Spring注解_Spring入门篇.html">
+<a href="Spring注解_Spring入门篇.html">
+<b>1.5.3.</b>
                     
                     Spring注解_Spring入门篇
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6" data-path="Java基础.md">
-            
-                <span>
-            
-                    
-                        <b>1.6.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.6" data-path="Java基础.md">
+<span>
+<b>1.6.</b>
                     
                     Java基础
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.6.1" data-path="Java基础_集合.html">
-            
-                <a href="Java基础_集合.html">
-            
-                    
-                        <b>1.6.1.</b>
+<li class="chapter" data-level="1.6.1" data-path="Java基础_集合.html">
+<a href="Java基础_集合.html">
+<b>1.6.1.</b>
                     
                     Java基础_集合
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.2" data-path="Java基础_泛型.html">
-            
-                <a href="Java基础_泛型.html">
-            
-                    
-                        <b>1.6.2.</b>
+</li>
+<li class="chapter" data-level="1.6.2" data-path="Java基础_泛型.html">
+<a href="Java基础_泛型.html">
+<b>1.6.2.</b>
                     
                     Java基础_泛型
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.3" data-path="Java基础_打jar包.html">
-            
-                <a href="Java基础_打jar包.html">
-            
-                    
-                        <b>1.6.3.</b>
+</li>
+<li class="chapter" data-level="1.6.3" data-path="Java基础_打jar包.html">
+<a href="Java基础_打jar包.html">
+<b>1.6.3.</b>
                     
                     Java基础_打jar包
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.4" data-path="Java基础_正则匹配.html">
-            
-                <a href="Java基础_正则匹配.html">
-            
-                    
-                        <b>1.6.4.</b>
+</li>
+<li class="chapter" data-level="1.6.4" data-path="Java基础_正则匹配.html">
+<a href="Java基础_正则匹配.html">
+<b>1.6.4.</b>
                     
                     Java基础_正则匹配
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.5" data-path="Java基础_反射机制.html">
-            
-                <a href="Java基础_反射机制.html">
-            
-                    
-                        <b>1.6.5.</b>
+</li>
+<li class="chapter" data-level="1.6.5" data-path="Java基础_反射机制.html">
+<a href="Java基础_反射机制.html">
+<b>1.6.5.</b>
                     
                     Java基础_反射机制
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.6" data-path="Java基础_对象正反序列化.html">
-            
-                <a href="Java基础_对象正反序列化.html">
-            
-                    
-                        <b>1.6.6.</b>
+</li>
+<li class="chapter" data-level="1.6.6" data-path="Java基础_对象正反序列化.html">
+<a href="Java基础_对象正反序列化.html">
+<b>1.6.6.</b>
                     
                     Java基础_对象正反序列化
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.7" data-path="Java基础_读取配置文件.html">
-            
-                <a href="Java基础_读取配置文件.html">
-            
-                    
-                        <b>1.6.7.</b>
+</li>
+<li class="chapter" data-level="1.6.7" data-path="Java基础_读取配置文件.html">
+<a href="Java基础_读取配置文件.html">
+<b>1.6.7.</b>
                     
                     Java基础_读取配置文件
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.8" data-path="Java基础_解析与生成XML.html">
-            
-                <a href="Java基础_解析与生成XML.html">
-            
-                    
-                        <b>1.6.8.</b>
+</li>
+<li class="chapter" data-level="1.6.8" data-path="Java基础_解析与生成XML.html">
+<a href="Java基础_解析与生成XML.html">
+<b>1.6.8.</b>
                     
                     Java基础_解析与生成XML
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.6.9" data-path="Java基础_后台服务器开发.html">
-            
-                <a href="Java基础_后台服务器开发.html">
-            
-                    
-                        <b>1.6.9.</b>
+</li>
+<li class="chapter active" data-level="1.6.9" data-path="Java基础_后台服务器开发.html">
+<a href="Java基础_后台服务器开发.html">
+<b>1.6.9.</b>
                     
                     Java基础_后台服务器开发
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.10" data-path="Java基础_四舍五入.html">
-            
-                <a href="Java基础_四舍五入.html">
-            
-                    
-                        <b>1.6.10.</b>
+</li>
+<li class="chapter" data-level="1.6.10" data-path="Java基础_四舍五入.html">
+<a href="Java基础_四舍五入.html">
+<b>1.6.10.</b>
                     
                     Java基础_四舍五入
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7" data-path="Java进阶.md">
-            
-                <span>
-            
-                    
-                        <b>1.7.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.7" data-path="Java进阶.md">
+<span>
+<b>1.7.</b>
                     
                     Java进阶
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.7.1" data-path="Java进阶_反射.html">
-            
-                <a href="Java进阶_反射.html">
-            
-                    
-                        <b>1.7.1.</b>
+<li class="chapter" data-level="1.7.1" data-path="Java进阶_反射.html">
+<a href="Java进阶_反射.html">
+<b>1.7.1.</b>
                     
                     Java进阶_反射
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.2" data-path="Java进阶_注解.html">
-            
-                <a href="Java进阶_注解.html">
-            
-                    
-                        <b>1.7.2.</b>
+</li>
+<li class="chapter" data-level="1.7.2" data-path="Java进阶_注解.html">
+<a href="Java进阶_注解.html">
+<b>1.7.2.</b>
                     
                     Java进阶_注解
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8" data-path="MySQL.md">
-            
-                <span>
-            
-                    
-                        <b>1.8.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.8" data-path="MySQL.md">
+<span>
+<b>1.8.</b>
                     
                     MySQL
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.8.1" data-path="MySQL_基础.html">
-            
-                <a href="MySQL_基础.html">
-            
-                    
-                        <b>1.8.1.</b>
+<li class="chapter" data-level="1.8.1" data-path="MySQL_基础.html">
+<a href="MySQL_基础.html">
+<b>1.8.1.</b>
                     
                     MySQL_基础
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.2" data-path="MySQL_约束.html">
-            
-                <a href="MySQL_约束.html">
-            
-                    
-                        <b>1.8.2.</b>
+</li>
+<li class="chapter" data-level="1.8.2" data-path="MySQL_约束.html">
+<a href="MySQL_约束.html">
+<b>1.8.2.</b>
                     
                     MySQL_约束
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.3" data-path="MySQL_多表查询.html">
-            
-                <a href="MySQL_多表查询.html">
-            
-                    
-                        <b>1.8.3.</b>
+</li>
+<li class="chapter" data-level="1.8.3" data-path="MySQL_多表查询.html">
+<a href="MySQL_多表查询.html">
+<b>1.8.3.</b>
                     
                     MySQL_多表查询
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.4" data-path="MySQL_事务.html">
-            
-                <a href="MySQL_事务.html">
-            
-                    
-                        <b>1.8.4.</b>
+</li>
+<li class="chapter" data-level="1.8.4" data-path="MySQL_事务.html">
+<a href="MySQL_事务.html">
+<b>1.8.4.</b>
                     
                     MySQL_事务
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.5" data-path="MySQL_数据库设计.html">
-            
-                <a href="MySQL_数据库设计.html">
-            
-                    
-                        <b>1.8.5.</b>
+</li>
+<li class="chapter" data-level="1.8.5" data-path="MySQL_数据库设计.html">
+<a href="MySQL_数据库设计.html">
+<b>1.8.5.</b>
                     
                     MySQL_数据库设计
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9" data-path="JDBC.md">
-            
-                <span>
-            
-                    
-                        <b>1.9.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.9" data-path="JDBC.md">
+<span>
+<b>1.9.</b>
                     
                     JDBC
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.9.1" data-path="JDBC_JDBC基础.html">
-            
-                <a href="JDBC_JDBC基础.html">
-            
-                    
-                        <b>1.9.1.</b>
+<li class="chapter" data-level="1.9.1" data-path="JDBC_JDBC基础.html">
+<a href="JDBC_JDBC基础.html">
+<b>1.9.1.</b>
                     
                     JDBC_JDBC基础
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9.2" data-path="JDBC_JDBC连接池.html">
-            
-                <a href="JDBC_JDBC连接池.html">
-            
-                    
-                        <b>1.9.2.</b>
+</li>
+<li class="chapter" data-level="1.9.2" data-path="JDBC_JDBC连接池.html">
+<a href="JDBC_JDBC连接池.html">
+<b>1.9.2.</b>
                     
                     JDBC_JDBC连接池
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9.3" data-path="JDBC_JDBCTemplate.html">
-            
-                <a href="JDBC_JDBCTemplate.html">
-            
-                    
-                        <b>1.9.3.</b>
+</li>
+<li class="chapter" data-level="1.9.3" data-path="JDBC_JDBCTemplate.html">
+<a href="JDBC_JDBCTemplate.html">
+<b>1.9.3.</b>
                     
                     JDBC_JDBCTemplate
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.10" data-path="Spark集群搭建.html">
-            
-                <a href="Spark集群搭建.html">
-            
-                    
-                        <b>1.10.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.10" data-path="Spark集群搭建.html">
+<a href="Spark集群搭建.html">
+<b>1.10.</b>
                     
                     Spark集群搭建
             
                 </a>
-            
-
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+</li>
+<li class="divider"></li>
+<li>
+<a class="gitbook-link" href="https://www.gitbook.com" target="blank">
             本书使用 GitBook 发布
         </a>
-    </li>
+</li>
 </ul>
-
-
-                </nav>
-            
-        
-    </div>
-
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
-
-<div class="book-header" role="navigation">
-    
-
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Java基础_后台服务器开发</a>
-    </h1>
+</nav>
 </div>
-
-
-
-
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="..">Java基础_后台服务器开发</a>
+</h1>
+</div>
+<div class="page-wrapper" role="main" tabindex="-1">
+<div class="page-inner">
 <div class="search-plus" id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x540E;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x5F00;&#x53D1;"><b></b>&#x540E;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x5F00;&#x53D1;</a></li><li><span class="title-icon "></span><a href="#&#x8FDC;&#x7A0B;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;"><b></b>&#x8FDC;&#x7A0B;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;</a></li><ul><li><span class="title-icon "></span><a href="#webservice&#x5E73;&#x53F0;&#x6280;&#x672F;"><b></b>WebService&#x5E73;&#x53F0;&#x6280;&#x672F;</a></li><li><span class="title-icon "></span><a href="#&#x5E38;&#x89C1;&#x901A;&#x4FE1;&#x534F;&#x8BAE;"><b></b>&#x5E38;&#x89C1;&#x901A;&#x4FE1;&#x534F;&#x8BAE;</a></li><li><span class="title-icon "></span><a href="#&#x5E38;&#x89C1;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;"><b></b>&#x5E38;&#x89C1;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;</a></li></ul><li><span class="title-icon "></span><a href="#webserverservlet&#x5BB9;&#x5668;"><b></b>webserver/servlet&#x5BB9;&#x5668;</a></li><li><span class="title-icon "></span><a href="#&#x4E0D;&#x540C;&#x5F00;&#x53D1;&#x5B9E;&#x73B0;"><b></b>&#x4E0D;&#x540C;&#x5F00;&#x53D1;&#x5B9E;&#x73B0;</a></li></ul></div><a href="#&#x540E;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x5F00;&#x53D1;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><a href="res/other/&#x5F02;&#x4E16;&#x754C;&#x857E;&#x59C6;_0.jpg" data-lightbox="6b46e1a4-93e1-4ddd-b9fb-260772c17c10" data-title="img"><img src="res/other/&#x5F02;&#x4E16;&#x754C;&#x857E;&#x59C6;_0.jpg" alt="img"></a></p>
+<div class="search-noresults">
+<section class="normal markdown-section">
+<div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon"></span><a href="#后台服务器开发">1 后台服务器开发</a></li><li><span class="title-icon"></span><a href="#远程通信方式">2 远程通信方式</a></li><ul><li><span class="title-icon"></span><a href="#webservice平台技术">2.1 WebService平台技术</a></li><li><span class="title-icon"></span><a href="#常见通信协议">2.2 常见通信协议</a></li><li><span class="title-icon"></span><a href="#常见通信方式">2.3 常见通信方式</a></li></ul><li><span class="title-icon"></span><a href="#webserverservlet容器">3 webserver/servlet容器</a></li><li><span class="title-icon"></span><a href="#不同开发实现">4 不同开发实现</a></li></ul></div><a href="#后台服务器开发" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><a data-lightbox="a23b61bd-9fec-4d6a-b2b4-cd36428f44ec" data-title="img" href="res/other/异世界蕾姆_0.jpg"><img alt="img" src="res/other/异世界蕾姆_0.jpg"/></a></p>
 <p>[TOC]</p>
-<hr>
-<h1 id="&#x540E;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x5F00;&#x53D1;"><a name="&#x540E;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x5F00;&#x53D1;" class="anchor-navigation-ex-anchor" href="#&#x540E;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x5F00;&#x53D1;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x540E;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x5F00;&#x53D1;" class="plugin-anchor" href="#&#x540E;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x5F00;&#x53D1;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x540E;&#x53F0;&#x670D;&#x52A1;&#x5668;&#x5F00;&#x53D1;</h1>
-<h1 id="&#x8FDC;&#x7A0B;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;"><a name="&#x8FDC;&#x7A0B;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x8FDC;&#x7A0B;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x8FDC;&#x7A0B;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;" class="plugin-anchor" href="#&#x8FDC;&#x7A0B;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FDC;&#x7A0B;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;</h1>
-<h2 id="webservice&#x5E73;&#x53F0;&#x6280;&#x672F;"><a name="webservice&#x5E73;&#x53F0;&#x6280;&#x672F;" class="anchor-navigation-ex-anchor" href="#webservice&#x5E73;&#x53F0;&#x6280;&#x672F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="webservice&#x5E73;&#x53F0;&#x6280;&#x672F;" class="plugin-anchor" href="#webservice&#x5E73;&#x53F0;&#x6280;&#x672F;"><i class="fa fa-link" aria-hidden="true"></i></a>WebService&#x5E73;&#x53F0;&#x6280;&#x672F;</h2>
+<hr/>
+<h1 id="后台服务器开发">1 后台服务器开发</h1>
+<h1 id="远程通信方式">2 远程通信方式</h1>
+<h2 id="webservice平台技术">2.1 WebService平台技术</h2>
 <blockquote>
-<p><a href="https://www.jianshu.com/p/49d7997ad3b7" target="_blank">XML+XSD,SOAP&#x548C;WSDL&#x5C31;&#x662F;&#x6784;&#x6210;WebService&#x5E73;&#x53F0;&#x7684;&#x4E09;&#x5927;&#x6280;&#x672F;</a></p>
+<p><a href="https://www.jianshu.com/p/49d7997ad3b7" target="_blank">XML+XSD,SOAP和WSDL就是构成WebService平台的三大技术</a></p>
 <p><code>XML+XSD</code></p>
 <ul>
-<li>WebService&#x91C7;&#x7528;HTTP&#x534F;&#x8BAE;&#x4F20;&#x8F93;&#x6570;&#x636E;&#xFF0C;&#x91C7;&#x7528;XML&#x683C;&#x5F0F;&#x5C01;&#x88C5;&#x6570;&#x636E;&#xFF08;&#x5373;XML&#x4E2D;&#x8BF4;&#x660E;&#x8C03;&#x7528;&#x8FDC;&#x7A0B;&#x670D;&#x52A1;&#x5BF9;&#x8C61;&#x7684;&#x54EA;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x4F20;&#x9012;&#x7684;&#x53C2;&#x6570;&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x4EE5;&#x53CA;&#x670D;&#x52A1;&#x5BF9;&#x8C61;&#x7684;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x662F;&#x4EC0;&#x4E48;&#xFF09;&#x3002;XML&#x662F;WebService&#x5E73;&#x53F0;&#x4E2D;&#x8868;&#x793A;&#x6570;&#x636E;&#x7684;&#x683C;&#x5F0F;&#x3002;&#x9664;&#x4E86;&#x6613;&#x4E8E;&#x5EFA;&#x7ACB;&#x548C;&#x6613;&#x4E8E;&#x5206;&#x6790;&#x5916;&#xFF0C;XML&#x4E3B;&#x8981;&#x7684;&#x4F18;&#x70B9;&#x5728;&#x4E8E;&#x5B83;&#x65E2;&#x662F;&#x5E73;&#x53F0;&#x65E0;&#x5173;&#x7684;&#xFF0C;&#x53C8;&#x662F;&#x5382;&#x5546;&#x65E0;&#x5173;&#x7684;&#x3002;&#x65E0;&#x5173;&#x6027;&#x662F;&#x6BD4;&#x6280;&#x672F;&#x4F18;&#x8D8A;&#x6027;&#x66F4;&#x91CD;&#x8981;&#x7684;&#xFF1A;&#x8F6F;&#x4EF6;&#x5382;&#x5546;&#x662F;&#x4E0D;&#x4F1A;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x7531;&#x7ADE;&#x4E89;&#x5BF9;&#x624B;&#x6240;&#x53D1;&#x660E;&#x7684;&#x6280;&#x672F;&#x7684;&#x3002;</li>
-<li>XML&#x89E3;&#x51B3;&#x4E86;&#x6570;&#x636E;&#x8868;&#x793A;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x5B83;&#x6CA1;&#x6709;&#x5B9A;&#x4E49;&#x4E00;&#x5957;&#x6807;&#x51C6;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x66F4;&#x6CA1;&#x6709;&#x8BF4;&#x600E;&#x4E48;&#x53BB;&#x6269;&#x5C55;&#x8FD9;&#x5957;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x6574;&#x5F62;&#x6570;&#x5230;&#x5E95;&#x4EE3;&#x8868;&#x4EC0;&#x4E48;&#xFF1F;16&#x4F4D;&#xFF0C;32&#x4F4D;&#xFF0C;64&#x4F4D;&#xFF1F;&#x8FD9;&#x4E9B;&#x7EC6;&#x8282;&#x5BF9;&#x5B9E;&#x73B0;&#x4E92;&#x64CD;&#x4F5C;&#x6027;&#x5F88;&#x91CD;&#x8981;&#x3002;XML Schema(XSD)&#x5C31;&#x662F;&#x4E13;&#x95E8;&#x89E3;&#x51B3;&#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x7684;&#x4E00;&#x5957;&#x6807;&#x51C6;&#x3002;&#x5B83;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x5957;&#x6807;&#x51C6;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#xFF0C;&#x5E76;&#x7ED9;&#x51FA;&#x4E86;&#x4E00;&#x79CD;&#x8BED;&#x8A00;&#x6765;&#x6269;&#x5C55;&#x8FD9;&#x5957;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002;WebService&#x5E73;&#x53F0;&#x5C31;&#x662F;&#x7528;XSD&#x6765;&#x4F5C;&#x4E3A;&#x5176;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7CFB;&#x7EDF;&#x7684;&#x3002;&#x5F53;&#x4F60;&#x7528;&#x67D0;&#x79CD;&#x8BED;&#x8A00;(&#x5982;VB.NET&#x6216;C#)&#x6765;&#x6784;&#x9020;&#x4E00;&#x4E2A;Web service&#x65F6;&#xFF0C;&#x4E3A;&#x4E86;&#x7B26;&#x5408;WebService&#x6807;&#x51C6;&#xFF0C;&#x6240;&#x6709;&#x4F60;&#x4F7F;&#x7528;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x90FD;&#x5FC5;&#x987B;&#x88AB;&#x8F6C;&#x6362;&#x4E3A;XSD&#x7C7B;&#x578B;&#x3002;&#x4F60;&#x7528;&#x7684;&#x5DE5;&#x5177;&#x53EF;&#x80FD;&#x5DF2;&#x7ECF;&#x81EA;&#x52A8;&#x5E2E;&#x4F60;&#x5B8C;&#x6210;&#x4E86;&#x8FD9;&#x4E2A;&#x8F6C;&#x6362;&#xFF0C;&#x4F46;&#x4F60;&#x5F88;&#x53EF;&#x80FD;&#x4F1A;&#x6839;&#x636E;&#x4F60;&#x7684;&#x9700;&#x8981;&#x4FEE;&#x6539;&#x4E00;&#x4E0B;&#x8F6C;&#x6362;&#x8FC7;&#x7A0B;&#x3002;</li>
+<li>WebService采用HTTP协议传输数据，采用XML格式封装数据（即XML中说明调用远程服务对象的哪个方法，传递的参数是什么，以及服务对象的返回结果是什么）。XML是WebService平台中表示数据的格式。除了易于建立和易于分析外，XML主要的优点在于它既是平台无关的，又是厂商无关的。无关性是比技术优越性更重要的：软件厂商是不会选择一个由竞争对手所发明的技术的。</li>
+<li>XML解决了数据表示的问题，但它没有定义一套标准的数据类型，更没有说怎么去扩展这套数据类型。例如，整形数到底代表什么？16位，32位，64位？这些细节对实现互操作性很重要。XML Schema(XSD)就是专门解决这个问题的一套标准。它定义了一套标准的数据类型，并给出了一种语言来扩展这套数据类型。WebService平台就是用XSD来作为其数据类型系统的。当你用某种语言(如VB.NET或C#)来构造一个Web service时，为了符合WebService标准，所有你使用的数据类型都必须被转换为XSD类型。你用的工具可能已经自动帮你完成了这个转换，但你很可能会根据你的需要修改一下转换过程。</li>
 </ul>
 <p><code>SOAP</code></p>
 <ul>
-<li><p>WebService&#x901A;&#x8FC7;HTTP&#x534F;&#x8BAE;&#x53D1;&#x9001;&#x8BF7;&#x6C42;&#x548C;&#x63A5;&#x6536;&#x7ED3;&#x679C;&#x65F6;&#xFF0C;&#x53D1;&#x9001;&#x7684;&#x8BF7;&#x6C42;&#x5185;&#x5BB9;&#x548C;&#x7ED3;&#x679C;&#x5185;&#x5BB9;&#x90FD;&#x91C7;&#x7528;XML&#x683C;&#x5F0F;&#x5C01;&#x88C5;&#xFF0C;&#x5E76;&#x589E;&#x52A0;&#x4E86;&#x4E00;&#x4E9B;&#x7279;&#x5B9A;&#x7684;HTTP&#x6D88;&#x606F;&#x5934;&#xFF0C;&#x4EE5;&#x8BF4;&#x660E;HTTP&#x6D88;&#x606F;&#x7684;&#x5185;&#x5BB9;&#x683C;&#x5F0F;&#xFF0C;&#x8FD9;&#x4E9B;&#x7279;&#x5B9A;&#x7684;HTTP&#x6D88;&#x606F;&#x5934;&#x548C;XML&#x5185;&#x5BB9;&#x683C;&#x5F0F;&#x5C31;&#x662F;SOAP&#x534F;&#x8BAE;&#x3002;SOAP&#x63D0;&#x4F9B;&#x4E86;&#x6807;&#x51C6;&#x7684;RPC&#x65B9;&#x6CD5;&#x6765;&#x8C03;&#x7528;Web Service&#x3002;</p>
+<li><p>WebService通过HTTP协议发送请求和接收结果时，发送的请求内容和结果内容都采用XML格式封装，并增加了一些特定的HTTP消息头，以说明HTTP消息的内容格式，这些特定的HTTP消息头和XML内容格式就是SOAP协议。SOAP提供了标准的RPC方法来调用Web Service。</p>
 </li>
-<li><p>SOAP&#x534F;&#x8BAE; = HTTP&#x534F;&#x8BAE; + XML&#x6570;&#x636E;&#x683C;&#x5F0F;</p>
+<li><p>SOAP协议 = HTTP协议 + XML数据格式</p>
 </li>
-<li><p>SOAP&#x534F;&#x8BAE;&#x5B9A;&#x4E49;&#x4E86;SOAP&#x6D88;&#x606F;&#x7684;&#x683C;&#x5F0F;&#xFF0C;SOAP&#x534F;&#x8BAE;&#x662F;&#x57FA;&#x4E8E;HTTP&#x534F;&#x8BAE;&#x7684;&#xFF0C;SOAP&#x4E5F;&#x662F;&#x57FA;&#x4E8E;XML&#x548C;XSD&#x7684;&#xFF0C;XML&#x662F;SOAP&#x7684;&#x6570;&#x636E;&#x7F16;&#x7801;&#x65B9;&#x5F0F;&#x3002;&#x6253;&#x4E2A;&#x6BD4;&#x55BB;&#xFF1A;HTTP&#x5C31;&#x662F;&#x666E;&#x901A;&#x516C;&#x8DEF;&#xFF0C;XML&#x5C31;&#x662F;&#x4E2D;&#x95F4;&#x7684;&#x7EFF;&#x8272;&#x9694;&#x79BB;&#x5E26;&#x548C;&#x4E24;&#x8FB9;&#x7684;&#x9632;&#x62A4;&#x680F;&#xFF0C;SOAP&#x5C31;&#x662F;&#x666E;&#x901A;&#x516C;&#x8DEF;&#x7ECF;&#x8FC7;&#x52A0;&#x9694;&#x79BB;&#x5E26;&#x548C;&#x9632;&#x62A4;&#x680F;&#x6539;&#x9020;&#x8FC7;&#x7684;&#x9AD8;&#x901F;&#x516C;&#x8DEF;&#x3002;</p>
+<li><p>SOAP协议定义了SOAP消息的格式，SOAP协议是基于HTTP协议的，SOAP也是基于XML和XSD的，XML是SOAP的数据编码方式。打个比喻：HTTP就是普通公路，XML就是中间的绿色隔离带和两边的防护栏，SOAP就是普通公路经过加隔离带和防护栏改造过的高速公路。</p>
 </li>
 </ul>
 <p><code>WSDL</code></p>
 <ul>
-<li><p>&#x597D;&#x6BD4;&#x6211;&#x4EEC;&#x53BB;&#x5546;&#x5E97;&#x4E70;&#x4E1C;&#x897F;&#xFF0C;&#x9996;&#x5148;&#x8981;&#x77E5;&#x9053;&#x5546;&#x5E97;&#x91CC;&#x6709;&#x4EC0;&#x4E48;&#x4E1C;&#x897F;&#x53EF;&#x4E70;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x6765;&#x8D2D;&#x4E70;&#xFF0C;&#x5546;&#x5BB6;&#x7684;&#x505A;&#x6CD5;&#x5C31;&#x662F;&#x5F20;&#x8D34;&#x5E7F;&#x544A;&#x6D77;&#x62A5;&#x3002; WebService&#x4E5F;&#x4E00;&#x6837;&#xFF0C;WebService&#x5BA2;&#x6237;&#x7AEF;&#x8981;&#x8C03;&#x7528;&#x4E00;&#x4E2A;WebService&#x670D;&#x52A1;&#xFF0C;&#x9996;&#x5148;&#x8981;&#x6709;&#x77E5;&#x9053;&#x8FD9;&#x4E2A;&#x670D;&#x52A1;&#x7684;&#x5730;&#x5740;&#x5728;&#x54EA;&#xFF0C;&#x4EE5;&#x53CA;&#x8FD9;&#x4E2A;&#x670D;&#x52A1;&#x91CC;&#x6709;&#x4EC0;&#x4E48;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x8C03;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;WebService&#x52A1;&#x5668;&#x7AEF;&#x9996;&#x5148;&#x8981;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;WSDL&#x6587;&#x4EF6;&#x6765;&#x8BF4;&#x660E;&#x81EA;&#x5DF1;&#x5BB6;&#x91CC;&#x6709;&#x5565;&#x670D;&#x52A1;&#x53EF;&#x4EE5;&#x5BF9;&#x5916;&#x8C03;&#x7528;&#xFF0C;&#x670D;&#x52A1;&#x662F;&#x4EC0;&#x4E48;&#xFF08;&#x670D;&#x52A1;&#x4E2D;&#x6709;&#x54EA;&#x4E9B;&#x65B9;&#x6CD5;&#xFF0C;&#x65B9;&#x6CD5;&#x63A5;&#x53D7;&#x7684;&#x53C2;&#x6570;&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x4EC0;&#x4E48;&#xFF09;&#xFF0C;&#x670D;&#x52A1;&#x7684;&#x7F51;&#x7EDC;&#x5730;&#x5740;&#x7528;&#x54EA;&#x4E2A;url&#x5730;&#x5740;&#x8868;&#x793A;&#xFF0C;&#x670D;&#x52A1;&#x901A;&#x8FC7;&#x4EC0;&#x4E48;&#x65B9;&#x5F0F;&#x6765;&#x8C03;&#x7528;&#x3002;</p>
+<li><p>好比我们去商店买东西，首先要知道商店里有什么东西可买，然后再来购买，商家的做法就是张贴广告海报。 WebService也一样，WebService客户端要调用一个WebService服务，首先要有知道这个服务的地址在哪，以及这个服务里有什么方法可以调用，所以，WebService务器端首先要通过一个WSDL文件来说明自己家里有啥服务可以对外调用，服务是什么（服务中有哪些方法，方法接受的参数是什么，返回值是什么），服务的网络地址用哪个url地址表示，服务通过什么方式来调用。</p>
 </li>
-<li><p>WSDL(Web Services Description Language)&#x5C31;&#x662F;&#x8FD9;&#x6837;&#x4E00;&#x4E2A;&#x57FA;&#x4E8E;XML&#x7684;&#x8BED;&#x8A00;&#xFF0C;&#x7528;&#x4E8E;&#x63CF;&#x8FF0;Web Service&#x53CA;&#x5176;&#x51FD;&#x6570;&#x3001;&#x53C2;&#x6570;&#x548C;&#x8FD4;&#x56DE;&#x503C;&#x3002;&#x5B83;&#x662F;WebService&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#x90FD;&#x80FD;&#x7406;&#x89E3;&#x7684;&#x6807;&#x51C6;&#x683C;&#x5F0F;&#x3002;&#x56E0;&#x4E3A;&#x662F;&#x57FA;&#x4E8E;XML&#x7684;&#xFF0C;&#x6240;&#x4EE5;WSDL&#x65E2;&#x662F;&#x673A;&#x5668;&#x53EF;&#x9605;&#x8BFB;&#x7684;&#xFF0C;&#x53C8;&#x662F;&#x4EBA;&#x53EF;&#x9605;&#x8BFB;&#x7684;&#xFF0C;&#x8FD9;&#x5C06;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x5927;&#x7684;&#x597D;&#x5904;&#x3002;&#x4E00;&#x4E9B;&#x6700;&#x65B0;&#x7684;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x65E2;&#x80FD;&#x6839;&#x636E;&#x4F60;&#x7684;Web service&#x751F;&#x6210;WSDL&#x6587;&#x6863;&#xFF0C;&#x53C8;&#x80FD;&#x5BFC;&#x5165;WSDL&#x6587;&#x6863;&#xFF0C;&#x751F;&#x6210;&#x8C03;&#x7528;&#x76F8;&#x5E94;WebService&#x7684;&#x4EE3;&#x7406;&#x7C7B;&#x4EE3;&#x7801;&#x3002;</p>
+<li><p>WSDL(Web Services Description Language)就是这样一个基于XML的语言，用于描述Web Service及其函数、参数和返回值。它是WebService客户端和服务器端都能理解的标准格式。因为是基于XML的，所以WSDL既是机器可阅读的，又是人可阅读的，这将是一个很大的好处。一些最新的开发工具既能根据你的Web service生成WSDL文档，又能导入WSDL文档，生成调用相应WebService的代理类代码。</p>
 </li>
-<li>WSDL&#x6587;&#x4EF6;&#x4FDD;&#x5B58;&#x5728;Web&#x670D;&#x52A1;&#x5668;&#x4E0A;&#xFF0C;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;url&#x5730;&#x5740;&#x5C31;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5230;&#x5B83;&#x3002;&#x5BA2;&#x6237;&#x7AEF;&#x8981;&#x8C03;&#x7528;&#x4E00;&#x4E2A;WebService&#x670D;&#x52A1;&#x4E4B;&#x524D;&#xFF0C;&#x8981;&#x77E5;&#x9053;&#x8BE5;&#x670D;&#x52A1;&#x7684;WSDL&#x6587;&#x4EF6;&#x7684;&#x5730;&#x5740;&#x3002;WebService&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x5546;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#x6765;&#x66B4;&#x9732;&#x5B83;&#x7684;WSDL&#x6587;&#x4EF6;&#x5730;&#x5740;&#xFF1A;1.&#x6CE8;&#x518C;&#x5230;UDDI&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x4EE5;&#x4FBF;&#x88AB;&#x4EBA;&#x67E5;&#x627E;&#xFF1B;2.&#x76F4;&#x63A5;&#x544A;&#x8BC9;&#x7ED9;&#x5BA2;&#x6237;&#x7AEF;&#x8C03;&#x7528;&#x8005;&#x3002;</li>
+<li>WSDL文件保存在Web服务器上，通过一个url地址就可以访问到它。客户端要调用一个WebService服务之前，要知道该服务的WSDL文件的地址。WebService服务提供商可以通过两种方式来暴露它的WSDL文件地址：1.注册到UDDI服务器，以便被人查找；2.直接告诉给客户端调用者。</li>
 </ul>
 </blockquote>
-<h2 id="&#x5E38;&#x89C1;&#x901A;&#x4FE1;&#x534F;&#x8BAE;"><a name="&#x5E38;&#x89C1;&#x901A;&#x4FE1;&#x534F;&#x8BAE;" class="anchor-navigation-ex-anchor" href="#&#x5E38;&#x89C1;&#x901A;&#x4FE1;&#x534F;&#x8BAE;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5E38;&#x89C1;&#x901A;&#x4FE1;&#x534F;&#x8BAE;" class="plugin-anchor" href="#&#x5E38;&#x89C1;&#x901A;&#x4FE1;&#x534F;&#x8BAE;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E38;&#x89C1;&#x901A;&#x4FE1;&#x534F;&#x8BAE;</h2>
+<h2 id="常见通信协议">2.2 常见通信协议</h2>
 <blockquote>
-<p><a href="https://blog.csdn.net/qq_34646231/article/details/84395460" target="_blank">&#x6D45;&#x8C08;&#x51E0;&#x79CD;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;(dubbo,webservice,restful)</a></p>
+<p><a href="https://blog.csdn.net/qq_34646231/article/details/84395460" target="_blank">浅谈几种通信方式(dubbo,webservice,restful)</a></p>
 <p><strong>TCP/IP</strong></p>
-<pre><code class="lang-html">TCP/IP &#x534F;&#x8BAE;&#x662F;&#x4E00;&#x4E2A;&#x534F;&#x8BAE;&#x65CF;&#x3002;&#x91CC;&#x9762;&#x5305;&#x62EC;&#x5F88;&#x591A;&#x534F;&#x8BAE;&#x3002;UDP &#x53EA;&#x662F;&#x5176;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x3002;&#x56E0;&#x4E3A;TCP/IP&#x6BD4;&#x8F83;&#x91CD;&#x8981;&#x6240;&#x4EE5;&#x7528;&#x4ED6;&#x4E24;&#x547D;&#x540D;&#x3002;
+<pre><code class="lang-html">TCP/IP 协议是一个协议族。里面包括很多协议。UDP 只是其中的一个。因为TCP/IP比较重要所以用他两命名。
 </code></pre>
-<p><strong>TCP&#x548C;UDP</strong></p>
-<pre><code class="lang-html">tcp&#x548C;udp&#x90FD;&#x662F;&#x4F20;&#x8F93;&#x534F;&#x8BAE;&#xFF0C;&#x4E3B;&#x8981;&#x533A;&#x522B;&#x662F;tcp&#x534F;&#x8BAE;&#x8FDE;&#x63A5;&#x9700;&#x8981;3&#x6B21;&#x63E1;&#x624B;&#xFF0C;&#x65AD;&#x5F00;&#x9700;&#x8981;&#x56DB;&#x6B21;&#x63E1;&#x624B;&#xFF0C;&#x662F;&#x901A;&#x8FC7;&#x6D41;&#x6765;&#x4F20;&#x8F93;&#x7684;&#xFF0C;&#x5C31;&#x662F;&#x786E;&#x5B9A;&#x8FDE;&#x63A5;&#x540E;&#xFF0C;&#x4E00;&#x76F4;&#x53D1;&#x9001;&#x4FE1;&#x606F;&#xFF0C;&#x4F20;&#x5B8C;&#x540E;&#x65AD;&#x5F00;&#x3002;
-udp&#x4E0D;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x8FDE;&#x63A5;&#xFF0C;&#x76F4;&#x63A5;&#x628A;&#x4FE1;&#x606F;&#x5C01;&#x88C5;&#x6210;&#x591A;&#x4E2A;&#x62A5;&#x6587;&#xFF0C;&#x76F4;&#x63A5;&#x53D1;&#x9001;&#x3002;&#x6240;&#x4EE5;udp&#x7684;&#x901F;&#x5EA6;&#x66F4;&#x5FEB;&#x5199;&#xFF0C;&#x4F46;&#x662F;&#x4E0D;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x7684;&#x5B8C;&#x6574;&#x6027;&#x548C;&#x6570;&#x636E;&#x987A;&#x5E8F;(&#x8FD9;&#x4E2A;&#x662F;&#x53EF;&#x4EE5;&#x5728;&#x5B9E;&#x73B0;&#x65F6;&#x901A;&#x8FC7;&#x9A8C;&#x8BC1;&#x624B;&#x6BB5;&#x6765;&#x624B;&#x52A8;&#x786E;&#x5B9A;&#x5B8C;&#x6574;&#x6027;)&#x3002;
+<p><strong>TCP和UDP</strong></p>
+<pre><code class="lang-html">tcp和udp都是传输协议，主要区别是tcp协议连接需要3次握手，断开需要四次握手，是通过流来传输的，就是确定连接后，一直发送信息，传完后断开。
+udp不需要进行连接，直接把信息封装成多个报文，直接发送。所以udp的速度更快写，但是不保证数据的完整性和数据顺序(这个是可以在实现时通过验证手段来手动确定完整性)。
 </code></pre>
 <p><strong>HTTP</strong></p>
-<pre><code class="lang-html">http&#x534F;&#x8BAE;&#x662F;&#x5EFA;&#x7ACB;&#x5728;TCP&#x534F;&#x8BAE;&#x4E4B;&#x4E0A;&#x7684;&#x4E00;&#x79CD;&#x5E94;&#x7528;&#xFF0C;&#x662F;Web&#x8054;&#x7F51;&#x7684;&#x57FA;&#x7840;&#xFF0C;&#x6700;&#x663E;&#x8457;&#x7684;&#x7279;&#x70B9;&#x662F;&#x5BA2;&#x6237;&#x7AEF;&#x53D1;&#x9001;&#x7684;&#x6BCF;&#x6B21;&#x8BF7;&#x6C42;&#x90FD;&#x9700;&#x8981;&#x670D;&#x52A1;&#x5668;&#x56DE;&#x9001;&#x54CD;&#x5E94;&#xFF0C;&#x5728;&#x8BF7;&#x6C42;&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x4F1A;&#x4E3B;&#x52A8;&#x91CA;&#x653E;&#x8FDE;&#x63A5;&#x3002;
-&#x4ECE;&#x5EFA;&#x7ACB;&#x8FDE;&#x63A5;&#x5230;&#x5173;&#x95ED;&#x8FDE;&#x63A5;&#x7684;&#x8FC7;&#x7A0B;&#x79F0;&#x4E3A;&#x201C;&#x4E00;&#x6B21;&#x8FDE;&#x63A5;&#x201D;&#x3002;
+<pre><code class="lang-html">http协议是建立在TCP协议之上的一种应用，是Web联网的基础，最显著的特点是客户端发送的每次请求都需要服务器回送响应，在请求结束后，会主动释放连接。
+从建立连接到关闭连接的过程称为“一次连接”。
 </code></pre>
 <p><strong>SOCKET</strong></p>
-<pre><code class="lang-html">socket&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x79CD;&#x534F;&#x8BAE;&#xFF0C;&#x662F;&#x5728;&#x7A0B;&#x5E8F;&#x5458;&#x5C42;&#x9762;&#x4E0A;&#x5BF9;TCP/IP&#x534F;&#x8BAE;&#x7684;&#x5C01;&#x88C5;&#x548C;&#x5E94;&#x7528;&#x3002;&#x5176;&#x5B9E;&#x662F;&#x4E00;&#x4E2A;&#x8C03;&#x7528;&#x63A5;&#x53E3;&#xFF0C;&#x65B9;&#x4FBF;&#x7A0B;&#x5E8F;&#x5458;&#x4F7F;&#x7528;TCP/IP&#x534F;&#x8BAE;&#x6808;&#x800C;&#x5DF2;&#x3002;&#x7A0B;&#x5E8F;&#x5458;&#x901A;&#x8FC7;socket&#x6765;&#x4F7F;&#x7528;tcp/ip&#x534F;&#x8BAE;&#x3002;
-&#x4F46;&#x662F;socket&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x5B9A;&#x8981;&#x4F7F;&#x7528;tcp/ip&#x534F;&#x8BAE;&#xFF0C;Socket&#x7F16;&#x7A0B;&#x63A5;&#x53E3;&#x5728;&#x8BBE;&#x8BA1;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x5E0C;&#x671B;&#x4E5F;&#x80FD;&#x9002;&#x5E94;&#x5176;&#x4ED6;&#x7684;&#x7F51;&#x7EDC;&#x534F;&#x8BAE;&#x3002;
+<pre><code class="lang-html">socket并不是一种协议，是在程序员层面上对TCP/IP协议的封装和应用。其实是一个调用接口，方便程序员使用TCP/IP协议栈而已。程序员通过socket来使用tcp/ip协议。
+但是socket并不是一定要使用tcp/ip协议，Socket编程接口在设计的时候，就希望也能适应其他的网络协议。
 </code></pre>
 <p><strong>RPC</strong></p>
-<pre><code class="lang-html">RPC(Remote Procedure Call)&#x2014;&#x8FDC;&#x7A0B;&#x8FC7;&#x7A0B;&#x8C03;&#x7528;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x79CD;&#x901A;&#x8FC7;&#x7F51;&#x7EDC;&#x4ECE;&#x8FDC;&#x7A0B;&#x8BA1;&#x7B97;&#x673A;&#x7A0B;&#x5E8F;&#x4E0A;&#x8BF7;&#x6C42;&#x670D;&#x52A1;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x4E86;&#x89E3;&#x5E95;&#x5C42;&#x7F51;&#x7EDC;&#x6280;&#x672F;&#x7684;&#x534F;&#x8BAE;&#x3002;RPC&#x534F;&#x8BAE;&#x5047;&#x5B9A;&#x67D0;&#x4E9B;&#x4F20;&#x8F93;&#x534F;&#x8BAE;&#x7684;&#x5B58;&#x5728;&#xFF0C;&#x5982;TCP&#x6216;UDP&#xFF0C;&#x4E3A;&#x901A;&#x4FE1;&#x7A0B;&#x5E8F;&#x4E4B;&#x95F4;&#x643A;&#x5E26;&#x4FE1;&#x606F;&#x6570;&#x636E;&#x3002;
-&#x5728;OSI&#x7F51;&#x7EDC;&#x901A;&#x4FE1;&#x6A21;&#x578B;&#x4E2D;&#xFF0C;RPC&#x8DE8;&#x8D8A;&#x4E86;&#x4F20;&#x8F93;&#x5C42;&#x548C;&#x5E94;&#x7528;&#x5C42;&#x3002;RPC&#x4F7F;&#x5F97;&#x5F00;&#x53D1;&#x5305;&#x62EC;&#x7F51;&#x7EDC;&#x5206;&#x5E03;&#x5F0F;&#x591A;&#x7A0B;&#x5E8F;&#x5728;&#x5185;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x66F4;&#x52A0;&#x5BB9;&#x6613;&#x3002;
+<pre><code class="lang-html">RPC(Remote Procedure Call)—远程过程调用，它是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。RPC协议假定某些传输协议的存在，如TCP或UDP，为通信程序之间携带信息数据。
+在OSI网络通信模型中，RPC跨越了传输层和应用层。RPC使得开发包括网络分布式多程序在内的应用程序更加容易。
 </code></pre>
 <p><strong>SOAP</strong></p>
-<pre><code class="lang-html">&#x7B80;&#x5355;&#x5BF9;&#x8C61;&#x8BBF;&#x95EE;&#x534F;&#x8BAE;&#x662F;&#x4EA4;&#x6362;&#x6570;&#x636E;&#x7684;&#x4E00;&#x79CD;&#x534F;&#x8BAE;&#x89C4;&#x8303;&#xFF0C;&#x662F;&#x4E00;&#x79CD;&#x8F7B;&#x91CF;&#x7684;&#x3001;&#x7B80;&#x5355;&#x7684;&#x3001;&#x57FA;&#x4E8E;XML&#xFF08;&#x6807;&#x51C6;&#x901A;&#x7528;&#x6807;&#x8BB0;&#x8BED;&#x8A00;&#x4E0B;&#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x96C6;&#xFF09;&#x7684;&#x534F;&#x8BAE;&#xFF0C;&#x5B83;&#x88AB;&#x8BBE;&#x8BA1;&#x6210;&#x5728;WEB&#x4E0A;&#x4EA4;&#x6362;&#x7ED3;&#x6784;&#x5316;&#x7684;&#x548C;&#x56FA;&#x5316;&#x7684;&#x4FE1;&#x606F;&#x3002;
+<pre><code class="lang-html">简单对象访问协议是交换数据的一种协议规范，是一种轻量的、简单的、基于XML（标准通用标记语言下的一个子集）的协议，它被设计成在WEB上交换结构化的和固化的信息。
 </code></pre>
 </blockquote>
-<h2 id="&#x5E38;&#x89C1;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;"><a name="&#x5E38;&#x89C1;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#&#x5E38;&#x89C1;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5E38;&#x89C1;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;" class="plugin-anchor" href="#&#x5E38;&#x89C1;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E38;&#x89C1;&#x901A;&#x4FE1;&#x65B9;&#x5F0F;</h2>
+<h2 id="常见通信方式">2.3 常见通信方式</h2>
 <blockquote>
 <p><code>Webservice</code></p>
-<pre><code class="lang-html">&#x6548;&#x7387;&#x4E0D;&#x9AD8;&#x57FA;&#x4E8E;soap&#x534F;&#x8BAE;&#xFF0C;&#x5176;&#x4E3B;&#x8981;&#x7684;&#x7279;&#x70B9;&#x662F;&#x8DE8;&#x8BED;&#x8A00;&#x3001;&#x8DE8;&#x5E73;&#x53F0;&#x7684;&#x3002;&#x9879;&#x76EE;&#x4E2D;&#x4E0D;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#xFF0C;&#x53EF;&#x7528;&#x4E8E;&#x4E0D;&#x540C;&#x516C;&#x53F8;&#x95F4;&#x63A5;&#x53E3;&#x7684;&#x8C03;&#x7528;&#x3002;
+<pre><code class="lang-html">效率不高基于soap协议，其主要的特点是跨语言、跨平台的。项目中不推荐使用，可用于不同公司间接口的调用。
 </code></pre>
 <p><code>restful</code></p>
-<pre><code class="lang-html">http+json&#x3002;&#x5F88;&#x591A;&#x9879;&#x76EE;&#x4E2D;&#x5E94;&#x7528;&#x3002;&#x5982;&#x679C;&#x670D;&#x52A1;&#x592A;&#x591A;&#xFF0C;&#x670D;&#x52A1;&#x4E4B;&#x95F4;&#x8C03;&#x7528;&#x5173;&#x7CFB;&#x6DF7;&#x4E71;&#xFF0C;&#x9700;&#x8981;&#x6CBB;&#x7597;&#x670D;&#x52A1;&#x3002;
+<pre><code class="lang-html">http+json。很多项目中应用。如果服务太多，服务之间调用关系混乱，需要治疗服务。
 </code></pre>
 <p><code>dubbo</code></p>
-<pre><code class="lang-html">&#x4F7F;&#x7528;rpc&#x534F;&#x8BAE;&#x8FDB;&#x884C;&#x8FDC;&#x7A0B;&#x8C03;&#x7528;&#xFF0C;&#x76F4;&#x63A5;&#x4F7F;&#x7528;socket&#x901A;&#x4FE1;&#x3002;&#x4F20;&#x8F93;&#x6548;&#x7387;&#x9AD8;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x7EDF;&#x8BA1;&#x51FA;&#x7CFB;&#x7EDF;&#x4E4B;&#x95F4;&#x7684;&#x8C03;&#x7528;&#x5173;&#x7CFB;&#x3001;&#x8C03;&#x7528;&#x6B21;&#x6570;&#x3002;&#x4F7F;&#x7528;Java&#x8BED;&#x8A00;&#x5F00;&#x53D1;&#xFF0C;&#x53EA;&#x80FD;&#x7528;&#x4E8E;Java&#x8BED;&#x8A00;&#x5F00;&#x53D1;&#x7684;&#x9879;&#x76EE;&#x95F4;&#x7684;&#x901A;&#x4FE1;&#xFF0C;&#x4E0D;&#x5177;&#x5907;&#x8DE8;&#x8BED;&#x8A00;&#xFF0C;&#x8DE8;&#x5E73;&#x53F0;&#x7684;&#x7279;&#x70B9;&#xFF01;
+<pre><code class="lang-html">使用rpc协议进行远程调用，直接使用socket通信。传输效率高，并且可以统计出系统之间的调用关系、调用次数。使用Java语言开发，只能用于Java语言开发的项目间的通信，不具备跨语言，跨平台的特点！
 </code></pre>
-<p><code>webservice&#x4E4B;Restful&#x98CE;&#x683C;</code></p>
-<p><a href="https://www.jianshu.com/p/c8ec2f0526fc" target="_blank">webservice&#x4E4B;Restful&#x98CE;&#x683C;</a></p>
-<pre><code class="lang-html">&#x4F7F;&#x7528;restful&#x98CE;&#x683C;&#x7684;webservice &#x4E5F;&#x5C31;&#x662F;cxf&#x53D1;&#x5E03;&#x7684;webservice&#x7684;&#x5730;&#x5740;&#x662F;restful&#x98CE;&#x683C;&#x7684;
-&#x4F7F;&#x7528;restful&#x98CE;&#x683C;&#x53D1;&#x5E03;&#x7684;webservice&#x4E0D;&#x91C7;&#x7528;soap&#x534F;&#x8BAE; &#xFF0C;&#x8F7B;&#x91CF;&#x7EA7; &#x901F;&#x5EA6;&#x5FEB;&#xFF0C;&#x91C7;&#x7528;http&#x4F20;&#x8F93;&#x534F;&#x8BAE;&#x3002;
+<p><code>webservice之Restful风格</code></p>
+<p><a href="https://www.jianshu.com/p/c8ec2f0526fc" target="_blank">webservice之Restful风格</a></p>
+<pre><code class="lang-html">使用restful风格的webservice 也就是cxf发布的webservice的地址是restful风格的
+使用restful风格发布的webservice不采用soap协议 ，轻量级 速度快，采用http传输协议。
 </code></pre>
-<p><a href="http://www.sohu.com/a/142276140_355142" target="_blank">SOAP webserivce &#x548C; RESTful webservice &#x5BF9;&#x6BD4;&#x53CA;&#x533A;&#x522B; </a></p>
-<p><a href="https://www.jianshu.com/p/cd7bfa8d51b7" target="_blank">RESTful&#x8DDF;WebService&#x7684;&#x533A;&#x522B;</a></p>
+<p><a href="http://www.sohu.com/a/142276140_355142" target="_blank">SOAP webserivce 和 RESTful webservice 对比及区别 </a></p>
+<p><a href="https://www.jianshu.com/p/cd7bfa8d51b7" target="_blank">RESTful跟WebService的区别</a></p>
 </blockquote>
-<h1 id="webserverservlet&#x5BB9;&#x5668;"><a name="webserverservlet&#x5BB9;&#x5668;" class="anchor-navigation-ex-anchor" href="#webserverservlet&#x5BB9;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="webserverservlet&#x5BB9;&#x5668;" class="plugin-anchor" href="#webserverservlet&#x5BB9;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>webserver/servlet&#x5BB9;&#x5668;</h1>
+<h1 id="webserverservlet容器">3 webserver/servlet容器</h1>
 <blockquote>
-<p><a href="https://yq.aliyun.com/articles/553292" target="_blank">&#x5173;&#x4E8E;tomcat&#x548C;jetty&#x5BF9;&#x6BD4;(&#x4E0D;&#x559C;&#x6B22;jetty&#x7684;&#x52FF;&#x770B;)</a></p>
-<p><a href="https://www.cnblogs.com/study-makes-me-happy/p/9606238.html" target="_blank">tomcat&#x4E0E;jetty&#x7684;&#x533A;&#x522B;</a></p>
-<p><a href="https://blog.csdn.net/qq_36522306/article/details/80699391" target="_blank">Jetty&#x7BC7;&#x4E00;&#x4E4B;&#x521D;&#x8BC6;Jetty</a></p>
-<p><code>&#x76F8;&#x540C;&#x70B9;</code></p>
+<p><a href="https://yq.aliyun.com/articles/553292" target="_blank">关于tomcat和jetty对比(不喜欢jetty的勿看)</a></p>
+<p><a href="https://www.cnblogs.com/study-makes-me-happy/p/9606238.html" target="_blank">tomcat与jetty的区别</a></p>
+<p><a href="https://blog.csdn.net/qq_36522306/article/details/80699391" target="_blank">Jetty篇一之初识Jetty</a></p>
+<p><code>相同点</code></p>
 <ul>
-<li>Tomcat&#x548C;Jetty&#x90FD;&#x662F;&#x4E00;&#x79CD;Servlet&#x5F15;&#x64CE;&#xFF0C;&#x4ED6;&#x4EEC;&#x90FD;&#x652F;&#x6301;&#x6807;&#x51C6;&#x7684;servlet&#x89C4;&#x8303;&#x548C;JavaEE&#x7684;&#x89C4;&#x8303;&#x3002; </li>
+<li>Tomcat和Jetty都是一种Servlet引擎，他们都支持标准的servlet规范和JavaEE的规范。 </li>
 </ul>
-<p><code>&#x67B6;&#x6784;&#x6BD4;&#x8F83;</code></p>
+<p><code>架构比较</code></p>
 <ul>
-<li>Jetty&#x7684;&#x67B6;&#x6784;&#x6BD4;Tomcat&#x7684;&#x66F4;&#x4E3A;&#x7B80;&#x5355;&#x3002;</li>
-<li>Jetty&#x7684;&#x67B6;&#x6784;&#x662F;&#x57FA;&#x4E8E;Handler&#x6765;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x4E3B;&#x8981;&#x7684;&#x6269;&#x5C55;&#x529F;&#x80FD;&#x90FD;&#x53EF;&#x4EE5;&#x7528;Handler&#x6765;&#x5B9E;&#x73B0;&#xFF0C;&#x6269;&#x5C55;&#x7B80;&#x5355;&#x3002;</li>
-<li>Tomcat&#x7684;&#x67B6;&#x6784;&#x662F;&#x57FA;&#x4E8E;&#x5BB9;&#x5668;&#x8BBE;&#x8BA1;&#x7684;&#xFF0C;&#x8FDB;&#x884C;&#x6269;&#x5C55;&#x662F;&#x9700;&#x8981;&#x4E86;&#x89E3;Tomcat&#x7684;&#x6574;&#x4F53;&#x8BBE;&#x8BA1;&#x7ED3;&#x6784;&#xFF0C;&#x4E0D;&#x6613;&#x6269;&#x5C55;&#x3002;</li>
+<li>Jetty的架构比Tomcat的更为简单。</li>
+<li>Jetty的架构是基于Handler来实现的，主要的扩展功能都可以用Handler来实现，扩展简单。</li>
+<li>Tomcat的架构是基于容器设计的，进行扩展是需要了解Tomcat的整体设计结构，不易扩展。</li>
 </ul>
-<p><code>&#x6027;&#x80FD;&#x6BD4;&#x8F83;</code></p>
+<p><code>性能比较</code></p>
 <ul>
-<li>Jetty&#x548C;Tomcat&#x6027;&#x80FD;&#x65B9;&#x9762;&#x5DEE;&#x5F02;&#x4E0D;&#x5927;&#x3002;</li>
-<li>Jetty&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x5904;&#x7406;&#x5927;&#x91CF;&#x8FDE;&#x63A5;&#x800C;&#x4E14;&#x53EF;&#x4EE5;&#x957F;&#x65F6;&#x95F4;&#x4FDD;&#x6301;&#x8FDE;&#x63A5;&#xFF0C;&#x9002;&#x5408;&#x4E8E;web&#x804A;&#x5929;&#x5E94;&#x7528;&#x7B49;&#x7B49;&#x3002;</li>
-<li>Jetty&#x7684;&#x67B6;&#x6784;&#x7B80;&#x5355;&#xFF0C;&#x56E0;&#x6B64;&#x4F5C;&#x4E3A;&#x670D;&#x52A1;&#x5668;&#xFF0C;Jetty&#x53EF;&#x4EE5;&#x6309;&#x9700;&#x52A0;&#x8F7D;&#x7EC4;&#x4EF6;&#xFF0C;&#x51CF;&#x5C11;&#x4E0D;&#x9700;&#x8981;&#x7684;&#x7EC4;&#x4EF6;&#xFF0C;&#x51CF;&#x5C11;&#x4E86;&#x670D;&#x52A1;&#x5668;&#x5185;&#x5B58;&#x5F00;&#x9500;&#xFF0C;&#x4ECE;&#x800C;&#x63D0;&#x9AD8;&#x670D;&#x52A1;&#x5668;&#x6027;&#x80FD;&#x3002;</li>
-<li>Jetty&#x9ED8;&#x8BA4;&#x91C7;&#x7528;NIO&#x7ED3;&#x675F;&#x5728;&#x5904;&#x7406;I/O&#x8BF7;&#x6C42;&#x4E0A;&#x66F4;&#x5360;&#x4F18;&#x52BF;&#xFF0C;&#x5728;&#x5904;&#x7406;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x65F6;&#xFF0C;&#x6027;&#x80FD;&#x8F83;&#x9AD8;&#x3002;</li>
-<li>Tomcat&#x9002;&#x5408;&#x5904;&#x7406;&#x5C11;&#x6570;&#x975E;&#x5E38;&#x7E41;&#x5FD9;&#x7684;&#x94FE;&#x63A5;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x94FE;&#x63A5;&#x751F;&#x547D;&#x5468;&#x671F;&#x77ED;&#x7684;&#x8BDD;&#xFF0C;Tomcat&#x7684;&#x603B;&#x4F53;&#x6027;&#x80FD;&#x66F4;&#x9AD8;&#x3002;</li>
-<li>Tomcat&#x9ED8;&#x8BA4;&#x91C7;&#x7528;BIO&#x5904;&#x7406;I/O&#x8BF7;&#x6C42;&#xFF0C;&#x5728;&#x5904;&#x7406;&#x9759;&#x6001;&#x8D44;&#x6E90;&#x65F6;&#xFF0C;&#x6027;&#x80FD;&#x8F83;&#x5DEE;&#x3002;</li>
+<li>Jetty和Tomcat性能方面差异不大。</li>
+<li>Jetty可以同时处理大量连接而且可以长时间保持连接，适合于web聊天应用等等。</li>
+<li>Jetty的架构简单，因此作为服务器，Jetty可以按需加载组件，减少不需要的组件，减少了服务器内存开销，从而提高服务器性能。</li>
+<li>Jetty默认采用NIO结束在处理I/O请求上更占优势，在处理静态资源时，性能较高。</li>
+<li>Tomcat适合处理少数非常繁忙的链接，也就是说链接生命周期短的话，Tomcat的总体性能更高。</li>
+<li>Tomcat默认采用BIO处理I/O请求，在处理静态资源时，性能较差。</li>
 </ul>
-<p><code>&#x5176;&#x5B83;&#x6BD4;&#x8F83;</code></p>
+<p><code>其它比较</code></p>
 <ul>
-<li>Jetty&#x7684;&#x5E94;&#x7528;&#x66F4;&#x52A0;&#x5FEB;&#x901F;&#xFF0C;&#x4FEE;&#x6539;&#x7B80;&#x5355;&#xFF0C;&#x5BF9;&#x65B0;&#x7684;Servlet&#x89C4;&#x8303;&#x7684;&#x652F;&#x6301;&#x8F83;&#x597D;&#x3002;</li>
-<li>Tomcat&#x76EE;&#x524D;&#x5E94;&#x7528;&#x6BD4;&#x8F83;&#x5E7F;&#x6CDB;&#xFF0C;&#x5BF9;JavaEE&#x548C;Servlet&#x7684;&#x652F;&#x6301;&#x66F4;&#x52A0;&#x5168;&#x9762;&#xFF0C;&#x5F88;&#x591A;&#x7279;&#x6027;&#x4F1A;&#x76F4;&#x63A5;&#x96C6;&#x6210;&#x8FDB;&#x6765;&#x3002;</li>
-<li><a href="https://yq.aliyun.com/go/articleRenderRedirect?url=http%3A%2F%2Fblog.csdn.net%2Fliguohuaty%2Farticle%2Fdetails%2F8053147" target="_blank">Google &#x9009;&#x62E9; Jetty, &#x653E;&#x5F03; Tomcat</a></li>
+<li>Jetty的应用更加快速，修改简单，对新的Servlet规范的支持较好。</li>
+<li>Tomcat目前应用比较广泛，对JavaEE和Servlet的支持更加全面，很多特性会直接集成进来。</li>
+<li><a href="https://yq.aliyun.com/go/articleRenderRedirect?url=http%3A%2F%2Fblog.csdn.net%2Fliguohuaty%2Farticle%2Fdetails%2F8053147" target="_blank">Google 选择 Jetty, 放弃 Tomcat</a></li>
 </ul>
-<p><code>Jetty&#x7684;&#x57FA;&#x672C;&#x67B6;&#x6784;</code></p>
-<p><a href="res/Java%20Base/20180614230109366.png" data-lightbox="581f9036-f579-484f-870f-052edafe13d6" data-title="img"><img src="res/Java%20Base/20180614230109366.png" alt="img"></a> </p>
-<p><code>Tomcat&#x7684;&#x57FA;&#x672C;&#x67B6;&#x6784;</code></p>
-<p><a href="res/Java%20Base/20180616093348674.gif" data-lightbox="820f381e-edeb-4a05-8266-190ecbac0edd" data-title="img"><img src="res/Java%20Base/20180616093348674.gif" alt="img"></a> </p>
+<p><code>Jetty的基本架构</code></p>
+<p><a data-lightbox="c3834e3b-ab46-4e83-b102-89a2873a0734" data-title="img" href="res/Java%20Base/20180614230109366.png"><img alt="img" src="res/Java%20Base/20180614230109366.png"/></a> </p>
+<p><code>Tomcat的基本架构</code></p>
+<p><a data-lightbox="405d6f94-c289-44a1-b3d6-06187eb10dcd" data-title="img" href="res/Java%20Base/20180616093348674.gif"><img alt="img" src="res/Java%20Base/20180616093348674.gif"/></a> </p>
 </blockquote>
-<h1 id="&#x4E0D;&#x540C;&#x5F00;&#x53D1;&#x5B9E;&#x73B0;"><a name="&#x4E0D;&#x540C;&#x5F00;&#x53D1;&#x5B9E;&#x73B0;" class="anchor-navigation-ex-anchor" href="#&#x4E0D;&#x540C;&#x5F00;&#x53D1;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4E0D;&#x540C;&#x5F00;&#x53D1;&#x5B9E;&#x73B0;" class="plugin-anchor" href="#&#x4E0D;&#x540C;&#x5F00;&#x53D1;&#x5B9E;&#x73B0;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E0D;&#x540C;&#x5F00;&#x53D1;&#x5B9E;&#x73B0;</h1>
+<h1 id="不同开发实现">4 不同开发实现</h1>
 <p>&gt;
 &gt;
 &gt;</p>
 <blockquote>
-<p><a href="https://www.jianshu.com/p/be45f7f06988" target="_blank">&#x82B1;&#x4E86;&#x8FD1;&#x5341;&#x5E74;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x6574;&#x7406;&#x51FA;&#x53F2;&#x4E0A;&#x6700;&#x5168;&#x9762;Java&#x9762;&#x8BD5;&#x9898;</a></p>
+<p><a href="https://www.jianshu.com/p/be45f7f06988" target="_blank">花了近十年的时间，整理出史上最全面Java面试题</a></p>
 </blockquote>
-<p></p><footer class="page-footer"><span class="copyright">Copyright &#xA9; narutohyc.com 2022 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2022-02-14 09:16:40
-</span></footer><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz',appKey: 'FOXMptWOHC7cU1FxXt0LJj4o',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script><p></p>
-
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
+<p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2022 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
+2022-02-15 13:20:00
+</span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz',appKey: 'FOXMptWOHC7cU1FxXt0LJj4o',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script><p></p>
+</section>
 </div>
-
-                        </div>
-                    </div>
-                
-            </div>
-
-            
-                
-                <a href="Java基础_解析与生成XML.html" class="navigation navigation-prev " aria-label="Previous page: Java基础_解析与生成XML">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="Java基础_四舍五入.html" class="navigation navigation-next " aria-label="Next page: Java基础_四舍五入">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
-        
-    </div>
-
-    <script>
+<div class="search-results">
+<div class="has-results">
+<h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+<ul class="search-results-list"></ul>
+</div>
+<div class="no-results">
+<h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<a aria-label="Previous page: Java基础_解析与生成XML" class="navigation navigation-prev" href="Java基础_解析与生成XML.html">
+<i class="fa fa-angle-left"></i>
+</a>
+<a aria-label="Next page: Java基础_四舍五入" class="navigation navigation-next" href="Java基础_四舍五入.html">
+<i class="fa fa-angle-right"></i>
+</a>
+</div>
+<script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Java基础_后台服务器开发","level":"1.6.9","depth":2,"next":{"title":"Java基础_四舍五入","level":"1.6.10","depth":2,"path":"chapters/Java基础_四舍五入.md","ref":"chapters/Java基础_四舍五入.md","articles":[]},"previous":{"title":"Java基础_解析与生成XML","level":"1.6.8","depth":2,"path":"chapters/Java基础_解析与生成XML.md","ref":"chapters/Java基础_解析与生成XML.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","favicon","search-plus","-lunr","-search","lightbox","change_girls","theme-comscore","valine","pageview-count","favicon-absolute"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"change_girls":{"time":10,"urls":["https://plc.jj20.com/up/allimg/1115/012122143136/220121143136-2.jpg","https://plc.jj20.com/up/allimg/1115/111R1094405/21111P94405-1.jpg"]},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://i.loli.net/2021/01/12/Cdunm9AoBcHF5MI.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://i.loli.net/2021/01/12/gmzASfCciIFXTyr.png","wechatText":"微信打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"","lang":"zh-CN","pageSize":10,"placeholder":"Just go go","recordIP":false,"appId":"jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz","appKey":"FOXMptWOHC7cU1FxXt0LJj4o"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java相关学习记录","language":"zh-hans","links":{"sidebar":{"我的狗窝":"https://github.com/narutohyc"}},"gitbook":"*","description":"记录 Java 的学习和一些技巧的使用"},"file":{"path":"chapters/Java基础_后台服务器开发.md","mtime":"2022-02-14T09:16:40.557Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-14T09:18:14.959Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Java基础_后台服务器开发","level":"1.6.9","depth":2,"next":{"title":"Java基础_四舍五入","level":"1.6.10","depth":2,"path":"chapters/Java基础_四舍五入.md","ref":"chapters/Java基础_四舍五入.md","articles":[]},"previous":{"title":"Java基础_解析与生成XML","level":"1.6.8","depth":2,"path":"chapters/Java基础_解析与生成XML.md","ref":"chapters/Java基础_解析与生成XML.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","favicon","search-plus","-lunr","-search","lightbox","change_girls","theme-comscore","valine","pageview-count","favicon-absolute"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"change_girls":{"time":10,"urls":["https://plc.jj20.com/up/allimg/1115/012122143136/220121143136-2.jpg","https://plc.jj20.com/up/allimg/1115/111R1094405/21111P94405-1.jpg"]},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://i.loli.net/2021/01/12/Cdunm9AoBcHF5MI.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://i.loli.net/2021/01/12/gmzASfCciIFXTyr.png","wechatText":"微信打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"","lang":"zh-CN","pageSize":10,"placeholder":"Just go go","recordIP":false,"appId":"jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz","appKey":"FOXMptWOHC7cU1FxXt0LJj4o"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java相关学习记录","language":"zh-hans","links":{"sidebar":{"我的狗窝":"https://github.com/narutohyc"}},"gitbook":"*","description":"记录 Java 的学习和一些技巧的使用"},"file":{"path":"chapters/Java基础_后台服务器开发.md","mtime":"2022-02-15T13:20:00.829Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-15T13:21:52.737Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
-
-        
-    
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
-        
-    
-        
-        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
-        
-    
-
-    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
-
-    </body>
+<script src="../gitbook/gitbook.js"></script>
+<script src="../gitbook/theme.js"></script>
+<script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+<script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+<script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+<script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+<script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+</body>
 </html>
-

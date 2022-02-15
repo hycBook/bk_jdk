@@ -1,917 +1,482 @@
-
 <!DOCTYPE HTML>
-<html lang="zh-hans" >
-    <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>JDBC_JDBCTemplate · Java相关学习记录</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
-        <meta name="author" content="narutohyc">
-        
-        
-    
-    
-    <link rel="stylesheet" href="../gitbook/style.css">
-
-    
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
-                
-            
-        
-
-    
-
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-
-    
-
-        
-    
-    
-    
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
-
-    
-    <link rel="next" href="Spark集群搭建.html" />
-    
-    
-    <link rel="prev" href="JDBC_JDBC连接池.html" />
-    
-
-    
-        <link rel="shortcut icon" href="./chapters/res/other/favicon.ico" type="image/x-icon">
-    
-    
-    
-    
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./chapters/res/other/favicon.ico">
-    
-    
-        
-    
-    
-        
-    
-
-    
-    
-    
-    
-
-    <style>
+<html lang="zh-hans">
+<head>
+<meta charset="utf-8"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>JDBC_JDBCTemplate · Java相关学习记录</title>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="" name="description"/>
+<meta content="GitBook 3.2.3" name="generator"/>
+<meta content="narutohyc" name="author"/>
+<link href="../gitbook/style.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-splitter/splitter.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchors/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-donate/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-code/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-search-plus/search.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-change_girls/girls.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-pageview-count/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-highlight/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-fontsettings/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-theme-comscore/test.css" rel="stylesheet"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<link href="../gitbook/images/apple-touch-icon-precomposed-152.png" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<link href="../gitbook/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="Spark集群搭建.html" rel="next"/>
+<link href="JDBC_JDBC连接池.html" rel="prev"/>
+<link href="./chapters/res/other/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="./chapters/res/other/favicon.ico" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<style>
     @media only screen and (max-width: 640px) {
         .book-header .hidden-mobile {
             display: none;
         }
     }
     </style>
-    <script>
+<script>
         window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]};
     </script>
-
-    </head>
-    <body>
-        
+</head>
+<body>
 <div class="book">
-    <div class="book-summary">
-        
-            
+<div class="book-summary">
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="输入并搜索" />
+<input placeholder="输入并搜索" type="text"/>
 </div>
-
-            
-                <nav role="navigation">
-                
-
-
+<nav role="navigation">
 <ul class="summary">
-    
-    
-    
-        
-        <li>
-            <a href="https://github.com/narutohyc" target="_blank" class="custom-link">我的狗窝</a>
-        </li>
-    
-    
-
-    
-    <li class="divider"></li>
-    
-
-    
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="../">
-            
-                <a href="../">
-            
-                    
-                        <b>1.1.</b>
+<li>
+<a class="custom-link" href="https://github.com/narutohyc" target="_blank">我的狗窝</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-level="1.1" data-path="../">
+<a href="../">
+<b>1.1.</b>
                     
                     Introduction
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2" data-path="设计模式.html">
-            
-                <a href="设计模式.html">
-            
-                    
-                        <b>1.2.</b>
+</li>
+<li class="chapter" data-level="1.2" data-path="设计模式.html">
+<a href="设计模式.html">
+<b>1.2.</b>
                     
                     设计模式
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" data-path="多线程.md">
-            
-                <span>
-            
-                    
-                        <b>1.3.</b>
+</li>
+<li class="chapter" data-level="1.3" data-path="多线程.md">
+<span>
+<b>1.3.</b>
                     
                     多线程
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.3.1" data-path="多线程_基础篇.html">
-            
-                <a href="多线程_基础篇.html">
-            
-                    
-                        <b>1.3.1.</b>
+<li class="chapter" data-level="1.3.1" data-path="多线程_基础篇.html">
+<a href="多线程_基础篇.html">
+<b>1.3.1.</b>
                     
                     多线程_基础篇
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.2" data-path="多线程_锁.html">
-            
-                <a href="多线程_锁.html">
-            
-                    
-                        <b>1.3.2.</b>
+</li>
+<li class="chapter" data-level="1.3.2" data-path="多线程_锁.html">
+<a href="多线程_锁.html">
+<b>1.3.2.</b>
                     
                     多线程_锁
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.3" data-path="多线程_JUC原子类.html">
-            
-                <a href="多线程_JUC原子类.html">
-            
-                    
-                        <b>1.3.3.</b>
+</li>
+<li class="chapter" data-level="1.3.3" data-path="多线程_JUC原子类.html">
+<a href="多线程_JUC原子类.html">
+<b>1.3.3.</b>
                     
                     多线程_JUC原子类
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.4" data-path="多线程_JUC锁集合 .html">
-            
-                <a href="多线程_JUC锁集合 .html">
-            
-                    
-                        <b>1.3.4.</b>
+</li>
+<li class="chapter" data-level="1.3.4" data-path="多线程_JUC锁集合 .html">
+<a href="多线程_JUC锁集合 .html">
+<b>1.3.4.</b>
                     
                     多线程_JUC锁集合 
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.5" data-path="多线程_ JUC集合.html">
-            
-                <a href="多线程_ JUC集合.html">
-            
-                    
-                        <b>1.3.5.</b>
+</li>
+<li class="chapter" data-level="1.3.5" data-path="多线程_ JUC集合.html">
+<a href="多线程_ JUC集合.html">
+<b>1.3.5.</b>
                     
                     多线程_ JUC集合
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.6" data-path="多线程_JUC线程池.html">
-            
-                <a href="多线程_JUC线程池.html">
-            
-                    
-                        <b>1.3.6.</b>
+</li>
+<li class="chapter" data-level="1.3.6" data-path="多线程_JUC线程池.html">
+<a href="多线程_JUC线程池.html">
+<b>1.3.6.</b>
                     
                     多线程_JUC线程池
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.7" data-path="多线程_生产者消费者.html">
-            
-                <a href="多线程_生产者消费者.html">
-            
-                    
-                        <b>1.3.7.</b>
+</li>
+<li class="chapter" data-level="1.3.7" data-path="多线程_生产者消费者.html">
+<a href="多线程_生产者消费者.html">
+<b>1.3.7.</b>
                     
                     多线程_生产者消费者
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4" data-path="IDEA快捷键.html">
-            
-                <a href="IDEA快捷键.html">
-            
-                    
-                        <b>1.4.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.4" data-path="IDEA快捷键.html">
+<a href="IDEA快捷键.html">
+<b>1.4.</b>
                     
                     IDEA快捷键
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" data-path="Spring注解.md">
-            
-                <span>
-            
-                    
-                        <b>1.5.</b>
+</li>
+<li class="chapter" data-level="1.5" data-path="Spring注解.md">
+<span>
+<b>1.5.</b>
                     
                     Spring注解
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.5.1" data-path="Spring注解_介绍.html">
-            
-                <a href="Spring注解_介绍.html">
-            
-                    
-                        <b>1.5.1.</b>
+<li class="chapter" data-level="1.5.1" data-path="Spring注解_介绍.html">
+<a href="Spring注解_介绍.html">
+<b>1.5.1.</b>
                     
                     Spring注解_介绍
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.2" data-path="Spring注解_常用注解.html">
-            
-                <a href="Spring注解_常用注解.html">
-            
-                    
-                        <b>1.5.2.</b>
+</li>
+<li class="chapter" data-level="1.5.2" data-path="Spring注解_常用注解.html">
+<a href="Spring注解_常用注解.html">
+<b>1.5.2.</b>
                     
                     Spring注解_常用注解
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.3" data-path="Spring注解_Spring入门篇.html">
-            
-                <a href="Spring注解_Spring入门篇.html">
-            
-                    
-                        <b>1.5.3.</b>
+</li>
+<li class="chapter" data-level="1.5.3" data-path="Spring注解_Spring入门篇.html">
+<a href="Spring注解_Spring入门篇.html">
+<b>1.5.3.</b>
                     
                     Spring注解_Spring入门篇
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6" data-path="Java基础.md">
-            
-                <span>
-            
-                    
-                        <b>1.6.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.6" data-path="Java基础.md">
+<span>
+<b>1.6.</b>
                     
                     Java基础
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.6.1" data-path="Java基础_集合.html">
-            
-                <a href="Java基础_集合.html">
-            
-                    
-                        <b>1.6.1.</b>
+<li class="chapter" data-level="1.6.1" data-path="Java基础_集合.html">
+<a href="Java基础_集合.html">
+<b>1.6.1.</b>
                     
                     Java基础_集合
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.2" data-path="Java基础_泛型.html">
-            
-                <a href="Java基础_泛型.html">
-            
-                    
-                        <b>1.6.2.</b>
+</li>
+<li class="chapter" data-level="1.6.2" data-path="Java基础_泛型.html">
+<a href="Java基础_泛型.html">
+<b>1.6.2.</b>
                     
                     Java基础_泛型
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.3" data-path="Java基础_打jar包.html">
-            
-                <a href="Java基础_打jar包.html">
-            
-                    
-                        <b>1.6.3.</b>
+</li>
+<li class="chapter" data-level="1.6.3" data-path="Java基础_打jar包.html">
+<a href="Java基础_打jar包.html">
+<b>1.6.3.</b>
                     
                     Java基础_打jar包
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.4" data-path="Java基础_正则匹配.html">
-            
-                <a href="Java基础_正则匹配.html">
-            
-                    
-                        <b>1.6.4.</b>
+</li>
+<li class="chapter" data-level="1.6.4" data-path="Java基础_正则匹配.html">
+<a href="Java基础_正则匹配.html">
+<b>1.6.4.</b>
                     
                     Java基础_正则匹配
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.5" data-path="Java基础_反射机制.html">
-            
-                <a href="Java基础_反射机制.html">
-            
-                    
-                        <b>1.6.5.</b>
+</li>
+<li class="chapter" data-level="1.6.5" data-path="Java基础_反射机制.html">
+<a href="Java基础_反射机制.html">
+<b>1.6.5.</b>
                     
                     Java基础_反射机制
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.6" data-path="Java基础_对象正反序列化.html">
-            
-                <a href="Java基础_对象正反序列化.html">
-            
-                    
-                        <b>1.6.6.</b>
+</li>
+<li class="chapter" data-level="1.6.6" data-path="Java基础_对象正反序列化.html">
+<a href="Java基础_对象正反序列化.html">
+<b>1.6.6.</b>
                     
                     Java基础_对象正反序列化
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.7" data-path="Java基础_读取配置文件.html">
-            
-                <a href="Java基础_读取配置文件.html">
-            
-                    
-                        <b>1.6.7.</b>
+</li>
+<li class="chapter" data-level="1.6.7" data-path="Java基础_读取配置文件.html">
+<a href="Java基础_读取配置文件.html">
+<b>1.6.7.</b>
                     
                     Java基础_读取配置文件
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.8" data-path="Java基础_解析与生成XML.html">
-            
-                <a href="Java基础_解析与生成XML.html">
-            
-                    
-                        <b>1.6.8.</b>
+</li>
+<li class="chapter" data-level="1.6.8" data-path="Java基础_解析与生成XML.html">
+<a href="Java基础_解析与生成XML.html">
+<b>1.6.8.</b>
                     
                     Java基础_解析与生成XML
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.9" data-path="Java基础_后台服务器开发.html">
-            
-                <a href="Java基础_后台服务器开发.html">
-            
-                    
-                        <b>1.6.9.</b>
+</li>
+<li class="chapter" data-level="1.6.9" data-path="Java基础_后台服务器开发.html">
+<a href="Java基础_后台服务器开发.html">
+<b>1.6.9.</b>
                     
                     Java基础_后台服务器开发
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.10" data-path="Java基础_四舍五入.html">
-            
-                <a href="Java基础_四舍五入.html">
-            
-                    
-                        <b>1.6.10.</b>
+</li>
+<li class="chapter" data-level="1.6.10" data-path="Java基础_四舍五入.html">
+<a href="Java基础_四舍五入.html">
+<b>1.6.10.</b>
                     
                     Java基础_四舍五入
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7" data-path="Java进阶.md">
-            
-                <span>
-            
-                    
-                        <b>1.7.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.7" data-path="Java进阶.md">
+<span>
+<b>1.7.</b>
                     
                     Java进阶
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.7.1" data-path="Java进阶_反射.html">
-            
-                <a href="Java进阶_反射.html">
-            
-                    
-                        <b>1.7.1.</b>
+<li class="chapter" data-level="1.7.1" data-path="Java进阶_反射.html">
+<a href="Java进阶_反射.html">
+<b>1.7.1.</b>
                     
                     Java进阶_反射
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.2" data-path="Java进阶_注解.html">
-            
-                <a href="Java进阶_注解.html">
-            
-                    
-                        <b>1.7.2.</b>
+</li>
+<li class="chapter" data-level="1.7.2" data-path="Java进阶_注解.html">
+<a href="Java进阶_注解.html">
+<b>1.7.2.</b>
                     
                     Java进阶_注解
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8" data-path="MySQL.md">
-            
-                <span>
-            
-                    
-                        <b>1.8.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.8" data-path="MySQL.md">
+<span>
+<b>1.8.</b>
                     
                     MySQL
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.8.1" data-path="MySQL_基础.html">
-            
-                <a href="MySQL_基础.html">
-            
-                    
-                        <b>1.8.1.</b>
+<li class="chapter" data-level="1.8.1" data-path="MySQL_基础.html">
+<a href="MySQL_基础.html">
+<b>1.8.1.</b>
                     
                     MySQL_基础
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.2" data-path="MySQL_约束.html">
-            
-                <a href="MySQL_约束.html">
-            
-                    
-                        <b>1.8.2.</b>
+</li>
+<li class="chapter" data-level="1.8.2" data-path="MySQL_约束.html">
+<a href="MySQL_约束.html">
+<b>1.8.2.</b>
                     
                     MySQL_约束
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.3" data-path="MySQL_多表查询.html">
-            
-                <a href="MySQL_多表查询.html">
-            
-                    
-                        <b>1.8.3.</b>
+</li>
+<li class="chapter" data-level="1.8.3" data-path="MySQL_多表查询.html">
+<a href="MySQL_多表查询.html">
+<b>1.8.3.</b>
                     
                     MySQL_多表查询
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.4" data-path="MySQL_事务.html">
-            
-                <a href="MySQL_事务.html">
-            
-                    
-                        <b>1.8.4.</b>
+</li>
+<li class="chapter" data-level="1.8.4" data-path="MySQL_事务.html">
+<a href="MySQL_事务.html">
+<b>1.8.4.</b>
                     
                     MySQL_事务
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.5" data-path="MySQL_数据库设计.html">
-            
-                <a href="MySQL_数据库设计.html">
-            
-                    
-                        <b>1.8.5.</b>
+</li>
+<li class="chapter" data-level="1.8.5" data-path="MySQL_数据库设计.html">
+<a href="MySQL_数据库设计.html">
+<b>1.8.5.</b>
                     
                     MySQL_数据库设计
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9" data-path="JDBC.md">
-            
-                <span>
-            
-                    
-                        <b>1.9.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.9" data-path="JDBC.md">
+<span>
+<b>1.9.</b>
                     
                     JDBC
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.9.1" data-path="JDBC_JDBC基础.html">
-            
-                <a href="JDBC_JDBC基础.html">
-            
-                    
-                        <b>1.9.1.</b>
+<li class="chapter" data-level="1.9.1" data-path="JDBC_JDBC基础.html">
+<a href="JDBC_JDBC基础.html">
+<b>1.9.1.</b>
                     
                     JDBC_JDBC基础
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9.2" data-path="JDBC_JDBC连接池.html">
-            
-                <a href="JDBC_JDBC连接池.html">
-            
-                    
-                        <b>1.9.2.</b>
+</li>
+<li class="chapter" data-level="1.9.2" data-path="JDBC_JDBC连接池.html">
+<a href="JDBC_JDBC连接池.html">
+<b>1.9.2.</b>
                     
                     JDBC_JDBC连接池
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.9.3" data-path="JDBC_JDBCTemplate.html">
-            
-                <a href="JDBC_JDBCTemplate.html">
-            
-                    
-                        <b>1.9.3.</b>
+</li>
+<li class="chapter active" data-level="1.9.3" data-path="JDBC_JDBCTemplate.html">
+<a href="JDBC_JDBCTemplate.html">
+<b>1.9.3.</b>
                     
                     JDBC_JDBCTemplate
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.10" data-path="Spark集群搭建.html">
-            
-                <a href="Spark集群搭建.html">
-            
-                    
-                        <b>1.10.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.10" data-path="Spark集群搭建.html">
+<a href="Spark集群搭建.html">
+<b>1.10.</b>
                     
                     Spark集群搭建
             
                 </a>
-            
-
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+</li>
+<li class="divider"></li>
+<li>
+<a class="gitbook-link" href="https://www.gitbook.com" target="blank">
             本书使用 GitBook 发布
         </a>
-    </li>
-</ul>
-
-
-                </nav>
-            
-        
-    </div>
-
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
-
-<div class="book-header" role="navigation">
-    
-
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >JDBC_JDBCTemplate</a>
-    </h1>
-</div>
-
-
-
-
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-<div class="search-plus" id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#spring-jdbc"><b></b>Spring JDBC</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E3B;&#x8981;&#x529F;&#x80FD;"><b></b>&#x4E3B;&#x8981;&#x529F;&#x80FD;</a></li><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;&#x793A;&#x4F8B;"><b></b>&#x4F7F;&#x7528;&#x793A;&#x4F8B;</a></li></ul></ul></div><a href="#spring-jdbc" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><a href="res/other/&#x5F02;&#x4E16;&#x754C;&#x857E;&#x59C6;_1.png" data-lightbox="4ca12ff7-9ddc-4ca4-8217-c07fa2321a69" data-title="img"><img src="res/other/&#x5F02;&#x4E16;&#x754C;&#x857E;&#x59C6;_1.png" alt="img"></a></p>
-<blockquote>
-<p><a href="https://www.bilibili.com/video/av61491585" target="_blank">&#x3010;&#x9ED1;&#x9A6C;&#x7A0B;&#x5E8F;&#x5458;-Java&#x8BED;&#x8A00;&#x9AD8;&#x7EA7;&#x90E8;&#x5206;11&#x3011;JDBC</a></p>
-</blockquote>
-<hr>
-<h1 id="spring-jdbc"><a name="spring-jdbc" class="anchor-navigation-ex-anchor" href="#spring-jdbc"><i class="fa fa-link" aria-hidden="true"></i></a><a name="spring-jdbc" class="plugin-anchor" href="#spring-jdbc"><i class="fa fa-link" aria-hidden="true"></i></a>Spring JDBC</h1>
-<h2 id="&#x4E3B;&#x8981;&#x529F;&#x80FD;"><a name="&#x4E3B;&#x8981;&#x529F;&#x80FD;" class="anchor-navigation-ex-anchor" href="#&#x4E3B;&#x8981;&#x529F;&#x80FD;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4E3B;&#x8981;&#x529F;&#x80FD;" class="plugin-anchor" href="#&#x4E3B;&#x8981;&#x529F;&#x80FD;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E3B;&#x8981;&#x529F;&#x80FD;</h2>
-<blockquote>
-<p>Spring&#x6846;&#x67B6;&#x5BF9;JDBC&#x7684;&#x7B80;&#x5355;&#x5C01;&#x88C5;&#x3002;</p>
-<p>&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;JDBCTemplate&#x5BF9;&#x8C61;&#x7B80;&#x5316;JDBC&#x7684;&#x5F00;&#x53D1;</p>
-<p>&#x6B65;&#x9AA4;&#xFF1A;</p>
-<ol>
-<li><p>&#x5BFC;&#x5165;jar&#x5305;</p>
 </li>
-<li><p>&#x521B;&#x5EFA;JdbcTemplate&#x5BF9;&#x8C61;&#x3002;&#x4F9D;&#x8D56;&#x4E8E;&#x6570;&#x636E;&#x6E90;DataSource</p>
+</ul>
+</nav>
+</div>
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="..">JDBC_JDBCTemplate</a>
+</h1>
+</div>
+<div class="page-wrapper" role="main" tabindex="-1">
+<div class="page-inner">
+<div class="search-plus" id="book-search-results">
+<div class="search-noresults">
+<section class="normal markdown-section">
+<div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon"></span><a href="#spring-jdbc">1 Spring JDBC</a></li><ul><li><span class="title-icon"></span><a href="#主要功能">1.1 主要功能</a></li><li><span class="title-icon"></span><a href="#使用示例">1.2 使用示例</a></li></ul></ul></div><a href="#spring-jdbc" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><a data-lightbox="81d133af-c409-4078-a54b-63af5bed915e" data-title="img" href="res/other/异世界蕾姆_1.png"><img alt="img" src="res/other/异世界蕾姆_1.png"/></a></p>
+<blockquote>
+<p><a href="https://www.bilibili.com/video/av61491585" target="_blank">【黑马程序员-Java语言高级部分11】JDBC</a></p>
+</blockquote>
+<hr/>
+<h1 id="spring-jdbc">1 Spring JDBC</h1>
+<h2 id="主要功能">1.1 主要功能</h2>
+<blockquote>
+<p>Spring框架对JDBC的简单封装。</p>
+<p>提供了一个JDBCTemplate对象简化JDBC的开发</p>
+<p>步骤：</p>
+<ol>
+<li><p>导入jar包</p>
+</li>
+<li><p>创建JdbcTemplate对象。依赖于数据源DataSource</p>
 <ul>
 <li>JdbcTemplate template = new JdbcTemplate(ds);</li>
 </ul>
 </li>
-<li><p>&#x8C03;&#x7528;JdbcTemplate&#x7684;&#x65B9;&#x6CD5;&#x6765;&#x5B8C;&#x6210;CRUD&#x7684;&#x64CD;&#x4F5C;</p>
+<li><p>调用JdbcTemplate的方法来完成CRUD的操作</p>
 <ul>
-<li><code>update()</code>: &#x6267;&#x884C;DML&#x8BED;&#x53E5;&#x3002;&#x589E;&#x3001;&#x5220;&#x3001;&#x6539;&#x8BED;&#x53E5;</li>
-<li><code>queryForMap()</code>: &#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x5C06;&#x7ED3;&#x679C;&#x96C6;&#x5C01;&#x88C5;&#x4E3A;map&#x96C6;&#x5408;&#xFF0C;&#x5C06;&#x5217;&#x540D;&#x4F5C;&#x4E3A;key&#xFF0C;&#x5C06;&#x503C;&#x4F5C;&#x4E3A;value &#x5C06;&#x8FD9;&#x6761;&#x8BB0;&#x5F55;&#x5C01;&#x88C5;&#x4E3A;&#x4E00;&#x4E2A;map&#x96C6;&#x5408;<ul>
-<li>&#x6CE8;&#x610F;&#xFF1A;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x67E5;&#x8BE2;&#x7684;&#x7ED3;&#x679C;&#x96C6;&#x957F;&#x5EA6;&#x53EA;&#x80FD;&#x662F;1</li>
+<li><code>update()</code>: 执行DML语句。增、删、改语句</li>
+<li><code>queryForMap()</code>: 查询结果将结果集封装为map集合，将列名作为key，将值作为value 将这条记录封装为一个map集合<ul>
+<li>注意：这个方法查询的结果集长度只能是1</li>
 </ul>
 </li>
-<li><code>queryForList()</code>: &#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x5C06;&#x7ED3;&#x679C;&#x96C6;&#x5C01;&#x88C5;&#x4E3A;list&#x96C6;&#x5408;<ul>
-<li>&#x6CE8;&#x610F;&#xFF1A;&#x5C06;&#x6BCF;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#x5C01;&#x88C5;&#x4E3A;&#x4E00;&#x4E2A;Map&#x96C6;&#x5408;&#xFF0C;&#x518D;&#x5C06;Map&#x96C6;&#x5408;&#x88C5;&#x8F7D;&#x5230;List&#x96C6;&#x5408;&#x4E2D;</li>
+<li><code>queryForList()</code>: 查询结果将结果集封装为list集合<ul>
+<li>注意：将每一条记录封装为一个Map集合，再将Map集合装载到List集合中</li>
 </ul>
 </li>
-<li><code>query()</code>: &#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#xFF0C;&#x5C06;&#x7ED3;&#x679C;&#x5C01;&#x88C5;&#x4E3A;JavaBean&#x5BF9;&#x8C61;<ul>
-<li>query&#x7684;&#x53C2;&#x6570;&#xFF1A;RowMapper<ul>
-<li>&#x4E00;&#x822C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;BeanPropertyRowMapper&#x5B9E;&#x73B0;&#x7C7B;&#x3002;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#x6570;&#x636E;&#x5230;JavaBean&#x7684;&#x81EA;&#x52A8;&#x5C01;&#x88C5;</li>
-<li>new BeanPropertyRowMapper&lt;&#x7C7B;&#x578B;&gt;(&#x7C7B;&#x578B;.class)</li>
+<li><code>query()</code>: 查询结果，将结果封装为JavaBean对象<ul>
+<li>query的参数：RowMapper<ul>
+<li>一般我们使用BeanPropertyRowMapper实现类。可以完成数据到JavaBean的自动封装</li>
+<li>new BeanPropertyRowMapper&lt;类型&gt;(类型.class)</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><code>queryForObject()</code>&#xFF1A;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#xFF0C;&#x5C06;&#x7ED3;&#x679C;&#x5C01;&#x88C5;&#x4E3A;&#x5BF9;&#x8C61;<ul>
-<li>&#x4E00;&#x822C;&#x7528;&#x4E8E;&#x805A;&#x5408;&#x51FD;&#x6570;&#x7684;&#x67E5;&#x8BE2;</li>
+<li><code>queryForObject()</code>：查询结果，将结果封装为对象<ul>
+<li>一般用于聚合函数的查询</li>
 </ul>
 </li>
 </ul>
 </li>
 </ol>
 </blockquote>
-<h2 id="&#x4F7F;&#x7528;&#x793A;&#x4F8B;"><a name="&#x4F7F;&#x7528;&#x793A;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4F7F;&#x7528;&#x793A;&#x4F8B;" class="plugin-anchor" href="#&#x4F7F;&#x7528;&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F7F;&#x7528;&#x793A;&#x4F8B;</h2>
+<h2 id="使用示例">1.2 使用示例</h2>
 <pre><code class="lang-java"><span class="hljs-keyword">import</span> cn.itcast.utils.JDBCUtils;
 <span class="hljs-keyword">import</span> org.junit.Test;
 <span class="hljs-keyword">import</span> org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -923,60 +488,60 @@
 <span class="hljs-keyword">import</span> java.util.Map;
 <span class="hljs-keyword">import</span> java.util.Date;
 <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">JdbcTemplateDemo</span> </span>{
-    <span class="hljs-comment">//1. &#x83B7;&#x53D6;JDBCTemplate&#x5BF9;&#x8C61;</span>
+    <span class="hljs-comment">//1. 获取JDBCTemplate对象</span>
     <span class="hljs-keyword">private</span> JdbcTemplate template = <span class="hljs-keyword">new</span> JdbcTemplate(JDBCUtils.getDataSource());
     <span class="hljs-comment">/**
-     * 1. &#x4FEE;&#x6539;1&#x53F7;&#x6570;&#x636E;&#x7684; salary &#x4E3A; 10000
+     * 1. 修改1号数据的 salary 为 10000
      */</span>
     <span class="hljs-meta">@Test</span>
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test1</span><span class="hljs-params">()</span></span>{
-        <span class="hljs-comment">//2. &#x5B9A;&#x4E49;sql</span>
-        String sql = <span class="hljs-string">&quot;update emp set salary = 10000 where id = 1001&quot;</span>;
-        <span class="hljs-comment">//3. &#x6267;&#x884C;sql</span>
+        <span class="hljs-comment">//2. 定义sql</span>
+        String sql = <span class="hljs-string">"update emp set salary = 10000 where id = 1001"</span>;
+        <span class="hljs-comment">//3. 执行sql</span>
         <span class="hljs-keyword">int</span> count = template.update(sql);
         System.out.println(count);
     }
 
     <span class="hljs-comment">/**
-     * 2. &#x6DFB;&#x52A0;&#x4E00;&#x6761;&#x8BB0;&#x5F55;
+     * 2. 添加一条记录
      */</span>
     <span class="hljs-meta">@Test</span>
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test2</span><span class="hljs-params">()</span></span>{
-        String sql = <span class="hljs-string">&quot;insert into emp(id,ename,dept_id) values(?,?,?)&quot;</span>;
-        <span class="hljs-keyword">int</span> count = template.update(sql, <span class="hljs-number">1015</span>, <span class="hljs-string">&quot;&#x90ED;&#x9756;&quot;</span>, <span class="hljs-number">10</span>);
+        String sql = <span class="hljs-string">"insert into emp(id,ename,dept_id) values(?,?,?)"</span>;
+        <span class="hljs-keyword">int</span> count = template.update(sql, <span class="hljs-number">1015</span>, <span class="hljs-string">"郭靖"</span>, <span class="hljs-number">10</span>);
         System.out.println(count);
 
     }
 
     <span class="hljs-comment">/**
-     * 3.&#x5220;&#x9664;&#x521A;&#x624D;&#x6DFB;&#x52A0;&#x7684;&#x8BB0;&#x5F55;
+     * 3.删除刚才添加的记录
      */</span>
     <span class="hljs-meta">@Test</span>
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test3</span><span class="hljs-params">()</span></span>{
-        String sql = <span class="hljs-string">&quot;delete from emp where id = ?&quot;</span>;
+        String sql = <span class="hljs-string">"delete from emp where id = ?"</span>;
         <span class="hljs-keyword">int</span> count = template.update(sql, <span class="hljs-number">1015</span>);
         System.out.println(count);
     }
 
     <span class="hljs-comment">/**
-     * 4.&#x67E5;&#x8BE2;id&#x4E3A;1001&#x7684;&#x8BB0;&#x5F55;&#xFF0C;&#x5C06;&#x5176;&#x5C01;&#x88C5;&#x4E3A;Map&#x96C6;&#x5408;
-     * &#x6CE8;&#x610F;&#xFF1A;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x67E5;&#x8BE2;&#x7684;&#x7ED3;&#x679C;&#x96C6;&#x957F;&#x5EA6;&#x53EA;&#x80FD;&#x662F;1
+     * 4.查询id为1001的记录，将其封装为Map集合
+     * 注意：这个方法查询的结果集长度只能是1
      */</span>
     <span class="hljs-meta">@Test</span>
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test4</span><span class="hljs-params">()</span></span>{
-        String sql = <span class="hljs-string">&quot;select * from emp where id = ? or id = ?&quot;</span>;
+        String sql = <span class="hljs-string">"select * from emp where id = ? or id = ?"</span>;
         Map&lt;String, Object&gt; map = template.queryForMap(sql, <span class="hljs-number">1001</span>,<span class="hljs-number">1002</span>);
         System.out.println(map);
-        <span class="hljs-comment">//{id=1001, ename=&#x5B59;&#x609F;&#x7A7A;, job_id=4, mgr=1004, joindate=2000-12-17, salary=10000.00, bonus=null, dept_id=20}</span>
+        <span class="hljs-comment">//{id=1001, ename=孙悟空, job_id=4, mgr=1004, joindate=2000-12-17, salary=10000.00, bonus=null, dept_id=20}</span>
 
     }
 
     <span class="hljs-comment">/**
-     * 5. &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x8BB0;&#x5F55;&#xFF0C;&#x5C06;&#x5176;&#x5C01;&#x88C5;&#x4E3A;List
+     * 5. 查询所有记录，将其封装为List
      */</span>
     <span class="hljs-meta">@Test</span>
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test5</span><span class="hljs-params">()</span></span>{
-        String sql = <span class="hljs-string">&quot;select * from emp&quot;</span>;
+        String sql = <span class="hljs-string">"select * from emp"</span>;
         List&lt;Map&lt;String, Object&gt;&gt; list = template.queryForList(sql);
 
         <span class="hljs-keyword">for</span> (Map&lt;String, Object&gt; stringObjectMap : list) {
@@ -985,23 +550,23 @@
     }
 
     <span class="hljs-comment">/**
-     * 6. &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x8BB0;&#x5F55;&#xFF0C;&#x5C06;&#x5176;&#x5C01;&#x88C5;&#x4E3A;Emp&#x5BF9;&#x8C61;&#x7684;List&#x96C6;&#x5408;
+     * 6. 查询所有记录，将其封装为Emp对象的List集合
      */</span>
     <span class="hljs-meta">@Test</span>
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test6</span><span class="hljs-params">()</span></span>{
-        String sql = <span class="hljs-string">&quot;select * from emp&quot;</span>;
+        String sql = <span class="hljs-string">"select * from emp"</span>;
         List&lt;Emp&gt; list = template.query(sql, <span class="hljs-keyword">new</span> RowMapper&lt;Emp&gt;() {
             <span class="hljs-meta">@Override</span>
             <span class="hljs-function"><span class="hljs-keyword">public</span> Emp <span class="hljs-title">mapRow</span><span class="hljs-params">(ResultSet rs, <span class="hljs-keyword">int</span> i)</span> <span class="hljs-keyword">throws</span> SQLException </span>{
                 Emp emp = <span class="hljs-keyword">new</span> Emp();
-                <span class="hljs-keyword">int</span> id = rs.getInt(<span class="hljs-string">&quot;id&quot;</span>);
-                String ename = rs.getString(<span class="hljs-string">&quot;ename&quot;</span>);
-                <span class="hljs-keyword">int</span> job_id = rs.getInt(<span class="hljs-string">&quot;job_id&quot;</span>);
-                <span class="hljs-keyword">int</span> mgr = rs.getInt(<span class="hljs-string">&quot;mgr&quot;</span>);
-                Date joindate = rs.getDate(<span class="hljs-string">&quot;joindate&quot;</span>);
-                <span class="hljs-keyword">double</span> salary = rs.getDouble(<span class="hljs-string">&quot;salary&quot;</span>);
-                <span class="hljs-keyword">double</span> bonus = rs.getDouble(<span class="hljs-string">&quot;bonus&quot;</span>);
-                <span class="hljs-keyword">int</span> dept_id = rs.getInt(<span class="hljs-string">&quot;dept_id&quot;</span>);
+                <span class="hljs-keyword">int</span> id = rs.getInt(<span class="hljs-string">"id"</span>);
+                String ename = rs.getString(<span class="hljs-string">"ename"</span>);
+                <span class="hljs-keyword">int</span> job_id = rs.getInt(<span class="hljs-string">"job_id"</span>);
+                <span class="hljs-keyword">int</span> mgr = rs.getInt(<span class="hljs-string">"mgr"</span>);
+                Date joindate = rs.getDate(<span class="hljs-string">"joindate"</span>);
+                <span class="hljs-keyword">double</span> salary = rs.getDouble(<span class="hljs-string">"salary"</span>);
+                <span class="hljs-keyword">double</span> bonus = rs.getDouble(<span class="hljs-string">"bonus"</span>);
+                <span class="hljs-keyword">int</span> dept_id = rs.getInt(<span class="hljs-string">"dept_id"</span>);
 
                 emp.setId(id);
                 emp.setEname(ename);
@@ -1022,11 +587,11 @@
     }
 
     <span class="hljs-comment">/**
-     * 6. &#x67E5;&#x8BE2;&#x6240;&#x6709;&#x8BB0;&#x5F55;&#xFF0C;&#x5C06;&#x5176;&#x5C01;&#x88C5;&#x4E3A;Emp&#x5BF9;&#x8C61;&#x7684;List&#x96C6;&#x5408;
+     * 6. 查询所有记录，将其封装为Emp对象的List集合
      */</span>
     <span class="hljs-meta">@Test</span>
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test6_2</span><span class="hljs-params">()</span></span>{
-        String sql = <span class="hljs-string">&quot;select * from emp&quot;</span>;
+        String sql = <span class="hljs-string">"select * from emp"</span>;
         List&lt;Emp&gt; list = template.query(sql, <span class="hljs-keyword">new</span> BeanPropertyRowMapper&lt;Emp&gt;(Emp.class));
         <span class="hljs-keyword">for</span> (Emp emp : list) {
             System.out.println(emp);
@@ -1034,11 +599,11 @@
     }
 
     <span class="hljs-comment">/**
-     * 7. &#x67E5;&#x8BE2;&#x603B;&#x8BB0;&#x5F55;&#x6570;
+     * 7. 查询总记录数
      */</span>
     <span class="hljs-meta">@Test</span>
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test7</span><span class="hljs-params">()</span></span>{
-        String sql = <span class="hljs-string">&quot;select count(id) from emp&quot;</span>;
+        String sql = <span class="hljs-string">"select count(id) from emp"</span>;
         Long total = template.queryForObject(sql, Long.class);
         System.out.println(total);
     }
@@ -1121,146 +686,70 @@
 
     <span class="hljs-meta">@Override</span>
     <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{
-        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Emp{&quot;</span> +
-                <span class="hljs-string">&quot;id=&quot;</span> + id +
-                <span class="hljs-string">&quot;, ename=&apos;&quot;</span> + ename + <span class="hljs-string">&apos;\&apos;&apos;</span> +
-                <span class="hljs-string">&quot;, job_id=&quot;</span> + job_id +
-                <span class="hljs-string">&quot;, mgr=&quot;</span> + mgr +
-                <span class="hljs-string">&quot;, joindate=&quot;</span> + joindate +
-                <span class="hljs-string">&quot;, salary=&quot;</span> + salary +
-                <span class="hljs-string">&quot;, bonus=&quot;</span> + bonus +
-                <span class="hljs-string">&quot;, dept_id=&quot;</span> + dept_id +
-                <span class="hljs-string">&apos;}&apos;</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">"Emp{"</span> +
+                <span class="hljs-string">"id="</span> + id +
+                <span class="hljs-string">", ename='"</span> + ename + <span class="hljs-string">'\''</span> +
+                <span class="hljs-string">", job_id="</span> + job_id +
+                <span class="hljs-string">", mgr="</span> + mgr +
+                <span class="hljs-string">", joindate="</span> + joindate +
+                <span class="hljs-string">", salary="</span> + salary +
+                <span class="hljs-string">", bonus="</span> + bonus +
+                <span class="hljs-string">", dept_id="</span> + dept_id +
+                <span class="hljs-string">'}'</span>;
     }
 }
 </code></pre>
-<p></p><footer class="page-footer"><span class="copyright">Copyright &#xA9; narutohyc.com 2022 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2022-02-14 09:16:40
-</span></footer><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz',appKey: 'FOXMptWOHC7cU1FxXt0LJj4o',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script><p></p>
-
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
+<p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2022 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
+2022-02-15 13:20:00
+</span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz',appKey: 'FOXMptWOHC7cU1FxXt0LJj4o',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script><p></p>
+</section>
 </div>
-
-                        </div>
-                    </div>
-                
-            </div>
-
-            
-                
-                <a href="JDBC_JDBC连接池.html" class="navigation navigation-prev " aria-label="Previous page: JDBC_JDBC连接池">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="Spark集群搭建.html" class="navigation navigation-next " aria-label="Next page: Spark集群搭建">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
-        
-    </div>
-
-    <script>
+<div class="search-results">
+<div class="has-results">
+<h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+<ul class="search-results-list"></ul>
+</div>
+<div class="no-results">
+<h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<a aria-label="Previous page: JDBC_JDBC连接池" class="navigation navigation-prev" href="JDBC_JDBC连接池.html">
+<i class="fa fa-angle-left"></i>
+</a>
+<a aria-label="Next page: Spark集群搭建" class="navigation navigation-next" href="Spark集群搭建.html">
+<i class="fa fa-angle-right"></i>
+</a>
+</div>
+<script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"JDBC_JDBCTemplate","level":"1.9.3","depth":2,"next":{"title":"Spark集群搭建","level":"1.10","depth":1,"path":"chapters/Spark集群搭建.md","ref":"chapters/Spark集群搭建.md","articles":[]},"previous":{"title":"JDBC_JDBC连接池","level":"1.9.2","depth":2,"path":"chapters/JDBC_JDBC连接池.md","ref":"chapters/JDBC_JDBC连接池.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","favicon","search-plus","-lunr","-search","lightbox","change_girls","theme-comscore","valine","pageview-count","favicon-absolute"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"change_girls":{"time":10,"urls":["https://plc.jj20.com/up/allimg/1115/012122143136/220121143136-2.jpg","https://plc.jj20.com/up/allimg/1115/111R1094405/21111P94405-1.jpg"]},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://i.loli.net/2021/01/12/Cdunm9AoBcHF5MI.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://i.loli.net/2021/01/12/gmzASfCciIFXTyr.png","wechatText":"微信打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"","lang":"zh-CN","pageSize":10,"placeholder":"Just go go","recordIP":false,"appId":"jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz","appKey":"FOXMptWOHC7cU1FxXt0LJj4o"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java相关学习记录","language":"zh-hans","links":{"sidebar":{"我的狗窝":"https://github.com/narutohyc"}},"gitbook":"*","description":"记录 Java 的学习和一些技巧的使用"},"file":{"path":"chapters/JDBC_JDBCTemplate.md","mtime":"2022-02-14T09:16:40.557Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-14T09:18:14.959Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"JDBC_JDBCTemplate","level":"1.9.3","depth":2,"next":{"title":"Spark集群搭建","level":"1.10","depth":1,"path":"chapters/Spark集群搭建.md","ref":"chapters/Spark集群搭建.md","articles":[]},"previous":{"title":"JDBC_JDBC连接池","level":"1.9.2","depth":2,"path":"chapters/JDBC_JDBC连接池.md","ref":"chapters/JDBC_JDBC连接池.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","favicon","search-plus","-lunr","-search","lightbox","change_girls","theme-comscore","valine","pageview-count","favicon-absolute"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"change_girls":{"time":10,"urls":["https://plc.jj20.com/up/allimg/1115/012122143136/220121143136-2.jpg","https://plc.jj20.com/up/allimg/1115/111R1094405/21111P94405-1.jpg"]},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://i.loli.net/2021/01/12/Cdunm9AoBcHF5MI.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://i.loli.net/2021/01/12/gmzASfCciIFXTyr.png","wechatText":"微信打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"","lang":"zh-CN","pageSize":10,"placeholder":"Just go go","recordIP":false,"appId":"jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz","appKey":"FOXMptWOHC7cU1FxXt0LJj4o"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java相关学习记录","language":"zh-hans","links":{"sidebar":{"我的狗窝":"https://github.com/narutohyc"}},"gitbook":"*","description":"记录 Java 的学习和一些技巧的使用"},"file":{"path":"chapters/JDBC_JDBCTemplate.md","mtime":"2022-02-15T13:20:00.829Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-15T13:21:52.737Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
-
-        
-    
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
-        
-    
-        
-        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
-        
-    
-
-    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
-
-    </body>
+<script src="../gitbook/gitbook.js"></script>
+<script src="../gitbook/theme.js"></script>
+<script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+<script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+<script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+<script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+<script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+</body>
 </html>
-

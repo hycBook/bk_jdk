@@ -1,1099 +1,588 @@
-
 <!DOCTYPE HTML>
-<html lang="zh-hans" >
-    <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>MySQL_事务 · Java相关学习记录</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
-        <meta name="author" content="narutohyc">
-        
-        
-    
-    
-    <link rel="stylesheet" href="../gitbook/style.css">
-
-    
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
-                
-            
-        
-
-    
-
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-
-    
-
-        
-    
-    
-    
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
-
-    
-    <link rel="next" href="MySQL_数据库设计.html" />
-    
-    
-    <link rel="prev" href="MySQL_多表查询.html" />
-    
-
-    
-        <link rel="shortcut icon" href="./chapters/res/other/favicon.ico" type="image/x-icon">
-    
-    
-    
-    
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./chapters/res/other/favicon.ico">
-    
-    
-        
-    
-    
-        
-    
-
-    
-    
-    
-    
-
-    <style>
+<html lang="zh-hans">
+<head>
+<meta charset="utf-8"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>MySQL_事务 · Java相关学习记录</title>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="" name="description"/>
+<meta content="GitBook 3.2.3" name="generator"/>
+<meta content="narutohyc" name="author"/>
+<link href="../gitbook/style.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-splitter/splitter.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchors/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-donate/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-code/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-search-plus/search.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-change_girls/girls.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-pageview-count/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-highlight/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-fontsettings/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-theme-comscore/test.css" rel="stylesheet"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<link href="../gitbook/images/apple-touch-icon-precomposed-152.png" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<link href="../gitbook/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="MySQL_数据库设计.html" rel="next"/>
+<link href="MySQL_多表查询.html" rel="prev"/>
+<link href="./chapters/res/other/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="./chapters/res/other/favicon.ico" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<style>
     @media only screen and (max-width: 640px) {
         .book-header .hidden-mobile {
             display: none;
         }
     }
     </style>
-    <script>
+<script>
         window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]};
     </script>
-
-    </head>
-    <body>
-        
+</head>
+<body>
 <div class="book">
-    <div class="book-summary">
-        
-            
+<div class="book-summary">
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="输入并搜索" />
+<input placeholder="输入并搜索" type="text"/>
 </div>
-
-            
-                <nav role="navigation">
-                
-
-
+<nav role="navigation">
 <ul class="summary">
-    
-    
-    
-        
-        <li>
-            <a href="https://github.com/narutohyc" target="_blank" class="custom-link">我的狗窝</a>
-        </li>
-    
-    
-
-    
-    <li class="divider"></li>
-    
-
-    
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="../">
-            
-                <a href="../">
-            
-                    
-                        <b>1.1.</b>
+<li>
+<a class="custom-link" href="https://github.com/narutohyc" target="_blank">我的狗窝</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-level="1.1" data-path="../">
+<a href="../">
+<b>1.1.</b>
                     
                     Introduction
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2" data-path="设计模式.html">
-            
-                <a href="设计模式.html">
-            
-                    
-                        <b>1.2.</b>
+</li>
+<li class="chapter" data-level="1.2" data-path="设计模式.html">
+<a href="设计模式.html">
+<b>1.2.</b>
                     
                     设计模式
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" data-path="多线程.md">
-            
-                <span>
-            
-                    
-                        <b>1.3.</b>
+</li>
+<li class="chapter" data-level="1.3" data-path="多线程.md">
+<span>
+<b>1.3.</b>
                     
                     多线程
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.3.1" data-path="多线程_基础篇.html">
-            
-                <a href="多线程_基础篇.html">
-            
-                    
-                        <b>1.3.1.</b>
+<li class="chapter" data-level="1.3.1" data-path="多线程_基础篇.html">
+<a href="多线程_基础篇.html">
+<b>1.3.1.</b>
                     
                     多线程_基础篇
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.2" data-path="多线程_锁.html">
-            
-                <a href="多线程_锁.html">
-            
-                    
-                        <b>1.3.2.</b>
+</li>
+<li class="chapter" data-level="1.3.2" data-path="多线程_锁.html">
+<a href="多线程_锁.html">
+<b>1.3.2.</b>
                     
                     多线程_锁
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.3" data-path="多线程_JUC原子类.html">
-            
-                <a href="多线程_JUC原子类.html">
-            
-                    
-                        <b>1.3.3.</b>
+</li>
+<li class="chapter" data-level="1.3.3" data-path="多线程_JUC原子类.html">
+<a href="多线程_JUC原子类.html">
+<b>1.3.3.</b>
                     
                     多线程_JUC原子类
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.4" data-path="多线程_JUC锁集合 .html">
-            
-                <a href="多线程_JUC锁集合 .html">
-            
-                    
-                        <b>1.3.4.</b>
+</li>
+<li class="chapter" data-level="1.3.4" data-path="多线程_JUC锁集合 .html">
+<a href="多线程_JUC锁集合 .html">
+<b>1.3.4.</b>
                     
                     多线程_JUC锁集合 
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.5" data-path="多线程_ JUC集合.html">
-            
-                <a href="多线程_ JUC集合.html">
-            
-                    
-                        <b>1.3.5.</b>
+</li>
+<li class="chapter" data-level="1.3.5" data-path="多线程_ JUC集合.html">
+<a href="多线程_ JUC集合.html">
+<b>1.3.5.</b>
                     
                     多线程_ JUC集合
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.6" data-path="多线程_JUC线程池.html">
-            
-                <a href="多线程_JUC线程池.html">
-            
-                    
-                        <b>1.3.6.</b>
+</li>
+<li class="chapter" data-level="1.3.6" data-path="多线程_JUC线程池.html">
+<a href="多线程_JUC线程池.html">
+<b>1.3.6.</b>
                     
                     多线程_JUC线程池
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.7" data-path="多线程_生产者消费者.html">
-            
-                <a href="多线程_生产者消费者.html">
-            
-                    
-                        <b>1.3.7.</b>
+</li>
+<li class="chapter" data-level="1.3.7" data-path="多线程_生产者消费者.html">
+<a href="多线程_生产者消费者.html">
+<b>1.3.7.</b>
                     
                     多线程_生产者消费者
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4" data-path="IDEA快捷键.html">
-            
-                <a href="IDEA快捷键.html">
-            
-                    
-                        <b>1.4.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.4" data-path="IDEA快捷键.html">
+<a href="IDEA快捷键.html">
+<b>1.4.</b>
                     
                     IDEA快捷键
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" data-path="Spring注解.md">
-            
-                <span>
-            
-                    
-                        <b>1.5.</b>
+</li>
+<li class="chapter" data-level="1.5" data-path="Spring注解.md">
+<span>
+<b>1.5.</b>
                     
                     Spring注解
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.5.1" data-path="Spring注解_介绍.html">
-            
-                <a href="Spring注解_介绍.html">
-            
-                    
-                        <b>1.5.1.</b>
+<li class="chapter" data-level="1.5.1" data-path="Spring注解_介绍.html">
+<a href="Spring注解_介绍.html">
+<b>1.5.1.</b>
                     
                     Spring注解_介绍
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.2" data-path="Spring注解_常用注解.html">
-            
-                <a href="Spring注解_常用注解.html">
-            
-                    
-                        <b>1.5.2.</b>
+</li>
+<li class="chapter" data-level="1.5.2" data-path="Spring注解_常用注解.html">
+<a href="Spring注解_常用注解.html">
+<b>1.5.2.</b>
                     
                     Spring注解_常用注解
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.3" data-path="Spring注解_Spring入门篇.html">
-            
-                <a href="Spring注解_Spring入门篇.html">
-            
-                    
-                        <b>1.5.3.</b>
+</li>
+<li class="chapter" data-level="1.5.3" data-path="Spring注解_Spring入门篇.html">
+<a href="Spring注解_Spring入门篇.html">
+<b>1.5.3.</b>
                     
                     Spring注解_Spring入门篇
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6" data-path="Java基础.md">
-            
-                <span>
-            
-                    
-                        <b>1.6.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.6" data-path="Java基础.md">
+<span>
+<b>1.6.</b>
                     
                     Java基础
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.6.1" data-path="Java基础_集合.html">
-            
-                <a href="Java基础_集合.html">
-            
-                    
-                        <b>1.6.1.</b>
+<li class="chapter" data-level="1.6.1" data-path="Java基础_集合.html">
+<a href="Java基础_集合.html">
+<b>1.6.1.</b>
                     
                     Java基础_集合
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.2" data-path="Java基础_泛型.html">
-            
-                <a href="Java基础_泛型.html">
-            
-                    
-                        <b>1.6.2.</b>
+</li>
+<li class="chapter" data-level="1.6.2" data-path="Java基础_泛型.html">
+<a href="Java基础_泛型.html">
+<b>1.6.2.</b>
                     
                     Java基础_泛型
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.3" data-path="Java基础_打jar包.html">
-            
-                <a href="Java基础_打jar包.html">
-            
-                    
-                        <b>1.6.3.</b>
+</li>
+<li class="chapter" data-level="1.6.3" data-path="Java基础_打jar包.html">
+<a href="Java基础_打jar包.html">
+<b>1.6.3.</b>
                     
                     Java基础_打jar包
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.4" data-path="Java基础_正则匹配.html">
-            
-                <a href="Java基础_正则匹配.html">
-            
-                    
-                        <b>1.6.4.</b>
+</li>
+<li class="chapter" data-level="1.6.4" data-path="Java基础_正则匹配.html">
+<a href="Java基础_正则匹配.html">
+<b>1.6.4.</b>
                     
                     Java基础_正则匹配
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.5" data-path="Java基础_反射机制.html">
-            
-                <a href="Java基础_反射机制.html">
-            
-                    
-                        <b>1.6.5.</b>
+</li>
+<li class="chapter" data-level="1.6.5" data-path="Java基础_反射机制.html">
+<a href="Java基础_反射机制.html">
+<b>1.6.5.</b>
                     
                     Java基础_反射机制
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.6" data-path="Java基础_对象正反序列化.html">
-            
-                <a href="Java基础_对象正反序列化.html">
-            
-                    
-                        <b>1.6.6.</b>
+</li>
+<li class="chapter" data-level="1.6.6" data-path="Java基础_对象正反序列化.html">
+<a href="Java基础_对象正反序列化.html">
+<b>1.6.6.</b>
                     
                     Java基础_对象正反序列化
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.7" data-path="Java基础_读取配置文件.html">
-            
-                <a href="Java基础_读取配置文件.html">
-            
-                    
-                        <b>1.6.7.</b>
+</li>
+<li class="chapter" data-level="1.6.7" data-path="Java基础_读取配置文件.html">
+<a href="Java基础_读取配置文件.html">
+<b>1.6.7.</b>
                     
                     Java基础_读取配置文件
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.8" data-path="Java基础_解析与生成XML.html">
-            
-                <a href="Java基础_解析与生成XML.html">
-            
-                    
-                        <b>1.6.8.</b>
+</li>
+<li class="chapter" data-level="1.6.8" data-path="Java基础_解析与生成XML.html">
+<a href="Java基础_解析与生成XML.html">
+<b>1.6.8.</b>
                     
                     Java基础_解析与生成XML
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.9" data-path="Java基础_后台服务器开发.html">
-            
-                <a href="Java基础_后台服务器开发.html">
-            
-                    
-                        <b>1.6.9.</b>
+</li>
+<li class="chapter" data-level="1.6.9" data-path="Java基础_后台服务器开发.html">
+<a href="Java基础_后台服务器开发.html">
+<b>1.6.9.</b>
                     
                     Java基础_后台服务器开发
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.10" data-path="Java基础_四舍五入.html">
-            
-                <a href="Java基础_四舍五入.html">
-            
-                    
-                        <b>1.6.10.</b>
+</li>
+<li class="chapter" data-level="1.6.10" data-path="Java基础_四舍五入.html">
+<a href="Java基础_四舍五入.html">
+<b>1.6.10.</b>
                     
                     Java基础_四舍五入
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7" data-path="Java进阶.md">
-            
-                <span>
-            
-                    
-                        <b>1.7.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.7" data-path="Java进阶.md">
+<span>
+<b>1.7.</b>
                     
                     Java进阶
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.7.1" data-path="Java进阶_反射.html">
-            
-                <a href="Java进阶_反射.html">
-            
-                    
-                        <b>1.7.1.</b>
+<li class="chapter" data-level="1.7.1" data-path="Java进阶_反射.html">
+<a href="Java进阶_反射.html">
+<b>1.7.1.</b>
                     
                     Java进阶_反射
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.2" data-path="Java进阶_注解.html">
-            
-                <a href="Java进阶_注解.html">
-            
-                    
-                        <b>1.7.2.</b>
+</li>
+<li class="chapter" data-level="1.7.2" data-path="Java进阶_注解.html">
+<a href="Java进阶_注解.html">
+<b>1.7.2.</b>
                     
                     Java进阶_注解
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8" data-path="MySQL.md">
-            
-                <span>
-            
-                    
-                        <b>1.8.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.8" data-path="MySQL.md">
+<span>
+<b>1.8.</b>
                     
                     MySQL
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.8.1" data-path="MySQL_基础.html">
-            
-                <a href="MySQL_基础.html">
-            
-                    
-                        <b>1.8.1.</b>
+<li class="chapter" data-level="1.8.1" data-path="MySQL_基础.html">
+<a href="MySQL_基础.html">
+<b>1.8.1.</b>
                     
                     MySQL_基础
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.2" data-path="MySQL_约束.html">
-            
-                <a href="MySQL_约束.html">
-            
-                    
-                        <b>1.8.2.</b>
+</li>
+<li class="chapter" data-level="1.8.2" data-path="MySQL_约束.html">
+<a href="MySQL_约束.html">
+<b>1.8.2.</b>
                     
                     MySQL_约束
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.3" data-path="MySQL_多表查询.html">
-            
-                <a href="MySQL_多表查询.html">
-            
-                    
-                        <b>1.8.3.</b>
+</li>
+<li class="chapter" data-level="1.8.3" data-path="MySQL_多表查询.html">
+<a href="MySQL_多表查询.html">
+<b>1.8.3.</b>
                     
                     MySQL_多表查询
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.8.4" data-path="MySQL_事务.html">
-            
-                <a href="MySQL_事务.html">
-            
-                    
-                        <b>1.8.4.</b>
+</li>
+<li class="chapter active" data-level="1.8.4" data-path="MySQL_事务.html">
+<a href="MySQL_事务.html">
+<b>1.8.4.</b>
                     
                     MySQL_事务
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.5" data-path="MySQL_数据库设计.html">
-            
-                <a href="MySQL_数据库设计.html">
-            
-                    
-                        <b>1.8.5.</b>
+</li>
+<li class="chapter" data-level="1.8.5" data-path="MySQL_数据库设计.html">
+<a href="MySQL_数据库设计.html">
+<b>1.8.5.</b>
                     
                     MySQL_数据库设计
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9" data-path="JDBC.md">
-            
-                <span>
-            
-                    
-                        <b>1.9.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.9" data-path="JDBC.md">
+<span>
+<b>1.9.</b>
                     
                     JDBC
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.9.1" data-path="JDBC_JDBC基础.html">
-            
-                <a href="JDBC_JDBC基础.html">
-            
-                    
-                        <b>1.9.1.</b>
+<li class="chapter" data-level="1.9.1" data-path="JDBC_JDBC基础.html">
+<a href="JDBC_JDBC基础.html">
+<b>1.9.1.</b>
                     
                     JDBC_JDBC基础
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9.2" data-path="JDBC_JDBC连接池.html">
-            
-                <a href="JDBC_JDBC连接池.html">
-            
-                    
-                        <b>1.9.2.</b>
+</li>
+<li class="chapter" data-level="1.9.2" data-path="JDBC_JDBC连接池.html">
+<a href="JDBC_JDBC连接池.html">
+<b>1.9.2.</b>
                     
                     JDBC_JDBC连接池
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9.3" data-path="JDBC_JDBCTemplate.html">
-            
-                <a href="JDBC_JDBCTemplate.html">
-            
-                    
-                        <b>1.9.3.</b>
+</li>
+<li class="chapter" data-level="1.9.3" data-path="JDBC_JDBCTemplate.html">
+<a href="JDBC_JDBCTemplate.html">
+<b>1.9.3.</b>
                     
                     JDBC_JDBCTemplate
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.10" data-path="Spark集群搭建.html">
-            
-                <a href="Spark集群搭建.html">
-            
-                    
-                        <b>1.10.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.10" data-path="Spark集群搭建.html">
+<a href="Spark集群搭建.html">
+<b>1.10.</b>
                     
                     Spark集群搭建
             
                 </a>
-            
-
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+</li>
+<li class="divider"></li>
+<li>
+<a class="gitbook-link" href="https://www.gitbook.com" target="blank">
             本书使用 GitBook 发布
         </a>
-    </li>
+</li>
 </ul>
-
-
-                </nav>
-            
-        
-    </div>
-
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
-
-<div class="book-header" role="navigation">
-    
-
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >MySQL_事务</a>
-    </h1>
+</nav>
 </div>
-
-
-
-
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="..">MySQL_事务</a>
+</h1>
+</div>
+<div class="page-wrapper" role="main" tabindex="-1">
+<div class="page-inner">
 <div class="search-plus" id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x57FA;&#x672C;&#x4ECB;&#x7ECD;"><b></b>&#x57FA;&#x672C;&#x4ECB;&#x7ECD;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E8B;&#x52A1;&#x56DB;&#x5927;&#x7279;&#x5F81;"><b></b>&#x4E8B;&#x52A1;&#x56DB;&#x5927;&#x7279;&#x5F81;</a></li><li><span class="title-icon "></span><a href="#&#x4E8B;&#x52A1;&#x9694;&#x79BB;&#x7EA7;&#x522B;"><b></b>&#x4E8B;&#x52A1;&#x9694;&#x79BB;&#x7EA7;&#x522B;</a></li><li><span class="title-icon "></span><a href="#&#x6F14;&#x793A;"><b></b>&#x6F14;&#x793A;</a></li></ul><li><span class="title-icon "></span><a href="#&#x4F8B;&#x5B50;"><b></b>&#x4F8B;&#x5B50;</a></li><li><span class="title-icon "></span><a href="#&#x4E8B;&#x52A1;&#x63D0;&#x4EA4;"><b></b>&#x4E8B;&#x52A1;&#x63D0;&#x4EA4;</a></li></ul></div><a href="#&#x57FA;&#x672C;&#x4ECB;&#x7ECD;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><a href="res/other/&#x5F02;&#x4E16;&#x754C;&#x857E;&#x59C6;_1.png" data-lightbox="09ba069f-a383-46ab-b26b-de306ed3c1a9" data-title="img"><img src="res/other/&#x5F02;&#x4E16;&#x754C;&#x857E;&#x59C6;_1.png" alt="img"></a></p>
+<div class="search-noresults">
+<section class="normal markdown-section">
+<div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon"></span><a href="#基本介绍">1 基本介绍</a></li><ul><li><span class="title-icon"></span><a href="#事务四大特征">1.1 事务四大特征</a></li><li><span class="title-icon"></span><a href="#事务隔离级别">1.2 事务隔离级别</a></li><li><span class="title-icon"></span><a href="#演示">1.3 演示</a></li></ul><li><span class="title-icon"></span><a href="#例子">2 例子</a></li><li><span class="title-icon"></span><a href="#事务提交">3 事务提交</a></li></ul></div><a href="#基本介绍" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><a data-lightbox="6d35c607-16a9-44fa-8b1d-9aba5541e550" data-title="img" href="res/other/异世界蕾姆_1.png"><img alt="img" src="res/other/异世界蕾姆_1.png"/></a></p>
 <p>[TOC]</p>
 <blockquote>
-<p><a href="res/MySQL_&#x591A;&#x8868;&#x67E5;&#x8BE2;/MySQL&#x591A;&#x8868;&#x67E5;&#x8BE2;&#x4E0E;&#x4E8B;&#x52A1;&#x7684;&#x64CD;&#x4F5C;.pdf">MySQL&#x591A;&#x8868;&#x67E5;&#x8BE2;&#x4E0E;&#x4E8B;&#x52A1;&#x7684;&#x64CD;&#x4F5C;</a></p>
+<p><a href="res/MySQL_多表查询/MySQL多表查询与事务的操作.pdf">MySQL多表查询与事务的操作</a></p>
 </blockquote>
-<hr>
-<h1 id="&#x57FA;&#x672C;&#x4ECB;&#x7ECD;"><a name="&#x57FA;&#x672C;&#x4ECB;&#x7ECD;" class="anchor-navigation-ex-anchor" href="#&#x57FA;&#x672C;&#x4ECB;&#x7ECD;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x57FA;&#x672C;&#x4ECB;&#x7ECD;" class="plugin-anchor" href="#&#x57FA;&#x672C;&#x4ECB;&#x7ECD;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x57FA;&#x672C;&#x4ECB;&#x7ECD;</h1>
+<hr/>
+<h1 id="基本介绍">1 基本介绍</h1>
 <blockquote>
-<p><strong>&#x6982;&#x5FF5;</strong>&#xFF1A;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x591A;&#x4E2A;&#x6B65;&#x9AA4;&#x7684;&#x4E1A;&#x52A1;&#x64CD;&#x4F5C;&#xFF0C;&#x88AB;&#x4E8B;&#x52A1;&#x7BA1;&#x7406;&#xFF0C;&#x90A3;&#x4E48;&#x8FD9;&#x4E9B;&#x64CD;&#x4F5C;&#x8981;&#x4E48;&#x540C;&#x65F6;&#x6210;&#x529F;&#xFF0C;&#x8981;&#x4E48;&#x540C;&#x65F6;&#x5931;&#x8D25;&#x3002;</p>
-<p><strong>&#x64CD;&#x4F5C;</strong>&#xFF1A;</p>
+<p><strong>概念</strong>：一个包含多个步骤的业务操作，被事务管理，那么这些操作要么同时成功，要么同时失败。</p>
+<p><strong>操作</strong>：</p>
 </blockquote>
-<h2 id="&#x4E8B;&#x52A1;&#x56DB;&#x5927;&#x7279;&#x5F81;"><a name="&#x4E8B;&#x52A1;&#x56DB;&#x5927;&#x7279;&#x5F81;" class="anchor-navigation-ex-anchor" href="#&#x4E8B;&#x52A1;&#x56DB;&#x5927;&#x7279;&#x5F81;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4E8B;&#x52A1;&#x56DB;&#x5927;&#x7279;&#x5F81;" class="plugin-anchor" href="#&#x4E8B;&#x52A1;&#x56DB;&#x5927;&#x7279;&#x5F81;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8B;&#x52A1;&#x56DB;&#x5927;&#x7279;&#x5F81;</h2>
+<h2 id="事务四大特征">1.1 事务四大特征</h2>
 <blockquote>
-<p><code>&#x539F;&#x5B50;&#x6027;</code>&#xFF1A;&#x662F;&#x4E0D;&#x53EF;&#x5206;&#x5272;&#x7684;&#x6700;&#x5C0F;&#x64CD;&#x4F5C;&#x5355;&#x4F4D;&#xFF0C;&#x8981;&#x4E48;&#x540C;&#x65F6;&#x6210;&#x529F;&#xFF0C;&#x8981;&#x4E48;&#x540C;&#x65F6;&#x5931;&#x8D25;&#x3002;</p>
-<p><code>&#x6301;&#x4E45;&#x6027;</code>&#xFF1A;&#x5F53;&#x4E8B;&#x52A1;&#x63D0;&#x4EA4;&#x6216;&#x56DE;&#x6EDA;&#x540E;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x4F1A;&#x6301;&#x4E45;&#x5316;&#x7684;&#x4FDD;&#x5B58;&#x6570;&#x636E;&#x3002;</p>
-<p><code>&#x9694;&#x79BB;&#x6027;</code>&#xFF1A;&#x591A;&#x4E2A;&#x4E8B;&#x52A1;&#x4E4B;&#x95F4;&#x3002;&#x76F8;&#x4E92;&#x72EC;&#x7ACB;&#x3002;</p>
-<p><code>&#x4E00;&#x81F4;&#x6027;</code>&#xFF1A;&#x4E8B;&#x52A1;&#x64CD;&#x4F5C;&#x524D;&#x540E;&#xFF0C;&#x6570;&#x636E;&#x603B;&#x91CF;&#x4E0D;&#x53D8;</p>
+<p><code>原子性</code>：是不可分割的最小操作单位，要么同时成功，要么同时失败。</p>
+<p><code>持久性</code>：当事务提交或回滚后，数据库会持久化的保存数据。</p>
+<p><code>隔离性</code>：多个事务之间。相互独立。</p>
+<p><code>一致性</code>：事务操作前后，数据总量不变</p>
 </blockquote>
-<h2 id="&#x4E8B;&#x52A1;&#x9694;&#x79BB;&#x7EA7;&#x522B;"><a name="&#x4E8B;&#x52A1;&#x9694;&#x79BB;&#x7EA7;&#x522B;" class="anchor-navigation-ex-anchor" href="#&#x4E8B;&#x52A1;&#x9694;&#x79BB;&#x7EA7;&#x522B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4E8B;&#x52A1;&#x9694;&#x79BB;&#x7EA7;&#x522B;" class="plugin-anchor" href="#&#x4E8B;&#x52A1;&#x9694;&#x79BB;&#x7EA7;&#x522B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8B;&#x52A1;&#x9694;&#x79BB;&#x7EA7;&#x522B;</h2>
+<h2 id="事务隔离级别">1.2 事务隔离级别</h2>
 <blockquote>
-<p><strong>&#x6982;&#x5FF5;</strong>&#xFF1A;&#x591A;&#x4E2A;&#x4E8B;&#x52A1;&#x4E4B;&#x95F4;&#x9694;&#x79BB;&#x7684;&#xFF0C;&#x76F8;&#x4E92;&#x72EC;&#x7ACB;&#x7684;&#x3002;&#x4F46;&#x662F;&#x5982;&#x679C;&#x591A;&#x4E2A;&#x4E8B;&#x52A1;&#x64CD;&#x4F5C;&#x540C;&#x4E00;&#x6279;&#x6570;&#x636E;&#xFF0C;&#x5219;&#x4F1A;&#x5F15;&#x53D1;&#x4E00;&#x4E9B;&#x95EE;&#x9898;&#xFF0C;&#x8BBE;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x9694;&#x79BB;&#x7EA7;&#x522B;&#x5C31;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x8FD9;&#x4E9B;&#x95EE;&#x9898;</p>
-<p><strong>&#x5B58;&#x5728;&#x95EE;&#x9898;</strong></p>
-<p><code>&#x810F;&#x8BFB;</code>&#xFF1A;&#x4E00;&#x4E2A;&#x4E8B;&#x52A1;&#xFF0C;&#x8BFB;&#x53D6;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x4E8B;&#x52A1;&#x4E2D;&#x6CA1;&#x6709;&#x63D0;&#x4EA4;&#x7684;&#x6570;&#x636E;
-<code>&#x4E0D;&#x53EF;&#x91CD;&#x590D;&#x8BFB;(&#x865A;&#x8BFB;)</code>&#xFF1A;&#x5728;&#x540C;&#x4E00;&#x4E2A;&#x4E8B;&#x52A1;&#x4E2D;&#xFF0C;&#x4E24;&#x6B21;&#x8BFB;&#x53D6;&#x5230;&#x7684;&#x6570;&#x636E;&#x4E0D;&#x4E00;&#x6837;&#x3002;
-<code>&#x5E7B;&#x8BFB;</code>&#xFF1A;&#x4E00;&#x4E2A;&#x4E8B;&#x52A1;&#x64CD;&#x4F5C;(DML)&#x6570;&#x636E;&#x8868;&#x4E2D;&#x6240;&#x6709;&#x8BB0;&#x5F55;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x4E8B;&#x52A1;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x6761;&#x6570;&#x636E;&#xFF0C;&#x5219;&#x7B2C;&#x4E00;&#x4E2A;&#x4E8B;&#x52A1;&#x67E5;&#x8BE2;&#x4E0D;&#x5230;&#x81EA;&#x5DF1;&#x7684;&#x4FEE;&#x6539;&#x3002;</p>
-<p><strong>&#x9694;&#x79BB;&#x7EA7;&#x522B;</strong></p>
+<p><strong>概念</strong>：多个事务之间隔离的，相互独立的。但是如果多个事务操作同一批数据，则会引发一些问题，设置不同的隔离级别就可以解决这些问题</p>
+<p><strong>存在问题</strong></p>
+<p><code>脏读</code>：一个事务，读取到另一个事务中没有提交的数据
+<code>不可重复读(虚读)</code>：在同一个事务中，两次读取到的数据不一样。
+<code>幻读</code>：一个事务操作(DML)数据表中所有记录，另一个事务添加了一条数据，则第一个事务查询不到自己的修改。</p>
+<p><strong>隔离级别</strong></p>
 <ol>
-<li><p><code>read uncommitted</code>&#xFF1A;&#x8BFB;&#x672A;&#x63D0;&#x4EA4;(&#x4EA7;&#x751F;&#x7684;&#x95EE;&#x9898;&#xFF1A;&#x810F;&#x8BFB;&#x3001;&#x4E0D;&#x53EF;&#x91CD;&#x590D;&#x8BFB;&#x3001;&#x5E7B;&#x8BFB;)</p>
-<p>A&#x4E8B;&#x52A1;&#x8FD8;&#x6CA1;&#x6267;&#x884C;&#x63D0;&#x4EA4;&#xFF0C;B&#x4E8B;&#x52A1;&#x5DF2;&#x7ECF;&#x53EF;&#x4EE5;&#x67E5;&#x5230;&#x6570;&#x636E;&#x4E86;</p>
+<li><p><code>read uncommitted</code>：读未提交(产生的问题：脏读、不可重复读、幻读)</p>
+<p>A事务还没执行提交，B事务已经可以查到数据了</p>
 </li>
-<li><p><code>read committed</code>&#xFF1A;&#x8BFB;&#x5DF2;&#x63D0;&#x4EA4; (Oracle)(&#x4EA7;&#x751F;&#x7684;&#x95EE;&#x9898;&#xFF1A;&#x4E0D;&#x53EF;&#x91CD;&#x590D;&#x8BFB;&#x3001;&#x5E7B;&#x8BFB;)</p>
-<p>A&#x4E8B;&#x52A1;&#x6267;&#x884C;&#x63D0;&#x4EA4;&#xFF0C;B&#x4E8B;&#x52A1;&#x5728;&#x540C;&#x4E00;&#x6B21;&#x67E5;&#x8BE2;&#x4E2D;&#x67E5;&#x5230;&#x5DF2;&#x88AB;&#x4FEE;&#x6539;&#x7684;&#x6570;&#x636E;</p>
+<li><p><code>read committed</code>：读已提交 (Oracle)(产生的问题：不可重复读、幻读)</p>
+<p>A事务执行提交，B事务在同一次查询中查到已被修改的数据</p>
 </li>
-<li><p><code>repeatable read</code>&#xFF1A;&#x53EF;&#x91CD;&#x590D;&#x8BFB; (MySQL&#x9ED8;&#x8BA4;)(&#x4EA7;&#x751F;&#x7684;&#x95EE;&#x9898;&#xFF1A;&#x5E7B;&#x8BFB;)</p>
-<p>&#x5FFD;&#x7565;A&#x4E8B;&#x52A1;&#x6267;&#x884C;&#x72B6;&#x6001;&#xFF0C;B&#x4E8B;&#x52A1;&#x5728;&#x540C;&#x4E00;&#x6B21;&#x67E5;&#x8BE2;&#x4E2D;&#x6570;&#x636E;&#x4E0D;&#x4F1A;&#x53D8;&#x5316;</p>
+<li><p><code>repeatable read</code>：可重复读 (MySQL默认)(产生的问题：幻读)</p>
+<p>忽略A事务执行状态，B事务在同一次查询中数据不会变化</p>
 </li>
-<li><p><code>serializable</code>&#xFF1A;&#x4E32;&#x884C;&#x5316;(&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x6240;&#x6709;&#x7684;&#x95EE;&#x9898;)</p>
+<li><p><code>serializable</code>：串行化(可以解决所有的问题)</p>
 </li>
 </ol>
-<p>&#x6CE8;&#x610F;&#xFF1A;&#x9694;&#x79BB;&#x7EA7;&#x522B;&#x4ECE;&#x5C0F;&#x5230;&#x5927;&#x5B89;&#x5168;&#x6027;&#x8D8A;&#x6765;&#x8D8A;&#x9AD8;&#xFF0C;&#x4F46;&#x662F;&#x6548;&#x7387;&#x8D8A;&#x6765;&#x8D8A;&#x4F4E;</p>
-<p><strong>&#x6570;&#x636E;&#x5E93;&#x67E5;&#x8BE2;&#x9694;&#x79BB;&#x7EA7;&#x522B;</strong></p>
+<p>注意：隔离级别从小到大安全性越来越高，但是效率越来越低</p>
+<p><strong>数据库查询隔离级别</strong></p>
 <pre><code class="lang-mysql">select @@tx_isolation;
 </code></pre>
-<p><strong>&#x6570;&#x636E;&#x5E93;&#x8BBE;&#x7F6E;&#x9694;&#x79BB;&#x7EA7;&#x522B;</strong></p>
-<pre><code class="lang-mysql">set global transaction isolation level  &#x7EA7;&#x522B;&#x5B57;&#x7B26;&#x4E32;;
+<p><strong>数据库设置隔离级别</strong></p>
+<pre><code class="lang-mysql">set global transaction isolation level  级别字符串;
 </code></pre>
 </blockquote>
-<h2 id="&#x6F14;&#x793A;"><a name="&#x6F14;&#x793A;" class="anchor-navigation-ex-anchor" href="#&#x6F14;&#x793A;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x6F14;&#x793A;" class="plugin-anchor" href="#&#x6F14;&#x793A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6F14;&#x793A;</h2>
+<h2 id="演示">1.3 演示</h2>
 <pre><code class="lang-mysql">set global transaction isolation level read uncommitted;
 start transaction;
--- &#x8F6C;&#x8D26;&#x64CD;&#x4F5C;
+-- 转账操作
 update account set balance = balance - 500 where id = 1;
 update account set balance = balance + 500 where id = 2;
 </code></pre>
-<h1 id="&#x4F8B;&#x5B50;"><a name="&#x4F8B;&#x5B50;" class="anchor-navigation-ex-anchor" href="#&#x4F8B;&#x5B50;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4F8B;&#x5B50;" class="plugin-anchor" href="#&#x4F8B;&#x5B50;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F8B;&#x5B50;</h1>
+<h1 id="例子">2 例子</h1>
 <blockquote>
 <pre><code class="lang-mysql">CREATE TABLE account (
    id INT PRIMARY KEY AUTO_INCREMENT,
    NAME VARCHAR(10),
    balance DOUBLE
 );
--- &#x6DFB;&#x52A0;&#x6570;&#x636E;
-INSERT INTO account (NAME, balance) VALUES (&apos;zhangsan&apos;, 1000), (&apos;lisi&apos;, 1000);
+-- 添加数据
+INSERT INTO account (NAME, balance) VALUES ('zhangsan', 1000), ('lisi', 1000);
 SELECT * FROM account;
 UPDATE account SET balance = 1000;
 
--- &#x5F20;&#x4E09;&#x7ED9;&#x674E;&#x56DB;&#x8F6C;&#x8D26; 500 &#x5143;
--- 0. &#x5F00;&#x542F;&#x4E8B;&#x52A1;
-START TRANSACTION; -- &#x5931;&#x8D25;&#x7684;&#x8BDD;&#x4F1A;&#x56DE;&#x6EDA;&#x5230;&#x8FD9;&#x91CC;
--- 1. &#x5F20;&#x4E09;&#x8D26;&#x6237; -500
-UPDATE account SET balance = balance - 500 WHERE NAME = &apos;zhangsan&apos;;
--- 2. &#x674E;&#x56DB;&#x8D26;&#x6237; +500
--- &#x51FA;&#x9519;&#x4E86;...
-UPDATE account SET balance = balance + 500 WHERE NAME = &apos;lisi&apos;;
--- &#x53D1;&#x73B0;&#x6267;&#x884C;&#x6CA1;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x63D0;&#x4EA4;&#x4E8B;&#x52A1;
+-- 张三给李四转账 500 元
+-- 0. 开启事务
+START TRANSACTION; -- 失败的话会回滚到这里
+-- 1. 张三账户 -500
+UPDATE account SET balance = balance - 500 WHERE NAME = 'zhangsan';
+-- 2. 李四账户 +500
+-- 出错了...
+UPDATE account SET balance = balance + 500 WHERE NAME = 'lisi';
+-- 发现执行没有问题，提交事务
 COMMIT;
--- &#x53D1;&#x73B0;&#x51FA;&#x95EE;&#x9898;&#x4E86;&#xFF0C;&#x56DE;&#x6EDA;&#x4E8B;&#x52A1;
+-- 发现出问题了，回滚事务
 ROLLBACK;
 </code></pre>
 </blockquote>
-<h1 id="&#x4E8B;&#x52A1;&#x63D0;&#x4EA4;"><a name="&#x4E8B;&#x52A1;&#x63D0;&#x4EA4;" class="anchor-navigation-ex-anchor" href="#&#x4E8B;&#x52A1;&#x63D0;&#x4EA4;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4E8B;&#x52A1;&#x63D0;&#x4EA4;" class="plugin-anchor" href="#&#x4E8B;&#x52A1;&#x63D0;&#x4EA4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4E8B;&#x52A1;&#x63D0;&#x4EA4;</h1>
+<h1 id="事务提交">3 事务提交</h1>
 <blockquote>
-<p><strong>&#x81EA;&#x52A8;&#x63D0;&#x4EA4;</strong>&#xFF1A;</p>
+<p><strong>自动提交</strong>：</p>
 <blockquote>
-<p>mysql&#x5C31;&#x662F;&#x81EA;&#x52A8;&#x63D0;&#x4EA4;&#x7684;</p>
-<p>&#x4E00;&#x6761;DML(&#x589E;&#x5220;&#x6539;)&#x8BED;&#x53E5;&#x4F1A;&#x81EA;&#x52A8;&#x63D0;&#x4EA4;&#x4E00;&#x6B21;&#x4E8B;&#x52A1;</p>
+<p>mysql就是自动提交的</p>
+<p>一条DML(增删改)语句会自动提交一次事务</p>
 </blockquote>
-<p><strong>&#x624B;&#x52A8;&#x63D0;&#x4EA4;</strong>&#xFF1A;</p>
+<p><strong>手动提交</strong>：</p>
 <blockquote>
-<p>Oracle &#x6570;&#x636E;&#x5E93;&#x9ED8;&#x8BA4;&#x662F;&#x624B;&#x52A8;&#x63D0;&#x4EA4;&#x4E8B;&#x52A1;</p>
-<p>&#x9700;&#x8981;&#x5148;&#x5F00;&#x542F;&#x4E8B;&#x52A1;&#xFF0C;&#x518D;&#x63D0;&#x4EA4;</p>
+<p>Oracle 数据库默认是手动提交事务</p>
+<p>需要先开启事务，再提交</p>
 </blockquote>
-<p><strong>&#x4FEE;&#x6539;&#x4E8B;&#x52A1;&#x7684;&#x9ED8;&#x8BA4;&#x63D0;&#x4EA4;&#x65B9;&#x5F0F;</strong>&#xFF1A;</p>
+<p><strong>修改事务的默认提交方式</strong>：</p>
 <blockquote>
-<p>&#x67E5;&#x770B;&#x4E8B;&#x52A1;&#x7684;&#x9ED8;&#x8BA4;&#x63D0;&#x4EA4;&#x65B9;&#x5F0F;</p>
-<pre><code class="lang-mysql">SELECT @@autocommit; -- 1 &#x4EE3;&#x8868;&#x81EA;&#x52A8;&#x63D0;&#x4EA4;  0 &#x4EE3;&#x8868;&#x624B;&#x52A8;&#x63D0;&#x4EA4;
+<p>查看事务的默认提交方式</p>
+<pre><code class="lang-mysql">SELECT @@autocommit; -- 1 代表自动提交  0 代表手动提交
 </code></pre>
-<p>&#x4FEE;&#x6539;&#x9ED8;&#x8BA4;&#x63D0;&#x4EA4;&#x65B9;&#x5F0F;</p>
+<p>修改默认提交方式</p>
 <pre><code class="lang-mysql">set @@autocommit = 0;
 </code></pre>
 </blockquote>
 </blockquote>
-<p></p><footer class="page-footer"><span class="copyright">Copyright &#xA9; narutohyc.com 2022 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2022-02-14 09:16:40
-</span></footer><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz',appKey: 'FOXMptWOHC7cU1FxXt0LJj4o',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script><p></p>
-
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
+<p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2022 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
+2022-02-15 13:20:00
+</span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz',appKey: 'FOXMptWOHC7cU1FxXt0LJj4o',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script><p></p>
+</section>
 </div>
-
-                        </div>
-                    </div>
-                
-            </div>
-
-            
-                
-                <a href="MySQL_多表查询.html" class="navigation navigation-prev " aria-label="Previous page: MySQL_多表查询">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="MySQL_数据库设计.html" class="navigation navigation-next " aria-label="Next page: MySQL_数据库设计">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
-        
-    </div>
-
-    <script>
+<div class="search-results">
+<div class="has-results">
+<h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+<ul class="search-results-list"></ul>
+</div>
+<div class="no-results">
+<h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<a aria-label="Previous page: MySQL_多表查询" class="navigation navigation-prev" href="MySQL_多表查询.html">
+<i class="fa fa-angle-left"></i>
+</a>
+<a aria-label="Next page: MySQL_数据库设计" class="navigation navigation-next" href="MySQL_数据库设计.html">
+<i class="fa fa-angle-right"></i>
+</a>
+</div>
+<script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"MySQL_事务","level":"1.8.4","depth":2,"next":{"title":"MySQL_数据库设计","level":"1.8.5","depth":2,"path":"chapters/MySQL_数据库设计.md","ref":"chapters/MySQL_数据库设计.md","articles":[]},"previous":{"title":"MySQL_多表查询","level":"1.8.3","depth":2,"path":"chapters/MySQL_多表查询.md","ref":"chapters/MySQL_多表查询.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","favicon","search-plus","-lunr","-search","lightbox","change_girls","theme-comscore","valine","pageview-count","favicon-absolute"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"change_girls":{"time":10,"urls":["https://plc.jj20.com/up/allimg/1115/012122143136/220121143136-2.jpg","https://plc.jj20.com/up/allimg/1115/111R1094405/21111P94405-1.jpg"]},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://i.loli.net/2021/01/12/Cdunm9AoBcHF5MI.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://i.loli.net/2021/01/12/gmzASfCciIFXTyr.png","wechatText":"微信打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"","lang":"zh-CN","pageSize":10,"placeholder":"Just go go","recordIP":false,"appId":"jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz","appKey":"FOXMptWOHC7cU1FxXt0LJj4o"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java相关学习记录","language":"zh-hans","links":{"sidebar":{"我的狗窝":"https://github.com/narutohyc"}},"gitbook":"*","description":"记录 Java 的学习和一些技巧的使用"},"file":{"path":"chapters/MySQL_事务.md","mtime":"2022-02-14T09:16:40.557Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-14T09:18:14.959Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"MySQL_事务","level":"1.8.4","depth":2,"next":{"title":"MySQL_数据库设计","level":"1.8.5","depth":2,"path":"chapters/MySQL_数据库设计.md","ref":"chapters/MySQL_数据库设计.md","articles":[]},"previous":{"title":"MySQL_多表查询","level":"1.8.3","depth":2,"path":"chapters/MySQL_多表查询.md","ref":"chapters/MySQL_多表查询.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","favicon","search-plus","-lunr","-search","lightbox","change_girls","theme-comscore","valine","pageview-count","favicon-absolute"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"change_girls":{"time":10,"urls":["https://plc.jj20.com/up/allimg/1115/012122143136/220121143136-2.jpg","https://plc.jj20.com/up/allimg/1115/111R1094405/21111P94405-1.jpg"]},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://i.loli.net/2021/01/12/Cdunm9AoBcHF5MI.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://i.loli.net/2021/01/12/gmzASfCciIFXTyr.png","wechatText":"微信打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"","lang":"zh-CN","pageSize":10,"placeholder":"Just go go","recordIP":false,"appId":"jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz","appKey":"FOXMptWOHC7cU1FxXt0LJj4o"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java相关学习记录","language":"zh-hans","links":{"sidebar":{"我的狗窝":"https://github.com/narutohyc"}},"gitbook":"*","description":"记录 Java 的学习和一些技巧的使用"},"file":{"path":"chapters/MySQL_事务.md","mtime":"2022-02-15T13:20:00.833Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-15T13:21:52.737Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
-
-        
-    
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
-        
-    
-        
-        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
-        
-    
-
-    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
-
-    </body>
+<script src="../gitbook/gitbook.js"></script>
+<script src="../gitbook/theme.js"></script>
+<script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+<script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+<script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+<script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+<script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+</body>
 </html>
-

@@ -1,1052 +1,617 @@
-
 <!DOCTYPE HTML>
-<html lang="zh-hans" >
-    <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>多线程_ JUC集合 · Java相关学习记录</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
-        <meta name="author" content="narutohyc">
-        
-        
-    
-    
-    <link rel="stylesheet" href="../gitbook/style.css">
-
-    
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
-                
-            
-        
-
-    
-
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-
-    
-
-        
-    
-    
-    
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
-
-    
-    <link rel="next" href="多线程_JUC线程池.html" />
-    
-    
-    <link rel="prev" href="多线程_JUC锁集合 .html" />
-    
-
-    
-        <link rel="shortcut icon" href="./chapters/res/other/favicon.ico" type="image/x-icon">
-    
-    
-    
-    
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./chapters/res/other/favicon.ico">
-    
-    
-        
-    
-    
-        
-    
-
-    
-    
-    
-    
-
-    <style>
+<html lang="zh-hans">
+<head>
+<meta charset="utf-8"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>多线程_ JUC集合 · Java相关学习记录</title>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="" name="description"/>
+<meta content="GitBook 3.2.3" name="generator"/>
+<meta content="narutohyc" name="author"/>
+<link href="../gitbook/style.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-splitter/splitter.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchors/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-donate/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-code/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-search-plus/search.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-change_girls/girls.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-pageview-count/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-highlight/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-fontsettings/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-theme-comscore/test.css" rel="stylesheet"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<link href="../gitbook/images/apple-touch-icon-precomposed-152.png" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<link href="../gitbook/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="多线程_JUC线程池.html" rel="next"/>
+<link href="多线程_JUC锁集合 .html" rel="prev"/>
+<link href="./chapters/res/other/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="./chapters/res/other/favicon.ico" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<style>
     @media only screen and (max-width: 640px) {
         .book-header .hidden-mobile {
             display: none;
         }
     }
     </style>
-    <script>
+<script>
         window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]};
     </script>
-
-    </head>
-    <body>
-        
+</head>
+<body>
 <div class="book">
-    <div class="book-summary">
-        
-            
+<div class="book-summary">
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="输入并搜索" />
+<input placeholder="输入并搜索" type="text"/>
 </div>
-
-            
-                <nav role="navigation">
-                
-
-
+<nav role="navigation">
 <ul class="summary">
-    
-    
-    
-        
-        <li>
-            <a href="https://github.com/narutohyc" target="_blank" class="custom-link">我的狗窝</a>
-        </li>
-    
-    
-
-    
-    <li class="divider"></li>
-    
-
-    
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="../">
-            
-                <a href="../">
-            
-                    
-                        <b>1.1.</b>
+<li>
+<a class="custom-link" href="https://github.com/narutohyc" target="_blank">我的狗窝</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-level="1.1" data-path="../">
+<a href="../">
+<b>1.1.</b>
                     
                     Introduction
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2" data-path="设计模式.html">
-            
-                <a href="设计模式.html">
-            
-                    
-                        <b>1.2.</b>
+</li>
+<li class="chapter" data-level="1.2" data-path="设计模式.html">
+<a href="设计模式.html">
+<b>1.2.</b>
                     
                     设计模式
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" data-path="多线程.md">
-            
-                <span>
-            
-                    
-                        <b>1.3.</b>
+</li>
+<li class="chapter" data-level="1.3" data-path="多线程.md">
+<span>
+<b>1.3.</b>
                     
                     多线程
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.3.1" data-path="多线程_基础篇.html">
-            
-                <a href="多线程_基础篇.html">
-            
-                    
-                        <b>1.3.1.</b>
+<li class="chapter" data-level="1.3.1" data-path="多线程_基础篇.html">
+<a href="多线程_基础篇.html">
+<b>1.3.1.</b>
                     
                     多线程_基础篇
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.2" data-path="多线程_锁.html">
-            
-                <a href="多线程_锁.html">
-            
-                    
-                        <b>1.3.2.</b>
+</li>
+<li class="chapter" data-level="1.3.2" data-path="多线程_锁.html">
+<a href="多线程_锁.html">
+<b>1.3.2.</b>
                     
                     多线程_锁
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.3" data-path="多线程_JUC原子类.html">
-            
-                <a href="多线程_JUC原子类.html">
-            
-                    
-                        <b>1.3.3.</b>
+</li>
+<li class="chapter" data-level="1.3.3" data-path="多线程_JUC原子类.html">
+<a href="多线程_JUC原子类.html">
+<b>1.3.3.</b>
                     
                     多线程_JUC原子类
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.4" data-path="多线程_JUC锁集合 .html">
-            
-                <a href="多线程_JUC锁集合 .html">
-            
-                    
-                        <b>1.3.4.</b>
+</li>
+<li class="chapter" data-level="1.3.4" data-path="多线程_JUC锁集合 .html">
+<a href="多线程_JUC锁集合 .html">
+<b>1.3.4.</b>
                     
                     多线程_JUC锁集合 
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter active" data-level="1.3.5" data-path="多线程_ JUC集合.html">
-            
-                <a href="多线程_ JUC集合.html">
-            
-                    
-                        <b>1.3.5.</b>
+</li>
+<li class="chapter active" data-level="1.3.5" data-path="多线程_ JUC集合.html">
+<a href="多线程_ JUC集合.html">
+<b>1.3.5.</b>
                     
                     多线程_ JUC集合
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.6" data-path="多线程_JUC线程池.html">
-            
-                <a href="多线程_JUC线程池.html">
-            
-                    
-                        <b>1.3.6.</b>
+</li>
+<li class="chapter" data-level="1.3.6" data-path="多线程_JUC线程池.html">
+<a href="多线程_JUC线程池.html">
+<b>1.3.6.</b>
                     
                     多线程_JUC线程池
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.7" data-path="多线程_生产者消费者.html">
-            
-                <a href="多线程_生产者消费者.html">
-            
-                    
-                        <b>1.3.7.</b>
+</li>
+<li class="chapter" data-level="1.3.7" data-path="多线程_生产者消费者.html">
+<a href="多线程_生产者消费者.html">
+<b>1.3.7.</b>
                     
                     多线程_生产者消费者
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4" data-path="IDEA快捷键.html">
-            
-                <a href="IDEA快捷键.html">
-            
-                    
-                        <b>1.4.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.4" data-path="IDEA快捷键.html">
+<a href="IDEA快捷键.html">
+<b>1.4.</b>
                     
                     IDEA快捷键
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" data-path="Spring注解.md">
-            
-                <span>
-            
-                    
-                        <b>1.5.</b>
+</li>
+<li class="chapter" data-level="1.5" data-path="Spring注解.md">
+<span>
+<b>1.5.</b>
                     
                     Spring注解
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.5.1" data-path="Spring注解_介绍.html">
-            
-                <a href="Spring注解_介绍.html">
-            
-                    
-                        <b>1.5.1.</b>
+<li class="chapter" data-level="1.5.1" data-path="Spring注解_介绍.html">
+<a href="Spring注解_介绍.html">
+<b>1.5.1.</b>
                     
                     Spring注解_介绍
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.2" data-path="Spring注解_常用注解.html">
-            
-                <a href="Spring注解_常用注解.html">
-            
-                    
-                        <b>1.5.2.</b>
+</li>
+<li class="chapter" data-level="1.5.2" data-path="Spring注解_常用注解.html">
+<a href="Spring注解_常用注解.html">
+<b>1.5.2.</b>
                     
                     Spring注解_常用注解
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.3" data-path="Spring注解_Spring入门篇.html">
-            
-                <a href="Spring注解_Spring入门篇.html">
-            
-                    
-                        <b>1.5.3.</b>
+</li>
+<li class="chapter" data-level="1.5.3" data-path="Spring注解_Spring入门篇.html">
+<a href="Spring注解_Spring入门篇.html">
+<b>1.5.3.</b>
                     
                     Spring注解_Spring入门篇
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6" data-path="Java基础.md">
-            
-                <span>
-            
-                    
-                        <b>1.6.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.6" data-path="Java基础.md">
+<span>
+<b>1.6.</b>
                     
                     Java基础
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.6.1" data-path="Java基础_集合.html">
-            
-                <a href="Java基础_集合.html">
-            
-                    
-                        <b>1.6.1.</b>
+<li class="chapter" data-level="1.6.1" data-path="Java基础_集合.html">
+<a href="Java基础_集合.html">
+<b>1.6.1.</b>
                     
                     Java基础_集合
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.2" data-path="Java基础_泛型.html">
-            
-                <a href="Java基础_泛型.html">
-            
-                    
-                        <b>1.6.2.</b>
+</li>
+<li class="chapter" data-level="1.6.2" data-path="Java基础_泛型.html">
+<a href="Java基础_泛型.html">
+<b>1.6.2.</b>
                     
                     Java基础_泛型
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.3" data-path="Java基础_打jar包.html">
-            
-                <a href="Java基础_打jar包.html">
-            
-                    
-                        <b>1.6.3.</b>
+</li>
+<li class="chapter" data-level="1.6.3" data-path="Java基础_打jar包.html">
+<a href="Java基础_打jar包.html">
+<b>1.6.3.</b>
                     
                     Java基础_打jar包
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.4" data-path="Java基础_正则匹配.html">
-            
-                <a href="Java基础_正则匹配.html">
-            
-                    
-                        <b>1.6.4.</b>
+</li>
+<li class="chapter" data-level="1.6.4" data-path="Java基础_正则匹配.html">
+<a href="Java基础_正则匹配.html">
+<b>1.6.4.</b>
                     
                     Java基础_正则匹配
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.5" data-path="Java基础_反射机制.html">
-            
-                <a href="Java基础_反射机制.html">
-            
-                    
-                        <b>1.6.5.</b>
+</li>
+<li class="chapter" data-level="1.6.5" data-path="Java基础_反射机制.html">
+<a href="Java基础_反射机制.html">
+<b>1.6.5.</b>
                     
                     Java基础_反射机制
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.6" data-path="Java基础_对象正反序列化.html">
-            
-                <a href="Java基础_对象正反序列化.html">
-            
-                    
-                        <b>1.6.6.</b>
+</li>
+<li class="chapter" data-level="1.6.6" data-path="Java基础_对象正反序列化.html">
+<a href="Java基础_对象正反序列化.html">
+<b>1.6.6.</b>
                     
                     Java基础_对象正反序列化
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.7" data-path="Java基础_读取配置文件.html">
-            
-                <a href="Java基础_读取配置文件.html">
-            
-                    
-                        <b>1.6.7.</b>
+</li>
+<li class="chapter" data-level="1.6.7" data-path="Java基础_读取配置文件.html">
+<a href="Java基础_读取配置文件.html">
+<b>1.6.7.</b>
                     
                     Java基础_读取配置文件
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.8" data-path="Java基础_解析与生成XML.html">
-            
-                <a href="Java基础_解析与生成XML.html">
-            
-                    
-                        <b>1.6.8.</b>
+</li>
+<li class="chapter" data-level="1.6.8" data-path="Java基础_解析与生成XML.html">
+<a href="Java基础_解析与生成XML.html">
+<b>1.6.8.</b>
                     
                     Java基础_解析与生成XML
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.9" data-path="Java基础_后台服务器开发.html">
-            
-                <a href="Java基础_后台服务器开发.html">
-            
-                    
-                        <b>1.6.9.</b>
+</li>
+<li class="chapter" data-level="1.6.9" data-path="Java基础_后台服务器开发.html">
+<a href="Java基础_后台服务器开发.html">
+<b>1.6.9.</b>
                     
                     Java基础_后台服务器开发
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.10" data-path="Java基础_四舍五入.html">
-            
-                <a href="Java基础_四舍五入.html">
-            
-                    
-                        <b>1.6.10.</b>
+</li>
+<li class="chapter" data-level="1.6.10" data-path="Java基础_四舍五入.html">
+<a href="Java基础_四舍五入.html">
+<b>1.6.10.</b>
                     
                     Java基础_四舍五入
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7" data-path="Java进阶.md">
-            
-                <span>
-            
-                    
-                        <b>1.7.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.7" data-path="Java进阶.md">
+<span>
+<b>1.7.</b>
                     
                     Java进阶
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.7.1" data-path="Java进阶_反射.html">
-            
-                <a href="Java进阶_反射.html">
-            
-                    
-                        <b>1.7.1.</b>
+<li class="chapter" data-level="1.7.1" data-path="Java进阶_反射.html">
+<a href="Java进阶_反射.html">
+<b>1.7.1.</b>
                     
                     Java进阶_反射
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.2" data-path="Java进阶_注解.html">
-            
-                <a href="Java进阶_注解.html">
-            
-                    
-                        <b>1.7.2.</b>
+</li>
+<li class="chapter" data-level="1.7.2" data-path="Java进阶_注解.html">
+<a href="Java进阶_注解.html">
+<b>1.7.2.</b>
                     
                     Java进阶_注解
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8" data-path="MySQL.md">
-            
-                <span>
-            
-                    
-                        <b>1.8.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.8" data-path="MySQL.md">
+<span>
+<b>1.8.</b>
                     
                     MySQL
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.8.1" data-path="MySQL_基础.html">
-            
-                <a href="MySQL_基础.html">
-            
-                    
-                        <b>1.8.1.</b>
+<li class="chapter" data-level="1.8.1" data-path="MySQL_基础.html">
+<a href="MySQL_基础.html">
+<b>1.8.1.</b>
                     
                     MySQL_基础
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.2" data-path="MySQL_约束.html">
-            
-                <a href="MySQL_约束.html">
-            
-                    
-                        <b>1.8.2.</b>
+</li>
+<li class="chapter" data-level="1.8.2" data-path="MySQL_约束.html">
+<a href="MySQL_约束.html">
+<b>1.8.2.</b>
                     
                     MySQL_约束
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.3" data-path="MySQL_多表查询.html">
-            
-                <a href="MySQL_多表查询.html">
-            
-                    
-                        <b>1.8.3.</b>
+</li>
+<li class="chapter" data-level="1.8.3" data-path="MySQL_多表查询.html">
+<a href="MySQL_多表查询.html">
+<b>1.8.3.</b>
                     
                     MySQL_多表查询
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.4" data-path="MySQL_事务.html">
-            
-                <a href="MySQL_事务.html">
-            
-                    
-                        <b>1.8.4.</b>
+</li>
+<li class="chapter" data-level="1.8.4" data-path="MySQL_事务.html">
+<a href="MySQL_事务.html">
+<b>1.8.4.</b>
                     
                     MySQL_事务
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.5" data-path="MySQL_数据库设计.html">
-            
-                <a href="MySQL_数据库设计.html">
-            
-                    
-                        <b>1.8.5.</b>
+</li>
+<li class="chapter" data-level="1.8.5" data-path="MySQL_数据库设计.html">
+<a href="MySQL_数据库设计.html">
+<b>1.8.5.</b>
                     
                     MySQL_数据库设计
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9" data-path="JDBC.md">
-            
-                <span>
-            
-                    
-                        <b>1.9.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.9" data-path="JDBC.md">
+<span>
+<b>1.9.</b>
                     
                     JDBC
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.9.1" data-path="JDBC_JDBC基础.html">
-            
-                <a href="JDBC_JDBC基础.html">
-            
-                    
-                        <b>1.9.1.</b>
+<li class="chapter" data-level="1.9.1" data-path="JDBC_JDBC基础.html">
+<a href="JDBC_JDBC基础.html">
+<b>1.9.1.</b>
                     
                     JDBC_JDBC基础
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9.2" data-path="JDBC_JDBC连接池.html">
-            
-                <a href="JDBC_JDBC连接池.html">
-            
-                    
-                        <b>1.9.2.</b>
+</li>
+<li class="chapter" data-level="1.9.2" data-path="JDBC_JDBC连接池.html">
+<a href="JDBC_JDBC连接池.html">
+<b>1.9.2.</b>
                     
                     JDBC_JDBC连接池
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9.3" data-path="JDBC_JDBCTemplate.html">
-            
-                <a href="JDBC_JDBCTemplate.html">
-            
-                    
-                        <b>1.9.3.</b>
+</li>
+<li class="chapter" data-level="1.9.3" data-path="JDBC_JDBCTemplate.html">
+<a href="JDBC_JDBCTemplate.html">
+<b>1.9.3.</b>
                     
                     JDBC_JDBCTemplate
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.10" data-path="Spark集群搭建.html">
-            
-                <a href="Spark集群搭建.html">
-            
-                    
-                        <b>1.10.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.10" data-path="Spark集群搭建.html">
+<a href="Spark集群搭建.html">
+<b>1.10.</b>
                     
                     Spark集群搭建
             
                 </a>
-            
-
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+</li>
+<li class="divider"></li>
+<li>
+<a class="gitbook-link" href="https://www.gitbook.com" target="blank">
             本书使用 GitBook 发布
         </a>
-    </li>
+</li>
 </ul>
-
-
-                </nav>
-            
-        
-    </div>
-
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
-
-<div class="book-header" role="navigation">
-    
-
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >多线程_ JUC集合</a>
-    </h1>
+</nav>
 </div>
-
-
-
-
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="..">多线程_ JUC集合</a>
+</h1>
+</div>
+<div class="page-wrapper" role="main" tabindex="-1">
+<div class="page-inner">
 <div class="search-plus" id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#juc&#x96C6;&#x5408;"><b></b>JUC&#x96C6;&#x5408;</a></li><li><span class="title-icon "></span><a href="#copyonwritearraylist"><b></b>CopyOnWriteArrayList</a></li><ul><li><span class="title-icon "></span><a href="#copyonwritearraylist&#x793A;&#x4F8B;"><b></b>CopyOnWriteArrayList&#x793A;&#x4F8B;</a></li></ul><li><span class="title-icon "></span><a href="#concurrentskiplistmap"><b></b>ConcurrentSkipListMap</a></li><ul><li><span class="title-icon "></span><a href="#concurrentskiplistmap&#x793A;&#x4F8B;"><b></b>ConcurrentSkipListMap&#x793A;&#x4F8B;</a></li></ul></ul></div><a href="#juc&#x96C6;&#x5408;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><a href="res/other/&#x5F02;&#x4E16;&#x754C;&#x857E;&#x59C6;_0.jpg" data-lightbox="9f29b2b6-de0f-401d-bf6c-3b89255e079d" data-title="img"><img src="res/other/&#x5F02;&#x4E16;&#x754C;&#x857E;&#x59C6;_0.jpg" alt="img"></a></p>
+<div class="search-noresults">
+<section class="normal markdown-section">
+<div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon"></span><a href="#juc集合">1 JUC集合</a></li><li><span class="title-icon"></span><a href="#copyonwritearraylist">2 CopyOnWriteArrayList</a></li><ul><li><span class="title-icon"></span><a href="#copyonwritearraylist示例">2.1 CopyOnWriteArrayList示例</a></li></ul><li><span class="title-icon"></span><a href="#concurrentskiplistmap">3 ConcurrentSkipListMap</a></li><ul><li><span class="title-icon"></span><a href="#concurrentskiplistmap示例">3.1 ConcurrentSkipListMap示例</a></li></ul></ul></div><a href="#juc集合" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><a data-lightbox="11bfa9bd-e37d-4b0d-be98-eb3d5574e5e4" data-title="img" href="res/other/异世界蕾姆_0.jpg"><img alt="img" src="res/other/异世界蕾姆_0.jpg"/></a></p>
 <p>[TOC]</p>
-<h1 id="juc&#x96C6;&#x5408;"><a name="juc&#x96C6;&#x5408;" class="anchor-navigation-ex-anchor" href="#juc&#x96C6;&#x5408;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="juc&#x96C6;&#x5408;" class="plugin-anchor" href="#juc&#x96C6;&#x5408;"><i class="fa fa-link" aria-hidden="true"></i></a>JUC&#x96C6;&#x5408;</h1>
-<p><strong>List&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x4E3B;&#x8981;&#x6709;: LinkedList, ArrayList, Vector, Stack&#x3002;</strong></p>
-<p>(01) LinkedList&#x662F;&#x53CC;&#x5411;&#x94FE;&#x8868;&#x5B9E;&#x73B0;&#x7684;&#x53CC;&#x7AEF;&#x961F;&#x5217;&#xFF1B;&#x5B83;&#x4E0D;&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x53EA;&#x9002;&#x7528;&#x4E8E;&#x5355;&#x7EBF;&#x7A0B;&#x3002;
-(02) ArrayList&#x662F;&#x6570;&#x7EC4;&#x5B9E;&#x73B0;&#x7684;&#x961F;&#x5217;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x52A8;&#x6001;&#x6570;&#x7EC4;&#xFF1B;&#x5B83;&#x4E5F;&#x4E0D;&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x53EA;&#x9002;&#x7528;&#x4E8E;&#x5355;&#x7EBF;&#x7A0B;&#x3002;
-(03) Vector&#x662F;&#x6570;&#x7EC4;&#x5B9E;&#x73B0;&#x7684;&#x77E2;&#x91CF;&#x961F;&#x5217;&#xFF0C;&#x5B83;&#x4E5F;&#x4E00;&#x4E2A;&#x52A8;&#x6001;&#x6570;&#x7EC4;&#xFF1B;&#x4E0D;&#x8FC7;&#x548C;ArrayList&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;Vector&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x5B83;&#x652F;&#x6301;&#x5E76;&#x53D1;&#x3002;
-(04) Stack&#x662F;Vector&#x5B9E;&#x73B0;&#x7684;&#x6808;&#xFF1B;&#x548C;Vector&#x4E00;&#x6837;&#xFF0C;&#x5B83;&#x4E5F;&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x3002;</p>
-<p> <strong>Set&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x4E3B;&#x8981;&#x6709;: HastSet&#x548C;TreeSet&#x3002;</strong></p>
-<p>(01) HashSet&#x662F;&#x4E00;&#x4E2A;&#x6CA1;&#x6709;&#x91CD;&#x590D;&#x5143;&#x7D20;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x5B83;&#x901A;&#x8FC7;HashMap&#x5B9E;&#x73B0;&#x7684;&#xFF1B;HashSet&#x4E0D;&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x53EA;&#x9002;&#x7528;&#x4E8E;&#x5355;&#x7EBF;&#x7A0B;&#x3002;
-(02) TreeSet&#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x6CA1;&#x6709;&#x91CD;&#x590D;&#x5143;&#x7D20;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x4E0D;&#x8FC7;&#x548C;HashSet&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;TreeSet&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x662F;&#x6709;&#x5E8F;&#x7684;&#xFF1B;&#x5B83;&#x662F;&#x901A;&#x8FC7;TreeMap&#x5B9E;&#x73B0;&#x7684;&#xFF1B;TreeSet&#x4E5F;&#x4E0D;&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x53EA;&#x9002;&#x7528;&#x4E8E;&#x5355;&#x7EBF;&#x7A0B;&#x3002;</p>
-<p> <strong>Map&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x4E3B;&#x8981;&#x6709;: HashMap&#xFF0C;WeakHashMap, Hashtable&#x548C;TreeMap&#x3002;</strong></p>
-<p>(01) HashMap&#x662F;&#x5B58;&#x50A8;&#x201C;&#x952E;-&#x503C;&#x5BF9;&#x201D;&#x7684;&#x54C8;&#x5E0C;&#x8868;&#xFF1B;&#x5B83;&#x4E0D;&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x53EA;&#x9002;&#x7528;&#x4E8E;&#x5355;&#x7EBF;&#x7A0B;&#x3002;
-(02) WeakHashMap&#x662F;&#x4E5F;&#x662F;&#x54C8;&#x5E0C;&#x8868;&#xFF1B;&#x548C;HashMap&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;HashMap&#x7684;&#x201C;&#x952E;&#x201D;&#x662F;&#x5F3A;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#xFF0C;&#x800C;WeakHashMap&#x7684;&#x201C;&#x952E;&#x201D;&#x662F;&#x5F31;&#x5F15;&#x7528;&#x7C7B;&#x578B;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x5F53;WeakHashMap &#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x952E;&#x4E0D;&#x518D;&#x6B63;&#x5E38;&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x4F1A;&#x88AB;&#x4ECE;WeakHashMap&#x4E2D;&#x88AB;&#x81EA;&#x52A8;&#x79FB;&#x9664;&#x3002;WeakHashMap&#x4E5F;&#x4E0D;&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x53EA;&#x9002;&#x7528;&#x4E8E;&#x5355;&#x7EBF;&#x7A0B;&#x3002;
-(03) Hashtable&#x4E5F;&#x662F;&#x54C8;&#x5E0C;&#x8868;&#xFF1B;&#x548C;HashMap&#x4E0D;&#x540C;&#x7684;&#x662F;&#xFF0C;Hashtable&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x652F;&#x6301;&#x5E76;&#x53D1;&#x3002;
-(04) TreeMap&#x4E5F;&#x662F;&#x54C8;&#x5E0C;&#x8868;&#xFF0C;&#x4E0D;&#x8FC7;TreeMap&#x4E2D;&#x7684;&#x201C;&#x952E;-&#x503C;&#x5BF9;&#x201D;&#x662F;&#x6709;&#x5E8F;&#x7684;&#xFF0C;&#x5B83;&#x662F;&#x901A;&#x8FC7;R-B Tree(&#x7EA2;&#x9ED1;&#x6811;)&#x5B9E;&#x73B0;&#x7684;&#xFF1B;TreeMap&#x4E0D;&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x53EA;&#x9002;&#x7528;&#x4E8E;&#x5355;&#x7EBF;&#x7A0B;&#x3002;
-&#x66F4;&#x591A;&#x5173;&#x4E8E;&#x8FD9;&#x4E9B;&#x96C6;&#x5408;&#x7C7B;&#x7684;&#x4ECB;&#x7ECD;&#xFF0C;&#x53EF;&#x4EE5;&#x53C2;&#x8003;&#x201C;Java &#x96C6;&#x5408;&#x7CFB;&#x5217;&#x76EE;&#x5F55;(Category)&#x201D;&#x3002;</p>
-<pre><code class="lang-java">&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x524D;&#x9762;&#x4ECB;&#x7ECD;&#x96C6;&#x5408;&#x7C7B;&#x7EDF;&#x79F0;&#x4E3A;&#x201D;java&#x96C6;&#x5408;&#x5305;&#x201C;&#x3002;java&#x96C6;&#x5408;&#x5305;&#x5927;&#x591A;&#x662F;&#x201C;&#x975E;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x201D;&#xFF0C;&#x867D;&#x7136;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;Collections&#x5DE5;&#x5177;&#x7C7B;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x83B7;&#x53D6;java&#x96C6;&#x5408;&#x5305;&#x5BF9;&#x5E94;&#x7684;&#x540C;&#x6B65;&#x7C7B;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E9B;&#x540C;&#x6B65;&#x7C7B;&#x7684;&#x5E76;&#x53D1;&#x6548;&#x7387;&#x5E76;&#x4E0D;&#x662F;&#x5F88;&#x9AD8;&#x3002;&#x4E3A;&#x4E86;&#x66F4;&#x597D;&#x7684;&#x652F;&#x6301;&#x9AD8;&#x5E76;&#x53D1;&#x4EFB;&#x52A1;&#xFF0C;&#x5E76;&#x53D1;&#x5927;&#x5E08;Doug Lea&#x5728;JUC(java.util.concurrent)&#x5305;&#x4E2D;&#x6DFB;&#x52A0;&#x4E86;java&#x96C6;&#x5408;&#x5305;&#x4E2D;&#x5355;&#x7EBF;&#x7A0B;&#x7C7B;&#x7684;&#x5BF9;&#x5E94;&#x7684;&#x652F;&#x6301;&#x9AD8;&#x5E76;&#x53D1;&#x7684;&#x7C7B;&#x3002;&#x4F8B;&#x5982;&#xFF0C;ArrayList&#x5BF9;&#x5E94;&#x7684;&#x9AD8;&#x5E76;&#x53D1;&#x7C7B;&#x662F;CopyOnWriteArrayList&#xFF0C;HashMap&#x5BF9;&#x5E94;&#x7684;&#x9AD8;&#x5E76;&#x53D1;&#x7C7B;&#x662F;ConcurrentHashMap&#xFF0C;&#x7B49;&#x7B49;&#x3002;
+<h1 id="juc集合">1 JUC集合</h1>
+<p><strong>List的实现类主要有: LinkedList, ArrayList, Vector, Stack。</strong></p>
+<p>(01) LinkedList是双向链表实现的双端队列；它不是线程安全的，只适用于单线程。
+(02) ArrayList是数组实现的队列，它是一个动态数组；它也不是线程安全的，只适用于单线程。
+(03) Vector是数组实现的矢量队列，它也一个动态数组；不过和ArrayList不同的是，Vector是线程安全的，它支持并发。
+(04) Stack是Vector实现的栈；和Vector一样，它也是线程安全的。</p>
+<p> <strong>Set的实现类主要有: HastSet和TreeSet。</strong></p>
+<p>(01) HashSet是一个没有重复元素的集合，它通过HashMap实现的；HashSet不是线程安全的，只适用于单线程。
+(02) TreeSet也是一个没有重复元素的集合，不过和HashSet不同的是，TreeSet中的元素是有序的；它是通过TreeMap实现的；TreeSet也不是线程安全的，只适用于单线程。</p>
+<p> <strong>Map的实现类主要有: HashMap，WeakHashMap, Hashtable和TreeMap。</strong></p>
+<p>(01) HashMap是存储“键-值对”的哈希表；它不是线程安全的，只适用于单线程。
+(02) WeakHashMap是也是哈希表；和HashMap不同的是，HashMap的“键”是强引用类型，而WeakHashMap的“键”是弱引用类型，也就是说当WeakHashMap 中的某个键不再正常使用时，会被从WeakHashMap中被自动移除。WeakHashMap也不是线程安全的，只适用于单线程。
+(03) Hashtable也是哈希表；和HashMap不同的是，Hashtable是线程安全的，支持并发。
+(04) TreeMap也是哈希表，不过TreeMap中的“键-值对”是有序的，它是通过R-B Tree(红黑树)实现的；TreeMap不是线程安全的，只适用于单线程。
+更多关于这些集合类的介绍，可以参考“Java 集合系列目录(Category)”。</p>
+<pre><code class="lang-java">为了方便，我们将前面介绍集合类统称为”java集合包“。java集合包大多是“非线程安全的”，虽然可以通过Collections工具类中的方法获取java集合包对应的同步类，但是这些同步类的并发效率并不是很高。为了更好的支持高并发任务，并发大师Doug Lea在JUC(java.util.concurrent)包中添加了java集合包中单线程类的对应的支持高并发的类。例如，ArrayList对应的高并发类是CopyOnWriteArrayList，HashMap对应的高并发类是ConcurrentHashMap，等等。
 
-JUC&#x5305;&#x5728;&#x6DFB;&#x52A0;&#x201D;java&#x96C6;&#x5408;&#x5305;&#x201C;&#x5BF9;&#x5E94;&#x7684;&#x9AD8;&#x5E76;&#x53D1;&#x7C7B;&#x65F6;&#xFF0C;&#x4E3A;&#x4E86;&#x4FDD;&#x6301;API&#x63A5;&#x53E3;&#x7684;&#x4E00;&#x81F4;&#x6027;&#xFF0C;&#x4F7F;&#x7528;&#x4E86;&#x201D;Java&#x96C6;&#x5408;&#x5305;&#x201C;&#x4E2D;&#x7684;&#x6846;&#x67B6;&#x3002;&#x4F8B;&#x5982;&#xFF0C;CopyOnWriteArrayList&#x5B9E;&#x73B0;&#x4E86;&#x201C;Java&#x96C6;&#x5408;&#x5305;&#x201D;&#x4E2D;&#x7684;List&#x63A5;&#x53E3;&#xFF0C;HashMap&#x7EE7;&#x627F;&#x4E86;&#x201C;java&#x96C6;&#x5408;&#x5305;&#x201D;&#x4E2D;&#x7684;AbstractMap&#x7C7B;&#xFF0C;&#x7B49;&#x7B49;&#x3002;&#x5F97;&#x76CA;&#x4E8E;&#x201C;JUC&#x5305;&#x4F7F;&#x7528;&#x4E86;Java&#x96C6;&#x5408;&#x5305;&#x4E2D;&#x7684;&#x7C7B;&#x201D;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x4E86;&#x89E3;&#x4E86;Java&#x96C6;&#x5408;&#x5305;&#x4E2D;&#x7684;&#x7C7B;&#x7684;&#x601D;&#x60F3;&#x4E4B;&#x540E;&#xFF0C;&#x7406;&#x89E3;JUC&#x5305;&#x4E2D;&#x7684;&#x7C7B;&#x4E5F;&#x76F8;&#x5BF9;&#x5BB9;&#x6613;&#xFF1B;&#x7406;&#x89E3;&#x65F6;&#xFF0C;&#x6700;&#x5927;&#x7684;&#x96BE;&#x70B9;&#x662F;&#xFF0C;&#x5BF9;JUC&#x5305;&#x662F;&#x5982;&#x4F55;&#x6DFB;&#x52A0;&#x5BF9;&#x201C;&#x9AD8;&#x5E76;&#x53D1;&#x201D;&#x7684;&#x652F;&#x6301;&#x7684;&#xFF01;
+JUC包在添加”java集合包“对应的高并发类时，为了保持API接口的一致性，使用了”Java集合包“中的框架。例如，CopyOnWriteArrayList实现了“Java集合包”中的List接口，HashMap继承了“java集合包”中的AbstractMap类，等等。得益于“JUC包使用了Java集合包中的类”，如果我们了解了Java集合包中的类的思想之后，理解JUC包中的类也相对容易；理解时，最大的难点是，对JUC包是如何添加对“高并发”的支持的！
 </code></pre>
-<pre><code class="lang-java"><span class="hljs-number">1</span>. List&#x548C;Set
-JUC&#x96C6;&#x5408;&#x5305;&#x4E2D;&#x7684;List&#x548C;Set&#x5B9E;&#x73B0;&#x7C7B;&#x5305;&#x62EC;: CopyOnWriteArrayList, CopyOnWriteArraySet&#x548C;ConcurrentSkipListSet&#x3002;
-(<span class="hljs-number">01</span>) CopyOnWriteArrayList&#x76F8;&#x5F53;&#x4E8E;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;ArrayList&#xFF0C;&#x5B83;&#x5B9E;&#x73B0;&#x4E86;List&#x63A5;&#x53E3;&#x3002;CopyOnWriteArrayList&#x662F;&#x652F;&#x6301;&#x9AD8;&#x5E76;&#x53D1;&#x7684;&#x3002;
-(<span class="hljs-number">02</span>) CopyOnWriteArraySet&#x76F8;&#x5F53;&#x4E8E;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;HashSet&#xFF0C;&#x5B83;&#x7EE7;&#x627F;&#x4E8E;AbstractSet&#x7C7B;&#x3002;CopyOnWriteArraySet&#x5185;&#x90E8;&#x5305;&#x542B;&#x4E00;&#x4E2A;CopyOnWriteArrayList&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x662F;&#x901A;&#x8FC7;CopyOnWriteArrayList&#x5B9E;&#x73B0;&#x7684;&#x3002;
+<pre><code class="lang-java"><span class="hljs-number">1</span>. List和Set
+JUC集合包中的List和Set实现类包括: CopyOnWriteArrayList, CopyOnWriteArraySet和ConcurrentSkipListSet。
+(<span class="hljs-number">01</span>) CopyOnWriteArrayList相当于线程安全的ArrayList，它实现了List接口。CopyOnWriteArrayList是支持高并发的。
+(<span class="hljs-number">02</span>) CopyOnWriteArraySet相当于线程安全的HashSet，它继承于AbstractSet类。CopyOnWriteArraySet内部包含一个CopyOnWriteArrayList对象，它是通过CopyOnWriteArrayList实现的。
 
 <span class="hljs-number">2</span>. Map
-JUC&#x96C6;&#x5408;&#x5305;&#x4E2D;Map&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x5305;&#x62EC;: ConcurrentHashMap&#x548C;ConcurrentSkipListMap&#x3002;
-(<span class="hljs-number">01</span>) ConcurrentHashMap&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x54C8;&#x5E0C;&#x8868;(&#x76F8;&#x5F53;&#x4E8E;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;HashMap)&#xFF1B;&#x5B83;&#x7EE7;&#x627F;&#x4E8E;AbstractMap&#x7C7B;&#xFF0C;&#x5E76;&#x4E14;&#x5B9E;&#x73B0;ConcurrentMap&#x63A5;&#x53E3;&#x3002;ConcurrentHashMap&#x662F;&#x901A;&#x8FC7;&#x201C;&#x9501;&#x5206;&#x6BB5;&#x201D;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x5B83;&#x652F;&#x6301;&#x5E76;&#x53D1;&#x3002;
-(<span class="hljs-number">02</span>) ConcurrentSkipListMap&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x6709;&#x5E8F;&#x7684;&#x54C8;&#x5E0C;&#x8868;(&#x76F8;&#x5F53;&#x4E8E;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;TreeMap); &#x5B83;&#x7EE7;&#x627F;&#x4E8E;AbstractMap&#x7C7B;&#xFF0C;&#x5E76;&#x4E14;&#x5B9E;&#x73B0;ConcurrentNavigableMap&#x63A5;&#x53E3;&#x3002;ConcurrentSkipListMap&#x662F;&#x901A;&#x8FC7;&#x201C;&#x8DF3;&#x8868;&#x201D;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x5B83;&#x652F;&#x6301;&#x5E76;&#x53D1;&#x3002;
-(<span class="hljs-number">03</span>) ConcurrentSkipListSet&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x6709;&#x5E8F;&#x7684;&#x96C6;&#x5408;(&#x76F8;&#x5F53;&#x4E8E;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;TreeSet)&#xFF1B;&#x5B83;&#x7EE7;&#x627F;&#x4E8E;AbstractSet&#xFF0C;&#x5E76;&#x5B9E;&#x73B0;&#x4E86;NavigableSet&#x63A5;&#x53E3;&#x3002;ConcurrentSkipListSet&#x662F;&#x901A;&#x8FC7;ConcurrentSkipListMap&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x5B83;&#x4E5F;&#x652F;&#x6301;&#x5E76;&#x53D1;&#x3002;
+JUC集合包中Map的实现类包括: ConcurrentHashMap和ConcurrentSkipListMap。
+(<span class="hljs-number">01</span>) ConcurrentHashMap是线程安全的哈希表(相当于线程安全的HashMap)；它继承于AbstractMap类，并且实现ConcurrentMap接口。ConcurrentHashMap是通过“锁分段”来实现的，它支持并发。
+(<span class="hljs-number">02</span>) ConcurrentSkipListMap是线程安全的有序的哈希表(相当于线程安全的TreeMap); 它继承于AbstractMap类，并且实现ConcurrentNavigableMap接口。ConcurrentSkipListMap是通过“跳表”来实现的，它支持并发。
+(<span class="hljs-number">03</span>) ConcurrentSkipListSet是线程安全的有序的集合(相当于线程安全的TreeSet)；它继承于AbstractSet，并实现了NavigableSet接口。ConcurrentSkipListSet是通过ConcurrentSkipListMap实现的，它也支持并发。
 
 <span class="hljs-number">3</span>. Queue
-JUC&#x96C6;&#x5408;&#x5305;&#x4E2D;Queue&#x7684;&#x5B9E;&#x73B0;&#x7C7B;&#x5305;&#x62EC;: ArrayBlockingQueue, LinkedBlockingQueue, LinkedBlockingDeque, ConcurrentLinkedQueue&#x548C;ConcurrentLinkedDeque&#x3002;
-(<span class="hljs-number">01</span>) ArrayBlockingQueue&#x662F;&#x6570;&#x7EC4;&#x5B9E;&#x73B0;&#x7684;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x6709;&#x754C;&#x7684;&#x963B;&#x585E;&#x961F;&#x5217;&#x3002;
-(<span class="hljs-number">02</span>) LinkedBlockingQueue&#x662F;&#x5355;&#x5411;&#x94FE;&#x8868;&#x5B9E;&#x73B0;&#x7684;(&#x6307;&#x5B9A;&#x5927;&#x5C0F;)&#x963B;&#x585E;&#x961F;&#x5217;&#xFF0C;&#x8BE5;&#x961F;&#x5217;&#x6309; FIFO&#xFF08;&#x5148;&#x8FDB;&#x5148;&#x51FA;&#xFF09;&#x6392;&#x5E8F;&#x5143;&#x7D20;&#x3002;
-(<span class="hljs-number">03</span>) LinkedBlockingDeque&#x662F;&#x53CC;&#x5411;&#x94FE;&#x8868;&#x5B9E;&#x73B0;&#x7684;(&#x6307;&#x5B9A;&#x5927;&#x5C0F;)&#x53CC;&#x5411;&#x5E76;&#x53D1;&#x963B;&#x585E;&#x961F;&#x5217;&#xFF0C;&#x8BE5;&#x963B;&#x585E;&#x961F;&#x5217;&#x540C;&#x65F6;&#x652F;&#x6301;FIFO&#x548C;FILO&#x4E24;&#x79CD;&#x64CD;&#x4F5C;&#x65B9;&#x5F0F;&#x3002;
-(<span class="hljs-number">04</span>) ConcurrentLinkedQueue&#x662F;&#x5355;&#x5411;&#x94FE;&#x8868;&#x5B9E;&#x73B0;&#x7684;&#x65E0;&#x754C;&#x961F;&#x5217;&#xFF0C;&#x8BE5;&#x961F;&#x5217;&#x6309; FIFO&#xFF08;&#x5148;&#x8FDB;&#x5148;&#x51FA;&#xFF09;&#x6392;&#x5E8F;&#x5143;&#x7D20;&#x3002;
-(<span class="hljs-number">05</span>) ConcurrentLinkedDeque&#x662F;&#x53CC;&#x5411;&#x94FE;&#x8868;&#x5B9E;&#x73B0;&#x7684;&#x65E0;&#x754C;&#x961F;&#x5217;&#xFF0C;&#x8BE5;&#x961F;&#x5217;&#x540C;&#x65F6;&#x652F;&#x6301;FIFO&#x548C;FILO&#x4E24;&#x79CD;&#x64CD;&#x4F5C;&#x65B9;&#x5F0F;&#x3002;
+JUC集合包中Queue的实现类包括: ArrayBlockingQueue, LinkedBlockingQueue, LinkedBlockingDeque, ConcurrentLinkedQueue和ConcurrentLinkedDeque。
+(<span class="hljs-number">01</span>) ArrayBlockingQueue是数组实现的线程安全的有界的阻塞队列。
+(<span class="hljs-number">02</span>) LinkedBlockingQueue是单向链表实现的(指定大小)阻塞队列，该队列按 FIFO（先进先出）排序元素。
+(<span class="hljs-number">03</span>) LinkedBlockingDeque是双向链表实现的(指定大小)双向并发阻塞队列，该阻塞队列同时支持FIFO和FILO两种操作方式。
+(<span class="hljs-number">04</span>) ConcurrentLinkedQueue是单向链表实现的无界队列，该队列按 FIFO（先进先出）排序元素。
+(<span class="hljs-number">05</span>) ConcurrentLinkedDeque是双向链表实现的无界队列，该队列同时支持FIFO和FILO两种操作方式。
 </code></pre>
-<h1 id="copyonwritearraylist"><a name="copyonwritearraylist" class="anchor-navigation-ex-anchor" href="#copyonwritearraylist"><i class="fa fa-link" aria-hidden="true"></i></a><a name="copyonwritearraylist" class="plugin-anchor" href="#copyonwritearraylist"><i class="fa fa-link" aria-hidden="true"></i></a>CopyOnWriteArrayList</h1>
-<pre><code class="lang-java">&#x5B83;&#x76F8;&#x5F53;&#x4E8E;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;ArrayList&#x3002;&#x548C;ArrayList&#x4E00;&#x6837;&#xFF0C;&#x5B83;&#x662F;&#x4E2A;&#x53EF;&#x53D8;&#x6570;&#x7EC4;&#xFF1B;&#x4F46;&#x662F;&#x548C;ArrayList&#x4E0D;&#x540C;&#x7684;&#x65F6;&#xFF0C;&#x5B83;&#x5177;&#x6709;&#x4EE5;&#x4E0B;&#x7279;&#x6027;&#xFF1A;
-<span class="hljs-number">1</span>. &#x5B83;&#x6700;&#x9002;&#x5408;&#x4E8E;&#x5177;&#x6709;&#x4EE5;&#x4E0B;&#x7279;&#x5F81;&#x7684;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#xFF1A;List &#x5927;&#x5C0F;&#x901A;&#x5E38;&#x4FDD;&#x6301;&#x5F88;&#x5C0F;&#xFF0C;&#x53EA;&#x8BFB;&#x64CD;&#x4F5C;&#x8FDC;&#x591A;&#x4E8E;&#x53EF;&#x53D8;&#x64CD;&#x4F5C;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x904D;&#x5386;&#x671F;&#x95F4;&#x9632;&#x6B62;&#x7EBF;&#x7A0B;&#x95F4;&#x7684;&#x51B2;&#x7A81;&#x3002;
-<span class="hljs-number">2</span>. &#x5B83;&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x3002;
-<span class="hljs-number">3</span>. &#x56E0;&#x4E3A;&#x901A;&#x5E38;&#x9700;&#x8981;&#x590D;&#x5236;&#x6574;&#x4E2A;&#x57FA;&#x7840;&#x6570;&#x7EC4;&#xFF0C;&#x6240;&#x4EE5;&#x53EF;&#x53D8;&#x64CD;&#x4F5C;&#xFF08;add()&#x3001;set() &#x548C; remove() &#x7B49;&#x7B49;&#xFF09;&#x7684;&#x5F00;&#x9500;&#x5F88;&#x5927;&#x3002;
-<span class="hljs-number">4</span>. &#x8FED;&#x4EE3;&#x5668;&#x652F;&#x6301;hasNext(), next()&#x7B49;&#x4E0D;&#x53EF;&#x53D8;&#x64CD;&#x4F5C;&#xFF0C;&#x4F46;&#x4E0D;&#x652F;&#x6301;&#x53EF;&#x53D8; remove()&#x7B49;&#x64CD;&#x4F5C;&#x3002;
-<span class="hljs-number">5</span>. &#x4F7F;&#x7528;&#x8FED;&#x4EE3;&#x5668;&#x8FDB;&#x884C;&#x904D;&#x5386;&#x7684;&#x901F;&#x5EA6;&#x5F88;&#x5FEB;&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x4F1A;&#x4E0E;&#x5176;&#x4ED6;&#x7EBF;&#x7A0B;&#x53D1;&#x751F;&#x51B2;&#x7A81;&#x3002;&#x5728;&#x6784;&#x9020;&#x8FED;&#x4EE3;&#x5668;&#x65F6;&#xFF0C;&#x8FED;&#x4EE3;&#x5668;&#x4F9D;&#x8D56;&#x4E8E;&#x4E0D;&#x53D8;&#x7684;&#x6570;&#x7EC4;&#x5FEB;&#x7167;&#x3002;
+<h1 id="copyonwritearraylist">2 CopyOnWriteArrayList</h1>
+<pre><code class="lang-java">它相当于线程安全的ArrayList。和ArrayList一样，它是个可变数组；但是和ArrayList不同的时，它具有以下特性：
+<span class="hljs-number">1</span>. 它最适合于具有以下特征的应用程序：List 大小通常保持很小，只读操作远多于可变操作，需要在遍历期间防止线程间的冲突。
+<span class="hljs-number">2</span>. 它是线程安全的。
+<span class="hljs-number">3</span>. 因为通常需要复制整个基础数组，所以可变操作（add()、set() 和 remove() 等等）的开销很大。
+<span class="hljs-number">4</span>. 迭代器支持hasNext(), next()等不可变操作，但不支持可变 remove()等操作。
+<span class="hljs-number">5</span>. 使用迭代器进行遍历的速度很快，并且不会与其他线程发生冲突。在构造迭代器时，迭代器依赖于不变的数组快照。
 </code></pre>
-<pre><code>&#x8BF4;&#x660E;&#xFF1A;
-1. CopyOnWriteArrayList&#x5B9E;&#x73B0;&#x4E86;List&#x63A5;&#x53E3;&#xFF0C;&#x56E0;&#x6B64;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x961F;&#x5217;&#x3002;
-2. CopyOnWriteArrayList&#x5305;&#x542B;&#x4E86;&#x6210;&#x5458;lock&#x3002;&#x6BCF;&#x4E00;&#x4E2A;CopyOnWriteArrayList&#x90FD;&#x548C;&#x4E00;&#x4E2A;&#x4E92;&#x65A5;&#x9501;lock&#x7ED1;&#x5B9A;&#xFF0C;&#x901A;&#x8FC7;lock&#xFF0C;&#x5B9E;&#x73B0;&#x4E86;&#x5BF9;CopyOnWriteArrayList&#x7684;&#x4E92;&#x65A5;&#x8BBF;&#x95EE;&#x3002;
-3. CopyOnWriteArrayList&#x5305;&#x542B;&#x4E86;&#x6210;&#x5458;array&#x6570;&#x7EC4;&#xFF0C;&#x8FD9;&#x8BF4;&#x660E;CopyOnWriteArrayList&#x672C;&#x8D28;&#x4E0A;&#x901A;&#x8FC7;&#x6570;&#x7EC4;&#x5B9E;&#x73B0;&#x7684;&#x3002;
+<pre><code>说明：
+1. CopyOnWriteArrayList实现了List接口，因此它是一个队列。
+2. CopyOnWriteArrayList包含了成员lock。每一个CopyOnWriteArrayList都和一个互斥锁lock绑定，通过lock，实现了对CopyOnWriteArrayList的互斥访问。
+3. CopyOnWriteArrayList包含了成员array数组，这说明CopyOnWriteArrayList本质上通过数组实现的。
 
-&#x4E0B;&#x9762;&#x4ECE;&#x201C;&#x52A8;&#x6001;&#x6570;&#x7EC4;&#x201D;&#x548C;&#x201C;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x201D;&#x4E24;&#x4E2A;&#x65B9;&#x9762;&#x8FDB;&#x4E00;&#x6B65;&#x5BF9;CopyOnWriteArrayList&#x7684;&#x539F;&#x7406;&#x8FDB;&#x884C;&#x8BF4;&#x660E;&#x3002;
-1. CopyOnWriteArrayList&#x7684;&#x201C;&#x52A8;&#x6001;&#x6570;&#x7EC4;&#x201D;&#x673A;&#x5236; -- &#x5B83;&#x5185;&#x90E8;&#x6709;&#x4E2A;&#x201C;volatile&#x6570;&#x7EC4;&#x201D;(array)&#x6765;&#x4FDD;&#x6301;&#x6570;&#x636E;&#x3002;&#x5728;&#x201C;&#x6DFB;&#x52A0;/&#x4FEE;&#x6539;/&#x5220;&#x9664;&#x201D;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x90FD;&#x4F1A;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x5E76;&#x5C06;&#x66F4;&#x65B0;&#x540E;&#x7684;&#x6570;&#x636E;&#x62F7;&#x8D1D;&#x5230;&#x65B0;&#x5EFA;&#x7684;&#x6570;&#x7EC4;&#x4E2D;&#xFF0C;&#x6700;&#x540E;&#x518D;&#x5C06;&#x8BE5;&#x6570;&#x7EC4;&#x8D4B;&#x503C;&#x7ED9;&#x201C;volatile&#x6570;&#x7EC4;&#x201D;&#x3002;&#x8FD9;&#x5C31;&#x662F;&#x5B83;&#x53EB;&#x505A;CopyOnWriteArrayList&#x7684;&#x539F;&#x56E0;&#xFF01;CopyOnWriteArrayList&#x5C31;&#x662F;&#x901A;&#x8FC7;&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x5B9E;&#x73B0;&#x7684;&#x52A8;&#x6001;&#x6570;&#x7EC4;&#xFF1B;&#x4E0D;&#x8FC7;&#x6B63;&#x7531;&#x4E8E;&#x5B83;&#x5728;&#x201C;&#x6DFB;&#x52A0;/&#x4FEE;&#x6539;/&#x5220;&#x9664;&#x201D;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x90FD;&#x4F1A;&#x65B0;&#x5EFA;&#x6570;&#x7EC4;&#xFF0C;&#x6240;&#x4EE5;&#x6D89;&#x53CA;&#x5230;&#x4FEE;&#x6539;&#x6570;&#x636E;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;CopyOnWriteArrayList&#x6548;&#x7387;&#x5F88;
-&#x4F4E;&#xFF1B;&#x4F46;&#x662F;&#x5355;&#x5355;&#x53EA;&#x662F;&#x8FDB;&#x884C;&#x904D;&#x5386;&#x67E5;&#x627E;&#x7684;&#x8BDD;&#xFF0C;&#x6548;&#x7387;&#x6BD4;&#x8F83;&#x9AD8;&#x3002;
-2. CopyOnWriteArrayList&#x7684;&#x201C;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x201D;&#x673A;&#x5236; -- &#x662F;&#x901A;&#x8FC7;volatile&#x548C;&#x4E92;&#x65A5;&#x9501;&#x6765;&#x5B9E;&#x73B0;&#x7684;&#x3002;(01) CopyOnWriteArrayList&#x662F;&#x901A;&#x8FC7;&#x201C;volatile&#x6570;&#x7EC4;&#x201D;&#x6765;&#x4FDD;&#x5B58;&#x6570;&#x636E;&#x7684;&#x3002;&#x4E00;&#x4E2A;&#x7EBF;&#x7A0B;&#x8BFB;&#x53D6;volatile&#x6570;&#x7EC4;&#x65F6;&#xFF0C;&#x603B;&#x80FD;&#x770B;&#x5230;&#x5176;&#x5B83;&#x7EBF;&#x7A0B;&#x5BF9;&#x8BE5;volatile&#x53D8;&#x91CF;&#x6700;&#x540E;&#x7684;&#x5199;&#x5165;&#xFF1B;&#x5C31;&#x8FD9;&#x6837;&#xFF0C;&#x901A;&#x8FC7;volatile&#x63D0;&#x4F9B;&#x4E86;&#x201C;&#x8BFB;&#x53D6;&#x5230;&#x7684;&#x6570;&#x636E;&#x603B;&#x662F;&#x6700;&#x65B0;&#x7684;&#x201D;&#x8FD9;&#x4E2A;&#x673A;&#x5236;&#x7684;
-&#x4FDD;&#x8BC1;&#x3002;(02) CopyOnWriteArrayList&#x901A;&#x8FC7;&#x4E92;&#x65A5;&#x9501;&#x6765;&#x4FDD;&#x62A4;&#x6570;&#x636E;&#x3002;&#x5728;&#x201C;&#x6DFB;&#x52A0;/&#x4FEE;&#x6539;/&#x5220;&#x9664;&#x201D;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x4F1A;&#x5148;&#x201C;&#x83B7;&#x53D6;&#x4E92;&#x65A5;&#x9501;&#x201D;&#xFF0C;&#x518D;&#x4FEE;&#x6539;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#xFF0C;&#x5148;&#x5C06;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x5230;&#x201C;volatile&#x6570;&#x7EC4;&#x201D;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x201C;&#x91CA;&#x653E;&#x4E92;&#x65A5;&#x9501;&#x201D;&#xFF1B;&#x8FD9;&#x6837;&#xFF0C;&#x5C31;&#x8FBE;&#x5230;&#x4E86;&#x4FDD;&#x62A4;&#x6570;&#x636E;&#x7684;&#x76EE;&#x7684;&#x3002;
-</code></pre><pre><code class="lang-java"><span class="hljs-comment">// CopyOnWriteArrayList&#x51FD;&#x6570;&#x5217;&#x8868;</span>
-<span class="hljs-comment">// &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x7A7A;&#x5217;&#x8868;&#x3002;</span>
+下面从“动态数组”和“线程安全”两个方面进一步对CopyOnWriteArrayList的原理进行说明。
+1. CopyOnWriteArrayList的“动态数组”机制 -- 它内部有个“volatile数组”(array)来保持数据。在“添加/修改/删除”数据时，都会新建一个数组，并将更新后的数据拷贝到新建的数组中，最后再将该数组赋值给“volatile数组”。这就是它叫做CopyOnWriteArrayList的原因！CopyOnWriteArrayList就是通过这种方式实现的动态数组；不过正由于它在“添加/修改/删除”数据时，都会新建数组，所以涉及到修改数据的操作，CopyOnWriteArrayList效率很
+低；但是单单只是进行遍历查找的话，效率比较高。
+2. CopyOnWriteArrayList的“线程安全”机制 -- 是通过volatile和互斥锁来实现的。(01) CopyOnWriteArrayList是通过“volatile数组”来保存数据的。一个线程读取volatile数组时，总能看到其它线程对该volatile变量最后的写入；就这样，通过volatile提供了“读取到的数据总是最新的”这个机制的
+保证。(02) CopyOnWriteArrayList通过互斥锁来保护数据。在“添加/修改/删除”数据时，会先“获取互斥锁”，再修改完毕之后，先将数据更新到“volatile数组”中，然后再“释放互斥锁”；这样，就达到了保护数据的目的。
+</code></pre><pre><code class="lang-java"><span class="hljs-comment">// CopyOnWriteArrayList函数列表</span>
+<span class="hljs-comment">// 创建一个空列表。</span>
 CopyOnWriteArrayList()
-<span class="hljs-comment">// &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6309; collection &#x7684;&#x8FED;&#x4EE3;&#x5668;&#x8FD4;&#x56DE;&#x5143;&#x7D20;&#x7684;&#x987A;&#x5E8F;&#x5305;&#x542B;&#x6307;&#x5B9A; collection &#x5143;&#x7D20;&#x7684;&#x5217;&#x8868;&#x3002;</span>
+<span class="hljs-comment">// 创建一个按 collection 的迭代器返回元素的顺序包含指定 collection 元素的列表。</span>
 CopyOnWriteArrayList(Collection&lt;? extends E&gt; c)
 <span class="hljs-comment">// CopyOnWriteArrayList(E[] toCopyIn)</span>
-<span class="hljs-comment">// &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4FDD;&#x5B58;&#x7ED9;&#x5B9A;&#x6570;&#x7EC4;&#x7684;&#x526F;&#x672C;&#x7684;&#x5217;&#x8868;&#x3002;</span>
-<span class="hljs-comment">// &#x5C06;&#x6307;&#x5B9A;&#x5143;&#x7D20;&#x6DFB;&#x52A0;&#x5230;&#x6B64;&#x5217;&#x8868;&#x7684;&#x5C3E;&#x90E8;&#x3002;</span>
+<span class="hljs-comment">// 创建一个保存给定数组的副本的列表。</span>
+<span class="hljs-comment">// 将指定元素添加到此列表的尾部。</span>
 <span class="hljs-function"><span class="hljs-keyword">boolean</span> <span class="hljs-title">add</span><span class="hljs-params">(E e)</span>
-<span class="hljs-comment">// &#x5728;&#x6B64;&#x5217;&#x8868;&#x7684;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x4E0A;&#x63D2;&#x5165;&#x6307;&#x5B9A;&#x5143;&#x7D20;&#x3002;</span>
+<span class="hljs-comment">// 在此列表的指定位置上插入指定元素。</span>
 <span class="hljs-keyword">void</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index, E element)</span>
-<span class="hljs-comment">// &#x6309;&#x7167;&#x6307;&#x5B9A; collection &#x7684;&#x8FED;&#x4EE3;&#x5668;&#x8FD4;&#x56DE;&#x5143;&#x7D20;&#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x5C06;&#x6307;&#x5B9A; collection &#x4E2D;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;&#x6DFB;&#x52A0;&#x6B64;&#x5217;&#x8868;&#x7684;&#x5C3E;&#x90E8;&#x3002;</span>
+<span class="hljs-comment">// 按照指定 collection 的迭代器返回元素的顺序，将指定 collection 中的所有元素添加此列表的尾部。</span>
 <span class="hljs-keyword">boolean</span> <span class="hljs-title">addAll</span><span class="hljs-params">(Collection&lt;? extends E&gt; c)</span>
-<span class="hljs-comment">// &#x4ECE;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#xFF0C;&#x5C06;&#x6307;&#x5B9A; collection &#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;&#x63D2;&#x5165;&#x6B64;&#x5217;&#x8868;&#x3002;</span>
+<span class="hljs-comment">// 从指定位置开始，将指定 collection 的所有元素插入此列表。</span>
 <span class="hljs-keyword">boolean</span> <span class="hljs-title">addAll</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index, Collection&lt;? extends E&gt; c)</span>
-<span class="hljs-comment">// &#x6309;&#x7167;&#x6307;&#x5B9A; collection &#x7684;&#x8FED;&#x4EE3;&#x5668;&#x8FD4;&#x56DE;&#x5143;&#x7D20;&#x7684;&#x987A;&#x5E8F;&#xFF0C;&#x5C06;&#x6307;&#x5B9A; collection &#x4E2D;&#x5C1A;&#x672A;&#x5305;&#x542B;&#x5728;&#x6B64;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;&#x6DFB;&#x52A0;&#x5217;&#x8868;&#x7684;&#x5C3E;&#x90E8;&#x3002;</span>
+<span class="hljs-comment">// 按照指定 collection 的迭代器返回元素的顺序，将指定 collection 中尚未包含在此列表中的所有元素添加列表的尾部。</span>
 <span class="hljs-keyword">int</span> <span class="hljs-title">addAllAbsent</span><span class="hljs-params">(Collection&lt;? extends E&gt; c)</span>
-<span class="hljs-comment">// &#x6DFB;&#x52A0;&#x5143;&#x7D20;&#xFF08;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#xFF09;&#x3002;</span>
+<span class="hljs-comment">// 添加元素（如果不存在）。</span>
 <span class="hljs-keyword">boolean</span> <span class="hljs-title">addIfAbsent</span><span class="hljs-params">(E e)</span>
-<span class="hljs-comment">// &#x4ECE;&#x6B64;&#x5217;&#x8868;&#x79FB;&#x9664;&#x6240;&#x6709;&#x5143;&#x7D20;&#x3002;</span>
+<span class="hljs-comment">// 从此列表移除所有元素。</span>
 <span class="hljs-keyword">void</span> <span class="hljs-title">clear</span><span class="hljs-params">()</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6B64;&#x5217;&#x8868;&#x7684;&#x6D45;&#x8868;&#x526F;&#x672C;&#x3002;</span>
+<span class="hljs-comment">// 返回此列表的浅表副本。</span>
 Object <span class="hljs-title">clone</span><span class="hljs-params">()</span>
-<span class="hljs-comment">// &#x5982;&#x679C;&#x6B64;&#x5217;&#x8868;&#x5305;&#x542B;&#x6307;&#x5B9A;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; true&#x3002;</span>
+<span class="hljs-comment">// 如果此列表包含指定的元素，则返回 true。</span>
 <span class="hljs-keyword">boolean</span> <span class="hljs-title">contains</span><span class="hljs-params">(Object o)</span>
-<span class="hljs-comment">// &#x5982;&#x679C;&#x6B64;&#x5217;&#x8868;&#x5305;&#x542B;&#x6307;&#x5B9A; collection &#x7684;&#x6240;&#x6709;&#x5143;&#x7D20;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; true&#x3002;</span>
+<span class="hljs-comment">// 如果此列表包含指定 collection 的所有元素，则返回 true。</span>
 <span class="hljs-keyword">boolean</span> <span class="hljs-title">containsAll</span><span class="hljs-params">(Collection&lt;?&gt; c)</span>
-<span class="hljs-comment">// &#x6BD4;&#x8F83;&#x6307;&#x5B9A;&#x5BF9;&#x8C61;&#x4E0E;&#x6B64;&#x5217;&#x8868;&#x7684;&#x76F8;&#x7B49;&#x6027;&#x3002;</span>
+<span class="hljs-comment">// 比较指定对象与此列表的相等性。</span>
 <span class="hljs-keyword">boolean</span> <span class="hljs-title">equals</span><span class="hljs-params">(Object o)</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x5217;&#x8868;&#x4E2D;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x7684;&#x5143;&#x7D20;&#x3002;</span>
+<span class="hljs-comment">// 返回列表中指定位置的元素。</span>
 E <span class="hljs-title">get</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index)</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6B64;&#x5217;&#x8868;&#x7684;&#x54C8;&#x5E0C;&#x7801;&#x503C;&#x3002;</span>
+<span class="hljs-comment">// 返回此列表的哈希码值。</span>
 <span class="hljs-keyword">int</span> <span class="hljs-title">hashCode</span><span class="hljs-params">()</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x7B2C;&#x4E00;&#x6B21;&#x51FA;&#x73B0;&#x7684;&#x6307;&#x5B9A;&#x5143;&#x7D20;&#x5728;&#x6B64;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x4ECE; index &#x5F00;&#x59CB;&#x5411;&#x524D;&#x641C;&#x7D22;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x627E;&#x5230;&#x8BE5;&#x5143;&#x7D20;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; -1&#x3002;</span>
+<span class="hljs-comment">// 返回第一次出现的指定元素在此列表中的索引，从 index 开始向前搜索，如果没有找到该元素，则返回 -1。</span>
 <span class="hljs-keyword">int</span> <span class="hljs-title">indexOf</span><span class="hljs-params">(E e, <span class="hljs-keyword">int</span> index)</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6B64;&#x5217;&#x8868;&#x4E2D;&#x7B2C;&#x4E00;&#x6B21;&#x51FA;&#x73B0;&#x7684;&#x6307;&#x5B9A;&#x5143;&#x7D20;&#x7684;&#x7D22;&#x5F15;&#xFF1B;&#x5982;&#x679C;&#x6B64;&#x5217;&#x8868;&#x4E0D;&#x5305;&#x542B;&#x8BE5;&#x5143;&#x7D20;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; -1&#x3002;</span>
+<span class="hljs-comment">// 返回此列表中第一次出现的指定元素的索引；如果此列表不包含该元素，则返回 -1。</span>
 <span class="hljs-keyword">int</span> <span class="hljs-title">indexOf</span><span class="hljs-params">(Object o)</span>
-<span class="hljs-comment">// &#x5982;&#x679C;&#x6B64;&#x5217;&#x8868;&#x4E0D;&#x5305;&#x542B;&#x4EFB;&#x4F55;&#x5143;&#x7D20;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; true&#x3002;</span>
+<span class="hljs-comment">// 如果此列表不包含任何元素，则返回 true。</span>
 <span class="hljs-keyword">boolean</span> <span class="hljs-title">isEmpty</span><span class="hljs-params">()</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x4EE5;&#x6070;&#x5F53;&#x987A;&#x5E8F;&#x5728;&#x6B64;&#x5217;&#x8868;&#x5143;&#x7D20;&#x4E0A;&#x8FDB;&#x884C;&#x8FED;&#x4EE3;&#x7684;&#x8FED;&#x4EE3;&#x5668;&#x3002;</span>
+<span class="hljs-comment">// 返回以恰当顺序在此列表元素上进行迭代的迭代器。</span>
 Iterator&lt;E&gt; <span class="hljs-title">iterator</span><span class="hljs-params">()</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6700;&#x540E;&#x4E00;&#x6B21;&#x51FA;&#x73B0;&#x7684;&#x6307;&#x5B9A;&#x5143;&#x7D20;&#x5728;&#x6B64;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x4ECE; index &#x5F00;&#x59CB;&#x5411;&#x540E;&#x641C;&#x7D22;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x627E;&#x5230;&#x8BE5;&#x5143;&#x7D20;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; -1&#x3002;</span>
+<span class="hljs-comment">// 返回最后一次出现的指定元素在此列表中的索引，从 index 开始向后搜索，如果没有找到该元素，则返回 -1。</span>
 <span class="hljs-keyword">int</span> <span class="hljs-title">lastIndexOf</span><span class="hljs-params">(E e, <span class="hljs-keyword">int</span> index)</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6B64;&#x5217;&#x8868;&#x4E2D;&#x6700;&#x540E;&#x51FA;&#x73B0;&#x7684;&#x6307;&#x5B9A;&#x5143;&#x7D20;&#x7684;&#x7D22;&#x5F15;&#xFF1B;&#x5982;&#x679C;&#x5217;&#x8868;&#x4E0D;&#x5305;&#x542B;&#x6B64;&#x5143;&#x7D20;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; -1&#x3002;</span>
+<span class="hljs-comment">// 返回此列表中最后出现的指定元素的索引；如果列表不包含此元素，则返回 -1。</span>
 <span class="hljs-keyword">int</span> <span class="hljs-title">lastIndexOf</span><span class="hljs-params">(Object o)</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6B64;&#x5217;&#x8868;&#x5143;&#x7D20;&#x7684;&#x5217;&#x8868;&#x8FED;&#x4EE3;&#x5668;&#xFF08;&#x6309;&#x9002;&#x5F53;&#x987A;&#x5E8F;&#xFF09;&#x3002;</span>
+<span class="hljs-comment">// 返回此列表元素的列表迭代器（按适当顺序）。</span>
 ListIterator&lt;E&gt; <span class="hljs-title">listIterator</span><span class="hljs-params">()</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x5217;&#x8868;&#x4E2D;&#x5143;&#x7D20;&#x7684;&#x5217;&#x8868;&#x8FED;&#x4EE3;&#x5668;&#xFF08;&#x6309;&#x9002;&#x5F53;&#x987A;&#x5E8F;&#xFF09;&#xFF0C;&#x4ECE;&#x5217;&#x8868;&#x7684;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x5F00;&#x59CB;&#x3002;</span>
+<span class="hljs-comment">// 返回列表中元素的列表迭代器（按适当顺序），从列表的指定位置开始。</span>
 ListIterator&lt;E&gt; <span class="hljs-title">listIterator</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index)</span>
-<span class="hljs-comment">// &#x79FB;&#x9664;&#x6B64;&#x5217;&#x8868;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x4E0A;&#x7684;&#x5143;&#x7D20;&#x3002;</span>
+<span class="hljs-comment">// 移除此列表指定位置上的元素。</span>
 E <span class="hljs-title">remove</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index)</span>
-<span class="hljs-comment">// &#x4ECE;&#x6B64;&#x5217;&#x8868;&#x79FB;&#x9664;&#x7B2C;&#x4E00;&#x6B21;&#x51FA;&#x73B0;&#x7684;&#x6307;&#x5B9A;&#x5143;&#x7D20;&#xFF08;&#x5982;&#x679C;&#x5B58;&#x5728;&#xFF09;&#x3002;</span>
+<span class="hljs-comment">// 从此列表移除第一次出现的指定元素（如果存在）。</span>
 <span class="hljs-keyword">boolean</span> <span class="hljs-title">remove</span><span class="hljs-params">(Object o)</span>
-<span class="hljs-comment">// &#x4ECE;&#x6B64;&#x5217;&#x8868;&#x79FB;&#x9664;&#x6240;&#x6709;&#x5305;&#x542B;&#x5728;&#x6307;&#x5B9A; collection &#x4E2D;&#x7684;&#x5143;&#x7D20;&#x3002;</span>
+<span class="hljs-comment">// 从此列表移除所有包含在指定 collection 中的元素。</span>
 <span class="hljs-keyword">boolean</span> <span class="hljs-title">removeAll</span><span class="hljs-params">(Collection&lt;?&gt; c)</span>
-<span class="hljs-comment">// &#x53EA;&#x4FDD;&#x7559;&#x6B64;&#x5217;&#x8868;&#x4E2D;&#x5305;&#x542B;&#x5728;&#x6307;&#x5B9A; collection &#x4E2D;&#x7684;&#x5143;&#x7D20;&#x3002;</span>
+<span class="hljs-comment">// 只保留此列表中包含在指定 collection 中的元素。</span>
 <span class="hljs-keyword">boolean</span> <span class="hljs-title">retainAll</span><span class="hljs-params">(Collection&lt;?&gt; c)</span>
-<span class="hljs-comment">// &#x7528;&#x6307;&#x5B9A;&#x7684;&#x5143;&#x7D20;&#x66FF;&#x4EE3;&#x6B64;&#x5217;&#x8868;&#x6307;&#x5B9A;&#x4F4D;&#x7F6E;&#x4E0A;&#x7684;&#x5143;&#x7D20;&#x3002;</span>
+<span class="hljs-comment">// 用指定的元素替代此列表指定位置上的元素。</span>
 E <span class="hljs-title">set</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index, E element)</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6B64;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x6570;&#x3002;</span>
+<span class="hljs-comment">// 返回此列表中的元素数。</span>
 <span class="hljs-keyword">int</span> <span class="hljs-title">size</span><span class="hljs-params">()</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6B64;&#x5217;&#x8868;&#x4E2D; fromIndex&#xFF08;&#x5305;&#x62EC;&#xFF09;&#x548C; toIndex&#xFF08;&#x4E0D;&#x5305;&#x62EC;&#xFF09;&#x4E4B;&#x95F4;&#x90E8;&#x5206;&#x7684;&#x89C6;&#x56FE;&#x3002;</span>
+<span class="hljs-comment">// 返回此列表中 fromIndex（包括）和 toIndex（不包括）之间部分的视图。</span>
 List&lt;E&gt; <span class="hljs-title">subList</span><span class="hljs-params">(<span class="hljs-keyword">int</span> fromIndex, <span class="hljs-keyword">int</span> toIndex)</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6309;&#x6070;&#x5F53;&#x987A;&#x5E8F;&#xFF08;&#x4ECE;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x5230;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF09;&#x5305;&#x542B;&#x6B64;&#x5217;&#x8868;&#x4E2D;&#x6240;&#x6709;&#x5143;&#x7D20;&#x7684;&#x6570;&#x7EC4;&#x3002;</span>
+<span class="hljs-comment">// 返回一个按恰当顺序（从第一个元素到最后一个元素）包含此列表中所有元素的数组。</span>
 Object[] <span class="hljs-title">toArray</span><span class="hljs-params">()</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x4EE5;&#x6070;&#x5F53;&#x987A;&#x5E8F;&#xFF08;&#x4ECE;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#x5230;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF09;&#x5305;&#x542B;&#x5217;&#x8868;&#x6240;&#x6709;&#x5143;&#x7D20;&#x7684;&#x6570;&#x7EC4;&#xFF1B;&#x8FD4;&#x56DE;&#x6570;&#x7EC4;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x7C7B;&#x578B;&#x662F;&#x6307;&#x5B9A;&#x6570;&#x7EC4;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x7C7B;&#x578B;&#x3002;</span>
+<span class="hljs-comment">// 返回以恰当顺序（从第一个元素到最后一个元素）包含列表所有元素的数组；返回数组的运行时类型是指定数组的运行时类型。</span>
 &lt;T&gt; T[] <span class="hljs-title">toArray</span><span class="hljs-params">(T[] a)</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6B64;&#x5217;&#x8868;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x8868;&#x793A;&#x5F62;&#x5F0F;&#x3002;</span>
+<span class="hljs-comment">// 返回此列表的字符串表示形式。</span>
 </span></code></pre>
-<pre><code class="lang-java"><span class="hljs-number">1</span>. &#x521B;&#x5EFA;
-CopyOnWriteArrayList&#x5171;<span class="hljs-number">3</span>&#x4E2A;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;
-&#x8BF4;&#x660E;&#xFF1A;&#x8FD9;<span class="hljs-number">3</span>&#x4E2A;&#x6784;&#x9020;&#x51FD;&#x6570;&#x90FD;&#x8C03;&#x7528;&#x4E86;setArray()&#xFF0C;
-&#x8BF4;&#x660E;&#xFF1A;setArray()&#x7684;&#x4F5C;&#x7528;&#x662F;&#x7ED9;array&#x8D4B;&#x503C;&#xFF1B;&#x5176;&#x4E2D;&#xFF0C;array&#x662F;<span class="hljs-keyword">volatile</span> <span class="hljs-keyword">transient</span> Object[]&#x7C7B;&#x578B;&#xFF0C;&#x5373;array&#x662F;&#x201C;<span class="hljs-keyword">volatile</span>&#x6570;&#x7EC4;&#x201D;&#x3002;
-&#x5173;&#x4E8E;<span class="hljs-keyword">volatile</span>&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x6211;&#x4EEC;&#x77E5;&#x9053;&#x201C;<span class="hljs-keyword">volatile</span>&#x80FD;&#x8BA9;&#x53D8;&#x91CF;&#x53D8;&#x5F97;&#x53EF;&#x89C1;&#x201D;&#xFF0C;&#x5373;&#x5BF9;&#x4E00;&#x4E2A;<span class="hljs-keyword">volatile</span>&#x53D8;&#x91CF;&#x7684;&#x8BFB;&#xFF0C;&#x603B;&#x662F;&#x80FD;&#x770B;&#x5230;&#xFF08;&#x4EFB;&#x610F;&#x7EBF;&#x7A0B;&#xFF09;&#x5BF9;&#x8FD9;&#x4E2A;<span class="hljs-keyword">volatile</span>&#x53D8;&#x91CF;&#x6700;&#x540E;&#x7684;&#x5199;&#x5165;&#x3002;&#x6B63;&#x5728;&#x7531;&#x4E8E;&#x8FD9;&#x79CD;&#x7279;&#x6027;&#xFF0C;&#x6BCF;&#x6B21;&#x66F4;&#x65B0;&#x4E86;&#x201C;<span class="hljs-keyword">volatile</span>&#x6570;&#x7EC4;&#x201D;&#x4E4B;&#x540E;&#xFF0C;&#x5176;&#x5B83;&#x7EBF;&#x7A0B;&#x90FD;&#x80FD;&#x770B;&#x5230;&#x5BF9;&#x5B83;&#x6240;&#x505A;&#x7684;&#x66F4;&#x65B0;&#x3002;
-&#x5173;&#x4E8E;<span class="hljs-keyword">transient</span>&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x5B83;&#x662F;&#x5728;&#x5E8F;&#x5217;&#x5316;&#x4E2D;&#x624D;&#x8D77;&#x4F5C;&#x7528;&#xFF0C;<span class="hljs-keyword">transient</span>&#x53D8;&#x91CF;&#x4E0D;&#x4F1A;&#x88AB;&#x81EA;&#x52A8;&#x5E8F;&#x5217;&#x5316;&#x3002;<span class="hljs-keyword">transient</span>&#x4E0D;&#x662F;&#x672C;&#x6587;&#x5173;&#x6CE8;&#x7684;&#x91CD;&#x70B9;&#xFF0C;&#x4E86;&#x89E3;&#x5373;&#x53EF;&#x3002;
-&#x5173;&#x4E8E;<span class="hljs-keyword">transient</span>&#x7684;&#x66F4;&#x591A;&#x5185;&#x5BB9;&#xFF0C;&#x8BF7;&#x53C2;&#x8003;&#xFF1A;http:<span class="hljs-comment">//www.cnblogs.com/skywang12345/p/io_06.html</span>
+<pre><code class="lang-java"><span class="hljs-number">1</span>. 创建
+CopyOnWriteArrayList共<span class="hljs-number">3</span>个构造函数。
+说明：这<span class="hljs-number">3</span>个构造函数都调用了setArray()，
+说明：setArray()的作用是给array赋值；其中，array是<span class="hljs-keyword">volatile</span> <span class="hljs-keyword">transient</span> Object[]类型，即array是“<span class="hljs-keyword">volatile</span>数组”。
+关于<span class="hljs-keyword">volatile</span>关键字，我们知道“<span class="hljs-keyword">volatile</span>能让变量变得可见”，即对一个<span class="hljs-keyword">volatile</span>变量的读，总是能看到（任意线程）对这个<span class="hljs-keyword">volatile</span>变量最后的写入。正在由于这种特性，每次更新了“<span class="hljs-keyword">volatile</span>数组”之后，其它线程都能看到对它所做的更新。
+关于<span class="hljs-keyword">transient</span>关键字，它是在序列化中才起作用，<span class="hljs-keyword">transient</span>变量不会被自动序列化。<span class="hljs-keyword">transient</span>不是本文关注的重点，了解即可。
+关于<span class="hljs-keyword">transient</span>的更多内容，请参考：http:<span class="hljs-comment">//www.cnblogs.com/skywang12345/p/io_06.html</span>
 
-<span class="hljs-number">2</span>. &#x6DFB;&#x52A0;
-&#x4EE5;add(E e)&#x4E3A;&#x4F8B;&#xFF0C;&#x6765;&#x5BF9;&#x201C;CopyOnWriteArrayList&#x7684;&#x6DFB;&#x52A0;&#x64CD;&#x4F5C;&#x201D;&#x8FDB;&#x884C;&#x8BF4;&#x660E;
-&#x8BF4;&#x660E;&#xFF1A;add(E e)&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x5C06;&#x6570;&#x636E;e&#x6DFB;&#x52A0;&#x5230;&#x201D;<span class="hljs-keyword">volatile</span>&#x6570;&#x7EC4;&#x201C;&#x4E2D;&#x3002;&#x5B83;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x662F;&#xFF0C;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x63A5;&#x7740;&#x5C06;&#x539F;&#x59CB;&#x7684;&#x201D;<span class="hljs-keyword">volatile</span>&#x6570;&#x7EC4;&#x201C;&#x7684;&#x6570;&#x636E;&#x62F7;&#x8D1D;&#x5230;&#x65B0;&#x6570;&#x7EC4;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x65B0;&#x589E;&#x6570;&#x636E;&#x4E5F;&#x6DFB;&#x52A0;&#x5230;&#x65B0;&#x6570;&#x7EC4;&#x4E2D;&#xFF1B;&#x6700;&#x540E;&#xFF0C;&#x5C06;&#x65B0;&#x6570;&#x7EC4;&#x8D4B;&#x503C;&#x7ED9;&#x201D;<span class="hljs-keyword">volatile</span>&#x6570;&#x7EC4;&#x201C;&#x3002;
-&#x5728;add(E e)&#x4E2D;&#x6709;&#x4E24;&#x70B9;&#x9700;&#x8981;&#x5173;&#x6CE8;&#x3002;
-    &#x7B2C;&#x4E00;&#xFF0C;&#x5728;&#x201D;&#x6DFB;&#x52A0;&#x64CD;&#x4F5C;&#x201C;&#x5F00;&#x59CB;&#x524D;&#xFF0C;&#x83B7;&#x53D6;&#x72EC;&#x5360;&#x9501;(lock)&#xFF0C;&#x82E5;&#x6B64;&#x65F6;&#x6709;&#x9700;&#x8981;&#x7EBF;&#x7A0B;&#x8981;&#x83B7;&#x53D6;&#x9501;&#xFF0C;&#x5219;&#x5FC5;&#x987B;&#x7B49;&#x5F85;&#xFF1B;&#x5728;&#x64CD;&#x4F5C;&#x5B8C;&#x6BD5;&#x540E;&#xFF0C;&#x91CA;&#x653E;&#x72EC;&#x5360;&#x9501;(lock)&#xFF0C;&#x6B64;&#x65F6;&#x5176;&#x5B83;&#x7EBF;&#x7A0B;&#x624D;&#x80FD;&#x83B7;&#x53D6;&#x9501;&#x3002;&#x901A;&#x8FC7;&#x72EC;&#x5360;&#x9501;&#xFF0C;&#x6765;&#x9632;&#x6B62;&#x591A;&#x7EBF;&#x7A0B;&#x540C;&#x65F6;&#x4FEE;&#x6539;&#x6570;&#x636E;&#xFF01;
+<span class="hljs-number">2</span>. 添加
+以add(E e)为例，来对“CopyOnWriteArrayList的添加操作”进行说明
+说明：add(E e)的作用就是将数据e添加到”<span class="hljs-keyword">volatile</span>数组“中。它的实现方式是，新建一个数组，接着将原始的”<span class="hljs-keyword">volatile</span>数组“的数据拷贝到新数组中，然后将新增数据也添加到新数组中；最后，将新数组赋值给”<span class="hljs-keyword">volatile</span>数组“。
+在add(E e)中有两点需要关注。
+    第一，在”添加操作“开始前，获取独占锁(lock)，若此时有需要线程要获取锁，则必须等待；在操作完毕后，释放独占锁(lock)，此时其它线程才能获取锁。通过独占锁，来防止多线程同时修改数据！
 
-<span class="hljs-number">3</span>. &#x83B7;&#x53D6;
-&#x8BF4;&#x660E;&#xFF1A;get(<span class="hljs-keyword">int</span> index)&#x7684;&#x5B9E;&#x73B0;&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x5C31;&#x662F;&#x8FD4;&#x56DE;&#x201D;<span class="hljs-keyword">volatile</span>&#x6570;&#x7EC4;&#x201C;&#x4E2D;&#x7684;&#x7B2C;index&#x4E2A;&#x5143;&#x7D20;&#x3002;
+<span class="hljs-number">3</span>. 获取
+说明：get(<span class="hljs-keyword">int</span> index)的实现很简单，就是返回”<span class="hljs-keyword">volatile</span>数组“中的第index个元素。
 
-<span class="hljs-number">4</span>. &#x5220;&#x9664;
-&#x4EE5;remove(<span class="hljs-keyword">int</span> index)&#x4E3A;&#x4F8B;&#xFF0C;&#x6765;&#x5BF9;&#x201C;CopyOnWriteArrayList&#x7684;&#x5220;&#x9664;&#x64CD;&#x4F5C;&#x201D;&#x8FDB;&#x884C;&#x8BF4;&#x660E;&#x3002;
-&#x8BF4;&#x660E;&#xFF1A;remove(<span class="hljs-keyword">int</span> index)&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x5C06;&#x201D;<span class="hljs-keyword">volatile</span>&#x6570;&#x7EC4;&#x201C;&#x4E2D;&#x7B2C;index&#x4E2A;&#x5143;&#x7D20;&#x5220;&#x9664;&#x3002;&#x5B83;&#x7684;&#x5B9E;&#x73B0;&#x65B9;&#x5F0F;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x88AB;&#x5220;&#x9664;&#x7684;&#x662F;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x5143;&#x7D20;&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x901A;&#x8FC7;Arrays.copyOf()&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x65B0;&#x5EFA;&#x6570;&#x7EC4;&#x3002;&#x5426;&#x5219;&#xFF0C;&#x65B0;&#x5EFA;&#x6570;&#x7EC4;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x201D;<span class="hljs-keyword">volatile</span>&#x6570;&#x7EC4;&#x4E2D;&#x88AB;&#x5220;&#x9664;&#x5143;&#x7D20;&#x4E4B;&#x5916;&#x7684;&#x5176;&#x5B83;&#x5143;&#x7D20;&#x201C;&#x62F7;&#x8D1D;&#x5230;&#x65B0;&#x6570;&#x7EC4;&#x4E2D;&#xFF1B;&#x6700;&#x540E;&#xFF0C;&#x5C06;&#x65B0;&#x6570;&#x7EC4;&#x8D4B;&#x503C;&#x7ED9;&#x201D;<span class="hljs-keyword">volatile</span>&#x6570;&#x7EC4;&#x201C;&#x3002;
-    &#x548C;add(E e)&#x4E00;&#x6837;&#xFF0C;remove(<span class="hljs-keyword">int</span> index)&#x4E5F;&#x662F;&#x201D;&#x5728;&#x64CD;&#x4F5C;&#x4E4B;&#x524D;&#xFF0C;&#x83B7;&#x53D6;&#x72EC;&#x5360;&#x9501;&#xFF1B;&#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#xFF0C;&#x91CA;&#x653E;&#x72EC;&#x5360;&#x662F;&#x201C;&#xFF1B;&#x5E76;&#x4E14;&#x201D;&#x5728;&#x64CD;&#x4F5C;&#x5B8C;&#x6210;&#x65F6;&#xFF0C;&#x4F1A;&#x901A;&#x8FC7;&#x5C06;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x5230;<span class="hljs-keyword">volatile</span>&#x6570;&#x7EC4;&#x4E2D;&#x201C;&#x3002;
+<span class="hljs-number">4</span>. 删除
+以remove(<span class="hljs-keyword">int</span> index)为例，来对“CopyOnWriteArrayList的删除操作”进行说明。
+说明：remove(<span class="hljs-keyword">int</span> index)的作用就是将”<span class="hljs-keyword">volatile</span>数组“中第index个元素删除。它的实现方式是，如果被删除的是最后一个元素，则直接通过Arrays.copyOf()进行处理，而不需要新建数组。否则，新建数组，然后将”<span class="hljs-keyword">volatile</span>数组中被删除元素之外的其它元素“拷贝到新数组中；最后，将新数组赋值给”<span class="hljs-keyword">volatile</span>数组“。
+    和add(E e)一样，remove(<span class="hljs-keyword">int</span> index)也是”在操作之前，获取独占锁；操作完成之后，释放独占是“；并且”在操作完成时，会通过将数据更新到<span class="hljs-keyword">volatile</span>数组中“。
 
-<span class="hljs-number">5</span>. &#x904D;&#x5386;
-&#x4EE5;iterator()&#x4E3A;&#x4F8B;&#xFF0C;&#x6765;&#x5BF9;&#x201C;CopyOnWriteArrayList&#x7684;&#x904D;&#x5386;&#x64CD;&#x4F5C;&#x201D;&#x8FDB;&#x884C;&#x8BF4;&#x660E;&#x3002;
-&#x8BF4;&#x660E;&#xFF1A;iterator()&#x4F1A;&#x8FD4;&#x56DE;COWIterator&#x5BF9;&#x8C61;&#x3002;COWIterator&#x5B9E;&#x73B0;&#x989D;ListIterator&#x63A5;&#x53E3;&#xFF0C;
-&#x8BF4;&#x660E;&#xFF1A;COWIterator&#x4E0D;&#x652F;&#x6301;&#x4FEE;&#x6539;&#x5143;&#x7D20;&#x7684;&#x64CD;&#x4F5C;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x5BF9;&#x4E8E;remove(),set(),add()&#x7B49;&#x64CD;&#x4F5C;&#xFF0C;COWIterator&#x90FD;&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#xFF01;
-&#x53E6;&#x5916;&#xFF0C;&#x9700;&#x8981;&#x63D0;&#x5230;&#x7684;&#x4E00;&#x70B9;&#x662F;&#xFF0C;CopyOnWriteArrayList&#x8FD4;&#x56DE;&#x8FED;&#x4EE3;&#x5668;&#x4E0D;&#x4F1A;&#x629B;&#x51FA;ConcurrentModificationException&#x5F02;&#x5E38;&#xFF0C;&#x5373;&#x5B83;&#x4E0D;&#x662F;fail-fast&#x673A;&#x5236;&#x7684;&#xFF01;
+<span class="hljs-number">5</span>. 遍历
+以iterator()为例，来对“CopyOnWriteArrayList的遍历操作”进行说明。
+说明：iterator()会返回COWIterator对象。COWIterator实现额ListIterator接口，
+说明：COWIterator不支持修改元素的操作。例如，对于remove(),set(),add()等操作，COWIterator都会抛出异常！
+另外，需要提到的一点是，CopyOnWriteArrayList返回迭代器不会抛出ConcurrentModificationException异常，即它不是fail-fast机制的！
 </code></pre>
-<h2 id="copyonwritearraylist&#x793A;&#x4F8B;"><a name="copyonwritearraylist&#x793A;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#copyonwritearraylist&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="copyonwritearraylist&#x793A;&#x4F8B;" class="plugin-anchor" href="#copyonwritearraylist&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>CopyOnWriteArrayList&#x793A;&#x4F8B;</h2>
+<h2 id="copyonwritearraylist示例">2.1 CopyOnWriteArrayList示例</h2>
 <pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.*;
 <span class="hljs-keyword">import</span> java.util.concurrent.*;
 <span class="hljs-comment">/*
- *   CopyOnWriteArrayList&#x662F;&#x201C;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x201D;&#x7684;&#x52A8;&#x6001;&#x6570;&#x7EC4;&#xFF0C;&#x800C;ArrayList&#x662F;&#x975E;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x3002;
+ *   CopyOnWriteArrayList是“线程安全”的动态数组，而ArrayList是非线程安全的。
  *
- *   &#x4E0B;&#x9762;&#x662F;&#x201C;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x540C;&#x65F6;&#x64CD;&#x4F5C;&#x5E76;&#x4E14;&#x904D;&#x5386;list&#x201D;&#x7684;&#x793A;&#x4F8B;
- *   (01) &#x5F53;list&#x662F;CopyOnWriteArrayList&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x7A0B;&#x5E8F;&#x80FD;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#x3002;
- *   (02) &#x5F53;list&#x662F;ArrayList&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x7A0B;&#x5E8F;&#x4F1A;&#x4EA7;&#x751F;ConcurrentModificationException&#x5F02;&#x5E38;&#x3002;
+ *   下面是“多个线程同时操作并且遍历list”的示例
+ *   (01) 当list是CopyOnWriteArrayList对象时，程序能正常运行。
+ *   (02) 当list是ArrayList对象时，程序会产生ConcurrentModificationException异常。
  *
  * @author skywang
  */</span>
 <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">CopyOnWriteArrayListTest1</span> </span>{
-    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> list&#x662F;ArrayList&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x7A0B;&#x5E8F;&#x4F1A;&#x51FA;&#x9519;&#x3002;</span>
+    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> list是ArrayList对象时，程序会出错。</span>
     <span class="hljs-comment">//private static List&lt;String&gt; list = new ArrayList&lt;String&gt;();</span>
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> List&lt;String&gt; list = <span class="hljs-keyword">new</span> CopyOnWriteArrayList&lt;String&gt;();
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-        <span class="hljs-comment">// &#x540C;&#x65F6;&#x542F;&#x52A8;&#x4E24;&#x4E2A;&#x7EBF;&#x7A0B;&#x5BF9;list&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF01;</span>
-        <span class="hljs-keyword">new</span> MyThread(<span class="hljs-string">&quot;ta&quot;</span>).start();
-        <span class="hljs-keyword">new</span> MyThread(<span class="hljs-string">&quot;tb&quot;</span>).start();
+        <span class="hljs-comment">// 同时启动两个线程对list进行操作！</span>
+        <span class="hljs-keyword">new</span> MyThread(<span class="hljs-string">"ta"</span>).start();
+        <span class="hljs-keyword">new</span> MyThread(<span class="hljs-string">"tb"</span>).start();
     }
     <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printAll</span><span class="hljs-params">()</span> </span>{
         String value = <span class="hljs-keyword">null</span>;
         Iterator iter = list.iterator();
         <span class="hljs-keyword">while</span>(iter.hasNext()) {
             value = (String)iter.next();
-            System.out.print(value+<span class="hljs-string">&quot;, &quot;</span>);
+            System.out.print(value+<span class="hljs-string">", "</span>);
         }
         System.out.println();
     }
@@ -1058,10 +623,10 @@ CopyOnWriteArrayList&#x5171;<span class="hljs-number">3</span>&#x4E2A;&#x6784;&#
         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
                 <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
             <span class="hljs-keyword">while</span> (i++ &lt; <span class="hljs-number">6</span>) {
-                <span class="hljs-comment">// &#x201C;&#x7EBF;&#x7A0B;&#x540D;&#x201D; + &quot;-&quot; + &quot;&#x5E8F;&#x53F7;&quot;</span>
-                String val = Thread.currentThread().getName()+<span class="hljs-string">&quot;-&quot;</span>+i;
+                <span class="hljs-comment">// “线程名” + "-" + "序号"</span>
+                String val = Thread.currentThread().getName()+<span class="hljs-string">"-"</span>+i;
                 list.add(val);
-                <span class="hljs-comment">// &#x901A;&#x8FC7;&#x201C;Iterator&#x201D;&#x904D;&#x5386;List&#x3002;</span>
+                <span class="hljs-comment">// 通过“Iterator”遍历List。</span>
                 printAll();
             }
         }
@@ -1081,175 +646,175 @@ ta-<span class="hljs-number">3</span>, ta-<span class="hljs-number">1</span>, tb
 tb-<span class="hljs-number">3</span>, ta-<span class="hljs-number">1</span>, ta-<span class="hljs-number">3</span>, tb-<span class="hljs-number">1</span>, tb-<span class="hljs-number">4</span>, tb-<span class="hljs-number">2</span>, ta-<span class="hljs-number">4</span>, ta-<span class="hljs-number">2</span>, tb-<span class="hljs-number">5</span>, tb-<span class="hljs-number">3</span>, ta-<span class="hljs-number">5</span>, ta-<span class="hljs-number">3</span>, tb-<span class="hljs-number">6</span>, 
 tb-<span class="hljs-number">4</span>, ta-<span class="hljs-number">4</span>, tb-<span class="hljs-number">5</span>, ta-<span class="hljs-number">5</span>, tb-<span class="hljs-number">6</span>, ta-<span class="hljs-number">6</span>,
 
-&#x7ED3;&#x679C;&#x8BF4;&#x660E;&#xFF1A;&#x5982;&#x679C;&#x5C06;&#x6E90;&#x7801;&#x4E2D;&#x7684;list&#x6539;&#x6210;ArrayList&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x7A0B;&#x5E8F;&#x4F1A;&#x4EA7;&#x751F;ConcurrentModificationException&#x5F02;&#x5E38;&#x3002;
+结果说明：如果将源码中的list改成ArrayList对象时，程序会产生ConcurrentModificationException异常。
 </code></pre>
-<h1 id="concurrentskiplistmap"><a name="concurrentskiplistmap" class="anchor-navigation-ex-anchor" href="#concurrentskiplistmap"><i class="fa fa-link" aria-hidden="true"></i></a><a name="concurrentskiplistmap" class="plugin-anchor" href="#concurrentskiplistmap"><i class="fa fa-link" aria-hidden="true"></i></a>ConcurrentSkipListMap</h1>
-<pre><code class="lang-java">ConcurrentSkipListMap&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x6709;&#x5E8F;&#x7684;&#x54C8;&#x5E0C;&#x8868;&#xFF0C;&#x9002;&#x7528;&#x4E8E;&#x9AD8;&#x5E76;&#x53D1;&#x7684;&#x573A;&#x666F;&#x3002;
-ConcurrentSkipListMap&#x548C;TreeMap&#xFF0C;&#x5B83;&#x4EEC;&#x867D;&#x7136;&#x90FD;&#x662F;&#x6709;&#x5E8F;&#x7684;&#x54C8;&#x5E0C;&#x8868;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x7B2C;&#x4E00;&#xFF0C;&#x5B83;&#x4EEC;&#x7684;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x673A;&#x5236;&#x4E0D;&#x540C;&#xFF0C;TreeMap&#x662F;&#x975E;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#xFF0C;&#x800C;ConcurrentSkipListMap&#x662F;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x3002;&#x7B2C;&#x4E8C;&#xFF0C;ConcurrentSkipListMap&#x662F;&#x901A;&#x8FC7;&#x8DF3;&#x8868;&#x5B9E;&#x73B0;&#x7684;&#xFF0C;&#x800C;TreeMap&#x662F;&#x901A;&#x8FC7;&#x7EA2;&#x9ED1;&#x6811;&#x5B9E;&#x73B0;&#x7684;&#x3002;
-&#x5173;&#x4E8E;&#x8DF3;&#x8868;(Skip List)&#xFF0C;&#x5B83;&#x662F;&#x5E73;&#x8861;&#x6811;&#x7684;&#x4E00;&#x79CD;&#x66FF;&#x4EE3;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x4F46;&#x662F;&#x548C;&#x7EA2;&#x9ED1;&#x6811;&#x4E0D;&#x76F8;&#x540C;&#x7684;&#x662F;&#xFF0C;&#x8DF3;&#x8868;&#x5BF9;&#x4E8E;&#x6811;&#x7684;&#x5E73;&#x8861;&#x7684;&#x5B9E;&#x73B0;&#x662F;&#x57FA;&#x4E8E;&#x4E00;&#x79CD;&#x968F;&#x673A;&#x5316;&#x7684;&#x7B97;&#x6CD5;&#x7684;&#xFF0C;&#x8FD9;&#x6837;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x8DF3;&#x8868;&#x7684;&#x63D2;&#x5165;&#x548C;&#x5220;&#x9664;&#x7684;&#x5DE5;&#x4F5C;&#x662F;&#x6BD4;&#x8F83;&#x7B80;&#x5355;&#x7684;&#x3002;
+<h1 id="concurrentskiplistmap">3 ConcurrentSkipListMap</h1>
+<pre><code class="lang-java">ConcurrentSkipListMap是线程安全的有序的哈希表，适用于高并发的场景。
+ConcurrentSkipListMap和TreeMap，它们虽然都是有序的哈希表。但是，第一，它们的线程安全机制不同，TreeMap是非线程安全的，而ConcurrentSkipListMap是线程安全的。第二，ConcurrentSkipListMap是通过跳表实现的，而TreeMap是通过红黑树实现的。
+关于跳表(Skip List)，它是平衡树的一种替代的数据结构，但是和红黑树不相同的是，跳表对于树的平衡的实现是基于一种随机化的算法的，这样也就是说跳表的插入和删除的工作是比较简单的。
 </code></pre>
-<p><a href="res/Java%20Thread/30221944-21a18064c0114e65bffa68c5dadd4f0b.jpg" data-lightbox="671eded4-c417-4101-8518-bff9569ca909" data-title="ConcurrentSkipListMap&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;"><img src="res/Java%20Thread/30221944-21a18064c0114e65bffa68c5dadd4f0b.jpg" alt="ConcurrentSkipListMap&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;"></a></p>
-<p><strong>&#x8BF4;&#x660E;</strong>&#xFF1A;</p>
-<p>&#x5148;&#x4EE5;&#x6570;&#x636E;&#x201C;7,14,21,32,37,71,85&#x201D;&#x5E8F;&#x5217;&#x4E3A;&#x4F8B;&#xFF0C;&#x6765;&#x5BF9;&#x8DF3;&#x8868;&#x8FDB;&#x884C;&#x7B80;&#x5355;&#x8BF4;&#x660E;&#x3002;</p>
-<p>&#x8DF3;&#x8868;&#x5206;&#x4E3A;&#x8BB8;&#x591A;&#x5C42;(level)&#xFF0C;&#x6BCF;&#x4E00;&#x5C42;&#x90FD;&#x53EF;&#x4EE5;&#x770B;&#x4F5C;&#x662F;&#x6570;&#x636E;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x8FD9;&#x4E9B;&#x7D22;&#x5F15;&#x7684;&#x610F;&#x4E49;&#x5C31;&#x662F;&#x52A0;&#x5FEB;&#x8DF3;&#x8868;&#x67E5;&#x627E;&#x6570;&#x636E;&#x901F;&#x5EA6;&#x3002;&#x6BCF;&#x4E00;&#x5C42;&#x7684;&#x6570;&#x636E;&#x90FD;&#x662F;&#x6709;&#x5E8F;&#x7684;&#xFF0C;&#x4E0A;&#x4E00;&#x5C42;&#x6570;&#x636E;&#x662F;&#x4E0B;&#x4E00;&#x5C42;&#x6570;&#x636E;&#x7684;&#x5B50;&#x96C6;&#xFF0C;&#x5E76;&#x4E14;&#x7B2C;&#x4E00;&#x5C42;(level 1)&#x5305;&#x542B;&#x4E86;&#x5168;&#x90E8;&#x7684;&#x6570;&#x636E;&#xFF1B;&#x5C42;&#x6B21;&#x8D8A;&#x9AD8;&#xFF0C;&#x8DF3;&#x8DC3;&#x6027;&#x8D8A;&#x5927;&#xFF0C;&#x5305;&#x542B;&#x7684;&#x6570;&#x636E;&#x8D8A;&#x5C11;&#x3002;
-&#x8DF3;&#x8868;&#x5305;&#x542B;&#x4E00;&#x4E2A;&#x8868;&#x5934;&#xFF0C;&#x5B83;&#x67E5;&#x627E;&#x6570;&#x636E;&#x65F6;&#xFF0C;&#x662F;&#x4ECE;&#x4E0A;&#x5F80;&#x4E0B;&#xFF0C;&#x4ECE;&#x5DE6;&#x5F80;&#x53F3;&#x8FDB;&#x884C;&#x67E5;&#x627E;&#x3002;&#x73B0;&#x5728;&#x201C;&#x9700;&#x8981;&#x627E;&#x51FA;&#x503C;&#x4E3A;32&#x7684;&#x8282;&#x70B9;&#x201D;&#x4E3A;&#x4F8B;&#xFF0C;&#x6765;&#x5BF9;&#x6BD4;&#x8BF4;&#x660E;&#x8DF3;&#x8868;&#x548C;&#x666E;&#x904D;&#x7684;&#x94FE;&#x8868;&#x3002;</p>
-<p><strong>&#x60C5;&#x51B5;1&#xFF1A;&#x94FE;&#x8868;&#x4E2D;&#x67E5;&#x627E;&#x201C;32&#x201D;&#x8282;&#x70B9;</strong></p>
-<p><a href="res/Java%20Thread/30222059-f01604b1b24d429e940f7a002947c143.jpg" data-lightbox="54da7e61-dee7-474f-95b4-ebb8dc5a41b8" data-title="&#x94FE;&#x8868;&#x4E2D;&#x67E5;&#x627E;&#x201C;32&#x201D;&#x8282;&#x70B9;"><img src="res/Java%20Thread/30222059-f01604b1b24d429e940f7a002947c143.jpg" alt="&#x94FE;&#x8868;&#x4E2D;&#x67E5;&#x627E;&#x201C;32&#x201D;&#x8282;&#x70B9;"></a></p>
-<p><strong>&#x60C5;&#x51B5;2&#xFF1A;&#x8DF3;&#x8868;&#x4E2D;&#x67E5;&#x627E;&#x201C;32&#x201D;&#x8282;&#x70B9;</strong></p>
-<p><a href="res/Java%20Thread/30222128-045c88b7e992443395a540ba2eb740f3.jpg" data-lightbox="250c1ced-fa2e-495b-b147-9f7f6cd0ccb1" data-title="&#x8DF3;&#x8868;&#x4E2D;&#x67E5;&#x627E;&#x201C;32&#x201D;&#x8282;&#x70B9;"><img src="res/Java%20Thread/30222128-045c88b7e992443395a540ba2eb740f3.jpg" alt="&#x8DF3;&#x8868;&#x4E2D;&#x67E5;&#x627E;&#x201C;32&#x201D;&#x8282;&#x70B9;"></a></p>
-<p>&#x5FFD;&#x7565;&#x7D22;&#x5F15;&#x5782;&#x76F4;&#x7EBF;&#x8DEF;&#x4E0A;&#x8DEF;&#x5F84;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x53EA;&#x9700;&#x8981;2&#x6B65;(&#x7EA2;&#x8272;&#x90E8;&#x5206;&#x8868;&#x793A;&#x8DEF;&#x5F84;)&#x3002;</p>
-<pre><code class="lang-java">&#x4E0B;&#x9762;&#x8BF4;&#x8BF4;Java&#x4E2D;ConcurrentSkipListMap&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;
-(<span class="hljs-number">01</span>) ConcurrentSkipListMap&#x7EE7;&#x627F;&#x4E8E;AbstractMap&#x7C7B;&#xFF0C;&#x4E5F;&#x5C31;&#x610F;&#x5473;&#x7740;&#x5B83;&#x662F;&#x4E00;&#x4E2A;&#x54C8;&#x5E0C;&#x8868;&#x3002;
-(<span class="hljs-number">02</span>) Index&#x662F;ConcurrentSkipListMap&#x7684;&#x5185;&#x90E8;&#x7C7B;&#xFF0C;&#x5B83;&#x4E0E;&#x201C;&#x8DF3;&#x8868;&#x4E2D;&#x7684;&#x7D22;&#x5F15;&#x76F8;&#x5BF9;&#x5E94;&#x201D;&#x3002;HeadIndex&#x7EE7;&#x627F;&#x4E8E;Index&#xFF0C;ConcurrentSkipListMap&#x4E2D;&#x542B;&#x6709;&#x4E00;&#x4E2A;HeadIndex&#x7684;&#x5BF9;&#x8C61;head&#xFF0C;head&#x662F;&#x201C;&#x8DF3;&#x8868;&#x7684;&#x8868;&#x5934;&#x201D;&#x3002;
-(<span class="hljs-number">03</span>) Index&#x662F;&#x8DF3;&#x8868;&#x4E2D;&#x7684;&#x7D22;&#x5F15;&#xFF0C;&#x5B83;&#x5305;&#x542B;&#x201C;&#x53F3;&#x7D22;&#x5F15;&#x7684;&#x6307;&#x9488;(right)&#x201D;&#xFF0C;&#x201C;&#x4E0B;&#x7D22;&#x5F15;&#x7684;&#x6307;&#x9488;(down)&#x201D;&#x548C;&#x201C;&#x54C8;&#x5E0C;&#x8868;&#x8282;&#x70B9;node&#x201D;&#x3002;node&#x662F;Node&#x7684;&#x5BF9;&#x8C61;&#xFF0C;Node&#x4E5F;&#x662F;ConcurrentSkipListMap&#x4E2D;&#x7684;&#x5185;&#x90E8;&#x7C7B;&#x3002;
+<p><a data-lightbox="2d5191f2-72db-4c36-9df1-dca62d8cfa24" data-title="ConcurrentSkipListMap的数据结构" href="res/Java%20Thread/30221944-21a18064c0114e65bffa68c5dadd4f0b.jpg"><img alt="ConcurrentSkipListMap的数据结构" src="res/Java%20Thread/30221944-21a18064c0114e65bffa68c5dadd4f0b.jpg"/></a></p>
+<p><strong>说明</strong>：</p>
+<p>先以数据“7,14,21,32,37,71,85”序列为例，来对跳表进行简单说明。</p>
+<p>跳表分为许多层(level)，每一层都可以看作是数据的索引，这些索引的意义就是加快跳表查找数据速度。每一层的数据都是有序的，上一层数据是下一层数据的子集，并且第一层(level 1)包含了全部的数据；层次越高，跳跃性越大，包含的数据越少。
+跳表包含一个表头，它查找数据时，是从上往下，从左往右进行查找。现在“需要找出值为32的节点”为例，来对比说明跳表和普遍的链表。</p>
+<p><strong>情况1：链表中查找“32”节点</strong></p>
+<p><a data-lightbox="ca116bac-9a7d-49ce-8996-5aab3b90be4d" data-title="链表中查找“32”节点" href="res/Java%20Thread/30222059-f01604b1b24d429e940f7a002947c143.jpg"><img alt="链表中查找“32”节点" src="res/Java%20Thread/30222059-f01604b1b24d429e940f7a002947c143.jpg"/></a></p>
+<p><strong>情况2：跳表中查找“32”节点</strong></p>
+<p><a data-lightbox="45cd6ce7-d44a-4ef7-8517-84155fad8d4b" data-title="跳表中查找“32”节点" href="res/Java%20Thread/30222128-045c88b7e992443395a540ba2eb740f3.jpg"><img alt="跳表中查找“32”节点" src="res/Java%20Thread/30222128-045c88b7e992443395a540ba2eb740f3.jpg"/></a></p>
+<p>忽略索引垂直线路上路径的情况下，只需要2步(红色部分表示路径)。</p>
+<pre><code class="lang-java">下面说说Java中ConcurrentSkipListMap的数据结构。
+(<span class="hljs-number">01</span>) ConcurrentSkipListMap继承于AbstractMap类，也就意味着它是一个哈希表。
+(<span class="hljs-number">02</span>) Index是ConcurrentSkipListMap的内部类，它与“跳表中的索引相对应”。HeadIndex继承于Index，ConcurrentSkipListMap中含有一个HeadIndex的对象head，head是“跳表的表头”。
+(<span class="hljs-number">03</span>) Index是跳表中的索引，它包含“右索引的指针(right)”，“下索引的指针(down)”和“哈希表节点node”。node是Node的对象，Node也是ConcurrentSkipListMap中的内部类。
 </code></pre>
-<pre><code class="lang-java"><span class="hljs-comment">// ConcurrentSkipListMap&#x51FD;&#x6570;&#x5217;&#x8868;</span>
-<span class="hljs-comment">// &#x6784;&#x9020;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7A7A;&#x6620;&#x5C04;&#xFF0C;&#x8BE5;&#x6620;&#x5C04;&#x6309;&#x7167;&#x952E;&#x7684;&#x81EA;&#x7136;&#x987A;&#x5E8F;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x3002;</span>
+<pre><code class="lang-java"><span class="hljs-comment">// ConcurrentSkipListMap函数列表</span>
+<span class="hljs-comment">// 构造一个新的空映射，该映射按照键的自然顺序进行排序。</span>
 ConcurrentSkipListMap()
-<span class="hljs-comment">// &#x6784;&#x9020;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x7A7A;&#x6620;&#x5C04;&#xFF0C;&#x8BE5;&#x6620;&#x5C04;&#x6309;&#x7167;&#x6307;&#x5B9A;&#x7684;&#x6BD4;&#x8F83;&#x5668;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x3002;</span>
+<span class="hljs-comment">// 构造一个新的空映射，该映射按照指定的比较器进行排序。</span>
 ConcurrentSkipListMap(Comparator&lt;? <span class="hljs-keyword">super</span> K&gt; comparator)
-<span class="hljs-comment">// &#x6784;&#x9020;&#x4E00;&#x4E2A;&#x65B0;&#x6620;&#x5C04;&#xFF0C;&#x8BE5;&#x6620;&#x5C04;&#x6240;&#x5305;&#x542B;&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#x4E0E;&#x7ED9;&#x5B9A;&#x6620;&#x5C04;&#x5305;&#x542B;&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#x76F8;&#x540C;&#xFF0C;&#x5E76;&#x6309;&#x7167;&#x952E;&#x7684;&#x81EA;&#x7136;&#x987A;&#x5E8F;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x3002;</span>
+<span class="hljs-comment">// 构造一个新映射，该映射所包含的映射关系与给定映射包含的映射关系相同，并按照键的自然顺序进行排序。</span>
 ConcurrentSkipListMap(Map&lt;? extends K,? extends V&gt; m)
-<span class="hljs-comment">// &#x6784;&#x9020;&#x4E00;&#x4E2A;&#x65B0;&#x6620;&#x5C04;&#xFF0C;&#x8BE5;&#x6620;&#x5C04;&#x6240;&#x5305;&#x542B;&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#x4E0E;&#x6307;&#x5B9A;&#x7684;&#x6709;&#x5E8F;&#x6620;&#x5C04;&#x5305;&#x542B;&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#x76F8;&#x540C;&#xFF0C;&#x4F7F;&#x7528;&#x7684;&#x987A;&#x5E8F;&#x4E5F;&#x76F8;&#x540C;&#x3002;</span>
+<span class="hljs-comment">// 构造一个新映射，该映射所包含的映射关系与指定的有序映射包含的映射关系相同，使用的顺序也相同。</span>
 ConcurrentSkipListMap(SortedMap&lt;K,? extends V&gt; m)
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x4E0E;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;&#x7ED9;&#x5B9A;&#x952E;&#x7684;&#x6700;&#x5C0F;&#x952E;&#x5173;&#x8054;&#x7684;&#x952E;-&#x503C;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#xFF1B;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x8FD9;&#x6837;&#x7684;&#x6761;&#x76EE;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; null&#x3002;</span>
+<span class="hljs-comment">// 返回与大于等于给定键的最小键关联的键-值映射关系；如果不存在这样的条目，则返回 null。</span>
 Map.<span class="hljs-function">Entry&lt;K,V&gt; <span class="hljs-title">ceilingEntry</span><span class="hljs-params">(K key)</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;&#x7ED9;&#x5B9A;&#x952E;&#x7684;&#x6700;&#x5C0F;&#x952E;&#xFF1B;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x8FD9;&#x6837;&#x7684;&#x952E;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; null&#x3002;</span>
+<span class="hljs-comment">// 返回大于等于给定键的最小键；如果不存在这样的键，则返回 null。</span>
 K <span class="hljs-title">ceilingKey</span><span class="hljs-params">(K key)</span>
-<span class="hljs-comment">// &#x4ECE;&#x6B64;&#x6620;&#x5C04;&#x4E2D;&#x79FB;&#x9664;&#x6240;&#x6709;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#x3002;</span>
+<span class="hljs-comment">// 从此映射中移除所有映射关系。</span>
 <span class="hljs-keyword">void</span> <span class="hljs-title">clear</span><span class="hljs-params">()</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6B64; ConcurrentSkipListMap &#x5B9E;&#x4F8B;&#x7684;&#x6D45;&#x8868;&#x526F;&#x672C;&#x3002;</span>
+<span class="hljs-comment">// 返回此 ConcurrentSkipListMap 实例的浅表副本。</span>
 ConcurrentSkipListMap&lt;K,V&gt; <span class="hljs-title">clone</span><span class="hljs-params">()</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x5BF9;&#x6B64;&#x6620;&#x5C04;&#x4E2D;&#x7684;&#x952E;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x7684;&#x6BD4;&#x8F83;&#x5668;&#xFF1B;&#x5982;&#x679C;&#x6B64;&#x6620;&#x5C04;&#x4F7F;&#x7528;&#x952E;&#x7684;&#x81EA;&#x7136;&#x987A;&#x5E8F;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; null&#x3002;</span>
+<span class="hljs-comment">// 返回对此映射中的键进行排序的比较器；如果此映射使用键的自然顺序，则返回 null。</span>
 Comparator&lt;? <span class="hljs-keyword">super</span> K&gt; <span class="hljs-title">comparator</span><span class="hljs-params">()</span>
-<span class="hljs-comment">// &#x5982;&#x679C;&#x6B64;&#x6620;&#x5C04;&#x5305;&#x542B;&#x6307;&#x5B9A;&#x952E;&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; true&#x3002;</span>
+<span class="hljs-comment">// 如果此映射包含指定键的映射关系，则返回 true。</span>
 <span class="hljs-keyword">boolean</span> <span class="hljs-title">containsKey</span><span class="hljs-params">(Object key)</span>
-<span class="hljs-comment">// &#x5982;&#x679C;&#x6B64;&#x6620;&#x5C04;&#x4E3A;&#x6307;&#x5B9A;&#x503C;&#x6620;&#x5C04;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x952E;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; true&#x3002;</span>
+<span class="hljs-comment">// 如果此映射为指定值映射一个或多个键，则返回 true。</span>
 <span class="hljs-keyword">boolean</span> <span class="hljs-title">containsValue</span><span class="hljs-params">(Object value)</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6B64;&#x6620;&#x5C04;&#x4E2D;&#x6240;&#x5305;&#x542B;&#x952E;&#x7684;&#x9006;&#x5E8F; NavigableSet &#x89C6;&#x56FE;&#x3002;</span>
+<span class="hljs-comment">// 返回此映射中所包含键的逆序 NavigableSet 视图。</span>
 NavigableSet&lt;K&gt; <span class="hljs-title">descendingKeySet</span><span class="hljs-params">()</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6B64;&#x6620;&#x5C04;&#x4E2D;&#x6240;&#x5305;&#x542B;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#x7684;&#x9006;&#x5E8F;&#x89C6;&#x56FE;&#x3002;</span>
+<span class="hljs-comment">// 返回此映射中所包含映射关系的逆序视图。</span>
 ConcurrentNavigableMap&lt;K,V&gt; <span class="hljs-title">descendingMap</span><span class="hljs-params">()</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6B64;&#x6620;&#x5C04;&#x4E2D;&#x6240;&#x5305;&#x542B;&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#x7684; Set &#x89C6;&#x56FE;&#x3002;</span>
+<span class="hljs-comment">// 返回此映射中所包含的映射关系的 Set 视图。</span>
 Set&lt;Map.Entry&lt;K,V&gt;&gt; <span class="hljs-title">entrySet</span><span class="hljs-params">()</span>
-<span class="hljs-comment">// &#x6BD4;&#x8F83;&#x6307;&#x5B9A;&#x5BF9;&#x8C61;&#x4E0E;&#x6B64;&#x6620;&#x5C04;&#x7684;&#x76F8;&#x7B49;&#x6027;&#x3002;</span>
+<span class="hljs-comment">// 比较指定对象与此映射的相等性。</span>
 <span class="hljs-keyword">boolean</span> <span class="hljs-title">equals</span><span class="hljs-params">(Object o)</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x4E0E;&#x6B64;&#x6620;&#x5C04;&#x4E2D;&#x7684;&#x6700;&#x5C0F;&#x952E;&#x5173;&#x8054;&#x7684;&#x952E;-&#x503C;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#xFF1B;&#x5982;&#x679C;&#x8BE5;&#x6620;&#x5C04;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; null&#x3002;</span>
+<span class="hljs-comment">// 返回与此映射中的最小键关联的键-值映射关系；如果该映射为空，则返回 null。</span>
 Map.Entry&lt;K,V&gt; <span class="hljs-title">firstEntry</span><span class="hljs-params">()</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6B64;&#x6620;&#x5C04;&#x4E2D;&#x5F53;&#x524D;&#x7B2C;&#x4E00;&#x4E2A;&#xFF08;&#x6700;&#x4F4E;&#xFF09;&#x952E;&#x3002;</span>
+<span class="hljs-comment">// 返回此映射中当前第一个（最低）键。</span>
 K <span class="hljs-title">firstKey</span><span class="hljs-params">()</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x4E0E;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#x7ED9;&#x5B9A;&#x952E;&#x7684;&#x6700;&#x5927;&#x952E;&#x5173;&#x8054;&#x7684;&#x952E;-&#x503C;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#xFF1B;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x8FD9;&#x6837;&#x7684;&#x952E;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; null&#x3002;</span>
+<span class="hljs-comment">// 返回与小于等于给定键的最大键关联的键-值映射关系；如果不存在这样的键，则返回 null。</span>
 Map.Entry&lt;K,V&gt; <span class="hljs-title">floorEntry</span><span class="hljs-params">(K key)</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x5C0F;&#x4E8E;&#x7B49;&#x4E8E;&#x7ED9;&#x5B9A;&#x952E;&#x7684;&#x6700;&#x5927;&#x952E;&#xFF1B;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x8FD9;&#x6837;&#x7684;&#x952E;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; null&#x3002;</span>
+<span class="hljs-comment">// 返回小于等于给定键的最大键；如果不存在这样的键，则返回 null。</span>
 K <span class="hljs-title">floorKey</span><span class="hljs-params">(K key)</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6307;&#x5B9A;&#x952E;&#x6240;&#x6620;&#x5C04;&#x5230;&#x7684;&#x503C;&#xFF1B;&#x5982;&#x679C;&#x6B64;&#x6620;&#x5C04;&#x4E0D;&#x5305;&#x542B;&#x8BE5;&#x952E;&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; null&#x3002;</span>
+<span class="hljs-comment">// 返回指定键所映射到的值；如果此映射不包含该键的映射关系，则返回 null。</span>
 V <span class="hljs-title">get</span><span class="hljs-params">(Object key)</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6B64;&#x6620;&#x5C04;&#x7684;&#x90E8;&#x5206;&#x89C6;&#x56FE;&#xFF0C;&#x5176;&#x952E;&#x503C;&#x4E25;&#x683C;&#x5C0F;&#x4E8E; toKey&#x3002;</span>
+<span class="hljs-comment">// 返回此映射的部分视图，其键值严格小于 toKey。</span>
 ConcurrentNavigableMap&lt;K,V&gt; <span class="hljs-title">headMap</span><span class="hljs-params">(K toKey)</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6B64;&#x6620;&#x5C04;&#x7684;&#x90E8;&#x5206;&#x89C6;&#x56FE;&#xFF0C;&#x5176;&#x952E;&#x5C0F;&#x4E8E;&#xFF08;&#x6216;&#x7B49;&#x4E8E;&#xFF0C;&#x5982;&#x679C; inclusive &#x4E3A; true&#xFF09;toKey&#x3002;</span>
+<span class="hljs-comment">// 返回此映射的部分视图，其键小于（或等于，如果 inclusive 为 true）toKey。</span>
 ConcurrentNavigableMap&lt;K,V&gt; <span class="hljs-title">headMap</span><span class="hljs-params">(K toKey, <span class="hljs-keyword">boolean</span> inclusive)</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x4E0E;&#x4E25;&#x683C;&#x5927;&#x4E8E;&#x7ED9;&#x5B9A;&#x952E;&#x7684;&#x6700;&#x5C0F;&#x952E;&#x5173;&#x8054;&#x7684;&#x952E;-&#x503C;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#xFF1B;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x8FD9;&#x6837;&#x7684;&#x952E;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; null&#x3002;</span>
+<span class="hljs-comment">// 返回与严格大于给定键的最小键关联的键-值映射关系；如果不存在这样的键，则返回 null。</span>
 Map.Entry&lt;K,V&gt; <span class="hljs-title">higherEntry</span><span class="hljs-params">(K key)</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x4E25;&#x683C;&#x5927;&#x4E8E;&#x7ED9;&#x5B9A;&#x952E;&#x7684;&#x6700;&#x5C0F;&#x952E;&#xFF1B;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x8FD9;&#x6837;&#x7684;&#x952E;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; null&#x3002;</span>
+<span class="hljs-comment">// 返回严格大于给定键的最小键；如果不存在这样的键，则返回 null。</span>
 K <span class="hljs-title">higherKey</span><span class="hljs-params">(K key)</span>
-<span class="hljs-comment">// &#x5982;&#x679C;&#x6B64;&#x6620;&#x5C04;&#x672A;&#x5305;&#x542B;&#x952E;-&#x503C;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; true&#x3002;</span>
+<span class="hljs-comment">// 如果此映射未包含键-值映射关系，则返回 true。</span>
 <span class="hljs-keyword">boolean</span> <span class="hljs-title">isEmpty</span><span class="hljs-params">()</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6B64;&#x6620;&#x5C04;&#x4E2D;&#x6240;&#x5305;&#x542B;&#x952E;&#x7684; NavigableSet &#x89C6;&#x56FE;&#x3002;</span>
+<span class="hljs-comment">// 返回此映射中所包含键的 NavigableSet 视图。</span>
 NavigableSet&lt;K&gt; <span class="hljs-title">keySet</span><span class="hljs-params">()</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x4E0E;&#x6B64;&#x6620;&#x5C04;&#x4E2D;&#x7684;&#x6700;&#x5927;&#x952E;&#x5173;&#x8054;&#x7684;&#x952E;-&#x503C;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#xFF1B;&#x5982;&#x679C;&#x8BE5;&#x6620;&#x5C04;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; null&#x3002;</span>
+<span class="hljs-comment">// 返回与此映射中的最大键关联的键-值映射关系；如果该映射为空，则返回 null。</span>
 Map.Entry&lt;K,V&gt; <span class="hljs-title">lastEntry</span><span class="hljs-params">()</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6620;&#x5C04;&#x4E2D;&#x5F53;&#x524D;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#xFF08;&#x6700;&#x9AD8;&#xFF09;&#x952E;&#x3002;</span>
+<span class="hljs-comment">// 返回映射中当前最后一个（最高）键。</span>
 K <span class="hljs-title">lastKey</span><span class="hljs-params">()</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x4E0E;&#x4E25;&#x683C;&#x5C0F;&#x4E8E;&#x7ED9;&#x5B9A;&#x952E;&#x7684;&#x6700;&#x5927;&#x952E;&#x5173;&#x8054;&#x7684;&#x952E;-&#x503C;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#xFF1B;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x8FD9;&#x6837;&#x7684;&#x952E;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; null&#x3002;</span>
+<span class="hljs-comment">// 返回与严格小于给定键的最大键关联的键-值映射关系；如果不存在这样的键，则返回 null。</span>
 Map.Entry&lt;K,V&gt; <span class="hljs-title">lowerEntry</span><span class="hljs-params">(K key)</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x4E25;&#x683C;&#x5C0F;&#x4E8E;&#x7ED9;&#x5B9A;&#x952E;&#x7684;&#x6700;&#x5927;&#x952E;&#xFF1B;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x8FD9;&#x6837;&#x7684;&#x952E;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; null&#x3002;</span>
+<span class="hljs-comment">// 返回严格小于给定键的最大键；如果不存在这样的键，则返回 null。</span>
 K <span class="hljs-title">lowerKey</span><span class="hljs-params">(K key)</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6B64;&#x6620;&#x5C04;&#x4E2D;&#x6240;&#x5305;&#x542B;&#x952E;&#x7684; NavigableSet &#x89C6;&#x56FE;&#x3002;</span>
+<span class="hljs-comment">// 返回此映射中所包含键的 NavigableSet 视图。</span>
 NavigableSet&lt;K&gt; <span class="hljs-title">navigableKeySet</span><span class="hljs-params">()</span>
-<span class="hljs-comment">// &#x79FB;&#x9664;&#x5E76;&#x8FD4;&#x56DE;&#x4E0E;&#x6B64;&#x6620;&#x5C04;&#x4E2D;&#x7684;&#x6700;&#x5C0F;&#x952E;&#x5173;&#x8054;&#x7684;&#x952E;-&#x503C;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#xFF1B;&#x5982;&#x679C;&#x8BE5;&#x6620;&#x5C04;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; null&#x3002;</span>
+<span class="hljs-comment">// 移除并返回与此映射中的最小键关联的键-值映射关系；如果该映射为空，则返回 null。</span>
 Map.Entry&lt;K,V&gt; <span class="hljs-title">pollFirstEntry</span><span class="hljs-params">()</span>
-<span class="hljs-comment">// &#x79FB;&#x9664;&#x5E76;&#x8FD4;&#x56DE;&#x4E0E;&#x6B64;&#x6620;&#x5C04;&#x4E2D;&#x7684;&#x6700;&#x5927;&#x952E;&#x5173;&#x8054;&#x7684;&#x952E;-&#x503C;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#xFF1B;&#x5982;&#x679C;&#x8BE5;&#x6620;&#x5C04;&#x4E3A;&#x7A7A;&#xFF0C;&#x5219;&#x8FD4;&#x56DE; null&#x3002;</span>
+<span class="hljs-comment">// 移除并返回与此映射中的最大键关联的键-值映射关系；如果该映射为空，则返回 null。</span>
 Map.Entry&lt;K,V&gt; <span class="hljs-title">pollLastEntry</span><span class="hljs-params">()</span>
-<span class="hljs-comment">// &#x5C06;&#x6307;&#x5B9A;&#x503C;&#x4E0E;&#x6B64;&#x6620;&#x5C04;&#x4E2D;&#x7684;&#x6307;&#x5B9A;&#x952E;&#x5173;&#x8054;&#x3002;</span>
+<span class="hljs-comment">// 将指定值与此映射中的指定键关联。</span>
 V <span class="hljs-title">put</span><span class="hljs-params">(K key, V value)</span>
-<span class="hljs-comment">// &#x5982;&#x679C;&#x6307;&#x5B9A;&#x952E;&#x5DF2;&#x7ECF;&#x4E0D;&#x518D;&#x4E0E;&#x67D0;&#x4E2A;&#x503C;&#x76F8;&#x5173;&#x8054;&#xFF0C;&#x5219;&#x5C06;&#x5B83;&#x4E0E;&#x7ED9;&#x5B9A;&#x503C;&#x5173;&#x8054;&#x3002;</span>
+<span class="hljs-comment">// 如果指定键已经不再与某个值相关联，则将它与给定值关联。</span>
 V <span class="hljs-title">putIfAbsent</span><span class="hljs-params">(K key, V value)</span>
-<span class="hljs-comment">// &#x4ECE;&#x6B64;&#x6620;&#x5C04;&#x4E2D;&#x79FB;&#x9664;&#x6307;&#x5B9A;&#x952E;&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#xFF08;&#x5982;&#x679C;&#x5B58;&#x5728;&#xFF09;&#x3002;</span>
+<span class="hljs-comment">// 从此映射中移除指定键的映射关系（如果存在）。</span>
 V <span class="hljs-title">remove</span><span class="hljs-params">(Object key)</span>
-<span class="hljs-comment">// &#x53EA;&#x6709;&#x76EE;&#x524D;&#x5C06;&#x952E;&#x7684;&#x6761;&#x76EE;&#x6620;&#x5C04;&#x5230;&#x7ED9;&#x5B9A;&#x503C;&#x65F6;&#xFF0C;&#x624D;&#x79FB;&#x9664;&#x8BE5;&#x952E;&#x7684;&#x6761;&#x76EE;&#x3002;</span>
+<span class="hljs-comment">// 只有目前将键的条目映射到给定值时，才移除该键的条目。</span>
 <span class="hljs-keyword">boolean</span> <span class="hljs-title">remove</span><span class="hljs-params">(Object key, Object value)</span>
-<span class="hljs-comment">// &#x53EA;&#x6709;&#x76EE;&#x524D;&#x5C06;&#x952E;&#x7684;&#x6761;&#x76EE;&#x6620;&#x5C04;&#x5230;&#x67D0;&#x4E00;&#x503C;&#x65F6;&#xFF0C;&#x624D;&#x66FF;&#x6362;&#x8BE5;&#x952E;&#x7684;&#x6761;&#x76EE;&#x3002;</span>
+<span class="hljs-comment">// 只有目前将键的条目映射到某一值时，才替换该键的条目。</span>
 V <span class="hljs-title">replace</span><span class="hljs-params">(K key, V value)</span>
-<span class="hljs-comment">// &#x53EA;&#x6709;&#x76EE;&#x524D;&#x5C06;&#x952E;&#x7684;&#x6761;&#x76EE;&#x6620;&#x5C04;&#x5230;&#x7ED9;&#x5B9A;&#x503C;&#x65F6;&#xFF0C;&#x624D;&#x66FF;&#x6362;&#x8BE5;&#x952E;&#x7684;&#x6761;&#x76EE;&#x3002;</span>
+<span class="hljs-comment">// 只有目前将键的条目映射到给定值时，才替换该键的条目。</span>
 <span class="hljs-keyword">boolean</span> <span class="hljs-title">replace</span><span class="hljs-params">(K key, V oldValue, V newValue)</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6B64;&#x6620;&#x5C04;&#x4E2D;&#x7684;&#x952E;-&#x503C;&#x6620;&#x5C04;&#x5173;&#x7CFB;&#x6570;&#x3002;</span>
+<span class="hljs-comment">// 返回此映射中的键-值映射关系数。</span>
 <span class="hljs-keyword">int</span> <span class="hljs-title">size</span><span class="hljs-params">()</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6B64;&#x6620;&#x5C04;&#x7684;&#x90E8;&#x5206;&#x89C6;&#x56FE;&#xFF0C;&#x5176;&#x952E;&#x7684;&#x8303;&#x56F4;&#x4ECE; fromKey &#x5230; toKey&#x3002;</span>
+<span class="hljs-comment">// 返回此映射的部分视图，其键的范围从 fromKey 到 toKey。</span>
 ConcurrentNavigableMap&lt;K,V&gt; <span class="hljs-title">subMap</span><span class="hljs-params">(K fromKey, <span class="hljs-keyword">boolean</span> fromInclusive, K toKey, <span class="hljs-keyword">boolean</span> toInclusive)</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6B64;&#x6620;&#x5C04;&#x7684;&#x90E8;&#x5206;&#x89C6;&#x56FE;&#xFF0C;&#x5176;&#x952E;&#x503C;&#x7684;&#x8303;&#x56F4;&#x4ECE; fromKey&#xFF08;&#x5305;&#x62EC;&#xFF09;&#x5230; toKey&#xFF08;&#x4E0D;&#x5305;&#x62EC;&#xFF09;&#x3002;</span>
+<span class="hljs-comment">// 返回此映射的部分视图，其键值的范围从 fromKey（包括）到 toKey（不包括）。</span>
 ConcurrentNavigableMap&lt;K,V&gt; <span class="hljs-title">subMap</span><span class="hljs-params">(K fromKey, K toKey)</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6B64;&#x6620;&#x5C04;&#x7684;&#x90E8;&#x5206;&#x89C6;&#x56FE;&#xFF0C;&#x5176;&#x952E;&#x5927;&#x4E8E;&#x7B49;&#x4E8E; fromKey&#x3002;</span>
+<span class="hljs-comment">// 返回此映射的部分视图，其键大于等于 fromKey。</span>
 ConcurrentNavigableMap&lt;K,V&gt; <span class="hljs-title">tailMap</span><span class="hljs-params">(K fromKey)</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6B64;&#x6620;&#x5C04;&#x7684;&#x90E8;&#x5206;&#x89C6;&#x56FE;&#xFF0C;&#x5176;&#x952E;&#x5927;&#x4E8E;&#xFF08;&#x6216;&#x7B49;&#x4E8E;&#xFF0C;&#x5982;&#x679C; inclusive &#x4E3A; true&#xFF09;fromKey&#x3002;</span>
+<span class="hljs-comment">// 返回此映射的部分视图，其键大于（或等于，如果 inclusive 为 true）fromKey。</span>
 ConcurrentNavigableMap&lt;K,V&gt; <span class="hljs-title">tailMap</span><span class="hljs-params">(K fromKey, <span class="hljs-keyword">boolean</span> inclusive)</span>
-<span class="hljs-comment">// &#x8FD4;&#x56DE;&#x6B64;&#x6620;&#x5C04;&#x4E2D;&#x6240;&#x5305;&#x542B;&#x503C;&#x7684; Collection &#x89C6;&#x56FE;&#x3002;</span>
+<span class="hljs-comment">// 返回此映射中所包含值的 Collection 视图。</span>
 Collection&lt;V&gt; <span class="hljs-title">values</span><span class="hljs-params">()</span>
 </span></code></pre>
-<pre><code class="lang-java"><span class="hljs-number">1</span>. &#x6DFB;&#x52A0;
-&#x4E0B;&#x9762;&#x4EE5;put(K key, V value)&#x4E3A;&#x4F8B;&#xFF0C;&#x5BF9;ConcurrentSkipListMap&#x7684;&#x6DFB;&#x52A0;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x8BF4;&#x660E;&#x3002;
-&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;put()&#x662F;&#x901A;&#x8FC7;doPut()&#x5C06;key-value&#x952E;&#x503C;&#x5BF9;&#x6DFB;&#x52A0;&#x5230;ConcurrentSkipListMap&#x4E2D;&#x7684;&#x3002;
-&#x8BF4;&#x660E;&#xFF1A;doPut() &#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x5C06;&#x952E;&#x503C;&#x5BF9;&#x6DFB;&#x52A0;&#x5230;&#x201C;&#x8DF3;&#x8868;&#x201D;&#x4E2D;&#x3002;
-&#x8981;&#x60F3;&#x641E;&#x6E05;doPut()&#xFF0C;&#x9996;&#x5148;&#x8981;&#x5F04;&#x6E05;&#x695A;&#x5B83;&#x7684;&#x4E3B;&#x5E72;&#x90E8;&#x5206; &#x2014;&#x2014; &#x6211;&#x4EEC;&#x5148;&#x5355;&#x7EAF;&#x7684;&#x53EA;&#x8003;&#x8651;&#x201C;&#x5355;&#x7EBF;&#x7A0B;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5C06;key-value&#x6DFB;&#x52A0;&#x5230;&#x8DF3;&#x8868;&#x4E2D;&#x201D;&#xFF0C;&#x5373;&#x5FFD;&#x7565;&#x201C;&#x591A;&#x7EBF;&#x7A0B;&#x76F8;&#x5173;&#x7684;&#x5185;&#x5BB9;&#x201D;&#x3002;&#x5B83;&#x7684;&#x6D41;&#x7A0B;&#x5982;&#x4E0B;&#xFF1A;
-&#x7B2C;<span class="hljs-number">1</span>&#x6B65;&#xFF1A;&#x627E;&#x5230;&#x201C;&#x63D2;&#x5165;&#x4F4D;&#x7F6E;&#x201D;&#x3002;
-    &#x5373;&#xFF0C;&#x627E;&#x5230;&#x201C;key&#x7684;&#x524D;&#x7EE7;&#x8282;&#x70B9;(b)&#x201D;&#x548C;&#x201C;key&#x7684;&#x540E;&#x7EE7;&#x8282;&#x70B9;(n)&#x201D;&#xFF1B;key&#x662F;&#x8981;&#x63D2;&#x5165;&#x8282;&#x70B9;&#x7684;&#x952E;&#x3002;
-&#x7B2C;<span class="hljs-number">2</span>&#x6B65;&#xFF1A;&#x65B0;&#x5EFA;&#x5E76;&#x63D2;&#x5165;&#x8282;&#x70B9;&#x3002;
-    &#x5373;&#xFF0C;&#x65B0;&#x5EFA;&#x8282;&#x70B9;z(key&#x5BF9;&#x5E94;&#x7684;&#x8282;&#x70B9;)&#xFF0C;&#x5E76;&#x5C06;&#x65B0;&#x8282;&#x70B9;z&#x63D2;&#x5165;&#x5230;&#x201C;&#x8DF3;&#x8868;&#x201D;&#x4E2D;(&#x8BBE;&#x7F6E;&#x201C;b&#x7684;&#x540E;&#x7EE7;&#x8282;&#x70B9;&#x4E3A;z&#x201D;&#xFF0C;&#x201C;z&#x7684;&#x540E;&#x7EE7;&#x8282;&#x70B9;&#x4E3A;n&#x201D;)&#x3002;
-&#x7B2C;<span class="hljs-number">3</span>&#x6B65;&#xFF1A;&#x66F4;&#x65B0;&#x8DF3;&#x8868;&#x3002;
-    &#x5373;&#xFF0C;&#x968F;&#x673A;&#x83B7;&#x53D6;&#x4E00;&#x4E2A;level&#xFF0C;&#x7136;&#x540E;&#x5728;&#x201C;&#x8DF3;&#x8868;&#x201D;&#x7684;&#x7B2C;<span class="hljs-number">1</span>&#x5C42;&#xFF5E;&#x7B2C;level&#x5C42;&#x4E4B;&#x95F4;&#xFF0C;&#x6BCF;&#x4E00;&#x5C42;&#x90FD;&#x63D2;&#x5165;&#x8282;&#x70B9;z&#xFF1B;&#x5728;&#x7B2C;level&#x5C42;&#x4E4B;&#x4E0A;&#x5C31;&#x4E0D;&#x518D;&#x63D2;&#x5165;&#x8282;&#x70B9;&#x4E86;&#x3002;&#x82E5;level&#x6570;&#x503C;&#x5927;&#x4E8E;&#x201C;&#x8DF3;&#x8868;&#x7684;&#x5C42;&#x6B21;&#x201D;&#xFF0C;&#x5219;&#x65B0;&#x5EFA;&#x4E00;&#x5C42;&#x3002;
+<pre><code class="lang-java"><span class="hljs-number">1</span>. 添加
+下面以put(K key, V value)为例，对ConcurrentSkipListMap的添加方法进行说明。
+实际上，put()是通过doPut()将key-value键值对添加到ConcurrentSkipListMap中的。
+说明：doPut() 的作用就是将键值对添加到“跳表”中。
+要想搞清doPut()，首先要弄清楚它的主干部分 —— 我们先单纯的只考虑“单线程的情况下，将key-value添加到跳表中”，即忽略“多线程相关的内容”。它的流程如下：
+第<span class="hljs-number">1</span>步：找到“插入位置”。
+    即，找到“key的前继节点(b)”和“key的后继节点(n)”；key是要插入节点的键。
+第<span class="hljs-number">2</span>步：新建并插入节点。
+    即，新建节点z(key对应的节点)，并将新节点z插入到“跳表”中(设置“b的后继节点为z”，“z的后继节点为n”)。
+第<span class="hljs-number">3</span>步：更新跳表。
+    即，随机获取一个level，然后在“跳表”的第<span class="hljs-number">1</span>层～第level层之间，每一层都插入节点z；在第level层之上就不再插入节点了。若level数值大于“跳表的层次”，则新建一层。
 
-<span class="hljs-number">2</span>. &#x5220;&#x9664;
-&#x4E0B;&#x9762;&#x4EE5;remove(Object key)&#x4E3A;&#x4F8B;&#xFF0C;&#x5BF9;ConcurrentSkipListMap&#x7684;&#x5220;&#x9664;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x8BF4;&#x660E;&#x3002;
-&#x5B9E;&#x9645;&#x4E0A;&#xFF0C;remove()&#x662F;&#x901A;&#x8FC7;doRemove()&#x5C06;ConcurrentSkipListMap&#x4E2D;&#x7684;key&#x5BF9;&#x5E94;&#x7684;&#x952E;&#x503C;&#x5BF9;&#x5220;&#x9664;&#x7684;&#x3002;
-&#x8BF4;&#x660E;&#xFF1A;doRemove()&#x7684;&#x4F5C;&#x7528;&#x662F;&#x5220;&#x9664;&#x8DF3;&#x8868;&#x4E2D;&#x7684;&#x8282;&#x70B9;&#x3002;
-&#x548C;doPut()&#x4E00;&#x6837;&#xFF0C;&#x6211;&#x4EEC;&#x91CD;&#x70B9;&#x770B;doRemove()&#x7684;&#x4E3B;&#x5E72;&#x90E8;&#x5206;&#xFF0C;&#x4E86;&#x89E3;&#x4E3B;&#x5E72;&#x90E8;&#x5206;&#x4E4B;&#x540E;&#xFF0C;&#x5176;&#x4F59;&#x90E8;&#x5206;&#x5C31;&#x975E;&#x5E38;&#x5BB9;&#x6613;&#x7406;&#x89E3;&#x4E86;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x201C;&#x5355;&#x7EBF;&#x7A0B;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x5220;&#x9664;&#x8DF3;&#x8868;&#x4E2D;&#x952E;&#x503C;&#x5BF9;&#x7684;&#x6B65;&#x9AA4;&#x201D;&#xFF1A;
-&#x7B2C;<span class="hljs-number">1</span>&#x6B65;&#xFF1A;&#x627E;&#x5230;&#x201C;&#x88AB;&#x5220;&#x9664;&#x8282;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;&#x201D;&#x3002;
- &#x5373;&#xFF0C;&#x627E;&#x5230;&#x201C;key&#x7684;&#x524D;&#x7EE7;&#x8282;&#x70B9;(b)&#x201D;&#xFF0C;&#x201C;key&#x6240;&#x5BF9;&#x5E94;&#x7684;&#x8282;&#x70B9;(n)&#x201D;&#xFF0C;&#x201C;n&#x7684;&#x540E;&#x7EE7;&#x8282;&#x70B9;f&#x201D;&#xFF1B;key&#x662F;&#x8981;&#x5220;&#x9664;&#x8282;&#x70B9;&#x7684;&#x952E;&#x3002;
-&#x7B2C;<span class="hljs-number">2</span>&#x6B65;&#xFF1A;&#x5220;&#x9664;&#x8282;&#x70B9;&#x3002;
- &#x5373;&#xFF0C;&#x5C06;&#x201C;key&#x6240;&#x5BF9;&#x5E94;&#x7684;&#x8282;&#x70B9;n&#x201D;&#x4ECE;&#x8DF3;&#x8868;&#x4E2D;&#x79FB;&#x9664; -- &#x5C06;&#x201C;b&#x7684;&#x540E;&#x7EE7;&#x8282;&#x70B9;&#x201D;&#x8BBE;&#x4E3A;&#x201C;f&#x201D;&#xFF01;
-&#x7B2C;<span class="hljs-number">3</span>&#x6B65;&#xFF1A;&#x66F4;&#x65B0;&#x8DF3;&#x8868;&#x3002;
- &#x5373;&#xFF0C;&#x904D;&#x5386;&#x8DF3;&#x8868;&#xFF0C;&#x5220;&#x9664;&#x6BCF;&#x4E00;&#x5C42;&#x7684;&#x201C;key&#x8282;&#x70B9;&#x201D;(&#x5982;&#x679C;&#x5B58;&#x5728;&#x7684;&#x8BDD;)&#x3002;&#x5982;&#x679C;&#x5220;&#x9664;&#x201C;key&#x8282;&#x70B9;&#x201D;&#x4E4B;&#x540E;&#xFF0C;&#x8DF3;&#x8868;&#x7684;&#x5C42;&#x6B21;&#x9700;&#x8981;-<span class="hljs-number">1</span>&#xFF1B;&#x5219;&#x6267;&#x884C;&#x76F8;&#x5E94;&#x7684;&#x64CD;&#x4F5C;&#xFF01;
+<span class="hljs-number">2</span>. 删除
+下面以remove(Object key)为例，对ConcurrentSkipListMap的删除方法进行说明。
+实际上，remove()是通过doRemove()将ConcurrentSkipListMap中的key对应的键值对删除的。
+说明：doRemove()的作用是删除跳表中的节点。
+和doPut()一样，我们重点看doRemove()的主干部分，了解主干部分之后，其余部分就非常容易理解了。下面是“单线程的情况下，删除跳表中键值对的步骤”：
+第<span class="hljs-number">1</span>步：找到“被删除节点的位置”。
+ 即，找到“key的前继节点(b)”，“key所对应的节点(n)”，“n的后继节点f”；key是要删除节点的键。
+第<span class="hljs-number">2</span>步：删除节点。
+ 即，将“key所对应的节点n”从跳表中移除 -- 将“b的后继节点”设为“f”！
+第<span class="hljs-number">3</span>步：更新跳表。
+ 即，遍历跳表，删除每一层的“key节点”(如果存在的话)。如果删除“key节点”之后，跳表的层次需要-<span class="hljs-number">1</span>；则执行相应的操作！
 
-<span class="hljs-number">3</span>. &#x83B7;&#x53D6;
-&#x4E0B;&#x9762;&#x4EE5;get(Object key)&#x4E3A;&#x4F8B;&#xFF0C;&#x5BF9;ConcurrentSkipListMap&#x7684;&#x83B7;&#x53D6;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x8BF4;&#x660E;&#x3002;
-&#x8BF4;&#x660E;&#xFF1A;doGet()&#x662F;&#x901A;&#x8FC7;findNode()&#x627E;&#x5230;&#x5E76;&#x8FD4;&#x56DE;&#x8282;&#x70B9;&#x7684;&#x3002;
-&#x8BF4;&#x660E;&#xFF1A;findNode(key)&#x7684;&#x4F5C;&#x7528;&#x662F;&#x5728;&#x8FD4;&#x56DE;&#x8DF3;&#x8868;&#x4E2D;key&#x5BF9;&#x5E94;&#x7684;&#x8282;&#x70B9;&#xFF1B;&#x5B58;&#x5728;&#x5219;&#x8FD4;&#x56DE;&#x8282;&#x70B9;&#xFF0C;&#x4E0D;&#x5B58;&#x5728;&#x5219;&#x8FD4;&#x56DE;<span class="hljs-keyword">null</span>&#x3002;
-&#x5148;&#x5F04;&#x6E05;&#x51FD;&#x6570;&#x7684;&#x4E3B;&#x5E72;&#x90E8;&#x5206;&#xFF0C;&#x5373;&#x629B;&#x5F00;&#x201C;&#x591A;&#x7EBF;&#x7A0B;&#x76F8;&#x5173;&#x5185;&#x5BB9;&#x201D;&#xFF0C;&#x5355;&#x7EAF;&#x7684;&#x8003;&#x8651;&#x5355;&#x7EBF;&#x7A0B;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4ECE;&#x8DF3;&#x8868;&#x83B7;&#x53D6;&#x8282;&#x70B9;&#x7684;&#x7B97;&#x6CD5;&#x3002;
-&#x7B2C;<span class="hljs-number">1</span>&#x6B65;&#xFF1A;&#x627E;&#x5230;&#x201C;&#x88AB;&#x5220;&#x9664;&#x8282;&#x70B9;&#x7684;&#x4F4D;&#x7F6E;&#x201D;&#x3002;
-    &#x6839;&#x636E;findPredecessor()&#x5B9A;&#x4F4D;key&#x6240;&#x5728;&#x7684;&#x5C42;&#x6B21;&#x4EE5;&#x53CA;&#x627E;&#x5230;key&#x7684;&#x524D;&#x7EE7;&#x8282;&#x70B9;(b)&#xFF0C;&#x7136;&#x540E;&#x627E;&#x5230;b&#x7684;&#x540E;&#x7EE7;&#x8282;&#x70B9;n&#x3002;
-&#x7B2C;<span class="hljs-number">2</span>&#x6B65;&#xFF1A;&#x6839;&#x636E;&#x201C;key&#x7684;&#x524D;&#x7EE7;&#x8282;&#x70B9;(b)&#x201D;&#x548C;&#x201C;key&#x7684;&#x524D;&#x7EE7;&#x8282;&#x70B9;&#x7684;&#x540E;&#x7EE7;&#x8282;&#x70B9;(n)&#x201D;&#x6765;&#x5B9A;&#x4F4D;&#x201C;key&#x5BF9;&#x5E94;&#x7684;&#x8282;&#x70B9;&#x201D;&#x3002;
-    &#x5177;&#x4F53;&#x662F;&#x901A;&#x8FC7;&#x6BD4;&#x8F83;&#x201C;n&#x7684;&#x952E;&#x503C;&#x201D;&#x548C;&#x201C;key&#x201D;&#x7684;&#x5927;&#x5C0F;&#x3002;&#x5982;&#x679C;&#x76F8;&#x7B49;&#xFF0C;&#x5219;n&#x5C31;&#x662F;&#x6240;&#x8981;&#x67E5;&#x627E;&#x7684;&#x952E;&#x3002;
+<span class="hljs-number">3</span>. 获取
+下面以get(Object key)为例，对ConcurrentSkipListMap的获取方法进行说明。
+说明：doGet()是通过findNode()找到并返回节点的。
+说明：findNode(key)的作用是在返回跳表中key对应的节点；存在则返回节点，不存在则返回<span class="hljs-keyword">null</span>。
+先弄清函数的主干部分，即抛开“多线程相关内容”，单纯的考虑单线程情况下，从跳表获取节点的算法。
+第<span class="hljs-number">1</span>步：找到“被删除节点的位置”。
+    根据findPredecessor()定位key所在的层次以及找到key的前继节点(b)，然后找到b的后继节点n。
+第<span class="hljs-number">2</span>步：根据“key的前继节点(b)”和“key的前继节点的后继节点(n)”来定位“key对应的节点”。
+    具体是通过比较“n的键值”和“key”的大小。如果相等，则n就是所要查找的键。
 </code></pre>
-<h2 id="concurrentskiplistmap&#x793A;&#x4F8B;"><a name="concurrentskiplistmap&#x793A;&#x4F8B;" class="anchor-navigation-ex-anchor" href="#concurrentskiplistmap&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="concurrentskiplistmap&#x793A;&#x4F8B;" class="plugin-anchor" href="#concurrentskiplistmap&#x793A;&#x4F8B;"><i class="fa fa-link" aria-hidden="true"></i></a>ConcurrentSkipListMap&#x793A;&#x4F8B;</h2>
+<h2 id="concurrentskiplistmap示例">3.1 ConcurrentSkipListMap示例</h2>
 <pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.*;
 <span class="hljs-keyword">import</span> java.util.concurrent.*;
 <span class="hljs-comment">/*
- *   ConcurrentSkipListMap&#x662F;&#x201C;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x201D;&#x7684;&#x54C8;&#x5E0C;&#x8868;&#xFF0C;&#x800C;TreeMap&#x662F;&#x975E;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;&#x3002;
+ *   ConcurrentSkipListMap是“线程安全”的哈希表，而TreeMap是非线程安全的。
  *
- *   &#x4E0B;&#x9762;&#x662F;&#x201C;&#x591A;&#x4E2A;&#x7EBF;&#x7A0B;&#x540C;&#x65F6;&#x64CD;&#x4F5C;&#x5E76;&#x4E14;&#x904D;&#x5386;map&#x201D;&#x7684;&#x793A;&#x4F8B;
- *   (01) &#x5F53;map&#x662F;ConcurrentSkipListMap&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x7A0B;&#x5E8F;&#x80FD;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#x3002;
- *   (02) &#x5F53;map&#x662F;TreeMap&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x7A0B;&#x5E8F;&#x4F1A;&#x4EA7;&#x751F;ConcurrentModificationException&#x5F02;&#x5E38;&#x3002;
+ *   下面是“多个线程同时操作并且遍历map”的示例
+ *   (01) 当map是ConcurrentSkipListMap对象时，程序能正常运行。
+ *   (02) 当map是TreeMap对象时，程序会产生ConcurrentModificationException异常。
  *
  * @author skywang
  */</span>
 <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConcurrentSkipListMapDemo1</span> </span>{
-    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> map&#x662F;TreeMap&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x7A0B;&#x5E8F;&#x4F1A;&#x51FA;&#x9519;&#x3002;</span>
+    <span class="hljs-comment">// <span class="hljs-doctag">TODO:</span> map是TreeMap对象时，程序会出错。</span>
     <span class="hljs-comment">//private static Map&lt;String, String&gt; map = new TreeMap&lt;String, String&gt;();</span>
     <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Map&lt;String, String&gt; map = <span class="hljs-keyword">new</span> ConcurrentSkipListMap&lt;String, String&gt;();
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
 
-        <span class="hljs-comment">// &#x540C;&#x65F6;&#x542F;&#x52A8;&#x4E24;&#x4E2A;&#x7EBF;&#x7A0B;&#x5BF9;map&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF01;</span>
-        <span class="hljs-keyword">new</span> MyThread(<span class="hljs-string">&quot;a&quot;</span>).start();
-        <span class="hljs-keyword">new</span> MyThread(<span class="hljs-string">&quot;b&quot;</span>).start();
+        <span class="hljs-comment">// 同时启动两个线程对map进行操作！</span>
+        <span class="hljs-keyword">new</span> MyThread(<span class="hljs-string">"a"</span>).start();
+        <span class="hljs-keyword">new</span> MyThread(<span class="hljs-string">"b"</span>).start();
     }
     <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">printAll</span><span class="hljs-params">()</span> </span>{
         String key, value;
@@ -1258,7 +823,7 @@ Collection&lt;V&gt; <span class="hljs-title">values</span><span class="hljs-para
             Map.Entry entry = (Map.Entry)iter.next();
             key = (String)entry.getKey();
             value = (String)entry.getValue();
-            System.out.print(<span class="hljs-string">&quot;(&quot;</span>+key+<span class="hljs-string">&quot;, &quot;</span>+value+<span class="hljs-string">&quot;), &quot;</span>);
+            System.out.print(<span class="hljs-string">"("</span>+key+<span class="hljs-string">", "</span>+value+<span class="hljs-string">"), "</span>);
         }
         System.out.println();
     }
@@ -1270,10 +835,10 @@ Collection&lt;V&gt; <span class="hljs-title">values</span><span class="hljs-para
         <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">run</span><span class="hljs-params">()</span> </span>{
                 <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
             <span class="hljs-keyword">while</span> (i++ &lt; <span class="hljs-number">6</span>) {
-                <span class="hljs-comment">// &#x201C;&#x7EBF;&#x7A0B;&#x540D;&#x201D; + &quot;&#x5E8F;&#x53F7;&quot;</span>
+                <span class="hljs-comment">// “线程名” + "序号"</span>
                 String val = Thread.currentThread().getName()+i;
-                map.put(val, <span class="hljs-string">&quot;0&quot;</span>);
-                <span class="hljs-comment">// &#x901A;&#x8FC7;&#x201C;Iterator&#x201D;&#x904D;&#x5386;map&#x3002;</span>
+                map.put(val, <span class="hljs-string">"0"</span>);
+                <span class="hljs-comment">// 通过“Iterator”遍历map。</span>
                 printAll();
             }
         }
@@ -1295,137 +860,61 @@ Collection&lt;V&gt; <span class="hljs-title">values</span><span class="hljs-para
 (a3, <span class="hljs-number">0</span>), (a4, <span class="hljs-number">0</span>), (a5, <span class="hljs-number">0</span>), (a6, <span class="hljs-number">0</span>), (b1, <span class="hljs-number">0</span>), (b2, <span class="hljs-number">0</span>), (b3, <span class="hljs-number">0</span>), (b4, <span class="hljs-number">0</span>), (b5, <span class="hljs-number">0</span>), (b6, <span class="hljs-number">0</span>), 
 
 
-&#x7ED3;&#x679C;&#x8BF4;&#x660E;&#xFF1A;
-&#x793A;&#x4F8B;&#x7A0B;&#x5E8F;&#x4E2D;&#xFF0C;&#x542F;&#x52A8;&#x4E24;&#x4E2A;&#x7EBF;&#x7A0B;(&#x7EBF;&#x7A0B;a&#x548C;&#x7EBF;&#x7A0B;b)&#x5206;&#x522B;&#x5BF9;ConcurrentSkipListMap&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x3002;&#x4EE5;&#x7EBF;&#x7A0B;a&#x800C;&#x8A00;&#xFF0C;&#x5B83;&#x4F1A;&#x5148;&#x83B7;&#x53D6;&#x201C;&#x7EBF;&#x7A0B;&#x540D;&#x201D;+&#x201C;&#x5E8F;&#x53F7;&#x201D;&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x8BE5;&#x5B57;&#x7B26;&#x4E32;&#x4F5C;&#x4E3A;key&#xFF0C;&#x5C06;&#x201C;<span class="hljs-number">0</span>&#x201D;&#x4F5C;&#x4E3A;value&#xFF0C;&#x63D2;&#x5165;&#x5230;ConcurrentSkipListMap&#x4E2D;&#xFF1B;&#x63A5;&#x7740;&#xFF0C;&#x904D;&#x5386;&#x5E76;&#x8F93;&#x51FA;ConcurrentSkipListMap&#x4E2D;&#x7684;&#x5168;&#x90E8;&#x5143;&#x7D20;&#x3002; &#x7EBF;&#x7A0B;b&#x7684;&#x64CD;&#x4F5C;&#x548C;&#x7EBF;&#x7A0B;a&#x4E00;&#x6837;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x7EBF;&#x7A0B;b&#x7684;&#x540D;&#x5B57;&#x548C;&#x7EBF;&#x7A0B;a&#x7684;&#x540D;&#x5B57;&#x4E0D;&#x540C;&#x3002;
-&#x5F53;map&#x662F;ConcurrentSkipListMap&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x7A0B;&#x5E8F;&#x80FD;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#x3002;&#x5982;&#x679C;&#x5C06;map&#x6539;&#x4E3A;TreeMap&#x65F6;&#xFF0C;&#x7A0B;&#x5E8F;&#x4F1A;&#x4EA7;&#x751F;ConcurrentModificationException&#x5F02;&#x5E38;&#x3002;
+结果说明：
+示例程序中，启动两个线程(线程a和线程b)分别对ConcurrentSkipListMap进行操作。以线程a而言，它会先获取“线程名”+“序号”，然后将该字符串作为key，将“<span class="hljs-number">0</span>”作为value，插入到ConcurrentSkipListMap中；接着，遍历并输出ConcurrentSkipListMap中的全部元素。 线程b的操作和线程a一样，只不过线程b的名字和线程a的名字不同。
+当map是ConcurrentSkipListMap对象时，程序能正常运行。如果将map改为TreeMap时，程序会产生ConcurrentModificationException异常。
 </code></pre>
-<p></p><footer class="page-footer"><span class="copyright">Copyright &#xA9; narutohyc.com 2022 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2022-02-14 09:16:40
-</span></footer><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz',appKey: 'FOXMptWOHC7cU1FxXt0LJj4o',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script><p></p>
-
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
+<p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2022 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
+2022-02-15 13:20:01
+</span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz',appKey: 'FOXMptWOHC7cU1FxXt0LJj4o',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script><p></p>
+</section>
 </div>
-
-                        </div>
-                    </div>
-                
-            </div>
-
-            
-                
-                <a href="多线程_JUC锁集合 .html" class="navigation navigation-prev " aria-label="Previous page: 多线程_JUC锁集合 ">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="多线程_JUC线程池.html" class="navigation navigation-next " aria-label="Next page: 多线程_JUC线程池">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
-        
-    </div>
-
-    <script>
+<div class="search-results">
+<div class="has-results">
+<h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+<ul class="search-results-list"></ul>
+</div>
+<div class="no-results">
+<h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<a aria-label="Previous page: 多线程_JUC锁集合 " class="navigation navigation-prev" href="多线程_JUC锁集合 .html">
+<i class="fa fa-angle-left"></i>
+</a>
+<a aria-label="Next page: 多线程_JUC线程池" class="navigation navigation-next" href="多线程_JUC线程池.html">
+<i class="fa fa-angle-right"></i>
+</a>
+</div>
+<script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"多线程_ JUC集合","level":"1.3.5","depth":2,"next":{"title":"多线程_JUC线程池","level":"1.3.6","depth":2,"path":"chapters/多线程_JUC线程池.md","ref":"chapters/多线程_JUC线程池.md","articles":[]},"previous":{"title":"多线程_JUC锁集合 ","level":"1.3.4","depth":2,"path":"chapters/多线程_JUC锁集合 .md","ref":"chapters/多线程_JUC锁集合 .md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","favicon","search-plus","-lunr","-search","lightbox","change_girls","theme-comscore","valine","pageview-count","favicon-absolute"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"change_girls":{"time":10,"urls":["https://plc.jj20.com/up/allimg/1115/012122143136/220121143136-2.jpg","https://plc.jj20.com/up/allimg/1115/111R1094405/21111P94405-1.jpg"]},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://i.loli.net/2021/01/12/Cdunm9AoBcHF5MI.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://i.loli.net/2021/01/12/gmzASfCciIFXTyr.png","wechatText":"微信打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"","lang":"zh-CN","pageSize":10,"placeholder":"Just go go","recordIP":false,"appId":"jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz","appKey":"FOXMptWOHC7cU1FxXt0LJj4o"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java相关学习记录","language":"zh-hans","links":{"sidebar":{"我的狗窝":"https://github.com/narutohyc"}},"gitbook":"*","description":"记录 Java 的学习和一些技巧的使用"},"file":{"path":"chapters/多线程_ JUC集合.md","mtime":"2022-02-14T09:16:40.793Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-14T09:18:14.959Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"多线程_ JUC集合","level":"1.3.5","depth":2,"next":{"title":"多线程_JUC线程池","level":"1.3.6","depth":2,"path":"chapters/多线程_JUC线程池.md","ref":"chapters/多线程_JUC线程池.md","articles":[]},"previous":{"title":"多线程_JUC锁集合 ","level":"1.3.4","depth":2,"path":"chapters/多线程_JUC锁集合 .md","ref":"chapters/多线程_JUC锁集合 .md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","favicon","search-plus","-lunr","-search","lightbox","change_girls","theme-comscore","valine","pageview-count","favicon-absolute"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"change_girls":{"time":10,"urls":["https://plc.jj20.com/up/allimg/1115/012122143136/220121143136-2.jpg","https://plc.jj20.com/up/allimg/1115/111R1094405/21111P94405-1.jpg"]},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://i.loli.net/2021/01/12/Cdunm9AoBcHF5MI.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://i.loli.net/2021/01/12/gmzASfCciIFXTyr.png","wechatText":"微信打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"","lang":"zh-CN","pageSize":10,"placeholder":"Just go go","recordIP":false,"appId":"jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz","appKey":"FOXMptWOHC7cU1FxXt0LJj4o"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java相关学习记录","language":"zh-hans","links":{"sidebar":{"我的狗窝":"https://github.com/narutohyc"}},"gitbook":"*","description":"记录 Java 的学习和一些技巧的使用"},"file":{"path":"chapters/多线程_ JUC集合.md","mtime":"2022-02-15T13:20:01.077Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-15T13:21:52.737Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
-
-        
-    
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
-        
-    
-        
-        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
-        
-    
-
-    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
-
-    </body>
+<script src="../gitbook/gitbook.js"></script>
+<script src="../gitbook/theme.js"></script>
+<script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+<script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+<script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+<script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+<script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+</body>
 </html>
-

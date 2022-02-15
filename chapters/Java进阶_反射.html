@@ -1,997 +1,562 @@
-
 <!DOCTYPE HTML>
-<html lang="zh-hans" >
-    <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Java进阶_反射 · Java相关学习记录</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
-        <meta name="author" content="narutohyc">
-        
-        
-    
-    
-    <link rel="stylesheet" href="../gitbook/style.css">
-
-    
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchors/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-plus/search.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-change_girls/girls.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-pageview-count/plugin.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
-                
-            
-                
-                <link rel="stylesheet" href="../gitbook/gitbook-plugin-theme-comscore/test.css">
-                
-            
-        
-
-    
-
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-        
-    
-
-
-    
-
-        
-    
-    
-    
-    
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
-
-    
-    <link rel="next" href="Java进阶_注解.html" />
-    
-    
-    <link rel="prev" href="Java进阶.md" />
-    
-
-    
-        <link rel="shortcut icon" href="./chapters/res/other/favicon.ico" type="image/x-icon">
-    
-    
-    
-    
-        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./chapters/res/other/favicon.ico">
-    
-    
-        
-    
-    
-        
-    
-
-    
-    
-    
-    
-
-    <style>
+<html lang="zh-hans">
+<head>
+<meta charset="utf-8"/>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<title>Java进阶_反射 · Java相关学习记录</title>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="" name="description"/>
+<meta content="GitBook 3.2.3" name="generator"/>
+<meta content="narutohyc" name="author"/>
+<link href="../gitbook/style.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-splitter/splitter.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchors/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-donate/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-code/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-search-plus/search.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-lightbox/css/lightbox.min.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-change_girls/girls.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-pageview-count/plugin.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-highlight/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-fontsettings/website.css" rel="stylesheet"/>
+<link href="../gitbook/gitbook-plugin-theme-comscore/test.css" rel="stylesheet"/>
+<meta content="true" name="HandheldFriendly"/>
+<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+<link href="../gitbook/images/apple-touch-icon-precomposed-152.png" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<link href="../gitbook/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="Java进阶_注解.html" rel="next"/>
+<link href="Java进阶.md" rel="prev"/>
+<link href="./chapters/res/other/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
+<link href="./chapters/res/other/favicon.ico" rel="apple-touch-icon-precomposed" sizes="152x152"/>
+<style>
     @media only screen and (max-width: 640px) {
         .book-header .hidden-mobile {
             display: none;
         }
     }
     </style>
-    <script>
+<script>
         window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]};
     </script>
-
-    </head>
-    <body>
-        
+</head>
+<body>
 <div class="book">
-    <div class="book-summary">
-        
-            
+<div class="book-summary">
 <div id="book-search-input" role="search">
-    <input type="text" placeholder="输入并搜索" />
+<input placeholder="输入并搜索" type="text"/>
 </div>
-
-            
-                <nav role="navigation">
-                
-
-
+<nav role="navigation">
 <ul class="summary">
-    
-    
-    
-        
-        <li>
-            <a href="https://github.com/narutohyc" target="_blank" class="custom-link">我的狗窝</a>
-        </li>
-    
-    
-
-    
-    <li class="divider"></li>
-    
-
-    
-        
-        
-    
-        <li class="chapter " data-level="1.1" data-path="../">
-            
-                <a href="../">
-            
-                    
-                        <b>1.1.</b>
+<li>
+<a class="custom-link" href="https://github.com/narutohyc" target="_blank">我的狗窝</a>
+</li>
+<li class="divider"></li>
+<li class="chapter" data-level="1.1" data-path="../">
+<a href="../">
+<b>1.1.</b>
                     
                     Introduction
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.2" data-path="设计模式.html">
-            
-                <a href="设计模式.html">
-            
-                    
-                        <b>1.2.</b>
+</li>
+<li class="chapter" data-level="1.2" data-path="设计模式.html">
+<a href="设计模式.html">
+<b>1.2.</b>
                     
                     设计模式
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3" data-path="多线程.md">
-            
-                <span>
-            
-                    
-                        <b>1.3.</b>
+</li>
+<li class="chapter" data-level="1.3" data-path="多线程.md">
+<span>
+<b>1.3.</b>
                     
                     多线程
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.3.1" data-path="多线程_基础篇.html">
-            
-                <a href="多线程_基础篇.html">
-            
-                    
-                        <b>1.3.1.</b>
+<li class="chapter" data-level="1.3.1" data-path="多线程_基础篇.html">
+<a href="多线程_基础篇.html">
+<b>1.3.1.</b>
                     
                     多线程_基础篇
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.2" data-path="多线程_锁.html">
-            
-                <a href="多线程_锁.html">
-            
-                    
-                        <b>1.3.2.</b>
+</li>
+<li class="chapter" data-level="1.3.2" data-path="多线程_锁.html">
+<a href="多线程_锁.html">
+<b>1.3.2.</b>
                     
                     多线程_锁
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.3" data-path="多线程_JUC原子类.html">
-            
-                <a href="多线程_JUC原子类.html">
-            
-                    
-                        <b>1.3.3.</b>
+</li>
+<li class="chapter" data-level="1.3.3" data-path="多线程_JUC原子类.html">
+<a href="多线程_JUC原子类.html">
+<b>1.3.3.</b>
                     
                     多线程_JUC原子类
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.4" data-path="多线程_JUC锁集合 .html">
-            
-                <a href="多线程_JUC锁集合 .html">
-            
-                    
-                        <b>1.3.4.</b>
+</li>
+<li class="chapter" data-level="1.3.4" data-path="多线程_JUC锁集合 .html">
+<a href="多线程_JUC锁集合 .html">
+<b>1.3.4.</b>
                     
                     多线程_JUC锁集合 
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.5" data-path="多线程_ JUC集合.html">
-            
-                <a href="多线程_ JUC集合.html">
-            
-                    
-                        <b>1.3.5.</b>
+</li>
+<li class="chapter" data-level="1.3.5" data-path="多线程_ JUC集合.html">
+<a href="多线程_ JUC集合.html">
+<b>1.3.5.</b>
                     
                     多线程_ JUC集合
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.6" data-path="多线程_JUC线程池.html">
-            
-                <a href="多线程_JUC线程池.html">
-            
-                    
-                        <b>1.3.6.</b>
+</li>
+<li class="chapter" data-level="1.3.6" data-path="多线程_JUC线程池.html">
+<a href="多线程_JUC线程池.html">
+<b>1.3.6.</b>
                     
                     多线程_JUC线程池
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.3.7" data-path="多线程_生产者消费者.html">
-            
-                <a href="多线程_生产者消费者.html">
-            
-                    
-                        <b>1.3.7.</b>
+</li>
+<li class="chapter" data-level="1.3.7" data-path="多线程_生产者消费者.html">
+<a href="多线程_生产者消费者.html">
+<b>1.3.7.</b>
                     
                     多线程_生产者消费者
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.4" data-path="IDEA快捷键.html">
-            
-                <a href="IDEA快捷键.html">
-            
-                    
-                        <b>1.4.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.4" data-path="IDEA快捷键.html">
+<a href="IDEA快捷键.html">
+<b>1.4.</b>
                     
                     IDEA快捷键
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5" data-path="Spring注解.md">
-            
-                <span>
-            
-                    
-                        <b>1.5.</b>
+</li>
+<li class="chapter" data-level="1.5" data-path="Spring注解.md">
+<span>
+<b>1.5.</b>
                     
                     Spring注解
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.5.1" data-path="Spring注解_介绍.html">
-            
-                <a href="Spring注解_介绍.html">
-            
-                    
-                        <b>1.5.1.</b>
+<li class="chapter" data-level="1.5.1" data-path="Spring注解_介绍.html">
+<a href="Spring注解_介绍.html">
+<b>1.5.1.</b>
                     
                     Spring注解_介绍
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.2" data-path="Spring注解_常用注解.html">
-            
-                <a href="Spring注解_常用注解.html">
-            
-                    
-                        <b>1.5.2.</b>
+</li>
+<li class="chapter" data-level="1.5.2" data-path="Spring注解_常用注解.html">
+<a href="Spring注解_常用注解.html">
+<b>1.5.2.</b>
                     
                     Spring注解_常用注解
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.5.3" data-path="Spring注解_Spring入门篇.html">
-            
-                <a href="Spring注解_Spring入门篇.html">
-            
-                    
-                        <b>1.5.3.</b>
+</li>
+<li class="chapter" data-level="1.5.3" data-path="Spring注解_Spring入门篇.html">
+<a href="Spring注解_Spring入门篇.html">
+<b>1.5.3.</b>
                     
                     Spring注解_Spring入门篇
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6" data-path="Java基础.md">
-            
-                <span>
-            
-                    
-                        <b>1.6.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.6" data-path="Java基础.md">
+<span>
+<b>1.6.</b>
                     
                     Java基础
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.6.1" data-path="Java基础_集合.html">
-            
-                <a href="Java基础_集合.html">
-            
-                    
-                        <b>1.6.1.</b>
+<li class="chapter" data-level="1.6.1" data-path="Java基础_集合.html">
+<a href="Java基础_集合.html">
+<b>1.6.1.</b>
                     
                     Java基础_集合
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.2" data-path="Java基础_泛型.html">
-            
-                <a href="Java基础_泛型.html">
-            
-                    
-                        <b>1.6.2.</b>
+</li>
+<li class="chapter" data-level="1.6.2" data-path="Java基础_泛型.html">
+<a href="Java基础_泛型.html">
+<b>1.6.2.</b>
                     
                     Java基础_泛型
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.3" data-path="Java基础_打jar包.html">
-            
-                <a href="Java基础_打jar包.html">
-            
-                    
-                        <b>1.6.3.</b>
+</li>
+<li class="chapter" data-level="1.6.3" data-path="Java基础_打jar包.html">
+<a href="Java基础_打jar包.html">
+<b>1.6.3.</b>
                     
                     Java基础_打jar包
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.4" data-path="Java基础_正则匹配.html">
-            
-                <a href="Java基础_正则匹配.html">
-            
-                    
-                        <b>1.6.4.</b>
+</li>
+<li class="chapter" data-level="1.6.4" data-path="Java基础_正则匹配.html">
+<a href="Java基础_正则匹配.html">
+<b>1.6.4.</b>
                     
                     Java基础_正则匹配
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.5" data-path="Java基础_反射机制.html">
-            
-                <a href="Java基础_反射机制.html">
-            
-                    
-                        <b>1.6.5.</b>
+</li>
+<li class="chapter" data-level="1.6.5" data-path="Java基础_反射机制.html">
+<a href="Java基础_反射机制.html">
+<b>1.6.5.</b>
                     
                     Java基础_反射机制
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.6" data-path="Java基础_对象正反序列化.html">
-            
-                <a href="Java基础_对象正反序列化.html">
-            
-                    
-                        <b>1.6.6.</b>
+</li>
+<li class="chapter" data-level="1.6.6" data-path="Java基础_对象正反序列化.html">
+<a href="Java基础_对象正反序列化.html">
+<b>1.6.6.</b>
                     
                     Java基础_对象正反序列化
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.7" data-path="Java基础_读取配置文件.html">
-            
-                <a href="Java基础_读取配置文件.html">
-            
-                    
-                        <b>1.6.7.</b>
+</li>
+<li class="chapter" data-level="1.6.7" data-path="Java基础_读取配置文件.html">
+<a href="Java基础_读取配置文件.html">
+<b>1.6.7.</b>
                     
                     Java基础_读取配置文件
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.8" data-path="Java基础_解析与生成XML.html">
-            
-                <a href="Java基础_解析与生成XML.html">
-            
-                    
-                        <b>1.6.8.</b>
+</li>
+<li class="chapter" data-level="1.6.8" data-path="Java基础_解析与生成XML.html">
+<a href="Java基础_解析与生成XML.html">
+<b>1.6.8.</b>
                     
                     Java基础_解析与生成XML
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.9" data-path="Java基础_后台服务器开发.html">
-            
-                <a href="Java基础_后台服务器开发.html">
-            
-                    
-                        <b>1.6.9.</b>
+</li>
+<li class="chapter" data-level="1.6.9" data-path="Java基础_后台服务器开发.html">
+<a href="Java基础_后台服务器开发.html">
+<b>1.6.9.</b>
                     
                     Java基础_后台服务器开发
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.6.10" data-path="Java基础_四舍五入.html">
-            
-                <a href="Java基础_四舍五入.html">
-            
-                    
-                        <b>1.6.10.</b>
+</li>
+<li class="chapter" data-level="1.6.10" data-path="Java基础_四舍五入.html">
+<a href="Java基础_四舍五入.html">
+<b>1.6.10.</b>
                     
                     Java基础_四舍五入
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7" data-path="Java进阶.md">
-            
-                <span>
-            
-                    
-                        <b>1.7.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.7" data-path="Java进阶.md">
+<span>
+<b>1.7.</b>
                     
                     Java进阶
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter active" data-level="1.7.1" data-path="Java进阶_反射.html">
-            
-                <a href="Java进阶_反射.html">
-            
-                    
-                        <b>1.7.1.</b>
+<li class="chapter active" data-level="1.7.1" data-path="Java进阶_反射.html">
+<a href="Java进阶_反射.html">
+<b>1.7.1.</b>
                     
                     Java进阶_反射
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.7.2" data-path="Java进阶_注解.html">
-            
-                <a href="Java进阶_注解.html">
-            
-                    
-                        <b>1.7.2.</b>
+</li>
+<li class="chapter" data-level="1.7.2" data-path="Java进阶_注解.html">
+<a href="Java进阶_注解.html">
+<b>1.7.2.</b>
                     
                     Java进阶_注解
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8" data-path="MySQL.md">
-            
-                <span>
-            
-                    
-                        <b>1.8.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.8" data-path="MySQL.md">
+<span>
+<b>1.8.</b>
                     
                     MySQL
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.8.1" data-path="MySQL_基础.html">
-            
-                <a href="MySQL_基础.html">
-            
-                    
-                        <b>1.8.1.</b>
+<li class="chapter" data-level="1.8.1" data-path="MySQL_基础.html">
+<a href="MySQL_基础.html">
+<b>1.8.1.</b>
                     
                     MySQL_基础
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.2" data-path="MySQL_约束.html">
-            
-                <a href="MySQL_约束.html">
-            
-                    
-                        <b>1.8.2.</b>
+</li>
+<li class="chapter" data-level="1.8.2" data-path="MySQL_约束.html">
+<a href="MySQL_约束.html">
+<b>1.8.2.</b>
                     
                     MySQL_约束
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.3" data-path="MySQL_多表查询.html">
-            
-                <a href="MySQL_多表查询.html">
-            
-                    
-                        <b>1.8.3.</b>
+</li>
+<li class="chapter" data-level="1.8.3" data-path="MySQL_多表查询.html">
+<a href="MySQL_多表查询.html">
+<b>1.8.3.</b>
                     
                     MySQL_多表查询
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.4" data-path="MySQL_事务.html">
-            
-                <a href="MySQL_事务.html">
-            
-                    
-                        <b>1.8.4.</b>
+</li>
+<li class="chapter" data-level="1.8.4" data-path="MySQL_事务.html">
+<a href="MySQL_事务.html">
+<b>1.8.4.</b>
                     
                     MySQL_事务
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.8.5" data-path="MySQL_数据库设计.html">
-            
-                <a href="MySQL_数据库设计.html">
-            
-                    
-                        <b>1.8.5.</b>
+</li>
+<li class="chapter" data-level="1.8.5" data-path="MySQL_数据库设计.html">
+<a href="MySQL_数据库设计.html">
+<b>1.8.5.</b>
                     
                     MySQL_数据库设计
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9" data-path="JDBC.md">
-            
-                <span>
-            
-                    
-                        <b>1.9.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.9" data-path="JDBC.md">
+<span>
+<b>1.9.</b>
                     
                     JDBC
             
-                </a>
+                
             
 
             
             <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.9.1" data-path="JDBC_JDBC基础.html">
-            
-                <a href="JDBC_JDBC基础.html">
-            
-                    
-                        <b>1.9.1.</b>
+<li class="chapter" data-level="1.9.1" data-path="JDBC_JDBC基础.html">
+<a href="JDBC_JDBC基础.html">
+<b>1.9.1.</b>
                     
                     JDBC_JDBC基础
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9.2" data-path="JDBC_JDBC连接池.html">
-            
-                <a href="JDBC_JDBC连接池.html">
-            
-                    
-                        <b>1.9.2.</b>
+</li>
+<li class="chapter" data-level="1.9.2" data-path="JDBC_JDBC连接池.html">
+<a href="JDBC_JDBC连接池.html">
+<b>1.9.2.</b>
                     
                     JDBC_JDBC连接池
             
                 </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.9.3" data-path="JDBC_JDBCTemplate.html">
-            
-                <a href="JDBC_JDBCTemplate.html">
-            
-                    
-                        <b>1.9.3.</b>
+</li>
+<li class="chapter" data-level="1.9.3" data-path="JDBC_JDBCTemplate.html">
+<a href="JDBC_JDBCTemplate.html">
+<b>1.9.3.</b>
                     
                     JDBC_JDBCTemplate
             
                 </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
-            
-        </li>
-    
-        <li class="chapter " data-level="1.10" data-path="Spark集群搭建.html">
-            
-                <a href="Spark集群搭建.html">
-            
-                    
-                        <b>1.10.</b>
+</li>
+</ul>
+</span></li>
+<li class="chapter" data-level="1.10" data-path="Spark集群搭建.html">
+<a href="Spark集群搭建.html">
+<b>1.10.</b>
                     
                     Spark集群搭建
             
                 </a>
-            
-
-            
-        </li>
-    
-
-    
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+</li>
+<li class="divider"></li>
+<li>
+<a class="gitbook-link" href="https://www.gitbook.com" target="blank">
             本书使用 GitBook 发布
         </a>
-    </li>
+</li>
 </ul>
-
-
-                </nav>
-            
-        
-    </div>
-
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
-
-<div class="book-header" role="navigation">
-    
-
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >Java进阶_反射</a>
-    </h1>
+</nav>
 </div>
-
-
-
-
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
+<div class="book-body">
+<div class="body-inner">
+<div class="book-header" role="navigation">
+<!-- Title -->
+<h1>
+<i class="fa fa-circle-o-notch fa-spin"></i>
+<a href="..">Java进阶_反射</a>
+</h1>
+</div>
+<div class="page-wrapper" role="main" tabindex="-1">
+<div class="page-inner">
 <div class="search-plus" id="book-search-results">
-    <div class="search-noresults">
-    
-                                <section class="normal markdown-section">
-                                
-                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#&#x53CD;&#x5C04;&#x6982;&#x5FF5;"><b></b>&#x53CD;&#x5C04;&#x6982;&#x5FF5;</a></li><ul><li><span class="title-icon "></span><a href="#&#x57FA;&#x672C;&#x6982;&#x5FF5;"><b></b>&#x57FA;&#x672C;&#x6982;&#x5FF5;</a></li><li><span class="title-icon "></span><a href="#&#x4EE3;&#x7801;&#x7684;&#x4E09;&#x4E2A;&#x9636;&#x6BB5;"><b></b>&#x4EE3;&#x7801;&#x7684;&#x4E09;&#x4E2A;&#x9636;&#x6BB5;</a></li></ul><li><span class="title-icon "></span><a href="#java&#x5185;&#x5B58;"><b></b>Java&#x5185;&#x5B58;</a></li><ul><li><span class="title-icon "></span><a href="#&#x7C7B;&#x52A0;&#x8F7D;&#x8FC7;&#x7A0B;"><b></b>&#x7C7B;&#x52A0;&#x8F7D;&#x8FC7;&#x7A0B;</a></li><li><span class="title-icon "></span><a href="#&#x7C7B;&#x52A0;&#x8F7D;&#x4E0E;classloader"><b></b>&#x7C7B;&#x52A0;&#x8F7D;&#x4E0E;ClassLoader</a></li><li><span class="title-icon "></span><a href="#&#x7C7B;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x673A;"><b></b>&#x7C7B;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x673A;</a></li><li><span class="title-icon "></span><a href="#&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x7684;&#x4F5C;&#x7528;"><b></b>&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x7684;&#x4F5C;&#x7528;</a></li><li><span class="title-icon "></span><a href="#&#x81EA;&#x5B9A;&#x4E49;&#x7F51;&#x7EDC;&#x7C7B;&#x52A0;&#x8F7D;"><b></b>&#x81EA;&#x5B9A;&#x4E49;&#x7F51;&#x7EDC;&#x7C7B;&#x52A0;&#x8F7D;</a></li></ul><li><span class="title-icon "></span><a href="#class&#x5BF9;&#x8C61;&#x83B7;&#x53D6;&#x65B9;&#x5F0F;"><b></b>Class&#x5BF9;&#x8C61;&#x83B7;&#x53D6;&#x65B9;&#x5F0F;</a></li><li><span class="title-icon "></span><a href="#&#x53CD;&#x64CD;&#x4F5C;&#x6CDB;&#x578B;"><b></b>&#x53CD;&#x64CD;&#x4F5C;&#x6CDB;&#x578B;</a></li><li><span class="title-icon "></span><a href="#class&#x5BF9;&#x8C61;&#x529F;&#x80FD;"><b></b>Class&#x5BF9;&#x8C61;&#x529F;&#x80FD;</a></li><ul><li><span class="title-icon "></span><a href="#&#x83B7;&#x53D6;&#x529F;&#x80FD;"><b></b>&#x83B7;&#x53D6;&#x529F;&#x80FD;</a></li><li><span class="title-icon "></span><a href="#field&#xFF1A;&#x6210;&#x5458;&#x53D8;&#x91CF;"><b></b>Field&#xFF1A;&#x6210;&#x5458;&#x53D8;&#x91CF;</a></li><li><span class="title-icon "></span><a href="#constructor&#x6784;&#x9020;&#x65B9;&#x6CD5;"><b></b>Constructor:&#x6784;&#x9020;&#x65B9;&#x6CD5;</a></li></ul><li><span class="title-icon "></span><a href="#method&#xFF1A;&#x65B9;&#x6CD5;&#x5BF9;&#x8C61;"><b></b>Method&#xFF1A;&#x65B9;&#x6CD5;&#x5BF9;&#x8C61;</a></li><ul><li><span class="title-icon "></span><a href="#getname&#x65B9;&#x6CD5;"><b></b>getName&#x65B9;&#x6CD5;</a></li><li><span class="title-icon "></span><a href="#&#x5173;&#x4E8E;&#x83B7;&#x53D6;&#x6210;&#x5458;&#x65B9;&#x6CD5;&#x4EEC;&#x7684;&#x53E6;&#x5916;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;"><b></b>&#x5173;&#x4E8E;&#x83B7;&#x53D6;&#x6210;&#x5458;&#x65B9;&#x6CD5;&#x4EEC;&#x7684;&#x53E6;&#x5916;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;</a></li></ul></ul></div><a href="#&#x53CD;&#x5C04;&#x6982;&#x5FF5;" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><a href="res/other/&#x5F02;&#x4E16;&#x754C;&#x857E;&#x59C6;_1.png" data-lightbox="9a22f892-9d16-418a-b944-e0a14a1394d0" data-title="img"><img src="res/other/&#x5F02;&#x4E16;&#x754C;&#x857E;&#x59C6;_1.png" alt="img"></a></p>
+<div class="search-noresults">
+<section class="normal markdown-section">
+<div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon"></span><a href="#反射概念">1 反射概念</a></li><ul><li><span class="title-icon"></span><a href="#基本概念">1.1 基本概念</a></li><li><span class="title-icon"></span><a href="#代码的三个阶段">1.2 代码的三个阶段</a></li></ul><li><span class="title-icon"></span><a href="#java内存">2 Java内存</a></li><ul><li><span class="title-icon"></span><a href="#类加载过程">2.1 类加载过程</a></li><li><span class="title-icon"></span><a href="#类加载与classloader">2.2 类加载与ClassLoader</a></li><li><span class="title-icon"></span><a href="#类初始化时机">2.3 类初始化时机</a></li><li><span class="title-icon"></span><a href="#类加载器的作用">2.4 类加载器的作用</a></li><li><span class="title-icon"></span><a href="#自定义网络类加载">2.5 自定义网络类加载</a></li></ul><li><span class="title-icon"></span><a href="#class对象获取方式">3 Class对象获取方式</a></li><li><span class="title-icon"></span><a href="#反操作泛型">4 反操作泛型</a></li><li><span class="title-icon"></span><a href="#class对象功能">5 Class对象功能</a></li><ul><li><span class="title-icon"></span><a href="#获取功能">5.1 获取功能</a></li><li><span class="title-icon"></span><a href="#field：成员变量">5.2 Field：成员变量</a></li><li><span class="title-icon"></span><a href="#constructor构造方法">5.3 Constructor:构造方法</a></li></ul><li><span class="title-icon"></span><a href="#method：方法对象">6 Method：方法对象</a></li><ul><li><span class="title-icon"></span><a href="#getname方法">6.1 getName方法</a></li><li><span class="title-icon"></span><a href="#关于获取成员方法们的另外两个方法">6.2 关于获取成员方法们的另外两个方法</a></li></ul></ul></div><a href="#反射概念" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><a data-lightbox="1dab4e99-7c0c-46dc-a65e-ba76a804303f" data-title="img" href="res/other/异世界蕾姆_1.png"><img alt="img" src="res/other/异世界蕾姆_1.png"/></a></p>
 <p>[TOC]</p>
 <blockquote>
-<p><a href="https://www.bilibili.com/video/av56351262" target="_blank">&#x3010;&#x9ED1;&#x9A6C;&#x7A0B;&#x5E8F;&#x5458;-Java&#x8BED;&#x8A00;&#x9AD8;&#x7EA7;&#x90E8;&#x5206;9.2&#x3011;Java &#x53CD;&#x5C04;</a></p>
-<p><a href="https://note.youdao.com/ynoteshare1/index.html?id=128508bf6a04968eced81ede9ac1b304&amp;type=note" target="_blank">&#x53CD;&#x5C04;&#x673A;&#x5236;&#x7B14;&#x8BB0;</a></p>
-<p><a href="https://www.bilibili.com/video/av55440782" target="_blank">&#x3010;&#x72C2;&#x795E;&#x8BF4;Java&#x3011;&#x6CE8;&#x89E3;&#x548C;&#x53CD;&#x5C04;</a></p>
-<p><a href="https://www.bilibili.com/video/av48959453?p=9" target="_blank">JAVA&#x6CE8;&#x89E3;&#x4E0E;&#x53CD;&#x5C04;&#x548C;&#x7C7B;&#x7684;&#x52A0;&#x8F7D;&#x673A;&#x5236;&#x7B2C;&#x5341;&#x516D;&#x4E2A;&#x4E13;&#x9898;</a></p>
+<p><a href="https://www.bilibili.com/video/av56351262" target="_blank">【黑马程序员-Java语言高级部分9.2】Java 反射</a></p>
+<p><a href="https://note.youdao.com/ynoteshare1/index.html?id=128508bf6a04968eced81ede9ac1b304&amp;type=note" target="_blank">反射机制笔记</a></p>
+<p><a href="https://www.bilibili.com/video/av55440782" target="_blank">【狂神说Java】注解和反射</a></p>
+<p><a href="https://www.bilibili.com/video/av48959453?p=9" target="_blank">JAVA注解与反射和类的加载机制第十六个专题</a></p>
 </blockquote>
-<h1 id="&#x53CD;&#x5C04;&#x6982;&#x5FF5;"><a name="&#x53CD;&#x5C04;&#x6982;&#x5FF5;" class="anchor-navigation-ex-anchor" href="#&#x53CD;&#x5C04;&#x6982;&#x5FF5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x53CD;&#x5C04;&#x6982;&#x5FF5;" class="plugin-anchor" href="#&#x53CD;&#x5C04;&#x6982;&#x5FF5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53CD;&#x5C04;&#x6982;&#x5FF5;</h1>
-<h2 id="&#x57FA;&#x672C;&#x6982;&#x5FF5;"><a name="&#x57FA;&#x672C;&#x6982;&#x5FF5;" class="anchor-navigation-ex-anchor" href="#&#x57FA;&#x672C;&#x6982;&#x5FF5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x57FA;&#x672C;&#x6982;&#x5FF5;" class="plugin-anchor" href="#&#x57FA;&#x672C;&#x6982;&#x5FF5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x57FA;&#x672C;&#x6982;&#x5FF5;</h2>
+<h1 id="反射概念">1 反射概念</h1>
+<h2 id="基本概念">1.1 基本概念</h2>
 <blockquote>
-<p><strong>&#x6846;&#x67B6;</strong>&#xFF1A;&#x534A;&#x6210;&#x54C1;&#x8F6F;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x6846;&#x67B6;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x8FDB;&#x884C;&#x8F6F;&#x4EF6;&#x5F00;&#x53D1;&#xFF0C;&#x7B80;&#x5316;&#x7F16;&#x7801;&#x3002;</p>
-<p>&#x5B66;&#x4E60;&#x6846;&#x67B6;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x4E86;&#x89E3;&#x53CD;&#x5C04;&#xFF0C;&#x4F46;&#x662F;&#x8981;&#x662F;&#x60F3;&#x81EA;&#x5DF1;&#x5199;&#x4E00;&#x4E2A;&#x6846;&#x67B6;&#xFF0C;&#x90A3;&#x4E48;&#x5C31;&#x8981;&#x5BF9;&#x53CD;&#x5C04;&#x673A;&#x5236;&#x6709;&#x5F88;&#x6DF1;&#x5165;&#x7684;&#x4E86;&#x89E3;&#x3002;</p>
-<p><code>&#x53CD;&#x5C04;&#x673A;&#x5236;</code>&#xFF1A;&#x5C06;&#x7C7B;&#x7684;&#x5404;&#x4E2A;&#x7EC4;&#x6210;&#x90E8;&#x5206;&#x5C01;&#x88C5;&#x4E3A;&#x5176;&#x4ED6;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD9;&#x5C31;&#x662F;&#x53CD;&#x5C04;&#x673A;&#x5236;&#x3002;</p>
-<p>&#x53CD;&#x5C04;&#x7684;&#x597D;&#x5904;&#xFF1A;</p>
+<p><strong>框架</strong>：半成品软件，可以在框架的基础上进行软件开发，简化编码。</p>
+<p>学习框架并不需要了解反射，但是要是想自己写一个框架，那么就要对反射机制有很深入的了解。</p>
+<p><code>反射机制</code>：将类的各个组成部分封装为其他对象，这就是反射机制。</p>
+<p>反射的好处：</p>
 <blockquote>
 <ul>
-<li>&#x53EF;&#x4EE5;&#x5728;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x64CD;&#x4F5C;&#x8FD9;&#x4E9B;&#x5BF9;&#x8C61;&#x3002;</li>
-<li>&#x53EF;&#x4EE5;&#x89E3;&#x8026;&#xFF0C;&#x63D0;&#x9AD8;&#x7A0B;&#x5E8F;&#x7684;&#x53EF;&#x6269;&#x5C55;&#x6027;&#x3002;</li>
-<li>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x7684;&#x662F;new&#x8FD9;&#x79CD;&#x5F62;&#x5F0F;&#x8FDB;&#x884C;&#x5BF9;&#x8C61;&#x7684;&#x5B9E;&#x4F8B;&#x5316;&#x3002;&#x6B64;&#x65F6;&#x5982;&#x679C;&#x5728;&#x9879;&#x76EE;&#x7684;&#x67D0;&#x4E00;&#x4E2A;&#x5C0F;&#x6A21;&#x5757;&#x4E2D;&#x6211;&#x4EEC;&#x7684;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x7C7B;&#x4E22;&#x5931;&#x4E86;&#xFF0C;&#x90A3;&#x4E48;&#x5728;&#x7F16;&#x8BD1;&#x671F;&#x95F4;&#x5C31;&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x4EE5;&#x5BFC;&#x81F4;&#x6574;&#x4E2A;&#x9879;&#x76EE;&#x65E0;&#x6CD5;&#x542F;&#x52A8;&#x3002;</li>
-<li>&#x5BF9;&#x4E8E;&#x53CD;&#x5C04;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;Class.forName(&quot;&#x5168;&#x7C7B;&#x540D;&quot;);&#x8FD9;&#x79CD;&#x5F62;&#x5F0F;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x7F16;&#x8BD1;&#x671F;&#x9700;&#x8981;&#x7684;&#x4EC5;&#x4EC5;&#x53EA;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF08;&#x5168;&#x7C7B;&#x540D;&#xFF09;&#xFF0C;&#x5728;&#x7F16;&#x8BD1;&#x671F;&#x4E0D;&#x4F1A;&#x62A5;&#x9519;&#xFF0C;&#x8FD9;&#x6837;&#x5176;&#x4ED6;&#x7684;&#x6A21;&#x5757;&#x5C31;&#x53EF;&#x4EE5;&#x6B63;&#x5E38;&#x7684;&#x8FD0;&#x884C;&#xFF0C;&#x800C;&#x4E0D;&#x4F1A;&#x56E0;&#x4E3A;&#x4E00;&#x4E2A;&#x6A21;&#x5757;&#x7684;&#x95EE;&#x9898;&#x5BFC;&#x81F4;&#x6574;&#x4E2A;&#x9879;&#x76EE;&#x5D29;&#x6E83;&#x3002;&#x8FD9;&#x5C31;&#x662F;Spring&#x6846;&#x67B6;&#x4E2D;<code>IOC&#x63A7;&#x5236;&#x53CD;&#x8F6C;</code>&#x7684;&#x672C;&#x8D28;&#x3002;</li>
+<li>可以在程序运行过程中，操作这些对象。</li>
+<li>可以解耦，提高程序的可扩展性。</li>
+<li>假设我们使用的是new这种形式进行对象的实例化。此时如果在项目的某一个小模块中我们的一个实例类丢失了，那么在编译期间就会报错，以导致整个项目无法启动。</li>
+<li>对于反射创建对象Class.forName("全类名");这种形式，我们在编译期需要的仅仅只是一个字符串（全类名），在编译期不会报错，这样其他的模块就可以正常的运行，而不会因为一个模块的问题导致整个项目崩溃。这就是Spring框架中<code>IOC控制反转</code>的本质。</li>
 </ul>
 </blockquote>
-<p><code>Reflection(&#x53CD;&#x5C04;)</code>&#x662F;Java&#x88AB;&#x89C6;&#x4E3A;&#x52A8;&#x6001;&#x8BED;&#x8A00;&#x7684;&#x5173;&#x952E;&#xFF0C;&#x53CD;&#x5C04;&#x673A;&#x5236;&#x5141;&#x8BB8;&#x7A0B;&#x5E8F;&#x5728;&#x6267;&#x884C;&#x671F;&#x501F;&#x52A9;&#x4E8E;Reflection API&#x53D6;&#x5F97;&#x4EFB;&#x4F55;&#x7C7B;&#x7684;&#x5185;&#x90E8;&#x4FE1;&#x606F;&#xFF0C;&#x5E76;&#x80FD;&#x76F4;&#x63A5;&#x64CD;&#x4F5C;&#x4EFB;&#x610F;&#x5BF9;&#x8C61;&#x7684;&#x5185;&#x90E8;&#x5C5E;&#x6027;&#x53CA;&#x65B9;&#x6CD5;&#x3002;</p>
-<p>&#x52A0;&#x8F7D;&#x5B8C;&#x7C7B;&#x4E4B;&#x540E;&#xFF0C;&#x5728;&#x5806;&#x5185;&#x5B58;&#x7684;&#x65B9;&#x6CD5;&#x533A;&#x4E2D;&#x5C31;&#x4EA7;&#x751F;&#x4E86;&#x4E00;&#x4E2A;Class&#x7C7B;&#x578B;&#x7684;&#x5BF9;&#x8C61;&#xFF08;<strong>&#x4E00;&#x4E2A;&#x7C7B;&#x53EA;&#x6709;&#x4E00;&#x4E2A;Class&#x5BF9;&#x8C61;</strong>&#xFF09;&#xFF0C;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x5C31;&#x5305;&#x542B;&#x4E86;&#x5B8C;&#x6574;&#x7684;&#x7C7B;&#x7684;&#x7ED3;&#x6784;&#x4FE1;&#x606F;&#x3002;</p>
-<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x770B;&#x5230;&#x7C7B;&#x7684;&#x7ED3;&#x6784;&#x3002;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x5C31;&#x50CF;&#x4E00;&#x9762;&#x955C;&#x5B50;&#xFF0C;&#x900F;&#x8FC7;&#x8FD9;&#x4E2A;&#x955C;&#x5B50;&#x770B;&#x5230;&#x7C7B;&#x7684;&#x7ED3;&#x6784;&#xFF0C;&#x6240;&#x4EE5;&#xFF0C;&#x6211;&#x4EEC;&#x5F62;&#x8C61;&#x7684;&#x79F0;&#x4E4B;&#x4E3A;&#xFF1A;&#x53CD;&#x5C04;</p>
-<p><a href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309213141544.png" data-lightbox="ca5fcf62-620f-4deb-8d17-9b008bf4e22d" data-title="image-20200309213141544"><img src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309213141544.png" alt="image-20200309213141544"></a></p>
+<p><code>Reflection(反射)</code>是Java被视为动态语言的关键，反射机制允许程序在执行期借助于Reflection API取得任何类的内部信息，并能直接操作任意对象的内部属性及方法。</p>
+<p>加载完类之后，在堆内存的方法区中就产生了一个Class类型的对象（<strong>一个类只有一个Class对象</strong>），这个对象就包含了完整的类的结构信息。</p>
+<p>我们可以通过这个对象看到类的结构。这个对象就像一面镜子，透过这个镜子看到类的结构，所以，我们形象的称之为：反射</p>
+<p><a data-lightbox="9c6af9e6-f192-4a76-9cbb-a94b0a06420e" data-title="image-20200309213141544" href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309213141544.png"><img alt="image-20200309213141544" src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309213141544.png"/></a></p>
 </blockquote>
-<h2 id="&#x4EE3;&#x7801;&#x7684;&#x4E09;&#x4E2A;&#x9636;&#x6BB5;"><a name="&#x4EE3;&#x7801;&#x7684;&#x4E09;&#x4E2A;&#x9636;&#x6BB5;" class="anchor-navigation-ex-anchor" href="#&#x4EE3;&#x7801;&#x7684;&#x4E09;&#x4E2A;&#x9636;&#x6BB5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x4EE3;&#x7801;&#x7684;&#x4E09;&#x4E2A;&#x9636;&#x6BB5;" class="plugin-anchor" href="#&#x4EE3;&#x7801;&#x7684;&#x4E09;&#x4E2A;&#x9636;&#x6BB5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4EE3;&#x7801;&#x7684;&#x4E09;&#x4E2A;&#x9636;&#x6BB5;</h2>
+<h2 id="代码的三个阶段">1.2 代码的三个阶段</h2>
 <blockquote>
-<p><code>Source</code>&#x6E90;&#x4EE3;&#x7801;&#x9636;&#x6BB5;&#xFF1A;*.java&#x88AB;&#x7F16;&#x8BD1;&#x6210;*.class&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x3002;</p>
-<p><code>Class</code>&#x7C7B;&#x5BF9;&#x8C61;&#x9636;&#x6BB5;&#xFF1A;*.class&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x88AB;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x52A0;&#x8F7D;&#x8FDB;&#x5185;&#x5B58;&#xFF0C;&#x5E76;&#x5C06;&#x5176;&#x5C01;&#x88C5;&#x6210;Class&#x5BF9;&#x8C61;&#xFF08;&#x7528;&#x4E8E;&#x5728;&#x5185;&#x5B58;&#x4E2D;&#x63CF;&#x8FF0;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#xFF09;&#xFF0C;Class&#x5BF9;&#x8C61;&#x5C06;&#x539F;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x62BD;&#x53D6;&#x51FA;&#x6765;&#x5C01;&#x88C5;&#x6210;&#x6570;&#x7EC4;Field[]&#xFF0C;&#x5C06;&#x539F;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x62BD;&#x53D6;&#x51FA;&#x6765;&#x5C01;&#x88C5;&#x6210;&#x6570;&#x7EC4;Construction[]&#xFF0C;&#x5728;&#x5C06;&#x6210;&#x5458;&#x65B9;&#x6CD5;&#x5C01;&#x88C5;&#x6210;Method[]&#x3002;</p>
+<p><code>Source</code>源代码阶段：*.java被编译成*.class字节码文件。</p>
+<p><code>Class</code>类对象阶段：*.class字节码文件被类加载器加载进内存，并将其封装成Class对象（用于在内存中描述字节码文件），Class对象将原字节码文件中的成员变量抽取出来封装成数组Field[]，将原字节码文件中的构造函数抽取出来封装成数组Construction[]，在将成员方法封装成Method[]。</p>
 <ul>
-<li><p>RunTime&#x8FD0;&#x884C;&#x65F6;&#x9636;&#x6BB5;&#xFF1A;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x7684;&#x8FC7;&#x7A0B;new&#x3002;</p>
-<p><a href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/Java%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5.bmp" data-lightbox="0d908698-3ccb-46f6-894d-7db284adec9d" data-title="img"><img src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/Java%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5.bmp" alt="img"></a></p>
+<li><p>RunTime运行时阶段：创建对象的过程new。</p>
+<p><a data-lightbox="777f5c6d-2014-474e-b516-edc8ca1f10aa" data-title="img" href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/Java%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5.bmp"><img alt="img" src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/Java%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5.bmp"/></a></p>
 </li>
 </ul>
 </blockquote>
-<h1 id="java&#x5185;&#x5B58;"><a name="java&#x5185;&#x5B58;" class="anchor-navigation-ex-anchor" href="#java&#x5185;&#x5B58;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="java&#x5185;&#x5B58;" class="plugin-anchor" href="#java&#x5185;&#x5B58;"><i class="fa fa-link" aria-hidden="true"></i></a>Java&#x5185;&#x5B58;</h1>
+<h1 id="java内存">2 Java内存</h1>
 <blockquote>
-<p><code>&#x5806;</code>: &#x5B58;&#x653E;new&#x7684;&#x5BF9;&#x8C61;&#x548C;&#x6570;&#x7EC4;&#xFF0C;&#x88AB;&#x6240;&#x6709;&#x7684;&#x7EBF;&#x7A0B;&#x5171;&#x4EAB;&#xFF0C;&#x4E0D;&#x4F1A;&#x5B58;&#x653E;&#x522B;&#x7684;&#x5BF9;&#x8C61;&#x5F15;&#x7528;</p>
-<p><code>&#x6808;</code>: &#x5B58;&#x653E;&#x57FA;&#x672C;&#x53D8;&#x91CF;&#x7C7B;&#x578B;(&#x4F1A;&#x5305;&#x542B;&#x8FD9;&#x4E2A;&#x57FA;&#x672C;&#x7C7B;&#x578B;&#x7684;&#x5177;&#x4F53;&#x6570;&#x503C;)&#xFF0C;&#x5F15;&#x7528;&#x5BF9;&#x8C61;&#x7684;&#x53D8;&#x91CF;(&#x4F1A;&#x5B58;&#x653E;&#x8FD9;&#x4E2A;&#x5F15;&#x7528;&#x5728;&#x5806;&#x91CC;&#x9762;&#x7684;&#x5177;&#x4F53;&#x5730;&#x5740;)</p>
-<p><code>&#x65B9;&#x6CD5;&#x533A;</code>: &#x53EF;&#x4EE5;&#x88AB;&#x6240;&#x6709;&#x7684;&#x7EBF;&#x7A0B;&#x5171;&#x4EAB;&#xFF0C;&#x5305;&#x542B;&#x4E86;&#x6240;&#x6709;&#x7684;class&#x548C;static&#x53D8;&#x91CF;</p>
+<p><code>堆</code>: 存放new的对象和数组，被所有的线程共享，不会存放别的对象引用</p>
+<p><code>栈</code>: 存放基本变量类型(会包含这个基本类型的具体数值)，引用对象的变量(会存放这个引用在堆里面的具体地址)</p>
+<p><code>方法区</code>: 可以被所有的线程共享，包含了所有的class和static变量</p>
 </blockquote>
-<h2 id="&#x7C7B;&#x52A0;&#x8F7D;&#x8FC7;&#x7A0B;"><a name="&#x7C7B;&#x52A0;&#x8F7D;&#x8FC7;&#x7A0B;" class="anchor-navigation-ex-anchor" href="#&#x7C7B;&#x52A0;&#x8F7D;&#x8FC7;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7C7B;&#x52A0;&#x8F7D;&#x8FC7;&#x7A0B;" class="plugin-anchor" href="#&#x7C7B;&#x52A0;&#x8F7D;&#x8FC7;&#x7A0B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7C7B;&#x52A0;&#x8F7D;&#x8FC7;&#x7A0B;</h2>
+<h2 id="类加载过程">2.1 类加载过程</h2>
 <blockquote>
-<p>&#x5F53;&#x7A0B;&#x5E8F;&#x4E3B;&#x52A8;&#x4F7F;&#x7528;&#x67D0;&#x4E2A;&#x7C7B;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x8BE5;&#x7C7B;&#x8FD8;&#x672A;&#x88AB;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x5219;&#x7CFB;&#x7EDF;&#x4F1A;&#x901A;&#x8FC7;&#x5982;&#x4E0B;&#x4E09;&#x4E2A;&#x6B65;&#x9AA4;&#x6765;&#x5BF9;&#x8BE5;&#x7C7B;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;&#x3002;</p>
-<p><a href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309215702460.png" data-lightbox="0ef002a9-c48c-4a48-beea-7cc88ede494e" data-title="image-20200309215702460"><img src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309215702460.png" alt="image-20200309215702460"></a></p>
+<p>当程序主动使用某个类时，如果该类还未被加载到内存中，则系统会通过如下三个步骤来对该类进行初始化。</p>
+<p><a data-lightbox="2ab8db47-df71-4ce6-a165-0694a4ce1cc7" data-title="image-20200309215702460" href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309215702460.png"><img alt="image-20200309215702460" src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309215702460.png"/></a></p>
 </blockquote>
-<h2 id="&#x7C7B;&#x52A0;&#x8F7D;&#x4E0E;classloader"><a name="&#x7C7B;&#x52A0;&#x8F7D;&#x4E0E;classloader" class="anchor-navigation-ex-anchor" href="#&#x7C7B;&#x52A0;&#x8F7D;&#x4E0E;classloader"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7C7B;&#x52A0;&#x8F7D;&#x4E0E;classloader" class="plugin-anchor" href="#&#x7C7B;&#x52A0;&#x8F7D;&#x4E0E;classloader"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7C7B;&#x52A0;&#x8F7D;&#x4E0E;ClassLoader</h2>
+<h2 id="类加载与classloader">2.2 类加载与ClassLoader</h2>
 <blockquote>
-<p>   <strong>&#x52A0;&#x8F7D;</strong>&#xFF1A;&#x5C06;class&#x6587;&#x4EF6;&#x5B57;&#x8282;&#x7801;&#x5185;&#x5BB9;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x5E76;&#x5C06;&#x8FD9;&#x4E9B;&#x9759;&#x6001;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x6210;&#x65B9;&#x6CD5;&#x533A;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x7136;&#x540E;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x4EE3;&#x8868;&#x8FD9;&#x4E2A;&#x7C7B;&#x7684;java.lang.Class&#x5BF9;&#x8C61;&#x3002;
-   <strong>&#x94FE;&#x63A5;</strong>&#xFF1A;&#x5C06;Java&#x7C7B;&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x4EE3;&#x7801;&#x5408;&#x5E76;&#x5230;JVM&#x7684;&#x8FD0;&#x884C;&#x72B6;&#x6001;&#x4E4B;&#x4E2D;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</p>
+<p> <strong>加载</strong>：将class文件字节码内容加载到内存中，并将这些静态数据转换成方法区的运行时数据结构，然后生成一个代表这个类的java.lang.Class对象。
+   <strong>链接</strong>：将Java类的二进制代码合并到JVM的运行状态之中的过程。</p>
 <blockquote>
-<p>&#x9A8C;&#x8BC1;&#xFF1A;&#x786E;&#x4FDD;&#x52A0;&#x8F7D;&#x7684;&#x7C7B;&#x4FE1;&#x606F;&#x7B26;&#x5408;JVM&#x89C4;&#x8303;&#xFF0C;&#x6CA1;&#x6709;&#x5B89;&#x5168;&#x65B9;&#x9762;&#x7684;&#x95EE;&#x9898;</p>
-<p>&#x51C6;&#x5907;&#xFF1A;&#x6B63;&#x5F0F;&#x4E3A;&#x7C7B;&#x53D8;&#x91CF;&#xFF08;static&#xFF09;&#x5206;&#x914D;&#x5185;&#x5B58;&#x5E76;&#x8BBE;&#x7F6E;&#x7C7B;&#x53D8;&#x91CF;&#x9ED8;&#x8BA4;&#x521D;&#x59CB;&#x503C;&#x7684;&#x9636;&#x6BB5;&#xFF0C;&#x8FD9;&#x4E9B;&#x5185;&#x5B58;&#x90FD;&#x5C06;&#x5728;&#x65B9;&#x6CD5;&#x533A;&#x4E2D;&#x8FDB;&#x884C;&#x5206;&#x914D;&#x3002;
-&#x89E3;&#x6790;&#xFF1A;&#x865A;&#x62DF;&#x673A;&#x5E38;&#x91CF;&#x6C60;&#x5185;&#x7684;&#x7B26;&#x53F7;&#x5F15;&#x7528;&#xFF08;&#x5E38;&#x91CF;&#x540D;&#xFF09;&#x66FF;&#x6362;&#x4E3A;&#x76F4;&#x63A5;&#x5F15;&#x7528;&#xFF08;&#x5730;&#x5740;&#xFF09;&#x7684;&#x8FC7;&#x7A0B;&#x3002;
-&#x521D;&#x59CB;&#x5316;&#xFF1A;&#x6267;&#x884C;&#x7C7B;&#x6784;&#x9020;&#x5668;<clinit>()&#x65B9;&#x6CD5;&#x7684;&#x8FC7;&#x7A0B;&#x3002;&#x7C7B;&#x6784;&#x9020;&#x5668;<clinit>()&#x65B9;&#x6CD5;&#x662F;&#x7531;&#x7F16;&#x8BD1;&#x671F;&#x81EA;&#x52A8;&#x6536;&#x96C6;&#x7C7B;&#x4E2D;&#x6240;&#x6709;&#x7C7B;&#x53D8;&#x91CF;&#x7684;&#x8D4B;&#x503C;&#x52A8;&#x4F5C;&#x548C;&#x9759;&#x6001;&#x4EE3;&#x7801;&#x5757;&#x4E2D;&#x7684;&#x8BED;&#x53E5;&#x5408;&#x5E76;&#x4EA7;&#x751F;&#x7684;&#x3002;</clinit></clinit></p>
-<p>&#x7C7B;&#x6784;&#x9020;&#x5668;&#x662F;&#x6784;&#x9020;&#x7C7B;&#x4FE1;&#x606F;&#x7684;&#xFF0C;&#x4E0D;&#x662F;&#x6784;&#x9020;&#x8BE5;&#x7C7B;&#x5BF9;&#x8C61;&#x7684;&#x6784;&#x9020;&#x5668;&#x3002;
-&#x5F53;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5982;&#x679C;&#x53D1;&#x73B0;&#x5176;&#x7236;&#x7C7B;&#x8FD8;&#x6CA1;&#x6709;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x5148;&#x89E6;&#x53D1;&#x5176;&#x7236;&#x7C7B;&#x7684;&#x521D;&#x59CB;&#x5316;&#x3002;
-&#x865A;&#x62DF;&#x673A;&#x4F1A;&#x4FDD;&#x8BC1;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;<clinit>()&#x65B9;&#x6CD5;&#x5728;&#x591A;&#x7EBF;&#x7A0B;&#x73AF;&#x5883;&#x4E2D;&#x88AB;&#x6B63;&#x786E;&#x52A0;&#x9501;&#x548C;&#x540C;&#x6B65;&#x3002;</clinit></p>
-</blockquote>
-</blockquote>
-<h2 id="&#x7C7B;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x673A;"><a name="&#x7C7B;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x673A;" class="anchor-navigation-ex-anchor" href="#&#x7C7B;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x673A;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7C7B;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x673A;" class="plugin-anchor" href="#&#x7C7B;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x673A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7C7B;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x673A;</h2>
-<blockquote>
-<p><code>&#x7C7B;&#x4E3B;&#x52A8;&#x5F15;&#x7528;</code>&#xFF08;&#x4E00;&#x5B9A;&#x4F1A;&#x53D1;&#x751F;&#x7C7B;&#x7684;&#x521D;&#x59CB;&#x5316;&#xFF09;</p>
-<blockquote>
-<p>&#x5F53;&#x865A;&#x62DF;&#x673A;&#x542F;&#x52A8;&#xFF0C;&#x5148;&#x521D;&#x59CB;&#x5316;main&#x65B9;&#x6CD5;&#x6240;&#x5728;&#x7684;&#x7C7B;</p>
-<p>new&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5BF9;&#x8C61;</p>
-<p>&#x8C03;&#x7528;&#x7C7B;&#x7684;&#x9759;&#x6001;&#x6210;&#x5458;&#xFF08;&#x9664;&#x4E86;final&#x5E38;&#x91CF;&#xFF09;&#x548C;&#x9759;&#x6001;&#x65B9;&#x6CD5;</p>
-<p>&#x4F7F;&#x7528;java.lang.reflect&#x5305;&#x7684;&#x65B9;&#x6CD5;&#x5BF9;&#x7C7B;&#x8FDB;&#x884C;&#x53CD;&#x5C04;&#x8C03;&#x7528;</p>
-<p>&#x5F53;&#x521D;&#x59CB;&#x5316;&#x4E00;&#x4E2A;&#x7C7B;&#xFF0C;&#x5982;&#x679C;&#x5176;&#x7236;&#x7C7B;&#x6CA1;&#x6709;&#x88AB;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x5219;&#x5148;&#x4F1A;&#x521D;&#x59CB;&#x5316;&#x5B83;&#x7684;&#x7236;&#x7C7B;</p>
-</blockquote>
-<p><code>&#x7C7B;&#x88AB;&#x52A8;&#x5F15;&#x7528;</code>&#xFF08;&#x4E0D;&#x4F1A;&#x53D1;&#x751F;&#x7C7B;&#x7684;&#x521D;&#x59CB;&#x5316;&#xFF09;</p>
-<blockquote>
-<p>&#x5F53;&#x8BBF;&#x95EE;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x57DF;&#x65F6;&#xFF0C;&#x53EA;&#x6709;&#x771F;&#x6B63;&#x58F0;&#x660E;&#x8FD9;&#x4E2A;&#x57DF;&#x7684;&#x7C7B;&#x624D;&#x4F1A;&#x88AB;&#x521D;&#x59CB;&#x5316;&#x3002;&#x5982;&#xFF1A;&#x5F53;&#x901A;&#x8FC7;&#x5B50;&#x7C7B;&#x5F15;&#x7528;&#x7236;&#x7C7B;&#x7684;&#x9759;&#x6001;&#x53D8;&#x91CF;&#xFF0C;&#x4E0D;&#x4F1A;&#x5BFC;&#x81F4;&#x5B50;&#x7C7B;&#x521D;&#x59CB;&#x5316;</p>
-<p>&#x901A;&#x8FC7;&#x6570;&#x7EC4;&#x5B9A;&#x4E49;&#x7C7B;&#x5F15;&#x7528;&#xFF0C;&#x4E0D;&#x4F1A;&#x89E6;&#x53D1;&#x6B64;&#x7C7B;&#x7684;&#x521D;&#x59CB;&#x5316;</p>
-<p>&#x5F15;&#x7528;&#x5E38;&#x91CF;&#x4E0D;&#x4F1A;&#x89E6;&#x53D1;&#x6B64;&#x7C7B;&#x7684;&#x521D;&#x59CB;&#x5316;&#xFF08;&#x5E38;&#x91CF;&#x5728;&#x94FE;&#x63A5;&#x9636;&#x6BB5;&#x5C31;&#x5B58;&#x5165;&#x8C03;&#x7528;&#x7C7B;&#x7684;&#x5E38;&#x91CF;&#x6C60;&#x4E2D;&#x4E86;&#xFF09;</p>
+<p>验证：确保加载的类信息符合JVM规范，没有安全方面的问题</p>
+<p>准备：正式为类变量（static）分配内存并设置类变量默认初始值的阶段，这些内存都将在方法区中进行分配。
+解析：虚拟机常量池内的符号引用（常量名）替换为直接引用（地址）的过程。
+初始化：执行类构造器<clinit>()方法的过程。类构造器<clinit>()方法是由编译期自动收集类中所有类变量的赋值动作和静态代码块中的语句合并产生的。</clinit></clinit></p>
+<p>类构造器是构造类信息的，不是构造该类对象的构造器。
+当初始化一个类的时候，如果发现其父类还没有进行初始化，则需要先触发其父类的初始化。
+虚拟机会保证一个类的<clinit>()方法在多线程环境中被正确加锁和同步。</clinit></p>
 </blockquote>
 </blockquote>
-<h2 id="&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x7684;&#x4F5C;&#x7528;"><a name="&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x7684;&#x4F5C;&#x7528;" class="anchor-navigation-ex-anchor" href="#&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x7684;&#x4F5C;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x7684;&#x4F5C;&#x7528;" class="plugin-anchor" href="#&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x7684;&#x4F5C;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x7684;&#x4F5C;&#x7528;</h2>
+<h2 id="类初始化时机">2.3 类初始化时机</h2>
 <blockquote>
-<p>   <strong>&#x7C7B;&#x52A0;&#x8F7D;&#x7684;&#x4F5C;&#x7528;</strong>&#xFF1A;&#x5C06;class&#x6587;&#x4EF6;&#x5B57;&#x8282;&#x7801;&#x5185;&#x5BB9;&#x52A0;&#x8F7D;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x5E76;&#x5C06;&#x8FD9;&#x4E9B;&#x9759;&#x6001;&#x6570;&#x636E;&#x8F6C;&#x6362;&#x6210;&#x65B9;&#x6CD5;&#x533A;&#x7684;&#x8FD0;&#x884C;&#x65F6;
-   &#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x7136;&#x540E;&#x5728;&#x5806;&#x4E2D;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x4EE3;&#x8868;&#x8FD9;&#x4E2A;&#x7C7B;&#x7684;java.lang.Class&#x5BF9;&#x8C61;&#xFF0C;&#x4F5C;&#x4E3A;&#x65B9;&#x6CD5;&#x533A;&#x4E2D;&#x7C7B;&#x6570;&#x636E;&#x7684;&#x8BBF;&#x95EE;&#x5165;&#x53E3;&#x3002;
-   <strong>&#x7C7B;&#x7F13;&#x5B58;</strong>&#xFF1A;&#x6807;&#x51C6;&#x7684;JavaSE&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x53EF;&#x4EE5;&#x6309;&#x8981;&#x6C42;&#x67E5;&#x627E;&#x7C7B;&#xFF0C;&#x4F46;&#x4E00;&#x65E6;&#x67D0;&#x4E2A;&#x7C7B;&#x88AB;&#x52A0;&#x8F7D;&#x5230;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x4E2D;&#xFF0C;&#x5B83;&#x5C06;&#x7EF4;&#x6301;&#x52A0;&#x8F7D;(&#x7F13;&#x5B58;)&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x3002;&#x4E0D;&#x8FC7;JVM&#x5783;&#x573E;&#x56DE;&#x6536;&#x673A;&#x5236;&#x53EF;&#x4EE5;&#x56DE;&#x6536;&#x8FD9;&#x4E9B;Class&#x5BF9;&#x8C61;
-   <a href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309220115775.png" data-lightbox="4fc05918-f5f4-4352-95c9-2e39fd1dfe5c" data-title="image-20200309220115775"><img src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309220115775.png" alt="image-20200309220115775"></a></p>
-<p>   <strong>&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x4F5C;&#x7528;</strong>&#x662F;&#x7528;&#x6765;&#x628A;&#x7C7B;(class)&#x88C5;&#x8F7D;&#x8FDB;&#x5185;&#x5B58;&#x7684;&#x3002;</p>
-<p>   JVM&#x89C4;&#x8303;&#x5B9A;&#x4E49;&#x4E86;&#x5982;&#x4E0B;&#x7C7B;&#x578B;&#x7684;&#x7C7B;&#x7684;&#x52A0;&#x8F7D;&#x5668;&#x3002;</p>
-<p>   <a href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309220200871.png" data-lightbox="a036b33d-51bf-43a4-a962-9522802792ea" data-title="image-20200309220200871"><img src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309220200871.png" alt="image-20200309220200871"></a></p>
+<p><code>类主动引用</code>（一定会发生类的初始化）</p>
+<blockquote>
+<p>当虚拟机启动，先初始化main方法所在的类</p>
+<p>new一个类的对象</p>
+<p>调用类的静态成员（除了final常量）和静态方法</p>
+<p>使用java.lang.reflect包的方法对类进行反射调用</p>
+<p>当初始化一个类，如果其父类没有被初始化，则先会初始化它的父类</p>
+</blockquote>
+<p><code>类被动引用</code>（不会发生类的初始化）</p>
+<blockquote>
+<p>当访问一个静态域时，只有真正声明这个域的类才会被初始化。如：当通过子类引用父类的静态变量，不会导致子类初始化</p>
+<p>通过数组定义类引用，不会触发此类的初始化</p>
+<p>引用常量不会触发此类的初始化（常量在链接阶段就存入调用类的常量池中了）</p>
+</blockquote>
+</blockquote>
+<h2 id="类加载器的作用">2.4 类加载器的作用</h2>
+<blockquote>
+<p> <strong>类加载的作用</strong>：将class文件字节码内容加载到内存中，并将这些静态数据转换成方法区的运行时
+   数据结构，然后在堆中生成一个代表这个类的java.lang.Class对象，作为方法区中类数据的访问入口。
+   <strong>类缓存</strong>：标准的JavaSE类加载器可以按要求查找类，但一旦某个类被加载到类加载器中，它将维持加载(缓存)一段时间。不过JVM垃圾回收机制可以回收这些Class对象
+   <a data-lightbox="c8bfc160-418a-4a1a-97a2-eafc3e891191" data-title="image-20200309220115775" href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309220115775.png"><img alt="image-20200309220115775" src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309220115775.png"/></a></p>
+<p> <strong>类加载器作用</strong>是用来把类(class)装载进内存的。</p>
+<p>   JVM规范定义了如下类型的类的加载器。</p>
+<p> <a data-lightbox="18964f76-f044-4a52-b1ce-87ab723b3222" data-title="image-20200309220200871" href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309220200871.png"><img alt="image-20200309220200871" src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309220200871.png"/></a></p>
 <pre><code class="lang-java">   <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(string[] args)</span></span>{
-       <span class="hljs-comment">// &#x83B7;&#x53D6;&#x7CFB;&#x7EDF;&#x7C7B;&#x7684;&#x52A0;&#x8F7D;&#x5668; </span>
+       <span class="hljs-comment">// 获取系统类的加载器 </span>
        ClassLoader systemClassloader = ClassLoader.getsystemclassloade(); 
        System.out.println(systemclassLoader); 
-       <span class="hljs-comment">// &#x83B7;&#x53D6;&#x7CFB;&#x7EDF;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x7684;&#x7236;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;-&#x4E00;&gt;&#x6269;&#x5C55;&#x7C7B;&#x52A0;&#x8F7D;&#x5668; </span>
+       <span class="hljs-comment">// 获取系统类加载器的父类加载器-一&gt;扩展类加载器 </span>
        ClassLoader parent = systemclassLoader.getParent(); 
        System.out.println(parent); 
-       <span class="hljs-comment">// &#x83B7;&#x53D6;&#x6269;&#x5C55;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x7684;&#x7236;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;--&gt;&#x6839;&#x52A0;&#x8F7D;&#x5668;&#xFF08;C/c++&#xFF09; </span>
+       <span class="hljs-comment">// 获取扩展类加载器的父类加载器--&gt;根加载器（C/c++） </span>
        ClassLoader parent1=parent.getParent();
        System.out.println(parent1);
-       <span class="hljs-comment">// &#x6D4B;&#x8BD5;&#x5F53;&#x524D;&#x7C7B;&#x662F;&#x54EA;&#x4E2A;&#x52A0;&#x8F7D;&#x5668;&#x52A0;&#x8F7D;&#x7684; </span>
-       ClassLoader classLoader = Class.forName(<span class="hljs-string">&quot;com.reflection.Test&quot;</span>).getClassLoader(); 
+       <span class="hljs-comment">// 测试当前类是哪个加载器加载的 </span>
+       ClassLoader classLoader = Class.forName(<span class="hljs-string">"com.reflection.Test"</span>).getClassLoader(); 
        System.out.println(classLoader); 
-       <span class="hljs-comment">// &#x6D4B;&#x8BD5;JDK&#x5185;&#x7F6E;&#x7684;&#x7C7B;&#x662F;&#x8C01;&#x52A0;&#x8F7D;&#x7684;</span>
-       classLoader = Class.forName(<span class="hljs-string">&quot;java.lang.object&quot;</span>).getclassLoader(); 
+       <span class="hljs-comment">// 测试JDK内置的类是谁加载的</span>
+       classLoader = Class.forName(<span class="hljs-string">"java.lang.object"</span>).getclassLoader(); 
        system.out.println(classloader);
    }
 </code></pre>
-<p>   <a href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309220415790.png" data-lightbox="4a132ffd-765c-4d75-a463-316b29af27de" data-title="image-20200309220415790"><img src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309220415790.png" alt="image-20200309220415790"></a></p>
-<p>   <a href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200310194313313.png" data-lightbox="9170fba0-09eb-4717-88ec-d48178708020" data-title="image-20200310194313313"><img src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200310194313313.png" alt="image-20200310194313313"></a></p>
+<p> <a data-lightbox="fcbb0a6a-bb96-4ba4-a65e-9048bf8d9995" data-title="image-20200309220415790" href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309220415790.png"><img alt="image-20200309220415790" src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309220415790.png"/></a></p>
+<p> <a data-lightbox="cea1036c-7a2d-4b2a-b345-d5b3d76ef761" data-title="image-20200310194313313" href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200310194313313.png"><img alt="image-20200310194313313" src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200310194313313.png"/></a></p>
 </blockquote>
-<h2 id="&#x81EA;&#x5B9A;&#x4E49;&#x7F51;&#x7EDC;&#x7C7B;&#x52A0;&#x8F7D;"><a name="&#x81EA;&#x5B9A;&#x4E49;&#x7F51;&#x7EDC;&#x7C7B;&#x52A0;&#x8F7D;" class="anchor-navigation-ex-anchor" href="#&#x81EA;&#x5B9A;&#x4E49;&#x7F51;&#x7EDC;&#x7C7B;&#x52A0;&#x8F7D;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x81EA;&#x5B9A;&#x4E49;&#x7F51;&#x7EDC;&#x7C7B;&#x52A0;&#x8F7D;" class="plugin-anchor" href="#&#x81EA;&#x5B9A;&#x4E49;&#x7F51;&#x7EDC;&#x7C7B;&#x52A0;&#x8F7D;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x81EA;&#x5B9A;&#x4E49;&#x7F51;&#x7EDC;&#x7C7B;&#x52A0;&#x8F7D;</h2>
+<h2 id="自定义网络类加载">2.5 自定义网络类加载</h2>
 <blockquote>
 <pre><code class="lang-java"><span class="hljs-keyword">import</span> java.io.ByteArrayOutputStream;
 <span class="hljs-keyword">import</span> java.io.File;
 <span class="hljs-keyword">import</span> java.io.FileInputStream;
 <span class="hljs-keyword">import</span> java.io.IOException;
 <span class="hljs-comment">/**
-* &#x81EA;&#x5B9A;&#x4E49;&#x7F51;&#x7EDC;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;
+* 自定义网络类加载器
 */</span>
 <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NetworkClassLoader</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">ClassLoader</span> </span>{
    <span class="hljs-keyword">private</span> String filePath;
-   <span class="hljs-keyword">private</span> String fileExtention = <span class="hljs-string">&quot;.class&quot;</span>;
+   <span class="hljs-keyword">private</span> String fileExtention = <span class="hljs-string">".class"</span>;
    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">NetworkClassLoader</span><span class="hljs-params">(String filePath)</span> </span>{
        <span class="hljs-keyword">this</span>.filePath = filePath;
    }
    <span class="hljs-function"><span class="hljs-keyword">public</span> Class <span class="hljs-title">findClass</span><span class="hljs-params">(String name)</span> </span>{
-       System.out.println(<span class="hljs-string">&quot;findClass name=&quot;</span> + name);
+       System.out.println(<span class="hljs-string">"findClass name="</span> + name);
        <span class="hljs-keyword">byte</span>[] bArr = <span class="hljs-keyword">null</span>;
        <span class="hljs-keyword">try</span> {
               bArr = loadClassData(name);
@@ -1001,8 +566,8 @@
        <span class="hljs-keyword">return</span> defineClass(name, bArr, <span class="hljs-number">0</span>, bArr.length);
    }
    <span class="hljs-keyword">private</span> <span class="hljs-keyword">byte</span>[] loadClassData(String name) <span class="hljs-keyword">throws</span> IOException {
-   <span class="hljs-comment">// name = &quot;annotatonreflection.NetworkClassLoader&quot;;</span>
-       name = name.replace(<span class="hljs-string">&quot;.&quot;</span>, <span class="hljs-string">&quot;/&quot;</span>);
+   <span class="hljs-comment">// name = "annotatonreflection.NetworkClassLoader";</span>
+       name = name.replace(<span class="hljs-string">"."</span>, <span class="hljs-string">"/"</span>);
        name += fileExtention;
        File file = <span class="hljs-keyword">new</span> File(filePath, name);
        FileInputStream fileInputStream = <span class="hljs-keyword">new</span> FileInputStream(file);
@@ -1015,9 +580,9 @@
    }
 
    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
-       NetworkClassLoader classLoader = <span class="hljs-keyword">new</span> NetworkClassLoader(<span class="hljs-string">&quot;CDesktop&quot;</span>);
+       NetworkClassLoader classLoader = <span class="hljs-keyword">new</span> NetworkClassLoader(<span class="hljs-string">"CDesktop"</span>);
        <span class="hljs-keyword">try</span> {
-           Class clazz = classLoader.loadClass(<span class="hljs-string">&quot;annotatonreflection.Person&quot;</span>);
+           Class clazz = classLoader.loadClass(<span class="hljs-string">"annotatonreflection.Person"</span>);
            Object obj = clazz.newInstance();
            System.out.println(obj);
            <span class="hljs-comment">// System.out.println(clazz.getClassLoader());</span>
@@ -1026,7 +591,7 @@
                System.out.println(classLoader2);
                classLoader2 = classLoader2.getParent();
            }
-           System.out.println(<span class="hljs-string">&quot;&#x5F15;&#x5BFC;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&quot;</span>+classLoader2); <span class="hljs-comment">//&#x5F15;&#x5BFC;&#x7C7B;&#x52A0;&#x8F7D;&#x5668;&#x662F;null</span>
+           System.out.println(<span class="hljs-string">"引导类加载器"</span>+classLoader2); <span class="hljs-comment">//引导类加载器是null</span>
        } <span class="hljs-keyword">catch</span> (ClassNotFoundException e) {
            e.printStackTrace();
        } <span class="hljs-keyword">catch</span> (InstantiationException e) {
@@ -1038,58 +603,58 @@
 }
 </code></pre>
 </blockquote>
-<h1 id="class&#x5BF9;&#x8C61;&#x83B7;&#x53D6;&#x65B9;&#x5F0F;"><a name="class&#x5BF9;&#x8C61;&#x83B7;&#x53D6;&#x65B9;&#x5F0F;" class="anchor-navigation-ex-anchor" href="#class&#x5BF9;&#x8C61;&#x83B7;&#x53D6;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="class&#x5BF9;&#x8C61;&#x83B7;&#x53D6;&#x65B9;&#x5F0F;" class="plugin-anchor" href="#class&#x5BF9;&#x8C61;&#x83B7;&#x53D6;&#x65B9;&#x5F0F;"><i class="fa fa-link" aria-hidden="true"></i></a>Class&#x5BF9;&#x8C61;&#x83B7;&#x53D6;&#x65B9;&#x5F0F;</h1>
+<h1 id="class对象获取方式">3 Class对象获取方式</h1>
 <blockquote>
-<p>&#x83B7;&#x53D6;Class&#x5BF9;&#x8C61;&#x7684;<code>&#x4E09;&#x79CD;&#x65B9;&#x5F0F;</code>&#x5BF9;&#x5E94;&#x7740;java&#x4EE3;&#x7801;&#x5728;&#x8BA1;&#x7B97;&#x673A;&#x4E2D;&#x7684;<code>&#x4E09;&#x4E2A;&#x9636;&#x6BB5;</code></p>
+<p>获取Class对象的<code>三种方式</code>对应着java代码在计算机中的<code>三个阶段</code></p>
 <ol>
-<li><p><code>Source</code>&#x6E90;&#x4EE3;&#x7801;&#x9636;&#x6BB5;: Class.forName(&quot;&#x5168;&#x7C7B;&#x540D;&quot;)&#xFF1A;&#x5C06;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;&#x52A0;&#x8F7D;&#x8FDB;&#x5185;&#x5B58;&#xFF0C;&#x8FD4;&#x56DE;Class&#x5BF9;&#x8C61;</p>
-<p>&#x591A;&#x7528;&#x4E8E;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x5C06;&#x7C7B;&#x540D;&#x5B9A;&#x4E49;&#x5728;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x3002;&#x8BFB;&#x53D6;&#x6587;&#x4EF6;&#xFF0C;&#x52A0;&#x8F7D;&#x7C7B;&#x3002; </p>
+<li><p><code>Source</code>源代码阶段: Class.forName("全类名")：将字节码文件加载进内存，返回Class对象</p>
+<p>多用于配置文件，将类名定义在配置文件中。读取文件，加载类。 </p>
 </li>
-<li><p><code>Class</code>&#x7C7B;&#x5BF9;&#x8C61;&#x9636;&#x6BB5;: &#x7C7B;&#x540D;.class&#xFF1A;&#x901A;&#x8FC7;&#x7C7B;&#x540D;&#x7684;&#x5C5E;&#x6027;class&#x83B7;&#x53D6;</p>
-<p>&#x591A;&#x7528;&#x4E8E;&#x53C2;&#x6570;&#x7684;&#x4F20;&#x9012; </p>
+<li><p><code>Class</code>类对象阶段: 类名.class：通过类名的属性class获取</p>
+<p>多用于参数的传递 </p>
 </li>
-<li><p><code>Runtime</code>&#x8FD0;&#x884C;&#x65F6;&#x9636;&#x6BB5;: &#x5BF9;&#x8C61;.getClass()&#xFF1A;getClass()&#x65B9;&#x6CD5;&#x662F;&#x5B9A;&#x4E49;&#x5728;Objec&#x7C7B;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;</p>
-<p>&#x591A;&#x7528;&#x4E8E;&#x5BF9;&#x8C61;&#x7684;&#x83B7;&#x53D6;&#x5B57;&#x8282;&#x7801;&#x7684;&#x65B9;&#x5F0F;  </p>
+<li><p><code>Runtime</code>运行时阶段: 对象.getClass()：getClass()方法是定义在Objec类中的方法</p>
+<p>多用于对象的获取字节码的方式  </p>
 </li>
 </ol>
-<p><strong>&#x7ED3;&#x8BBA;</strong>: &#x540C;&#x4E00;&#x4E2A;&#x5B57;&#x8282;&#x7801;&#x6587;&#x4EF6;(*.class)&#x5728;&#x4E00;&#x6B21;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x53EA;&#x4F1A;&#x88AB;&#x52A0;&#x8F7D;&#x4E00;&#x6B21;&#xFF0C;&#x65E0;&#x8BBA;&#x901A;&#x8FC7;&#x54EA;&#x4E00;&#x79CD;&#x65B9;&#x5F0F;&#x83B7;&#x53D6;&#x7684;Class&#x5BF9;&#x8C61;&#x90FD;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x3002;</p>
+<p><strong>结论</strong>: 同一个字节码文件(*.class)在一次程序运行过程中，只会被加载一次，无论通过哪一种方式获取的Class对象都是同一个。</p>
 <blockquote>
 <ul>
-<li><p>&#x82E5;&#x5DF2;&#x77E5;&#x5177;&#x4F53;&#x7684;&#x7C7B;&#xFF0C;&#x901A;&#x8FC7;&#x7C7B;&#x7684;class&#x5C5E;&#x6027;&#x83B7;&#x53D6;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x6700;&#x4E3A;&#x5B89;&#x5168;&#x53EF;&#x9760;&#xFF0C;&#x7A0B;&#x5E8F;&#x6027;&#x80FD;&#x6700;&#x9AD8;&#x3002;</p>
-<p>Class clazz=Person.class&#xFF1B;</p>
+<li><p>若已知具体的类，通过类的class属性获取，该方法最为安全可靠，程序性能最高。</p>
+<p>Class clazz=Person.class；</p>
 </li>
-<li><p>&#x5DF2;&#x77E5;&#x67D0;&#x4E2A;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#xFF0C;&#x8C03;&#x7528;&#x8BE5;&#x5B9E;&#x4F8B;&#x7684;getClass&#xFF08;&#xFF09;&#x65B9;&#x6CD5;&#x83B7;&#x53D6;Class&#x5BF9;&#x8C61;</p>
-<p>Class clazz=person.getClass()&#xFF1B;</p>
+<li><p>已知某个类的实例，调用该实例的getClass（）方法获取Class对象</p>
+<p>Class clazz=person.getClass()；</p>
 </li>
-<li><p>&#x5DF2;&#x77E5;&#x4E00;&#x4E2A;&#x7C7B;&#x7684;&#x5168;&#x7C7B;&#x540D;&#xFF0C;&#x4E14;&#x8BE5;&#x7C7B;&#x5728;&#x7C7B;&#x8DEF;&#x5F84;&#x4E0B;&#xFF0C;&#x53EF;&#x901A;&#x8FC7;Class&#x7C7B;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;forName()&#x83B7;&#x53D6;&#xFF0C;&#x53EF;&#x80FD;&#x629B;&#x51FA;ClassNotFoundException</p>
-<p>Class clazz=Class.forName(&quot;demo01.Student&quot;);</p>
+<li><p>已知一个类的全类名，且该类在类路径下，可通过Class类的静态方法forName()获取，可能抛出ClassNotFoundException</p>
+<p>Class clazz=Class.forName("demo01.Student");</p>
 </li>
-<li><p>&#x5185;&#x7F6E;&#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7528;&#x7C7B;&#x540D;.Type</p>
+<li><p>内置基本数据类型可以直接用类名.Type</p>
 </li>
-<li><p>&#x8FD8;&#x53EF;&#x4EE5;&#x5229;&#x7528;ClassLoader&#x6211;&#x4EEC;&#x4E4B;&#x540E;&#x8BB2;&#x89E3;</p>
+<li><p>还可以利用ClassLoader我们之后讲解</p>
 </li>
 </ul>
 </blockquote>
-<p>&#x54EA;&#x4E9B;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x6709;Class&#x5BF9;&#x8C61;&#xFF1F;</p>
+<p>哪些类型可以有Class对象？</p>
 <blockquote>
-<p>class: &#x5916;&#x90E8;&#x7C7B;&#xFF0C;&#x6210;&#x5458;(&#x6210;&#x5458;&#x5185;&#x90E8;&#x7C7B;&#xFF0C;&#x9759;&#x6001;&#x5185;&#x90E8;&#x7C7B;)&#xFF0C;&#x5C40;&#x90E8;&#x5185;&#x90E8;&#x7C7B;&#xFF0C;&#x533F;&#x540D;&#x5185;&#x90E8;&#x7C7B;&#x3002;</p>
-<p>interface: &#x63A5;&#x53E3;</p>
-<p>[]: &#x6570;&#x7EC4;</p>
-<p>enum: &#x679A;&#x4E3E;</p>
-<p>annotation: &#x6CE8;&#x89E3;@interface</p>
-<p>primitive type: &#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;</p>
+<p>class: 外部类，成员(成员内部类，静态内部类)，局部内部类，匿名内部类。</p>
+<p>interface: 接口</p>
+<p>[]: 数组</p>
+<p>enum: 枚举</p>
+<p>annotation: 注解@interface</p>
+<p>primitive type: 基本数据类型</p>
 <p>void</p>
 </blockquote>
-<pre><code class="lang-java"><span class="hljs-comment">//&#x6240;&#x6709;&#x5173;&#x578B;Class </span>
+<pre><code class="lang-java"><span class="hljs-comment">//所有关型Class </span>
 <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span></span>{ 
    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(string[] args)</span></span>{ 
-       Class c1 = Object.class; <span class="hljs-comment">// &#x7C7B;</span>
-       Class c2 = Comparable.class; <span class="hljs-comment">// &#x63A5;&#x53E3;</span>
-       <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">c3</span> </span>= String[].class; <span class="hljs-comment">// &#x4E00;&#x7EF4;&#x6570;&#x7EC4; </span>
-       Class c4 = <span class="hljs-keyword">int</span>[][].class; <span class="hljs-comment">// &#x4E8C;&#x7EF4;&#x6570;&#x7EC4; </span>
-       Class c5 = Override.class; <span class="hljs-comment">// &#x6CE8;&#x89E3; </span>
-       Class c6 = ElementType.class; <span class="hljs-comment">// &#x679A;&#x4E3E; </span>
-       Class c7 = Integer.class; <span class="hljs-comment">// &#x57FA;&#x672C;&#x6570;&#x636E;&#x7C7B;&#x578B;</span>
+       Class c1 = Object.class; <span class="hljs-comment">// 类</span>
+       Class c2 = Comparable.class; <span class="hljs-comment">// 接口</span>
+       <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">c3</span> </span>= String[].class; <span class="hljs-comment">// 一维数组 </span>
+       Class c4 = <span class="hljs-keyword">int</span>[][].class; <span class="hljs-comment">// 二维数组 </span>
+       Class c5 = Override.class; <span class="hljs-comment">// 注解 </span>
+       Class c6 = ElementType.class; <span class="hljs-comment">// 枚举 </span>
+       Class c7 = Integer.class; <span class="hljs-comment">// 基本数据类型</span>
        Class c8 = <span class="hljs-keyword">void</span>.class; <span class="hljs-comment">// void </span>
        Class c9 = Class.class; <span class="hljs-comment">// class </span>
        System.out.println(c1); 
@@ -1109,60 +674,60 @@
 </code></pre>
 <pre><code class="lang-java"><span class="hljs-meta">@Test</span>
 <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reflect</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> ClassNotFoundException </span>{
-     <span class="hljs-comment">// &#x65B9;&#x5F0F;&#x4E00;&#xFF1A;Class.forName(&quot;&#x5168;&#x7C7B;&#x540D;&quot;);</span>
-     Class cls1 = Class.forName(<span class="hljs-string">&quot;com.test.domain.Person&quot;</span>);   <span class="hljs-comment">//P erson&#x81EA;&#x5B9A;&#x4E49;&#x5B9E;&#x4F53;&#x7C7B;</span>
-     System.out.println(<span class="hljs-string">&quot;cls1 = &quot;</span> + cls1);
+     <span class="hljs-comment">// 方式一：Class.forName("全类名");</span>
+     Class cls1 = Class.forName(<span class="hljs-string">"com.test.domain.Person"</span>);   <span class="hljs-comment">//P erson自定义实体类</span>
+     System.out.println(<span class="hljs-string">"cls1 = "</span> + cls1);
 
-     <span class="hljs-comment">// &#x65B9;&#x5F0F;&#x4E8C;&#xFF1A;&#x7C7B;&#x540D;.class</span>
+     <span class="hljs-comment">// 方式二：类名.class</span>
      Class cls2 = Person.class;
-     System.out.println(<span class="hljs-string">&quot;cls2 = &quot;</span> + cls2);
+     System.out.println(<span class="hljs-string">"cls2 = "</span> + cls2);
 
-     <span class="hljs-comment">// &#x65B9;&#x5F0F;&#x4E09;&#xFF1A;&#x5BF9;&#x8C61;.getClass();</span>
+     <span class="hljs-comment">// 方式三：对象.getClass();</span>
      Person person = <span class="hljs-keyword">new</span> Person();        
      Class cls3 = person.getClass();
-     System.out.println(<span class="hljs-string">&quot;cls3 = &quot;</span> + cls3);
+     System.out.println(<span class="hljs-string">"cls3 = "</span> + cls3);
 
-     <span class="hljs-comment">// == &#x6BD4;&#x8F83;&#x4E09;&#x4E2A;&#x5BF9;&#x8C61;</span>
-     System.out.println(<span class="hljs-string">&quot;cls1 == cls2 : &quot;</span> + (cls1 == cls2));    <span class="hljs-comment">//true</span>
-     System.out.println(<span class="hljs-string">&quot;cls1 == cls3 : &quot;</span> + (cls1 == cls3));    <span class="hljs-comment">//true</span>
+     <span class="hljs-comment">// == 比较三个对象</span>
+     System.out.println(<span class="hljs-string">"cls1 == cls2 : "</span> + (cls1 == cls2));    <span class="hljs-comment">//true</span>
+     System.out.println(<span class="hljs-string">"cls1 == cls3 : "</span> + (cls1 == cls3));    <span class="hljs-comment">//true</span>
 
-        <span class="hljs-comment">// &#x65B9;&#x5F0F;&#x56DB;&#xFF1A;&#x57FA;&#x672C;&#x5185;&#x7F6E;&#x7C7B;&#x578B;&#x7684;&#x5305;&#x88C5;&#x7C7B;&#x90FD;&#x6709;&#x4E00;&#x4E2A;Type&#x5C5E;&#x6027; </span>
+        <span class="hljs-comment">// 方式四：基本内置类型的包装类都有一个Type属性 </span>
         Class c4=Integer.TYPE;
         System.out.printin(c4); 
-        <span class="hljs-comment">// &#x83B7;&#x5F97;&#x7236;&#x7C7B;&#x7C7B;&#x578B; </span>
+        <span class="hljs-comment">// 获得父类类型 </span>
         Class c5=c1.getsuperclass(); 
         System.out.printin(c5);
 }
 </code></pre>
-<p><a href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309213256005.png" data-lightbox="12670e05-f7ca-4e07-8c11-c4a84253e3a8" data-title="image-20200309213256005"><img src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309213256005.png" alt="image-20200309213256005"></a></p>
+<p><a data-lightbox="f3b1f490-0792-40ab-87f2-b31397e78f16" data-title="image-20200309213256005" href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309213256005.png"><img alt="image-20200309213256005" src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309213256005.png"/></a></p>
 </blockquote>
-<h1 id="&#x53CD;&#x64CD;&#x4F5C;&#x6CDB;&#x578B;"><a name="&#x53CD;&#x64CD;&#x4F5C;&#x6CDB;&#x578B;" class="anchor-navigation-ex-anchor" href="#&#x53CD;&#x64CD;&#x4F5C;&#x6CDB;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x53CD;&#x64CD;&#x4F5C;&#x6CDB;&#x578B;" class="plugin-anchor" href="#&#x53CD;&#x64CD;&#x4F5C;&#x6CDB;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53CD;&#x64CD;&#x4F5C;&#x6CDB;&#x578B;</h1>
+<h1 id="反操作泛型">4 反操作泛型</h1>
 <blockquote>
 <blockquote>
-<p>Method&#x548C;Field&#x3001;Constructor&#x5BF9;&#x8C61;&#x90FD;&#x6709;setAccessible&#xFF09;&#x65B9;&#x6CD5;&#x3002;</p>
-<p>setAccessible&#x4F5C;&#x7528;&#x662F;&#x542F;&#x52A8;&#x548C;&#x7981;&#x7528;&#x8BBF;&#x95EE;&#x5B89;&#x5168;&#x68C0;&#x67E5;&#x7684;&#x5F00;&#x5173;&#x3002;</p>
-<p>&#x53C2;&#x6570;&#x503C;&#x4E3A;true&#x5219;&#x6307;&#x793A;&#x53CD;&#x5C04;&#x7684;&#x5BF9;&#x8C61;&#x5728;&#x4F7F;&#x7528;&#x65F6;&#x5E94;&#x8BE5;&#x53D6;&#x6D88;Java&#x8BED;&#x8A00;&#x8BBF;&#x95EE;&#x68C0;&#x67E5;&#x3002;</p>
-<p>&#x63D0;&#x9AD8;&#x53CD;&#x5C04;&#x7684;&#x6548;&#x7387;&#x3002;&#x5982;&#x679C;&#x4EE3;&#x7801;&#x4E2D;&#x5FC5;&#x987B;&#x7528;&#x53CD;&#x5C04;&#xFF0C;&#x800C;&#x8BE5;&#x53E5;&#x4EE3;&#x7801;&#x9700;&#x8981;&#x9891;&#x7E41;&#x7684;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x90A3;&#x4E48;&#x8BF7;&#x8BBE;&#x7F6E;&#x4E3A;true&#x3002;</p>
-<p>&#x4F7F;&#x5F97;&#x539F;&#x672C;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x7684;&#x79C1;&#x6709;&#x6210;&#x5458;&#x4E5F;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;</p>
-<p>&#x53C2;&#x6570;&#x503C;&#x4E3A;false&#x5219;&#x6307;&#x793A;&#x53CD;&#x5C04;&#x7684;&#x5BF9;&#x8C61;&#x5E94;&#x8BE5;&#x5B9E;&#x65BD;Java&#x8BED;&#x8A00;&#x8BBF;&#x95EE;&#x68C0;&#x67E5;</p>
+<p>Method和Field、Constructor对象都有setAccessible）方法。</p>
+<p>setAccessible作用是启动和禁用访问安全检查的开关。</p>
+<p>参数值为true则指示反射的对象在使用时应该取消Java语言访问检查。</p>
+<p>提高反射的效率。如果代码中必须用反射，而该句代码需要频繁的被调用，那么请设置为true。</p>
+<p>使得原本无法访问的私有成员也可以访问</p>
+<p>参数值为false则指示反射的对象应该实施Java语言访问检查</p>
 <pre><code class="lang-java">   public class Test { 
        public void testel(Map&lt;String,User&gt; map,List&lt;User&gt; list){ 
-           System.out.println(&quot;&quot;testo1&quot;); 
+           System.out.println(""testo1"); 
        }
        public Map&lt;string,User&gt;testo2(){ 
-           System.out.println(&quot;testo2&quot;); 
+           System.out.println("testo2"); 
            return null; 
        }
        public static void main(String[] args) throws NoSuchMethodException { 
-           Method method=Test11.class.getMethod(&quot;teste1&quot;,Map.class,List.class); 
+           Method method=Test11.class.getMethod("teste1",Map.class,List.class); 
            Type[] genericParameterTypes=method.getGenericParameterTypes();
            for(Type genericParameterType:genericParameterTypes){
-               System.out.println(&quot;#&quot;+genericParameterType); 
+               System.out.println("#"+genericParameterType); 
                if(genericParameterType instanceof ParameterizedType){ 
                    Type[] actualTypeArguments=((ParameterizedType)genericParameterType).getActualTypeArguments(); 
                    for (Type actualTypeArgument:actualTypeArguments){ 
                        System.out.println(actualTypeArgument);
-                       method=Test11.class.getMethod(name:&quot;testo2&quot;,.&#x2026;parameterTypes:null); 
+                       method=Test11.class.getMethod(name:"testo2",.…parameterTypes:null); 
                        Type genericReturnType=method.getGenericReturnType(); 
                        if(genericReturnType instanceof ParameterizedType){ 
                            Type[]actualTypeArguments=((ParameterizedType) genericReturnType).getActualTypeArguments(); 
@@ -1176,41 +741,41 @@
    }
 </code></pre>
 </blockquote>
-<p>   <a href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309223405261.png" data-lightbox="0ba6ce9e-832a-4f14-9d24-b200ab88f5e3" data-title="image-20200309223405261"><img src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309223405261.png" alt="image-20200309223405261"></a></p>
+<p> <a data-lightbox="effd7f04-43a0-4ead-818a-d1b5d8f4aaa4" data-title="image-20200309223405261" href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309223405261.png"><img alt="image-20200309223405261" src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309223405261.png"/></a></p>
 </blockquote>
-<h1 id="class&#x5BF9;&#x8C61;&#x529F;&#x80FD;"><a name="class&#x5BF9;&#x8C61;&#x529F;&#x80FD;" class="anchor-navigation-ex-anchor" href="#class&#x5BF9;&#x8C61;&#x529F;&#x80FD;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="class&#x5BF9;&#x8C61;&#x529F;&#x80FD;" class="plugin-anchor" href="#class&#x5BF9;&#x8C61;&#x529F;&#x80FD;"><i class="fa fa-link" aria-hidden="true"></i></a>Class&#x5BF9;&#x8C61;&#x529F;&#x80FD;</h1>
-<h2 id="&#x83B7;&#x53D6;&#x529F;&#x80FD;"><a name="&#x83B7;&#x53D6;&#x529F;&#x80FD;" class="anchor-navigation-ex-anchor" href="#&#x83B7;&#x53D6;&#x529F;&#x80FD;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x83B7;&#x53D6;&#x529F;&#x80FD;" class="plugin-anchor" href="#&#x83B7;&#x53D6;&#x529F;&#x80FD;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x83B7;&#x53D6;&#x529F;&#x80FD;</h2>
+<h1 id="class对象功能">5 Class对象功能</h1>
+<h2 id="获取功能">5.1 获取功能</h2>
 <blockquote>
-<p>1&#xFF09;&#x83B7;&#x53D6;&#x6210;&#x5458;&#x53D8;&#x91CF;&#x4EEC;</p>
-<pre><code class="lang-java">Field[] getFields() &#xFF1A;&#x83B7;&#x53D6;&#x6240;&#x6709;<span class="hljs-keyword">public</span>&#x4FEE;&#x9970;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;
-<span class="hljs-function">Field <span class="hljs-title">getField</span><span class="hljs-params">(String name)</span>   &#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x540D;&#x79F0;&#x7684; <span class="hljs-keyword">public</span>&#x4FEE;&#x9970;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;
+<p>1）获取成员变量们</p>
+<pre><code class="lang-java">Field[] getFields() ：获取所有<span class="hljs-keyword">public</span>修饰的成员变量
+<span class="hljs-function">Field <span class="hljs-title">getField</span><span class="hljs-params">(String name)</span>   获取指定名称的 <span class="hljs-keyword">public</span>修饰的成员变量
 
-Field[] <span class="hljs-title">getDeclaredFields</span><span class="hljs-params">()</span>  &#x83B7;&#x53D6;&#x6240;&#x6709;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;&#xFF0C;&#x4E0D;&#x8003;&#x8651;&#x4FEE;&#x9970;&#x7B26;
+Field[] <span class="hljs-title">getDeclaredFields</span><span class="hljs-params">()</span>  获取所有的成员变量，不考虑修饰符
 Field <span class="hljs-title">getDeclaredField</span><span class="hljs-params">(String name)</span>
 </span></code></pre>
-<p>2&#xFF09;&#x83B7;&#x53D6;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x4EEC;</p>
+<p>2）获取构造方法们</p>
 <pre><code class="lang-java">Constructor&lt;?&gt;[] getConstructors()  
-<span class="hljs-function">Constructor&lt;T&gt; <span class="hljs-title">getConstructor</span><span class="hljs-params">(&#x7C7B;&lt;?&gt;... parameterTypes)</span>  
+<span class="hljs-function">Constructor&lt;T&gt; <span class="hljs-title">getConstructor</span><span class="hljs-params">(类&lt;?&gt;... parameterTypes)</span>  
 
 Constructor&lt;?&gt;[] <span class="hljs-title">getDeclaredConstructors</span><span class="hljs-params">()</span>  
-Constructor&lt;T&gt; <span class="hljs-title">getDeclaredConstructor</span><span class="hljs-params">(&#x7C7B;&lt;?&gt;... parameterTypes)</span>
+Constructor&lt;T&gt; <span class="hljs-title">getDeclaredConstructor</span><span class="hljs-params">(类&lt;?&gt;... parameterTypes)</span>
 </span></code></pre>
-<p>3&#xFF09;&#x83B7;&#x53D6;&#x6210;&#x5458;&#x65B9;&#x6CD5;&#x4EEC;</p>
+<p>3）获取成员方法们</p>
 <pre><code class="lang-java">Method[] getMethods()  
-<span class="hljs-function">Method <span class="hljs-title">getMethod</span><span class="hljs-params">(String name, &#x7C7B;&lt;?&gt;... parameterTypes)</span>  
+<span class="hljs-function">Method <span class="hljs-title">getMethod</span><span class="hljs-params">(String name, 类&lt;?&gt;... parameterTypes)</span>  
 
 Method[] <span class="hljs-title">getDeclaredMethods</span><span class="hljs-params">()</span>  
-Method <span class="hljs-title">getDeclaredMethod</span><span class="hljs-params">(String name, &#x7C7B;&lt;?&gt;... parameterTypes)</span>
+Method <span class="hljs-title">getDeclaredMethod</span><span class="hljs-params">(String name, 类&lt;?&gt;... parameterTypes)</span>
 </span></code></pre>
-<p>4&#xFF09;&#x83B7;&#x53D6;&#x5168;&#x7C7B;&#x540D;&#x548C;&#x7B80;&#x5355;&#x7C7B;&#x540D;</p>
+<p>4）获取全类名和简单类名</p>
 <pre><code class="lang-java"><span class="hljs-function">String <span class="hljs-title">getName</span><span class="hljs-params">()</span>
 </span></code></pre>
 </blockquote>
-<h2 id="field&#xFF1A;&#x6210;&#x5458;&#x53D8;&#x91CF;"><a name="field&#xFF1A;&#x6210;&#x5458;&#x53D8;&#x91CF;" class="anchor-navigation-ex-anchor" href="#field&#xFF1A;&#x6210;&#x5458;&#x53D8;&#x91CF;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="field&#xFF1A;&#x6210;&#x5458;&#x53D8;&#x91CF;" class="plugin-anchor" href="#field&#xFF1A;&#x6210;&#x5458;&#x53D8;&#x91CF;"><i class="fa fa-link" aria-hidden="true"></i></a>Field&#xFF1A;&#x6210;&#x5458;&#x53D8;&#x91CF;</h2>
+<h2 id="field：成员变量">5.2 Field：成员变量</h2>
 <blockquote>
-<p><strong>&#x8BBE;&#x7F6E;&#x503C;</strong>: void set(Object obj, Object value)</p>
-<p><strong>&#x83B7;&#x53D6;&#x503C;</strong>: get(Object obj)</p>
-<p>&#x5FFD;&#x7565;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x4FEE;&#x9970;&#x7B26;&#x7684;&#x5B89;&#x5168;&#x68C0;&#x67E5; setAccessible(true): <code>&#x66B4;&#x529B;&#x53CD;&#x5C04;</code></p>
+<p><strong>设置值</strong>: void set(Object obj, Object value)</p>
+<p><strong>获取值</strong>: get(Object obj)</p>
+<p>忽略访问权限修饰符的安全检查 setAccessible(true): <code>暴力反射</code></p>
 <pre><code class="lang-java"><span class="hljs-keyword">import</span> lombok.Getter;
 <span class="hljs-keyword">import</span> lombok.Setter;
 <span class="hljs-keyword">import</span> lombok.ToString;
@@ -1219,44 +784,44 @@ Method <span class="hljs-title">getDeclaredMethod</span><span class="hljs-params
 <span class="hljs-meta">@Getter</span>
 <span class="hljs-meta">@ToString</span>
 <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{
-   <span class="hljs-keyword">public</span> String a;        <span class="hljs-comment">//&#x6700;&#x5927;&#x8303;&#x56F4;public</span>
-       <span class="hljs-keyword">protected</span> String b;     <span class="hljs-comment">//&#x53D7;&#x4FDD;&#x62A4;&#x7C7B;&#x578B;</span>
-       String c;               <span class="hljs-comment">//&#x9ED8;&#x8BA4;&#x7684;&#x8BBF;&#x95EE;&#x6743;&#x9650;</span>
-       <span class="hljs-keyword">private</span> String d;       <span class="hljs-comment">//&#x79C1;&#x6709;&#x7C7B;&#x578B;</span>
+   <span class="hljs-keyword">public</span> String a;        <span class="hljs-comment">//最大范围public</span>
+       <span class="hljs-keyword">protected</span> String b;     <span class="hljs-comment">//受保护类型</span>
+       String c;               <span class="hljs-comment">//默认的访问权限</span>
+       <span class="hljs-keyword">private</span> String d;       <span class="hljs-comment">//私有类型</span>
    }
 </code></pre>
-<pre><code class="lang-java"><span class="hljs-comment">// &#x6D4B;&#x8BD5;getFields&#x548C;getField(String name)&#x65B9;&#x6CD5;</span>
+<pre><code class="lang-java"><span class="hljs-comment">// 测试getFields和getField(String name)方法</span>
 **
-* &#x83B7;&#x53D6;&#x6210;&#x5458;&#x53D8;&#x91CF;
+* 获取成员变量
 *   Field[] getFields()
 *   <span class="hljs-function">Field <span class="hljs-title">getField</span><span class="hljs-params">(String name)</span>
 */
 @Test
 <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reflect</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>{
-  <span class="hljs-comment">// 0. &#x83B7;&#x53D6;Person&#x7684;Class&#x5BF9;&#x8C61;</span>
+  <span class="hljs-comment">// 0. 获取Person的Class对象</span>
   Class personClass = Person.class;
 
-   <span class="hljs-comment">// 1. Field[] getFields()&#x83B7;&#x53D6;&#x6240;&#x6709;public&#x4FEE;&#x9970;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;</span>
+   <span class="hljs-comment">// 1. Field[] getFields()获取所有public修饰的成员变量</span>
   Field[] fields = personClass.getFields();
    <span class="hljs-keyword">for</span>(Field field : fields){
        System.out.println(field);
    }
-   System.out.println(<span class="hljs-string">&quot;=============================&quot;</span>);
+   System.out.println(<span class="hljs-string">"============================="</span>);
    <span class="hljs-comment">// 2. Field getField(String name)</span>
-   Field a = personClass.getField(<span class="hljs-string">&quot;a&quot;</span>);
+   Field a = personClass.getField(<span class="hljs-string">"a"</span>);
 
-   <span class="hljs-comment">// 3. &#x83B7;&#x53D6;&#x6210;&#x5458;&#x53D8;&#x91CF;a &#x7684;&#x503C; [&#x4E5F;&#x53EA;&#x80FD;&#x83B7;&#x53D6;&#x516C;&#x6709;&#x7684;&#xFF0C;&#x83B7;&#x53D6;&#x79C1;&#x6709;&#x7684;&#x6216;&#x8005;&#x4E0D;&#x5B58;&#x5728;&#x7684;&#x5B57;&#x7B26;&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;]</span>
+   <span class="hljs-comment">// 3. 获取成员变量a 的值 [也只能获取公有的，获取私有的或者不存在的字符会抛出异常]</span>
   Person p = <span class="hljs-keyword">new</span> Person();
    Object value = a.get(p);
-   System.out.println(<span class="hljs-string">&quot;value = &quot;</span> + value);
+   System.out.println(<span class="hljs-string">"value = "</span> + value);
 
-   <span class="hljs-comment">// 4 &#x8BBE;&#x7F6E;&#x5C5E;&#x6027;a&#x7684;&#x503C;</span>
-  a.set(p,<span class="hljs-string">&quot;&#x5F20;&#x4E09;&quot;</span>);
+   <span class="hljs-comment">// 4 设置属性a的值</span>
+  a.set(p,<span class="hljs-string">"张三"</span>);
    System.out.println(p);
 }
 </code></pre>
-<p><a href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard.png" data-lightbox="03057d73-9c81-433b-b02e-408632324fcb" data-title="img"><img src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard.png" alt="img"></a></p>
-<pre><code class="lang-java"><span class="hljs-comment">// &#x6D4B;&#x8BD5;getDeclaredFields&#x548C;getDeclaredField(String name)&#x65B9;&#x6CD5;</span>
+<p><a data-lightbox="62b8bad0-a234-4009-9d37-801d4f6c4d52" data-title="img" href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard.png"><img alt="img" src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard.png"/></a></p>
+<pre><code class="lang-java"><span class="hljs-comment">// 测试getDeclaredFields和getDeclaredField(String name)方法</span>
 <span class="hljs-comment">/**
 *  Field[] getDeclaredFields()
 *  Field getDeclaredField(String name)
@@ -1264,34 +829,34 @@ Method <span class="hljs-title">getDeclaredMethod</span><span class="hljs-params
 <span class="hljs-meta">@Test</span>
 <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reflect3</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>{
   Class personClass = Person.class;
-   <span class="hljs-comment">// Field[] getDeclaredFields()&#xFF1A;&#x83B7;&#x53D6;&#x6240;&#x6709;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;&#xFF0C;&#x4E0D;&#x8003;&#x8651;&#x4FEE;&#x9970;&#x7B26;</span>
+   <span class="hljs-comment">// Field[] getDeclaredFields()：获取所有的成员变量，不考虑修饰符</span>
   Field[] declaredFields = personClass.getDeclaredFields();
    <span class="hljs-keyword">for</span>(Field filed : declaredFields){
        System.out.println(filed);
    }
-   System.out.println(<span class="hljs-string">&quot;===================================&quot;</span>);
+   System.out.println(<span class="hljs-string">"==================================="</span>);
    <span class="hljs-comment">// Field getDeclaredField(String name)</span>
-   Field d = personClass.getDeclaredField(<span class="hljs-string">&quot;d&quot;</span>);     <span class="hljs-comment">//private String d;</span>
+   Field d = personClass.getDeclaredField(<span class="hljs-string">"d"</span>);     <span class="hljs-comment">//private String d;</span>
    Person p = <span class="hljs-keyword">new</span> Person();
 
-   <span class="hljs-comment">// Object value1 = d.get(p);    //&#x4F1A;&#x629B;&#x51FA;&#x5F02;&#x5E38;</span>
-  <span class="hljs-comment">// System.out.println(&quot;value1 = &quot; + value1);    </span>
-   <span class="hljs-comment">//&#x5BF9;&#x4E8E;&#x79C1;&#x6709;&#x53D8;&#x91CF;&#x867D;&#x7136;&#x80FD;&#x4F1A;&#x83B7;&#x53D6;&#x5230;&#xFF0C;&#x4F46;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;set&#x548C;get</span>
+   <span class="hljs-comment">// Object value1 = d.get(p);    //会抛出异常</span>
+  <span class="hljs-comment">// System.out.println("value1 = " + value1);    </span>
+   <span class="hljs-comment">//对于私有变量虽然能会获取到，但不能直接set和get</span>
 
-  <span class="hljs-comment">//&#x5FFD;&#x7565;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x4FEE;&#x9970;&#x7B26;&#x7684;&#x5B89;&#x5168;&#x68C0;&#x67E5;</span>
-   d.setAccessible(<span class="hljs-keyword">true</span>);<span class="hljs-comment">//&#x66B4;&#x529B;&#x53CD;&#x5C04;</span>
+  <span class="hljs-comment">//忽略访问权限修饰符的安全检查</span>
+   d.setAccessible(<span class="hljs-keyword">true</span>);<span class="hljs-comment">//暴力反射</span>
    Object value2 = d.get(p);
-   System.out.println(<span class="hljs-string">&quot;value2 = &quot;</span> + value2);
+   System.out.println(<span class="hljs-string">"value2 = "</span> + value2);
 }
 </code></pre>
-<p><a href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757303499.png" data-lightbox="aafa1d1e-0dcc-440c-b612-52db3ed8ab25" data-title="img"><img src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757303499.png" alt="img"></a></p>
-<p>&#x6CA1;&#x6709;&#x5FFD;&#x7565;&#x8BBF;&#x95EE;&#x4FEE;&#x9970;&#x7B26;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x629B;&#x51FA;&#x7684;&#x5F02;&#x5E38;</p>
-<p><a href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757311152.png" data-lightbox="d896adf1-b5d4-45c7-b04c-c9460a3969d7" data-title="img"><img src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757311152.png" alt="img"></a></p>
+<p><a data-lightbox="559224be-86ec-4b93-9786-d533d3574526" data-title="img" href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757303499.png"><img alt="img" src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757303499.png"/></a></p>
+<p>没有忽略访问修饰符直接访问抛出的异常</p>
+<p><a data-lightbox="299da6d5-8b21-4b48-ab4a-85361f494918" data-title="img" href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757311152.png"><img alt="img" src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757311152.png"/></a></p>
 </blockquote>
-<h2 id="constructor&#x6784;&#x9020;&#x65B9;&#x6CD5;"><a name="constructor&#x6784;&#x9020;&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#constructor&#x6784;&#x9020;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="constructor&#x6784;&#x9020;&#x65B9;&#x6CD5;" class="plugin-anchor" href="#constructor&#x6784;&#x9020;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>Constructor:&#x6784;&#x9020;&#x65B9;&#x6CD5;</h2>
+<h2 id="constructor构造方法">5.3 Constructor:构造方法</h2>
 <blockquote>
-<p><strong>&#x521B;&#x5EFA;&#x5BF9;&#x8C61;</strong>&#xFF1A;T newInstance(Object... initargs)</p>
-<p>&#x6CE8;&#x610F;&#xFF1A;&#x5982;&#x679C;&#x4F7F;&#x7528;&#x7A7A;&#x53C2;&#x6570;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#xFF0C;&#x64CD;&#x4F5C;&#x53EF;&#x4EE5;&#x7B80;&#x5316;&#xFF1A;Class&#x5BF9;&#x8C61;&#x7684;newInstance&#x65B9;&#x6CD5;</p>
+<p><strong>创建对象</strong>：T newInstance(Object... initargs)</p>
+<p>注意：如果使用空参数构造方法创建对象，操作可以简化：Class对象的newInstance方法</p>
 <pre><code class="lang-java"><span class="hljs-keyword">import</span> lombok.Getter;
 <span class="hljs-keyword">import</span> lombok.Setter;
 <span class="hljs-keyword">import</span> lombok.ToString;
@@ -1302,11 +867,11 @@ Method <span class="hljs-title">getDeclaredMethod</span><span class="hljs-params
 <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{
        <span class="hljs-keyword">private</span> String name;
        <span class="hljs-keyword">private</span> Integer age;
-   <span class="hljs-comment">//&#x65E0;&#x53C2;&#x6784;&#x9020;&#x51FD;&#x6570;</span>
+   <span class="hljs-comment">//无参构造函数</span>
        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">()</span> </span>{}
-       <span class="hljs-comment">//&#x5355;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x4E14;&#x4E3A;&#x79C1;&#x6709;&#x6784;&#x9020;&#x65B9;&#x6CD5;</span>
+       <span class="hljs-comment">//单个参数的构造函数，且为私有构造方法</span>
        <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">Person</span><span class="hljs-params">(String name)</span></span>{}
-       <span class="hljs-comment">//&#x6709;&#x53C2;&#x6784;&#x9020;&#x51FD;&#x6570;</span>
+       <span class="hljs-comment">//有参构造函数</span>
        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">(String name, Integer age)</span> </span>{
           <span class="hljs-keyword">this</span>.name = name;
           <span class="hljs-keyword">this</span>.age = age; }
@@ -1315,10 +880,10 @@ Method <span class="hljs-title">getDeclaredMethod</span><span class="hljs-params
 <pre><code>````java
 /**
 </code></pre><ul>
-<li><p>&#x83B7;&#x53D6;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x4EEC;</p>
+<li><p>获取构造方法们</p>
 <ul>
 <li>Constructor&lt;?&gt;[] getConstructors()</li>
-<li>Constructor<t> getConstructor(&#x7C7B;&lt;?&gt;... parameterTypes)
+<li>Constructor<t> getConstructor(类&lt;?&gt;... parameterTypes)
 */
 @Test
 public void reflect4() throws Exception {
@@ -1326,49 +891,49 @@ Class personClass = Person.class;</t></li>
 </ul>
 <p>//Constructor&lt;?&gt;[] getConstructors()
 Constructor[] constructors = personClass.getConstructors();
-for(Constructor constructor : constructors){<br> // Constructor &#x5BF9;&#x8C61;reflect&#x5305;&#x4E0B;&#x7684; import java.lang.reflect.Constructor;
+for(Constructor constructor : constructors){<br/> // Constructor 对象reflect包下的 import java.lang.reflect.Constructor;
   System.out.println(constructor);
 }
-System.out.println(&quot;==========================================&quot;);</p>
-<p>// &#x83B7;&#x53D6;&#x65E0;&#x53C2;&#x6784;&#x9020;&#x51FD;&#x6570; &#x6CE8;&#x610F;&#xFF1A;Person&#x7C7B;&#x4E2D;&#x5FC5;&#x987B;&#x8981;&#x6709;&#x65E0;&#x53C2;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x4E0D;&#x7136;&#x629B;&#x51FA;&#x5F02;&#x5E38;
+System.out.println("==========================================");</p>
+<p>// 获取无参构造函数 注意：Person类中必须要有无参的构造函数，不然抛出异常
 Constructor constructor1 = personClass.getConstructor();
-System.out.println(&quot;constructor1 = &quot; + constructor1);
-// &#x83B7;&#x53D6;&#x5230;&#x6784;&#x9020;&#x51FD;&#x6570;&#x540E;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;
+System.out.println("constructor1 = " + constructor1);
+// 获取到构造函数后可以用于创建对象
 Object person1 = constructor1.newInstance();
-// Constructor&#x7C7B;&#x5185;&#x63D0;&#x4F9B;&#x4E86;&#x521D;&#x59CB;&#x5316;&#x65B9;&#x6CD5;newInstance();&#x65B9;&#x6CD5;
-System.out.println(&quot;person1 = &quot; + person1);
-System.out.println(&quot;==========================================&quot;);</p>
-<p>// &#x83B7;&#x53D6;&#x6709;&#x53C2;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;<br>// public Person(String name, Integer age) 
-// &#x53C2;&#x6570;&#x7C7B;&#x578B;&#x987A;&#x5E8F;&#x8981;&#x4E0E;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5185;&#x4E00;&#x81F4;&#xFF0C;&#x4E14;&#x53C2;&#x6570;&#x7C7B;&#x578B;&#x4E3A;&#x5B57;&#x8282;&#x7801;&#x7C7B;&#x578B;
+// Constructor类内提供了初始化方法newInstance();方法
+System.out.println("person1 = " + person1);
+System.out.println("==========================================");</p>
+<p>// 获取有参的构造函数<br/>// public Person(String name, Integer age) 
+// 参数类型顺序要与构造函数内一致，且参数类型为字节码类型
 Constructor constructor2 = personClass.getConstructor(String.class,Integer.class);
-System.out.println(&quot;constructor2 = &quot; + constructor2);</p>
-<p>// &#x521B;&#x5EFA;&#x5BF9;&#x8C61;
-Object person2 = constructor2.newInstance(&quot;&#x5F20;&#x4E09;&quot;, 23);<br>// &#x83B7;&#x53D6;&#x7684;&#x662F;&#x6709;&#x53C2;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#xFF0C;&#x5C31;&#x5FC5;&#x987B;&#x8981;&#x7ED9;&#x53C2;&#x6570;
+System.out.println("constructor2 = " + constructor2);</p>
+<p>// 创建对象
+Object person2 = constructor2.newInstance("张三", 23);<br/>// 获取的是有参的构造方法，就必须要给参数
 System.out.println(person2);
-System.out.println(&quot;=========================================&quot;);</p>
-<p>// &#x5BF9;&#x4E8E;&#x4E00;&#x822C;&#x7684;&#x65E0;&#x53C2;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x6211;&#x4EEC;&#x90FD;&#x4E0D;&#x4F1A;&#x5148;&#x83B7;&#x53D6;&#x65E0;&#x53C2;&#x6784;&#x9020;&#x5668;&#x4E4B;&#x540E;&#x5728;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;&#x3002;
-// &#x800C;&#x662F;&#x76F4;&#x63A5;&#x8C03;&#x7528;Class&#x7C7B;&#x5185;&#x7684;newInstance()&#x65B9;&#x6CD5;
+System.out.println("=========================================");</p>
+<p>// 对于一般的无参构造函数，我们都不会先获取无参构造器之后在进行初始化。
+// 而是直接调用Class类内的newInstance()方法
 Object person3 = personClass.newInstance();
-System.out.println(&quot;person3 = &quot; + person3);
-// &#x6211;&#x4EEC;&#x4E4B;&#x524D;&#x4F7F;&#x7528;&#x7684; Class.forName(&quot;&quot;).newInstance
-// &#x5176;&#x672C;&#x8D28;&#x4E0A;&#x5C31;&#x662F;&#x8C03;&#x7528;&#x4E86;&#x7C7B;&#x5185;&#x7684;&#x65E0;&#x53C2;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6765;&#x5B8C;&#x6210;&#x5B9E;&#x4F8B;&#x5316;&#x7684;
-// &#x4EE5;&#x540E;&#x5728;&#x4F7F;&#x7528;  Class.forName(&quot;&quot;).newInstance; &#x53CD;&#x5C04;&#x521B;&#x5EFA;&#x5BF9;&#x8C61;&#x65F6;&#xFF0C;&#x4E00;&#x5B9A;&#x8981;&#x4FDD;&#x8BC1;&#x7C7B;&#x5185;&#x6709;&#x65E0;&#x53C2;&#x6784;&#x9020;&#x51FD;&#x6570;
+System.out.println("person3 = " + person3);
+// 我们之前使用的 Class.forName("").newInstance
+// 其本质上就是调用了类内的无参构造函数来完成实例化的
+// 以后在使用  Class.forName("").newInstance; 反射创建对象时，一定要保证类内有无参构造函数
 }
 ````</p>
 </li>
 </ul>
-<p><a href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757474373.png" data-lightbox="b24e9a97-8cf2-47be-be03-96b529c5ace2" data-title="img"><img src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757474373.png" alt="img"></a></p>
-<p><strong>&#x5BF9;&#x4E8E;getDeclaredConstructor&#x65B9;&#x6CD5;&#x548C;getDeclaredConstructors&#x65B9;&#x6CD5;</strong></p>
-<p>getDeclaredConstructor&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5230;&#x4EFB;&#x4F55;&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x7684;&#x6784;&#x9020;&#x5668;&#xFF0C;&#x800C;getConstructor&#x65B9;&#x6CD5;&#x53EA;&#x80FD;&#x83B7;&#x53D6;public&#x4FEE;&#x9970;&#x7684;&#x6784;&#x9020;&#x5668;&#x3002;&#x6B64;&#x5916;&#x5728;&#x6784;&#x9020;&#x5668;&#x7684;&#x5BF9;&#x8C61;&#x5185;&#x4E5F;&#x6709;setAccessible(true);&#x65B9;&#x6CD5;&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x6210;true&#x5C31;&#x53EF;&#x4EE5;&#x64CD;&#x4F5C;&#x4E86;&#x3002;</p>
-<p>&#x200B;    &#x5173;&#x4E8E;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528;private&#x8BBF;&#x95EE;&#x6743;&#x9650;&#x7684;&#x6784;&#x9020;&#x5668;&#xFF0C;&#x4F7F;&#x7528;&#x8FD9;&#x4E2A;&#x6784;&#x9020;&#x5668;&#x4E0D;&#x5C31;&#x4E0D;&#x80FD;&#x5916;&#x90E8;&#x8BBF;&#x95EE;&#x4E86;&#x561B;&#xFF0C;&#x4E0D;&#x4E5F;&#x5C31;&#x65E0;&#x6CD5;&#x8FDB;&#x884C;&#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;&#x4E86;&#x5417;&#xFF1F;&#x65E0;&#x6CD5;&#x5728;&#x7C7B;&#x7684;&#x5916;&#x90E8;&#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;&#x6B63;&#x662F;&#x79C1;&#x6709;&#x6784;&#x9020;&#x5668;&#x7684;&#x610F;&#x4E49;&#x6240;&#x5728;&#xFF0C;&#x5728;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x4E0B;&#x7ECF;&#x5E38;&#x4F7F;&#x7528;&#xFF0C;&#x6574;&#x4E2A;&#x9879;&#x76EE;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x5916;&#x90E8;&#x65E0;&#x6CD5;&#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x7C7B;&#x5185;&#x7684;&#x8FDB;&#x884C;&#x5B9E;&#x4F8B;&#x5316;&#x5E76;&#x901A;&#x8FC7;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#xFF08;&#x7531;&#x4E8E;&#x5B9E;&#x4F8B;&#x5316;&#x7684;&#x5BF9;&#x8C61;&#x662F;&#x9759;&#x6001;&#x7684;&#xFF0C;&#x6545;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5355;&#x4F8B;&#x7684;&#xFF09;&#x3002;</p>
-<p>&#x7F51;&#x4E0A;&#x8BF4;&#x8FD9;&#x5C31;&#x662F;&#x5355;&#x4F8B;&#x6A21;&#x5F0F;&#x4E2D;&#x7684;&#x997F;&#x6C49;&#x6A21;&#x5F0F;&#xFF0C;&#x4E0D;&#x7BA1;&#x662F;&#x5426;&#x8C03;&#x7528;&#xFF0C;&#x90FD;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x3002;</p>
+<p><a data-lightbox="40ee804c-ac52-4bb9-8560-735bf7a3495f" data-title="img" href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757474373.png"><img alt="img" src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757474373.png"/></a></p>
+<p><strong>对于getDeclaredConstructor方法和getDeclaredConstructors方法</strong></p>
+<p>getDeclaredConstructor方法可以获取到任何访问权限的构造器，而getConstructor方法只能获取public修饰的构造器。此外在构造器的对象内也有setAccessible(true);方法，并设置成true就可以操作了。</p>
+<p>​    关于为什么要使用private访问权限的构造器，使用这个构造器不就不能外部访问了嘛，不也就无法进行实例化对象了吗？无法在类的外部实例化对象正是私有构造器的意义所在，在单例模式下经常使用，整个项目只有一个对象，外部无法实例化对象，可以在类内的进行实例化并通过静态方法返回（由于实例化的对象是静态的，故只有一个对象，也就是单例的）。</p>
+<p>网上说这就是单例模式中的饿汉模式，不管是否调用，都创建一个对象。</p>
 <pre><code class="lang-java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SingletonDemo</span></span>{
-   <span class="hljs-comment">// &#x79C1;&#x6709;&#x5316;&#x6784;&#x9020;&#x65B9;&#x6CD5;</span>
+   <span class="hljs-comment">// 私有化构造方法</span>
    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">SingletonDemo</span><span class="hljs-params">()</span></span>{
    }
-   <span class="hljs-comment">// &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;  &#x7C7B;&#x5185;&#x5B9E;&#x4F8B;&#x5316;&#xFF08;&#x9759;&#x6001;&#x7684;&#x5BF9;&#x8C61;&#xFF09;</span>
+   <span class="hljs-comment">// 创建一个对象  类内实例化（静态的对象）</span>
    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> SingletonDemo singleton = <span class="hljs-keyword">new</span> SingletonDemo();
-   <span class="hljs-comment">// &#x63D0;&#x4F9B;public&#x65B9;&#x6CD5;&#x4F9B;&#x5916;&#x90E8;&#x8BBF;&#x95EE;&#xFF0C;&#x8FD4;&#x56DE;&#x8FD9;&#x4E2A;&#x521B;&#x5EFA;&#x7684;&#x5BF9;&#x8C61;</span>
+   <span class="hljs-comment">// 提供public方法供外部访问，返回这个创建的对象</span>
    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> SingletonDemo <span class="hljs-title">getInstance</span><span class="hljs-params">()</span></span>{
        <span class="hljs-keyword">return</span> singleton;
    }
@@ -1376,19 +941,19 @@ System.out.println(&quot;person3 = &quot; + person3);
 <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Singleton</span> </span>{
    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
        SingletonDemo s1 = SingletonDemo.getInstance();
-       <span class="hljs-comment">//&#x8F93;&#x51FA;&#x5BF9;&#x8C61;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x5730;&#x5740;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x8BF4;&#x660E;&#x5BF9;&#x8C61;&#x521B;&#x5EFA;&#x6210;&#x529F;&#x5E76;&#x83B7;&#x53D6;&#x5230;</span>
+       <span class="hljs-comment">//输出对象的地址，如果有地址存在，则说明对象创建成功并获取到</span>
        System.out.println(s1);
           SingletonDemo s2 = SingletonDemo.getInstance();
-       <span class="hljs-comment">//&#x5982;&#x679C;&#x7ED3;&#x679C;&#x4E3A;true&#xFF0C;&#x5219;&#x8BF4;&#x660E;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;</span>
-       System.out.println(s1==s2);    <span class="hljs-comment">//&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#x4E3A;true</span>
+       <span class="hljs-comment">//如果结果为true，则说明是同一个对象</span>
+       System.out.println(s1==s2);    <span class="hljs-comment">//输出结果为true</span>
    }
 }
 </code></pre>
 </blockquote>
-<h1 id="method&#xFF1A;&#x65B9;&#x6CD5;&#x5BF9;&#x8C61;"><a name="method&#xFF1A;&#x65B9;&#x6CD5;&#x5BF9;&#x8C61;" class="anchor-navigation-ex-anchor" href="#method&#xFF1A;&#x65B9;&#x6CD5;&#x5BF9;&#x8C61;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="method&#xFF1A;&#x65B9;&#x6CD5;&#x5BF9;&#x8C61;" class="plugin-anchor" href="#method&#xFF1A;&#x65B9;&#x6CD5;&#x5BF9;&#x8C61;"><i class="fa fa-link" aria-hidden="true"></i></a>Method&#xFF1A;&#x65B9;&#x6CD5;&#x5BF9;&#x8C61;</h1>
+<h1 id="method：方法对象">6 Method：方法对象</h1>
 <blockquote>
-<p><strong>&#x6267;&#x884C;&#x65B9;&#x6CD5;</strong>&#xFF1A;Object invoke(Object obj, Object... args)</p>
-<p><strong>&#x83B7;&#x53D6;&#x65B9;&#x6CD5;&#x540D;&#x79F0;</strong>&#xFF1A;String getName();</p>
+<p><strong>执行方法</strong>：Object invoke(Object obj, Object... args)</p>
+<p><strong>获取方法名称</strong>：String getName();</p>
 <pre><code class="lang-java"><span class="hljs-keyword">import</span> lombok.Getter;
 <span class="hljs-keyword">import</span> lombok.Setter;
 <span class="hljs-keyword">import</span> lombok.ToString;
@@ -1399,77 +964,77 @@ System.out.println(&quot;person3 = &quot; + person3);
 <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{
    <span class="hljs-keyword">private</span> String name;
        <span class="hljs-keyword">private</span> Integer age;
-       <span class="hljs-comment">//&#x65E0;&#x53C2;&#x6784;&#x9020;&#x51FD;&#x6570;</span>
+       <span class="hljs-comment">//无参构造函数</span>
    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">()</span> </span>{}
-       <span class="hljs-comment">//&#x6709;&#x53C2;&#x6784;&#x9020;&#x51FD;&#x6570;</span>
+       <span class="hljs-comment">//有参构造函数</span>
        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Person</span><span class="hljs-params">(String name, Integer age)</span> </span>{
       <span class="hljs-keyword">this</span>.name = name;
           <span class="hljs-keyword">this</span>.age = age;}
-   <span class="hljs-comment">//&#x65E0;&#x53C2;&#x65B9;&#x6CD5;</span>
+   <span class="hljs-comment">//无参方法</span>
        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">eat</span><span class="hljs-params">()</span></span>{
-          System.out.println(<span class="hljs-string">&quot;eat...&quot;</span>);
+          System.out.println(<span class="hljs-string">"eat..."</span>);
         }
-        <span class="hljs-comment">//&#x91CD;&#x8F7D;&#x6709;&#x53C2;&#x65B9;&#x6CD5;</span>
+        <span class="hljs-comment">//重载有参方法</span>
        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">eat</span><span class="hljs-params">(String food)</span></span>{
-      System.out.println(<span class="hljs-string">&quot;eat...&quot;</span>+food);
+      System.out.println(<span class="hljs-string">"eat..."</span>+food);
        }
    }
 </code></pre>
-<p><strong>invoke&#x65B9;&#x6CD5;</strong></p>
+<p><strong>invoke方法</strong></p>
 <pre><code class="lang-java">    <span class="hljs-comment">/**
-   * &#x83B7;&#x53D6;&#x6210;&#x5458;&#x65B9;&#x6CD5;&#x4EEC;&#xFF1A;
+   * 获取成员方法们：
 *  Method[] getMethods()
-*  Method getMethod(String name, &#x7C7B;&lt;?&gt;... parameterTypes)
+*  Method getMethod(String name, 类&lt;?&gt;... parameterTypes)
 */</span>
 <span class="hljs-meta">@Test</span>
 <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reflect5</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>{
   Class personClass = Person.class;
 
-   <span class="hljs-comment">// &#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x540D;&#x79F0;&#x7684;&#x65B9;&#x6CD5;    </span>
-   Method eat_method1 = personClass.getMethod(<span class="hljs-string">&quot;eat&quot;</span>);
-   <span class="hljs-comment">// &#x6267;&#x884C;&#x65B9;&#x6CD5;</span>
+   <span class="hljs-comment">// 获取指定名称的方法    </span>
+   Method eat_method1 = personClass.getMethod(<span class="hljs-string">"eat"</span>);
+   <span class="hljs-comment">// 执行方法</span>
    Person person = <span class="hljs-keyword">new</span> Person();
   Object rtValue = eat_method1.invoke(person);
-   <span class="hljs-comment">//&#x5982;&#x679C;&#x65B9;&#x6CD5;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#x7C7B;&#x578B;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5230;&#xFF0C;&#x6CA1;&#x6709;&#x5C31;&#x4E3A;null</span>
-   <span class="hljs-comment">// &#x8F93;&#x51FA;&#x8FD4;&#x56DE;&#x503C; eat&#x65B9;&#x6CD5;&#x6CA1;&#x6709;&#x8FD4;&#x56DE;&#x503C;&#xFF0C;&#x6545;&#x8F93;&#x51FA;null</span>
-  System.out.println(<span class="hljs-string">&quot;rtValue = &quot;</span> + rtValue);
-   System.out.println(<span class="hljs-string">&quot;--------------------------------------------&quot;</span>);
+   <span class="hljs-comment">//如果方法有返回值类型可以获取到，没有就为null</span>
+   <span class="hljs-comment">// 输出返回值 eat方法没有返回值，故输出null</span>
+  System.out.println(<span class="hljs-string">"rtValue = "</span> + rtValue);
+   System.out.println(<span class="hljs-string">"--------------------------------------------"</span>);
 
-   <span class="hljs-comment">// &#x83B7;&#x53D6;&#x6709;&#x53C2;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;  &#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570; &#x7B2C;&#x4E00;&#x4E2A;&#x65B9;&#x6CD5;&#x540D; &#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x5217;&#x8868; &#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x53C2;&#x6570;&#x662F;&#x4E0D;&#x540C;&#x7684;&#x65B9;&#x6CD5;&#xFF08;&#x91CD;&#x8F7D;&#xFF09;</span>
-   Method eat_method2 = personClass.getMethod(<span class="hljs-string">&quot;eat&quot;</span>, String.class);
-   <span class="hljs-comment">//&#x6267;&#x884C;&#x65B9;&#x6CD5;</span>
-   eat_method2.invoke(person,<span class="hljs-string">&quot;&#x996D;&quot;</span>);
-   System.out.println(<span class="hljs-string">&quot;============================================&quot;</span>);
+   <span class="hljs-comment">// 获取有参的构造函数  有两个参数 第一个方法名 第二个参数列表 ，不同的参数是不同的方法（重载）</span>
+   Method eat_method2 = personClass.getMethod(<span class="hljs-string">"eat"</span>, String.class);
+   <span class="hljs-comment">//执行方法</span>
+   eat_method2.invoke(person,<span class="hljs-string">"饭"</span>);
+   System.out.println(<span class="hljs-string">"============================================"</span>);
 
-   <span class="hljs-comment">//&#x83B7;&#x53D6;&#x65B9;&#x6CD5;&#x5217;&#x8868;</span>
+   <span class="hljs-comment">//获取方法列表</span>
   Method[] methods = personClass.getMethods();
    <span class="hljs-keyword">for</span>(Method method : methods){     
-       <span class="hljs-comment">//&#x6CE8;&#x610F;&#xFF1A;&#x83B7;&#x53D6;&#x5230;&#x7684;&#x65B9;&#x6CD5;&#x540D;&#x79F0;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F;&#x6211;&#x4EEC;&#x5728;Person&#x7C7B;&#x5185;&#x770B;&#x5230;&#x7684;&#x65B9;&#x6CD5;</span>
+       <span class="hljs-comment">//注意：获取到的方法名称不仅仅是我们在Person类内看到的方法</span>
        System.out.println(method);   
-       <span class="hljs-comment">//&#x7EE7;&#x627F;&#x4E0B;&#x6765;&#x7684;&#x65B9;&#x6CD5;&#x4E5F;&#x4F1A;&#x88AB;&#x83B7;&#x53D6;&#x5230;&#xFF08;&#x5F53;&#x7136;&#x524D;&#x63D0;&#x662F;public&#x4FEE;&#x9970;&#x7684;&#xFF09;</span>
+       <span class="hljs-comment">//继承下来的方法也会被获取到（当然前提是public修饰的）</span>
   }
 }
 </code></pre>
-<p><a href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757833119.png" data-lightbox="b9384999-f976-4733-b31f-e8d38aaffd47" data-title="img"><img src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757833119.png" alt="img"></a></p>
+<p><a data-lightbox="c5440d80-8f2a-45f3-b74d-c9f3539d8c4d" data-title="img" href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757833119.png"><img alt="img" src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757833119.png"/></a></p>
 </blockquote>
-<h2 id="getname&#x65B9;&#x6CD5;"><a name="getname&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#getname&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="getname&#x65B9;&#x6CD5;" class="plugin-anchor" href="#getname&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>getName&#x65B9;&#x6CD5;</h2>
+<h2 id="getname方法">6.1 getName方法</h2>
 <blockquote>
-<p>getName()&#x65B9;&#x6CD5;&#x83B7;&#x53D6;&#x7684;&#x65B9;&#x6CD5;&#x540D;&#x662F;&#x4EC5;&#x4EC5;&#x5C31;&#x662F;&#x65B9;&#x6CD5;&#x540D;&#xFF08;&#x4E0D;&#x5E26;&#x5168;&#x7C7B;&#x540D;&#xFF09;&#xFF0C;&#x4E14;&#x4E0D;&#x5E26;&#x6709;&#x53C2;&#x6570;&#x5217;&#x8868;&#x3002;</p>
+<p>getName()方法获取的方法名是仅仅就是方法名（不带全类名），且不带有参数列表。</p>
 <pre><code class="lang-java"><span class="hljs-meta">@Test</span>
 <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reflect6</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> NoSuchMethodException </span>{
        Class personClass = Person.class;
        Method[] methods = personClass.getMethods();
        <span class="hljs-keyword">for</span>(Method method : methods){
            System.out.println(method);
-           <span class="hljs-comment">// &#x83B7;&#x53D6;&#x65B9;&#x6CD5;&#x540D;</span>
+           <span class="hljs-comment">// 获取方法名</span>
            String name = method.getName();  
            System.out.println(name);   
        }
 }
 </code></pre>
-<p><a href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757870418.png" data-lightbox="e0443b15-c638-4998-86a1-606f76ae6794" data-title="img"><img src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757870418.png" alt="img"></a></p>
-<p><strong>&#x83B7;&#x53D6;&#x7C7B;&#x540D;</strong></p>
-<p>getClass()&#x65B9;&#x6CD5;&#x662F;Object&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x4E00;&#x70B9;&#x83B7;&#x53D6;&#x7684;&#x7C7B;&#x540D;&#x662F;<strong>&#x5168;&#x7C7B;&#x540D;</strong>&#xFF08;&#x5E26;&#x6709;&#x8DEF;&#x5F84;&#xFF09;</p>
+<p><a data-lightbox="f8af92e1-f04e-4287-a3b5-484e655e2690" data-title="img" href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757870418.png"><img alt="img" src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757870418.png"/></a></p>
+<p><strong>获取类名</strong></p>
+<p>getClass()方法是Object类的方法，需要注意一点获取的类名是<strong>全类名</strong>（带有路径）</p>
 <pre><code class="lang-java"><span class="hljs-meta">@Test</span>
 <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reflect7</span><span class="hljs-params">()</span></span>{
      Class personClass = Person.class;
@@ -1477,149 +1042,73 @@ System.out.println(&quot;person3 = &quot; + person3);
      System.out.println(className);
 }
 </code></pre>
-<p><a href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/clipboard-1583757948090.png" data-lightbox="8277d878-b7e4-403d-838c-7e379e7c6918" data-title="img"><img src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/clipboard-1583757948090.png" alt="img"></a></p>
+<p><a data-lightbox="dd4bd9a3-32a5-4cd1-8bc3-04ed939682b3" data-title="img" href="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/clipboard-1583757948090.png"><img alt="img" src="res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/clipboard-1583757948090.png"/></a></p>
 </blockquote>
-<h2 id="&#x5173;&#x4E8E;&#x83B7;&#x53D6;&#x6210;&#x5458;&#x65B9;&#x6CD5;&#x4EEC;&#x7684;&#x53E6;&#x5916;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;"><a name="&#x5173;&#x4E8E;&#x83B7;&#x53D6;&#x6210;&#x5458;&#x65B9;&#x6CD5;&#x4EEC;&#x7684;&#x53E6;&#x5916;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;" class="anchor-navigation-ex-anchor" href="#&#x5173;&#x4E8E;&#x83B7;&#x53D6;&#x6210;&#x5458;&#x65B9;&#x6CD5;&#x4EEC;&#x7684;&#x53E6;&#x5916;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a><a name="&#x5173;&#x4E8E;&#x83B7;&#x53D6;&#x6210;&#x5458;&#x65B9;&#x6CD5;&#x4EEC;&#x7684;&#x53E6;&#x5916;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;" class="plugin-anchor" href="#&#x5173;&#x4E8E;&#x83B7;&#x53D6;&#x6210;&#x5458;&#x65B9;&#x6CD5;&#x4EEC;&#x7684;&#x53E6;&#x5916;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5173;&#x4E8E;&#x83B7;&#x53D6;&#x6210;&#x5458;&#x65B9;&#x6CD5;&#x4EEC;&#x7684;&#x53E6;&#x5916;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;</h2>
+<h2 id="关于获取成员方法们的另外两个方法">6.2 关于获取成员方法们的另外两个方法</h2>
 <blockquote>
-<p>&#x540C;&#x4E4B;&#x524D;&#x7684;&#x53D9;&#x8FF0;&#x4E00;&#x6837;&#xFF0C;&#x5E26;&#x6709;Declared&#x5173;&#x952E;&#x5B57;&#x7684;&#x65B9;&#x6CD5;&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x5230;&#x4EFB;&#x610F;&#x4FEE;&#x9970;&#x7B26;&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x540C;&#x6837;&#x7684;&#x63D0;&#x4F9B;&#x4E86;setAccessible(true);&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x66B4;&#x529B;&#x53CD;&#x5C04;&#x3002;</p>
-<p>   Method&#x548C;Field&#x3001;Constructor&#x5BF9;&#x8C61;&#x90FD;&#x6709;setAccessible&#xFF09;&#x65B9;&#x6CD5;&#x3002;</p>
-<p>setAccessible&#x4F5C;&#x7528;&#x662F;&#x542F;&#x52A8;&#x548C;&#x7981;&#x7528;&#x8BBF;&#x95EE;&#x5B89;&#x5168;&#x68C0;&#x67E5;&#x7684;&#x5F00;&#x5173;&#x3002;</p>
-<p>&#x53C2;&#x6570;&#x503C;&#x4E3A;true&#x5219;&#x6307;&#x793A;&#x53CD;&#x5C04;&#x7684;&#x5BF9;&#x8C61;&#x5728;&#x4F7F;&#x7528;&#x65F6;&#x5E94;&#x8BE5;&#x53D6;&#x6D88;Java&#x8BED;&#x8A00;&#x8BBF;&#x95EE;&#x68C0;&#x67E5;&#x3002;</p>
-<p>   &#x63D0;&#x9AD8;&#x53CD;&#x5C04;&#x7684;&#x6548;&#x7387;&#x3002;&#x5982;&#x679C;&#x4EE3;&#x7801;&#x4E2D;&#x5FC5;&#x987B;&#x7528;&#x53CD;&#x5C04;&#xFF0C;&#x800C;&#x8BE5;&#x53E5;&#x4EE3;&#x7801;&#x9700;&#x8981;&#x9891;&#x7E41;&#x7684;&#x88AB;&#x8C03;&#x7528;&#xFF0C;&#x90A3;&#x4E48;&#x8BF7;&#x8BBE;&#x7F6E;&#x4E3A;true&#x3002;</p>
-<p>&#x4F7F;&#x5F97;&#x539F;&#x672C;&#x65E0;&#x6CD5;&#x8BBF;&#x95EE;&#x7684;&#x79C1;&#x6709;&#x6210;&#x5458;&#x4E5F;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&gt;&#x53C2;&#x6570;&#x503C;&#x4E3A;false&#x5219;&#x6307;&#x793A;&#x53CD;&#x5C04;&#x7684;&#x5BF9;&#x8C61;&#x5E94;&#x8BE5;&#x5B9E;&#x65BD;Java&#x8BED;&#x8A00;&#x8BBF;&#x95EE;&#x68C0;&#x67E5;</p>
-<p><strong>&#x7EFC;&#x4E0A;&#x8BF4;&#x8FF0;&#xFF1A;&#x5BF9;&#x4E8E;&#x53CD;&#x5C04;&#x673A;&#x5236;&#x6765;&#x8BF4;&#xFF0C;&#x5728;&#x53CD;&#x5C04;&#x9762;&#x524D;&#x6CA1;&#x6709;&#x516C;&#x6709;&#x79C1;&#x6709;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x66B4;&#x529B;&#x53CD;&#x5C04;&#x89E3;&#x51B3;&#x3002;</strong></p>
+<p>同之前的叙述一样，带有Declared关键字的方法这两个方法，可以获取到任意修饰符的方法。同样的提供了setAccessible(true);方法进行暴力反射。</p>
+<p>   Method和Field、Constructor对象都有setAccessible）方法。</p>
+<p>setAccessible作用是启动和禁用访问安全检查的开关。</p>
+<p>参数值为true则指示反射的对象在使用时应该取消Java语言访问检查。</p>
+<p>   提高反射的效率。如果代码中必须用反射，而该句代码需要频繁的被调用，那么请设置为true。</p>
+<p>使得原本无法访问的私有成员也可以访问&gt;参数值为false则指示反射的对象应该实施Java语言访问检查</p>
+<p><strong>综上说述：对于反射机制来说，在反射面前没有公有私有，都可以通过暴力反射解决。</strong></p>
 <pre><code class="lang-java">Method[] getDeclaredMethods()  
-<span class="hljs-function">Method <span class="hljs-title">getDeclaredMethod</span><span class="hljs-params">(String name, &#x7C7B;&lt;?&gt;... parameterTypes)</span>
-method.<span class="hljs-title">setAccessible</span><span class="hljs-params">(<span class="hljs-keyword">true</span>)</span></span>;   <span class="hljs-comment">//&#x66B4;&#x529B;&#x53CD;&#x5C04;</span>
+<span class="hljs-function">Method <span class="hljs-title">getDeclaredMethod</span><span class="hljs-params">(String name, 类&lt;?&gt;... parameterTypes)</span>
+method.<span class="hljs-title">setAccessible</span><span class="hljs-params">(<span class="hljs-keyword">true</span>)</span></span>;   <span class="hljs-comment">//暴力反射</span>
 </code></pre>
 </blockquote>
-<p></p><footer class="page-footer"><span class="copyright">Copyright &#xA9; narutohyc.com 2022 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
-2022-02-14 09:16:40
-</span></footer><hr><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz',appKey: 'FOXMptWOHC7cU1FxXt0LJj4o',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script><p></p>
-
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
+<p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2022 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
+2022-02-15 13:20:00
+</span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz',appKey: 'FOXMptWOHC7cU1FxXt0LJj4o',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script><p></p>
+</section>
 </div>
-
-                        </div>
-                    </div>
-                
-            </div>
-
-            
-                
-                <a href="Java进阶.md" class="navigation navigation-prev " aria-label="Previous page: Java进阶">
-                    <i class="fa fa-angle-left"></i>
-                </a>
-                
-                
-                <a href="Java进阶_注解.html" class="navigation navigation-next " aria-label="Next page: Java进阶_注解">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
-        
-    </div>
-
-    <script>
+<div class="search-results">
+<div class="has-results">
+<h1 class="search-results-title"><span class="search-results-count"></span> results matching "<span class="search-query"></span>"</h1>
+<ul class="search-results-list"></ul>
+</div>
+<div class="no-results">
+<h1 class="search-results-title">No results matching "<span class="search-query"></span>"</h1>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<a aria-label="Previous page: Java进阶" class="navigation navigation-prev" href="Java进阶.md">
+<i class="fa fa-angle-left"></i>
+</a>
+<a aria-label="Next page: Java进阶_注解" class="navigation navigation-next" href="Java进阶_注解.html">
+<i class="fa fa-angle-right"></i>
+</a>
+</div>
+<script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Java进阶_反射","level":"1.7.1","depth":2,"next":{"title":"Java进阶_注解","level":"1.7.2","depth":2,"path":"chapters/Java进阶_注解.md","ref":"chapters/Java进阶_注解.md","articles":[]},"previous":{"title":"Java进阶","level":"1.7","depth":1,"path":"chapters/Java进阶.md","ref":"chapters/Java进阶.md","articles":[{"title":"Java进阶_反射","level":"1.7.1","depth":2,"path":"chapters/Java进阶_反射.md","ref":"chapters/Java进阶_反射.md","articles":[]},{"title":"Java进阶_注解","level":"1.7.2","depth":2,"path":"chapters/Java进阶_注解.md","ref":"chapters/Java进阶_注解.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","favicon","search-plus","-lunr","-search","lightbox","change_girls","theme-comscore","valine","pageview-count","favicon-absolute"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"change_girls":{"time":10,"urls":["https://plc.jj20.com/up/allimg/1115/012122143136/220121143136-2.jpg","https://plc.jj20.com/up/allimg/1115/111R1094405/21111P94405-1.jpg"]},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://i.loli.net/2021/01/12/Cdunm9AoBcHF5MI.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://i.loli.net/2021/01/12/gmzASfCciIFXTyr.png","wechatText":"微信打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"","lang":"zh-CN","pageSize":10,"placeholder":"Just go go","recordIP":false,"appId":"jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz","appKey":"FOXMptWOHC7cU1FxXt0LJj4o"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java相关学习记录","language":"zh-hans","links":{"sidebar":{"我的狗窝":"https://github.com/narutohyc"}},"gitbook":"*","description":"记录 Java 的学习和一些技巧的使用"},"file":{"path":"chapters/Java进阶_反射.md","mtime":"2022-02-14T09:16:40.557Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-14T09:18:14.959Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Java进阶_反射","level":"1.7.1","depth":2,"next":{"title":"Java进阶_注解","level":"1.7.2","depth":2,"path":"chapters/Java进阶_注解.md","ref":"chapters/Java进阶_注解.md","articles":[]},"previous":{"title":"Java进阶","level":"1.7","depth":1,"path":"chapters/Java进阶.md","ref":"chapters/Java进阶.md","articles":[{"title":"Java进阶_反射","level":"1.7.1","depth":2,"path":"chapters/Java进阶_反射.md","ref":"chapters/Java进阶_反射.md","articles":[]},{"title":"Java进阶_注解","level":"1.7.2","depth":2,"path":"chapters/Java进阶_注解.md","ref":"chapters/Java进阶_注解.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","favicon","search-plus","-lunr","-search","lightbox","change_girls","theme-comscore","valine","pageview-count","favicon-absolute"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"change_girls":{"time":10,"urls":["https://plc.jj20.com/up/allimg/1115/012122143136/220121143136-2.jpg","https://plc.jj20.com/up/allimg/1115/111R1094405/21111P94405-1.jpg"]},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://i.loli.net/2021/01/12/Cdunm9AoBcHF5MI.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://i.loli.net/2021/01/12/gmzASfCciIFXTyr.png","wechatText":"微信打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"","lang":"zh-CN","pageSize":10,"placeholder":"Just go go","recordIP":false,"appId":"jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz","appKey":"FOXMptWOHC7cU1FxXt0LJj4o"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java相关学习记录","language":"zh-hans","links":{"sidebar":{"我的狗窝":"https://github.com/narutohyc"}},"gitbook":"*","description":"记录 Java 的学习和一些技巧的使用"},"file":{"path":"chapters/Java进阶_反射.md","mtime":"2022-02-15T13:20:00.833Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-15T13:21:52.737Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
-
-        
-    
-    <script src="../gitbook/gitbook.js"></script>
-    <script src="../gitbook/theme.js"></script>
-    
-        
-        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
-        
-    
-        
-        <script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
-        
-        <script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
-        
-    
-
-    <script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
-
-    </body>
+<script src="../gitbook/gitbook.js"></script>
+<script src="../gitbook/theme.js"></script>
+<script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+<script src="../gitbook/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+<script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/2.6-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="../gitbook/gitbook-plugin-mathjax/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/book/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/jquery.mark.min.js"></script>
+<script src="../gitbook/gitbook-plugin-search-plus/search.js"></script>
+<script src="../gitbook/gitbook-plugin-lightbox/js/lightbox.min.js"></script>
+<script src="../gitbook/gitbook-plugin-change_girls/girls.js"></script>
+<script src="../gitbook/gitbook-plugin-pageview-count/plugin.js"></script>
+<script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+<script src="../gitbook/gitbook-plugin-theme-comscore/test.js"></script>
+<script src="../gitbook/gitbook-plugin-mermaid-gb3/mermaid/mermaid.min.js"></script>
+</body>
 </html>
-
