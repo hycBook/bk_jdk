@@ -58,7 +58,8 @@ jobs:
           cp bk_jdk.epub _ebook/
           echo pdf电子书复制完成
           cp ./node_modules_mathjax/py_scripts/gen_sup_idx.py .
-          python gen_sup_idx.py
+          pip install BeautifulSoup4
+          python -u gen_sup_idx.py
           echo 生成辅助索引完成
           rm -rf _book/docs/*
           rm -rf _book/chapters/*.md
