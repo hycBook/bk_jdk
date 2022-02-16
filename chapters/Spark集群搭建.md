@@ -234,6 +234,8 @@ Slave03  # 主节点
 export JAVA_HOME=${JAVA_HOME}                    #设置JAVA_HOME的路径，需要再次指明
 export HADOOP_HOME=${HADOOP_HOME}
 export HADOOP_PID_DIR=/usr/hadoop-3.2.0/pids     # pid文件根目录，不设置的默认值为/tmp，一段时间后/tmp下的文件会被清除，导致无法关闭hadoop集群
+# 解决启动时警告 WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+export JAVA_LIBRARY_PATH=$HADOOP_HOME/lib/native
 ```
 
 注意的是，如果之前没有设置JAVA_HOME的环境变量，此处直接这样引用会出现错误，改用绝对路径即可消除错误。
@@ -479,6 +481,42 @@ scp -r root@192.168.123.24:/usr/spark-3.0 /usr/
 
 启动成功后，我们在浏览器输入`Slave03:8080`看到有三个结点，就代表我们安装成功了。
 如果发现启动错误，请查看`logs`目录下的日志，自行检查配置文件！
+
+### 日志配置
+
+> 配置spark的执行日志等级，进入到spark根目录下的`conf`目录
+> `cp log4j.properties.template log4j.properties`，修改配置如下
+
+```properties
+# Set everything to be logged to the console
+log4j.rootCategory=WARN, console
+log4j.appender.console=org.apache.log4j.ConsoleAppender
+log4j.appender.console.target=System.err
+log4j.appender.console.layout=org.apache.log4j.PatternLayout
+log4j.appender.console.layout.ConversionPattern=%d{yy/MM/dd HH:mm:ss} %p %c{1}: %m%n
+
+# Set the default spark-shell log level to WARN. When running the spark-shell, the
+# log level for this class is used to overwrite the root logger's log level, so that
+# the user can have different defaults for the shell and regular Spark apps.
+log4j.logger.org.apache.spark.repl.Main=WARN
+
+# Settings to quiet third party logs that are too verbose
+log4j.logger.org.sparkproject.jetty=WARN
+log4j.logger.org.sparkproject.jetty.util.component.AbstractLifeCycle=ERROR
+log4j.logger.org.apache.spark.repl.SparkIMain$exprTyper=INFO
+log4j.logger.org.apache.spark.repl.SparkILoop$SparkILoopInterpreter=INFO
+log4j.logger.org.apache.parquet=ERROR
+log4j.logger.parquet=ERROR
+
+# SPARK-9183: Settings to avoid annoying messages when looking up nonexistent UDFs in SparkSQL with Hive support
+log4j.logger.org.apache.hadoop.hive.metastore.RetryingHMSHandler=FATAL
+log4j.logger.org.apache.hadoop.hive.ql.exec.FunctionRegistry=ERROR
+# 关闭警告
+# WARN util.NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+log4j.logger.org.apache.hadoop.util.NativeCodeLoader=ERROR
+```
+
+
 
 ### 主要命令
 
