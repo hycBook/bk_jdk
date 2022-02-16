@@ -13,3 +13,8 @@
 
 > gitbook的node插件
 
+### py_scripts
+
+> 存放一些辅助的python脚本
+
+* *gen_sup_idx.py*: 用于更新辅助列的编号以及`[TOC]`标签的解析
