@@ -65,6 +65,9 @@ jobs:
           rm -rf _book/docs/*
           rm -rf _book/chapters/*.md
           rm -rf _book/*.pdf
+          echo 删除多余格式文件完成
+          cp ./node_modules_mathjax/styles/style.css _book/gitbook/style.css
+          echo style.css文件替换完成
 
       - name: Deploy #步骤4：把编译好的静态目录上传到gh-pages分支上
         uses: JamesIves/github-pages-deploy-action@3.1.5 #这里调用第三方依赖，用于上传代码到指定分支上
