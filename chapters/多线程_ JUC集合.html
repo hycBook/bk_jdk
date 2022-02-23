@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
-<title>多线程_ JUC集合 · Java相关学习记录</title>
+<title>多线程_JUC集合 · Java相关学习记录</title>
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="" name="description"/>
 <meta content="GitBook 3.2.3" name="generator"/>
@@ -31,7 +31,7 @@
 <link href="../gitbook/images/apple-touch-icon-precomposed-152.png" rel="apple-touch-icon-precomposed" sizes="152x152"/>
 <link href="../gitbook/images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 <link href="多线程_JUC线程池.html" rel="next"/>
-<link href="多线程_JUC锁集合 .html" rel="prev"/>
+<link href="多线程_JUC锁集合.html" rel="prev"/>
 <link href="./chapters/res/other/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 <link href="./chapters/res/other/favicon.ico" rel="apple-touch-icon-precomposed" sizes="152x152"/>
 <style>
@@ -108,8 +108,8 @@
             
                 </a>
 </li>
-<li class="chapter" data-level="1.3.4" data-path="多线程_JUC锁集合 .html">
-<a href="多线程_JUC锁集合 .html">
+<li class="chapter" data-level="1.3.4" data-path="多线程_JUC锁集合.html">
+<a href="多线程_JUC锁集合.html">
 <b>1.3.4.</b>
                     
                     多线程_JUC锁集合 
@@ -120,7 +120,7 @@
 <a href="多线程_ JUC集合.html">
 <b>1.3.5.</b>
                     
-                    多线程_ JUC集合
+                    多线程_JUC集合
             
                 </a>
 </li>
@@ -422,7 +422,7 @@
 <!-- Title -->
 <h1>
 <i class="fa fa-circle-o-notch fa-spin"></i>
-<a href="..">多线程_ JUC集合</a>
+<a href="..">多线程_JUC集合</a>
 </h1>
 </div>
 <div class="page-wrapper" role="main" tabindex="-1">
@@ -430,7 +430,7 @@
 <div class="search-plus" id="book-search-results">
 <div class="search-noresults">
 <section class="normal markdown-section">
-<div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon"></span><a href="#juc集合">1 JUC集合</a></li><li><span class="title-icon"></span><a href="#copyonwritearraylist">2 CopyOnWriteArrayList</a></li><ul><li><span class="title-icon"></span><a href="#copyonwritearraylist示例">2.1 CopyOnWriteArrayList示例</a></li></ul><li><span class="title-icon"></span><a href="#concurrentskiplistmap">3 ConcurrentSkipListMap</a></li><ul><li><span class="title-icon"></span><a href="#concurrentskiplistmap示例">3.1 ConcurrentSkipListMap示例</a></li></ul></ul></div><a href="#juc集合" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><a data-lightbox="599c8035-1e2f-4866-90d9-818d7047c53f" data-title="img" href="res/other/异世界蕾姆_0.jpg"><img alt="img" src="res/other/异世界蕾姆_0.jpg"/></a></p>
+<div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon"></span><a href="#juc集合">1 JUC集合</a></li><li><span class="title-icon"></span><a href="#copyonwritearraylist">2 CopyOnWriteArrayList</a></li><ul><li><span class="title-icon"></span><a href="#copyonwritearraylist示例">2.1 CopyOnWriteArrayList示例</a></li></ul><li><span class="title-icon"></span><a href="#concurrentskiplistmap">3 ConcurrentSkipListMap</a></li><ul><li><span class="title-icon"></span><a href="#concurrentskiplistmap示例">3.1 ConcurrentSkipListMap示例</a></li></ul></ul></div><a href="#juc集合" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><p><a data-lightbox="b879d03b-0737-47c5-bc7d-9c010465ba0c" data-title="img" href="res/other/异世界蕾姆_0.jpg"><img alt="img" src="res/other/异世界蕾姆_0.jpg"/></a></p>
 <p><li><span class="title-icon"></span><a href="#juc集合">1 JUC集合</a></li><li><span class="title-icon"></span><a href="#copyonwritearraylist">2 CopyOnWriteArrayList</a></li><ul><li><span class="title-icon"></span><a href="#copyonwritearraylist示例">2.1 CopyOnWriteArrayList示例</a></li></ul><li><span class="title-icon"></span><a href="#concurrentskiplistmap">3 ConcurrentSkipListMap</a></li><ul><li><span class="title-icon"></span><a href="#concurrentskiplistmap示例">3.1 ConcurrentSkipListMap示例</a></li></ul></p>
 <h1 id="juc集合">1 JUC集合</h1>
 <p><strong>List的实现类主要有: LinkedList, ArrayList, Vector, Stack。</strong></p>
@@ -653,15 +653,15 @@ tb-<span class="hljs-number">4</span>, ta-<span class="hljs-number">4</span>, tb
 ConcurrentSkipListMap和TreeMap，它们虽然都是有序的哈希表。但是，第一，它们的线程安全机制不同，TreeMap是非线程安全的，而ConcurrentSkipListMap是线程安全的。第二，ConcurrentSkipListMap是通过跳表实现的，而TreeMap是通过红黑树实现的。
 关于跳表(Skip List)，它是平衡树的一种替代的数据结构，但是和红黑树不相同的是，跳表对于树的平衡的实现是基于一种随机化的算法的，这样也就是说跳表的插入和删除的工作是比较简单的。
 </code></pre>
-<p><a data-lightbox="0ef5d5a1-4cc2-4c03-9511-dcd8a478d3fc" data-title="ConcurrentSkipListMap的数据结构" href="res/Java%20Thread/30221944-21a18064c0114e65bffa68c5dadd4f0b.jpg"><img alt="ConcurrentSkipListMap的数据结构" src="res/Java%20Thread/30221944-21a18064c0114e65bffa68c5dadd4f0b.jpg"/></a></p>
+<p><a data-lightbox="9adfea9d-52b0-46e7-9eea-b202ec9b6eb0" data-title="ConcurrentSkipListMap的数据结构" href="res/Java%20Thread/30221944-21a18064c0114e65bffa68c5dadd4f0b.jpg"><img alt="ConcurrentSkipListMap的数据结构" src="res/Java%20Thread/30221944-21a18064c0114e65bffa68c5dadd4f0b.jpg"/></a></p>
 <p><strong>说明</strong>：</p>
 <p>先以数据“7,14,21,32,37,71,85”序列为例，来对跳表进行简单说明。</p>
 <p>跳表分为许多层(level)，每一层都可以看作是数据的索引，这些索引的意义就是加快跳表查找数据速度。每一层的数据都是有序的，上一层数据是下一层数据的子集，并且第一层(level 1)包含了全部的数据；层次越高，跳跃性越大，包含的数据越少。
 跳表包含一个表头，它查找数据时，是从上往下，从左往右进行查找。现在“需要找出值为32的节点”为例，来对比说明跳表和普遍的链表。</p>
 <p><strong>情况1：链表中查找“32”节点</strong></p>
-<p><a data-lightbox="7565bc78-fb95-4b26-958f-785d297d7c5e" data-title="链表中查找“32”节点" href="res/Java%20Thread/30222059-f01604b1b24d429e940f7a002947c143.jpg"><img alt="链表中查找“32”节点" src="res/Java%20Thread/30222059-f01604b1b24d429e940f7a002947c143.jpg"/></a></p>
+<p><a data-lightbox="96dd5a70-a384-4586-a6e1-6ff7149d9f43" data-title="链表中查找“32”节点" href="res/Java%20Thread/30222059-f01604b1b24d429e940f7a002947c143.jpg"><img alt="链表中查找“32”节点" src="res/Java%20Thread/30222059-f01604b1b24d429e940f7a002947c143.jpg"/></a></p>
 <p><strong>情况2：跳表中查找“32”节点</strong></p>
-<p><a data-lightbox="05d161c6-7315-4e2e-88ec-20ff2a2d975f" data-title="跳表中查找“32”节点" href="res/Java%20Thread/30222128-045c88b7e992443395a540ba2eb740f3.jpg"><img alt="跳表中查找“32”节点" src="res/Java%20Thread/30222128-045c88b7e992443395a540ba2eb740f3.jpg"/></a></p>
+<p><a data-lightbox="c66e768f-5278-4f5c-81a0-f76a2c7909af" data-title="跳表中查找“32”节点" href="res/Java%20Thread/30222128-045c88b7e992443395a540ba2eb740f3.jpg"><img alt="跳表中查找“32”节点" src="res/Java%20Thread/30222128-045c88b7e992443395a540ba2eb740f3.jpg"/></a></p>
 <p>忽略索引垂直线路上路径的情况下，只需要2步(红色部分表示路径)。</p>
 <pre><code class="lang-java">下面说说Java中ConcurrentSkipListMap的数据结构。
 (<span class="hljs-number">01</span>) ConcurrentSkipListMap继承于AbstractMap类，也就意味着它是一个哈希表。
@@ -865,7 +865,7 @@ Collection&lt;V&gt; <span class="hljs-title">values</span><span class="hljs-para
 当map是ConcurrentSkipListMap对象时，程序能正常运行。如果将map改为TreeMap时，程序会产生ConcurrentModificationException异常。
 </code></pre>
 <p></p><footer class="page-footer"><span class="copyright">Copyright © narutohyc.com 2022 all right reserved，powered by Gitbook</span><span class="footer-modification">该文件修订时间：
-2022-02-18 01:01:52
+2022-02-23 09:10:14
 </span></footer><hr/><div id="vcomments"></div><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el: "#vcomments",appId: 'jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz',appKey: 'FOXMptWOHC7cU1FxXt0LJj4o',placeholder: 'Just go go',avatar: '',meta: undefined,pageSize: 10,lang: 'zh-CN',recordIP: false})</script><p></p>
 </section>
 </div>
@@ -882,7 +882,7 @@ Collection&lt;V&gt; <span class="hljs-title">values</span><span class="hljs-para
 </div>
 </div>
 </div>
-<a aria-label="Previous page: 多线程_JUC锁集合 " class="navigation navigation-prev" href="多线程_JUC锁集合 .html">
+<a aria-label="Previous page: 多线程_JUC锁集合 " class="navigation navigation-prev" href="多线程_JUC锁集合.html">
 <i class="fa fa-angle-left"></i>
 </a>
 <a aria-label="Next page: 多线程_JUC线程池" class="navigation navigation-next" href="多线程_JUC线程池.html">
@@ -892,7 +892,7 @@ Collection&lt;V&gt; <span class="hljs-title">values</span><span class="hljs-para
 <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"多线程_ JUC集合","level":"1.3.5","depth":2,"next":{"title":"多线程_JUC线程池","level":"1.3.6","depth":2,"path":"chapters/多线程_JUC线程池.md","ref":"chapters/多线程_JUC线程池.md","articles":[]},"previous":{"title":"多线程_JUC锁集合 ","level":"1.3.4","depth":2,"path":"chapters/多线程_JUC锁集合 .md","ref":"chapters/多线程_JUC锁集合 .md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","favicon","search-plus","-lunr","-search","lightbox","change_girls","theme-comscore","valine","pageview-count","favicon-absolute"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"change_girls":{"time":10,"urls":["https://plc.jj20.com/up/allimg/1115/012122143136/220121143136-2.jpg","https://plc.jj20.com/up/allimg/1115/111R1094405/21111P94405-1.jpg"]},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://i.loli.net/2021/01/12/Cdunm9AoBcHF5MI.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://i.loli.net/2021/01/12/gmzASfCciIFXTyr.png","wechatText":"微信打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"","lang":"zh-CN","pageSize":10,"placeholder":"Just go go","recordIP":false,"appId":"jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz","appKey":"FOXMptWOHC7cU1FxXt0LJj4o"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java相关学习记录","language":"zh-hans","links":{"sidebar":{"我的狗窝":"https://github.com/narutohyc"}},"gitbook":"*","description":"记录 Java 的学习和一些技巧的使用"},"file":{"path":"chapters/多线程_ JUC集合.md","mtime":"2022-02-18T01:01:52.933Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-18T01:03:20.321Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"多线程_JUC集合","level":"1.3.5","depth":2,"next":{"title":"多线程_JUC线程池","level":"1.3.6","depth":2,"path":"chapters/多线程_JUC线程池.md","ref":"chapters/多线程_JUC线程池.md","articles":[]},"previous":{"title":"多线程_JUC锁集合 ","level":"1.3.4","depth":2,"path":"chapters/多线程_JUC锁集合.md","ref":"chapters/多线程_JUC锁集合.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","splitter","expandable-chapters-small","anchors","github","github-buttons","donate","sharing-plus","anchor-navigation-ex","mathjax","mermaid-gb3","tbfed-pagefooter","code","favicon","search-plus","-lunr","-search","lightbox","change_girls","theme-comscore","valine","pageview-count","favicon-absolute"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © narutohyc.com 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"github":{"url":"https://github.com/narutohyc"},"splitter":{},"change_girls":{"time":10,"urls":["https://plc.jj20.com/up/allimg/1115/012122143136/220121143136-2.jpg","https://plc.jj20.com/up/allimg/1115/111R1094405/21111P94405-1.jpg"]},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"code":{"copyButtons":true},"donate":{"alipay":"https://i.loli.net/2021/01/12/Cdunm9AoBcHF5MI.png","alipayText":"支付宝打赏","button":"赏","title":"","wechat":"https://i.loli.net/2021/01/12/gmzASfCciIFXTyr.png","wechatText":"微信打赏"},"favicon-absolute":{"appleTouchIconMore":{},"appleTouchIconPrecomposed152":"./chapters/res/other/favicon.ico","appleTouchIconPrecomposedMore":{},"favicon":"./chapters/res/other/favicon.ico"},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"mermaid-gb3":{},"anchor-navigation-ex":{"associatedWithSummary":true,"float":{"floatIcon":"fa fa-navicon","level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"mode":"float","multipleH1":true,"pageTop":{"level1Icon":"","level2Icon":"","level3Icon":"","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":false},"favicon":{},"lightbox":{"jquery":true,"sameUuid":false},"theme-comscore":{},"pageview-count":{},"github-buttons":{"buttons":[{"user":"narutohyc","repo":"bk_jdk","type":"star","size":"small","count":true}]},"mathjax":{"forceSVG":false,"version":"2.6-latest"},"expandable-chapters-small":{},"sharing":{"qq":true,"all":["google","facebook","weibo","twitter","qq","qzone","linkedin","pocket"],"douban":true,"facebook":true,"weibo":true,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":false,"google":true,"viber":false,"stumbleupon":false,"qzone":true,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":true},"anchors":{},"valine":{"avatar":"","lang":"zh-CN","pageSize":10,"placeholder":"Just go go","recordIP":false,"appId":"jQTfSSGRF0zp8yqaaa6bjeVQ-gzGzoHsz","appKey":"FOXMptWOHC7cU1FxXt0LJj4o"},"search-plus":{}},"theme":"default","author":"narutohyc","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"Java相关学习记录","language":"zh-hans","links":{"sidebar":{"我的狗窝":"https://github.com/narutohyc"}},"gitbook":"*","description":"记录 Java 的学习和一些技巧的使用"},"file":{"path":"chapters/多线程_ JUC集合.md","mtime":"2022-02-23T09:10:14.469Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-02-23T09:11:42.444Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
