@@ -41,6 +41,7 @@ jobs:
           # 安装calibre，生成电子书
           echo 安装calibre...
           npm install svgexport -g
+          sudo mkdir /usr/share/desktop-directories/
           sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
           sudo ln -s /usr/bin/nodejs /usr/bin/node
           echo 安装calibre完成
