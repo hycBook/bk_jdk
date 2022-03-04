@@ -28,7 +28,7 @@ Welcome to
 Using Scala version 2.12.10 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_281)
 ```
 
-
+> [百度网盘下载](https://pan.baidu.com/s/1yUiCiYj3e03ou27XE-eu_Q)  提取码: `7g8v`
 
 ## scala
 
