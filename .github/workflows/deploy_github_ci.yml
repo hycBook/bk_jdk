@@ -87,6 +87,20 @@ jobs:
           files: |
             _ebook/*
 
+      - name: Sync Github Repos To Gitee  # 名字随便起
+        uses: Yikun/hub-mirror-action@master  # 使用Yikun/hub-mirror-action
+        with:
+          src: github/hycBook  # 源端账户名(github),如果是组织的话要用组织名,此时account_type=org
+          dst: gitee/hycBook  # 目的端账户名(gitee),如果是组织的话要用组织名,此时account_type=org
+          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}  # SSH密钥对中的私钥
+          dst_token:  ${{ secrets.GITEE_TOKEN }}  # Gitee账户的私人令牌
+          account_type: org  # 账户类型,
+          # clone_style: "ssh"  # 使用https方式进行clone，也可以使用ssh
+          debug: true  # 启用后会显示所有执行命令
+          force_update: true  # 启用后，强制同步，即强制覆盖目的端仓库
+          static_list: "bk_jdk"  # 静态同步列表，在此填写需要同步的仓库名称，可填写多个
+          timeout: '660s'  # git超时设置，超时后会自动重试git操作
+
       # Runs a single command using the runners shell
       - name: print_infos
         run: echo build sucessful!
