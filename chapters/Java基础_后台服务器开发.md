@@ -1,3 +1,11 @@
+---
+title: Java基础_后台服务器开发
+date: '2022/9/10 20:46:25'
+categories:
+  - java
+abbrlink: 3b72c11
+---
+
 ![img](res/other/异世界蕾姆_0.jpg)
 
 [TOC]
@@ -154,11 +162,11 @@
 >
 >` Jetty的基本架构 `
 >
-> ![img](res/Java%20Base/20180614230109366.png) 
+> ![img](res/Java基础_后台服务器开发/20180614230109366.png) 
 >
 >`Tomcat的基本架构`
 >
-> ![img](res/Java%20Base/20180616093348674.gif) 
+> ![img](res/Java基础_后台服务器开发/20180616093348674.gif) 
 
 # 不同开发实现
 

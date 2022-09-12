@@ -1,3 +1,11 @@
+---
+title: Spring注解_介绍
+date: '2022/9/10 20:46:25'
+categories:
+  - java
+abbrlink: 7819d42
+---
+
 ![img](res/other/异世界蕾姆_1.png)
 
 [TOC]
@@ -22,7 +30,7 @@
 >
 > [用Spring Boot颠覆Java应用开发]( https://zhuanlan.zhihu.com/p/22920391 )
 
- ![img](res/Java%20And%20Spring%20Annotation/v2-b2c92856b17a107a7fdd53e65b7b2eff_hd.webp) 
+ ![img](res/Spring注解_介绍/v2-b2c92856b17a107a7fdd53e65b7b2eff_hd.webp) 
 
 # 什么是注解？
 

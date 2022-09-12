@@ -1,10 +1,18 @@
+---
+title: 多线程_JUC线程池
+date: '2022/9/10 20:46:25'
+categories:
+  - java
+abbrlink: 5912654c
+---
+
 ![img](res/other/异世界蕾姆_1.png)
 
 [TOC]
 
 # JUC线程池
 
-[![img](res/Java%20Thread/07231601-3ee0f7defe5847289e6e308d1d312ed1.jpg)](https://images0.cnblogs.com/blog/497634/201401/07231601-3ee0f7defe5847289e6e308d1d312ed1.jpg)
+![img](res/多线程_JUC线程池/07231601-3ee0f7defe5847289e6e308d1d312ed1.jpg)
 
 ```java
 1. Executor
@@ -300,7 +308,7 @@ TERMINATED -- 对应的高3位值是011。
 
 ## 线程状态切换
 
-![img](res/Java%20Thread/08000847-0a9caed4d6914485b2f56048c668251a.jpg)
+![img](res/多线程_JUC线程池/08000847-0a9caed4d6914485b2f56048c668251a.jpg)
 
 **RUNNING**
 
@@ -594,7 +602,7 @@ Future 是一个接口。它用于表示异步计算的结果。提供了检查�
 说明：Future用于表示异步计算的结果。它的实现类是FutureTask，在讲解FutureTask之前，我们先看看Callable, Future, FutureTask它们之间的关系图，如下：
 ```
 
-![img](res/Java%20Thread/111156106192237.jpg)
+![img](res/多线程_JUC线程池/111156106192237.jpg)
 
 ```java
 说明：

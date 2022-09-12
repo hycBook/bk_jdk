@@ -1,3 +1,11 @@
+---
+title: JDBC_JDBC连接池
+date: '2022/9/10 20:46:25'
+categories:
+  - java
+abbrlink: ae528721
+---
+
 ![img](res/other/异世界蕾姆_1.png)
 
 [TOC]
@@ -50,7 +58,7 @@
 >          <property name="jdbcUrl">jdbc:mysql://localhost:3306/db4</property>
 >          <property name="user">root</property>
 >          <property name="password">root</property>
->            
+>              
 >          <!-- 连接池参数 -->
 >          <!--初始化申请的连接数量-->
 >          <property name="initialPoolSize">5</property>
@@ -59,14 +67,14 @@
 >          <!--超时时间-->
 >          <property name="checkoutTimeout">3000</property>
 >        </default-config>
->        
+>          
 >        <named-config name="otherc3p0"> 
 >          <!--  连接参数 -->
 >          <property name="driverClass">com.mysql.jdbc.Driver</property>
 >          <property name="jdbcUrl">jdbc:mysql://localhost:3306/db3</property>
 >          <property name="user">root</property>
 >          <property name="password">root</property>
->            
+>              
 >          <!-- 连接池参数 -->
 >          <property name="initialPoolSize">5</property>
 >          <property name="maxPoolSize">8</property>

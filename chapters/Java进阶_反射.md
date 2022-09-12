@@ -1,3 +1,11 @@
+---
+title: Java进阶_反射
+date: '2022/9/10 20:46:25'
+categories:
+  - java
+abbrlink: b885131b
+---
+
 ![img](res/other/异世界蕾姆_1.png)
 
 [TOC]
@@ -35,7 +43,7 @@
 >
 > 我们可以通过这个对象看到类的结构。这个对象就像一面镜子，透过这个镜子看到类的结构，所以，我们形象的称之为：反射
 >
-> ![image-20200309213141544](res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84/image-20200309213141544.png)
+> ![image-20200309213141544](res/Java进阶_反射/image-20200309213141544.png)
 
 
 
@@ -47,7 +55,7 @@
 >
 > - RunTime运行时阶段：创建对象的过程new。
 >
->   ![img](res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/Java%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5.bmp)
+>   ![img](res/Java进阶_反射/Java%E4%BB%A3%E7%A0%81%E7%9A%84%E4%B8%89%E4%B8%AA%E9%98%B6%E6%AE%B5.bmp)
 
 
 
@@ -469,7 +477,7 @@
 > }
 > ```
 >
->![img](res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard.png)
+>![img](res/Java进阶_反射/clipboard.png)
 
 
 
@@ -503,11 +511,11 @@
 > }
 >```
 >
->![img](res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757303499.png)
+>![img](res/Java进阶_反射/clipboard-1583757303499.png)
 >
 >没有忽略访问修饰符直接访问抛出的异常
 >
->![img](res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757311152.png)
+>![img](res/Java进阶_反射/clipboard-1583757311152.png)
 
 ## Constructor:构造方法
 
@@ -586,7 +594,7 @@
 > }
 > ````
 >
->![img](res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757474373.png)
+>![img](res/Java进阶_反射/clipboard-1583757474373.png)
 >
 >
 
@@ -696,7 +704,7 @@
 > }
 >````
 > 
-> ![img](res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757833119.png)
+> ![img](res/Java进阶_反射/clipboard-1583757833119.png)
 > 
 > 
 
@@ -718,7 +726,7 @@
 >}
 >```
 >
->![img](res/Java%E8%BF%9B%E9%98%B6_%E5%8F%8D%E5%B0%84%E5%92%8C%E6%B3%A8%E8%A7%A3/clipboard-1583757870418.png)
+>![img](res/Java进阶_反射/clipboard-1583757870418.png)
 
 > **获取类名**
 >

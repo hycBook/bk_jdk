@@ -1,3 +1,11 @@
+---
+title: Spring注解_Spring入门篇
+date: '2022/9/10 20:46:25'
+categories:
+  - java
+abbrlink: 1ddf4748
+---
+
 ![img](res/other/异世界蕾姆_1.png)
 
 [TOC]
@@ -25,7 +33,7 @@
 >
 > * -将简单的组件配置、组合成为复杂的应用，这个意义上是框架 
 >
-> ![spring framework runtime结构图](res/Java%20And%20Spring%20Annotation/spring%20framework%20runtime.png)
+> ![spring framework runtime结构图](res/Spring注解_Spring入门篇/spring%20framework%20runtime.png)
 >
 > [Java 程序员必须掌握的 5 个注解！](https://mp.weixin.qq.com/s?__biz=MzI3ODcxMzQzMw==&mid=2247486373&idx=1&sn=601720b8a9dc1af60ffe6b2bd1dfc917&scene=21#wechat_redirect)
 
@@ -91,7 +99,7 @@
 > * DI（依赖注入）是其一种实现方式 
 > * 目的：创建对象并且组装对象之间的关系 
 >
-> ![IoC container结构图](res/Java%20And%20Spring%20Annotation/IoC%20container.png)
+> ![IoC container结构图](res/Spring注解_Spring入门篇/IoC%20container.png)
 >
 > **扩展理解**
 >
@@ -722,25 +730,25 @@
 >   import org.springframework.beans.factory.annotation.Autowired;
 >   import org.springframework.stereotype.Service;
 >   import com.imooc.beanannotation.injection.dao.InjectionDAO;
->     
+>       
 >   @Service
 >   public class InjectionServiceImpl implements InjectionService {
 >       // 方式一
 >   	// @Autowired
 >   	private InjectionDAO injectionDAO;
->   	  
+>   	    
 >       // 方式二
 >   	@Autowired
 >   	public InjectionServiceImpl(InjectionDAO injectionDAO) {
 >   		this.injectionDAO = injectionDAO;
 >   	}
->   	  
+>   	    
 >       // 方式三
 >   	// @Autowired
 >   	public void setInjectionDAO(InjectionDAO injectionDAO) {
 >   		this.injectionDAO = injectionDAO;
 >   	}
->         
+>           
 >   	@Override
 >   	public void save(String arg) {
 >   		System.out.println("Service接收参数：" + arg);
@@ -929,7 +937,7 @@
 >   ```java
 >   import org.springframework.context.annotation.Bean;
 >   import org.springframework.context.annotation.Configuration;
->     
+>       
 >   @Configuration
 >   public class StoreConfig {
 >       // 若没有指明name，则默认为方法名
@@ -1065,7 +1073,7 @@
 >* AOP：Aspect Oriented Programming的缩写，意为：面向切面编程，通过预编译方式和运行期动态代理实现程序功能 的统一维护的一种技术 
 >* 主要的功能是：日志记录，性能统计，安全控制，事务处理， 异常处理等等 
 >
->![AOP切面示意图](res/Java%20And%20Spring%20Annotation/AOP%E5%88%87%E9%9D%A2%E7%A4%BA%E6%84%8F%E5%9B%BE.png)
+>![AOP切面示意图](res/Spring注解_Spring入门篇/AOP%E5%88%87%E9%9D%A2%E7%A4%BA%E6%84%8F%E5%9B%BE.png)
 >
 >**AOP实现方式**
 >
